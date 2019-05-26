@@ -25,7 +25,7 @@
               <Icon type="ios-settings-outline" size="18"></Icon>
               设置
             </MenuItem>
-            <MenuItem name="sign">
+            <MenuItem name="sign" to="/sign">
               <Dropdown>
                 <Avatar class="avatar" size="small">强</Avatar>
                 <DropdownMenu slot="list">

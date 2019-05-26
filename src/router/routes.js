@@ -1,4 +1,5 @@
 import Main from "@/components/main/Main.vue";
+import Sign from "@/components/sign/Sign.vue";
 
 export default [
   {
@@ -15,5 +16,10 @@ export default [
         component: () => import("@/components/user/User.vue")
       }
     ]
+  },
+  {
+    path: "/sign",
+    name: "sign",
+    component: Sign
   }
 ];
