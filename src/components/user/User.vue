@@ -96,5 +96,6 @@ export default {
 }
 .ivu-page {
   text-align: center;
+  margin-bottom: 10px;
 }
 </style>

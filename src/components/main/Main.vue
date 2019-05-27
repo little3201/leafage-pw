@@ -26,12 +26,14 @@
               设置
             </MenuItem>
             <MenuItem name="sign">
-              <Dropdown>
+              <Dropdown @on-click="directToSign">
                 <Avatar class="avatar" size="small">强</Avatar>
                 <DropdownMenu slot="list">
-                  <DropdownItem>通知</DropdownItem>
-                  <DropdownItem>待办事项</DropdownItem>
-                  <DropdownItem divided>退出登录</DropdownItem>
+                  <DropdownItem name="notice">通知</DropdownItem>
+                  <DropdownItem name="item">待办事项</DropdownItem>
+                  <DropdownItem name="sign-out" divided>
+                    退出登录
+                  </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
             </MenuItem>
@@ -61,7 +63,17 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    directToSign(name) {
+      if (name == "sign-out") {
+        this.$router.push({
+          name: "sign"
+        });
+      }
+    }
+  }
+};
 </script>
 
 <style scoped>
