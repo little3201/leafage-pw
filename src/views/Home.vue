@@ -9,7 +9,7 @@
               <Icon type="ios-home-outline" size="18"></Icon>
               首页
             </MenuItem>
-            <MenuItem name="help">
+            <MenuItem name="help" to="/help">
               <Icon type="ios-help-circle-outline" size="18"></Icon>
               帮助
             </MenuItem>
@@ -59,7 +59,7 @@ export default {};
   left: 20px;
 }
 .layout-nav {
-  width: 420px;
+  width: 430px;
   margin: 0 auto;
   margin-right: 20px;
 }
