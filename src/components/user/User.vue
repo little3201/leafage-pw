@@ -1,12 +1,16 @@
 <template>
-  <div>
+  <div id="user">
+    <div>
+      <Input search placeholder="Enter something..." style="width: auto; margin: 10px auto 0 10px" />
+      <Button class="ivu-button-add" size="small" icon="ios-add" type="success" shape="circle"></Button>
+    </div>
     <Table :columns="columns" :data="datas">
       <template slot-scope="{ row }" slot="name">
         <strong>{{ row.name }}</strong>
       </template>
       <template slot-scope="{ row, index }" slot="action">
         <Button
-          type="primary"
+          type="info"
           shape="circle"
           size="small"
           icon="ios-create-outline"
@@ -97,5 +101,9 @@ export default {
 .ivu-page {
   text-align: center;
   margin-bottom: 10px;
+}
+.ivu-button-add {
+  float: right;
+  margin: 15px 60px 0 0;
 }
 </style>

@@ -40,10 +40,7 @@
           </div>
         </Menu>
       </Header>
-      <Content
-        class="content"
-        :style="{ margin: '70px 20px 0', background: '#fff' }"
-      >
+      <Content :style="{ margin: '70px 20px 0', background: '#fff' }">
         <Breadcrumb class="bread-crumb" :style="{ background: '#f5f7f9' }">
           <BreadcrumbItem to="/">
             <Icon type="ios-settings-outline"></Icon> 设置
@@ -82,12 +79,11 @@ export default {
   background: #f5f7f9;
   position: relative;
   border-radius: 5px;
-  overflow: hidden;
 }
 .layout-logo {
   width: 100px;
   height: 30px;
-  border-radius: 3px;
+  border-radius: 5px;
   float: left;
   position: relative;
   top: 15px;
@@ -96,7 +92,7 @@ export default {
 .layout-nav {
   width: 460px;
   margin: 0 auto;
-  margin-right: 30px;
+  margin-right: 20px;
 }
 .layout-footer-center {
   text-align: center;
@@ -107,12 +103,14 @@ export default {
 }
 .ivu-layout-header {
   background: #ffffff;
+  z-index: 1;
+}
+.ivu-layout-content {
+  min-height: 580px;
+  height: calc(100% - 50px - 20px);
 }
 .bread-crumb {
   padding-bottom: 7px;
-}
-.content {
-  height: 580px;
 }
 .ivu-menu-horizontal .ivu-menu-submenu {
   padding-right: 0px;
