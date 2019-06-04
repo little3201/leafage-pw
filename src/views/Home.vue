@@ -1,7 +1,7 @@
 <template>
   <div name="home" class="layout">
     <Layout>
-      <Header :style="{ position: 'fixed', width: '100%' }">
+      <Header :style="{ width: '100%' }">
         <Menu mode="horizontal" theme="light" active-name="console">
           <div class="layout-logo"></div>
           <div class="layout-nav">
@@ -17,18 +17,28 @@
               <Icon type="ios-contact-outline" size="18"></Icon>
               联系我们
             </MenuItem>
-            <MenuItem name="console">
+            <MenuItem name="console" to="/sign">
               <Icon type="ios-cog-outline" size="18"></Icon>
               控制台
             </MenuItem>
           </div>
         </Menu>
       </Header>
-      <Content
-        class="content"
-        :style="{ margin: '70px 20px 0', background: '#fff' }"
-      >
-        Content
+      <Content :arrow="false" :style="{ padding: '0 50px', background: '#ffffff' }">
+        <Carousel autoplay v-model="value2" loop>
+          <CarouselItem>
+            <div class="demo-carousel">1</div>
+          </CarouselItem>
+          <CarouselItem>
+            <div class="demo-carousel">2</div>
+          </CarouselItem>
+          <CarouselItem>
+            <div class="demo-carousel">3</div>
+          </CarouselItem>
+          <CarouselItem>
+            <div class="demo-carousel">4</div>
+          </CarouselItem>
+        </Carousel>
       </Content>
       <Footer class="layout-footer-center">
         2018-2019 &copy; Abeille Group Ltd.
@@ -46,7 +56,7 @@ export default {};
   border: 1px solid #d7dde4;
   background: #f5f7f9;
   position: relative;
-  border-radius: 5px;
+  border-radius: 4px;
   overflow: hidden;
 }
 .layout-logo {
@@ -66,17 +76,7 @@ export default {};
 .layout-footer-center {
   text-align: center;
 }
-.ivu-menu-horizontal {
-  height: 64px;
-  line-height: 62px;
-}
 .ivu-layout-header {
-  background: #ffffff;
-}
-.bread-crumb {
-  padding-bottom: 7px;
-}
-.content {
-  height: 500px;
+  background-color: #ffffff;
 }
 </style>

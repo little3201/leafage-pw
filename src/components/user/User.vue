@@ -2,7 +2,7 @@
   <div id="user">
     <div>
       <Input search placeholder="Enter something..." style="width: auto; margin: 10px auto 0 10px" />
-      <Button class="ivu-button-add" size="small" icon="ios-add" type="success" shape="circle"></Button>
+      <Button class="ivu-button-add" size="small" icon="md-add" type="success" shape="circle"></Button>
     </div>
     <Table :columns="columns" :data="datas">
       <template slot-scope="{ row }" slot="name">
@@ -13,15 +13,15 @@
           type="info"
           shape="circle"
           size="small"
-          icon="ios-create-outline"
-          style="margin-right: 5px"
+          icon="md-create"
+          style="margin-right: 10px"
           @click="show(index)"
         ></Button>
         <Button
           type="error"
           shape="circle"
           size="small"
-          icon="ios-trash-outline"
+          icon="md-trash"
           @click="remove(index)"
         ></Button>
       </template>
@@ -78,7 +78,19 @@ export default {
       ]
     };
   },
+  mounted: {
+    initUsers() {
+      this.init();
+    }
+  },
   methods: {
+    init(pageNum, pageSize) {
+      const url = "/users";
+      const params = {};
+      params.pageNum = pageNum;
+      params.pageSize = pageSize;
+      this.$axios.get(url, params);
+    },
     show(index) {
       this.$Modal.info({
         title: "User Info",
@@ -104,6 +116,6 @@ export default {
 }
 .ivu-button-add {
   float: right;
-  margin: 15px 60px 0 0;
+  margin: 15px 55px 0 0;
 }
 </style>

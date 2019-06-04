@@ -5,7 +5,7 @@
         <Menu mode="horizontal" theme="light" active-name="settings">
           <div class="layout-logo"></div>
           <div class="layout-nav">
-            <MenuItem name="dashbord" to="/">
+            <MenuItem name="dashbord" to="/main">
               <Icon type="ios-ionic-outline" size="18"></Icon>
               看板
             </MenuItem>
@@ -40,7 +40,7 @@
           </div>
         </Menu>
       </Header>
-      <Content :style="{ margin: '70px 20px 0', background: '#fff' }">
+      <Content :style="{ margin: '70px 20px 0', background: '#ffffff' }">
         <Breadcrumb class="bread-crumb" :style="{ background: '#f5f7f9' }">
           <BreadcrumbItem to="/">
             <Icon type="ios-settings-outline"></Icon> 设置

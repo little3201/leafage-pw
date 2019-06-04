@@ -1,10 +1,9 @@
 import axios from "axios";
-import QS from "qs";
 import store from "@/store";
 
 /**
  * 提示函数
- * 禁止点击蒙层、显示一秒后关闭
+ * loadingbar
  */
 const tip = msg => {
   this.$Notice.error({
@@ -17,9 +16,9 @@ const tip = msg => {
  * 跳转登录页
  * 携带当前页面路由，以期在登录页面完成登录后返回当前页面
  */
-const toLogin = () => {
+const directToSign = () => {
   this.$router.replace({
-    path: "/login",
+    path: "/sign",
     query: {
       redirect: this.$router.currentRoute.fullPath
     }
@@ -30,12 +29,12 @@ const toLogin = () => {
  * 请求失败后的错误统一处理
  * @param {Number} status 请求失败的状态码
  */
-const errorHandle = (status, other) => {
+const errorHandle = (status, message) => {
   // 状态码判断
   switch (status) {
     // 401: 未登录状态，跳转登录页
     case 401:
-      toLogin();
+      directToSign();
       break;
     // 403 token过期
     // 清除token并跳转登录页
@@ -44,7 +43,7 @@ const errorHandle = (status, other) => {
       localStorage.removeItem("token");
       store.commit("loginSuccess", null);
       setTimeout(() => {
-        toLogin();
+        directToSign();
       }, 1000);
       break;
     // 404请求不存在
@@ -52,12 +51,13 @@ const errorHandle = (status, other) => {
       tip("请求的资源不存在");
       break;
     default:
-      tip("当前网络不稳定:" + other);
+      tip("当前网络不稳定:" + message);
   }
 };
 
 // 创建axios实例
 var instance = axios.create({
+  baseUrl: this.$config.baseUrl,
   timeout: 1000 * 12
 });
 // 设置post请求头
@@ -131,7 +131,7 @@ export function get(url, params) {
 export function post(url, params) {
   return new Promise((resolve, reject) => {
     axios
-      .post(url, QS.stringify(params))
+      .post(url, params)
       .then(res => {
         resolve(res.data);
       })
@@ -167,7 +167,7 @@ export function remove(url, params) {
 export function put(url, params) {
   return new Promise((resolve, reject) => {
     axios
-      .put(url, QS.stringify(params))
+      .put(url, params)
       .then(res => {
         resolve(res.data);
       })
