@@ -19,15 +19,5 @@ export default {
   baseUrl: {
     dev: "http://localhost:8762",
     pro: "https://abeille.top"
-  },
-	proxyTable: {
-    "/api": {
-      target: "http://localhost:8762",
-      changeOrigin: true,
-      pathRewrite: {
-        "^/api": ""
-      }
-    }
-	}
-
+  }
 };
