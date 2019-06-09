@@ -40,8 +40,7 @@
 
 <script>
 import "./Sign.less";
-import axios from "@/api/http.js";
-import { Message } from "iview";
+import { sign } from "./sign.js";
 
 export default {
   data() {
@@ -78,27 +77,7 @@ export default {
     handleSubmit(form) {
       this.$refs[form].validate(valid => {
         if (valid) {
-          axios
-            .request({
-              url: "/oauth/token",
-              params: {
-                grant_type: "client_credentials",
-                client_id: this.user.username,
-                client_secret: this.user.password
-              },
-              method: "POST"
-            })
-            // handle success
-            .then(function(response) {
-              Message.success(response);
-              this.$router.push({
-                name: "main"
-              });
-            })
-            // handle error
-            .catch(function(error) {
-              Message.error(error.message);
-            });
+          sign(this.user.username, this.user.password);
         }
       });
     }
