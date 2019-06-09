@@ -2,7 +2,7 @@
   <div class="layout">
     <Layout>
       <Header :style="{ position: 'fixed', width: '100%' }">
-        <Menu mode="horizontal" theme="light" active-name="settings">
+        <Menu mode="horizontal" theme="light" active-name="dashbord">
           <div class="layout-logo"></div>
           <div class="layout-nav">
             <MenuItem name="dashbord" to="/main">

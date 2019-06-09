@@ -20,8 +20,14 @@ export default {
     dev: "http://localhost:8762",
     pro: "https://abeille.top"
   },
-  /**
-   * @description 默认打开的首页的路由name值，默认为home
-   */
-  homeName: "main"
+	proxyTable: {
+    "/api": {
+      target: "http://localhost:8762",
+      changeOrigin: true,
+      pathRewrite: {
+        "^/api": ""
+      }
+    }
+	}
+
 };

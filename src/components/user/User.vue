@@ -1,8 +1,19 @@
 <template>
   <div id="user">
     <div>
-      <Input search placeholder="Enter something..." style="width: auto; margin: 10px auto 0 10px" />
-      <Button class="ivu-button-add" size="small" icon="md-add" type="success" shape="circle"></Button>
+      <Input
+        search
+        placeholder="Enter something..."
+        style="width: auto; margin: 10px auto 0 10px"
+      />
+      <Button
+        class="ivu-button-add"
+        size="small"
+        icon="md-add"
+        type="success"
+        shape="circle"
+      >
+      </Button>
     </div>
     <Table :columns="columns" :data="datas">
       <template slot-scope="{ row }" slot="name">
@@ -78,19 +89,7 @@ export default {
       ]
     };
   },
-  mounted: {
-    initUsers() {
-      this.init();
-    }
-  },
   methods: {
-    init(pageNum, pageSize) {
-      const url = "/users";
-      const params = {};
-      params.pageNum = pageNum;
-      params.pageSize = pageSize;
-      this.$axios.get(url, params);
-    },
     show(index) {
       this.$Modal.info({
         title: "User Info",

@@ -1,15 +1,15 @@
 <template>
   <div name="home" class="layout">
     <Layout>
-      <Header :style="{ width: '100%' }">
-        <Menu mode="horizontal" theme="light" active-name="console">
+      <Header :style="{ position: 'fixed', width: '100%' }">
+        <Menu mode="horizontal" theme="light" active-name="home">
           <div class="layout-logo"></div>
           <div class="layout-nav">
             <MenuItem name="home" to="/">
               <Icon type="ios-home-outline" size="18"></Icon>
               首页
             </MenuItem>
-            <MenuItem name="help" to="/help">
+            <MenuItem name="help">
               <Icon type="ios-help-circle-outline" size="18"></Icon>
               帮助
             </MenuItem>
@@ -24,21 +24,8 @@
           </div>
         </Menu>
       </Header>
-      <Content :arrow="false" :style="{ padding: '0 50px', background: '#ffffff' }">
-        <Carousel autoplay v-model="value2" loop>
-          <CarouselItem>
-            <div class="demo-carousel">1</div>
-          </CarouselItem>
-          <CarouselItem>
-            <div class="demo-carousel">2</div>
-          </CarouselItem>
-          <CarouselItem>
-            <div class="demo-carousel">3</div>
-          </CarouselItem>
-          <CarouselItem>
-            <div class="demo-carousel">4</div>
-          </CarouselItem>
-        </Carousel>
+      <Content :style="{ margin: '70px 20px 0', background: '#fff' }">
+        Content
       </Content>
       <Footer class="layout-footer-center">
         2018-2019 &copy; Abeille Group Ltd.
@@ -56,7 +43,7 @@ export default {};
   border: 1px solid #d7dde4;
   background: #f5f7f9;
   position: relative;
-  border-radius: 4px;
+  border-radius: 5px;
   overflow: hidden;
 }
 .layout-logo {
@@ -76,7 +63,17 @@ export default {};
 .layout-footer-center {
   text-align: center;
 }
+.ivu-menu-horizontal {
+  height: 64px;
+  line-height: 62px;
+}
 .ivu-layout-header {
-  background-color: #ffffff;
+  background: #ffffff;
+}
+.bread-crumb {
+  padding-bottom: 7px;
+}
+.ivu-layout-content {
+  min-height: 500px;
 }
 </style>

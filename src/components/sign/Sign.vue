@@ -7,19 +7,19 @@
       </h2>
       <div class="form-container">
         <h2 class="form-title">登&emsp;录</h2>
-        <Form ref="userForm" :model="user" :rules="rules">
+        <Form ref="signForm" :model="user" :rules="rules">
           <FormItem prop="username">
             <Input
               type="text"
               v-model="user.username"
               placeholder="用户名/邮箱/手机号"
             >
-              <Icon type="ios-person-outline" slot="prepend" />
+              <Icon type="md-person" slot="prepend" />
             </Input>
           </FormItem>
           <FormItem prop="password">
             <Input type="password" v-model="user.password" placeholder="密码">
-              <Icon type="ios-lock-outline" slot="prepend" />
+              <Icon type="md-lock" slot="prepend" />
             </Input>
           </FormItem>
           <FormItem>
@@ -27,7 +27,7 @@
               long
               shape="circle"
               type="primary"
-              @click="handleSubmit('userForm')"
+              @click="handleSubmit('signForm')"
             >
               登&emsp;&emsp;录
             </Button>
@@ -40,6 +40,9 @@
 
 <script>
 import "./Sign.less";
+import axios from "@/api/http.js";
+import { Message } from "iview";
+
 export default {
   data() {
     return {
@@ -75,8 +78,25 @@ export default {
     handleSubmit(form) {
       this.$refs[form].validate(valid => {
         if (valid) {
-          this.$router.push({
-            name: this.$config.homeName
+          axios.request({
+            url: "/oauth/token",
+            params: {
+              grant_type: "client_credentials",
+              client_id: this.user.username,
+              client_secret: this.user.password
+						},
+            method: "POST"
+          })
+          // handle success
+          .then(function(response) {
+            Message.success(response);
+            this.$router.push({
+              name: "main"
+            });
+          })
+          // handle error
+          .catch(function(error) {
+            Message.error(error.message);
           });
         }
       });

@@ -7,7 +7,14 @@ export default [
   {
     path: "/",
     name: "home",
-    component: Home
+    component: Home,
+    children: [
+      {
+        path: "/help",
+        name: "help",
+        component: Help
+      }
+    ]
   },
   {
     path: "/main",
@@ -28,10 +35,5 @@ export default [
     path: "/sign",
     name: "sign",
     component: Sign
-  },
-  {
-    path: "/help",
-    name: "help",
-    component: Help
   }
 ];
