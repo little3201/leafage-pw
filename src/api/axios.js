@@ -9,7 +9,7 @@ class HttpRequest {
   }
   getInsideConfig() {
     const config = {
-      baseUrl: this.baseUrl,
+      baseURL: this.baseUrl,
       headers: {
         "Content-Type": "application/x-www-form-urlencoded"
       }
