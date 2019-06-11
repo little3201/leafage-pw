@@ -1,6 +1,9 @@
 import axios from "axios";
 import { baseURL } from "@/config";
 
+//跨域请求，允许保存cookie
+axios.defaults.withCredentials = true;
+
 class HttpRequest {
   // 如果传入参数就用传入的，没有就用baseURL
   constructor(baseUrl = baseURL) {

@@ -1,21 +1,18 @@
 import Cookies from "vue-cookies";
 
+const tokenKey = "access-token";
 /* 设置token */
-export const setToken = (tokenKey, token) => {
-  Cookies.set(tokenKey, token);
+export const setToken = token => {
+  let initEffectiveTime = new Date(new Date().getTime() + 120 * 60 * 1000);
+  Cookies.set(tokenKey, token, initEffectiveTime);
 };
 
 /* 获取token */
 export const getToken = () => {
-  const token = Cookies.get("access_token");
-  if (token) {
-    return token;
-  } else {
-    return false;
-  }
+  return Cookies.get(tokenKey);
 };
 
 /* 删除token */
-export const removeToken = tokenKey => {
+export const removeToken = () => {
   Cookies.remove(tokenKey);
 };

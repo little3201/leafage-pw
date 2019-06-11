@@ -16,7 +16,7 @@ export function sign(username, password) {
     })
     // handle success
     .then(response => {
-      Message.success(response);
+      Message.success(response.data);
       this.$router.push({
         name: "main"
       });
