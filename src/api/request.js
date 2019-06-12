@@ -3,7 +3,7 @@ import axios from "@/api";
 export const getUserInfo = userId => {
   return axios
 		.request({
-        url: "/user/${userId}",
+        url: "/user/1",
         method: "GET"
     })
 };

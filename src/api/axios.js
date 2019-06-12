@@ -15,7 +15,7 @@ class HttpRequest {
       baseURL: this.baseUrl,
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
-        common["Authorization"]: "Bearer" + getToken()
+        "Authorization": "Bearer " + getToken()
       }
     };
     return config;
