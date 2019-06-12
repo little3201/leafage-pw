@@ -12,6 +12,7 @@
         icon="md-add"
         type="success"
         shape="circle"
+        @click="getUser(1)"
       >
       </Button>
     </div>
@@ -42,6 +43,8 @@
 </template>
 
 <script>
+import { getUserInfo } from "@/api/request";
+	
 export default {
   data() {
     return {
@@ -90,6 +93,9 @@ export default {
     };
   },
   methods: {
+		getUser(userId){
+      getUserInfo(userId);
+		},
     show(index) {
       this.$Modal.info({
         title: "User Info",

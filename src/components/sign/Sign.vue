@@ -40,7 +40,8 @@
 
 <script>
 import "./Sign.less";
-import { sign } from "./sign.js";
+import { sign } from "@/api/request";
+import { setToken } from "@/utils/assist/cookies";
 
 export default {
   data() {
@@ -77,7 +78,16 @@ export default {
     handleSubmit(form) {
       this.$refs[form].validate(valid => {
         if (valid) {
-          sign(this.user.username, this.user.password);
+          sign(this.user).then(response => {
+            //设置token到cookie中
+            setToken(response.data.access_token)
+            this.$router.push({
+              name: "main"
+						});
+            },
+            error => { console.log("error: " + error); 
+            // 执行失败的回调函数
+            });
         }
       });
     }

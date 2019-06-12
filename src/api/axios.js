@@ -1,20 +1,21 @@
 import axios from "axios";
-import { baseURL } from "@/config";
-
-//跨域请求，允许保存cookie
-axios.defaults.withCredentials = true;
+import config from "@/config";
+import { getToken } from "@/utils/assist/cookies.js";
 
 class HttpRequest {
-  // 如果传入参数就用传入的，没有就用baseURL
-  constructor(baseUrl = baseURL) {
+  // 如果传入参数就用传入的，没有就用baseURL.dev
+  constructor(baseUrl = config.baseURL.dev) {
     this.baseUrl = baseUrl;
     this.queue = {};
   }
+  // 统一添加请求参数
   getInsideConfig() {
     const config = {
+      // axios.create 参数 baseUrl将被添加到`url`前面，除非`url`是绝对的。
       baseURL: this.baseUrl,
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
+        "Content-Type": "application/x-www-form-urlencoded",
+        common["Authorization"]: "Bearer" + getToken()
       }
     };
     return config;
