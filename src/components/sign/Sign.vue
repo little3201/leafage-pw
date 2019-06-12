@@ -27,7 +27,7 @@
               long
               shape="circle"
               type="primary"
-              @click="handleSubmit('signForm')"
+              @click="onSubmit('signForm')"
             >
               登&emsp;&emsp;录
             </Button>
@@ -40,7 +40,7 @@
 
 <script>
 import "./Sign.less";
-import { sign } from "@/api/request";
+import { signIn } from "@/api/request";
 import { setToken } from "@/utils/assist/cookies";
 
 export default {
@@ -75,19 +75,26 @@ export default {
     };
   },
   methods: {
-    handleSubmit(form) {
+    onSubmit(form) {
       this.$refs[form].validate(valid => {
         if (valid) {
-          sign(this.user).then(response => {
-            //设置token到cookie中
-            setToken(response.data.access_token)
-            this.$router.push({
-              name: "main"
-						});
+          signIn(this.user).then(
+            response => {
+              this.$Message.success("您好！登录成功");
+              //设置token到cookie中
+              setToken(response.data.access_token);
+              this.$router.push({
+                name: "main"
+              });
             },
-            error => { console.log("error: " + error); 
-            // 执行失败的回调函数
-            });
+            error => {
+              // 执行失败的回调函数
+              this.$Message.error({
+                duration: 3,
+                content: "抱歉，因为 " + error.message + "，登录失败"
+              });
+            }
+          );
         }
       });
     }

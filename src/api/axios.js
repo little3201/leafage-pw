@@ -1,6 +1,10 @@
 import axios from "axios";
 import config from "@/config";
 import { getToken } from "@/utils/assist/cookies.js";
+import Vue from "vue";
+import { LoadingBar } from "iview";
+
+Vue.component("LoadingBar", LoadingBar);
 
 class HttpRequest {
   // 如果传入参数就用传入的，没有就用baseURL.dev
@@ -15,7 +19,7 @@ class HttpRequest {
       baseURL: this.baseUrl,
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
-        "Authorization": "Bearer " + getToken()
+        Authorization: "Bearer " + getToken()
       }
     };
     return config;
@@ -27,6 +31,7 @@ class HttpRequest {
     // 请求拦截
     instance.interceptors.request.use(
       config => {
+        LoadingBar.start();
         this.queue[url] = true;
         return config;
       },
@@ -37,11 +42,13 @@ class HttpRequest {
     // 响应拦截
     instance.interceptors.response.use(
       res => {
+        LoadingBar.finish();
         this.destroy(url);
         const { data, status } = res;
         return { data, status };
       },
       error => {
+        LoadingBar.finish();
         this.destroy(url);
         return Promise.reject(error);
       }

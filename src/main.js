@@ -10,8 +10,6 @@ Vue.config.productionTip = false;
 /* iview */
 Vue.use(iView);
 
-Vue.prototype.HOST = "/api";
-
 new Vue({
   router,
   store,

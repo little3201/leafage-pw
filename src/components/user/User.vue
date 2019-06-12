@@ -12,14 +12,11 @@
         icon="md-add"
         type="success"
         shape="circle"
-        @click="getUser(1)"
+        @click="initUser()"
       >
       </Button>
     </div>
     <Table :columns="columns" :data="datas">
-      <template slot-scope="{ row }" slot="name">
-        <strong>{{ row.name }}</strong>
-      </template>
       <template slot-scope="{ row, index }" slot="action">
         <Button
           type="info"
@@ -38,72 +35,115 @@
         ></Button>
       </template>
     </Table>
-    <Page size="small" :total="60" show-total show-sizer show-elevator />
+    <Page
+      :current="page.pageNum"
+      :page-size="page.pageSize"
+      :total="page.total"
+      @on-change="pageChange"
+      @on-page-size-change="pageSizeChange"
+      size="small"
+      show-total
+      show-sizer
+      show-elevator
+    />
   </div>
 </template>
 
 <script>
-import { getUserInfo } from "@/api/request";
-	
+import { getUserInfo, findUsers } from "@/api/request";
+
 export default {
   data() {
     return {
       columns: [
         {
-          title: "Name",
-          slot: "name"
+          title: "用户编号",
+          key: "userId"
         },
         {
-          title: "Age",
-          key: "age"
+          title: "中文名",
+          key: "userNameCn"
         },
         {
-          title: "Address",
-          key: "address"
+          title: "英文名",
+          key: "userNameEn"
         },
         {
-          title: "Action",
+          title: "手机号",
+          key: "userMobile"
+        },
+        {
+          title: "联系地址",
+          key: "userAddress"
+        },
+        {
+          title: "状态",
+          key: "accountNonLocked"
+        },
+        {
+          title: "操作",
           slot: "action",
           width: 150,
           align: "center"
         }
       ],
-      datas: [
-        {
-          name: "John Brown",
-          age: 18,
-          address: "New York No. 1 Lake Park"
-        },
-        {
-          name: "Jim Green",
-          age: 24,
-          address: "London No. 1 Lake Park"
-        },
-        {
-          name: "Joe Black",
-          age: 30,
-          address: "Sydney No. 1 Lake Park"
-        },
-        {
-          name: "Jon Snow",
-          age: 26,
-          address: "Ottawa No. 2 Lake Park"
-        }
-      ]
+      page: {
+        pageNum: 1,
+        pageSize: 10,
+        total: 0
+      },
+      datas: []
     };
   },
   methods: {
-		getUser(userId){
+    pageChange(pageNum) {
+      this.page.pageNum = pageNum;
+      this.initUser();
+    },
+    pageSizeChange(pageSize) {
+      this.page.pageSize = pageSize;
+      this.initUser();
+    },
+    /* 初始化用户列表 */
+    initUser() {
+      let page = {
+        pageNum: this.page.pageNum - 1,
+        pageSize: this.page.pageSize
+      };
+      findUsers(page).then(
+        response => {
+          this.datas = response.data.content;
+          this.page.pageNum = response.data.pageable.pageNumber + 1;
+          this.page.pageSize = response.data.pageable.pageSize;
+          this.page.total = response.data.totalElements;
+        },
+        error => {
+          // 执行失败的回调函数
+          this.$Message.error({
+            duration: 4,
+            content: "因为：" + error.message + "，数据初始化失败！"
+          });
+        }
+      );
+    },
+    /* 根据userId查询用户 */
+    getUser(userId) {
       getUserInfo(userId);
-		},
+    },
+    /* 展示用户信息 */
     show(index) {
       this.$Modal.info({
         title: "User Info",
-        content: `Name：${this.datas[index].name}<br>
-          Age：${this.datas[index].age}<br>
-          Address：${this.datas[index].address}`
+        content: `
+          用户编号：${this.datas[index].userId}<br/>
+          中文名：${this.datas[index].userNameCn}<br/>
+          英文名：${this.datas[index].userNameEn}<br/>
+          手机号：${this.datas[index].userMobile}<br/>
+          联系地址：${this.datas[index].userAddress}
+        `
       });
     },
+    /* 从列表中移除 */
     remove(index) {
       this.datas.splice(index, 1);
     }
