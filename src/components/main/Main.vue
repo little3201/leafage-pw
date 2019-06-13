@@ -43,11 +43,11 @@
       </Header>
       <Content :style="{ margin: '70px 20px 0', background: '#ffffff' }">
         <Breadcrumb class="bread-crumb" :style="{ background: '#f5f7f9' }">
-          <BreadcrumbItem to="/">
-            <Icon type="ios-settings-outline"></Icon> 设置
+          <BreadcrumbItem to="/user">
+            <Icon type="ios-settings-outline"></Icon> 用户
           </BreadcrumbItem>
-          <BreadcrumbItem to="/components/breadcrumb">
-            <Icon type="ios-key-outline"></Icon> 修改密码
+          <BreadcrumbItem>
+            <Icon type="ios-key-outline"></Icon> 第三方
           </BreadcrumbItem>
         </Breadcrumb>
         <!-- 视图 -->

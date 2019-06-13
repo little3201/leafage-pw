@@ -1,10 +1,11 @@
 <template>
   <div id="user">
-    <div>
+    <div style="width: auto; margin: 10px auto 0 10px">
+      用户编号：
       <Input
         search
         placeholder="Enter something..."
-        style="width: auto; margin: 10px auto 0 10px"
+        style="width: 160px"
       />
       <Button
         class="ivu-button-add"
@@ -17,6 +18,9 @@
       </Button>
     </div>
     <Table :columns="columns" :data="datas">
+			<template slot="status">
+				<Tag color="green">正常</Tag>
+			</template>
       <template slot-scope="{ row, index }" slot="action">
         <Button
           type="info"
@@ -73,12 +77,18 @@ export default {
           key: "userMobile"
         },
         {
+          title: "邮箱",
+          key: "userEmail"
+        },
+        {
           title: "联系地址",
           key: "userAddress"
         },
         {
           title: "状态",
-          key: "accountNonLocked"
+          slot: "status",
+          key: "accountNonLocked",
+          align: "center"
         },
         {
           title: "操作",
@@ -95,15 +105,10 @@ export default {
       datas: []
     };
   },
+	mounted: function () {
+    return this.initUser();
+	},
   methods: {
-    pageChange(pageNum) {
-      this.page.pageNum = pageNum;
-      this.initUser();
-    },
-    pageSizeChange(pageSize) {
-      this.page.pageSize = pageSize;
-      this.initUser();
-    },
     /* 初始化用户列表 */
     initUser() {
       let page = {
@@ -121,7 +126,7 @@ export default {
           // 执行失败的回调函数
           this.$Message.error({
             duration: 4,
-            content: "因为：" + error.message + "，数据初始化失败！"
+            content: "数据初始化失败！"
           });
         }
       );
@@ -129,6 +134,14 @@ export default {
     /* 根据userId查询用户 */
     getUser(userId) {
       getUserInfo(userId);
+    },
+    pageChange(pageNum) {
+      this.page.pageNum = pageNum;
+      this.initUser();
+    },
+    pageSizeChange(pageSize) {
+      this.page.pageSize = pageSize;
+      this.initUser();
     },
     /* 展示用户信息 */
     show(index) {
@@ -161,6 +174,6 @@ export default {
 }
 .ivu-button-add {
   float: right;
-  margin: 15px 55px 0 0;
+  margin: 5px 58px 0 0;
 }
 </style>

@@ -24,7 +24,7 @@
           </div>
         </Menu>
       </Header>
-      <Content :style="{ margin: '70px 20px 0', background: '#fff' }">
+      <Content :style="{ margin: '80px 20px 0', background: '#fff' }">
         Content
       </Content>
       <Footer class="layout-footer-center">
