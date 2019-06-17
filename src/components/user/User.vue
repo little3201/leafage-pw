@@ -2,11 +2,7 @@
   <div id="user">
     <div style="width: auto; margin: 10px auto 0 10px">
       用户编号：
-      <Input
-        search
-        placeholder="Enter something..."
-        style="width: 160px"
-      />
+      <Input search placeholder="Enter something..." style="width: 160px" />
       <Button
         class="ivu-button-add"
         size="small"
@@ -18,9 +14,10 @@
       </Button>
     </div>
     <Table :columns="columns" :data="datas">
-			<template slot="status">
-				<Tag color="green">正常</Tag>
-			</template>
+      <template slot-scope="{ row }" slot="status">
+        <Tag color="green" v-show="row.accountNonLocked">正常</Tag>
+        <Tag color="red" v-show="!row.accountNonLocked">锁定</Tag>
+      </template>
       <template slot-scope="{ row, index }" slot="action">
         <Button
           type="info"
@@ -61,7 +58,7 @@ export default {
     return {
       columns: [
         {
-          title: "用户编号",
+          title: "用户ID",
           key: "userId"
         },
         {
@@ -105,9 +102,9 @@ export default {
       datas: []
     };
   },
-	mounted: function () {
+  mounted: function() {
     return this.initUser();
-	},
+  },
   methods: {
     /* 初始化用户列表 */
     initUser() {
@@ -126,7 +123,7 @@ export default {
           // 执行失败的回调函数
           this.$Message.error({
             duration: 4,
-            content: "数据初始化失败！"
+            content: "数据初始化失败！" + error.message
           });
         }
       );
@@ -148,7 +145,7 @@ export default {
       this.$Modal.info({
         title: "User Info",
         content: `
-          用户编号：${this.datas[index].userId}<br/>
+          用户ID：${this.datas[index].userId}<br/>
           中文名：${this.datas[index].userNameCn}<br/>
           英文名：${this.datas[index].userNameEn}<br/>
           手机号：${this.datas[index].userMobile}<br/>

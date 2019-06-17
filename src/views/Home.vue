@@ -9,7 +9,7 @@
               <Icon type="ios-home-outline" size="18"></Icon>
               首页
             </MenuItem>
-            <MenuItem name="help">
+            <MenuItem name="help" to="/help">
               <Icon type="ios-help-circle-outline" size="18"></Icon>
               帮助
             </MenuItem>
@@ -25,7 +25,8 @@
         </Menu>
       </Header>
       <Content :style="{ margin: '80px 20px 0', background: '#fff' }">
-        Content
+        <!-- 视图 -->
+        <router-view />
       </Content>
       <Footer class="layout-footer-center">
         2018-2019 &copy; Abeille Group Ltd.

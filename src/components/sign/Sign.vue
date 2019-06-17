@@ -9,11 +9,7 @@
         <h2 class="form-title">登&emsp;录</h2>
         <Form ref="signForm" :model="user" :rules="rules">
           <FormItem prop="username">
-            <Input
-              type="text"
-              v-model="user.username"
-              placeholder="用户名/邮箱/手机号"
-            >
+            <Input type="text" v-model="user.username" placeholder="账号">
               <Icon type="md-person" slot="prepend" />
             </Input>
           </FormItem>

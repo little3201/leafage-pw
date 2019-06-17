@@ -32,7 +32,7 @@
                   <DropdownItem name="profile">个人中心</DropdownItem>
                   <DropdownItem name="notice">通知消息</DropdownItem>
                   <DropdownItem name="item">待办事项</DropdownItem>
-                  <DropdownItem name="sign-out" divided>
+                  <DropdownItem name="signOut" divided>
                     退出登录
                   </DropdownItem>
                 </DropdownMenu>
@@ -64,7 +64,7 @@
 export default {
   methods: {
     directToSign(name) {
-      if (name == "sign-out") {
+      if (name == "signOut") {
         this.$router.push({
           name: "sign"
         });
