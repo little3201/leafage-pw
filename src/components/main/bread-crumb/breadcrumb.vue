@@ -6,7 +6,7 @@
         :to="item.to"
         :key="`bread-crumb-${item.name}`"
       >
-        <Icon type="item.icon"></Icon>{{ showTitle(item) }}
+        <Icon type="md-home" color="iconColor"></Icon>{{ showTitle(item) }}
       </BreadcrumbItem>
     </Breadcrumb>
   </div>
@@ -24,6 +24,14 @@ export default {
     showIcon: {
       type: Boolean,
       default: false
+    }
+  },
+  computed: {
+    iconType() {
+      return this.type.indexOf("_") === 0 ? "Icons" : "Icon";
+    },
+    iconColor() {
+      return this.color || "";
     }
   },
   methods: {

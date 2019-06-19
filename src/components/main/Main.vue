@@ -41,15 +41,8 @@
           </div>
         </Menu>
       </Header>
-      <Content :style="{ margin: '70px 20px 0', background: '#ffffff' }">
-        <Breadcrumb class="bread-crumb" :style="{ background: '#f5f7f9' }">
-          <BreadcrumbItem to="/user">
-            <Icon type="ios-settings-outline"></Icon> 用户
-          </BreadcrumbItem>
-          <BreadcrumbItem>
-            <Icon type="ios-key-outline"></Icon> 第三方
-          </BreadcrumbItem>
-        </Breadcrumb>
+      <Content :style="{ margin: '110px 20px 0', background: '#ffffff' }">
+        <breadcrumb></breadcrumb>
         <!-- 视图 -->
         <router-view />
       </Content>
@@ -61,7 +54,12 @@
 </template>
 
 <script>
+import breadcrumb from "./bread-crumb/breadcrumb.vue";
+
 export default {
+  components: {
+    breadcrumb
+  },
   methods: {
     directToSign(name) {
       if (name == "signOut") {
