@@ -42,7 +42,7 @@
         </Menu>
       </Header>
       <Content :style="{ margin: '110px 20px 0', background: '#ffffff' }">
-        <breadcrumb></breadcrumb>
+        <breadcrumb :list="breadCrumbList"></breadcrumb>
         <!-- 视图 -->
         <router-view />
       </Content>
@@ -59,6 +59,11 @@ import breadcrumb from "./bread-crumb/breadcrumb.vue";
 export default {
   components: {
     breadcrumb
+  },
+  computed: {
+    breadCrumbList() {
+      return this.$store.state.app.breadCrumbList;
+    }
   },
   methods: {
     directToSign(name) {
