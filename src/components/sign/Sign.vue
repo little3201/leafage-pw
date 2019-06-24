@@ -3,7 +3,7 @@
     <div class="content-wrapper">
       <h2 class="slogan">
         欢迎使用 <br />
-        Abeille 后台管理系统
+        Abeille 管理控制台
       </h2>
       <div class="form-container">
         <h2 class="form-title">登&emsp;录</h2>
