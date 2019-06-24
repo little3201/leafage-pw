@@ -7,7 +7,7 @@
         class="ivu-button-add"
         size="small"
         icon="md-add"
-        type="success"
+        type="primary"
         shape="circle"
         @click="initUser()"
       >
@@ -20,7 +20,7 @@
       </template>
       <template slot-scope="{ row, index }" slot="action">
         <Button
-          type="info"
+          type="success"
           shape="circle"
           size="small"
           icon="md-create"

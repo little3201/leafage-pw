@@ -3,7 +3,9 @@
     <Layout>
       <Header :style="{ position: 'fixed', width: '100%' }">
         <Menu mode="horizontal" theme="light" active-name="dashbord">
-          <div class="layout-logo"></div>
+          <div class="layout-logo">
+            <router-link to="/"><img src="../../assets/abeille.png"/></router-link>
+          </div>
           <div class="layout-nav">
             <MenuItem name="dashbord" to="/main">
               <Icon type="ios-ionic-outline" size="18"></Icon>
@@ -41,8 +43,7 @@
           </div>
         </Menu>
       </Header>
-      <Content :style="{ margin: '110px 20px 0', background: '#ffffff' }">
-        <breadcrumb :list="breadCrumbList"></breadcrumb>
+      <Content :style="{ margin: '80px 20px 0', background: '#ffffff' }">
         <!-- 视图 -->
         <router-view />
       </Content>
@@ -54,17 +55,7 @@
 </template>
 
 <script>
-import breadcrumb from "./bread-crumb/breadcrumb.vue";
-
 export default {
-  components: {
-    breadcrumb
-  },
-  computed: {
-    breadCrumbList() {
-      return this.$store.state.app.breadCrumbList;
-    }
-  },
   methods: {
     directToSign(name) {
       if (name == "signOut") {
@@ -90,8 +81,11 @@ export default {
   border-radius: 5px;
   float: left;
   position: relative;
-  top: 15px;
+  top: 12px;
   left: 20px;
+}
+img {
+  width: 100px;
 }
 .layout-nav {
   width: 460px;

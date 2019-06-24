@@ -3,7 +3,9 @@
     <Layout>
       <Header :style="{ position: 'fixed', width: '100%' }">
         <Menu mode="horizontal" theme="light" active-name="home">
-          <div class="layout-logo"></div>
+          <div class="layout-logo">
+            <router-link to="/"><img src="../assets/abeille.png"/></router-link>
+          </div>
           <div class="layout-nav">
             <MenuItem name="home" to="/">
               <Icon type="ios-home-outline" size="18"></Icon>
@@ -17,7 +19,7 @@
               <Icon type="ios-contact-outline" size="18"></Icon>
               联系我们
             </MenuItem>
-            <MenuItem name="console" to="/sign">
+            <MenuItem name="console" to="/main">
               <Icon type="ios-cog-outline" size="18"></Icon>
               控制台
             </MenuItem>
@@ -53,8 +55,11 @@ export default {};
   border-radius: 3px;
   float: left;
   position: relative;
-  top: 15px;
+  top: 12px;
   left: 20px;
+}
+img {
+ width: 100px;
 }
 .layout-nav {
   width: 430px;
