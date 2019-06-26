@@ -4,7 +4,7 @@
       <a-layout-header :style="{ position: 'fixed', zIndex: 1, width: '100%' }">
         <div class="logo">
           <router-link to="/">
-            <img class="logo" src="../../assets/abeille.png" />
+            <img class="logo" src="../../assets/abeille.png">
           </router-link>
         </div>
         <div class="layout-nav">
@@ -16,29 +16,33 @@
             :style="{ lineHeight: '62px' }"
             @click="changeMenu"
           >
-            <a-menu-item key="dashbord"><a-icon type="dashboard" />看板</a-menu-item>
-            <a-menu-item key="user"> <a-icon type="user" />用户</a-menu-item>
+            <a-menu-item key="dashbord">
+              <a-icon type="dashboard"/>看板
+            </a-menu-item>
+            <a-menu-item key="user">
+              <a-icon type="user"/>用户
+            </a-menu-item>
             <a-menu-item key="share">
-              <a-icon type="share-alt" />资源
+              <a-icon type="share-alt"/>资源
             </a-menu-item>
             <a-menu-item>
-              <a-avatar style="color: #f56a00; backgroundColor: #fde3cf">
-                强
-              </a-avatar>
+              <a-avatar style="color: #f56a00; backgroundColor: #fde3cf">强</a-avatar>
             </a-menu-item>
           </a-menu>
         </div>
       </a-layout-header>
-      <a-layout-content
-        :style="{ background: '#fff', padding: '0', marginTop: '64px' }"
-      >
+      <a-layout-content :style="{ background: '#fff', padding: '0', marginTop: '64px' }">
+        <a-breadcrumb :routes="routes">
+          <template slot="itemRender" slot-scope="{route, params, routes, paths}">
+            <span v-if="routes.indexOf(route) === routes.length - 1">{{route.name}}</span>
+            <router-link v-else :to="`${basePath}/${paths.join('/')}`">{{route.name}}</router-link>
+          </template>
+        </a-breadcrumb>
         <div>
-          <router-view />
+          <router-view/>
         </div>
       </a-layout-content>
-      <a-layout-footer :style="{ textAlign: 'center' }">
-        2018-2019 &copy; Abeille Group Ltd.
-      </a-layout-footer>
+      <a-layout-footer :style="{ textAlign: 'center' }">2018-2019 &copy; Abeille Group Ltd.</a-layout-footer>
     </a-layout>
   </div>
 </template>
@@ -46,9 +50,15 @@
 <script>
 export default {
   data() {
+    const { lang } = this.$route.params;
     return {
-      openKeys: ["home"]
+      basePath: "/${lang}/components/breadcrumb",
+      openKeys: ["home"],
+      routes: []
     };
+  },
+  beforeCreate() {
+    this.routes = this.$router.options.routes;
   },
   watch: {
     openKeys(val) {

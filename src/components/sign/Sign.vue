@@ -61,29 +61,6 @@ export default {
     this.form = this.$form.createForm(this);
   },
   methods: {
-    changeMenu(openKeys) {
-      switch (openKeys.key) {
-        case "help":
-          this.$router.push({
-            name: "help"
-          });
-          break;
-        case "share":
-          this.$router.push({
-            name: "share"
-          });
-          break;
-        case "setting":
-          this.$router.push({
-            name: "main"
-          });
-          break;
-        default:
-          this.$router.push({
-            name: "home"
-          });
-      }
-    },
     handleSubmit(e) {
       e.preventDefault();
       this.form.validateFields((err, values) => {

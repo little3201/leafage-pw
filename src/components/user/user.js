@@ -6,8 +6,7 @@ const columns = [
     width: '20%'
   }, {
     title: '中文名',
-    dataIndex: 'usrNameCn',
-    scopedSlots: { customRender: 'usrNameCn' }
+    dataIndex: 'usrNameCn'
   }, {
     title: '英文名',
     dataIndex: 'usrNameEn'
