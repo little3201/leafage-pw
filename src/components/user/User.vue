@@ -1,100 +1,25 @@
 <template>
   <div id="user">
-    <div style="width: auto; margin: 10px auto 0 10px">
-      用户编号：
-      <Input search placeholder="Enter something..." style="width: 160px" />
-      <Button
-        class="ivu-button-add"
-        size="small"
-        icon="md-add"
-        type="primary"
-        shape="circle"
-        @click="initUser()"
-      >
-      </Button>
-    </div>
-    <Table :columns="columns" :data="datas">
-      <template slot-scope="{ row }" slot="status">
-        <Tag color="green" v-show="row.accountNonLocked">正常</Tag>
-        <Tag color="red" v-show="!row.accountNonLocked">锁定</Tag>
-      </template>
-      <template slot-scope="{ row, index }" slot="action">
-        <Button
-          type="success"
-          shape="circle"
-          size="small"
-          icon="md-create"
-          style="margin-right: 10px"
-          @click="show(index)"
-        ></Button>
-        <Button
-          type="error"
-          shape="circle"
-          size="small"
-          icon="md-trash"
-          @click="remove(index)"
-        ></Button>
-      </template>
-    </Table>
-    <Page
-      :current="page.pageNum"
-      :page-size="page.pageSize"
-      :total="page.total"
-      @on-change="pageChange"
-      @on-page-size-change="pageSizeChange"
-      size="small"
-      show-total
-      show-sizer
-      show-elevator
+    <a-table :columns="columns" :dataSource="datas" :pagination="pagination">
+    </a-table>
+    <a-pagination
+      showQuickJumper
+      :current="pagination.pageNum"
+      :total="pagination.total"
+      @change="onChange"
     />
   </div>
 </template>
 
 <script>
 import { getUserInfo, findUsers } from "@/api/request";
+import { columns } from "./user";
 
 export default {
   data() {
     return {
-      columns: [
-        {
-          title: "用户ID",
-          key: "userId"
-        },
-        {
-          title: "中文名",
-          key: "userNameCn"
-        },
-        {
-          title: "英文名",
-          key: "userNameEn"
-        },
-        {
-          title: "手机号",
-          key: "userMobile"
-        },
-        {
-          title: "邮箱",
-          key: "userEmail"
-        },
-        {
-          title: "联系地址",
-          key: "userAddress"
-        },
-        {
-          title: "状态",
-          slot: "status",
-          key: "accountNonLocked",
-          align: "center"
-        },
-        {
-          title: "操作",
-          slot: "action",
-          width: 150,
-          align: "center"
-        }
-      ],
-      page: {
+      columns: [],
+      pagination: {
         pageNum: 1,
         pageSize: 10,
         total: 0
@@ -102,22 +27,25 @@ export default {
       datas: []
     };
   },
+  beforeCreate() {
+    this.columns = columns;
+  },
   mounted: function() {
     return this.initUser();
   },
   methods: {
     /* 初始化用户列表 */
     initUser() {
-      let page = {
-        pageNum: this.page.pageNum - 1,
-        pageSize: this.page.pageSize
+      let pagination = {
+        pageNum: this.pagination.pageNum - 1,
+        pageSize: this.pagination.pageSize
       };
-      findUsers(page).then(
+      findUsers(pagination).then(
         response => {
           this.datas = response.data.content;
-          this.page.pageNum = response.data.pageable.pageNumber + 1;
-          this.page.pageSize = response.data.pageable.pageSize;
-          this.page.total = response.data.totalElements;
+          this.pagination.pageNum = response.data.pageable.pageNumber + 1;
+          this.pagination.pageSize = response.data.pageable.pageSize;
+          this.pagination.total = response.data.totalElements;
         },
         error => {
           // 执行失败的回调函数
@@ -132,12 +60,8 @@ export default {
     getUser(userId) {
       getUserInfo(userId);
     },
-    pageChange(pageNum) {
-      this.page.pageNum = pageNum;
-      this.initUser();
-    },
-    pageSizeChange(pageSize) {
-      this.page.pageSize = pageSize;
+    onChange(pageNumber) {
+      this.pagination.pageNum = pageNumber;
       this.initUser();
     },
     /* 展示用户信息 */

@@ -2,33 +2,50 @@
   <div class="user-login">
     <div class="content-wrapper">
       <h2 class="slogan">
-        欢迎使用 <br />
-        Abeille 管理控制台
+        欢迎使用
+        <br>Abeille 管理控制台
       </h2>
       <div class="form-container">
         <h2 class="form-title">登&emsp;录</h2>
-        <Form ref="signForm" :model="user" :rules="rules">
-          <FormItem prop="username">
-            <Input type="text" v-model="user.username" placeholder="账号">
-              <Icon type="md-person" slot="prepend" />
-            </Input>
-          </FormItem>
-          <FormItem prop="password">
-            <Input type="password" v-model="user.password" placeholder="密码">
-              <Icon type="md-lock" slot="prepend" />
-            </Input>
-          </FormItem>
-          <FormItem>
-            <Button
-              long
-              shape="circle"
-              type="primary"
-              @click="onSubmit('signForm')"
+        <a-form id="form-login" :form="form" class="login-form" @submit="handleSubmit">
+          <a-form-item>
+            <a-input
+              v-decorator="[
+          'username',
+          { rules: [{ required: true, message: 'Please input your username!' }] }
+        ]"
+              placeholder="Username"
             >
-              登&emsp;&emsp;录
-            </Button>
-          </FormItem>
-        </Form>
+              <a-icon slot="prefix" type="user"/>
+            </a-input>
+          </a-form-item>
+          <a-form-item>
+            <a-input
+              v-decorator="[
+          'password',
+          { rules: [{ required: true, message: 'Please input your Password!' }] }
+        ]"
+              type="password"
+              placeholder="Password"
+            >
+              <a-icon slot="prefix" type="lock"/>
+            </a-input>
+          </a-form-item>
+          <a-form-item>
+            <a-checkbox
+              v-decorator="[
+          'remember',
+          {
+            valuePropName: 'checked',
+            initialValue: true,
+          }
+        ]"
+            >Remember me</a-checkbox>
+            <a class="login-form-forgot" href>Forgot password</a>
+            <a-button type="primary" html-type="submit" class="login-form-button">Log in</a-button>Or
+            <a href>register now!</a>
+          </a-form-item>
+        </a-form>
       </div>
     </div>
   </div>
@@ -40,43 +57,17 @@ import { signIn } from "@/api/request";
 import { setToken } from "@/utils/assist/cookies";
 
 export default {
-  data() {
-    return {
-      user: {
-        user: "",
-        password: ""
-      },
-      rules: {
-        username: [
-          {
-            required: true,
-            message: "用户名不能为空",
-            trigger: "blur"
-          }
-        ],
-        password: [
-          {
-            required: true,
-            message: "密码不能为空.",
-            trigger: "blur"
-          },
-          {
-            type: "string",
-            min: 6,
-            message: "密码格式不正确",
-            trigger: "blur"
-          }
-        ]
-      }
-    };
+  beforeCreate() {
+    this.form = this.$form.createForm(this);
   },
   methods: {
-    onSubmit(form) {
-      this.$refs[form].validate(valid => {
-        if (valid) {
-          signIn(this.user).then(
+    handleSubmit(e) {
+      e.preventDefault();
+      this.form.validateFields((err, values) => {
+        if (!err) {
+          signIn(values).then(
             response => {
-              this.$Message.success("您好！登录成功");
+              this.$message.success("您好！登录成功");
               //设置token到cookie中
               setToken(response.data.access_token);
               this.$router.push({
@@ -85,7 +76,7 @@ export default {
             },
             error => {
               // 执行失败的回调函数
-              this.$Message.error({
+              this.$message.error({
                 duration: 3,
                 content: "抱歉，因为 " + error.message + "，登录失败"
               });
@@ -101,5 +92,11 @@ export default {
 <style>
 .user-login {
   background-image: url("../../assets/laptop.png");
+}
+#form-login .login-form-forgot {
+  float: right;
+}
+#form-login .login-form-button {
+  width: 100%;
 }
 </style>

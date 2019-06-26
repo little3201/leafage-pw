@@ -1,6 +1,6 @@
 import Main from "@/components/main/Main.vue";
 import Sign from "@/components/sign/Sign.vue";
-import Home from "@/views/Home.vue";
+import Home from "@/views/home/Home.vue";
 import Help from "@/views/Help.vue";
 
 export default [
