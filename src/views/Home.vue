@@ -3,7 +3,11 @@
     <Layout>
       <Header :style="{ position: 'fixed', width: '100%' }">
         <Menu mode="horizontal" theme="light" active-name="home">
-          <div class="layout-logo"></div>
+          <div class="layout-logo">
+            <router-link to="/">
+              <img src="../assets/logo.png" />
+            </router-link>
+          </div>
           <div class="layout-nav">
             <MenuItem name="home" to="/">
               <Icon type="ios-home-outline" size="18"></Icon>
@@ -53,8 +57,11 @@ export default {};
   border-radius: 3px;
   float: left;
   position: relative;
-  top: 15px;
+  top: 10px;
   left: 20px;
+}
+.layout-logo img {
+  width: 100px;
 }
 .layout-nav {
   width: 430px;

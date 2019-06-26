@@ -1,10 +1,10 @@
 export default {
   state: {
-    access: ''
+    access: ""
   },
   mutations: {
-    setAccess (state, access) {
-      state.access = access
+    setAccess(state, access) {
+      state.access = access;
     }
   }
-}
+};

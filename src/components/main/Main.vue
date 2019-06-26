@@ -3,7 +3,11 @@
     <Layout>
       <Header :style="{ position: 'fixed', width: '100%' }">
         <Menu mode="horizontal" theme="light" active-name="dashbord">
-          <div class="layout-logo"></div>
+          <div class="layout-logo">
+            <router-link to="/">
+              <img src="../../assets/logo.png" />
+            </router-link>
+          </div>
           <div class="layout-nav">
             <MenuItem name="dashbord" to="/main">
               <Icon type="ios-ionic-outline" size="18"></Icon>
@@ -32,7 +36,7 @@
                   <DropdownItem name="profile">个人中心</DropdownItem>
                   <DropdownItem name="notice">通知消息</DropdownItem>
                   <DropdownItem name="item">待办事项</DropdownItem>
-                  <DropdownItem name="signOut" divided>
+                  <DropdownItem name="sign-out" divided>
                     退出登录
                   </DropdownItem>
                 </DropdownMenu>
@@ -67,7 +71,8 @@ export default {
   },
   methods: {
     directToSign(name) {
-      if (name == "signOut") {
+      switch(name) {
+          case "sign-out":
         this.$router.push({
           name: "sign"
         });
@@ -90,8 +95,11 @@ export default {
   border-radius: 5px;
   float: left;
   position: relative;
-  top: 15px;
+  top: 10px;
   left: 20px;
+}
+.layout-logo img {
+  width: 100px;
 }
 .layout-nav {
   width: 460px;
@@ -108,10 +116,6 @@ export default {
 .ivu-layout-header {
   background: #ffffff;
   z-index: 1;
-}
-.ivu-layout-content {
-  min-height: 580px;
-  height: calc(100% - 50px - 20px);
 }
 .bread-crumb {
   padding-bottom: 7px;
