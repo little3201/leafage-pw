@@ -57,11 +57,12 @@ export default {};
   border-radius: 3px;
   float: left;
   position: relative;
-  top: 10px;
+  top: 15px;
   left: 20px;
 }
 .layout-logo img {
   width: 100px;
+  padding-bottom: 10px;
 }
 .layout-nav {
   width: 430px;

@@ -2,31 +2,31 @@
   <div class="layout">
     <Layout>
       <Header :style="{ position: 'fixed', width: '100%' }">
-        <Menu mode="horizontal" theme="light" active-name="dashbord">
+        <Menu mode="horizontal" theme="light" active-name="main">
           <div class="layout-logo">
             <router-link to="/">
               <img src="../../assets/logo.png" />
             </router-link>
           </div>
           <div class="layout-nav">
-            <MenuItem name="dashbord" to="/main">
-              <Icon type="ios-ionic-outline" size="18"></Icon>
+            <MenuItem name="main" to="/main">
+              <Icon type="ios-ionic-outline" size="18" />
               看板
             </MenuItem>
             <Submenu name="user">
               <template slot="title">
-                <Icon type="ios-contacts-outline" size="18"></Icon>
+                <Icon type="ios-contacts-outline" size="18" />
                 用户
               </template>
               <MenuItem name="user-save" to="/user">第三方</MenuItem>
               <MenuItem name="user-profile">内部</MenuItem>
             </Submenu>
             <MenuItem name="permission">
-              <Icon type="ios-lock-outline" size="18"></Icon>
+              <Icon type="ios-lock-outline" size="18" />
               权限
             </MenuItem>
             <MenuItem name="settings">
-              <Icon type="ios-settings-outline" size="18"></Icon>
+              <Icon type="ios-settings-outline" size="18" />
               设置
             </MenuItem>
             <MenuItem name="sign">
@@ -36,7 +36,7 @@
                   <DropdownItem name="profile">个人中心</DropdownItem>
                   <DropdownItem name="notice">通知消息</DropdownItem>
                   <DropdownItem name="item">待办事项</DropdownItem>
-                  <DropdownItem name="sign-out" divided>
+                  <DropdownItem name="signout" divided>
                     退出登录
                   </DropdownItem>
                 </DropdownMenu>
@@ -71,11 +71,21 @@ export default {
   },
   methods: {
     directToSign(name) {
-      switch(name) {
-          case "sign-out":
-        this.$router.push({
-          name: "sign"
-        });
+      switch (name) {
+        case "profile":
+          this.$router.push({
+            name: "profile"
+          });
+          break;
+        case "notice":
+          this.$router.push({
+            name: "notice"
+          });
+          break;
+        default:
+          this.$router.push({
+            name: "sign"
+          });
       }
     }
   }
@@ -95,11 +105,12 @@ export default {
   border-radius: 5px;
   float: left;
   position: relative;
-  top: 10px;
+  top: 15px;
   left: 20px;
 }
 .layout-logo img {
   width: 100px;
+  padding-bottom: 10px;
 }
 .layout-nav {
   width: 460px;

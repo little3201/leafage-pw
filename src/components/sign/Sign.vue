@@ -6,27 +6,35 @@
         Abeille 后台管理系统
       </h2>
       <div class="form-container">
-        <h2 class="form-title">登&emsp;录</h2>
-        <Form ref="signForm" :model="user" :rules="rules">
+        <h2 class="form-title">Sign In</h2>
+        <Form
+          ref="signForm"
+          :model="user"
+          :rules="rules"
+        >
           <FormItem prop="username">
-            <Input type="text" v-model="user.username" placeholder="账号">
+            <Input type="text" v-model="user.username" placeholder="Username">
               <Icon type="md-person" slot="prepend" />
             </Input>
           </FormItem>
-          <FormItem prop="password">
-            <Input type="password" v-model="user.password" placeholder="密码">
+          <FormItem prop="password" style="margin-bottom: 10px">
+            <Input
+              type="password"
+              v-model="user.password"
+              placeholder="Password"
+            >
               <Icon type="md-lock" slot="prepend" />
             </Input>
           </FormItem>
-          <FormItem>
-            <Button
-              long
-              shape="circle"
-              type="primary"
-              @click="onSubmit('signForm')"
-            >
-              登&emsp;&emsp;录
+          <FormItem style="margin-bottom: 5px">
+            <Checkbox size="small" v-model="single">Remember me</Checkbox>
+            <router-link to="">Forgot password</router-link>
+          </FormItem>
+          <FormItem style="margin-bottom: 10px">
+            <Button long :loading="loading" shape="circle" type="primary" @click="onSubmit('signForm')">
+              Sign In
             </Button>
+            Or <router-link to="/sign">Register now!</router-link>
           </FormItem>
         </Form>
       </div>
@@ -42,6 +50,8 @@ import { setToken } from "@/utils/assist/cookies";
 export default {
   data() {
     return {
+      single: false,
+      loading: false,
       user: {
         user: "",
         password: ""
@@ -74,6 +84,7 @@ export default {
     onSubmit(form) {
       this.$refs[form].validate(valid => {
         if (valid) {
+          this.loading = true;
           signIn(this.user).then(
             response => {
               this.$Message.success("您好！登录成功");
@@ -84,6 +95,7 @@ export default {
               });
             },
             error => {
+              this.loading = false;
               // 执行失败的回调函数
               this.$Message.error({
                 duration: 3,
