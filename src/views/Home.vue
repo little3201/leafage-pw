@@ -10,19 +10,19 @@
           </div>
           <div class="layout-nav">
             <MenuItem name="home" to="/">
-              <Icon type="ios-home-outline" size="18"></Icon>
+              <Icon type="ios-home-outline" size="18" />
               首页
             </MenuItem>
             <MenuItem name="help" to="/help">
-              <Icon type="ios-help-circle-outline" size="18"></Icon>
+              <Icon type="ios-help-circle-outline" size="18" />
               帮助
             </MenuItem>
-            <MenuItem name="contact">
-              <Icon type="ios-contact-outline" size="18"></Icon>
+            <MenuItem name="contact" to="/default">
+              <Icon type="ios-contact-outline" size="18" />
               联系我们
             </MenuItem>
             <MenuItem name="console" to="/sign">
-              <Icon type="ios-cog-outline" size="18"></Icon>
+              <Icon type="ios-cog-outline" size="18" />
               控制台
             </MenuItem>
           </div>
@@ -78,11 +78,5 @@ export default {};
 }
 .ivu-layout-header {
   background: #ffffff;
-}
-.bread-crumb {
-  padding-bottom: 7px;
-}
-.ivu-layout-content {
-  min-height: 500px;
 }
 </style>

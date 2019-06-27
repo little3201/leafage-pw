@@ -2,7 +2,7 @@ import axios from "axios";
 import config from "@/config";
 import { getToken } from "@/utils/assist/cookies.js";
 import Vue from "vue";
-import { LoadingBar } from "iview";
+import { LoadingBar, Message } from "iview";
 
 Vue.component("LoadingBar", LoadingBar);
 
@@ -48,7 +48,7 @@ class HttpRequest {
         return { data, status };
       },
       error => {
-        LoadingBar.finish();
+        LoadingBar.error();
         this.destroy(url);
         return Promise.reject(error);
       }

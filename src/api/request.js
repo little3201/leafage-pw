@@ -31,7 +31,7 @@ export const findUsers = ({ pageNum, pageSize }) => {
     pageSize
   };
   return axios.request({
-    url: "/users",
+    url: "/user",
     method: "GET",
     params
   });

@@ -2,16 +2,12 @@
   <div class="user-login">
     <div class="content-wrapper">
       <h2 class="slogan">
-        欢迎使用 <br />
-        Abeille 后台管理系统
+        欢迎使用
+        <br />Abeille 管理控制台
       </h2>
       <div class="form-container">
         <h2 class="form-title">Sign In</h2>
-        <Form
-          ref="signForm"
-          :model="user"
-          :rules="rules"
-        >
+        <Form ref="signForm" :model="user" :rules="rules">
           <FormItem prop="username">
             <Input type="text" v-model="user.username" placeholder="Username">
               <Icon type="md-person" slot="prepend" />
@@ -28,13 +24,19 @@
           </FormItem>
           <FormItem style="margin-bottom: 5px">
             <Checkbox size="small" v-model="single">Remember me</Checkbox>
-            <router-link to="">Forgot password</router-link>
+            <router-link to>Forgot password</router-link>
           </FormItem>
           <FormItem style="margin-bottom: 10px">
-            <Button long :loading="loading" shape="circle" type="primary" @click="onSubmit('signForm')">
+            <Button
+              long
+              :loading="loading"
+              type="primary"
+              @click="onSubmit('signForm')"
+            >
               Sign In
             </Button>
-            Or <router-link to="/sign">Register now!</router-link>
+            Or
+            <router-link to="/sign">Register now!</router-link>
           </FormItem>
         </Form>
       </div>
@@ -87,7 +89,6 @@ export default {
           this.loading = true;
           signIn(this.user).then(
             response => {
-              this.$Message.success("您好！登录成功");
               //设置token到cookie中
               setToken(response.data.access_token);
               this.$router.push({
@@ -96,11 +97,6 @@ export default {
             },
             error => {
               this.loading = false;
-              // 执行失败的回调函数
-              this.$Message.error({
-                duration: 3,
-                content: "抱歉，因为 " + error.message + "，登录失败"
-              });
             }
           );
         }

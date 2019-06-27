@@ -1,7 +1,6 @@
 import Main from "@/components/main/Main.vue";
 import Sign from "@/components/sign/Sign.vue";
 import Home from "@/views/Home.vue";
-import Help from "@/views/Help.vue";
 
 export default [
   {
@@ -10,9 +9,14 @@ export default [
     component: Home,
     children: [
       {
+        path: "/default",
+        name: "default",
+        component: () => import("@/views/Default.vue")
+      },
+      {
         path: "/help",
         name: "help",
-        component: Help
+        component: () => import("@/views/Help.vue")
       }
     ]
   },
