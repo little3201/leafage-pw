@@ -62,7 +62,7 @@ export default {};
 }
 .layout-logo img {
   width: 100px;
-  padding-bottom: 10px;
+  padding-bottom: 9px;
 }
 .layout-nav {
   width: 430px;
@@ -78,5 +78,6 @@ export default {};
 }
 .ivu-layout-header {
   background: #ffffff;
+  z-index: 11;
 }
 </style>

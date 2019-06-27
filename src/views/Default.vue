@@ -1,18 +1,23 @@
 <template>
-  <Carousel loop dots="outside" :radius-dot="true">
-    <CarouselItem>
-      <div>1</div>
-    </CarouselItem>
-    <CarouselItem>
-      <div>2</div>
-    </CarouselItem>
-    <CarouselItem>
-      <div>3</div>
-    </CarouselItem>
-    <CarouselItem>
-      <div>4</div>
-    </CarouselItem>
-  </Carousel>
+  <div>
+    <Carousel loop dots="outside" height="500px" arrow="never">
+      <CarouselItem>
+        <div><img src="../assets/photor.png" /></div>
+      </CarouselItem>
+      <CarouselItem>
+        <div><img src="../assets/gramer.png" /></div>
+      </CarouselItem>
+    </Carousel>
+    <div style="text-align: center">
+      <h1>小程序</h1>
+      <h2>ß</h2>
+      <h2>ß</h2>
+      <h2>ß</h2>
+      <h2>ß</h2>
+      <h2>ß</h2>
+      <h2>ß</h2>
+    </div>
+  </div>
 </template>
 <script>
 export default {
@@ -21,3 +26,10 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.ivu-carousel {
+  margin: 3rem auto;
+  max-width: 960px;
+}
+</style>

@@ -2,7 +2,7 @@ import axios from "axios";
 import config from "@/config";
 import { getToken } from "@/utils/assist/cookies.js";
 import Vue from "vue";
-import { LoadingBar, Message } from "iview";
+import { LoadingBar } from "iview";
 
 Vue.component("LoadingBar", LoadingBar);
 

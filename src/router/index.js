@@ -17,7 +17,7 @@ const router = new Router({
 router.beforeEach((to, from, next) => {
   LoadingBar.start();
   let token = getToken();
-  if (token == null || to.fullPath === "sign") {
+  if (to.fullPath === "/sign" || token == null) {
     next({
       name: "sign"
     });
