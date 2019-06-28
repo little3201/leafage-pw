@@ -17,7 +17,7 @@
             <a-input
               v-decorator="[
                 'username',
-                {
+                { 
                   rules: [
                     {
                       required: true,

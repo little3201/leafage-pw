@@ -32,12 +32,6 @@
         </div>
       </a-layout-header>
       <a-layout-content :style="{ background: '#fff', padding: '0', marginTop: '64px' }">
-        <a-breadcrumb :routes="routes">
-          <template slot="itemRender" slot-scope="{route, params, routes, paths}">
-            <span v-if="routes.indexOf(route) === routes.length - 1">{{route.name}}</span>
-            <router-link v-else :to="`${basePath}/${paths.join('/')}`">{{route.name}}</router-link>
-          </template>
-        </a-breadcrumb>
         <div>
           <router-view/>
         </div>
@@ -50,11 +44,8 @@
 <script>
 export default {
   data() {
-    const { lang } = this.$route.params;
     return {
-      basePath: "/${lang}/components/breadcrumb",
-      openKeys: ["home"],
-      routes: []
+      openKeys: ["home"]
     };
   },
   beforeCreate() {

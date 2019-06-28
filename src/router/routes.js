@@ -1,7 +1,6 @@
 import Main from "@/components/main/Main.vue";
 import Sign from "@/components/sign/Sign.vue";
 import Home from "@/views/home/Home.vue";
-import Help from "@/views/Help.vue";
 
 export default [
   {
@@ -12,7 +11,7 @@ export default [
       {
         path: "/help",
         name: "help",
-        component: Help
+        component: () => import("@/views/Help.vue")
       }
     ]
   },
