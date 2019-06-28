@@ -30,8 +30,16 @@
         </div>
       </a-layout-header>
       <a-layout-content
-        :style="{  background: '#fff', padding: '0', marginTop: '64px' }"
+        :style="{ background: '#fff', padding: '0', marginTop: '64px' }"
       >
+        <a-carousel autoplay>
+          <div>
+            <img src="./../../assets/photor.png" />
+          </div>
+          <div>
+            <img src="./../../assets/gramer.png" />
+          </div>
+        </a-carousel>
         <div class="mini-program">
           <p class="mini-program-title">小程序+</p>
           <p class="mini-program-content">
@@ -106,5 +114,11 @@ export default {
   width: 385px;
   margin: 0 auto;
   margin-right: 0;
+}
+.slick-slide img {
+  border: 5px solid #ffffff;
+  display: block;
+  margin: auto;
+  max-width: 80%;
 }
 </style>

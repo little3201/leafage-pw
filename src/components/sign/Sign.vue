@@ -3,46 +3,74 @@
     <div class="content-wrapper">
       <h2 class="slogan">
         欢迎使用
-        <br>Abeille 管理控制台
+        <br />Abeille 管理控制台
       </h2>
       <div class="form-container">
-        <h2 class="form-title">登&emsp;录</h2>
-        <a-form id="form-login" :form="form" class="login-form" @submit="handleSubmit">
+        <h2 class="form-title">Sign In Console</h2>
+        <a-form
+          id="form-login"
+          :form="form"
+          class="login-form"
+          @submit="handleSubmit"
+        >
           <a-form-item>
             <a-input
               v-decorator="[
-          'username',
-          { rules: [{ required: true, message: 'Please input your username!' }] }
-        ]"
+                'username',
+                {
+                  rules: [
+                    {
+                      required: true,
+                      message: 'Please input your username!'
+                    }
+                  ]
+                }
+              ]"
               placeholder="Username"
             >
-              <a-icon slot="prefix" type="user"/>
+              <a-icon slot="prefix" type="user" />
             </a-input>
           </a-form-item>
           <a-form-item>
             <a-input
               v-decorator="[
-          'password',
-          { rules: [{ required: true, message: 'Please input your Password!' }] }
-        ]"
+                'password',
+                {
+                  rules: [
+                    {
+                      required: true,
+                      message: 'Please input your Password!'
+                    }
+                  ]
+                }
+              ]"
               type="password"
               placeholder="Password"
             >
-              <a-icon slot="prefix" type="lock"/>
+              <a-icon slot="prefix" type="lock" />
             </a-input>
           </a-form-item>
           <a-form-item>
             <a-checkbox
               v-decorator="[
-          'remember',
-          {
-            valuePropName: 'checked',
-            initialValue: true,
-          }
-        ]"
-            >Remember me</a-checkbox>
+                'remember',
+                {
+                  valuePropName: 'checked',
+                  initialValue: true
+                }
+              ]"
+            >
+              Remember me
+            </a-checkbox>
             <a class="login-form-forgot" href>Forgot password</a>
-            <a-button type="primary" html-type="submit" class="login-form-button">Log in</a-button>Or
+            <a-button
+              type="primary"
+              html-type="submit"
+              class="login-form-button"
+            >
+              Sign in
+            </a-button>
+            Or
             <a href>register now!</a>
           </a-form-item>
         </a-form>
@@ -54,7 +82,6 @@
 <script>
 import "./Sign.less";
 import { signIn } from "@/api/request";
-import { setToken } from "@/utils/assist/cookies";
 
 export default {
   beforeCreate() {
@@ -67,19 +94,15 @@ export default {
         if (!err) {
           signIn(values).then(
             response => {
-              this.$message.success("您好！登录成功");
-              //设置token到cookie中
-              setToken(response.data.access_token);
+              this.$message.success(response.message);
+              //设置token
               this.$router.push({
                 name: "main"
               });
             },
             error => {
               // 执行失败的回调函数
-              this.$message.error({
-                duration: 3,
-                content: "抱歉，因为 " + error.message + "，登录失败"
-              });
+              this.$message.error(error.message);
             }
           );
         }
