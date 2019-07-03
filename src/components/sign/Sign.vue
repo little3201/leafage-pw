@@ -67,6 +67,7 @@
               type="primary"
               html-type="submit"
               class="login-form-button"
+              :loading="loading"
             >
               Sign in
             </a-button>
@@ -85,14 +86,21 @@ import { signIn } from "@/api/request";
 import { setStore } from "@/utils/assist/storage";
 
 export default {
+  data() {
+    return {
+      loading: false
+    };
+  },
   beforeCreate() {
     this.form = this.$form.createForm(this);
   },
   methods: {
     handleSubmit(e) {
+      this.loading = true;
       // 执行校验
       e.preventDefault();
       this.form.validateFields((err, values) => {
+        this.loading = false;
         if (!err) {
           signIn(values).then(
             response => {

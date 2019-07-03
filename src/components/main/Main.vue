@@ -106,5 +106,6 @@ export default {
   width: 350px;
   margin: 0 auto;
   margin-left: 50rem;
+  float: left;
 }
 </style>
