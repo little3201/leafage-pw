@@ -7,21 +7,19 @@
  */
 export const setStore = (name, content, maxAge = null) => {
   if (!global.window || !name) {
-    return
+    return;
   }
 
-  if (typeof content !== 'string') {
-    content = JSON.stringify(content)
+  if (typeof content !== "string") {
+    content = JSON.stringify(content);
   }
-
-  const storage = global.window.localStorage
-
-  storage.setItem(name, content)
+  const storage = global.window.localStorage;
+  storage.setItem(name, content);
   if (maxAge && !isNaN(parseInt(maxAge))) {
-    const timeout = parseInt(new Date().getTime() / 1000)
-    storage.setItem(`${name}_expire`, timeout + maxAge)
+    const timeout = parseInt(new Date().getTime() / 1000);
+    storage.setItem(`${name}_expire`, timeout + maxAge);
   }
-}
+};
 
 /**
  * Get storage
@@ -31,25 +29,22 @@ export const setStore = (name, content, maxAge = null) => {
  */
 export const getStore = name => {
   if (!global.window || !name) {
-    return
+    return;
   }
-
-  const content = window.localStorage.getItem(name)
-  const _expire = window.localStorage.getItem(`${name}_expire`)
-
+  const content = window.localStorage.getItem(name);
+  const _expire = window.localStorage.getItem(`${name}_expire`);
   if (_expire) {
-    const now = parseInt(new Date().getTime() / 1000)
+    const now = parseInt(new Date().getTime() / 1000);
     if (now > _expire) {
-      return
+      return;
     }
   }
-
   try {
-    return JSON.parse(content)
+    return JSON.parse(content);
   } catch (e) {
-    return content
+    return content;
   }
-}
+};
 
 /**
  * Clear storage
@@ -58,20 +53,18 @@ export const getStore = name => {
  */
 export const clearStore = name => {
   if (!global.window || !name) {
-    return
+    return;
   }
-
-  window.localStorage.removeItem(name)
-  window.localStorage.removeItem(`${name}_expire`)
-}
+  window.localStorage.removeItem(name);
+  window.localStorage.removeItem(`${name}_expire`);
+};
 
 /**
  * Clear all storage
  */
 export const clearAll = () => {
   if (!global.window || !name) {
-    return
+    return;
   }
-
-  window.localStorage.clear()
-}
+  window.localStorage.clear();
+};

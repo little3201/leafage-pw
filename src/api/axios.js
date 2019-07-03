@@ -1,4 +1,6 @@
 import axios from "axios";
+import { getStore } from "@/utils/assist/storage";
+
 import NProgress from "nprogress"; // progress bar
 import "nprogress/nprogress.css"; // progress bar style
 
@@ -29,6 +31,10 @@ class HttpRequest {
     instance.interceptors.request.use(
       config => {
         NProgress.start();
+        let token = getStore("Access-token");
+        if (token !== null) {
+          config.headers.Authorization = "Bearer " + token; // 让每个请求携带自定义 token 请根据实际情况自行修改
+        }
         this.queue[url] = true;
         return config;
       },

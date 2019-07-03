@@ -4,7 +4,7 @@
       <a-layout-header :style="{ position: 'fixed', zIndex: 1, width: '100%' }">
         <div class="logo">
           <router-link to="/">
-            <img class="logo" src="../../assets/abeille.png">
+            <img class="logo" src="../../assets/abeille.png" />
           </router-link>
         </div>
         <div class="layout-nav">
@@ -17,32 +17,37 @@
             @click="changeMenu"
           >
             <a-menu-item key="dashbord">
-              <a-icon type="dashboard"/>看板
+              <a-icon type="dashboard" />看板
             </a-menu-item>
-            <a-menu-item key="user">
-              <a-icon type="user"/>用户
-            </a-menu-item>
+            <a-menu-item key="user"><a-icon type="user" />用户</a-menu-item>
             <a-menu-item key="share">
-              <a-icon type="share-alt"/>资源
-            </a-menu-item>
-            <a-menu-item>
-              <a-avatar style="color: #f56a00; backgroundColor: #fde3cf">强</a-avatar>
+              <a-icon type="share-alt" />资源
             </a-menu-item>
           </a-menu>
         </div>
+        <avatar />
       </a-layout-header>
-      <a-layout-content :style="{ background: '#fff', padding: '0', marginTop: '64px' }">
+      <a-layout-content
+        :style="{ background: '#fff', padding: '0', marginTop: '64px' }"
+      >
         <div>
-          <router-view/>
+          <router-view />
         </div>
       </a-layout-content>
-      <a-layout-footer :style="{ textAlign: 'center' }">2018-2019 &copy; Abeille Group Ltd.</a-layout-footer>
+      <a-layout-footer :style="{ textAlign: 'center' }">
+        2018-2019 &copy; Abeille Group Ltd.
+      </a-layout-footer>
     </a-layout>
   </div>
 </template>
 
 <script>
+import Avatar from "@/components/avatar/Avatar.vue";
+
 export default {
+  components: {
+    Avatar
+  },
   data() {
     return {
       openKeys: ["home"]
@@ -100,6 +105,6 @@ export default {
 .layout-nav {
   width: 350px;
   margin: 0 auto;
-  margin-right: 0;
+  margin-left: 50rem;
 }
 </style>

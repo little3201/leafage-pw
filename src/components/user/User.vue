@@ -49,10 +49,7 @@ export default {
         },
         error => {
           // 执行失败的回调函数
-          this.$Message.error({
-            duration: 4,
-            content: "数据初始化失败！" + error.message
-          });
+          this.$message.error(error.message);
         }
       );
     },

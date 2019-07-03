@@ -17,7 +17,7 @@
             <a-input
               v-decorator="[
                 'username',
-                { 
+                {
                   rules: [
                     {
                       required: true,
@@ -82,6 +82,7 @@
 <script>
 import "./Sign.less";
 import { signIn } from "@/api/request";
+import { setStore } from "@/utils/assist/storage";
 
 export default {
   beforeCreate() {
@@ -89,12 +90,13 @@ export default {
   },
   methods: {
     handleSubmit(e) {
+      // 执行校验
       e.preventDefault();
       this.form.validateFields((err, values) => {
         if (!err) {
           signIn(values).then(
             response => {
-              this.$message.success(response.message);
+              setStore("Access-token", response.data.access_token);
               //设置token
               this.$router.push({
                 name: "main"
