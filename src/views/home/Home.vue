@@ -1,6 +1,6 @@
 <template>
-  <div class="layout">
-    <a-layout id="main-layout">
+  <div name="home" class="layout">
+    <a-layout id="home-layout">
       <a-layout-header :style="{ position: 'fixed', zIndex: 1, width: '100%' }">
         <div class="logo">
           <router-link to="/">
@@ -12,24 +12,41 @@
             theme="light"
             mode="horizontal"
             :openKeys="openKeys"
-            :defaultSelectedKeys="['dashbord']"
+            :defaultSelectedKeys="['home']"
             :style="{ lineHeight: '62px' }"
             @click="changeMenu"
           >
-            <a-menu-item key="dashbord">
-              <a-icon type="dashboard" />看板
+            <a-menu-item key="home"><a-icon type="home" />首页</a-menu-item>
+            <a-menu-item key="help">
+              <a-icon type="question-circle" />帮助
             </a-menu-item>
-            <a-menu-item key="user"><a-icon type="user" />用户</a-menu-item>
             <a-menu-item key="share">
-              <a-icon type="share-alt" />资源
+              <a-icon type="share-alt" />分享
+            </a-menu-item>
+            <a-menu-item key="setting">
+              <a-icon type="setting" />控制台
             </a-menu-item>
           </a-menu>
         </div>
-        <avatar />
       </a-layout-header>
       <a-layout-content
         :style="{ background: '#fff', padding: '0', marginTop: '64px' }"
       >
+        <a-carousel autoplay>
+          <div>
+            <img src="./../../assets/photor.png" />
+          </div>
+          <div>
+            <img src="./../../assets/gramer.png" />
+          </div>
+        </a-carousel>
+        <div class="mini-program">
+          <p class="mini-program-title">小程序+</p>
+          <p class="mini-program-content">
+            小程序主动打开放大倍数可达 5.55，为订阅号提升阅读量 20.28%。
+            现在注册，我们将为有复杂需求的内容品牌，定制一份小程序建议方案。
+          </p>
+        </div>
         <div>
           <router-view />
         </div>
@@ -42,19 +59,12 @@
 </template>
 
 <script>
-import Avatar from "@/components/avatar/Avatar.vue";
-
+import "./Home.less";
 export default {
-  components: {
-    Avatar
-  },
   data() {
     return {
       openKeys: ["home"]
     };
-  },
-  beforeCreate() {
-    this.routes = this.$router.options.routes;
   },
   watch: {
     openKeys(val) {
@@ -64,27 +74,25 @@ export default {
   methods: {
     changeMenu(openKeys) {
       switch (openKeys.key) {
-        case "user":
+        case "help":
           this.$router.push({
-            name: "user"
+            name: "help"
           });
           break;
-        case "sign":
+        case "share":
           this.$router.push({
-            name: "sign"
+            name: "share"
+          });
+          break;
+        case "setting":
+          this.$router.push({
+            name: "main"
           });
           break;
         default:
           this.$router.push({
-            name: "main"
+            name: "home"
           });
-      }
-    },
-    directToSign(name) {
-      if (name == "signOut") {
-        this.$router.push({
-          name: "sign"
-        });
       }
     }
   }
@@ -92,7 +100,7 @@ export default {
 </script>
 
 <style scoped>
-#main-layout .logo {
+#home-layout .logo {
   width: 120px;
   height: 31px;
   margin: 9px 24px 16px 0;
@@ -103,9 +111,14 @@ export default {
   border-bottom: 1px solid #e8e8e8;
 }
 .layout-nav {
-  width: 350px;
+  width: 385px;
   margin: 0 auto;
-  margin-left: 50rem;
-  float: left;
+  margin-right: 0;
+}
+.slick-slide img {
+  border: 5px solid #ffffff;
+  display: block;
+  margin: auto;
+  max-width: 80%;
 }
 </style>

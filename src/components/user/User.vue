@@ -1,88 +1,80 @@
 <template>
-  <div>
-    <Table :columns="columns" :data="datas">
-      <template slot-scope="{ row }" slot="name">
-        <strong>{{ row.name }}</strong>
-      </template>
-      <template slot-scope="{ row, index }" slot="action">
-        <Button
-          type="primary"
-          shape="circle"
-          size="small"
-          icon="ios-create-outline"
-          style="margin-right: 5px"
-          @click="show(index)"
-        ></Button>
-        <Button
-          type="error"
-          shape="circle"
-          size="small"
-          icon="ios-trash-outline"
-          @click="remove(index)"
-        ></Button>
-      </template>
-    </Table>
-    <Page size="small" :total="60" show-total show-sizer show-elevator />
+  <div id="user">
+    <a-table :columns="columns" :dataSource="datas" :pagination="pagination">
+    </a-table>
+    <a-pagination
+      showQuickJumper
+      :current="pagination.pageNum"
+      :total="pagination.total"
+      @change="onChange"
+    />
   </div>
 </template>
 
 <script>
+import { getUserInfo, findUsers } from "@/api/request";
+import { columns } from "./user";
+
 export default {
   data() {
     return {
-      columns: [
-        {
-          title: "Name",
-          slot: "name"
-        },
-        {
-          title: "Age",
-          key: "age"
-        },
-        {
-          title: "Address",
-          key: "address"
-        },
-        {
-          title: "Action",
-          slot: "action",
-          width: 150,
-          align: "center"
-        }
-      ],
-      datas: [
-        {
-          name: "John Brown",
-          age: 18,
-          address: "New York No. 1 Lake Park"
-        },
-        {
-          name: "Jim Green",
-          age: 24,
-          address: "London No. 1 Lake Park"
-        },
-        {
-          name: "Joe Black",
-          age: 30,
-          address: "Sydney No. 1 Lake Park"
-        },
-        {
-          name: "Jon Snow",
-          age: 26,
-          address: "Ottawa No. 2 Lake Park"
-        }
-      ]
+      columns: [],
+      pagination: {
+        pageNum: 1,
+        pageSize: 10,
+        total: 0
+      },
+      datas: []
     };
   },
+  beforeCreate() {
+    this.columns = columns;
+  },
+  mounted: function() {
+    return this.initUser();
+  },
   methods: {
+    /* 初始化用户列表 */
+    initUser() {
+      let pagination = {
+        pageNum: this.pagination.pageNum - 1,
+        pageSize: this.pagination.pageSize
+      };
+      findUsers(pagination).then(
+        response => {
+          this.datas = response.data.content;
+          this.pagination.pageNum = response.data.pageable.pageNumber + 1;
+          this.pagination.pageSize = response.data.pageable.pageSize;
+          this.pagination.total = response.data.totalElements;
+        },
+        error => {
+          // 执行失败的回调函数
+          this.$message.error(error.message);
+        }
+      );
+    },
+    /* 根据userId查询用户 */
+    getUser(userId) {
+      getUserInfo(userId);
+    },
+    onChange(pageNumber) {
+      this.pagination.pageNum = pageNumber;
+      this.initUser();
+    },
+    /* 展示用户信息 */
     show(index) {
       this.$Modal.info({
         title: "User Info",
-        content: `Name：${this.datas[index].name}<br>
-          Age：${this.datas[index].age}<br>
-          Address：${this.datas[index].address}`
+        content: `
+          用户ID：${this.datas[index].userId}<br/>
+          中文名：${this.datas[index].userNameCn}<br/>
+          英文名：${this.datas[index].userNameEn}<br/>
+          手机号：${this.datas[index].userMobile}<br/>
+          联系地址：${this.datas[index].userAddress}
+        `
       });
     },
+    /* 从列表中移除 */
     remove(index) {
       this.datas.splice(index, 1);
     }
@@ -97,5 +89,9 @@ export default {
 .ivu-page {
   text-align: center;
   margin-bottom: 10px;
+}
+.ivu-button-add {
+  float: right;
+  margin: 5px 58px 0 0;
 }
 </style>

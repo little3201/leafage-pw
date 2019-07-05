@@ -2,37 +2,79 @@
   <div class="user-login">
     <div class="content-wrapper">
       <h2 class="slogan">
-        欢迎使用 <br />
-        Abeille 后台管理系统
+        欢迎使用
+        <br />Abeille 管理控制台
       </h2>
       <div class="form-container">
-        <h2 class="form-title">登&emsp;录</h2>
-        <Form ref="userForm" :model="user" :rules="rules">
-          <FormItem prop="username">
-            <Input
-              type="text"
-              v-model="user.username"
-              placeholder="用户名/邮箱/手机号"
+        <h2 class="form-title">Sign In Console</h2>
+        <a-form
+          id="form-login"
+          :form="form"
+          class="login-form"
+          @submit="handleSubmit"
+        >
+          <a-form-item>
+            <a-input
+              v-decorator="[
+                'username',
+                {
+                  rules: [
+                    {
+                      required: true,
+                      message: 'Please input your username!'
+                    }
+                  ]
+                }
+              ]"
+              placeholder="Username"
             >
-              <Icon type="ios-person-outline" slot="prepend" />
-            </Input>
-          </FormItem>
-          <FormItem prop="password">
-            <Input type="password" v-model="user.password" placeholder="密码">
-              <Icon type="ios-lock-outline" slot="prepend" />
-            </Input>
-          </FormItem>
-          <FormItem>
-            <Button
-              long
-              shape="circle"
+              <a-icon slot="prefix" type="user" />
+            </a-input>
+          </a-form-item>
+          <a-form-item>
+            <a-input
+              v-decorator="[
+                'password',
+                {
+                  rules: [
+                    {
+                      required: true,
+                      message: 'Please input your Password!'
+                    }
+                  ]
+                }
+              ]"
+              type="password"
+              placeholder="Password"
+            >
+              <a-icon slot="prefix" type="lock" />
+            </a-input>
+          </a-form-item>
+          <a-form-item>
+            <a-checkbox
+              v-decorator="[
+                'remember',
+                {
+                  valuePropName: 'checked',
+                  initialValue: true
+                }
+              ]"
+            >
+              Remember me
+            </a-checkbox>
+            <a class="login-form-forgot" href>Forgot password</a>
+            <a-button
               type="primary"
-              @click="handleSubmit('userForm')"
+              html-type="submit"
+              class="login-form-button"
+              :loading="loading"
             >
-              登&emsp;&emsp;录
-            </Button>
-          </FormItem>
-        </Form>
+              Sign in
+            </a-button>
+            Or
+            <a href>register now!</a>
+          </a-form-item>
+        </a-form>
       </div>
     </div>
   </div>
@@ -40,44 +82,39 @@
 
 <script>
 import "./Sign.less";
+import { signIn } from "@/api/request";
+import { setStore } from "@/utils/assist/storage";
+
 export default {
   data() {
     return {
-      user: {
-        user: "",
-        password: ""
-      },
-      rules: {
-        username: [
-          {
-            required: true,
-            message: "用户名不能为空",
-            trigger: "blur"
-          }
-        ],
-        password: [
-          {
-            required: true,
-            message: "密码不能为空.",
-            trigger: "blur"
-          },
-          {
-            type: "string",
-            min: 6,
-            message: "密码格式不正确",
-            trigger: "blur"
-          }
-        ]
-      }
+      loading: false
     };
   },
+  beforeCreate() {
+    this.form = this.$form.createForm(this);
+  },
   methods: {
-    handleSubmit(form) {
-      this.$refs[form].validate(valid => {
-        if (valid) {
-          this.$router.push({
-            name: this.$config.homeName
-          });
+    handleSubmit(e) {
+      this.loading = true;
+      // 执行校验
+      e.preventDefault();
+      this.form.validateFields((err, values) => {
+        this.loading = false;
+        if (!err) {
+          signIn(values).then(
+            response => {
+              setStore("Access-token", response.data.access_token);
+              //设置token
+              this.$router.push({
+                name: "main"
+              });
+            },
+            error => {
+              // 执行失败的回调函数
+              this.$message.error(error.message);
+            }
+          );
         }
       });
     }
@@ -88,5 +125,11 @@ export default {
 <style>
 .user-login {
   background-image: url("../../assets/laptop.png");
+}
+#form-login .login-form-forgot {
+  float: right;
+}
+#form-login .login-form-button {
+  width: 100%;
 }
 </style>
