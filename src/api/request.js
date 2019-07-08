@@ -10,7 +10,7 @@ export const signIn = ({ username, password }) => {
     client_secret: password
   };
   return axios.request({
-    url: "/oauth/token",
+    url: "/server/oauth/token",
     method: "POST",
     params
   });
@@ -19,7 +19,7 @@ export const signIn = ({ username, password }) => {
 /* 根据用户id获取用户信息 */
 export const getUserInfo = userId => {
   return axios.request({
-    url: "/user/" + userId,
+    url: "/hypervisor/user/" + userId,
     method: "GET"
   });
 };
