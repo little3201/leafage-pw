@@ -28,7 +28,7 @@
               ]"
               placeholder="Username"
             >
-              <a-icon slot="prefix" type="user" />
+              <a-icon slot="prefix" type="user" style="color:rgba(0,0,0,.25)" />
             </a-input>
           </a-form-item>
           <a-form-item>
@@ -44,10 +44,10 @@
                   ]
                 }
               ]"
-              type="password"
+              Input.Password
               placeholder="Password"
             >
-              <a-icon slot="prefix" type="lock" />
+              <a-icon slot="prefix" type="lock" style="color:rgba(0,0,0,.25)" />
             </a-input>
           </a-form-item>
           <a-form-item>
