@@ -4,7 +4,7 @@ const tokenKey = "access_token";
 /* 设置token */
 export const setToken = token => {
   //设置有效时间为30分钟
-  let initEffectiveTime = new Date(new Date().getTime() + 60 * 30);
+  let initEffectiveTime = new Date(new Date().getTime() + 30 * 60 * 1000);
   Cookies.set(tokenKey, token, initEffectiveTime);
 };
 

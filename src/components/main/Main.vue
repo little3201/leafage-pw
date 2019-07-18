@@ -69,6 +69,11 @@ export default {
             name: "user"
           });
           break;
+        case "share":
+          this.$router.push({
+            name: "analysis"
+          });
+          break;
         case "sign":
           this.$router.push({
             name: "sign"

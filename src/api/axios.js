@@ -1,10 +1,9 @@
 import axios from "axios";
-import { getToken } from "@/utils/assist/cookie";
+import { getToken } from "@/utils/assist/cookies";
+import config from "@/config";
 
 import NProgress from "nprogress"; // progress bar
 import "nprogress/nprogress.css"; // progress bar style
-
-import config from "@/config";
 
 class HttpRequest {
   // 如果传入参数就用传入的，没有就用baseURL.dev

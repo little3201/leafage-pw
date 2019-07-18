@@ -83,7 +83,7 @@
 <script>
 import "./Sign.less";
 import { signIn } from "@/api/request";
-import { setToken } from "@/utils/assist/cookie";
+import { setToken } from "@/utils/assist/cookies";
 
 export default {
   data() {
