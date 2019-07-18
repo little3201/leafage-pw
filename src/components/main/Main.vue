@@ -4,7 +4,7 @@
       <a-layout-header :style="{ position: 'fixed', zIndex: 1, width: '100%' }">
         <div class="logo">
           <router-link to="/">
-            <img class="logo" src="../../assets/abeille.png" />
+            <img class="logo" src="../../assets/logo.svg" />
           </router-link>
         </div>
         <div class="layout-nav">

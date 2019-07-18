@@ -44,7 +44,7 @@
                   ]
                 }
               ]"
-              Input.Password
+              type="password"
               placeholder="Password"
             >
               <a-icon slot="prefix" type="lock" style="color:rgba(0,0,0,.25)" />
@@ -69,10 +69,10 @@
               class="login-form-button"
               :loading="loading"
             >
-              Sign in
+              Log In
             </a-button>
             Or
-            <a href>register now!</a>
+            <a href>Register now!</a>
           </a-form-item>
         </a-form>
       </div>
@@ -83,7 +83,7 @@
 <script>
 import "./Sign.less";
 import { signIn } from "@/api/request";
-import { setStore } from "@/utils/assist/storage";
+import { setToken } from "@/utils/assist/cookie";
 
 export default {
   data() {
@@ -104,7 +104,7 @@ export default {
         if (!err) {
           signIn(values).then(
             response => {
-              setStore("Access-token", response.data.access_token);
+              setToken(response.data.access_token);
               //设置token
               this.$router.push({
                 name: "main"
@@ -124,7 +124,7 @@ export default {
 
 <style>
 .user-login {
-  background-image: url("../../assets/laptop.png");
+  background-image: url("../../assets/background.svg");
 }
 #form-login .login-form-forgot {
   float: right;

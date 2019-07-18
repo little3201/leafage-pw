@@ -1,9 +1,5 @@
 export default {
   /**
-   * @description 配置显示在浏览器标签的title
-   */
-  title: "abeille-ui",
-  /**
    * @description token在Cookie中存储的天数，默认1天
    */
   cookieExpires: 1,
@@ -17,7 +13,7 @@ export default {
    * @description api请求基础路径
    */
   baseURL: {
-    dev: "http://localhost",
+    dev: "http://localhost:8760",
     pro: "https://abeille.top"
   }
 };

@@ -12,13 +12,13 @@ export default [
       {
         path: "/help",
         name: "help",
-        meta: { title: "帮助" },
+        meta: { title: "技术博客" },
         component: () => import("@/views/Help.vue")
       },
       {
         path: "/share",
         name: "share",
-        meta: { title: "分享" },
+        meta: { title: "摄影分享" },
         component: () => import("@/views/Share.vue")
       }
     ]
@@ -37,6 +37,12 @@ export default [
          this generates a separate chunk (about.[hash].js) for this route
          which is lazy-loaded when the route is visited */
         component: () => import("@/components/user/User.vue")
+      },
+      {
+        path: "/analysis",
+        name: "analysis",
+        meta: { title: "首页" },
+        component: () => import("@/components/dashboard/Analysis.vue")
       }
     ]
   },

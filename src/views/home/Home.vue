@@ -4,7 +4,7 @@
       <a-layout-header :style="{ position: 'fixed', zIndex: 1, width: '100%' }">
         <div class="logo">
           <router-link to="/">
-            <img class="logo" src="../../assets/abeille.png" />
+            <img class="logo" src="../../assets/logo.svg" />
           </router-link>
         </div>
         <div class="layout-nav">
@@ -18,10 +18,10 @@
           >
             <a-menu-item key="home"><a-icon type="home" />首页</a-menu-item>
             <a-menu-item key="help">
-              <a-icon type="question-circle" />帮助
+              <a-icon type="deployment-unit" />技术博客
             </a-menu-item>
             <a-menu-item key="share">
-              <a-icon type="share-alt" />分享
+              <a-icon type="share-alt" />摄影分享
             </a-menu-item>
             <a-menu-item key="setting">
               <a-icon type="setting" />控制台
