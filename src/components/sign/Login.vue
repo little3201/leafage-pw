@@ -132,7 +132,7 @@ export default {
 </script>
 
 <style lang="less">
-@import "./Login.less";
+@import "./Sign.less";
 .user-login {
   background-image: url("../../assets/background.svg");
 }
@@ -141,6 +141,9 @@ export default {
 }
 #form-login .login-form-button {
   width: 100%;
+}
+.form-container {
+	width: 300px
 }
 .footer {
   position: absolute;
@@ -167,3 +170,10 @@ export default {
   }
 }
 </style>
+
+<style lang="less" scoped>
+.form-container {
+	width: 300px
+}
+</style>
+
