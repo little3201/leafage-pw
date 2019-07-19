@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import routes from "./routes";
-import { getToken } from "@/utils/assist/cookies";
+// import { getToken } from "@/utils/assist/cookies";
 
 import NProgress from "nprogress"; // progress bar
 import "nprogress/nprogress.css"; // progress bar style
@@ -17,14 +17,14 @@ const router = new Router({
 /* 路由之前检查token */
 router.beforeEach((to, from, next) => {
   NProgress.start();
-  let token = getToken();
-  if (token == null && to.fullPath !== "/sign") {
-    next({
-      name: "sign"
-    });
-  } else {
+  // let token = getToken();
+  // if (token == null && to.fullPath !== "/login") {
+  //   next({
+  //     name: "login"
+  //   });
+  // } else {
     next();
-  }
+  // }
 });
 
 /* 路由之后添加token */

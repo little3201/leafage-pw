@@ -1,6 +1,6 @@
 import Main from "@/components/main/Main.vue";
-import Sign from "@/components/sign/Sign.vue";
 import Home from "@/views/home/Home.vue";
+import Login from "@/components/sign/Login.vue";
 
 export default [
   {
@@ -30,25 +30,31 @@ export default [
     component: Main,
     children: [
       {
-        path: "/user",
-        name: "user",
-        meta: { title: "用户管理" },
+        path: "/folder",
+        name: "folder",
+        meta: { title: "文章管理" },
         /*  route level code-splitting
          this generates a separate chunk (about.[hash].js) for this route
          which is lazy-loaded when the route is visited */
-        component: () => import("@/components/user/User.vue")
+        component: () => import("@/components/folder/Folder.vue")
       },
       {
-        path: "/analysis",
-        name: "analysis",
+        path: "/dashboard",
+        name: "dashboard",
         meta: { title: "首页" },
-        component: () => import("@/components/dashboard/Analysis.vue")
+        component: () => import("@/components/dashboard/Dashboard.vue")
       }
     ]
   },
   {
-    path: "/sign",
-    name: "sign",
-    component: Sign
+    path: "/login",
+    name: "login",
+    component: Login
+  }
+  ,
+  {
+    path: "/register",
+    name: "register",
+    component: () => import("@/components/sign/Register.vue")
   }
 ];

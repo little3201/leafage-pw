@@ -1,4 +1,17 @@
 <template>
+<div id="userLayout" :class="['user-layout-wrapper', device]">
+    <div class="container">
+      <div class="top">
+        <div class="header">
+          <a href="/">
+            <!-- <img src="~@/assets/logo.svg" class="logo" alt="logo"> -->
+            <span class="title">Abeille</span>
+          </a>
+        </div>
+        <div class="desc">
+          控制管理中心欢迎你！
+        </div>
+      </div>
   <div class="main user-layout-register">
     <h3><span>注册</span></h3>
     <a-form ref="formRegister" :form="form" id="formRegister">
@@ -55,13 +68,6 @@
           </a-select>
         </a-input>
       </a-form-item>
-      <!--<a-input-group size="large" compact>
-            <a-select style="width: 20%" size="large" defaultValue="+86">
-              <a-select-option value="+86">+86</a-select-option>
-              <a-select-option value="+87">+87</a-select-option>
-            </a-select>
-            <a-input style="width: 80%" size="large" placeholder="11 位手机号"></a-input>
-          </a-input-group>-->
 
       <a-row :gutter="16">
         <a-col class="gutter-row" :span="16">
@@ -91,16 +97,28 @@
           @click.stop.prevent="handleSubmit"
           :disabled="registerBtn">注册
         </a-button>
-        <router-link class="login" :to="{ name: 'login' }">使用已有账户登录</router-link>
+        <router-link class="login" to="/login">使用已有账户登录</router-link>
       </a-form-item>
 
     </a-form>
   </div>
+  <div class="footer">
+        <div class="links">
+          <a href="_self">帮助</a>
+          <a href="_self">隐私</a>
+          <a href="_self">条款</a>
+        </div>
+        <div class="copyright">
+          Copyright &copy; 2019 Abeille.top Serviced
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import { mixinDevice } from '@/utils/mixin.js'
-import { getSmsCaptcha } from '@/api/login'
+// import { mixinDevice } from '@/utils/mixin.js'
+// import { getSmsCaptcha } from '@/api/login'
 
 const levelNames = {
   0: '低',
@@ -124,7 +142,7 @@ export default {
   name: 'Register',
   components: {
   },
-  mixins: [mixinDevice],
+  // mixins: [mixinDevice],
   data () {
     return {
       form: this.$form.createForm(this),
@@ -239,20 +257,20 @@ export default {
 
             const hide = $message.loading('验证码发送中..', 0)
 
-            getSmsCaptcha({ mobile: values.mobile }).then(res => {
-              setTimeout(hide, 2500)
-              $notification['success']({
-                message: '提示',
-                description: '验证码获取成功，您的验证码为：' + res.result.captcha,
-                duration: 8
-              })
-            }).catch(err => {
-              setTimeout(hide, 1)
-              clearInterval(interval)
-              state.time = 60
-              state.smsSendBtn = false
-              this.requestFailed(err)
-            })
+            // getSmsCaptcha({ mobile: values.mobile }).then(res => {
+            //   setTimeout(hide, 2500)
+            //   $notification['success']({
+            //     message: '提示',
+            //     description: '验证码获取成功，您的验证码为：' + res.result.captcha,
+            //     duration: 8
+            //   })
+            // }).catch(err => {
+            //   setTimeout(hide, 1)
+            //   clearInterval(interval)
+            //   state.time = 60
+            //   state.smsSendBtn = false
+            //   this.requestFailed(err)
+            // })
           }
         }
       )

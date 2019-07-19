@@ -19,9 +19,11 @@
             <a-menu-item key="dashbord">
               <a-icon type="dashboard" />看板
             </a-menu-item>
-            <a-menu-item key="user"><a-icon type="user" />用户</a-menu-item>
-            <a-menu-item key="share">
-              <a-icon type="share-alt" />资源
+            <a-menu-item key="folder">
+              <a-icon type="folder" />文章管理
+            </a-menu-item>
+            <a-menu-item key="appstore">
+              <a-icon type="appstore" />资源管理
             </a-menu-item>
           </a-menu>
         </div>
@@ -34,23 +36,26 @@
           <router-view />
         </div>
       </a-layout-content>
-      <a-layout-footer :style="{ textAlign: 'center' }">
-        2018-2019 &copy; Abeille Group Ltd.
-      </a-layout-footer>
+      <abeille-footer/>
     </a-layout>
   </div>
 </template>
 
 <script>
+// cookies
+import { removeToken } from "@/utils/assist/cookies";
+// components
 import Avatar from "@/components/avatar/Avatar.vue";
+import AbeilleFooter from "@/components/main/Footer.vue";
 
 export default {
   components: {
-    Avatar
+    Avatar,
+    AbeilleFooter
   },
   data() {
     return {
-      openKeys: ["home"]
+      openKeys: ["dashboard"]
     };
   },
   beforeCreate() {
@@ -64,32 +69,20 @@ export default {
   methods: {
     changeMenu(openKeys) {
       switch (openKeys.key) {
-        case "user":
+        case "folder":
           this.$router.push({
-            name: "user"
+            name: "folder"
           });
           break;
-        case "share":
+        case "dashboard":
           this.$router.push({
-            name: "analysis"
-          });
-          break;
-        case "sign":
-          this.$router.push({
-            name: "sign"
+            name: "dashboard"
           });
           break;
         default:
           this.$router.push({
             name: "main"
           });
-      }
-    },
-    directToSign(name) {
-      if (name == "signOut") {
-        this.$router.push({
-          name: "sign"
-        });
       }
     }
   }
@@ -110,7 +103,6 @@ export default {
 .layout-nav {
   width: 350px;
   margin: 0 auto;
-  margin-left: 50rem;
   float: left;
 }
 </style>

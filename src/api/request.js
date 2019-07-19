@@ -1,7 +1,7 @@
 import axios from "@/api";
 
 /* 登录方法 */
-export const signIn = ({ username, password }) => {
+export const login = ({ username, password }) => {
   const params = {
     grant_type: "password",
     username: username,

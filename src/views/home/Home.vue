@@ -1,5 +1,5 @@
 <template>
-  <div name="home" class="layout">
+  <div name="home">
     <a-layout id="home-layout">
       <a-layout-header :style="{ position: 'fixed', zIndex: 1, width: '100%' }">
         <div class="logo">
@@ -18,10 +18,10 @@
           >
             <a-menu-item key="home"><a-icon type="home" />首页</a-menu-item>
             <a-menu-item key="help">
-              <a-icon type="deployment-unit" />技术博客
+              <a-icon type="share-alt" />技术分享
             </a-menu-item>
             <a-menu-item key="share">
-              <a-icon type="share-alt" />摄影分享
+              <a-icon type="camera" />摄影博客
             </a-menu-item>
             <a-menu-item key="setting">
               <a-icon type="setting" />控制台
@@ -59,7 +59,6 @@
 </template>
 
 <script>
-import "./Home.less";
 export default {
   data() {
     return {
@@ -111,7 +110,7 @@ export default {
   border-bottom: 1px solid #e8e8e8;
 }
 .layout-nav {
-  width: 385px;
+  width: 440px;
   margin: 0 auto;
   margin-right: 0;
 }
@@ -120,5 +119,19 @@ export default {
   display: block;
   margin: auto;
   max-width: 80%;
+}
+.mini-program {
+  text-align: center;
+  width: 720px;
+  margin: 20px auto;
+  padding: 24px;
+  min-height: 380px;
+}
+.mini-program-title {
+  font-size: 42px;
+}
+.mini-program-content {
+  font-size: 18px;
+  margin: 20px;
 }
 </style>

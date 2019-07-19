@@ -72,17 +72,26 @@
               Log In
             </a-button>
             Or
-            <a href>Register now!</a>
+            <router-link to="/register">Register now!</router-link>
           </a-form-item>
         </a-form>
       </div>
+    </div>
+    <div class="footer">
+        <div class="links">
+          <a href="_self">帮助</a>
+          <a href="_self">隐私</a>
+          <a href="_self">条款</a>
+        </div>
+        <div class="copyright">
+          Copyright &copy; 2019 Abeille.top Serviced
+        </div>
     </div>
   </div>
 </template>
 
 <script>
-import "./Sign.less";
-import { signIn } from "@/api/request";
+import { login } from "@/api/request";
 import { setToken } from "@/utils/assist/cookies";
 
 export default {
@@ -102,7 +111,7 @@ export default {
       this.form.validateFields((err, values) => {
         this.loading = false;
         if (!err) {
-          signIn(values).then(
+          login(values).then(
             response => {
               setToken(response.data.access_token);
               //设置token
@@ -122,7 +131,8 @@ export default {
 };
 </script>
 
-<style>
+<style lang="less">
+@import "./Login.less";
 .user-login {
   background-image: url("../../assets/background.svg");
 }
@@ -131,5 +141,29 @@ export default {
 }
 #form-login .login-form-button {
   width: 100%;
+}
+.footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 0 16px;
+  margin: 48px 0 24px;
+  text-align: center;
+
+  .links {
+    margin-bottom: 8px;
+    font-size: 14px;
+    a {
+      color: rgba(0, 0, 0, 0.65);
+      transition: all 0.3s;
+      &:not(:last-child) {
+        margin-right: 40px;
+      }
+    }
+  }
+  .copyright {
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 14px;
+  }
 }
 </style>
