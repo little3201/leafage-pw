@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: 'AbeilleFooter',
+  name: "AbeilleFooter",
   data () {
     return {}
   }

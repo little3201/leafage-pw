@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
     <a-layout id="main-layout">
-      <a-layout-header :style="{ position: 'fixed', zIndex: 1, width: '100%' }">
+      <a-layout-header :style="{ position: "fixed", zIndex: 1, width: "100%" }">
         <div class="logo">
           <router-link to="/">
             <img class="logo" src="../../assets/logo.svg" />
@@ -12,8 +12,8 @@
             theme="light"
             mode="horizontal"
             :openKeys="openKeys"
-            :defaultSelectedKeys="['dashbord']"
-            :style="{ lineHeight: '62px' }"
+            :defaultSelectedKeys="["dashbord"]"
+            :style="{ lineHeight: "62px" }"
             @click="changeMenu"
           >
             <a-menu-item key="dashbord">
@@ -30,7 +30,7 @@
         <avatar />
       </a-layout-header>
       <a-layout-content
-        :style="{ background: '#fff', padding: '0', marginTop: '64px' }"
+        :style="{ background: "#fff", padding: "0", marginTop: "64px" }"
       >
         <div>
           <router-view />

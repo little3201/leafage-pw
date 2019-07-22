@@ -3,19 +3,19 @@
     <div v-if="visible" class="header-animat">
       <a-layout-header
         v-if="visible"
-        :class="[fixedHeader && 'ant-header-fixedHeader', sidebarOpened ? 'ant-header-side-opened' : 'ant-header-side-closed', ]"
-        :style="{ padding: '0' }">
-        <div v-if="mode === 'sidemenu'" class="header">
-          <a-icon v-if="device==='mobile'" class="trigger" :type="collapsed ? 'menu-fold' : 'menu-unfold'" @click="toggle"/>
-          <a-icon v-else class="trigger" :type="collapsed ? 'menu-unfold' : 'menu-fold'" @click="toggle"/>
+        :class="[fixedHeader && "ant-header-fixedHeader", sidebarOpened ? "ant-header-side-opened" : "ant-header-side-closed", ]"
+        :style="{ padding: "0" }">
+        <div v-if="mode === "sidemenu"" class="header">
+          <a-icon v-if="device==="mobile"" class="trigger" :type="collapsed ? "menu-fold" : "menu-unfold"" @click="toggle"/>
+          <a-icon v-else class="trigger" :type="collapsed ? "menu-unfold" : "menu-fold"" @click="toggle"/>
           <user-menu></user-menu>
         </div>
-        <div v-else :class="['top-nav-header-index', theme]">
+        <div v-else :class="["top-nav-header-index", theme]">
           <div class="header-index-wide">
             <div class="header-index-left">
-              <logo class="top-nav-header" :show-title="device !== 'mobile'"/>
-              <s-menu v-if="device !== 'mobile'" mode="horizontal" :menu="menus" :theme="theme" />
-              <a-icon v-else class="trigger" :type="collapsed ? 'menu-fold' : 'menu-unfold'" @click="toggle" />
+              <logo class="top-nav-header" :show-title="device !== "mobile""/>
+              <s-menu v-if="device !== "mobile"" mode="horizontal" :menu="menus" :theme="theme" />
+              <a-icon v-else class="trigger" :type="collapsed ? "menu-fold" : "menu-unfold"" @click="toggle" />
             </div>
             <user-menu class="header-index-right"></user-menu>
           </div>
@@ -26,13 +26,13 @@
 </template>
 
 <script>
-import UserMenu from '../tools/UserMenu'
-import SMenu from '../Menu/'
-import Logo from '../tools/Logo'
-import { mixin } from '@/utils/mixin'
+import UserMenu from "../tools/UserMenu"
+import SMenu from "../Menu/"
+import Logo from "../tools/Logo"
+import { mixin } from "@/utils/mixin"
 
 export default {
-  name: 'header',
+  name: "header",
   components: {
     UserMenu,
     SMenu,
@@ -42,7 +42,7 @@ export default {
   props: {
     mode: {
       type: String,
-      default: 'sidemenu'
+      default: "sidemenu"
     },
     menus: {
       type: Array,
@@ -51,7 +51,7 @@ export default {
     theme: {
       type: String,
       required: false,
-      default: 'dark'
+      default: "dark"
     },
     collapsed: {
       type: Boolean,
@@ -61,7 +61,7 @@ export default {
     device: {
       type: String,
       required: false,
-      default: 'desktop'
+      default: "desktop"
     }
   },
   data () {
@@ -71,7 +71,7 @@ export default {
     }
   },
   mounted () {
-    document.addEventListener('scroll', this.handleScroll, { passive: true })
+    document.addEventListener("scroll", this.handleScroll, { passive: true })
   },
   methods: {
     handleScroll () {
@@ -96,17 +96,17 @@ export default {
       }
     },
     toggle () {
-      this.$emit('toggle')
+      this.$emit("toggle")
     }
   },
   beforeDestroy () {
-    document.body.removeEventListener('scroll', this.handleScroll, true)
+    document.body.removeEventListener("scroll", this.handleScroll, true)
   }
 }
 </script>
 
 <style lang="less">
-@import '../index.less';
+@import "../index.less";
 
 .header-animat{
   position: relative;

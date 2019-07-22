@@ -7,7 +7,7 @@
     :getPopupContainer="() => $refs.noticeRef.parentElement"
     :autoAdjustOverflow="true"
     :arrowPointAtCenter="true"
-    :overlayStyle="{ width: '300px', top: '50px' }"
+    :overlayStyle="{ width: "300px", top: "50px" }"
   >
     <template slot="content">
       <a-spin :spinning="loadding">

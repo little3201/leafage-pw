@@ -78,14 +78,14 @@
       </div>
     </div>
     <div class="footer">
-        <div class="links">
-          <a href="_self">帮助</a>
-          <a href="_self">隐私</a>
-          <a href="_self">条款</a>
-        </div>
-        <div class="copyright">
-          Copyright &copy; 2019 Abeille.top Serviced
-        </div>
+      <div class="links">
+        <a href="_self">帮助</a>
+        <a href="_self">隐私</a>
+        <a href="_self">条款</a>
+      </div>
+      <div class="copyright">
+        Copyright &copy; 2019 Abeille.top Serviced
+      </div>
     </div>
   </div>
 </template>
@@ -143,7 +143,7 @@ export default {
   width: 100%;
 }
 .form-container {
-	width: 300px
+  width: 300px;
 }
 .footer {
   position: absolute;
@@ -173,7 +173,6 @@ export default {
 
 <style lang="less" scoped>
 .form-container {
-	width: 300px
+  width: 300px;
 }
 </style>
-
