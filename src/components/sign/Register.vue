@@ -2,7 +2,7 @@
   <div class="user-login">
     <div class="content-wrapper">
       <div class="form-container">
-        <h2 class="form-title">Sign Up For Abeille</h2>
+        <h2 class="form-title">账 号 注 册</h2>
         <a-form ref="formRegister" :form="form" id="formRegister">
           <a-form-item>
             <a-input
@@ -116,7 +116,7 @@
           </a-form-item>
 
           <a-row :gutter="16">
-            <a-col class="gutter-row" :span="14">
+            <a-col class="gutter-row" :span="15">
               <a-form-item>
                 <a-input
                   class="getCaptcha"
@@ -385,7 +385,7 @@ export default {
 </style>
 <style lang="less" scoped>
 .form-container {
-  width: 330px;
+  width: 360px;
 }
 .getCaptcha {
   display: block;
