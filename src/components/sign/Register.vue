@@ -147,7 +147,8 @@
               <a-button
                 :disabled="state.smsSendBtn"
                 @click.stop.prevent="getCaptcha"
-                v-text="!state.smsSendBtn && '获取验证码' || (state.time+' s')"
+                v-text="
+                  (!state.smsSendBtn && '获取验证码') || state.time + ' s'"
               ></a-button>
             </a-col>
           </a-row>
@@ -182,8 +183,7 @@
 </template>
 
 <script>
-import { login } from "@/api/request";
-import { setToken } from "@/utils/assist/cookies";
+import { getSmsCaptcha } from "@/api/request";
 
 const levelNames = {
   0: "低",
@@ -233,29 +233,6 @@ export default {
     }
   },
   methods: {
-    handleSubmit(e) {
-      this.loading = true;
-      // 执行校验
-      e.preventDefault();
-      this.form.validateFields((err, values) => {
-        this.loading = false;
-        if (!err) {
-          login(values).then(
-            response => {
-              setToken(response.data.access_token);
-              //设置token
-              this.$router.push({
-                name: "main"
-              });
-            },
-            error => {
-              // 执行失败的回调函数
-              this.$message.error(error.message);
-            }
-          );
-        }
-      });
-    },
     handlePasswordLevel(rule, value, callback) {
       let level = 0;
       // 判断这个字符串中有没有数字
@@ -297,62 +274,74 @@ export default {
     handlePhoneCheck(rule, value, callback) {
       callback();
     },
-    handlePasswordInputClick () {
+    handlePasswordInputClick() {
       if (!this.isMobile()) {
-        this.state.passwordLevelChecked = true
-        return
+        this.state.passwordLevelChecked = true;
+        return;
       }
-      this.state.passwordLevelChecked = false
+      this.state.passwordLevelChecked = false;
     },
-    handleSubmit () {
-      const { form: { validateFields }, state, $router } = this
+    handleSubmit() {
+      const {
+        form: { validateFields },
+        state,
+        $router
+      } = this;
       validateFields({ force: true }, (err, values) => {
         if (!err) {
-          state.passwordLevelChecked = false
-          $router.push({ name: 'registerResult', params: { ...values } })
+          state.passwordLevelChecked = false;
+          $router.push({ name: "registerResult", params: { ...values } });
         }
-      })
+      });
     },
-    getCaptcha (e) {
-      e.preventDefault()
-      const { form: { validateFields }, state, $message, $notification } = this
-      validateFields(['mobile'], { force: true },
-        (err, values) => {
-          if (!err) {
-            state.smsSendBtn = true
-            const interval = window.setInterval(() => {
-              if (state.time-- <= 0) {
-                state.time = 60
-                state.smsSendBtn = false
-                window.clearInterval(interval)
-              }
-            }, 1000)
-            const hide = $message.loading('验证码发送中..', 0)
-            getSmsCaptcha({ mobile: values.mobile }).then(res => {
-              setTimeout(hide, 2500)
-              $notification['success']({
-                message: '提示',
-                description: '验证码获取成功，您的验证码为：' + res.result.captcha,
+    getCaptcha(e) {
+      e.preventDefault();
+      const {
+        form: { validateFields },
+        state,
+        $message,
+        $notification
+      } = this;
+      validateFields(["mobile"], { force: true }, (err, values) => {
+        if (!err) {
+          state.smsSendBtn = true;
+          const interval = window.setInterval(() => {
+            if (state.time-- <= 0) {
+              state.time = 60;
+              state.smsSendBtn = false;
+              window.clearInterval(interval);
+            }
+          }, 1000);
+          const hide = $message.loading("验证码发送中..", 0);
+          getSmsCaptcha({ mobile: values.mobile })
+            .then(res => {
+              setTimeout(hide, 2500);
+              $notification["success"]({
+                message: "提示",
+                description:
+                  "验证码获取成功，您的验证码为：" + res.result.captcha,
                 duration: 8
-              })
-            }).catch(err => {
-              setTimeout(hide, 1)
-              clearInterval(interval)
-              state.time = 60
-              state.smsSendBtn = false
-              this.requestFailed(err)
+              });
             })
-          }
+            .catch(err => {
+              setTimeout(hide, 1);
+              clearInterval(interval);
+              state.time = 60;
+              state.smsSendBtn = false;
+              this.requestFailed(err);
+            });
         }
-      )
+      });
     },
-    requestFailed (err) {
-      this.$notification['error']({
-        message: '错误',
-        description: ((err.response || {}).data || {}).message || '请求出现错误，请稍后再试',
+    requestFailed(err) {
+      this.$notification["error"]({
+        message: "错误",
+        description:
+          ((err.response || {}).data || {}).message ||
+          "请求出现错误，请稍后再试",
         duration: 4
-      })
-      this.registerBtn = false
+      });
+      this.registerBtn = false;
     }
   }
 };
@@ -396,7 +385,7 @@ export default {
 </style>
 <style lang="less" scoped>
 .form-container {
-	width: 330px
+  width: 330px;
 }
 .getCaptcha {
   display: block;

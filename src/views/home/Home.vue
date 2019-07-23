@@ -1,7 +1,7 @@
 <template>
   <div name="home">
     <a-layout id="home-layout">
-      <a-layout-header :style="{ position: "fixed", zIndex: 1, width: "100%" }">
+      <a-layout-header :style="{ position: 'fixed', zIndex: 1, width: '100%' }">
         <div class="logo">
           <router-link to="/">
             <img class="logo" src="../../assets/logo.svg" />
@@ -12,8 +12,8 @@
             theme="light"
             mode="horizontal"
             :openKeys="openKeys"
-            :defaultSelectedKeys="["home"]"
-            :style="{ lineHeight: "62px" }"
+            :defaultSelectedKeys="['home']"
+            :style="{ lineHeight: '62px' }"
             @click="changeMenu"
           >
             <a-menu-item key="home"><a-icon type="home" />首页</a-menu-item>
@@ -30,7 +30,7 @@
         </div>
       </a-layout-header>
       <a-layout-content
-        :style="{ background: "#fff", padding: "0", marginTop: "64px" }"
+        :style="{ background: '#fff', padding: '0', marginTop: '64px' }"
       >
         <a-carousel autoplay>
           <div>
@@ -51,7 +51,7 @@
           <router-view />
         </div>
       </a-layout-content>
-      <a-layout-footer :style="{ textAlign: "center" }">
+      <a-layout-footer :style="{ textAlign: 'center' }">
         2018-2019 &copy; Abeille Group Ltd.
       </a-layout-footer>
     </a-layout>

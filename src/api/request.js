@@ -16,6 +16,15 @@ export const login = ({ username, password }) => {
   });
 };
 
+/* 获取手机验证码 */
+export const getSmsCaptcha = mobile => {
+  return axios.request({
+    url: "/user",
+    method: "GET",
+    mobile
+  });
+};
+
 /* 根据用户id获取用户信息 */
 export const getUserInfo = userId => {
   return axios.request({
