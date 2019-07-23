@@ -40,26 +40,30 @@
             <img src="./../../assets/gramer.png" />
           </div>
         </a-carousel>
-        <div class="mini-program">
-          <p class="mini-program-title">小程序+</p>
-          <p class="mini-program-content">
-            小程序主动打开放大倍数可达 5.55，为订阅号提升阅读量 20.28%。
-            现在注册，我们将为有复杂需求的内容品牌，定制一份小程序建议方案。
-          </p>
-        </div>
+        <!-- 列表 -->
+        <a-card title="Card Title">
+          <a href="#" slot="extra">more</a>
+          <p>card content</p>
+          <p>card content</p>
+          <p>card content</p>
+        </a-card>
         <div>
           <router-view />
         </div>
       </a-layout-content>
-      <a-layout-footer :style="{ textAlign: 'center' }">
-        2018-2019 &copy; Abeille Group Ltd.
-      </a-layout-footer>
+      <!-- 底部布局 -->
+      <a-footer />
     </a-layout>
   </div>
 </template>
 
 <script>
+import AFooter from "@/components/main/AFooter.vue";
+
 export default {
+  components: {
+    AFooter
+  },
   data() {
     return {
       openKeys: ["home"]

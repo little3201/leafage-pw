@@ -36,7 +36,8 @@
           <router-view />
         </div>
       </a-layout-content>
-      <abeille-footer />
+      <!-- 底部布局 -->
+      <a-footer />
     </a-layout>
   </div>
 </template>
@@ -44,12 +45,12 @@
 <script>
 // components
 import Avatar from "@/components/avatar/Avatar.vue";
-import AbeilleFooter from "@/components/main/Footer.vue";
+import AFooter from "@/components/main/AFooter.vue";
 
 export default {
   components: {
     Avatar,
-    AbeilleFooter
+    AFooter
   },
   data() {
     return {
