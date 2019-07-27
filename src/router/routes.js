@@ -1,5 +1,5 @@
 import Main from "@/components/main/Main.vue";
-import Home from "@/views/home/Home.vue";
+import Home from "@/views/Home.vue";
 import Login from "@/components/sign/Login.vue";
 
 export default [
@@ -20,6 +20,11 @@ export default [
         name: "share",
         meta: { title: "摄影分享" },
         component: () => import("@/views/Share.vue")
+      },
+      {
+        path: "/article",
+        name: "article",
+        component: () => import("@/views/Article.vue")
       }
     ]
   },
@@ -50,8 +55,7 @@ export default [
     path: "/login",
     name: "login",
     component: Login
-  }
-  ,
+  },
   {
     path: "/register",
     name: "register",

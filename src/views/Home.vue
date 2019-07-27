@@ -4,7 +4,7 @@
       <a-layout-header :style="{ position: 'fixed', zIndex: 1, width: '100%' }">
         <div class="logo">
           <router-link to="/">
-            <img class="logo" src="../../assets/logo.svg" />
+            <img class="logo" src="../assets/logo.svg" />
           </router-link>
         </div>
         <div class="layout-nav">
@@ -17,10 +17,10 @@
             @click="changeMenu"
           >
             <a-menu-item key="home"><a-icon type="home" />首页</a-menu-item>
-            <a-menu-item key="help">
+            <a-menu-item key="share">
               <a-icon type="share-alt" />技术分享
             </a-menu-item>
-            <a-menu-item key="share">
+            <a-menu-item key="camera">
               <a-icon type="camera" />摄影博客
             </a-menu-item>
             <a-menu-item key="setting">
@@ -32,21 +32,6 @@
       <a-layout-content
         :style="{ background: '#fff', padding: '0', marginTop: '64px' }"
       >
-        <a-carousel autoplay>
-          <div>
-            <img src="./../../assets/photor.png" />
-          </div>
-          <div>
-            <img src="./../../assets/gramer.png" />
-          </div>
-        </a-carousel>
-        <!-- 列表 -->
-        <a-card title="Card Title">
-          <a href="#" slot="extra">more</a>
-          <p>card content</p>
-          <p>card content</p>
-          <p>card content</p>
-        </a-card>
         <div>
           <router-view />
         </div>
@@ -77,12 +62,12 @@ export default {
   methods: {
     changeMenu(openKeys) {
       switch (openKeys.key) {
-        case "help":
+        case "share":
           this.$router.push({
-            name: "help"
+            name: "article"
           });
           break;
-        case "share":
+        case "camera":
           this.$router.push({
             name: "share"
           });
