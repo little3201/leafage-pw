@@ -101,24 +101,4 @@ export default {
 .layout-nav {
   float: right;
 }
-.slick-slide img {
-  border: 5px solid #ffffff;
-  display: block;
-  margin: auto;
-  max-width: 80%;
-}
-.mini-program {
-  text-align: center;
-  width: 720px;
-  margin: 20px auto;
-  padding: 24px;
-  min-height: 380px;
-}
-.mini-program-title {
-  font-size: 42px;
-}
-.mini-program-content {
-  font-size: 18px;
-  margin: 20px;
-}
 </style>
