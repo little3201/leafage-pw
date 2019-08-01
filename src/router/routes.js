@@ -7,11 +7,12 @@ export default [
     path: "/",
     name: "home",
     component: Home,
+    redirect: "/default",
     children: [
       {
-        path: "/help",
-        name: "help",
-        component: () => import("@/views/Help.vue")
+        path: "/default",
+        name: "default",
+        component: () => import("@/views/Default.vue")
       },
       {
         path: "/share",
