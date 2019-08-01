@@ -28,7 +28,7 @@
               ]"
               placeholder="Username"
             >
-              <a-icon slot="prefix" type="user" />
+              <a-icon slot="prefix" type="user" style="color:rgba(0,0,0,.25)" />
             </a-input>
           </a-form-item>
           <a-form-item>
@@ -47,7 +47,7 @@
               type="password"
               placeholder="Password"
             >
-              <a-icon slot="prefix" type="lock" />
+              <a-icon slot="prefix" type="lock" style="color:rgba(0,0,0,.25)" />
             </a-input>
           </a-form-item>
           <a-form-item>
@@ -69,21 +69,30 @@
               class="login-form-button"
               :loading="loading"
             >
-              Sign in
+              Log In
             </a-button>
             Or
-            <a href>register now!</a>
+            <router-link to="/register">Register now!</router-link>
           </a-form-item>
         </a-form>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="links">
+        <a href="_self">帮助</a>
+        <a href="_self">隐私</a>
+        <a href="_self">条款</a>
+      </div>
+      <div class="copyright">
+        Copyright &copy; 2019 Abeille.top Serviced
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import "./Sign.less";
-import { signIn } from "@/api/request";
-import { setStore } from "@/utils/assist/storage";
+import { login } from "@/api/request";
+import { setToken } from "@/utils/assist/cookies";
 
 export default {
   data() {
@@ -102,9 +111,9 @@ export default {
       this.form.validateFields((err, values) => {
         this.loading = false;
         if (!err) {
-          signIn(values).then(
+          login(values).then(
             response => {
-              setStore("Access-token", response.data.access_token);
+              setToken(response.data.access_token);
               //设置token
               this.$router.push({
                 name: "main"
@@ -122,14 +131,48 @@ export default {
 };
 </script>
 
-<style>
+<style lang="less">
+@import "./Sign.less";
 .user-login {
-  background-image: url("../../assets/laptop.png");
+  background-image: url("../../assets/background.svg");
 }
 #form-login .login-form-forgot {
   float: right;
 }
 #form-login .login-form-button {
   width: 100%;
+}
+.form-container {
+  width: 300px;
+}
+.footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 0 16px;
+  margin: 48px 0 24px;
+  text-align: center;
+
+  .links {
+    margin-bottom: 8px;
+    font-size: 14px;
+    a {
+      color: rgba(0, 0, 0, 0.65);
+      transition: all 0.3s;
+      &:not(:last-child) {
+        margin-right: 40px;
+      }
+    }
+  }
+  .copyright {
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 14px;
+  }
+}
+</style>
+
+<style lang="less" scoped>
+.form-container {
+  width: 300px;
 }
 </style>

@@ -12,9 +12,6 @@
 </template>
 
 <script>
-import { getUserInfo, findUsers } from "@/api/request";
-import { columns } from "./user";
-
 export default {
   data() {
     return {
@@ -27,39 +24,10 @@ export default {
       datas: []
     };
   },
-  beforeCreate() {
-    this.columns = columns;
-  },
-  mounted: function() {
-    return this.initUser();
-  },
+  mounted: function() {},
   methods: {
-    /* 初始化用户列表 */
-    initUser() {
-      let pagination = {
-        pageNum: this.pagination.pageNum - 1,
-        pageSize: this.pagination.pageSize
-      };
-      findUsers(pagination).then(
-        response => {
-          this.datas = response.data.content;
-          this.pagination.pageNum = response.data.pageable.pageNumber + 1;
-          this.pagination.pageSize = response.data.pageable.pageSize;
-          this.pagination.total = response.data.totalElements;
-        },
-        error => {
-          // 执行失败的回调函数
-          this.$message.error(error.message);
-        }
-      );
-    },
-    /* 根据userId查询用户 */
-    getUser(userId) {
-      getUserInfo(userId);
-    },
     onChange(pageNumber) {
       this.pagination.pageNum = pageNumber;
-      this.initUser();
     },
     /* 展示用户信息 */
     show(index) {

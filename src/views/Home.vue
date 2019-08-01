@@ -1,10 +1,10 @@
 <template>
-  <div name="home" class="layout">
+  <div name="home">
     <a-layout id="home-layout">
       <a-layout-header :style="{ position: 'fixed', zIndex: 1, width: '100%' }">
         <div class="logo">
           <router-link to="/">
-            <img class="logo" src="../../assets/abeille.png" />
+            <img class="logo" src="../assets/logo.svg" />
           </router-link>
         </div>
         <div class="layout-nav">
@@ -17,11 +17,11 @@
             @click="changeMenu"
           >
             <a-menu-item key="home"><a-icon type="home" />首页</a-menu-item>
-            <a-menu-item key="help">
-              <a-icon type="question-circle" />帮助
-            </a-menu-item>
             <a-menu-item key="share">
-              <a-icon type="share-alt" />分享
+              <a-icon type="share-alt" />技术分享
+            </a-menu-item>
+            <a-menu-item key="camera">
+              <a-icon type="camera" />摄影博客
             </a-menu-item>
             <a-menu-item key="setting">
               <a-icon type="setting" />控制台
@@ -32,35 +32,23 @@
       <a-layout-content
         :style="{ background: '#fff', padding: '0', marginTop: '64px' }"
       >
-        <a-carousel autoplay>
-          <div>
-            <img src="./../../assets/photor.png" />
-          </div>
-          <div>
-            <img src="./../../assets/gramer.png" />
-          </div>
-        </a-carousel>
-        <div class="mini-program">
-          <p class="mini-program-title">小程序+</p>
-          <p class="mini-program-content">
-            小程序主动打开放大倍数可达 5.55，为订阅号提升阅读量 20.28%。
-            现在注册，我们将为有复杂需求的内容品牌，定制一份小程序建议方案。
-          </p>
-        </div>
         <div>
           <router-view />
         </div>
       </a-layout-content>
-      <a-layout-footer :style="{ textAlign: 'center' }">
-        2018-2019 &copy; Abeille Group Ltd.
-      </a-layout-footer>
+      <!-- 底部布局 -->
+      <a-footer />
     </a-layout>
   </div>
 </template>
 
 <script>
-import "./Home.less";
+import AFooter from "@/components/main/AFooter.vue";
+
 export default {
+  components: {
+    AFooter
+  },
   data() {
     return {
       openKeys: ["home"]
@@ -74,12 +62,12 @@ export default {
   methods: {
     changeMenu(openKeys) {
       switch (openKeys.key) {
-        case "help":
+        case "share":
           this.$router.push({
-            name: "help"
+            name: "article"
           });
           break;
-        case "share":
+        case "camera":
           this.$router.push({
             name: "share"
           });
@@ -111,14 +99,26 @@ export default {
   border-bottom: 1px solid #e8e8e8;
 }
 .layout-nav {
-  width: 385px;
-  margin: 0 auto;
-  margin-right: 0;
+  float: right;
 }
 .slick-slide img {
   border: 5px solid #ffffff;
   display: block;
   margin: auto;
   max-width: 80%;
+}
+.mini-program {
+  text-align: center;
+  width: 720px;
+  margin: 20px auto;
+  padding: 24px;
+  min-height: 380px;
+}
+.mini-program-title {
+  font-size: 42px;
+}
+.mini-program-content {
+  font-size: 18px;
+  margin: 20px;
 }
 </style>

@@ -1,13 +1,13 @@
 import Vue from "vue";
 import Router from "vue-router";
 import routes from "./routes";
-
-import { getStore } from "@/utils/assist/storage";
+import { getToken } from "@/utils/assist/cookies";
 
 import NProgress from "nprogress"; // progress bar
 import "nprogress/nprogress.css"; // progress bar style
 
 Vue.use(Router);
+NProgress.configure({ showSpinner: false }); // NProgress Configuration
 
 const router = new Router({
   routes,
@@ -18,10 +18,10 @@ const router = new Router({
 /* 路由之前检查token */
 router.beforeEach((to, from, next) => {
   NProgress.start();
-  let token = getStore("Access-token");
-  if (token == null && to.fullPath !== "/sign") {
+  let token = getToken();
+  if (token == null && to.fullPath !== "/login") {
     next({
-      name: "sign"
+      name: "login"
     });
   } else {
     next();

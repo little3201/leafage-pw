@@ -1,7 +1,7 @@
 import axios from "@/api";
 
 /* 登录方法 */
-export const signIn = ({ username, password }) => {
+export const login = ({ username, password }) => {
   const params = {
     grant_type: "password",
     username: username,
@@ -10,16 +10,25 @@ export const signIn = ({ username, password }) => {
     client_secret: password
   };
   return axios.request({
-    url: "/oauth/token",
+    url: "/server/oauth/token",
     method: "POST",
     params
+  });
+};
+
+/* 获取手机验证码 */
+export const getSmsCaptcha = mobile => {
+  return axios.request({
+    url: "/hypervisor/user",
+    method: "GET",
+    mobile
   });
 };
 
 /* 根据用户id获取用户信息 */
 export const getUserInfo = userId => {
   return axios.request({
-    url: "/user/" + userId,
+    url: "/hypervisor/user/" + userId,
     method: "GET"
   });
 };
@@ -31,7 +40,7 @@ export const findUsers = ({ pageNum, pageSize }) => {
     pageSize
   };
   return axios.request({
-    url: "/user",
+    url: "/hypervisor/user",
     method: "GET",
     params
   });

@@ -4,8 +4,11 @@
       <a-layout-header :style="{ position: 'fixed', zIndex: 1, width: '100%' }">
         <div class="logo">
           <router-link to="/">
-            <img class="logo" src="../../assets/abeille.png" />
+            <img class="logo" src="../../assets/logo.svg" />
           </router-link>
+        </div>
+        <div class="avatar">
+          <avatar />
         </div>
         <div class="layout-nav">
           <a-menu
@@ -19,38 +22,41 @@
             <a-menu-item key="dashbord">
               <a-icon type="dashboard" />看板
             </a-menu-item>
-            <a-menu-item key="user"><a-icon type="user" />用户</a-menu-item>
-            <a-menu-item key="share">
-              <a-icon type="share-alt" />资源
+            <a-menu-item key="folder">
+              <a-icon type="folder" />文章管理
+            </a-menu-item>
+            <a-menu-item key="appstore">
+              <a-icon type="appstore" />资源管理
             </a-menu-item>
           </a-menu>
         </div>
-        <avatar />
       </a-layout-header>
       <a-layout-content
-        :style="{ background: '#fff', padding: '0', marginTop: '64px' }"
+        :style="{ background: '#ff', padding: '0', marginTop: '64px' }"
       >
         <div>
           <router-view />
         </div>
       </a-layout-content>
-      <a-layout-footer :style="{ textAlign: 'center' }">
-        2018-2019 &copy; Abeille Group Ltd.
-      </a-layout-footer>
+      <!-- 底部布局 -->
+      <a-footer />
     </a-layout>
   </div>
 </template>
 
 <script>
+// components
 import Avatar from "@/components/avatar/Avatar.vue";
+import AFooter from "@/components/main/AFooter.vue";
 
 export default {
   components: {
-    Avatar
+    Avatar,
+    AFooter
   },
   data() {
     return {
-      openKeys: ["home"]
+      openKeys: ["dashboard"]
     };
   },
   beforeCreate() {
@@ -64,27 +70,20 @@ export default {
   methods: {
     changeMenu(openKeys) {
       switch (openKeys.key) {
-        case "user":
+        case "folder":
           this.$router.push({
-            name: "user"
+            name: "folder"
           });
           break;
-        case "sign":
+        case "dashboard":
           this.$router.push({
-            name: "sign"
+            name: "dashboard"
           });
           break;
         default:
           this.$router.push({
             name: "main"
           });
-      }
-    },
-    directToSign(name) {
-      if (name == "signOut") {
-        this.$router.push({
-          name: "sign"
-        });
       }
     }
   }
@@ -103,9 +102,10 @@ export default {
   border-bottom: 1px solid #e8e8e8;
 }
 .layout-nav {
-  width: 350px;
-  margin: 0 auto;
-  margin-left: 50rem;
-  float: left;
+  float: right;
+  margin-right: 50px;
+}
+.avatar {
+  float: right;
 }
 </style>

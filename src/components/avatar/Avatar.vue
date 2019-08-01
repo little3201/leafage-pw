@@ -1,15 +1,14 @@
 <template>
   <div>
-    <router-link to="/question">
-      <span><a-icon type="question-circle-o"></a-icon></span>
+    <router-link to="/help">
+      <span><a-icon type="question-circle"/></span>
     </router-link>
     <!-- 通知 -->
     <notice />
     <a-dropdown>
       <span>
-        <!-- <a-avatar class="avatar" size="small" :src="avatar()"/> -->
         <a-avatar style="color: #f56a00; backgroundColor: #fde3cf">D</a-avatar>
-        <span>小道士</span>
+        小道士
       </span>
       <a-menu slot="overlay" style="top: 22px">
         <a-menu-item key="profile">
@@ -26,7 +25,7 @@
         </a-menu-item>
         <a-menu-divider />
         <a-menu-item key="signout">
-          <a href="javascript:;" @click="signOut">
+          <a href="javascript:;" @click="logout">
             <a-icon type="logout" />
             <span>退出登录</span>
           </a>
@@ -38,19 +37,19 @@
 
 <script>
 import Notice from "@/components/notice/Notice.vue";
-import { clearStore } from "@/utils/assist/storage";
+import { removeToken } from "@/utils/assist/cookies";
 
 export default {
   components: {
     Notice
   },
   methods: {
-    signOut() {
+    logout() {
       this.$confirm({
         title: "提示",
         content: "真的要注销登录吗 ?",
         onOk() {
-          clearStore("Access-token");
+          removeToken();
           //这里无法使用this.$router
           window.location.reload();
         },
@@ -63,6 +62,6 @@ export default {
 
 <style lang="less" scoped>
 span {
-  margin: 0 5px;
+  margin: 0 10px;
 }
 </style>
