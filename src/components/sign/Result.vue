@@ -22,30 +22,29 @@ export default {
   components: {
     Result
   },
-  data () {
+  data() {
     return {
-      description: "激活邮件已发送到你的邮箱中，邮件有效期为2小时。请及时登录邮箱，点击邮件中的链接激活帐户。",
+      description:
+        "激活邮件已发送到你的邮箱中，邮件有效期为2小时。请及时登录邮箱，点击邮件中的链接激活帐户。",
       form: {}
-    }
+    };
   },
   computed: {
-    email () {
-      const v = this.form && this.form.email || "xxx"
-      const title = `你的账户：${v} 注册成功`
-      return title
+    email() {
+      const v = (this.form && this.form.email) || "xxx";
+      const title = `你的账户：${v} 注册成功`;
+      return title;
     }
   },
-  created () {
-    this.form = this.$route.params
+  created() {
+    this.form = this.$route.params;
   },
   methods: {
-    goHomeHandle () {
-      this.$router.push({ name: "login" })
+    goHomeHandle() {
+      this.$router.push({ name: "login" });
     }
   }
-}
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
