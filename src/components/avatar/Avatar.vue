@@ -1,15 +1,14 @@
 <template>
   <div>
-    <router-link to="">
-      <span><a-icon type="question-circle"></a-icon></span>
+    <router-link to="/help">
+      <span><a-icon type="question-circle"/></span>
     </router-link>
     <!-- 通知 -->
     <notice />
     <a-dropdown>
       <span>
-        <!-- <a-avatar class="avatar" size="small" :src="avatar()"/> -->
         <a-avatar style="color: #f56a00; backgroundColor: #fde3cf">D</a-avatar>
-        <span>小道士</span>
+        小道士
       </span>
       <a-menu slot="overlay" style="top: 22px">
         <a-menu-item key="profile">
@@ -63,6 +62,6 @@ export default {
 
 <style lang="less" scoped>
 span {
-  margin: 0 5px;
+  margin: 0 10px;
 }
 </style>

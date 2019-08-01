@@ -7,6 +7,7 @@ import NProgress from "nprogress"; // progress bar
 import "nprogress/nprogress.css"; // progress bar style
 
 Vue.use(Router);
+NProgress.configure({ showSpinner: false }); // NProgress Configuration
 
 const router = new Router({
   routes,
@@ -17,14 +18,14 @@ const router = new Router({
 /* 路由之前检查token */
 router.beforeEach((to, from, next) => {
   NProgress.start();
-  // let token = getToken();
-  // if (token == null && to.fullPath !== "/login") {
-  //   next({
-  //     name: "login"
-  //   });
-  // } else {
+  let token = getToken();
+  if (token == null && to.fullPath !== "/login") {
+    next({
+      name: "login"
+    });
+  } else {
     next();
-  // }
+  }
 });
 
 /* 路由之后添加token */

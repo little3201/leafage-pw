@@ -7,6 +7,9 @@
             <img class="logo" src="../../assets/logo.svg" />
           </router-link>
         </div>
+        <div class="avatar">
+          <avatar />
+        </div>
         <div class="layout-nav">
           <a-menu
             theme="light"
@@ -27,7 +30,6 @@
             </a-menu-item>
           </a-menu>
         </div>
-        <avatar />
       </a-layout-header>
       <a-layout-content
         :style="{ background: '#ff', padding: '0', marginTop: '64px' }"
@@ -100,8 +102,10 @@ export default {
   border-bottom: 1px solid #e8e8e8;
 }
 .layout-nav {
-  width: 350px;
-  margin: 0 auto;
-  float: left;
+  float: right;
+  margin-right: 50px;
+}
+.avatar {
+  float: right;
 }
 </style>

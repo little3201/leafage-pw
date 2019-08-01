@@ -10,7 +10,7 @@ export const login = ({ username, password }) => {
     client_secret: password
   };
   return axios.request({
-    url: "/oauth/token",
+    url: "/server/oauth/token",
     method: "POST",
     params
   });
@@ -19,7 +19,7 @@ export const login = ({ username, password }) => {
 /* 获取手机验证码 */
 export const getSmsCaptcha = mobile => {
   return axios.request({
-    url: "/user",
+    url: "/hypervisor/user",
     method: "GET",
     mobile
   });
@@ -28,7 +28,7 @@ export const getSmsCaptcha = mobile => {
 /* 根据用户id获取用户信息 */
 export const getUserInfo = userId => {
   return axios.request({
-    url: "/user/" + userId,
+    url: "/hypervisor/user/" + userId,
     method: "GET"
   });
 };
@@ -40,7 +40,7 @@ export const findUsers = ({ pageNum, pageSize }) => {
     pageSize
   };
   return axios.request({
-    url: "/user",
+    url: "/hypervisor/user",
     method: "GET",
     params
   });

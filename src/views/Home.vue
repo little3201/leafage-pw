@@ -99,9 +99,7 @@ export default {
   border-bottom: 1px solid #e8e8e8;
 }
 .layout-nav {
-  width: 460px;
-  margin: 0 auto;
-  margin-right: 0;
+  float: right;
 }
 .slick-slide img {
   border: 5px solid #ffffff;
