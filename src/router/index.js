@@ -19,15 +19,15 @@ const router = new Router({
 router.beforeEach((to, from, next) => {
   NProgress.start();
   let token = getToken();
-//  if (to.fullPath === "/register") {
-//    next();
-//  } else if (token == null && to.fullPath !== "/login") {
-//    next({
-//      name: "login"
-//    });
-//  } else {
+  if (to.fullPath === "/default" || to.fullPath === "/register") {
     next();
-//  }
+  } else if (token == null && to.fullPath !== "/login") {
+    next({
+      name: "login"
+    });
+  } else {
+    next();
+  }
 });
 
 /* 路由之后添加token */
