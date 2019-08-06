@@ -26,7 +26,7 @@
           src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
         />
         <a-list-item-meta :description="item.description">
-          <a slot="title" :href="item.href">{{ item.title }}</a>
+          <router-link slot="title" :to="item.href">{{ item.title }}</router-link>
           <a-avatar slot="avatar" :src="item.avatar" />
         </a-list-item-meta>
         {{ item.content }}
@@ -38,7 +38,7 @@
 const articleList = [];
 for (let i = 0; i < 5; i++) {
   articleList.push({
-    href: "https://vue.ant.design/",
+    href: "/article",
     title: `ant design vue part ${i}`,
     avatar: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
     description:
