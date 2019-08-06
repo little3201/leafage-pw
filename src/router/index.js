@@ -9,6 +9,8 @@ import "nprogress/nprogress.css"; // progress bar style
 Vue.use(Router);
 NProgress.configure({ showSpinner: false }); // NProgress Configuration
 
+const whiteList = ["/", "/default", "/share", "/article"];
+
 const router = new Router({
   routes,
   mode: "history",
@@ -19,7 +21,7 @@ const router = new Router({
 router.beforeEach((to, from, next) => {
   NProgress.start();
   let token = getToken();
-  if (to.fullPath === "/default" || to.fullPath === "/register") {
+  if (whiteList.includes(to.fullPath)) {
     next();
   } else if (token == null && to.fullPath !== "/login") {
     next({

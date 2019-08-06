@@ -1,11 +1,8 @@
 <template>
   <div class="default">
-    <a-carousel autoplay>
+    <a-carousel>
       <div>
-        <img src="./../assets/photor.png" />
-      </div>
-      <div>
-        <img src="./../assets/gramer.png" />
+        <img src="./../assets/gen.svg" />
       </div>
     </a-carousel>
     <!-- 分割线 -->
