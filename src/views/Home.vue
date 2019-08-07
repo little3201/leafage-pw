@@ -30,7 +30,7 @@
         </div>
       </a-layout-header>
       <a-layout-content
-        :style="{ background: '#fff', padding: '24px', marginTop: '64px' }"
+        :style="{ padding: '0 40px', marginTop: '64px' }"
       >
         <div>
           <router-view />
