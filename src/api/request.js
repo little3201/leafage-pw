@@ -45,3 +45,11 @@ export const findUsers = ({ pageNum, pageSize }) => {
     params
   });
 };
+
+/* 根据文章ID获取文章详情 */
+export const getArticleContent = articleId => {
+  return axios.request({
+    url: "/assets/article/" + articleId,
+    method: "GET"
+  });
+};

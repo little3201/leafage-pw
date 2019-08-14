@@ -1,17 +1,18 @@
 import Main from "@/components/main/Main.vue";
-import Home from "@/views/Home.vue";
+import Layout from "@/views/Layout.vue";
 import Login from "@/components/sign/Login.vue";
 
 export default [
   {
     path: "/",
     name: "home",
-    component: Home,
+    component: Layout,
+    redirect: "/home",
     children: [
       {
-        path: "/help",
-        name: "help",
-        component: () => import("@/views/Help.vue")
+        path: "/home",
+        name: "home",
+        component: () => import("@/views/Home.vue")
       },
       {
         path: "/share",
@@ -19,9 +20,9 @@ export default [
         component: () => import("@/views/Share.vue")
       },
       {
-        path: "/article",
-        name: "article",
-        component: () => import("@/views/Article.vue")
+        path: "/photograph",
+        name: "photograph",
+        component: () => import("@/views/Photograph.vue")
       }
     ]
   },
@@ -29,6 +30,7 @@ export default [
     path: "/main",
     name: "main",
     component: Main,
+    redirect: "/folder",
     children: [
       {
         path: "/folder",
