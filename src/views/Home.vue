@@ -64,6 +64,7 @@ export default {
   text-align: center;
 }
 .title {
+  font-family: Wawati SC;
   font-size: 42px;
 }
 .description {

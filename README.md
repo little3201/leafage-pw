@@ -7,8 +7,7 @@ A beautiful blog and photograph share site as a Vue boilerplate. based on  <a hr
 
 <div align="center">
 
-[![Backers on Open Collective](https://opencollective.com/ant-design-pro-vue/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/ant-design-pro-vue/sponsors/badge.svg)](#sponsors) [![License](https://img.shields.io/npm/l/package.json.svg?style=flat)](https://github.com/sendya/ant-design-pro-vue/blob/master/LICENSE)
-[![Release](https://img.shields.io/github/release/sendya/ant-design-pro-vue.svg?style=flat)](https://github.com/sendya/ant-design-pro-vue/releases/latest)
+[![License](https://img.shields.io/npm/l/package.json.svg?style=flat)](https://github.com/little3201/abeille-ui/blob/master/LICENSE)
 [![Travis branch](https://travis-ci.org/sendya/ant-design-pro-vue.svg?branch=master)](https://travis-ci.org/sendya/ant-design-pro-vue)
 
 </div>
