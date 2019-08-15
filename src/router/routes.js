@@ -30,7 +30,7 @@ export default [
     path: "/main",
     name: "main",
     component: Main,
-    redirect: "/folder",
+    redirect: "/dashboard",
     children: [
       {
         path: "/folder",
