@@ -5,7 +5,7 @@ import Login from "@/components/sign/Login.vue";
 export default [
   {
     path: "/",
-    name: "home",
+    name: "layout",
     component: Layout,
     redirect: "/home",
     children: [
@@ -23,6 +23,11 @@ export default [
         path: "/photograph",
         name: "photograph",
         component: () => import("@/views/Photograph.vue")
+      },
+      {
+        path: "/article",
+        name: "article",
+        component: () => import("@/views/Article.vue")
       }
     ]
   },
