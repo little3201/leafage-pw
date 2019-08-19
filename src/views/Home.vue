@@ -16,7 +16,9 @@
           <br />
           现在注册，我们将为有复杂需求的内容品牌，定制一份小程序建议方案
         </p>
-        <a-button size="large">立即使用</a-button>
+        <a-button size="large" :style="{ marginTop: '30px' }">
+          立即使用
+        </a-button>
       </div>
     </div>
     <div :style="{ margin: '100px auto' }">
@@ -44,8 +46,6 @@
 </template>
 
 <script>
-import { getArticleContent } from "@/api/request";
-
 export default {
   data() {
     return {};
@@ -53,23 +53,7 @@ export default {
   beforeCreate() {
     this.$emit("setkeys", "share");
   },
-  methods: {
-    openArticle(articleId) {
-      getArticleContent(articleId).then(
-        response => {
-          response.data;
-          //设置token
-          this.$router.push({
-            name: "article"
-          });
-        },
-        error => {
-          // 执行失败的回调函数
-          this.$message.error(error.message);
-        }
-      );
-    }
-  }
+  methods: {}
 };
 </script>
 

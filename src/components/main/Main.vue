@@ -34,7 +34,7 @@
       <a-layout-content
         :style="{ background: '#ffffff', padding: '0', marginTop: '64px' }"
       >
-        <div :style="{ height: '400px'}">
+        <div :style="{ height: '400px' }">
           <router-view />
         </div>
       </a-layout-content>
