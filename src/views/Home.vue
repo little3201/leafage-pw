@@ -50,9 +50,6 @@ export default {
   data() {
     return {};
   },
-  beforeCreate() {
-    this.$emit("setkeys", "share");
-  },
   methods: {}
 };
 </script>

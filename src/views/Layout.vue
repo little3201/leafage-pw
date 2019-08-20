@@ -15,7 +15,6 @@
             :defaultSelectedKeys="['home']"
             :style="{ lineHeight: '62px' }"
             @click="changeMenu"
-            @setkeys="changeMenu"
           >
             <a-menu-item key="home"><a-icon type="home" />首页</a-menu-item>
             <a-menu-item key="share">
@@ -60,14 +59,8 @@ export default {
       openKeys: ["home"]
     };
   },
-  watch: {
-    openKeys(val) {
-      this.openKeys.splice(val);
-    }
-  },
   methods: {
     changeMenu(openKeys) {
-      this.openKeys = openKeys.key;
       switch (openKeys.key) {
         case "share":
           this.$router.push({
