@@ -39,6 +39,7 @@
         <div :style="{ marginTop: '30px' }">
           <router-view />
         </div>
+        <a-back-top />
       </a-layout-content>
       <!-- 底部布局 -->
       <a-footer />
@@ -57,11 +58,6 @@ export default {
     return {
       openKeys: ["home"]
     };
-  },
-  watch: {
-    openKeys(val) {
-      this.openKeys.splice(val);
-    }
   },
   methods: {
     changeMenu(openKeys) {

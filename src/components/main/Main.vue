@@ -32,9 +32,9 @@
         </div>
       </a-layout-header>
       <a-layout-content
-        :style="{ background: '#ff', padding: '0', marginTop: '64px' }"
+        :style="{ background: '#ffffff', padding: '0', marginTop: '64px' }"
       >
-        <div>
+        <div :style="{ height: '400px' }">
           <router-view />
         </div>
       </a-layout-content>

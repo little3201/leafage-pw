@@ -47,9 +47,22 @@ export const findUsers = ({ pageNum, pageSize }) => {
 };
 
 /* 根据文章ID获取文章详情 */
-export const getArticleContent = articleId => {
+export const getArticle = articleId => {
   return axios.request({
     url: "/assets/article/" + articleId,
     method: "GET"
+  });
+};
+
+/* 获取用户信息列表 */
+export const findArticles = ({ pageNum, pageSize }) => {
+  const params = {
+    pageNum,
+    pageSize
+  };
+  return axios.request({
+    url: "/assets/article",
+    method: "GET",
+    params
   });
 };

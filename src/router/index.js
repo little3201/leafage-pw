@@ -9,7 +9,14 @@ import "nprogress/nprogress.css"; // progress bar style
 Vue.use(Router);
 NProgress.configure({ showSpinner: false }); // NProgress Configuration
 
-const whiteList = ["/", "/home", "/share", "/photograph", "/register"];
+const whiteList = [
+  "/",
+  "/home",
+  "/share",
+  "/photograph",
+  "/register",
+  "/article"
+];
 
 const router = new Router({
   routes,
