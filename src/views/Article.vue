@@ -1,11 +1,11 @@
 <template>
-  <a-roe>
+  <a-row>
     <a-col :span="6" class="lefgCol">{{ title }}</a-col>
     <a-col :span="12">
       <vue-markdown :source="content" />
     </a-col>
     <a-col :span="6" class="rightCol">www</a-col>
-  </a-roe>
+  </a-row>
 </template>
 
 <script>
