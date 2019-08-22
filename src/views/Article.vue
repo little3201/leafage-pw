@@ -31,8 +31,8 @@ export default {
         response => {
           //设置token
           this.$message.success("获取数据成功");
-          this.content = response.data.articleContent;
-          this.title = response.data.articleTitle;
+          this.content = response.data.content;
+          this.title = response.data.title;
         },
         error => {
           // 执行失败的回调函数
