@@ -1,10 +1,10 @@
 <template>
   <a-row>
-    <a-col :span="6" class="lefgCol">{{ title }}</a-col>
+    <a-col :span="6" class="lefgCol">左侧菜单栏</a-col>
     <a-col :span="12">
       <vue-markdown :source="content" />
     </a-col>
-    <a-col :span="6" class="rightCol">www</a-col>
+    <a-col :span="6" class="rightCol">右侧目录栏</a-col>
   </a-row>
 </template>
 
@@ -29,8 +29,7 @@ export default {
     initArticle(articleId) {
       getArticle(articleId).then(
         response => {
-          //设置token
-          this.$message.success("获取数据成功");
+          //获取数据
           this.content = response.data.content;
           this.title = response.data.title;
         },

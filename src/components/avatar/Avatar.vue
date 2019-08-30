@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <router-link to="/help">
+  <div id="avatar">
+    <router-link class="hrefColor" to="/help">
       <span><a-icon type="question-circle"/></span>
     </router-link>
     <!-- 通知 -->
@@ -8,7 +8,6 @@
     <a-dropdown>
       <span>
         <a-avatar style="color: #f56a00; backgroundColor: #fde3cf">D</a-avatar>
-        小道士
       </span>
       <a-menu slot="overlay" style="top: 22px">
         <a-menu-item key="profile">
@@ -63,5 +62,8 @@ export default {
 <style lang="less" scoped>
 span {
   margin: 0 10px;
+}
+.hrefColor {
+  color: rgba(0, 0, 0, 0.65);
 }
 </style>

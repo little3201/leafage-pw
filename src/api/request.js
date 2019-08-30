@@ -49,7 +49,7 @@ export const findUsers = ({ pageNum, pageSize }) => {
 /* 根据文章ID获取文章详情 */
 export const getArticle = articleId => {
   return axios.request({
-    url: "/assets/article/" + articleId,
+    url: "/article/" + articleId,
     method: "GET"
   });
 };
@@ -61,7 +61,7 @@ export const findArticles = ({ pageNum, pageSize }) => {
     pageSize
   };
   return axios.request({
-    url: "/assets/article",
+    url: "/article",
     method: "GET",
     params
   });

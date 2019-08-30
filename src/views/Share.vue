@@ -1,5 +1,6 @@
 <template>
   <div class="share">
+    <div class="shareHeader">技术驱动未来</div>
     <a-row>
       <a-col :span="4"></a-col>
       <a-col :span="16">
@@ -23,7 +24,7 @@
               </router-link>
               <a-avatar slot="avatar" :src="item.url" />
             </a-list-item-meta>
-            {{ item.content }}
+            {{ item.summary }}
           </a-list-item>
         </a-list>
       </a-col>
@@ -74,5 +75,10 @@ export default {
 .share {
   margin: 0 auto;
   max-width: 90%;
+}
+.shareHeader {
+  height: 200px;
+  font-size: 34px;
+  text-align: center;
 }
 </style>
