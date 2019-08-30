@@ -176,7 +176,13 @@
         <a href="/">Privacy</a>
         <a href="/">Item</a>
       </div>
-      <div class="copyright">Copyright &copy; 2019 Abeille.top Serviced</div>
+      <div class="copyright">
+        Copyright &copy; 2019 ·
+        <a class="hrefColor" href="http://beian.miitbeian.gov.cn">
+          陕ICP备 19017836
+        </a>
+        <span> · Powerd By Wilson Li</span>
+      </div>
     </div>
   </div>
 </template>
