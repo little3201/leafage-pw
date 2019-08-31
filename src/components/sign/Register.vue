@@ -147,7 +147,7 @@
               <a-button
                 :disabled="state.smsSendBtn"
                 @click.stop.prevent="getCaptcha"
-                v-text="(!state.smsSendBtn && 'verify code') || state.time + ' s'"
+                v-text="!state.smsSendBtn && 'verify code' || state.time + ' s'"
               ></a-button>
             </a-col>
           </a-row>
@@ -191,19 +191,16 @@
 import { getSmsCaptcha } from "@/api/request";
 
 const levelNames = {
-  0: "低",
   1: "低",
   2: "中",
   3: "强"
 };
 const levelClass = {
-  0: "error",
   1: "error",
   2: "warning",
   3: "success"
 };
 const levelColor = {
-  0: "#ff0000",
   1: "#ff0000",
   2: "#ff7e05",
   3: "#52c41a"
@@ -323,8 +320,7 @@ export default {
               setTimeout(hide, 2500);
               $notification["success"]({
                 message: "notice",
-                description:
-                  "send code success，it's：" + res.result.captcha,
+                description: "send code success，it's：" + res.result.captcha,
                 duration: 8
               });
             })
@@ -399,6 +395,9 @@ export default {
 }
 .register-button {
   width: 50%;
+}
+.hrefColor {
+  color: rgba(0, 0, 0, 0.65);
 }
 .login {
   float: right;
