@@ -84,7 +84,11 @@
         <a href="_self">条款</a>
       </div>
       <div class="copyright">
-        Copyright &copy; 2019 Abeille.top Serviced
+        Copyright &copy; 2019 ·
+        <a class="hrefColor" href="http://beian.miitbeian.gov.cn">
+          陕ICP备 19017836
+        </a>
+        <span> · Powerd By Wilson Li</span>
       </div>
     </div>
   </div>
@@ -171,7 +175,10 @@ export default {
 }
 </style>
 
-<style lang="less" scoped>
+<style scoped>
+.hrefColor {
+  color: rgba(0, 0, 0, 0.65);
+}
 .form-container {
   width: 300px;
 }

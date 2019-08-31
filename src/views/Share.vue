@@ -1,5 +1,6 @@
 <template>
   <div class="share">
+    <div class="shareHeader">技术驱动未来</div>
     <a-row>
       <a-col :span="4"></a-col>
       <a-col :span="16">
@@ -17,13 +18,13 @@
               alt="logo"
               src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
             />
-            <a-list-item-meta :description="item.articleDescription">
+            <a-list-item-meta :description="item.description">
               <router-link slot="title" to="/article">
-                {{ item.articleTitle }}
+                {{ item.title }}
               </router-link>
-              <a-avatar slot="avatar" :src="item.articleImageUrl" />
+              <a-avatar slot="avatar" :src="item.url" />
             </a-list-item-meta>
-            {{ item.articleContent }}
+            {{ item.summary }}
           </a-list-item>
         </a-list>
       </a-col>
@@ -74,5 +75,10 @@ export default {
 .share {
   margin: 0 auto;
   max-width: 90%;
+}
+.shareHeader {
+  height: 200px;
+  font-size: 34px;
+  text-align: center;
 }
 </style>
