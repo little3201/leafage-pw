@@ -30,7 +30,7 @@ export default {
       getArticle(articleId).then(
         response => {
           //获取数据
-          this.content = response.data.content;
+          this.content = response.data.details;
           this.title = response.data.title;
         },
         error => {
