@@ -12,17 +12,12 @@
                 {{ text }}
               </span>
             </template>
-            <img
-              slot="extra"
-              width="272"
-              alt="logo"
-              src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
-            />
+            <img slot="extra" width="272" :src="item.url" />
             <a-list-item-meta :description="item.description">
               <router-link slot="title" to="/article">
                 {{ item.title }}
               </router-link>
-              <a-avatar slot="avatar" :src="item.url" />
+              <a-avatar slot="avatar" src="http://img.wxcha.com/file/201810/23/5e623a6c2f.jpeg" />
             </a-list-item-meta>
             {{ item.summary }}
           </a-list-item>
@@ -40,8 +35,8 @@ export default {
     return {
       listData: [],
       actions: [
-        { type: "star-o", text: "156" },
-        { type: "like-o", text: "156" },
+        { type: "star", text: "156" },
+        { type: "like", text: "156" },
         { type: "message", text: "2" }
       ]
     };
@@ -57,8 +52,6 @@ export default {
       };
       findArticles(page).then(
         response => {
-          //设置token
-          this.$message.success("获取数据成功");
           this.listData = response.data.content;
         },
         error => {
@@ -74,7 +67,6 @@ export default {
 <style scoped>
 .share {
   margin: 0 auto;
-  max-width: 90%;
 }
 .shareHeader {
   height: 200px;

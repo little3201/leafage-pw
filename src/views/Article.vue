@@ -1,10 +1,10 @@
 <template>
-  <a-row>
-    <a-col :span="6" class="lefgCol">左侧菜单栏</a-col>
-    <a-col :span="12">
-      <vue-markdown :source="content" />
+  <a-row type="flex" justify="space-around">
+    <a-col :span="5" class="lefgCol">左侧菜单栏</a-col>
+    <a-col :span="13">
+      <vue-markdown v-highlight :source="content" />
     </a-col>
-    <a-col :span="6" class="rightCol">右侧目录栏</a-col>
+    <a-col :span="5" class="rightCol">右侧目录栏</a-col>
   </a-row>
 </template>
 

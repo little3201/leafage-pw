@@ -117,6 +117,10 @@ export default {
         if (!err) {
           login(values).then(
             response => {
+              this.$notification.open({
+                message: "Welcome back",
+                description: "miss you much"
+              });
               setToken(response.data.access_token);
               //设置token
               this.$router.push({
@@ -124,6 +128,10 @@ export default {
               });
             },
             error => {
+              this.$notification.open({
+                message: "Ops!!! sorry",
+                description: "an error occured."
+              });
               // 执行失败的回调函数
               this.$message.error(error.message);
             }
