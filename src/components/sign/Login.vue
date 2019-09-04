@@ -46,6 +46,7 @@
               ]"
               type="password"
               placeholder="Password"
+              @keypress="pwdEncrypt"
             >
               <a-icon slot="prefix" type="lock" style="color:rgba(0,0,0,.25)" />
             </a-input>
@@ -108,6 +109,9 @@ export default {
     this.form = this.$form.createForm(this);
   },
   methods: {
+    pwdEncrypt() {
+      //执行加密
+    },
     handleSubmit(e) {
       this.loading = true;
       // 执行校验

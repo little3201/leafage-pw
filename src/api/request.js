@@ -5,12 +5,10 @@ export const login = ({ username, password }) => {
   const params = {
     grant_type: "password",
     username: username,
-    password: password,
-    client_id: username,
-    client_secret: password
+    password: password
   };
   return axios.request({
-    url: "/server/oauth/token",
+    url: "/server/login",
     method: "POST",
     params
   });
