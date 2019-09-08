@@ -2,7 +2,7 @@
   <div class="user-login">
     <div class="content-wrapper">
       <div class="form-container">
-        <h2 class="form-title">Sign Up</h2>
+        <h2 class="form-title">Sign Up To Abeille</h2>
         <a-form ref="formRegister" :form="form" id="formRegister">
           <a-form-item>
             <a-input
@@ -41,9 +41,6 @@
                   :showInfo="false"
                   :strokeColor="passwordLevelColor"
                 />
-                <div style="margin-top: 10px;">
-                  <span>at least six chars, need safety.</span>
-                </div>
               </div>
             </template>
             <a-form-item>
@@ -58,7 +55,7 @@
                     rules: [
                       {
                         required: true,
-                        message: 'at least six chars，match case'
+                        message: 'at least six chars. '
                       },
                       { validator: this.handlePasswordLevel }
                     ],
@@ -80,7 +77,7 @@
                   rules: [
                     {
                       required: true,
-                      message: 'at least six chars，match case'
+                      message: 'at least six chars. '
                     },
                     { validator: this.handlePasswordCheck }
                   ],
@@ -99,7 +96,7 @@
                   rules: [
                     {
                       required: true,
-                      message: 'a right number wanted',
+                      message: 'a right number wanted. ',
                       pattern: /^1[3456789]\d{9}$/
                     },
                     { validator: this.handlePhoneCheck }
@@ -128,7 +125,7 @@
                       rules: [
                         {
                           required: true,
-                          message: 'a verify code wanted'
+                          message: 'a verify code wanted. '
                         }
                       ],
                       validateTrigger: 'blur'
@@ -147,7 +144,7 @@
               <a-button
                 :disabled="state.smsSendBtn"
                 @click.stop.prevent="getCaptcha"
-                v-text="!state.smsSendBtn && 'verify code' || state.time + ' s'"
+                v-text="!state.sendBtn && 'verify code' || state.time + ' s'"
               ></a-button>
             </a-col>
           </a-row>
@@ -211,7 +208,7 @@ export default {
       loading: false,
       state: {
         time: 60,
-        smsSendBtn: false,
+        sendBtn: false,
         passwordLevel: 0,
         passwordLevelChecked: false,
         percent: 10,
