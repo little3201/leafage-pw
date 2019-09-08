@@ -353,6 +353,9 @@ export default {
 .user-login {
   background-image: url("../../assets/background.svg");
 }
+.ant-form-item {
+  margin-bottom: 15px;
+}
 #form-login .login-form-forgot {
   float: right;
 }
