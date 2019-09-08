@@ -115,8 +115,8 @@
             </a-input>
           </a-form-item>
 
-          <a-row :gutter="14">
-            <a-col class="gutter-row" :span="14">
+          <a-row :gutter="13">
+            <a-col class="gutter-row" :span="13">
               <a-form-item>
                 <a-input
                   class="getCaptcha"
@@ -172,9 +172,9 @@
     </div>
     <div class="footer">
       <div class="links">
-        <a href="/">Help</a>
-        <a href="/">Privacy</a>
-        <a href="/">Item</a>
+        <a href="_self">帮助</a>
+        <a href="_self">隐私</a>
+        <a href="_self">条款</a>
       </div>
       <div class="copyright">
         Copyright &copy; 2019 ·
@@ -363,8 +363,7 @@ export default {
   position: absolute;
   width: 100%;
   bottom: 0;
-  padding: 0 16px;
-  margin: 48px 0 24px;
+  margin: 2rem 0 1.2rem 0;
   text-align: center;
 
   .links {
@@ -386,7 +385,7 @@ export default {
 </style>
 <style lang="less" scoped>
 .form-container {
-  width: 330px;
+  width: 19rem;
 }
 .getCaptcha {
   display: block;

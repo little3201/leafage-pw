@@ -70,32 +70,30 @@ export default {
   overflow: hidden;
 }
 .content {
+  margin: 0 auto;
   text-align: center;
+  max-width: 90%;
 }
 .title {
-  font-family: Wawati SC;
-  font-size: 42px;
+  font-size: 2.5rem;
 }
 .description {
-  font-size: 20px;
-}
-.groupDiv {
-  margin: 100px auto;
+  font-size: 1.2rem;
 }
 .leftDiv {
-  margin-right: -25px;
+  margin-right: -2rem;
   background-color: #f6f7f7;
-  height: 500px;
-  width: 500px;
+  height: 35rem;
+  width: 35rem;
   float: right;
 }
 .rightDiv {
   float: left;
-  margin-left: -25px;
-  margin-top: 50px;
+  margin-left: -2rem;
+  margin-top: 4rem;
   background-color: #d4e2e9;
-  height: 500px;
-  width: 500px;
-  padding: 50px;
+  height: 35rem;
+  width: 35rem;
+  padding: 4rem;
 }
 </style>

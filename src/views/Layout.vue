@@ -89,8 +89,7 @@ export default {
 
 <style scoped>
 #home-layout .logo {
-  width: 120px;
-  height: 31px;
+  height: 2rem;
   margin: 8px 24px 16px 10px;
   float: left;
 }

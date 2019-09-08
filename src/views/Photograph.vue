@@ -6,17 +6,17 @@
       <a-col :span="6">
         <a-card hoverable>
           <img src="../assets/beach.jpg" slot="cover" />
-          <a-card-meta title="Europe Street beat">
+          <a-card-meta title="夕斜">
             <template slot="description">
-              www.instagram.com
+              日落西山
             </template>
           </a-card-meta>
         </a-card>
         <a-card hoverable>
           <img src="../assets/sun.jpg" slot="cover" />
-          <a-card-meta title="Europe Street beat">
+          <a-card-meta title="日暮">
             <template slot="description">
-              www.instagram.com
+              夕阳西下
             </template>
           </a-card-meta>
         </a-card>
@@ -24,17 +24,17 @@
       <a-col :span="6">
         <a-card hoverable>
           <img src="../assets/nature.jpg" slot="cover" />
-          <a-card-meta title="Europe Street beat">
+          <a-card-meta title="金沙滩">
             <template slot="description">
-              www.instagram.com
+              金灿灿的沙滩
             </template>
           </a-card-meta>
         </a-card>
         <a-card hoverable>
           <img src="../assets/beach.jpg" slot="cover" />
-          <a-card-meta title="Europe Street beat">
+          <a-card-meta title="夕斜">
             <template slot="description">
-              www.instagram.com
+              日落西山
             </template>
           </a-card-meta>
         </a-card>
@@ -42,9 +42,9 @@
       <a-col :span="6">
         <a-card hoverable>
           <img src="../assets/sun.jpg" slot="cover" />
-          <a-card-meta title="Europe Street beat">
+          <a-card-meta title="日暮">
             <template slot="description">
-              www.instagram.com
+              夕阳西下
             </template>
           </a-card-meta>
         </a-card>

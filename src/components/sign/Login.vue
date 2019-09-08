@@ -31,7 +31,7 @@
               <a-icon slot="prefix" type="user" style="color:rgba(0,0,0,.25)" />
             </a-input>
           </a-form-item>
-          <a-form-item>
+          <a-form-item :style="{ marginBottom: '0' }">
             <a-input
               v-decorator="[
                 'password',
@@ -51,7 +51,7 @@
               <a-icon slot="prefix" type="lock" style="color:rgba(0,0,0,.25)" />
             </a-input>
           </a-form-item>
-          <a-form-item>
+          <a-form-item :style="{ marginBottom: '0' }">
             <a-checkbox
               v-decorator="[
                 'remember',
@@ -156,17 +156,14 @@ export default {
   float: right;
 }
 #form-login .login-form-button {
+  margin-top: 20px;
   width: 100%;
-}
-.form-container {
-  width: 300px;
 }
 .footer {
   position: absolute;
   width: 100%;
   bottom: 0;
-  padding: 0 16px;
-  margin: 48px 0 24px;
+  margin: 2rem 0 1.2rem 0;
   text-align: center;
 
   .links {
@@ -188,10 +185,10 @@ export default {
 </style>
 
 <style scoped>
+.form-container {
+  width: 18.8rem;
+}
 .hrefColor {
   color: rgba(0, 0, 0, 0.65);
-}
-.form-container {
-  width: 300px;
 }
 </style>
