@@ -23,7 +23,7 @@ export default {
     };
   },
   mounted() {
-    this.initArticle("002");
+    this.initArticle(this.articleId);
   },
   methods: {
     initArticle(articleId) {

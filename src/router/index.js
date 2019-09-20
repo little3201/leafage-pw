@@ -27,16 +27,16 @@ const router = new Router({
 /* 路由之前检查token */
 router.beforeEach((to, from, next) => {
   NProgress.start();
-  let token = getToken();
-  if (whiteList.includes(to.fullPath)) {
+//  let token = getToken();
+//  if (whiteList.includes(to.fullPath)) {
+//    next();
+//  } else if (token == null && to.fullPath !== "/login") {
+//    next({
+//      name: "login"
+//    });
+//  } else {
     next();
-  } else if (token == null && to.fullPath !== "/login") {
-    next({
-      name: "login"
-    });
-  } else {
-    next();
-  }
+//  }
 });
 
 /* 路由之后添加token */
