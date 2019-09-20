@@ -12,7 +12,7 @@
                 {{ text }}
               </span>
             </template>
-            <img slot="extra" width="272" :src="item.url" />
+            <img slot="extra" width="272" :src="item.imageUrl" />
             <a-list-item-meta :description="item.description">
               <router-link
                 slot="title"
@@ -26,7 +26,11 @@
                 src="http://img.wxcha.com/file/201810/23/5e623a6c2f.jpeg"
               />
             </a-list-item-meta>
+<<<<<<< HEAD
             {{ item.content | ellipsis }}
+=======
+            {{ item.content }}
+>>>>>>> 53989449f6b7e00bd6043cb7c1e7546c89cbeab0
           </a-list-item>
         </a-list>
       </a-col>

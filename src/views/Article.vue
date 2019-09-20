@@ -16,6 +16,9 @@ export default {
   components: {
     VueMarkdown // 声明组件
   },
+  props: {
+    listData
+  },
   data() {
     return {
       title: "",
@@ -30,7 +33,7 @@ export default {
       getArticle(articleId).then(
         response => {
           //获取数据
-          this.content = response.data.details;
+          this.content = response.data.content;
           this.title = response.data.title;
         },
         error => {
