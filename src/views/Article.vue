@@ -1,10 +1,10 @@
 <template>
   <a-row type="flex" justify="space-around">
-    <a-col :span="5" class="lefgCol">左侧菜单栏</a-col>
+    <a-col :span="5" class="lefgCol">{{ title }}</a-col>
     <a-col :span="13">
       <vue-markdown v-highlight :source="content" />
     </a-col>
-    <a-col :span="5" class="rightCol">右侧目录栏</a-col>
+    <a-col :span="5" class="rightCol">{{ content }}</a-col>
   </a-row>
 </template>
 
@@ -16,9 +16,6 @@ export default {
   components: {
     VueMarkdown // 声明组件
   },
-  props: {
-    listData
-  },
   data() {
     return {
       title: "",
@@ -26,7 +23,7 @@ export default {
     };
   },
   mounted() {
-    this.initArticle(this.articleId);
+    this.initArticle(this.$route.params.articleId);
   },
   methods: {
     initArticle(articleId) {
