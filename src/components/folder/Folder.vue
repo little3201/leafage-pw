@@ -11,14 +11,21 @@
                 {{ text }}
               </span>
             </template>
-            <img slot="extra" width="272" :src="item.imageUrl" />
+            <img slot="extra" width="272" :src="item.url" />
             <a-list-item-meta :description="item.description">
-              <router-link slot="title" to="/article">
+              <router-link
+                slot="title"
+                to="/article"
+                :articleId="item.articleId"
+              >
                 {{ item.title }}
               </router-link>
-              <a-avatar slot="avatar" src="http://img.wxcha.com/file/201810/23/5e623a6c2f.jpeg" />
+              <a-avatar
+                slot="avatar"
+                src="http://img.wxcha.com/file/201810/23/5e623a6c2f.jpeg"
+              />
             </a-list-item-meta>
-            {{ item.content }}
+            {{ item.content | ellipsis }}
           </a-list-item>
         </a-list>
       </a-col>
@@ -27,9 +34,47 @@
 </template>
 
 <script>
+import { findArticles } from "@/api/request";
+
 export default {
   data() {
-    return {};
+    return {
+      listData: [],
+      actions: [
+        { type: "star", text: "156" },
+        { type: "like", text: "156" },
+        { type: "message", text: "2" }
+      ]
+    };
+  },
+  mounted() {
+    this.initArticleList();
+  },
+  methods: {
+    initArticleList() {
+      const page = {
+        pageNum: 0,
+        pageSize: 10
+      };
+      findArticles(page).then(
+        response => {
+          this.listData = response.data;
+        },
+        error => {
+          // 执行失败的回调函数
+          this.$message.error(error.message);
+        }
+      );
+    }
+  },
+  filters: {
+    ellipsis(value) {
+      if (!value) return "";
+      if (value.length > 100) {
+        return value.slice(0, 100) + "...";
+      }
+      return value;
+    }
   }
 };
 </script>
