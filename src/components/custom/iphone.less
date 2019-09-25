@@ -1,18 +1,7 @@
  
-.device *,
-.device *::before,
-.device *::after {
-  box-sizing: border-box;
-  display: block;
-}
- 
 .device {
   margin: 50px auto;
   position: relative;
-}
- 
-.device .frame {
-  z-index: 1;
 }
  
 .iphone-x {
@@ -23,16 +12,14 @@
 .iphone-x .frame {
   background: #222;
   border-radius: 54px;
-  box-shadow: inset 0 0 0 2px #606467, inset 0 0 0 6px #e2e3e4;
+  box-shadow: inset 0 0 0 2px #606467, inset 0 0 0 4px #e2e3e4;
   height: 694px;
-  padding: 22px;
+  padding: 21px;
   width: 342px;
 }
  
 .iphone-x .content {
   background-color: #fff;
-//  background-image: url("bg.jpg");
-  background-position: center center;
   background-size: cover;
   border-radius: 32px;
   height: 650px;
@@ -44,12 +31,10 @@
 .iphone-x .stripe::before {
   border: solid rgba(51, 51, 51, .25);
   border-width: 0 6px;
-  content: "";
   height: 5px;
   left: 0;
   position: absolute;
   width: 100%;
-  z-index: 9;
 }
  
 .iphone-x .stripe::after {
@@ -65,11 +50,10 @@
   border-bottom-right-radius: 16px;
   height: 24px;
   left: 50%;
-  margin-left: -82px;
+  margin-left: -80px;
   position: absolute;
-  top: 22px;
-  width: 164px;
-  z-index: 199;
+  top: 20px;
+  width: 160px;
 }
  
 .iphone-x .header::after,
@@ -150,4 +134,8 @@
   right: -2px;
   top: 160px;
   width: 3px;
+}
+.shape {
+  float: left;
+  shape-outside: polygon(0 0, 0 150px, 16px 154px, 30px 166px, 30px 314px, 16px 326px, 0 330px, 0 0);
 }
