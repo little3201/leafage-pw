@@ -9,7 +9,7 @@ A beautiful blog and photograph share site as a Vue boilerplate. based on  <a hr
 
 [![License](https://img.shields.io/npm/l/package.json.svg?style=flat)](https://github.com/little3201/abeille-ui/blob/master/LICENSE)
 [![Travis branch](https://travis-ci.org/sendya/ant-design-pro-vue.svg?branch=master)](https://travis-ci.org/sendya/ant-design-pro-vue)
-![](https://img.shields.io/cocoapods/v/Abeille-ui.svg?style=flat)
+
 </div>
 
 - 预览: https://abeille.top
