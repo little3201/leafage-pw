@@ -5,14 +5,15 @@ import store from "./store";
 /* ant-design-vue */
 import Antd from "ant-design-vue";
 import "ant-design-vue/dist/antd.less";
-/* highlight.js */
-import Highlight from "@/utils/assist/highlight.js";
+/* mavon-editor */
+import mavonEditor from "mavon-editor";
+import "mavon-editor/dist/css/index.css";
 
 Vue.config.productionTip = false;
 /* Antd */
 Vue.use(Antd);
-/* Highlight */
-Vue.use(Highlight);
+/* mavonEditor */
+Vue.use(mavonEditor);
 
 new Vue({
   router,

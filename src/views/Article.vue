@@ -2,19 +2,33 @@
   <a-row type="flex" justify="space-around">
     <a-col :span="5" class="lefgCol">{{ title }}</a-col>
     <a-col :span="13">
-      <vue-markdown v-highlight :source="content" />
+      <vue-markdown v-marked :source="content" />
     </a-col>
-    <a-col :span="5" class="rightCol">{{ content }}</a-col>
+    <a-col :span="5" class="rightCol">
+      <anchor />
+    </a-col>
   </a-row>
 </template>
 
 <script>
 import VueMarkdown from "vue-markdown"; //直接作为一个组件引入
 import { getArticle } from "@/api/request";
+import Anchor from "./Anchor.vue";
+import hljs from "highlight.js";
+import "highlight.js/styles/railscasts.css";
+
+const highlightCode = () => {
+  const preEl = document.querySelectorAll("pre code");
+
+  preEl.forEach(el => {
+    hljs.highlightBlock(el);
+  });
+};
 
 export default {
   components: {
-    VueMarkdown // 声明组件
+    VueMarkdown, // 声明组件
+    Anchor
   },
   data() {
     return {
@@ -24,6 +38,10 @@ export default {
   },
   mounted() {
     this.initArticle(this.$route.params.articleId);
+    highlightCode();
+  },
+  updated() {
+    highlightCode();
   },
   methods: {
     initArticle(articleId) {
@@ -51,8 +69,3 @@ export default {
   padding: 20px 30px;
 }
 </style>
-
-
-
-
-

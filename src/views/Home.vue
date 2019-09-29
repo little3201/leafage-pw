@@ -2,10 +2,7 @@
   <div id="home">
     <a-carousel autoplay>
       <div>
-        <img src="./../assets/gen.svg" />
-      </div>
-      <div>
-        <img src="./../assets/gen-2.svg" />
+        <iphone />
       </div>
     </a-carousel>
     <div class="content">
@@ -46,7 +43,12 @@
 </template>
 
 <script>
+import Iphone from "@/components/custom/Iphone.vue";
+
 export default {
+  components: {
+    Iphone
+  },
   data() {
     return {};
   },
@@ -65,8 +67,7 @@ export default {
   max-width: 90%;
 }
 .ant-carousel >>> .slick-slide {
-  text-align: center;
-  line-height: 160px;
+  /* line-height: 160px; */
   overflow: hidden;
 }
 .content {

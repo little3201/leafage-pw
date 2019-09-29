@@ -1,6 +1,5 @@
 <template>
   <div class="share">
-    <div class="shareHeader">技术驱动未来</div>
     <a-row>
       <a-col :span="4"></a-col>
       <a-col :span="16">
@@ -67,8 +66,8 @@ export default {
   filters: {
     ellipsis(value) {
       if (!value) return "";
-      if (value.length > 100) {
-        return value.slice(0, 100) + "...";
+      if (value.length > 180) {
+        return value.slice(0, 180) + "...";
       }
       return value;
     }
@@ -78,11 +77,6 @@ export default {
 
 <style scoped>
 .share {
-  margin: 0 auto;
-}
-.shareHeader {
-  height: 200px;
-  font-size: 34px;
-  text-align: center;
+  margin: 50px auto;
 }
 </style>

@@ -144,7 +144,7 @@
               <a-button
                 :disabled="state.smsSendBtn"
                 @click.stop.prevent="getCaptcha"
-                v-text="!state.sendBtn && 'verify code' || state.time + ' s'"
+                v-text="(!state.sendBtn && 'verify code') || state.time + ' s'"
               ></a-button>
             </a-col>
           </a-row>
