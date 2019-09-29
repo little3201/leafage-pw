@@ -12,7 +12,7 @@ export default [
       {
         path: "/home",
         name: "home",
-        component: () => import("@/components/custom/Iphone.vue")
+        component: () => import("@/views/Home.vue")
       },
       {
         path: "/share",

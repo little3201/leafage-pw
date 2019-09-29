@@ -1,10 +1,12 @@
 <template>
   <div id="home">
+<!--
     <a-carousel autoplay>
       <div>
-        <iphone />
+        <mobile />
       </div>
     </a-carousel>
+-->
     <div class="content">
       <div>
         <p class="title">Abeille 小程序+</p>
@@ -43,11 +45,11 @@
 </template>
 
 <script>
-import Iphone from "@/components/custom/Iphone.vue";
+import Mobile from "@/components/custom/Mobile.vue";
 
 export default {
   components: {
-    Iphone
+    Mobile
   },
   data() {
     return {};

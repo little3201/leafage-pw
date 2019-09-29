@@ -54,7 +54,7 @@ export default {
       };
       findArticles(page).then(
         response => {
-          this.listData = response.data.content;
+          this.listData = response.data;
         },
         error => {
           // 执行失败的回调函数
@@ -77,6 +77,6 @@ export default {
 
 <style scoped>
 .share {
-  margin: 50px auto;
+  margin: 30px auto;
 }
 </style>

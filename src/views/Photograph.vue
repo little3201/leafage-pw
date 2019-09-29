@@ -1,6 +1,5 @@
 <template>
   <div>
-    <div class="photoHeader">记录世界的美</div>
     <a-row type="flex" justify="space-around" align="top">
       <a-col :span="1"></a-col>
       <a-col :span="6">
