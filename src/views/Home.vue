@@ -1,12 +1,10 @@
 <template>
   <div id="home">
-<!--
-    <a-carousel autoplay>
+    <a-carousel>
       <div>
         <mobile />
       </div>
     </a-carousel>
--->
     <div class="content">
       <div>
         <p class="title">Abeille 小程序+</p>
