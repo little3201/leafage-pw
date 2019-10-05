@@ -39,7 +39,7 @@
         </div>
       </a-layout-content>
       <!-- 底部布局 -->
-      <a-footer />
+      <g-footer />
     </a-layout>
   </div>
 </template>
@@ -47,12 +47,12 @@
 <script>
 // components
 import Avatar from "@/components/avatar/Avatar.vue";
-import AFooter from "@/components/main/AFooter.vue";
+import GFooter from "@/components/main/GFooter.vue";
 
 export default {
   components: {
     Avatar,
-    AFooter
+    GFooter
   },
   data() {
     return {

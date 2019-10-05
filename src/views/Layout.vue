@@ -33,7 +33,7 @@
         :style="{
           background: '#ffffff',
           padding: '0',
-          marginTop: '64px'
+          marginTop: '34px'
         }"
       >
         <div :style="{ marginTop: '30px' }">
@@ -42,17 +42,17 @@
         <a-back-top />
       </a-layout-content>
       <!-- 底部布局 -->
-      <a-footer />
+      <g-footer />
     </a-layout>
   </div>
 </template>
 
 <script>
-import AFooter from "@/components/main/AFooter.vue";
+import GFooter from "@/components/main/GFooter.vue";
 
 export default {
   components: {
-    AFooter
+    GFooter
   },
   data() {
     return {

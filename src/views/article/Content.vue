@@ -1,19 +1,11 @@
 <template>
-  <a-row type="flex" justify="space-around">
-    <a-col :span="5" class="lefgCol">{{ title }}</a-col>
-    <a-col :span="13">
-      <vue-markdown v-marked :source="content" />
-    </a-col>
-    <a-col :span="5" class="rightCol">
-      <anchor />
-    </a-col>
-  </a-row>
+  <div>
+    <vue-markdown :source="content" />
+  </div>
 </template>
 
 <script>
-import VueMarkdown from "vue-markdown"; //直接作为一个组件引入
-import { getArticle } from "@/api/request";
-import Anchor from "./Anchor.vue";
+import VueMarkdown from "vue-markdown";
 import hljs from "highlight.js";
 import "highlight.js/styles/railscasts.css";
 
@@ -27,45 +19,16 @@ const highlightCode = () => {
 
 export default {
   components: {
-    VueMarkdown, // 声明组件
-    Anchor
+    VueMarkdown // 声明组件
   },
-  data() {
-    return {
-      title: "",
-      content: ""
-    };
-  },
+  props: ["content"],
   mounted() {
-    this.initArticle(this.$route.params.articleId);
     highlightCode();
   },
   updated() {
     highlightCode();
-  },
-  methods: {
-    initArticle(articleId) {
-      getArticle(articleId).then(
-        response => {
-          //获取数据
-          this.content = response.data.content;
-          this.title = response.data.title;
-        },
-        error => {
-          // 执行失败的回调函数
-          this.$message.error(error.message);
-        }
-      );
-    }
   }
 };
 </script>
-<style scoped>
-.lefgCol {
-  text-align: right;
-  padding: 20px 30px;
-}
-.rightCol {
-  padding: 20px 30px;
-}
-</style>
+
+<style></style>

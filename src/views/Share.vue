@@ -13,15 +13,10 @@
             </template>
             <img slot="extra" width="272" :src="item.imageUrl" />
             <a-list-item-meta :description="item.description">
-              <router-link slot="title" :to="'/article/' + item.articleId">
-                {{ item.title }}
-              </router-link>
-              <a-avatar
-                slot="avatar"
-                src="http://img.wxcha.com/file/201810/23/5e623a6c2f.jpeg"
-              />
+              <router-link slot="title" :to="'/article/' + item.articleId">{{ item.title }}</router-link>
+              <a-avatar slot="avatar" src="http://img.wxcha.com/file/201810/23/5e623a6c2f.jpeg" />
             </a-list-item-meta>
-            {{ item.content | ellipsis }}
+            <f-content :content="item.summary | ellipsis" />
           </a-list-item>
         </a-list>
       </a-col>
@@ -30,9 +25,13 @@
 </template>
 
 <script>
+import FContent from "./article/Content.vue";
 import { findArticles } from "@/api/request";
 
 export default {
+  components: {
+    FContent
+  },
   data() {
     return {
       listData: [],
@@ -54,7 +53,7 @@ export default {
       };
       findArticles(page).then(
         response => {
-          this.listData = response.data;
+          this.listData = response.data.content;
         },
         error => {
           // 执行失败的回调函数
