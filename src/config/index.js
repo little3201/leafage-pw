@@ -10,6 +10,6 @@ export default {
    */
   baseURL: {
     dev: "http://localhost",
-    pro: "https://abeille.top"
+    prod: "https://abeille.top/api"
   }
 };
