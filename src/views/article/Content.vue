@@ -10,8 +10,9 @@ import hljs from "highlight.js";
 import "highlight.js/styles/railscasts.css";
 
 const highlightCode = () => {
+  //获取所有pre code的元素
   const preEl = document.querySelectorAll("pre code");
-
+  //循环处理pre code的元素的数据
   preEl.forEach(el => {
     hljs.highlightBlock(el);
   });
