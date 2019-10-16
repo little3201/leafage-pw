@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { getArticle } from "@/api/request";
+import { fetchArticle } from "@/api/request";
 import ArticleTitle from "./ArticleTitle.vue";
 import FContent from "./Content.vue";
 import Anchor from "./Anchor.vue";
@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     initArticle(articleId) {
-      getArticle(articleId).then(
+      fetchArticle(articleId).then(
         response => {
           //获取数据
           this.content = response.data.content;

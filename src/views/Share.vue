@@ -13,8 +13,10 @@
             </template>
             <img slot="extra" width="272" :src="item.imageUrl" />
             <a-list-item-meta :description="item.description">
-              <router-link slot="title" :to="'/article/' + item.articleId">{{ item.title }}</router-link>
-              <a-avatar slot="avatar" src="http://img.wxcha.com/file/201810/23/5e623a6c2f.jpeg" />
+              <router-link slot="title" :to="'/article/' + item.articleId">
+                {{ item.title }}
+              </router-link>
+              <a-avatar slot="avatar" :src="avatar" />
             </a-list-item-meta>
             <f-content :content="item.summary | ellipsis" />
           </a-list-item>
@@ -26,7 +28,7 @@
 
 <script>
 import FContent from "./article/Content.vue";
-import { findArticles } from "@/api/request";
+import { fetchArticles } from "@/api/request";
 
 export default {
   components: {
@@ -35,6 +37,7 @@ export default {
   data() {
     return {
       listData: [],
+      avatar: "",
       actions: [
         { type: "star", text: "156" },
         { type: "like", text: "156" },
@@ -51,8 +54,9 @@ export default {
         pageNum: 0,
         pageSize: 10
       };
-      findArticles(page).then(
+      fetchArticles(page).then(
         response => {
+          this.avatar = "http://img.wxcha.com/file/201810/23/5e623a6c2f.jpeg";
           this.listData = response.data.content;
         },
         error => {

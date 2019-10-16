@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import { findArticles } from "@/api/request";
+import { fetchArticles } from "@/api/request";
 
 export default {
   data() {
@@ -56,7 +56,7 @@ export default {
         pageNum: 0,
         pageSize: 10
       };
-      findArticles(page).then(
+      fetchArticles(page).then(
         response => {
           this.listData = response.data;
         },

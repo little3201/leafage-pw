@@ -185,7 +185,7 @@
 </template>
 
 <script>
-import { getSmsCaptcha } from "@/api/request";
+import { fetchSmsCaptcha } from "@/api/request";
 
 const levelNames = {
   1: "低",
@@ -312,7 +312,7 @@ export default {
             }
           }, 1000);
           const hide = $message.loading("verify code sending..", 0);
-          getSmsCaptcha({ mobile: values.mobile })
+          fetchSmsCaptcha({ mobile: values.mobile })
             .then(res => {
               setTimeout(hide, 2500);
               $notification["success"]({
