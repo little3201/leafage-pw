@@ -2,15 +2,17 @@
   <div>
     <article-title style="text-align: center" :title="title" />
     <a-row type="flex" justify="space-around">
-      <a-col :span="5" class="lefgCol">
+      <a-col :span="1" />
+      <a-col :span="4" class="lefgCol">
         <author />
       </a-col>
       <a-col :span="13">
         <f-content :content="content" />
       </a-col>
-      <a-col :span="5" class="rightCol">
-        <anchor />
+      <a-col :span="4" class="rightCol">
+        <catalog :catalog="catalog" />
       </a-col>
+      <a-col :span="1" />
     </a-row>
   </div>
 </template>
@@ -20,17 +22,18 @@ import { fetchArticle } from "@/api/request";
 import ArticleTitle from "./ArticleTitle.vue";
 import Author from "./Author.vue";
 import FContent from "./Content.vue";
-import Anchor from "./Anchor.vue";
+import Catalog from "./Catalog.vue";
 
 export default {
   components: {
     ArticleTitle,
     Author,
-    Anchor,
+    Catalog,
     FContent
   },
   data() {
     return {
+      catalog: "1.1 、分析原理",
       title: "",
       content: ""
     };
@@ -57,10 +60,9 @@ export default {
 </script>
 <style scoped>
 .lefgCol {
-  text-align: right;
-  padding: 20px 30px;
+  padding: 30px 20px;
 }
 .rightCol {
-  padding: 20px 30px;
+  padding: 30px 20px;
 }
 </style>
