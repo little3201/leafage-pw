@@ -2,7 +2,9 @@
   <div>
     <article-title style="text-align: center" :title="title" />
     <a-row type="flex" justify="space-around">
-      <a-col :span="5" class="lefgCol">{{ title }}</a-col>
+      <a-col :span="5" class="lefgCol">
+        <author />
+      </a-col>
       <a-col :span="13">
         <f-content :content="content" />
       </a-col>
@@ -16,12 +18,14 @@
 <script>
 import { fetchArticle } from "@/api/request";
 import ArticleTitle from "./ArticleTitle.vue";
+import Author from "./Author.vue";
 import FContent from "./Content.vue";
 import Anchor from "./Anchor.vue";
 
 export default {
   components: {
     ArticleTitle,
+    Author,
     Anchor,
     FContent
   },

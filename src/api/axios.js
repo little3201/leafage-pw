@@ -7,7 +7,7 @@ import "nprogress/nprogress.css"; // progress bar style
 
 class HttpRequest {
   // 如果传入参数就用传入的，没有就用baseURL.dev
-  constructor(baseUrl = config.baseURL.dev) {
+  constructor(baseUrl = config.baseURL.prod) {
     this.baseUrl = baseUrl;
     this.queue = {};
   }

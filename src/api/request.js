@@ -8,7 +8,7 @@ export const login = ({ username, password }) => {
     password: password
   };
   return axios.request({
-    url: "/server/login",
+    url: "/server/oauth/token",
     method: "POST",
     params
   });

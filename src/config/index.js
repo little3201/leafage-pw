@@ -9,7 +9,7 @@ export default {
    * @description api请求基础路径
    */
   baseURL: {
-    dev: "http://localhost",
+    dev: "https://abeille.top/api",
     prod: "https://abeille.top/api"
   }
 };
