@@ -1,18 +1,12 @@
 <template>
   <div>
-    <article-title style="text-align: center" :title="title" />
-    <a-row type="flex" justify="space-around">
-      <a-col :span="1" />
-      <a-col :span="4" class="lefgCol">
-        <author />
+    <a-row :gutter="24" type="flex" justify="space-around">
+      <a-col :md="24" :lg="4">
+        <author class="box-border" />
       </a-col>
-      <a-col :span="13">
+      <a-col :md="24" :lg="20" :xs="18">
         <f-content :content="content" />
       </a-col>
-      <a-col :span="4" class="rightCol">
-        <catalog :catalog="catalog" />
-      </a-col>
-      <a-col :span="1" />
     </a-row>
   </div>
 </template>
@@ -59,10 +53,8 @@ export default {
 };
 </script>
 <style scoped>
-.lefgCol {
-  padding: 30px 20px;
-}
-.rightCol {
-  padding: 30px 20px;
+.box-border {
+  border: 1.2px solid #ebedf0;
+  padding: 2rem 1.5rem;
 }
 </style>

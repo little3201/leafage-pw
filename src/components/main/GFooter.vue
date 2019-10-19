@@ -2,7 +2,7 @@
   <div>
     <a-layout-footer :style="{ textAlign: 'center' }">
       <div class="links">
-        <a href="https://www.abeille.top/" target="_blank">
+        <a href="https://www.linkedin.com/in/文强-李-b90073104" target="_blank">
           <a-icon type="linkedin" />
         </a>
         <a href="https://github.com/little3201/abeille-ui" target="_blank">

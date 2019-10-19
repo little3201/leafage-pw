@@ -92,12 +92,11 @@ export default {
 
 <style scoped>
 #main-layout .logo {
-  width: 120px;
-  height: 31px;
-  margin: 8px 24px 16px 10px;
+  margin: 8px 10px 16px 10px;
   float: left;
 }
 .ant-layout-header {
+  padding: 0px 80px;
   background: #ffffff;
   border-bottom: 1px solid #e8e8e8;
 }

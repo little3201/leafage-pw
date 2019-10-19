@@ -1,5 +1,5 @@
 <template>
-  <div class="profile">
+  <a-card>
     <div class="swapper">
       <div class="avatar">
         <img src="http://img.wxcha.com/file/201810/23/5e623a6c2f.jpeg" />
@@ -22,8 +22,7 @@
       <div class="tagsTitle">标签</div>
       <div>
         <template v-for="tag in tags">
-          <a-tooltip v-if="tag.length > 20" :key="tag" :title="tag">
-          </a-tooltip>
+          <a-tooltip v-if="tag.length > 20" :key="tag" :title="tag"></a-tooltip>
           <a-tag v-else :key="tag">{{ tag }}</a-tag>
         </template>
       </div>
@@ -40,7 +39,7 @@
         </template>
       </div>
     </div>
-  </div>
+  </a-card>
 </template>
 
 <script>

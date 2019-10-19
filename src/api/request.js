@@ -10,6 +10,9 @@ export const login = ({ username, password }) => {
   return axios.request({
     url: "/server/oauth/token",
     method: "POST",
+    headers: {
+      "Authorization": `Basic ${window.btoa("abeille:abeille")}`,
+    },
     params
   });
 };
