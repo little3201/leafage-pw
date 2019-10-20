@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <a-row :gutter="24" type="flex" justify="space-around">
-      <a-col :md="24" :lg="4">
-        <author class="box-border" />
+  <div :style="{ margin: '3rem auto' }">
+    <a-row :gutter="24" type="flex" justify="center">
+      <a-col :lg="5" :md="22">
+        <author />
       </a-col>
-      <a-col :md="24" :lg="20" :xs="18">
+      <a-col :lg="16" :md="22" :xs="21">
         <f-content :content="content" />
       </a-col>
     </a-row>
@@ -13,21 +13,16 @@
 
 <script>
 import { fetchArticle } from "@/api/request";
-import ArticleTitle from "./ArticleTitle.vue";
 import Author from "./Author.vue";
 import FContent from "./Content.vue";
-import Catalog from "./Catalog.vue";
 
 export default {
   components: {
-    ArticleTitle,
     Author,
-    Catalog,
     FContent
   },
   data() {
     return {
-      catalog: "1.1 、分析原理",
       title: "",
       content: ""
     };
@@ -52,9 +47,4 @@ export default {
   }
 };
 </script>
-<style scoped>
-.box-border {
-  border: 1.2px solid #ebedf0;
-  padding: 2rem 1.5rem;
-}
-</style>
+<style scoped></style>

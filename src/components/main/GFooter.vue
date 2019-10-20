@@ -8,6 +8,12 @@
         <a href="https://github.com/little3201/abeille-ui" target="_blank">
           <a-icon type="github" />
         </a>
+        <a-popover>
+          <template slot="content">
+            <img class="wechat" src="../../assets/wechat.jpg" />
+          </template>
+          <a-icon :style="{ color: 'rgba(0, 0, 0, 0.45)' }" type="wechat" />
+        </a-popover>
       </div>
       <div class="copyright">
         Copyright &copy; 2019 ·
@@ -48,5 +54,9 @@ export default {
 .copyright {
   color: rgba(0, 0, 0, 0.45);
   font-size: 14px;
+}
+.wechat {
+  width: 10rem;
+  height: 10rem;
 }
 </style>

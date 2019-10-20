@@ -2,7 +2,7 @@
   <div class="layout">
     <a-layout id="main-layout">
       <a-layout-header :style="{ position: 'fixed', zIndex: 1, width: '100%' }">
-        <div class="logo">
+        <div>
           <router-link to="/">
             <img class="logo" src="../../assets/logo.svg" />
           </router-link>
@@ -92,7 +92,7 @@ export default {
 
 <style scoped>
 #main-layout .logo {
-  margin: 8px 10px 16px 10px;
+  margin: 16px 10px 16px 10px;
   float: left;
 }
 .ant-layout-header {

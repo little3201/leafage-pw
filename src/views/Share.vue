@@ -1,8 +1,7 @@
 <template>
-  <div class="share">
-    <a-row>
-      <a-col :span="4"></a-col>
-      <a-col :span="16">
+  <div :style="{ margin: '3rem auto' }">
+    <a-row :gutter="24" type="flex" justify="center">
+      <a-col :lg="18" :md="20" :xs="20">
         <a-list itemLayout="vertical" size="large" :dataSource="listData">
           <a-list-item slot="renderItem" slot-scope="item" key="item.title">
             <template slot="actions" v-for="{ type, text } in actions">
@@ -69,8 +68,8 @@ export default {
   filters: {
     ellipsis(value) {
       if (!value) return "";
-      if (value.length > 180) {
-        return value.slice(0, 180) + "...";
+      if (value.length > 160) {
+        return value.slice(0, 160) + "...";
       }
       return value;
     }
@@ -78,8 +77,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.share {
-  margin: 30px auto;
-}
-</style>
+<style scoped></style>
