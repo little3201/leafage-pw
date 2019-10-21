@@ -1,5 +1,5 @@
 <template>
-  <div class="layout">
+  <div id="main">
     <a-layout id="main-layout">
       <a-layout-header :style="{ position: 'fixed', zIndex: 1, width: '100%' }">
         <div>
@@ -23,10 +23,10 @@
               <a-icon type="dashboard" />看板
             </a-menu-item>
             <a-menu-item key="folder">
-              <a-icon type="folder" />文章管理
+              <a-icon type="folder" />博文管理
             </a-menu-item>
             <a-menu-item key="appstore">
-              <a-icon type="appstore" />资源管理
+              <a-icon type="appstore" />分享管理
             </a-menu-item>
           </a-menu>
         </div>
@@ -96,13 +96,12 @@ export default {
   float: left;
 }
 .ant-layout-header {
-  padding: 0px 80px;
+  padding: 0px 5rem;
   background: #ffffff;
   border-bottom: 1px solid #e8e8e8;
 }
 .layout-nav {
   float: right;
-  margin-right: 50px;
 }
 .avatar {
   float: right;

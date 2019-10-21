@@ -1,7 +1,7 @@
 <template>
   <div :style="{ margin: '3rem auto' }">
     <a-row :gutter="24" type="flex" justify="center">
-      <a-col :lg="5" :md="22">
+      <a-col :lg="5" :md="0" :xs="0">
         <author />
       </a-col>
       <a-col :lg="16" :md="22" :xs="21">

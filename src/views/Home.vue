@@ -18,12 +18,12 @@
     </div>
     <div :style="{ margin: '5rem auto' }">
       <a-row :gutter="24" type="flex" justify="center">
-        <a-col :lg="10" :md="20" :xs="22" :push="1">
+        <a-col :lg="10" :md="20" :xs="22">
           <div class="leftDiv">
             <img src="../assets/book.png" />
           </div>
         </a-col>
-        <a-col :lg="10" :md="20" :xs="22" :pull="1">
+        <a-col :lg="10" :md="20" :xs="22">
           <div class="rightDiv">
             <p class="title">用杂志小程序完整呈现你的品牌</p>
             <p class="description">
@@ -56,18 +56,21 @@ export default {
 }
 .ant-carousel >>> .slick-slide {
   text-align: center;
+  max-height: 800px;
 }
 .ant-carousel >>> .slick-slide .first {
-  max-height: 45rem;
+  padding-top: 56.25%; /* 解决图片比例缩放，计算方法：例如：1920*1080 则 值为 1080 / 1920 * 100% = 56.25% */
   background-image: url("../assets/carousel-one.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 .ant-carousel >>> .slick-slide .second {
-  max-height: 45rem;
+  padding-top: 56.25%;
   background-image: url("../assets/carousel-two.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 .content {
   margin: 20px auto;
@@ -84,10 +87,6 @@ export default {
   background-color: #f6f7f7;
   max-height: 35rem;
   max-width: 35rem;
-}
-.leftDiv img {
-  max-height: 100%;
-  max-width: 100%;
 }
 .rightDiv {
   margin-top: 4rem;

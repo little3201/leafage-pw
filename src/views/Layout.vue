@@ -1,34 +1,6 @@
 <template>
   <div name="home">
     <a-layout id="home-layout">
-<!--
-      <a-layout-sider
-        breakpoint="lg"
-        collapsedWidth="0"
-        @collapse="onCollapse"
-        @breakpoint="onBreakpoint"
-      >
-        <a-menu
-          theme="light"
-          mode="inline"
-          :openKeys="openKeys"
-          :defaultSelectedKeys="['home']"
-          :style="{ lineHeight: '62px' }"
-          @click="changeMenu"
-        >
-          <a-menu-item key="home"><a-icon type="home" />首页</a-menu-item>
-          <a-menu-item key="share">
-            <a-icon type="share-alt" />技术分享
-          </a-menu-item>
-          <a-menu-item key="camera">
-            <a-icon type="camera" />摄影博客
-          </a-menu-item>
-          <a-menu-item key="setting">
-            <a-icon type="setting" />控制台
-          </a-menu-item>
-        </a-menu>
-      </a-layout-sider>
--->
       <a-layout-header :style="{ position: 'fixed', zIndex: 1, width: '100%' }">
         <div>
           <router-link to="/">
