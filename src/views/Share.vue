@@ -1,42 +1,57 @@
 <template>
   <div :style="{ margin: '3rem auto' }">
     <a-row :gutter="24" type="flex" justify="center">
-      <a-col :lg="18" :md="20" :xs="20">
-        <a-list itemLayout="vertical" size="large" :dataSource="listData">
-          <a-list-item slot="renderItem" slot-scope="item" key="item.title">
-            <template slot="actions" v-for="{ type, text } in actions">
-              <span :key="type">
-                <a-icon :type="type" style="margin-right: 8px" />
-                {{ text }}
-              </span>
-            </template>
-            <img slot="extra" width="272" :src="item.imageUrl" />
-            <a-list-item-meta :description="item.description">
-              <router-link slot="title" :to="'/article/' + item.articleId">
-                {{ item.title }}
-              </router-link>
-              <a-avatar slot="avatar" :src="avatar" />
-            </a-list-item-meta>
-            <f-content :content="item.summary | ellipsis" />
-          </a-list-item>
-        </a-list>
+      <a-col :lg="6" :md="20" :xs="20">
+        <a-card hoverable style="width: 350px">
+          <img
+            src="https://ccdn.goodq.top/caches/3ddfe819fbff4df42c2816872195b7de/aHR0cHM6Ly81ZDQyNDBiMjU4OWM5LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDcvNmI3ZWRjZTcwNDRlYjc3Y2Q2ZDllZDU4YmJjMzBlNGEuanBn.jpg"
+            slot="cover"
+          />
+          <a-card-meta title="特斯拉CTO离职 公司股价受挫下跌跌超11%" description="实际上，此前为了提高利润率并实现盈利，特斯拉已经进行了裁员，并承诺关闭一些门店以降低成本。其目标是在第三季度实现盈利，为此，特斯拉在近几个月进行了产品定价调整">
+          </a-card-meta>
+        </a-card>
+      </a-col>
+      <a-col :lg="6" :md="20" :xs="20">
+        <a-card hoverable style="width: 350px">
+          <img
+  src="https://ccdn.goodq.top/caches/3ddfe819fbff4df42c2816872195b7de/aHR0cHM6Ly81ZDQyNDBiMjU4OWM5LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDcvNDFmMzM4YTM4NjM5MWEzYjJkMzY0MjYxNWMyOWY1ZTguanBn.jpg"
+            slot="cover"
+          />
+          <a-card-meta title="确保群众“舌尖上的安全”有了明确时间表" description="实际上，此前为了提高利润率并实现盈利，特斯拉已经进行了裁员，并承诺关闭一些门店以降低成本。其目标是在第三季度实现盈利">
+          </a-card-meta>
+        </a-card>
+      </a-col>
+      <a-col :lg="6" :md="20" :xs="20">
+        <a-card>
+          <h3>最新文章</h3>
+          <a-list itemLayout="vertical" size="large" :dataSource="listData">
+            <a-list-item slot="renderItem" slot-scope="item" key="item.title">
+              <img
+                class="item-img"
+                slot="extra"
+                width="100"
+                :src="item.imageUrl"
+              />
+              <a-list-item-meta>
+                <router-link slot="title" :to="'/article/' + item.articleId">
+                  {{ item.title }}
+                </router-link>
+              </a-list-item-meta>
+            </a-list-item>
+          </a-list>
+        </a-card>
       </a-col>
     </a-row>
   </div>
 </template>
 
 <script>
-import FContent from "./article/Content.vue";
 import { fetchArticles } from "@/api/request";
 
 export default {
-  components: {
-    FContent
-  },
   data() {
     return {
       listData: [],
-      avatar: "",
       actions: [
         { type: "star", text: "156" },
         { type: "like", text: "156" },
@@ -55,7 +70,6 @@ export default {
       };
       fetchArticles(page).then(
         response => {
-          this.avatar = "http://img.wxcha.com/file/201810/23/5e623a6c2f.jpeg";
           this.listData = response.data.content;
         },
         error => {

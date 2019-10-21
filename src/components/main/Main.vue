@@ -34,9 +34,7 @@
       <a-layout-content
         :style="{ background: '#ffffff', padding: '0', marginTop: '64px' }"
       >
-        <div :style="{ height: '400px' }">
-          <router-view />
-        </div>
+        <router-view />
       </a-layout-content>
       <!-- 底部布局 -->
       <g-footer />
@@ -92,6 +90,7 @@ export default {
 
 <style scoped>
 #main-layout .logo {
+  height: 2rem;
   margin: 16px 10px 16px 10px;
   float: left;
 }

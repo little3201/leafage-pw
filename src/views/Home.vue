@@ -6,10 +6,11 @@
     </a-carousel>
     <div class="content">
       <div>
-        <p class="title">Abeille 小程序+</p>
+        <p class="title">关于我...</p>
         <p class="description">
-          小程序主动打开放大倍数可达 5.55，为订阅号提升阅读量 20.28%
-          <br />现在注册，我们将为有复杂需求的内容品牌，定制一份小程序建议方案
+          Abeille 是一款简单、便捷的分享，吐槽之地，可以让您畅所欲言。
+          <br />我们的愿景，将传统的编码工作转化为直观的拖拽操作和文字录入。
+          <br />这是一款简单、便捷的工具，可以帮助您记录生活的点滴。
         </p>
         <a-button size="large" :style="{ marginTop: '2rem' }">
           立即使用
@@ -34,6 +35,30 @@
           </div>
         </a-col>
       </a-row>
+    </div>
+    <div>
+      <a-timeline mode="alternate">
+        <a-timeline-item>
+          最近，我又要活了，已经在服务器中开始部署了。。。哈哈😄😄😄
+        </a-timeline-item>
+        <a-timeline-item color="green">
+          时间过的真快，2019年中询了，我可能要凉了。。。
+        </a-timeline-item>
+        <a-timeline-item>
+          <a-icon slot="dot" type="clock-circle-o" style="font-size: 16px;" />
+          经过了多少次的推翻，重写，我开始有了自己清晰的样子
+        </a-timeline-item>
+        <a-timeline-item color="red">
+          过了不知道多久，我有了一点点模样
+        </a-timeline-item>
+        <a-timeline-item>
+          毫无头绪的主人，在迷茫中，摸爬着。。。
+        </a-timeline-item>
+        <a-timeline-item>
+          <a-icon slot="dot" type="clock-circle-o" style="font-size: 16px;" />
+          2018年7月的某一天，我诞生了。。。
+        </a-timeline-item>
+      </a-timeline>
     </div>
   </div>
 </template>

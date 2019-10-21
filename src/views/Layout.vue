@@ -17,11 +17,17 @@
             @click="changeMenu"
           >
             <a-menu-item key="home"><a-icon type="home" />首页</a-menu-item>
-            <a-menu-item key="share">
-              <a-icon type="share-alt" />技术博客
+            <a-menu-item key="about">
+              <a-icon type="share-alt" />关于我
+            </a-menu-item>
+            <a-menu-item key="travel">
+              <a-icon type="share-alt" />旅行篇
             </a-menu-item>
             <a-menu-item key="camera">
-              <a-icon type="camera" />摄影分享
+              <a-icon type="camera" />摄影
+            </a-menu-item>
+            <a-menu-item key="share">
+              <a-icon type="share-alt" />博客
             </a-menu-item>
             <a-menu-item key="setting">
               <a-icon type="setting" />控制台
