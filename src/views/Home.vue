@@ -20,13 +20,18 @@
     <div :style="{ margin: '5rem auto' }">
       <a-row :gutter="24" type="flex" justify="center">
         <a-col :lg="10" :md="20" :xs="22">
-          <div class="leftDiv">
-            <img src="../assets/book.png" />
+          <div :style="{ margin: '4rem auto', textAlign: 'right' }">
+            <p class="title">用杂志小程序完整呈现你的品牌</p>
+            <p class="description">
+              聚合全平台精选内容，多种排版样式自由组合
+              <br />自助配置 15 种品牌视觉元素
+              <br />基于话题的社群互动，推送通知唤醒用户
+            </p>
           </div>
         </a-col>
         <a-col :lg="10" :md="20" :xs="22">
-          <div class="rightDiv">
-            <p class="title">用杂志小程序完整呈现你的品牌</p>
+          <div class="box">
+            <p class="title">想你所想</p>
             <p class="description">
               聚合全平台精选内容，多种排版样式自由组合
               <br />自助配置 15 种品牌视觉元素
@@ -103,18 +108,12 @@ export default {
   max-width: 90%;
 }
 .title {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 .description {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
-.leftDiv {
-  background-color: #f6f7f7;
-  max-height: 35rem;
-  max-width: 35rem;
-}
-.rightDiv {
-  margin-top: 4rem;
+.box {
   background-color: #d4e2e9;
   max-height: 35rem;
   max-width: 35rem;

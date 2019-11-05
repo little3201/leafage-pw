@@ -1,7 +1,7 @@
 <template>
   <div :style="{ margin: '3rem auto' }">
     <a-row :gutter="24" type="flex" justify="center">
-      <a-col :lg="6" :md="20" :xs="20">
+      <a-col :xl="5" :lg="6" :md="20" :xs="20">
         <a-card hoverable style="width: 350px">
           <img
             src="https://ccdn.goodq.top/caches/3ddfe819fbff4df42c2816872195b7de/aHR0cHM6Ly81ZDQyNDBiMjU4OWM5LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDcvNmI3ZWRjZTcwNDRlYjc3Y2Q2ZDllZDU4YmJjMzBlNGEuanBn.jpg"
@@ -11,7 +11,7 @@
           </a-card-meta>
         </a-card>
       </a-col>
-      <a-col :lg="6" :md="20" :xs="20">
+      <a-col :xl="5" :lg="6" :md="20" :xs="20">
         <a-card hoverable style="width: 350px">
           <img
   src="https://ccdn.goodq.top/caches/3ddfe819fbff4df42c2816872195b7de/aHR0cHM6Ly81ZDQyNDBiMjU4OWM5LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDcvNDFmMzM4YTM4NjM5MWEzYjJkMzY0MjYxNWMyOWY1ZTguanBn.jpg"
@@ -21,7 +21,7 @@
           </a-card-meta>
         </a-card>
       </a-col>
-      <a-col :lg="6" :md="20" :xs="20">
+      <a-col :xl="5" :lg="6" :md="20" :xs="20">
         <a-card>
           <h3>最新文章</h3>
           <a-list itemLayout="vertical" size="large" :dataSource="listData">
@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import { fetchArticles } from "@/api/request";
+import { fetchArticle } from "@/api/request";
 
 export default {
   data() {
@@ -64,11 +64,11 @@ export default {
   },
   methods: {
     initArticleList() {
-      const page = {
+      const pabeable = {
         pageNum: 0,
         pageSize: 10
       };
-      fetchArticles(page).then(
+      fetchArticle(pabeable).then(
         response => {
           this.listData = response.data.content;
         },

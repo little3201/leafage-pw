@@ -1,10 +1,10 @@
 <template>
   <div :style="{ margin: '3rem auto' }">
     <a-row :gutter="24" type="flex" justify="center">
-      <a-col :lg="5" :md="0" :xs="0">
+      <a-col :xl="4" :lg="5" :md="0" :xs="0">
         <author />
       </a-col>
-      <a-col :lg="16" :md="22" :xs="21">
+      <a-col :xl="14" :lg="16" :md="22" :xs="21">
         <f-content :content="content" />
       </a-col>
     </a-row>
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { fetchArticle } from "@/api/request";
+import { queryArticle } from "@/api/request";
 import Author from "./Author.vue";
 import FContent from "./Content.vue";
 
@@ -32,10 +32,12 @@ export default {
   },
   methods: {
     initArticle(articleId) {
-      fetchArticle(articleId).then(
+      queryArticle(articleId).then(
         response => {
           //获取数据
-          this.content = response.data.content;
+          if (response.data.content) {
+            this.content = response.data.content;
+          }
           this.title = response.data.title;
         },
         error => {

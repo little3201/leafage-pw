@@ -18,7 +18,7 @@ export const login = ({ username, password }) => {
 };
 
 /* 获取手机验证码 */
-export const fetchSmsCaptcha = mobile => {
+export const querySmsCaptcha = mobile => {
   return axios.request({
     url: "/hypervisor/user",
     method: "GET",
@@ -27,7 +27,7 @@ export const fetchSmsCaptcha = mobile => {
 };
 
 /* 根据用户id获取用户信息 */
-export const fetchUser = userId => {
+export const queryUser = userId => {
   return axios.request({
     url: "/hypervisor/user/" + userId,
     method: "GET"
@@ -35,7 +35,7 @@ export const fetchUser = userId => {
 };
 
 /* 获取用户信息列表 */
-export const fetchUsers = ({ pageNum, pageSize }) => {
+export const fetchUser = ({ pageNum, pageSize }) => {
   const params = {
     pageNum,
     pageSize
@@ -48,7 +48,7 @@ export const fetchUsers = ({ pageNum, pageSize }) => {
 };
 
 /* 根据文章ID获取文章详情 */
-export const fetchArticle = articleId => {
+export const queryArticle = articleId => {
   return axios.request({
     url: "/assets/article/" + articleId,
     method: "GET"
@@ -56,7 +56,7 @@ export const fetchArticle = articleId => {
 };
 
 /* 获取用户信息列表 */
-export const fetchArticles = ({ pageNum, pageSize }) => {
+export const fetchArticle = ({ pageNum, pageSize }) => {
   const params = {
     pageNum,
     pageSize

@@ -1,5 +1,5 @@
 <template>
-  <a-card>
+  <a-card hoverable="true">
     <div class="swapper">
       <div class="avatar">
         <img src="http://img.wxcha.com/file/201810/23/5e623a6c2f.jpeg" />
@@ -32,7 +32,7 @@
     <div class="team">
       <div class="teamTitle">最新文章</div>
       <div class="members">
-        <template v-for="item in teams">
+        <template v-for="item in articles">
           <a href="#" :key="item">
             <span class="member">{{ item }}</span>
           </a>
@@ -47,7 +47,7 @@ export default {
   data() {
     return {
       tags: ["很有想法的", "专注设计", "辣~", "大长腿", "川妹子", "海纳百川"],
-      teams: [
+      articles: [
         "SpringSecurity原理1",
         "SpringSecurity原理2",
         "SpringSecurity原理3"
