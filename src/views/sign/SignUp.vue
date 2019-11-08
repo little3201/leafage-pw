@@ -1,10 +1,11 @@
-<template>    
+<template>
+  <div></div>
 </template>
 
 <script lang="ts">
 import { Vue } from 'vue-property-decorator'
 
-export default class SignUp extends Vue {    
+export default class SignUp extends Vue {
 }
 </script>
 
