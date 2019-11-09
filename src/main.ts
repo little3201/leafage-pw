@@ -2,20 +2,10 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import { Button, Drawer, Form, FormItem, Header, Icon, Input, Layout, Menu, MenuItem, Message } from 'view-design'
 import 'view-design/dist/styles/iview.css'
+import ViewUI  from './iview'
 
-Vue.component('Button', Button)
-Vue.component('Drawer', Drawer)
-Vue.component('Form', Form)
-Vue.component('FormItem', FormItem)
-Vue.component('Header', Header)
-Vue.component('Icon', Icon)
-Vue.component('Input', Input)
-Vue.component('Layout', Layout)
-Vue.component('Menu', Menu)
-Vue.component('MenuItem', MenuItem)
-Vue.component('Message', Message)
+Vue.use(ViewUI)
 
 Vue.config.productionTip = false
 
