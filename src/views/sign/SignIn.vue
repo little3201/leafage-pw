@@ -8,7 +8,7 @@
       <div class="form-container">
         <h2 class="form-title">Sign In Console</h2>
         <Form ref="formValidate" :model="formValidate" :rules="ruleValidate" :label-width="80">
-          <FormItem label="Name" prop="name">
+          <FormItem label="Username" prop="name">
             <Input v-model="formValidate.name" placeholder="Enter your name" />
           </FormItem>
           <FormItem label="Password" prop="mail" type="password">
@@ -38,8 +38,10 @@
 <script lang="ts">
 import { Vue } from 'vue-property-decorator'
 
-export default class SignIn extends Vue {}
+export default class SignIn extends Vue {
+  private formValidate: any = {}
+  private ruleValidate: any = {}
+}
 </script>
 
-<style lang="scss">
-</style>
+<style lang="less"></style>

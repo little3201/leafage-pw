@@ -1,6 +1,6 @@
 import service from './axios'
 
-/* 登录方法 */
+/* 登录 */
 export const login = (username: string, password: string) => {
   const params = {
     grant_type: "password",
@@ -11,5 +11,13 @@ export const login = (username: string, password: string) => {
     url: "/login",
     method: "POST",
     params
+  });
+}
+
+/* 登出 */
+export const logout = () => {
+  return service.request({
+    url: "/logout",
+    method: "DELETE"
   });
 }
