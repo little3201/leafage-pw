@@ -3,7 +3,7 @@
     <Layout>
       <headers />
       <Content :style="{ background: '#fff', minHeight: '500px'}">
-        <Card :bordered="false" :style="{ width: '90%', margin: '54px auto 0' }">
+        <Card :bordered="false" :style="{ width: '90%', margin: '68px auto 0' }">
           <div style="text-align:center">
             <h3>A high quality UI Toolkit based on Vue.js</h3>
           </div>

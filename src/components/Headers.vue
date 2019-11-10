@@ -3,8 +3,8 @@
     <Row :span="24">
       <Col :xs="0" :sm="24">
         <Header :style="{ position: 'fixed', width: '100%' }">
-          <Menu mode="horizontal" :theme="theme" active-name="home">
-            <div :style="{ float: 'left' }">
+          <Menu mode="horizontal" :theme="theme" :active-name="activeName">
+            <div :style="{ float: 'left', padding: '0 20px' }">
               <router-link to="/">
                 <img
                   :style="{
@@ -70,6 +70,7 @@ import { Component, Vue } from "vue-property-decorator";
 export default class Headers extends Vue {
   private theme: string = "light";
   private isShow: boolean = false;
+  private activeName: string = "home";
 }
 </script>
 
