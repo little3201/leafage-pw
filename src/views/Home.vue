@@ -9,18 +9,21 @@
           </div>
         </Card>
       </Content>
+      <footers />
     </Layout>
   </div>
 </template>
 
 <script>
-  // @ is an alias to /src
-  import Headers from '@/components/Headers.vue'
+// @ is an alias to /src
+import Headers from '@/components/Headers.vue'
+import Footers from '@/components/Footers.vue'
 
-  export default {
-    name: 'home',
-    components: {
-      Headers
-    }
+export default {
+  name: 'home',
+  components: {
+    Headers,
+    Footers
   }
+}
 </script>

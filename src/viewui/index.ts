@@ -6,6 +6,7 @@ import {
   Drawer,
   Form,
   FormItem,
+  Footer,
   Header,
   Icon,
   Input,
@@ -13,6 +14,7 @@ import {
   Menu,
   MenuItem,
   Message,
+  Poptip,
   Row
 } from "view-design"
 
@@ -25,6 +27,7 @@ const ViewUI = {
     Vue.component('Drawer', Drawer)
     Vue.component('Form', Form)
     Vue.component('FormItem', FormItem)
+    Vue.component('Footer', Footer)
     Vue.component('Header', Header)
     Vue.component('Icon', Icon)
     Vue.component('Input', Input)
@@ -32,6 +35,7 @@ const ViewUI = {
     Vue.component('Menu', Menu)
     Vue.component('MenuItem', MenuItem)
     Vue.component('Message', Message)
+    Vue.component('Poptip', Poptip)
     Vue.component('Row', Row)
   }
 };

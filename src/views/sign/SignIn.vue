@@ -25,7 +25,10 @@
       </div>
       <div class="copyright">
         Copyright &copy; 2019 ·
-        <a class="hrefColor" href="http://beian.miitbeian.gov.cn">陕ICP备 19017836</a>
+        <a
+          class="hrefColor"
+          href="http://beian.miitbeian.gov.cn"
+        >陕ICP备 19017836</a>
         <span>· Powerd By Wilson Li</span>
       </div>
     </div>
@@ -36,8 +39,8 @@
 import { Vue } from 'vue-property-decorator'
 
 export default class SignIn extends Vue {
-  private formValidate: any = {};
-  private ruleValidate: any = {};
+  private formValidate: any = {}
+  private ruleValidate: any = {}
 }
 </script>
 
