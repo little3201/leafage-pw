@@ -2,25 +2,21 @@
   <div class="home">
     <Layout>
       <headers />
-      <Content :style="{ background: '#fff', minHeight: '500px'}">
-        <Card :style="{ width: '460px', margin: '68px auto 0' }">
-          <div style="text-align:center">
-            <h3>A high quality UI Toolkit based on Vue.js</h3>
-          </div>
-        </Card>
-      </Content>
+      <Contents />
     </Layout>
   </div>
 </template>
 
 <script>
-  // @ is an alias to /src
-  import Headers from '@/components/Headers.vue'
+// @ is an alias to /src
+import Headers from "@/components/Headers.vue";
+import Contents from "@/components/Contents.vue";
 
-  export default {
-    name: 'home',
-    components: {
-      Headers
-    }
+export default {
+  name: "home",
+  components: {
+    Headers,
+    Contents
   }
+};
 </script>

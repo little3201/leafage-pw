@@ -41,6 +41,7 @@
                 @click="isShow = true"
                 type="ios-menu"
                 size="28"
+                color="#ff9900"
                 :style="{ margin: '18px 1rem' }"
               />
               <Col span="8">
@@ -53,6 +54,7 @@
               <Icon
                 type="ios-search"
                 size="28"
+                color="#ff9900"
                 :style="{ margin: '18px 1rem' }"
                 @click="searchEvent"
               />
