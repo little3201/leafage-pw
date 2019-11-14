@@ -72,8 +72,7 @@
         </Card>
       </Col>
     </Row>
-
-    <!-- <div class="footer">
+    <div class="footer">
       <div class="links">
         <a href="_self">帮助</a>
         <a href="_self">隐私</a>
@@ -87,7 +86,7 @@
         >陕ICP备 19017836</a>
         <span>· Powerd By Wilson Li</span>
       </div>
-    </div>-->
+    </div>
   </div>
 </template>
 
@@ -102,6 +101,13 @@ export default class SignIn extends Vue {
 
 <style lang="less">
 #singin {
-  background-image: url('/asstes/bowct-adyhs.svg');
+  background-color: coral;
+}
+.footer {
+  margin: 2rem auto;
+  position: absolute;
+  bottom: 0;
+  padding: 0 1rem;
+  width: 100%;
 }
 </style>
