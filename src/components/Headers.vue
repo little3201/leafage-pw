@@ -12,7 +12,7 @@
                     marginLeft: '60px',
                     marginTop: '14px'
                   }"
-                  src="../assets/logo.svg"
+                  src="@/assets/logo.svg"
                 />
               </router-link>
             </div>
@@ -26,7 +26,7 @@
               <MenuItem name="resource">
                 <Icon type="ios-paper" />资源
               </MenuItem>
-              <MenuItem name="console">
+              <MenuItem name="console" to="/signin">
                 <Icon type="ios-cog" />控制台
               </MenuItem>
             </div>
@@ -47,7 +47,7 @@
               <Col span="8">
                 <div :style="{ margin: '8px auto' }">
                   <router-link to="/">
-                    <img :style="{ height: '26px' }" src="../assets/logo.svg" />
+                    <img :style="{ height: '26px' }" src="@/assets/logo.svg" />
                   </router-link>
                 </div>
               </Col>
