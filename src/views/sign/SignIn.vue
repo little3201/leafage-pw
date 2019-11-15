@@ -1,5 +1,5 @@
 <template>
-  <div id="singin">
+  <div id="signin">
     <Row type="flex" justify="space-around">
       <Col :xs="20" :sm="18" :md="16" :lg="0">
         <Card :style="{ maxWidth: '17rem', margin: '6rem auto auto' }">
@@ -60,7 +60,7 @@
               />
             </FormItem>
             <FormItem>
-              <Button type="warning" long>登&nbsp;录</Button>
+              <Button type="Primary" long>登&nbsp;录</Button>
             </FormItem>
             <FormItem>
               <span>
@@ -92,4 +92,8 @@ export default class SignIn extends Vue {
 </script>
 
 <style lang="less">
+#signin {
+  background-image: url('../../assets/undraw_surveillance_kqll.svg');
+  background-repeat: no-repeat;
+}
 </style>

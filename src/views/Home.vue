@@ -3,33 +3,23 @@
     <Layout>
       <headers />
       <Content>
-        <div>
-          <ul>
-            <li v-for="(item, index) in datas" :key="index">{{ item }}</li>
-          </ul>
-        </div>
+        <article />
       </Content>
     </Layout>
   </div>
 </template>
 
-<script>
+<script lang="ts">
 // @ is an alias to /src
+import { Component, Vue } from 'vue-property-decorator'
 import Headers from '@/components/Headers.vue'
+import Article from '@/views/article/Article.vue'
 
-export default {
-  name: 'home',
+@Component({
   components: {
-    Headers
-  },
-  data() {
-    return {
-      datas: {
-        title: 'How to do lists in Vue',
-        author: 'Jane Doe',
-        content: '2019-10-10'
-      }
-    }
+    Headers,
+    Article
   }
-}
+})
+export default class Home extends Vue {}
 </script>

@@ -1,18 +1,15 @@
 <template>
-  <div id="markdown">
+  <div id="markEdit">
     <mavon-editor style="height: 100%"></mavon-editor>
   </div>
 </template>
 
 <script>
 // Local Registration
-import { mavonEditor } from 'mavon-editor'
-import 'mavon-editor/dist/css/index.css'
 
 export default {
   components: {
     mavonEditor
-    // or 'mavon-editor': mavonEditor
   },
   data() {
     return {
