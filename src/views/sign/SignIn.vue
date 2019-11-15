@@ -72,27 +72,19 @@
         </Card>
       </Col>
     </Row>
-    <div class="footer">
-      <div class="links">
-        <a href="_self">帮助</a>
-        <a href="_self">隐私</a>
-        <a href="_self">条款</a>
-      </div>
-      <div class="copyright">
-        Copyright &copy; 2019 ·
-        <a
-          class="hrefColor"
-          href="http://beian.miitbeian.gov.cn"
-        >陕ICP备 19017836</a>
-        <span>· Powerd By Wilson Li</span>
-      </div>
-    </div>
+    <footers />
   </div>
 </template>
 
 <script lang="ts">
-import { Vue } from 'vue-property-decorator'
+import { Component, Vue } from 'vue-property-decorator'
+import Footers from '@/components/Footers.vue'
 
+@Component({
+  components: {
+    Footers
+  }
+})
 export default class SignIn extends Vue {
   private formValidate: any = {}
   private ruleValidate: any = {}
@@ -100,14 +92,4 @@ export default class SignIn extends Vue {
 </script>
 
 <style lang="less">
-#singin {
-  background-color: coral;
-}
-.footer {
-  margin: 2rem auto;
-  position: absolute;
-  bottom: 0;
-  padding: 0 1rem;
-  width: 100%;
-}
 </style>

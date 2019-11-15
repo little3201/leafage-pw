@@ -28,6 +28,9 @@ export default class Footers extends Vue {}
 </script>
 
 <style lang="less" scoped>
+.ivu-layout-footer {
+  background-color: transparent;
+}
 .links {
   margin-bottom: 8px;
   a {
