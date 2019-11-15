@@ -8,22 +8,22 @@
               <router-link to="/">
                 <img
                   :style="{
-                    height: '30px',
+                    height: '40px',
                     marginLeft: '60px',
-                    marginTop: '14px'
+                    marginTop: '10px'
                   }"
                   src="@/assets/logo.svg"
                 />
               </router-link>
             </div>
             <div class="layout-nav">
-              <MenuItem name="home">
+              <MenuItem name="home" to="/">
                 <Icon type="ios-home" />首页
               </MenuItem>
-              <MenuItem name="introduce">
+              <MenuItem name="introduce" to="/introduce">
                 <Icon type="ios-book" />介绍
               </MenuItem>
-              <MenuItem name="resource">
+              <MenuItem name="resource" to="/resource">
                 <Icon type="ios-paper" />资源
               </MenuItem>
               <MenuItem name="console" to="/signin">
@@ -42,12 +42,12 @@
                 type="ios-menu"
                 size="28"
                 color="#ff9900"
-                :style="{ margin: '18px 1rem' }"
+                :style="{ margin: '20px 1rem' }"
               />
               <Col span="8">
                 <div :style="{ margin: '8px auto' }">
                   <router-link to="/">
-                    <img :style="{ height: '26px' }" src="@/assets/logo.svg" />
+                    <img :style="{ height: '33px', margin: '6px auto' }" src="@/assets/logo.svg" />
                   </router-link>
                 </div>
               </Col>
@@ -63,16 +63,16 @@
         </Header>
         <Drawer placement="left" :closable="false" v-model="isShow">
           <Menu :theme="theme" :active-name="activeName" @on-select="menuActive">
-            <MenuItem name="home">
+            <MenuItem name="home" to="/">
               <Icon type="ios-home" size="16" />首页
             </MenuItem>
-            <MenuItem name="introduce">
+            <MenuItem name="introduce" to="/introduce">
               <Icon type="ios-book" size="16" />介绍
             </MenuItem>
-            <MenuItem name="resource">
+            <MenuItem name="resource" to="/resource">
               <Icon type="ios-paper" size="16" />资源
             </MenuItem>
-            <MenuItem name="console">
+            <MenuItem name="console" to="/signin">
               <Icon type="ios-cog" size="16" />控制台
             </MenuItem>
           </Menu>
@@ -83,13 +83,13 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Prop, Vue } from 'vue-property-decorator'
 
 @Component
 export default class Headers extends Vue {
+  @Prop() private activeName!: string
   private theme: string = 'light'
   private isShow: boolean = false
-  private activeName: string = 'home'
 
   // 菜单切换方法
   private async menuActive(name: string): Promise<void> {

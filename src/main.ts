@@ -4,7 +4,9 @@ import router from './router'
 import store from './store'
 // view-design
 import ViewUI from './viewui'
-import './viewui/index.less'
+import 'view-design/dist/styles/iview.css'
+
+//import './viewui/index.less'
 // mavon-editor
 import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'

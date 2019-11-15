@@ -30,7 +30,7 @@
             <FormItem>
               <span>
                 没有账号&nbsp;？&nbsp;
-                <router-link to="/singup">注&nbsp;册</router-link>
+                <router-link to="/singup">立即注册</router-link>
               </span>
             </FormItem>
           </Form>
@@ -60,31 +60,25 @@
               />
             </FormItem>
             <FormItem>
-              <Button type="Primary" long>登&nbsp;录</Button>
+              <Button type="warning" long>登&nbsp;录</Button>
             </FormItem>
             <FormItem>
               <span>
                 没有账号&nbsp;？&nbsp;
-                <router-link to="/singup">注&nbsp;册</router-link>
+                <router-link to="/signup">立即注册</router-link>
               </span>
             </FormItem>
           </Form>
         </Card>
       </Col>
     </Row>
-    <footers />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import Footers from '@/components/Footers.vue'
 
-@Component({
-  components: {
-    Footers
-  }
-})
+@Component
 export default class SignIn extends Vue {
   private formValidate: any = {}
   private ruleValidate: any = {}
@@ -93,7 +87,13 @@ export default class SignIn extends Vue {
 
 <style lang="less">
 #signin {
-  background-image: url('../../assets/undraw_surveillance_kqll.svg');
+  background-image: url('../../assets/undraw_best_place_r685.svg');
   background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 </style>

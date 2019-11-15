@@ -7,6 +7,16 @@ export default [
     component: Home
   },
   {
+    path: '/introduce',
+    name: 'introduce',
+    component: () => import('@/views/Introduce.vue')
+  },
+  {
+    path: '/resource',
+    name: 'resource',
+    component: () => import('@/views/Resource.vue')
+  },
+  {
     path: '/article/:articleId',
     name: 'article',
     component: () => import('@/views/article/Article.vue')

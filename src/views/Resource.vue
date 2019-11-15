@@ -1,9 +1,8 @@
 <template>
-  <div id="home">
+  <div id="resource">
     <Layout>
       <headers :activeName="activeName" />
       <Content>
-        <article />
       </Content>
     </Layout>
   </div>
@@ -13,22 +12,20 @@
 // @ is an alias to /src
 import { Component, Vue } from 'vue-property-decorator'
 import Headers from '@/components/Headers.vue'
-import Article from '@/views/article/Article.vue'
 
 @Component({
   components: {
-    Headers,
-    Article
+    Headers
   }
 })
-export default class Home extends Vue {
-  private activeName: string = 'home'
+export default class Resource extends Vue {
+  private activeName: string = 'resource'
 }
 </script>
 
 <style lang="less" scoped>
-#home{
-  background-image: url('../assets/undraw_trip_dv9f.svg');
+#resource{
+  background-image: url('../assets/undraw_content_vbqo.svg');
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;

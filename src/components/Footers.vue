@@ -28,6 +28,11 @@ export default class Footers extends Vue {}
 </script>
 
 <style lang="less" scoped>
+#footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0.5rem;
+}
 .ivu-layout-footer {
   background-color: transparent;
 }
@@ -47,7 +52,6 @@ export default class Footers extends Vue {}
   color: rgba(0, 0, 0, 0.45);
 }
 .copyright {
-  color: rgba(0, 0, 0, 0.45);
   font-size: 14px;
 }
 .wechat {
