@@ -1,14 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import { LoadingBar } from 'view-design'
 import routes from './routes'
-
-Vue.component('LoadingBar', LoadingBar)
 
 Vue.use(VueRouter)
 
 // 白名单
-const whiteList = ['/', '/home', '/share', '/photograph', '/register']
+const whiteList = ['/', '/home', '/signin', '/signup']
 
 const router = new VueRouter({
   mode: 'history',
@@ -18,14 +15,13 @@ const router = new VueRouter({
 
 /* 路由之前检查token */
 router.beforeEach((to, from, next) => {
-  LoadingBar.start()
+//  LoadingBar.start()
   let token = '123'
   // 白名单直接放行
   if (whiteList.includes(to.fullPath)) {
     next()
   } else if (
-    to.fullPath.startsWith('/article') ||
-    to.fullPath.startsWith('/photograph')
+    to.fullPath.startsWith('/article')
   ) {
     // 路由包含/article，即文章详情页，或者包换/photograph，即图片记录，放行
     next()
@@ -42,7 +38,7 @@ router.beforeEach((to, from, next) => {
 
 /* 路由之后关闭进度条 */
 router.afterEach(() => {
-  LoadingBar.finish()
+//  LoadingBar.finish()
 })
 
 export default router

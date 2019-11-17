@@ -1,45 +1,101 @@
 <template>
-  <div class="user-login">
-    <div class="content-wrapper">
-      <h2 class="slogan">
-        欢迎使用
-        <br />Abeille 管理控制台
-      </h2>
-      <div class="form-container">
-        <h2 class="form-title">Sign In Console</h2>
-        <Form ref="formValidate" :model="formValidate" :rules="ruleValidate" :label-width="80">
-          <FormItem label="Name" prop="name">
-            <Input v-model="formValidate.name" placeholder="Enter your name" />
-          </FormItem>
-          <FormItem label="Password" prop="mail" type="password">
-            <Input v-model="formValidate.mail" placeholder="Enter your e-mail" />
-          </FormItem>
-        </Form>
-      </div>
-    </div>
-    <div class="footer">
-      <div class="links">
-        <a href="_self">帮助</a>
-        <a href="_self">隐私</a>
-        <a href="_self">条款</a>
-      </div>
-      <div class="copyright">
-        Copyright &copy; 2019 ·
-        <a
-          class="hrefColor"
-          href="http://beian.miitbeian.gov.cn"
-        >陕ICP备 19017836</a>
-        <span>· Powerd By Wilson Li</span>
-      </div>
-    </div>
+  <div id="signin">
+    <a-row type="flex" justify="space-around">
+      <a-col :xs="20" :sm="18" :md="16" :lg="0">
+        <a-card :style="{ maxWidth: '17rem', margin: '6rem auto auto' }">
+          <div>
+            <img
+              :style="{
+                    height: '30px',
+                    margin: '1em auto'
+                  }"
+              src="@/assets/logo.svg"
+            />
+          </div>
+          <a-form ref="formValidate" :model="formValidate" :rules="ruleValidate">
+            <a-form-item prop="username">
+              <a-input prefix="user" v-model="formValidate.name" placeholder="账号/手机号/邮箱" />
+            </a-form-item>
+            <a-form-item prop="password">
+              <a-input
+                prefix="lock"
+                type="password"
+                v-model="formValidate.password"
+                placeholder="密码"
+              />
+            </a-form-item>
+            <a-form-item>
+              <a-button type="warning" long>登&nbsp;录</a-button>
+            </a-form-item>
+            <a-form-item>
+              <span>
+                没有账号&nbsp;？&nbsp;
+                <router-link to="/singup">立即注册</router-link>
+              </span>
+            </a-form-item>
+          </a-form>
+        </a-card>
+      </a-col>
+      <a-col :xs="0" :sm="0" :md="0" :lg="6" offset="10">
+        <a-card :style="{ width: '17rem', margin: '12rem auto auto' }">
+          <div>
+            <img
+              :style="{
+                    height: '30px',
+                    margin: '1em auto'
+                  }"
+              src="@/assets/logo.svg"
+            />
+          </div>
+          <a-form ref="formValidate" :model="formValidate" :rules="ruleValidate">
+            <a-form-item prop="username">
+              <Input prefix="md-person" v-model="formValidate.name" placeholder="账号/手机号/邮箱" />
+            </a-form-item>
+            <a-form-item prop="password">
+              <a-input
+                prefix="md-lock"
+                type="password"
+                v-model="formValidate.password"
+                placeholder="密码"
+              />
+            </a-form-item>
+            <a-form-item>
+              <a-button type="primary" long>登&nbsp;录</a-button>
+            </a-form-item>
+            <a-form-item>
+              <span>
+                没有账号&nbsp;？&nbsp;
+                <router-link to="/signup">立即注册</router-link>
+              </span>
+            </a-form-item>
+          </a-form>
+        </a-card>
+      </a-col>
+    </a-row>
   </div>
 </template>
 
-<script lang="ts">
-import { Vue } from 'vue-property-decorator'
-
-export default class SignIn extends Vue {}
+<script>
+export default {
+  name: 'signin',
+  data () {
+    return {
+      formValidate: {},
+      ruleValidate: {}
+    }
+  }
+}
 </script>
 
-<style lang="scss">
+<style lang="less">
+#signin {
+  background-image: url('../../assets/undraw_best_place_r685.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 </style>

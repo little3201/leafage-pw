@@ -1,4 +1,4 @@
-# abeille
+# abeille-ui
 
 ## Project setup
 ```

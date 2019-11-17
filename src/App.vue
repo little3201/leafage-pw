@@ -1,13 +1,14 @@
 <template>
   <div id="app">
+    <a-layout>
       <router-view />
-    <router-view/>
+    </a-layout>
   </div>
 </template>
 
-<style lang="scss">
+<style lang="less">
 #app {
-  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  font-family: Helvetica, 'PingFang SC', "Microsoft YaHei", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
