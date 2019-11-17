@@ -1,5 +1,5 @@
 <template>
-  <div id="footer">
+  <div id="footers">
     <Footer :style="{ textAlign: 'center' }">
       <div class="links">
         <a href="https://www.linkedin.com/in/文强-李-b90073104" target="_blank">
@@ -20,15 +20,18 @@
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
-
-@Component
-export default class Footers extends Vue {}
+<script>
+export default {
+  name: 'footers',
+  data () {
+    return {
+    }
+  }
+}
 </script>
 
 <style lang="less" scoped>
-#footer {
+#footers {
   position: absolute;
   width: 100%;
   bottom: 0.5rem;
@@ -59,4 +62,3 @@ export default class Footers extends Vue {}
   height: 10rem;
 }
 </style>
-

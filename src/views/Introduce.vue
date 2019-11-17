@@ -1,25 +1,26 @@
 <template>
   <div id="introduce">
-    <Layout>
-      <headers :activeName="activeName" />
-      <Content>
-      </Content>
-    </Layout>
+    <headers :activeName="activeName" />
+    <a-layout-content style="margin-top:60px">
+      <h1>眼里只有你。。。</h1>
+    </a-layout-content>
   </div>
 </template>
 
-<script lang="ts">
+<script>
 // @ is an alias to /src
-import { Component, Vue } from 'vue-property-decorator'
 import Headers from '@/components/Headers.vue'
 
-@Component({
+export default {
+  name: 'introduce',
   components: {
     Headers
+  },
+  data () {
+    return {
+      activeName: 'introduce'
+    }
   }
-})
-export default class Introduce extends Vue {
-  private activeName: string = 'introduce'
 }
 </script>
 

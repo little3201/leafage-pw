@@ -1,6 +1,4 @@
-# abeille
-
-本站资源来源于：https://undraw.co/
+# abeille-ui
 
 ## Project setup
 ```

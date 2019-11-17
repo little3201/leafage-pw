@@ -1,9 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import routes from './routes'
-import { LoadingBar } from 'view-design'
 
-Vue.component('LoadingBar', LoadingBar)
 Vue.use(VueRouter)
 
 // 白名单
@@ -17,7 +15,7 @@ const router = new VueRouter({
 
 /* 路由之前检查token */
 router.beforeEach((to, from, next) => {
-  LoadingBar.start()
+//  LoadingBar.start()
   let token = '123'
   // 白名单直接放行
   if (whiteList.includes(to.fullPath)) {
@@ -40,7 +38,7 @@ router.beforeEach((to, from, next) => {
 
 /* 路由之后关闭进度条 */
 router.afterEach(() => {
-  LoadingBar.finish()
+//  LoadingBar.finish()
 })
 
 export default router
