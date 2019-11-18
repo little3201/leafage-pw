@@ -2954,6 +2954,7 @@ packages:
       integrity: sha1-SD28aHAWtFyrTBhc+ZjCxZ53LCo=
       tarball: core-js-pure/download/core-js-pure-3.4.1.tgz
   /core-js/2.6.10:
+    deprecated: 'core-js@<3.0 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.'
     dev: false
     requiresBuild: true
     resolution:

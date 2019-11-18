@@ -26,7 +26,7 @@ export default {
 
 <style lang="less" scoped>
 #resource{
-  background-image: url('../assets/undraw_content_vbqo.svg');
+  background-image: url('../assets/content.svg');
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;

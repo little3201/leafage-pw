@@ -1,8 +1,8 @@
 <template>
   <div id="signin">
     <a-row type="flex" justify="space-around">
-      <a-col :xs="20" :sm="18" :md="16" :lg="0">
-        <a-card :style="{ maxWidth: '17rem', margin: '6rem auto auto' }">
+      <a-col>
+        <a-card :hoverable="true" :style="{ maxWidth: '17rem', margin: 'auto' }">
           <div>
             <img
               :style="{
@@ -12,61 +12,52 @@
               src="@/assets/logo.svg"
             />
           </div>
-          <a-form ref="formValidate" :model="formValidate" :rules="ruleValidate">
-            <a-form-item prop="username">
-              <a-input prefix="user" v-model="formValidate.name" placeholder="账号/手机号/邮箱" />
-            </a-form-item>
-            <a-form-item prop="password">
+          <a-form :form="form" @submit="handleSubmit">
+            <a-form-item>
               <a-input
-                prefix="lock"
-                type="password"
-                v-model="formValidate.password"
-                placeholder="密码"
-              />
+                v-decorator="[
+                  'userName',
+                  { rules: [{ required: true, message: 'Enter your username!' }] },
+                ]"
+                placeholder="账号/手机号/邮箱"
+              >
+                <a-icon slot="prefix" type="user" style="color: rgba(0,0,0,.25)" />
+              </a-input>
             </a-form-item>
             <a-form-item>
-              <a-button type="warning" long>登&nbsp;录</a-button>
-            </a-form-item>
-            <a-form-item>
-              <span>
-                没有账号&nbsp;？&nbsp;
-                <router-link to="/singup">立即注册</router-link>
-              </span>
-            </a-form-item>
-          </a-form>
-        </a-card>
-      </a-col>
-      <a-col :xs="0" :sm="0" :md="0" :lg="6" offset="10">
-        <a-card :style="{ width: '17rem', margin: '12rem auto auto' }">
-          <div>
-            <img
-              :style="{
-                    height: '30px',
-                    margin: '1em auto'
-                  }"
-              src="@/assets/logo.svg"
-            />
-          </div>
-          <a-form ref="formValidate" :model="formValidate" :rules="ruleValidate">
-            <a-form-item prop="username">
-              <Input prefix="md-person" v-model="formValidate.name" placeholder="账号/手机号/邮箱" />
-            </a-form-item>
-            <a-form-item prop="password">
               <a-input
-                prefix="md-lock"
+                v-decorator="[
+                  'password',
+                  { rules: [{ required: true, message: 'Enter your Password!' }] },
+                ]"
                 type="password"
-                v-model="formValidate.password"
-                placeholder="密码"
-              />
+                placeholder="Password"
+              >
+                <a-icon slot="prefix" type="lock" style="color: rgba(0,0,0,.25)" />
+              </a-input>
             </a-form-item>
             <a-form-item>
-              <a-button type="primary" long>登&nbsp;录</a-button>
-            </a-form-item>
-            <a-form-item>
-              <span>
-                没有账号&nbsp;？&nbsp;
-                <router-link to="/signup">立即注册</router-link>
-              </span>
+              <a-checkbox
+                v-decorator="[
+                  'remember',
+                  {
+                    valuePropName: 'checked',
+                    initialValue: true,
+                  },
+                ]"
+              >
+                Remember me
+              </a-checkbox>
+              <a class="login-form-forgot" href="">
+                Forgot password
+              </a>
+              <a-button type="primary" html-type="submit" class="login-form-button">
+                Log in
+              </a-button>
+              Or
+              <a href="">
+                register now!
+              </a>
             </a-form-item>
           </a-form>
         </a-card>
@@ -80,8 +71,18 @@ export default {
   name: 'signin',
   data () {
     return {
-      formValidate: {},
-      ruleValidate: {}
+    }
+  },
+  beforeCreate () {
+    this.form = this.$form.createForm(this, { name: 'normal_login' })
+  },
+  methods: {
+    handleSubmit (e) {
+      e.preventDefault()
+      this.form.validateFields((err, values) => {
+        if (!err) {
+        }
+      })
     }
   }
 }
@@ -89,7 +90,7 @@ export default {
 
 <style lang="less">
 #signin {
-  background-image: url('../../assets/undraw_best_place_r685.svg');
+  background-image: url('../../assets/place.svg');
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;

@@ -1,22 +1,22 @@
 <template>
   <div id="footers">
-    <Footer :style="{ textAlign: 'center' }">
+    <a-layout-footer :style="{ textAlign: 'center' }">
       <div class="links">
         <a href="https://www.linkedin.com/in/文强-李-b90073104" target="_blank">
-          <Icon type="logo-linkedin" size="18" />
+          <a-icon :style="{ fontSize: '18px' }" type="linkedin" />
         </a>
         <a href="https://github.com/little3201/abeille-ui" target="_blank">
-          <Icon type="logo-github" size="18" />
+          <a-icon :style="{ fontSize: '18px' }" type="github" />
         </a>
-        <Poptip content="content" placement="top" trigger="hover">
+        <a-popover>
           <template slot="content">
             <img class="wechat" src="@/assets/wechat.jpg" />
           </template>
-          <Icon :style="{ color: 'rgba(0, 0, 0, 0.45)' }" type="ios-chatbubbles" size="18" />
-        </Poptip>
+          <a-icon :style="{ fontSize: '20px', color: 'rgba(0, 0, 0, 0.45)' }" type="wechat" />
+        </a-popover>
       </div>
-      <div class="copyright">Copyright &copy; 2019 · 陕ICP备 19017836 · Powerd By Wilson Li</div>
-    </Footer>
+      <div :style="{ fontSize: '1rem' }">Copyright &copy; 2019 · 陕ICP备 19017836 · Powerd By Wilson Li</div>
+    </a-layout-footer>
   </div>
 </template>
 
@@ -36,7 +36,7 @@ export default {
   width: 100%;
   bottom: 0.5rem;
 }
-.ivu-layout-footer {
+.ant-layout-footer {
   background-color: transparent;
 }
 .links {
@@ -44,18 +44,12 @@ export default {
   a {
     color: rgba(0, 0, 0, 0.45);
     &:hover {
-      color: rgba(45, 140, 240, 0.65);
+      color: rgba(255, 193, 7, 0.65);
     }
     &:not(:last-child) {
       margin-right: 40px;
     }
   }
-}
-.hrefColor {
-  color: rgba(0, 0, 0, 0.45);
-}
-.copyright {
-  font-size: 14px;
 }
 .wechat {
   width: 10rem;

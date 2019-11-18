@@ -26,7 +26,7 @@ export default {
 
 <style lang="less" scoped>
 #introduce{
-  background-image: url('../assets/undraw_onboarding_o8mv.svg');
+  background-image: url('../assets/onboarding.svg');
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
