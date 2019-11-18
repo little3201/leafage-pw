@@ -87,7 +87,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="scss">
 #signin {
   background-image: url('../../assets/biking.svg');
   background-repeat: no-repeat;

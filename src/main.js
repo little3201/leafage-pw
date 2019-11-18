@@ -3,12 +3,12 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 // view-design
-import Antd from '@/components/antd'
-import '@/components/antd/index.less'
+import Element from '@/components/elementui'
+import '@/components/elementui/index.scss'
 
 Vue.config.productionTip = false
 
-Vue.use(Antd)
+Vue.use(Element)
 
 new Vue({
   router,

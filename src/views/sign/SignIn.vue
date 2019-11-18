@@ -1,8 +1,8 @@
 <template>
   <div id="signin">
-    <a-row type="flex" justify="space-around">
-      <a-col>
-        <a-card :hoverable="true" :style="{ maxWidth: '17rem', margin: 'auto' }">
+    <el-row type="flex" justify="space-around">
+      <el-col>
+        <el-card :hoverable="true" :style="{ maxWidth: '17rem', margin: 'auto' }">
           <div>
             <img
               :style="{
@@ -12,57 +12,38 @@
               src="@/assets/logo.svg"
             />
           </div>
-          <a-form :form="form" @submit="handleSubmit">
-            <a-form-item>
-              <a-input
-                v-decorator="[
-                  'userName',
-                  { rules: [{ required: true, message: 'Enter your username!' }] },
-                ]"
-                placeholder="账号/手机号/邮箱"
-              >
-                <a-icon slot="prefix" type="user" style="color: rgba(0,0,0,.25)" />
-              </a-input>
-            </a-form-item>
-            <a-form-item>
-              <a-input
-                v-decorator="[
-                  'password',
-                  { rules: [{ required: true, message: 'Enter your Password!' }] },
-                ]"
-                type="password"
-                placeholder="Password"
-              >
-                <a-icon slot="prefix" type="lock" style="color: rgba(0,0,0,.25)" />
-              </a-input>
-            </a-form-item>
-            <a-form-item>
-              <a-checkbox
-                v-decorator="[
-                  'remember',
-                  {
-                    valuePropName: 'checked',
-                    initialValue: true,
-                  },
-                ]"
-              >
-                Remember me
-              </a-checkbox>
-              <a class="login-form-forgot" href="">
-                Forgot password
-              </a>
-              <a-button type="primary" html-type="submit" class="login-form-button">
-                Log in
-              </a-button>
-              Or
-              <a href="">
-                register now!
-              </a>
-            </a-form-item>
-          </a-form>
-        </a-card>
-      </a-col>
-    </a-row>
+          <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px">
+            <el-form-item
+              prop="username"
+              label="用户名"
+              :rules="[
+                { required: true, message: '请输入用户名', trigger: 'blur' },
+                { message: '请输入正确的用户名', trigger: ['blur', 'change'] }
+              ]"
+            >
+              <el-input v-model="dynamicValidateForm.username"></el-input>
+            </el-form-item>
+            <el-form-item
+              prop="password"
+              label="用户名"
+              :rules="[
+                { required: true, message: '请输入密码', trigger: 'blur' },
+                { type: 'password', message: '请输入正确的密码', trigger: ['blur', 'change'] }
+              ]"
+            >
+              <el-input v-model="dynamicValidateForm.username"></el-input>
+            </el-form-item>
+            <el-form-item prop="remberme">
+              <el-checkbox-group v-model="ruleForm.remberme">
+                <el-checkbox label="记住我？" name="remberme"></el-checkbox>
+              </el-checkbox-group>
+              <el-link type="primary">忘记密码</el-link>
+              <el-button type="primary" @click="submitForm('ruleForm')">立即登录</el-button>
+            </el-form-item>
+          </el-form>
+        </el-card>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -73,14 +54,14 @@ export default {
     return {
     }
   },
-  beforeCreate () {
-    this.form = this.$form.createForm(this, { name: 'normal_login' })
-  },
   methods: {
-    handleSubmit (e) {
-      e.preventDefault()
-      this.form.validateFields((err, values) => {
-        if (!err) {
+    submitForm (formName) {
+      this.$refs[formName].validate((valid) => {
+        if (valid) {
+          alert('submit!')
+        } else {
+          console.log('error submit!!')
+          return false
         }
       })
     }
@@ -88,7 +69,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="scss">
 #signin {
   background-image: url('../../assets/place.svg');
   background-repeat: no-repeat;

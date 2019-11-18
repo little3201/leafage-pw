@@ -1,19 +1,13 @@
 <template>
   <div id="home">
-    <headers :activeName="activeName" />
-    <a-layout-content>
-      <a-carousel vertical ref="carousel" :dots="false">
-        <div id="onboarding">
-            <h1>你有故事。。。</h1>
-        </div>
-        <div id="content">
-            <h1>我有酒。。。</h1>
-        </div>
-        <div id="trip">
-            <h1>咱两一起做朋友。。。</h1>
-        </div>
-      </a-carousel>
-    </a-layout-content>
+    <headers />
+    <el-container>
+      <el-carousel height="200px" direction="vertical" :autoplay="false" :loop="false">
+        <el-carousel-item v-for="item in 3" :key="item">
+          <h3 class="medium">{{ item }}</h3>
+        </el-carousel-item>
+      </el-carousel>
+    </el-container>
     <footers />
   </div>
 </template>
@@ -31,14 +25,19 @@ export default {
   },
   data () {
     return {
-      activeName: 'home'
+      height: `${document.documentElement.clientHeight}`
     }
   },
   mounted () {
     // 监听（绑定）滚轮 滚动事件, safari, firefox
-    window.addEventListener('DOMMouseScroll', this.handleScroll, true)
+    window.addEventListener('DOMMouseScroll', this.handleScroll, false)
     // chrome and ie
-    window.addEventListener('mousewheel', this.handleScroll, true)
+    window.addEventListener('mousewheel', this.handleScroll, false)
+    // 高度监听
+    window.onresize = () => {
+      // 可以在这里保存到浏览器中，也可以保存到其他地方
+      this.height = `${document.documentElement.clientHeight}`
+    }
   },
   methods: {
     handleScroll () {
@@ -49,16 +48,7 @@ export default {
         if (e.wheelDelta > 0) {
           // 当滑轮向上滚动时
           this.$refs.carousel.prev()
-        } else {
-          // 当滑轮向下滚动时
-          this.$refs.carousel.next()
-        }
-      } else if (e.detail) {
-        // Firefox滑轮事件
-        if (e.detail > 0) {
-          // 当滑轮向上滚动时
-          this.$refs.carousel.prev()
-        } else {
+        } else if (e.wheelDelta < 0) {
           // 当滑轮向下滚动时
           this.$refs.carousel.next()
         }
@@ -68,26 +58,20 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
-#trip {
-  background-image: url('../assets/trip.svg');
-  background-repeat: no-repeat;
-  background-position: center;
+<style lang="scss" scoped>
+.el-carousel__item h3 {
+  color: #475669;
+  font-size: 14px;
+  opacity: 0.75;
+  line-height: 200px;
+  margin: 0;
 }
-#onboarding {
-  background-image: url('../assets/onboarding.svg');
-  background-repeat: no-repeat;
-  background-position: center;
+
+.el-carousel__item:nth-child(2n) {
+  background-color: #99a9bf;
 }
-#content {
-  background-image: url('../assets/content.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.ant-carousel /deep/ .slick-slide {
-  background-color: #f8f8f9;
-  text-align: center;
-  line-height: 920px;
-  overflow: hidden;
+
+.el-carousel__item:nth-child(2n+1) {
+  background-color: #d3dce6;
 }
 </style>

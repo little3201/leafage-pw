@@ -1,6 +1,6 @@
 <template>
   <div id="resource">
-    <headers :activeName="activeName" />
+    <headers />
     <a-layout-content style="margin-top:60px">
       <h1>眼里只有你。。。</h1>
     </a-layout-content>
@@ -18,13 +18,12 @@ export default {
   },
   data () {
     return {
-      activeName: 'resource'
     }
   }
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 #resource{
   background-image: url('../assets/content.svg');
   background-repeat: no-repeat;
