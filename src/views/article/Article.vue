@@ -1,6 +1,5 @@
 <template>
   <div>
-    <mark-show :content="content" />
   </div>
 </template>
 

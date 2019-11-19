@@ -7,6 +7,9 @@
 </template>
 
 <style lang="scss">
+body {
+  margin: 0;
+}
 #app {
   font-family: Helvetica, 'PingFang SC', "Microsoft YaHei", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

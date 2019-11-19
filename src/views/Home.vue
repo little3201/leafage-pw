@@ -2,9 +2,27 @@
   <div id="home">
     <headers />
     <el-main style="width: 100vw">
-      <el-carousel height="(100vh - 120px)" direction="vertical" :autoplay="false" :loop="false" ref="carousel">
-        <el-carousel-item v-for="item in 3" :key="item">
-          <h3 class="medium">{{ item }}</h3>
+      <el-carousel
+        height="100vh"
+        direction="vertical"
+        :autoplay="false"
+        :loop="false"
+        ref="carousel"
+        indicator-position="none"
+      >
+        <el-carousel-item>
+          <img src="../assets/trip.svg" />
+          <div class="center">
+            <h1>语言和文字真的是不可执取的东西，当一句话说出来或者写下来，它就不是你的了，
+            <br />你必须允许别人任意解读，甚至误读。所以最想说的话，其实在开口的一刹那就已经说完了。
+            </h1>
+          </div>
+        </el-carousel-item>
+        <el-carousel-item>
+          <img src="../assets/content.svg" />
+        </el-carousel-item>
+        <el-carousel-item>
+          <img src="../assets/onboarding.svg" />
         </el-carousel-item>
       </el-carousel>
     </el-main>
@@ -28,23 +46,26 @@ export default {
     }
   },
   mounted () {
-    // 监听（绑定）滚轮 滚动事件, safari, firefox
-    window.addEventListener('DOMMouseScroll', this.handleScroll, false)
-    // chrome and ie
-    window.addEventListener('mousewheel', this.handleScroll, false)
+    // 监听（绑定）滚轮 滚动事件, safari, firefox, chrome
+    this.$nextTick(function () {
+      // 监听当前组件的滚动事件
+      let mousewheelevt = (/Firefox/i.test(navigator.userAgent)) ? 'DOMMouseScroll' : 'mousewheel'
+      window.addEventListener(mousewheelevt, this.handleScroll, false)
+    })
   },
   methods: {
-    handleScroll () {
+    handleScroll (e) {
       // 页面滚动距顶部距离
-      let e = window.event
-      // 判断浏览器IE，谷歌滑轮事件
-      if (e.wheelDelta) {
+      if (!e) e = window.event
+      let carousel = this.$refs.carousel
+      let wheel = e.wheelDelta === undefined ? (e.detail === undefined ? false : e.detail) : e.wheelDelta
+      if (wheel) {
         if (e.wheelDelta > 0) {
           // 当滑轮向上滚动时
-          this.$refs.carousel.prev()
-        } else if (e.wheelDelta < 0) {
+          carousel.prev()
+        } else {
           // 当滑轮向下滚动时
-          this.$refs.carousel.next()
+          carousel.next()
         }
       }
     }
@@ -54,24 +75,20 @@ export default {
 
 <style lang="scss" scoped>
 .el-main {
-    background-color: #E9EEF3;
-    color: #333;
-    text-align: center;
-    line-height: 160px;
-  }
-.el-carousel__item h3 {
-  color: #475669;
-  font-size: 14px;
-  opacity: 0.75;
-  line-height: 700px;
-  margin: 0;
+  text-align: center;
+  padding: 0;
 }
-
-.el-carousel__item:nth-child(2n) {
-  background-color: #99a9bf;
+img {
+  max-height: 100%;
+  width: auto;
+  opacity: 0.8;
 }
-
-.el-carousel__item:nth-child(2n+1) {
-  background-color: #d3dce6;
+.center {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
 }
 </style>
