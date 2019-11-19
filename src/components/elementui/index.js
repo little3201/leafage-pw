@@ -9,8 +9,11 @@ import {
   CarouselItem,
   Drawer,
   Form,
+  Header,
   Icon,
+  Image,
   Input,
+  Link,
   Main,
   Footer,
   Menu,
@@ -31,8 +34,11 @@ const Element = {
     Vue.use(CarouselItem)
     Vue.use(Drawer)
     Vue.use(Form)
+    Vue.use(Header)
     Vue.use(Icon)
+    Vue.use(Image)
     Vue.use(Input)
+    Vue.use(Link)
     Vue.use(Main)
     Vue.use(Footer)
     Vue.use(Menu)

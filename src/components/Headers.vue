@@ -1,24 +1,15 @@
 <template>
   <div id="headers">
     <el-header :style="{ position: 'fixed', width: '100%' }">
-      <el-row :span="24">
-        <el-col :style="{ padding: '0 5rem' }">
-          <div :style="{ float: 'left' }">
-            <router-link to="/">
-              <img
-                :style="{
-                  height: '40px',
-                  marginTop: '10px'
-                }"
-                src="@/assets/logo.svg"
-              />
-            </router-link>
-          </div>
-          <div :style="{ float: 'right' }">
-            <i class="el-icon-edit"></i>
-          </div>
-        </el-col>
-      </el-row>
+      <el-menu mode="horizontal" style="padding: 0 5rem">
+          <router-link to="/" style="float: left">
+            <img
+              style="height: 3rem"
+              src="@/assets/logo.svg"
+            />
+          </router-link>
+          <i class="el-icon-s-operation" style="font-size: 28px; float: right; margin: 10px auto; color: #FFC107"></i>
+      </el-menu>
     </el-header>
   </div>
 </template>
@@ -28,8 +19,6 @@ export default {
   name: 'headers',
   data () {
     return {
-      theme: 'light',
-      visible: false
     }
   },
   methods: {

@@ -1,5 +1,10 @@
-@import "~element-ui/packages/theme-chalk/src/index";
+/* 改变主题色变量"$--color-primary":"#FFC107","$--color-warning":"#FF9900","$--color-success":"#19BE6B","$--color-danger":"#ED4014" */
+$--color-primary: #FFC107;
+$--color-warning: #FF9900;
+$--color-success: #19BE6B;
+$--color-danger: #ED4014;
 
-// Here are the variables to cover, such as:
-/* 改变主题色变量 */
-$--color-primary: #ffc107;
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import "~element-ui/packages/theme-chalk/src/index";

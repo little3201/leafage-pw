@@ -1,13 +1,13 @@
 <template>
   <div id="home">
     <headers />
-    <el-container>
-      <el-carousel height="200px" direction="vertical" :autoplay="false" :loop="false">
+    <el-main style="width: 100vw">
+      <el-carousel height="(100vh - 120px)" direction="vertical" :autoplay="false" :loop="false" ref="carousel">
         <el-carousel-item v-for="item in 3" :key="item">
           <h3 class="medium">{{ item }}</h3>
         </el-carousel-item>
       </el-carousel>
-    </el-container>
+    </el-main>
     <footers />
   </div>
 </template>
@@ -25,7 +25,6 @@ export default {
   },
   data () {
     return {
-      height: `${document.documentElement.clientHeight}`
     }
   },
   mounted () {
@@ -33,11 +32,6 @@ export default {
     window.addEventListener('DOMMouseScroll', this.handleScroll, false)
     // chrome and ie
     window.addEventListener('mousewheel', this.handleScroll, false)
-    // 高度监听
-    window.onresize = () => {
-      // 可以在这里保存到浏览器中，也可以保存到其他地方
-      this.height = `${document.documentElement.clientHeight}`
-    }
   },
   methods: {
     handleScroll () {
@@ -59,11 +53,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.el-main {
+    background-color: #E9EEF3;
+    color: #333;
+    text-align: center;
+    line-height: 160px;
+  }
 .el-carousel__item h3 {
   color: #475669;
   font-size: 14px;
   opacity: 0.75;
-  line-height: 200px;
+  line-height: 700px;
   margin: 0;
 }
 
