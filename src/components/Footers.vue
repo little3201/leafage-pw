@@ -1,22 +1,8 @@
 <template>
   <div id="footers">
-    <Footer :style="{ textAlign: 'center' }">
-      <div class="links">
-        <a href="https://www.linkedin.com/in/文强-李-b90073104" target="_blank">
-          <Icon type="logo-linkedin" size="18" />
-        </a>
-        <a href="https://github.com/little3201/abeille-ui" target="_blank">
-          <Icon type="logo-github" size="18" />
-        </a>
-        <Poptip content="content" placement="top" trigger="hover">
-          <template slot="content">
-            <img class="wechat" src="@/assets/wechat.jpg" />
-          </template>
-          <Icon :style="{ color: 'rgba(0, 0, 0, 0.45)' }" type="ios-chatbubbles" size="18" />
-        </Poptip>
-      </div>
-      <div class="copyright">Copyright &copy; 2019 · 陕ICP备 19017836 · Powerd By Wilson Li</div>
-    </Footer>
+    <el-footer style="text-align: center; background: transparent">
+      <div :style="{ fontSize: '1rem' }">Copyright &copy; 2019 · 陕ICP备19017836号-1 · Powerd By Wilson Li</div>
+    </el-footer>
   </div>
 </template>
 
@@ -30,35 +16,9 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 #footers {
   position: absolute;
-  width: 100%;
   bottom: 0.5rem;
-}
-.ivu-layout-footer {
-  background-color: transparent;
-}
-.links {
-  margin-bottom: 8px;
-  a {
-    color: rgba(0, 0, 0, 0.45);
-    &:hover {
-      color: rgba(45, 140, 240, 0.65);
-    }
-    &:not(:last-child) {
-      margin-right: 40px;
-    }
-  }
-}
-.hrefColor {
-  color: rgba(0, 0, 0, 0.45);
-}
-.copyright {
-  font-size: 14px;
-}
-.wechat {
-  width: 10rem;
-  height: 10rem;
 }
 </style>

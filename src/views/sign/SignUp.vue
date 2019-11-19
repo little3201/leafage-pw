@@ -87,9 +87,9 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="scss">
 #signin {
-  background-image: url('../../assets/undraw_best_place_r685.svg');
+  background-image: url('../../assets/biking.svg');
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;

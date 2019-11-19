@@ -1,8 +1,8 @@
 <template>
   <div id="signin">
-    <a-row type="flex" justify="space-around">
-      <a-col :xs="20" :sm="18" :md="16" :lg="0">
-        <a-card :style="{ maxWidth: '17rem', margin: '6rem auto auto' }">
+    <el-row type="flex" justify="space-around">
+      <el-col>
+        <el-card :hoverable="true" :style="{ maxWidth: '17rem', margin: 'auto' }">
           <div>
             <img
               :style="{
@@ -12,66 +12,38 @@
               src="@/assets/logo.svg"
             />
           </div>
-          <a-form ref="formValidate" :model="formValidate" :rules="ruleValidate">
-            <a-form-item prop="username">
-              <a-input prefix="user" v-model="formValidate.name" placeholder="账号/手机号/邮箱" />
-            </a-form-item>
-            <a-form-item prop="password">
-              <a-input
-                prefix="lock"
-                type="password"
-                v-model="formValidate.password"
-                placeholder="密码"
-              />
-            </a-form-item>
-            <a-form-item>
-              <a-button type="warning" long>登&nbsp;录</a-button>
-            </a-form-item>
-            <a-form-item>
-              <span>
-                没有账号&nbsp;？&nbsp;
-                <router-link to="/singup">立即注册</router-link>
-              </span>
-            </a-form-item>
-          </a-form>
-        </a-card>
-      </a-col>
-      <a-col :xs="0" :sm="0" :md="0" :lg="6" offset="10">
-        <a-card :style="{ width: '17rem', margin: '12rem auto auto' }">
-          <div>
-            <img
-              :style="{
-                    height: '30px',
-                    margin: '1em auto'
-                  }"
-              src="@/assets/logo.svg"
-            />
-          </div>
-          <a-form ref="formValidate" :model="formValidate" :rules="ruleValidate">
-            <a-form-item prop="username">
-              <Input prefix="md-person" v-model="formValidate.name" placeholder="账号/手机号/邮箱" />
-            </a-form-item>
-            <a-form-item prop="password">
-              <a-input
-                prefix="md-lock"
-                type="password"
-                v-model="formValidate.password"
-                placeholder="密码"
-              />
-            </a-form-item>
-            <a-form-item>
-              <a-button type="primary" long>登&nbsp;录</a-button>
-            </a-form-item>
-            <a-form-item>
-              <span>
-                没有账号&nbsp;？&nbsp;
-                <router-link to="/signup">立即注册</router-link>
-              </span>
-            </a-form-item>
-          </a-form>
-        </a-card>
-      </a-col>
-    </a-row>
+          <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px">
+            <el-form-item
+              prop="username"
+              label="用户名"
+              :rules="[
+                { required: true, message: '请输入用户名', trigger: 'blur' },
+                { message: '请输入正确的用户名', trigger: ['blur', 'change'] }
+              ]"
+            >
+              <el-input v-model="dynamicValidateForm.username"></el-input>
+            </el-form-item>
+            <el-form-item
+              prop="password"
+              label="用户名"
+              :rules="[
+                { required: true, message: '请输入密码', trigger: 'blur' },
+                { type: 'password', message: '请输入正确的密码', trigger: ['blur', 'change'] }
+              ]"
+            >
+              <el-input v-model="dynamicValidateForm.username"></el-input>
+            </el-form-item>
+            <el-form-item prop="remberme">
+              <el-checkbox-group v-model="ruleForm.remberme">
+                <el-checkbox label="记住我？" name="remberme"></el-checkbox>
+              </el-checkbox-group>
+              <el-link type="primary">忘记密码</el-link>
+              <el-button type="primary" @click="submitForm('ruleForm')">立即登录</el-button>
+            </el-form-item>
+          </el-form>
+        </el-card>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -80,16 +52,26 @@ export default {
   name: 'signin',
   data () {
     return {
-      formValidate: {},
-      ruleValidate: {}
+    }
+  },
+  methods: {
+    submitForm (formName) {
+      this.$refs[formName].validate((valid) => {
+        if (valid) {
+          alert('submit!')
+        } else {
+          console.log('error submit!!')
+          return false
+        }
+      })
     }
   }
 }
 </script>
 
-<style lang="less">
+<style lang="scss">
 #signin {
-  background-image: url('../../assets/undraw_best_place_r685.svg');
+  background-image: url('../../assets/place.svg');
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;

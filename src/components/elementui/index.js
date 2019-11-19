@@ -1,30 +1,46 @@
 import {
   Button,
   Card,
+  Checkbox,
+  CheckboxGroup,
   Col,
+  Container,
   Carousel,
+  CarouselItem,
   Drawer,
   Form,
+  Header,
   Icon,
+  Image,
   Input,
-  Layout,
+  Link,
+  Main,
+  Footer,
   Menu,
   message,
   Popover,
   Row
-} from 'ant-design-vue'
+} from 'element-ui'
 
-const Antd = {
+const Element = {
   install: function (Vue) {
     Vue.use(Button)
     Vue.use(Card)
+    Vue.use(Checkbox)
+    Vue.use(CheckboxGroup)
     Vue.use(Col)
+    Vue.use(Container)
     Vue.use(Carousel)
+    Vue.use(CarouselItem)
     Vue.use(Drawer)
     Vue.use(Form)
+    Vue.use(Header)
     Vue.use(Icon)
+    Vue.use(Image)
     Vue.use(Input)
-    Vue.use(Layout)
+    Vue.use(Link)
+    Vue.use(Main)
+    Vue.use(Footer)
     Vue.use(Menu)
     Vue.use(message)
     Vue.use(Popover)
@@ -32,4 +48,4 @@ const Antd = {
   }
 }
 
-export default Antd
+export default Element

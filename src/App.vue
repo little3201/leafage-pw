@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <a-layout>
+    <el-container style="100vw">
       <router-view />
-    </a-layout>
+    </el-container>
   </div>
 </template>
 
-<style lang="less">
+<style lang="scss">
 #app {
   font-family: Helvetica, 'PingFang SC', "Microsoft YaHei", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
