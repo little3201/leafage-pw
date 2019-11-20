@@ -2,13 +2,12 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-// view-design
-import Element from '@/components/elementui'
-import '@/components/elementui/index.scss'
+// vuetify
+import vuetify from '@/plugins/vuetify'
 
 Vue.config.productionTip = false
 
-Vue.use(Element)
+Vue.use(vuetify)
 
 new Vue({
   router,

@@ -2,13 +2,24 @@ module.exports = {
   presets: [
     '@vue/cli-plugin-babel/preset'
   ],
-  'plugins': [
-    [
-      'component',
-      {
-        'libraryName': 'element-ui',
-        'styleLibraryName': 'theme-chalk'
-      }
-    ]
+  rules: [
+    {
+      test: /\.s(c|a)ss$/,
+      use: [
+        'vue-style-loader',
+        'css-loader',
+        {
+          loader: 'sass-loader',
+          // Requires sass-loader@^8.0.0
+          options: {
+            implementation: require('sass'),
+            sassOptions: {
+              fiber: require('fibers'),
+              indentedSyntax: true // optional
+            }
+          }
+        }
+      ]
+    }
   ]
 }
