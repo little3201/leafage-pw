@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import Vuetify, {
   VApp,
-  VButton,
+  VBtn,
   VCard,
   VCol,
+  VInput,
   VRow,
   VToolbar
 } from 'vuetify/lib'
@@ -13,9 +14,10 @@ import { Ripple } from 'vuetify/lib/directives'
 Vue.use(Vuetify, {
   components: {
     VApp,
-    VButton,
+    VBtn,
     VCard,
     VCol,
+    VInput,
     VRow,
     VToolbar
   },
