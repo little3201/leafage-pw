@@ -1,18 +1,26 @@
 import Vue from 'vue'
 import Vuetify, {
+  VApp,
+  VButton,
   VCard,
-  VRating,
+  VCol,
+  VRow,
   VToolbar
 } from 'vuetify/lib'
 
+import { Ripple } from 'vuetify/lib/directives'
+
 Vue.use(Vuetify, {
   components: {
+    VApp,
+    VButton,
     VCard,
-    VRating,
+    VCol,
+    VRow,
     VToolbar
   },
   directives: {
-  // Ripples
+    Ripple
   }
 })
 
