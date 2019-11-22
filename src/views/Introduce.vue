@@ -1,9 +1,9 @@
 <template>
   <div id="introduce">
     <headers />
-    <a-layout-content style="margin-top:60px">
+    <el-main style="margin-top:60px">
       <h1>眼里只有你。。。</h1>
-    </a-layout-content>
+    </el-main>
   </div>
 </template>
 

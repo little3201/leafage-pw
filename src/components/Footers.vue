@@ -20,5 +20,6 @@ export default {
 #footers {
   position: absolute;
   bottom: 0.5rem;
+  z-index: 3;
 }
 </style>

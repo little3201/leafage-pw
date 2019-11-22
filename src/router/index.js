@@ -1,44 +1,29 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import routes from './routes'
+import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
-// 白名单
-const whiteList = ['/', '/home', '/signin', '/signup']
+const routes = [
+  {
+    path: '/',
+    name: 'home',
+    component: Home
+  },
+  {
+    path: '/about',
+    name: 'about',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  }
+]
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
-})
-
-/* 路由之前检查token */
-router.beforeEach((to, from, next) => {
-//  LoadingBar.start()
-  let token = '123'
-  // 白名单直接放行
-  if (whiteList.includes(to.fullPath)) {
-    next()
-  } else if (
-    to.fullPath.startsWith('/article')
-  ) {
-    // 路由包含/article，即文章详情页，或者包换/photograph，即图片记录，放行
-    next()
-  } else if (token == null && to.fullPath !== '/login') {
-    // 路由不是登录，且没有拿到token，直接拦截，跳转至登录页
-    next({
-      name: 'login'
-    })
-  } else {
-    // 拿到token，或者路由是login，直接放行
-    next()
-  }
-})
-
-/* 路由之后关闭进度条 */
-router.afterEach(() => {
-//  LoadingBar.finish()
 })
 
 export default router
