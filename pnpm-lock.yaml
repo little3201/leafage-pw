@@ -1,5 +1,6 @@
 dependencies:
-  core-js: 3.4.1
+  axios: 0.19.0
+  core-js: 3.4.2
   register-service-worker: 1.6.2
   vue: 2.6.10
   vue-router: 3.1.3
@@ -844,7 +845,7 @@ packages:
       '@babel/plugin-transform-unicode-regex': 7.7.0_@babel+core@7.7.2
       '@babel/types': 7.7.2
       browserslist: 4.7.3
-      core-js-compat: 3.4.1
+      core-js-compat: 3.4.2
       invariant: 2.2.4
       js-levenshtein: 1.1.6
       semver: 5.7.1
@@ -856,7 +857,7 @@ packages:
       tarball: '@babel/preset-env/download/@babel/preset-env-7.7.1.tgz'
   /@babel/runtime-corejs3/7.7.2:
     dependencies:
-      core-js-pure: 3.4.1
+      core-js-pure: 3.4.2
       regenerator-runtime: 0.13.3
     dev: true
     resolution:
@@ -1351,8 +1352,8 @@ packages:
       '@vue/babel-preset-jsx': 1.1.2_@babel+core@7.7.2
       babel-plugin-dynamic-import-node: 2.3.0
       babel-plugin-module-resolver: 3.2.0
-      core-js: 3.4.1
-      core-js-compat: 3.4.1
+      core-js: 3.4.2
+      core-js-compat: 3.4.2
     dev: true
     resolution:
       integrity: sha1-F8/nz+Jz3EzKjZiNW4rhWkKIf7M=
@@ -1541,7 +1542,7 @@ packages:
       default-gateway: 5.0.5
       dotenv: 8.2.0
       dotenv-expand: 5.1.0
-      file-loader: 4.2.0_webpack@4.41.2
+      file-loader: 4.3.0_webpack@4.41.2
       fs-extra: 7.0.1
       globby: 9.2.0
       hash-sum: 1.0.2
@@ -1563,7 +1564,7 @@ packages:
       string.prototype.padend: 3.0.0
       terser-webpack-plugin: 2.2.1_webpack@4.41.2
       thread-loader: 2.1.3_webpack@4.41.2
-      url-loader: 2.2.0_file-loader@4.2.0+webpack@4.41.2
+      url-loader: 2.3.0_file-loader@4.3.0+webpack@4.41.2
       vue-loader: 15.7.2_css-loader@3.2.0+webpack@4.41.2
       vue-template-compiler: 2.6.10
       webpack: 4.41.2_webpack@4.41.2
@@ -2241,6 +2242,14 @@ packages:
     resolution:
       integrity: sha1-8OAD2cqef1nHpQiUXXsu+aBKVC8=
       tarball: aws4/download/aws4-1.8.0.tgz
+  /axios/0.19.0:
+    dependencies:
+      follow-redirects: 1.5.10
+      is-buffer: 2.0.4
+    dev: false
+    resolution:
+      integrity: sha1-jgm/89kSLhM/e4EByPvdAO09Krg=
+      tarball: axios/download/axios-0.19.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Faxios%2Fdownload%2Faxios-0.19.0.tgz
   /babel-code-frame/6.26.0:
     dependencies:
       chalk: 1.1.3
@@ -2694,8 +2703,8 @@ packages:
   /browserslist/4.7.3:
     dependencies:
       caniuse-lite: 1.0.30001011
-      electron-to-chromium: 1.3.309
-      node-releases: 1.1.40
+      electron-to-chromium: 1.3.310
+      node-releases: 1.1.41
     dev: true
     hasBin: true
     resolution:
@@ -3479,20 +3488,20 @@ packages:
     resolution:
       integrity: sha1-cx32qDei7w+PjiNFvf6bfGKi2mg=
       tarball: copy-webpack-plugin/download/copy-webpack-plugin-5.0.5.tgz
-  /core-js-compat/3.4.1:
+  /core-js-compat/3.4.2:
     dependencies:
       browserslist: 4.7.3
       semver: 6.3.0
     dev: true
     resolution:
-      integrity: sha1-4SxaPvn8tQ/Z2aMoBb/mdPkTkkY=
-      tarball: core-js-compat/download/core-js-compat-3.4.1.tgz
-  /core-js-pure/3.4.1:
+      integrity: sha1-ZS+nxUZSt/ZYaok+NwAd9V6irDc=
+      tarball: core-js-compat/download/core-js-compat-3.4.2.tgz
+  /core-js-pure/3.4.2:
     dev: true
     requiresBuild: true
     resolution:
-      integrity: sha1-SD28aHAWtFyrTBhc+ZjCxZ53LCo=
-      tarball: core-js-pure/download/core-js-pure-3.4.1.tgz
+      integrity: sha1-/9TqTcH4UX911KkpmGohRilHdBc=
+      tarball: core-js-pure/download/core-js-pure-3.4.2.tgz
   /core-js/2.6.10:
     deprecated: 'core-js@<3.0 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.'
     dev: true
@@ -3500,11 +3509,11 @@ packages:
     resolution:
       integrity: sha1-iluDkfjMcBPacDQRzltYVwYwDX8=
       tarball: core-js/download/core-js-2.6.10.tgz
-  /core-js/3.4.1:
+  /core-js/3.4.2:
     requiresBuild: true
     resolution:
-      integrity: sha1-dt1oKEEpAKsnyM4LIuYRTXziGxg=
-      tarball: core-js/download/core-js-3.4.1.tgz
+      integrity: sha1-7isaYLUDiNjdzajNtEqSx6nqdt8=
+      tarball: core-js/download/core-js-3.4.2.tgz
   /core-util-is/1.0.2:
     dev: true
     resolution:
@@ -3879,6 +3888,13 @@ packages:
     resolution:
       integrity: sha1-XRKFFd8TT/Mn6QpMk/Tgd6U2NB8=
       tarball: debug/download/debug-2.6.9.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fdebug%2Fdownload%2Fdebug-2.6.9.tgz
+  /debug/3.1.0:
+    dependencies:
+      ms: 2.0.0
+    dev: false
+    resolution:
+      integrity: sha1-W7WgZyYotkFJVmuhaBnmFRjGcmE=
+      tarball: debug/download/debug-3.1.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fdebug%2Fdownload%2Fdebug-3.1.0.tgz
   /debug/3.2.6:
     dependencies:
       ms: 2.1.2
@@ -4300,11 +4316,11 @@ packages:
     resolution:
       integrity: sha1-SGYSh1c9zFPjZsehrlLDoSDuybo=
       tarball: ejs/download/ejs-2.7.4.tgz
-  /electron-to-chromium/1.3.309:
+  /electron-to-chromium/1.3.310:
     dev: true
     resolution:
-      integrity: sha1-nh5eI8c9BPA2TlJK+q/WZZKJrhs=
-      tarball: electron-to-chromium/download/electron-to-chromium-1.3.309.tgz
+      integrity: sha1-psDBlNk/9U/Nxtw4Q2iau1xN7Aw=
+      tarball: electron-to-chromium/download/electron-to-chromium-1.3.310.tgz
   /elegant-spinner/1.0.1:
     dev: true
     engines:
@@ -5099,7 +5115,7 @@ packages:
     resolution:
       integrity: sha1-yg9u+m3T1WEzP7FFFQZcL6/fQ5w=
       tarball: file-entry-cache/download/file-entry-cache-5.0.1.tgz
-  /file-loader/4.2.0_webpack@4.41.2:
+  /file-loader/4.3.0_webpack@4.41.2:
     dependencies:
       loader-utils: 1.2.3
       schema-utils: 2.5.0
@@ -5110,8 +5126,8 @@ packages:
     peerDependencies:
       webpack: ^4.0.0
     resolution:
-      integrity: sha1-X7Ek0jadcHXXCppavs0S5gqVIV4=
-      tarball: file-loader/download/file-loader-4.2.0.tgz
+      integrity: sha1-eA8ED3KbPRgBnyBgX3I+hEuKWK8=
+      tarball: file-loader/download/file-loader-4.3.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ffile-loader%2Fdownload%2Ffile-loader-4.3.0.tgz
   /filesize/3.6.1:
     dev: true
     engines:
@@ -5260,6 +5276,15 @@ packages:
     resolution:
       integrity: sha1-jdfYc6G6vCB9lOrQwuDkQnbr8ug=
       tarball: flush-write-stream/download/flush-write-stream-1.1.1.tgz
+  /follow-redirects/1.5.10:
+    dependencies:
+      debug: 3.1.0
+    dev: false
+    engines:
+      node: '>=4.0'
+    resolution:
+      integrity: sha1-e3qfmuov3/NnhqlP9kPtB/T/Xio=
+      tarball: follow-redirects/download/follow-redirects-1.5.10.tgz
   /follow-redirects/1.9.0:
     dependencies:
       debug: 3.2.6
@@ -6241,6 +6266,13 @@ packages:
     resolution:
       integrity: sha1-76ouqdqg16suoTqXsritUf776L4=
       tarball: is-buffer/download/is-buffer-1.1.6.tgz
+  /is-buffer/2.0.4:
+    dev: false
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-PlcvI8hBGlz9lVfISeNmXgspBiM=
+      tarball: is-buffer/download/is-buffer-2.0.4.tgz
   /is-callable/1.1.4:
     dev: true
     engines:
@@ -8094,7 +8126,6 @@ packages:
       integrity: sha1-viwAX9oy4LKa8fBdfEszIUxwH5I=
       tarball: move-concurrently/download/move-concurrently-1.0.1.tgz
   /ms/2.0.0:
-    dev: true
     resolution:
       integrity: sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=
       tarball: ms/download/ms-2.0.0.tgz
@@ -8270,13 +8301,13 @@ packages:
     resolution:
       integrity: sha1-y3La+UyTkECY4oucWQ/YZuRkvVA=
       tarball: node-notifier/download/node-notifier-5.4.3.tgz
-  /node-releases/1.1.40:
+  /node-releases/1.1.41:
     dependencies:
       semver: 6.3.0
     dev: true
     resolution:
-      integrity: sha1-qU+s+o4tYSMCYByhNhdB1SnEUVo=
-      tarball: node-releases/download/node-releases-1.1.40.tgz
+      integrity: sha1-V2dKgqN/gS0Y47JhGK769ToAr+0=
+      tarball: node-releases/download/node-releases-1.1.41.tgz
   /nopt/4.0.1:
     dependencies:
       abbrev: 1.1.1
@@ -11732,9 +11763,9 @@ packages:
     resolution:
       integrity: sha1-2pN/emLiH+wf0Y1Js1wpNQZ6bHI=
       tarball: urix/download/urix-0.1.0.tgz
-  /url-loader/2.2.0_file-loader@4.2.0+webpack@4.41.2:
+  /url-loader/2.3.0_file-loader@4.3.0+webpack@4.41.2:
     dependencies:
-      file-loader: 4.2.0_webpack@4.41.2
+      file-loader: 4.3.0_webpack@4.41.2
       loader-utils: 1.2.3
       mime: 2.4.4
       schema-utils: 2.5.0
@@ -11746,8 +11777,8 @@ packages:
       file-loader: '*'
       webpack: ^4.0.0
     resolution:
-      integrity: sha1-rzIa7OH9DWg63Iqusngp8px1tG4=
-      tarball: url-loader/download/url-loader-2.2.0.tgz
+      integrity: sha1-4OLvZY8APvuMpBsPP/v3a6uIZYs=
+      tarball: url-loader/download/url-loader-2.3.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Furl-loader%2Fdownload%2Furl-loader-2.3.0.tgz
   /url-parse/1.4.7:
     dependencies:
       querystringify: 2.1.1
@@ -12620,8 +12651,9 @@ specifiers:
   '@vue/cli-service': ^4.0.5
   '@vue/eslint-config-standard': ^4.0.0
   '@vue/test-utils': 1.0.0-beta.29
+  axios: ^0.19.0
   babel-eslint: ^10.0.3
-  core-js: ^3.4.1
+  core-js: ^3.4.2
   deepmerge: ^4.2.2
   eslint: ^5.16.0
   eslint-plugin-vue: ^5.2.3

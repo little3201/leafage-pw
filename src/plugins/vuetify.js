@@ -4,9 +4,15 @@ import Vuetify, {
   VBtn,
   VCard,
   VCol,
+  VContainer,
+  VContent,
+  VFooter,
+  VForm,
   VInput,
   VRow,
-  VToolbar
+  VTextField,
+  VToolbar,
+  VTooltip
 } from 'vuetify/lib'
 
 import { Ripple } from 'vuetify/lib/directives'
@@ -17,9 +23,15 @@ Vue.use(Vuetify, {
     VBtn,
     VCard,
     VCol,
+    VContainer,
+    VContent,
+    VTextField,
+    VFooter,
+    VForm,
     VInput,
     VRow,
-    VToolbar
+    VToolbar,
+    VTooltip
   },
   directives: {
     Ripple
