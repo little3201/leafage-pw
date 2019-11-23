@@ -3,6 +3,8 @@ import Vuetify, {
   VApp,
   VBtn,
   VCard,
+  VCarousel,
+  VCarouselItem,
   VCol,
   VContainer,
   VContent,
@@ -10,9 +12,9 @@ import Vuetify, {
   VForm,
   VInput,
   VRow,
+  VSheet,
   VTextField,
-  VToolbar,
-  VTooltip
+  VToolbar
 } from 'vuetify/lib'
 
 import { Ripple } from 'vuetify/lib/directives'
@@ -22,16 +24,18 @@ Vue.use(Vuetify, {
     VApp,
     VBtn,
     VCard,
+    VCarousel,
+    VCarouselItem,
     VCol,
     VContainer,
     VContent,
-    VTextField,
     VFooter,
     VForm,
     VInput,
     VRow,
-    VToolbar,
-    VTooltip
+    VSheet,
+    VTextField,
+    VToolbar
   },
   directives: {
     Ripple
