@@ -1,21 +1,24 @@
 <template>
   <div>
+    <Headers />
     <v-content>
       <!-- Provides the application the proper gutter -->
-      <v-container fluid :vertical="true">
+      <v-container fluid>
         <v-carousel
-          cycle
-          height="400"
-          hide-delimiter-background
-          show-arrows-on-hover
+          v-model="model"
+          :show-arrows="true"
+          :hide-delimiters="true"
+          :vertical="true"
+          :continuous="false"
         >
           <v-carousel-item
-            v-for="(slide, i) in slides"
-            :key="i"
+            v-for="(color, i) in colors"
+            :key="color"
           >
             <v-sheet
-              :color="colors[i]"
+              :color="color"
               height="100%"
+              tile
             >
               <v-row
                 class="fill-height"
@@ -23,6 +26,7 @@
                 justify="center"
               >
                 <div class="display-3">{{ slide }} Slide</div>
+                <div class="display-3">Slide {{ i + 1 }}</div>
               </v-row>
             </v-sheet>
           </v-carousel-item>
@@ -35,11 +39,13 @@
 
 <script>
 // @ is an alias to /src
+import Headers from '@/components/Headers'
 import Footers from '@/components/Footers'
 
 export default {
   name: 'introduce',
   components: {
+    Headers,
     Footers
   },
   data () {
@@ -57,8 +63,15 @@ export default {
         'Third',
         'Fourth',
         'Fifth'
-      ]
+      ],
+      model: 0
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.container--fluid {
+  padding: 0;
+}
+</style>

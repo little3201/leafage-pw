@@ -1,82 +1,48 @@
 <template>
-  <v-form
-    ref="form"
-    v-model="valid"
-    lazy-validation
-  >
-    <v-text-field
-      v-model="name"
-      :counter="10"
-      :rules="nameRules"
-      label="Name"
-      required
-    ></v-text-field>
-
-    <v-text-field
-      v-model="email"
-      :rules="emailRules"
-      label="E-mail"
-      required
-    ></v-text-field>
-
-    <v-select
-      v-model="select"
-      :items="items"
-      :rules="[v => !!v || 'Item is required']"
-      label="Item"
-      required
-    ></v-select>
-
-    <v-checkbox
-      v-model="checkbox"
-      :rules="[v => !!v || 'You must agree to continue!']"
-      label="Do you agree?"
-      required
-    ></v-checkbox>
-
-    <v-btn
-      :disabled="!valid"
-      color="success"
-      class="mr-4"
-      @click="validate"
-    >
-      Validate
-    </v-btn>
-
-    <v-btn
-      color="error"
-      class="mr-4"
-      @click="reset"
-    >
-      Reset Form
-    </v-btn>
-
-    <v-btn
-      color="warning"
-      @click="resetValidation"
-    >
-      Reset Validation
-    </v-btn>
-  </v-form>
+  <v-row align="center" justify="center">
+    <v-col style="max-width: 19rem;">
+      <img src="../../assets/logo.png" />
+      <v-form ref="form" v-model="valid" lazy-validation>
+        <v-text-field v-model="username" :rules="usernameRules" label="账号/手机号/邮箱" required />
+        <v-text-field v-model="password" :rules="passwordRules" label="登录密码" required />
+        <v-checkbox v-model="checkbox" label="记住我？"></v-checkbox>
+        <v-btn :block="true" :rounded="true" :loading="loading" @click="validate">
+          登&nbsp;录
+        </v-btn>
+      </v-form>
+    </v-col>
+    <Footers />
+  </v-row>
 </template>
 
 <script>
+import Footers from '@/components/Footers'
+
 export default {
   name: 'signin',
+  components: {
+    Footers
+  },
   data () {
     return {
+      valid: true,
+      loading: false,
+      username: '',
+      usernameRules: [
+        v => !!v || '请输入账号/手机号/邮箱'
+      ],
+      password: '',
+      passwordRules: [
+        v => !!v || '请输入登录密码'
+      ],
+      checkbox: false
     }
   },
   methods: {
-    submitForm (formName) {
-      this.$refs[formName].validate((valid) => {
-        if (valid) {
-          alert('submit!')
-        } else {
-          console.log('error submit!!')
-          return false
-        }
-      })
+    validate () {
+      if (this.$refs.form.validate()) {
+        this.snackbar = true
+      }
     }
   }
 }
