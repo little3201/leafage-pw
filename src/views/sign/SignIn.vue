@@ -1,7 +1,7 @@
 <template>
-  <v-row align="center" justify="center">
-    <v-col style="max-width: 19rem;">
-      <img src="../../assets/logo.png" />
+  <v-row class="signin" align="center" justify="center">
+    <v-col style="max-width: 17rem;">
+      <img src="../../assets/logo.png" style="height: 100px" />
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-text-field v-model="username" :rules="usernameRules" label="账号/手机号/邮箱" required />
         <v-text-field v-model="password" :rules="passwordRules" label="登录密码" required />
@@ -9,6 +9,7 @@
         <v-btn :block="true" :rounded="true" :loading="loading" @click="validate">
           登&nbsp;录
         </v-btn>
+        <v-btn text to="/signup">注册账号</v-btn>
       </v-form>
     </v-col>
     <Footers />
@@ -49,5 +50,9 @@ export default {
 </script>
 
 <style lang="scss">
-
+.signin {
+  background: #00c3ff;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #00c3ff, #ffff1c);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #00c3ff, #ffff1c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 </style>

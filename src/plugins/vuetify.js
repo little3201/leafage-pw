@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuetify, {
   VApp,
+  VAppBar,
   VBtn,
   VCard,
   VCarousel,
@@ -12,12 +13,12 @@ import Vuetify, {
   VFooter,
   VForm,
   VIcon,
+  VImg,
+  VMenu,
   VRow,
   VSheet,
   VSpacer,
   VTextField,
-  VToolbar,
-  VToolbarItems,
   VToolbarTitle
 } from 'vuetify/lib'
 
@@ -26,6 +27,7 @@ import { Ripple } from 'vuetify/lib/directives'
 Vue.use(Vuetify, {
   components: {
     VApp,
+    VAppBar,
     VBtn,
     VCard,
     VCarousel,
@@ -37,12 +39,12 @@ Vue.use(Vuetify, {
     VFooter,
     VForm,
     VIcon,
+    VImg,
+    VMenu,
     VRow,
     VSheet,
     VSpacer,
     VTextField,
-    VToolbar,
-    VToolbarItems,
     VToolbarTitle
   },
   directives: {

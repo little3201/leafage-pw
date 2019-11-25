@@ -10,23 +10,10 @@
           :hide-delimiters="true"
           :vertical="true"
           :continuous="false"
+          height="644"
         >
-          <v-carousel-item
-            v-for="(color, i) in colors"
-            :key="color"
-          >
-            <v-sheet
-              :color="color"
-              height="100%"
-              tile
-            >
-              <v-row
-                align="center"
-                justify="center"
-              >
-                <div class="display-3">{{ i + 1 }}</div>
-              </v-row>
-            </v-sheet>
+          <v-carousel-item v-for="src in imgs" :key="src">
+            <v-img :src="src" aspect-ratio="2.16"/>
           </v-carousel-item>
         </v-carousel>
       </v-container>
@@ -49,12 +36,10 @@ export default {
   },
   data () {
     return {
-      colors: [
-        'indigo',
-        'warning',
-        'pink darken-2',
-        'red lighten-1',
-        'deep-purple accent-4'
+      imgs: [
+        'https://oss.abeille.top/upload.svg',
+        'https://oss.abeille.top/onboarding.svg',
+        'https://oss.abeille.top/content.svg'
       ],
       model: 0
     }
@@ -84,7 +69,7 @@ export default {
           this.model -= 1
         } else {
           // 当滑轮向上滚动时
-          if (this.model < this.colors.length - 1) {
+          if (this.model < this.imgs.length - 1) {
             this.model += 1
           }
         }
