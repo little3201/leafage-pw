@@ -6,7 +6,7 @@
       <v-container fluid>
         <v-carousel
           v-model="model"
-          :show-arrows="true"
+          :show-arrows="false"
           :hide-delimiters="true"
           :vertical="true"
           :continuous="false"
@@ -25,8 +25,7 @@
                 align="center"
                 justify="center"
               >
-                <div class="display-3">{{ slide }} Slide</div>
-                <div class="display-3">Slide {{ i + 1 }}</div>
+                <div class="display-3">{{ i + 1 }}</div>
               </v-row>
             </v-sheet>
           </v-carousel-item>
@@ -57,14 +56,35 @@ export default {
         'red lighten-1',
         'deep-purple accent-4'
       ],
-      slides: [
-        'First',
-        'Second',
-        'Third',
-        'Fourth',
-        'Fifth'
-      ],
       model: 0
+    }
+  },
+  mounted () {
+    // 监听（绑定）滚轮 滚动事件, safari, firefox, chrome
+    this.$nextTick(function () {
+      // 监听当前组件的滚动事件
+      let mousewheelevt = 'onwheel' in document.createElement('div') ? 'wheel'// 各个厂商的高版本浏览器都支持"wheel"
+        : document.onmousewheel !== undefined ? 'mousewheel' // Webkit 和 IE一定支持"mousewheel"
+          : 'DOMMouseScroll' // 低版本firefox
+      window.addEventListener(mousewheelevt, this.handleScroll, false)
+    })
+  },
+  methods: {
+    handleScroll (event) {
+      if (!event) event = window.event
+      let wheel = event.wheelDelta === undefined
+        ? (event.detail === undefined ? false : event.detail) : event.wheelDelta
+      if (wheel) {
+        if (event.wheelDelta > 0) {
+          // 当滑轮向下滚动时
+          this.model -= 1
+        } else {
+          // 当滑轮向上滚动时
+          if (this.model < this.colors.length - 1) {
+            this.model += 1
+          }
+        }
+      }
     }
   }
 }
