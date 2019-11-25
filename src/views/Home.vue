@@ -21,7 +21,6 @@
               tile
             >
               <v-row
-                class="fill-height"
                 align="center"
                 justify="center"
               >
@@ -66,7 +65,10 @@ export default {
       let mousewheelevt = 'onwheel' in document.createElement('div') ? 'wheel'// 各个厂商的高版本浏览器都支持"wheel"
         : document.onmousewheel !== undefined ? 'mousewheel' // Webkit 和 IE一定支持"mousewheel"
           : 'DOMMouseScroll' // 低版本firefox
-      window.addEventListener(mousewheelevt, this.handleScroll, false)
+      if (window.addEventListener) {
+        window.addEventListener(mousewheelevt, this.handleScroll, false)
+      }
+      window.onmousewheel = document.onmousewheel = this.handleScroll
     })
   },
   methods: {
