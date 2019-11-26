@@ -1,11 +1,17 @@
 <template>
-  <v-app-bar :flat="true">
-    <v-toolbar-title>Abeille</v-toolbar-title>
-    <v-spacer></v-spacer>
-    <v-btn text to="/">首页</v-btn>
-    <v-btn text to="/about">介绍</v-btn>
-    <v-btn text to="/signin">控制台</v-btn>
-  </v-app-bar>
+  <div id="headers">
+    <el-header :style="{ position: 'fixed', width: '100%' }">
+      <el-menu mode="horizontal" style="padding: 1rem 5rem">
+          <router-link to="/" style="float: left">
+            <img
+              style="height: 40px; margin: 0.5rem auto"
+              src="@/assets/logo.svg"
+            />
+          </router-link>
+          <i class="el-icon-s-operation" style="font-size: 28px; float: right; margin: 1rem auto;"></i>
+      </el-menu>
+    </el-header>
+  </div>
 </template>
 
 <script>
@@ -16,9 +22,19 @@ export default {
     }
   },
   methods: {
+    showDrawer () {
+      this.visible = true
+    },
+    onClose () {
+      this.visible = false
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.el-menu.el-menu--horizontal {
+  border-bottom: solid 0;
+  background: transparent;
+}
 </style>

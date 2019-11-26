@@ -1,72 +1,101 @@
 <template>
-  <v-row class="signup" align="center" justify="center">
-    <v-col style="max-width: 19rem;">
-      <img src="../../assets/logo.png" style="height: 100px" />
-      <v-form ref="form" v-model="valid" lazy-validation>
-        <v-text-field v-model="nickname" :rules="nicknameRules" label="昵称" required />
-        <v-text-field v-model="username" :rules="usernameRules" label="手机号/邮箱" required />
-        <v-text-field v-model="password" :rules="passwordRules" label="密码" required />
-        <v-text-field v-model="repassword" :rules="repasswordRules" label="确认密码" required />
-        <v-btn
-          :block="true"
-          :rounded="true"
-          :loading="loading"
-          @click="validate"
-        >
-          注&nbsp;册
-        </v-btn>
-        <v-btn text to="/signin">登录</v-btn>
-      </v-form>
-    </v-col>
-    <Footers />
-  </v-row>
+  <div id="signin">
+    <a-row type="flex" justify="space-around">
+      <a-col :xs="20" :sm="18" :md="16" :lg="0">
+        <a-card :style="{ maxWidth: '17rem', margin: '6rem auto auto' }">
+          <div>
+            <img
+              :style="{
+                    height: '30px',
+                    margin: '1em auto'
+                  }"
+              src="@/assets/logo.svg"
+            />
+          </div>
+          <a-form ref="formValidate" :model="formValidate" :rules="ruleValidate">
+            <a-form-item prop="username">
+              <a-input prefix="user" v-model="formValidate.name" placeholder="账号/手机号/邮箱" />
+            </a-form-item>
+            <a-form-item prop="password">
+              <a-input
+                prefix="lock"
+                type="password"
+                v-model="formValidate.password"
+                placeholder="密码"
+              />
+            </a-form-item>
+            <a-form-item>
+              <a-button type="warning" long>登&nbsp;录</a-button>
+            </a-form-item>
+            <a-form-item>
+              <span>
+                没有账号&nbsp;？&nbsp;
+                <router-link to="/singup">立即注册</router-link>
+              </span>
+            </a-form-item>
+          </a-form>
+        </a-card>
+      </a-col>
+      <a-col :xs="0" :sm="0" :md="0" :lg="6" offset="10">
+        <a-card :style="{ width: '17rem', margin: '12rem auto auto' }">
+          <div>
+            <img
+              :style="{
+                    height: '30px',
+                    margin: '1em auto'
+                  }"
+              src="@/assets/logo.svg"
+            />
+          </div>
+          <a-form ref="formValidate" :model="formValidate" :rules="ruleValidate">
+            <a-form-item prop="username">
+              <Input prefix="md-person" v-model="formValidate.name" placeholder="账号/手机号/邮箱" />
+            </a-form-item>
+            <a-form-item prop="password">
+              <a-input
+                prefix="md-lock"
+                type="password"
+                v-model="formValidate.password"
+                placeholder="密码"
+              />
+            </a-form-item>
+            <a-form-item>
+              <a-button type="primary" long>注&nbsp;册</a-button>
+            </a-form-item>
+            <a-form-item>
+              <span>
+                已有账号&nbsp;？&nbsp;
+                <router-link to="/signup">立即登录</router-link>
+              </span>
+            </a-form-item>
+          </a-form>
+        </a-card>
+      </a-col>
+    </a-row>
+  </div>
 </template>
 
 <script>
-import Footers from '@/components/Footers'
-
 export default {
-  name: 'signup',
-  components: {
-    Footers
-  },
+  name: 'signin',
   data () {
     return {
-      valid: true,
-      loading: false,
-      nickname: '',
-      username: '',
-      nicknameRules: [
-        v => !!v || '请输入昵称'
-      ],
-      usernameRules: [
-        v => !!v || '请输入账号'
-      ],
-      password: '',
-      repassword: '',
-      passwordRules: [
-        v => !!v || '请输入密码'
-      ],
-      repasswordRules: [
-        v => !!v || '请输入密码'
-      ],
-      checkbox: false
-    }
-  },
-  methods: {
-    validate () {
-      if (this.$refs.form.validate()) {
-        this.snackbar = true
-      }
+      formValidate: {},
+      ruleValidate: {}
     }
   }
 }
 </script>
 
-<style lang="scss" scoped>
-.signup {
-  background: #00c3ff;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #ffff1c, #00c3ff);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #ffff1c, #00c3ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+<style lang="scss">
+#signin {
+  background-image: url('https://oss.abeille.top/place.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 </style>

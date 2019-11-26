@@ -1,23 +1,23 @@
 <template>
-  <div>
+  <div id="home">
     <Headers />
-    <v-content>
-      <!-- Provides the application the proper gutter -->
-      <v-container fluid>
-        <v-carousel
-          v-model="model"
-          :show-arrows="false"
-          :hide-delimiters="true"
-          :vertical="true"
-          :continuous="false"
-          height="644"
-        >
-          <v-carousel-item v-for="src in imgs" :key="src">
-            <v-img :src="src" aspect-ratio="2.16"/>
-          </v-carousel-item>
-        </v-carousel>
-      </v-container>
-    </v-content>
+    <el-main style="width: 100vw">
+      <el-carousel
+        height="100vh"
+        direction="vertical"
+        :autoplay="false"
+        :loop="false"
+        ref="carousel"
+        indicator-position="none"
+      >
+        <el-carousel-item v-for="(item, index) in datas" :key="index">
+          <div>
+            <h1>{{ item.content }}</h1>
+          </div>
+          <img :src="item.url" />
+        </el-carousel-item>
+      </el-carousel>
+    </el-main>
     <Footers />
   </div>
 </template>
@@ -25,27 +25,39 @@
 <script>
 // @ is an alias to /src
 import _ from 'lodash' // 引入节流函数
-import Headers from '@/components/Headers'
-import Footers from '@/components/Footers'
+import Headers from '@/components/Headers.vue'
+import Footers from '@/components/Footers.vue'
 
 export default {
-  name: 'introduce',
+  name: 'home',
   components: {
     Headers,
     Footers
   },
   data () {
     return {
-      imgs: [
-        'https://oss.abeille.top/upload.svg',
-        'https://oss.abeille.top/onboarding.svg',
-        'https://oss.abeille.top/content.svg'
-      ],
-      model: 0
+      datas: [
+        {
+          url: 'https://oss.abeille.top/creativity.svg',
+          content: '你有故事...'
+        },
+        {
+          url: 'https://oss.abeille.top/content.svg',
+          content: '我有酒...'
+        },
+        {
+          url: 'https://oss.abeille.top/upload.svg',
+          content: '咱两一起做朋友...'
+        },
+        {
+          url: 'https://oss.abeille.top/onboarding.svg',
+          content: '背靠背，手拉手...'
+        }
+      ]
     }
   },
   mounted () {
-    // 监听（绑定）滚轮 滚动事件, safari, chrome
+    // 监听（绑定）滚轮 滚动事件, safari, firefox, chrome
     this.$nextTick(function () {
       // 监听当前组件的滚动事件
       let mousewheelevt = 'onwheel' in document.createElement('div') ? 'wheel'// 各个厂商的高版本浏览器都支持"wheel"
@@ -58,20 +70,18 @@ export default {
     })
   },
   methods: {
-    // 滚动处理
     handleScroll (event) {
+      // 页面滚动距顶部距离
       if (!event) event = window.event
-      let wheel = event.wheelDelta === undefined
-        ? (event.detail === undefined ? false : event.detail) : event.wheelDelta
+      let wheel = event.wheelDelta === undefined ? (event.detail === undefined ? false : event.detail) : event.wheelDelta
+      let carousel = this.$refs.carousel
       if (wheel) {
         if (event.wheelDelta > 0) {
-          // 当滑轮向下滚动时
-          this.model -= 1
-        } else {
           // 当滑轮向上滚动时
-          if (this.model < this.imgs.length - 1) {
-            this.model += 1
-          }
+          carousel.prev()
+        } else {
+          // 当滑轮向下滚动时
+          carousel.next()
         }
       }
     }
@@ -80,7 +90,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container--fluid {
+.el-main {
+  text-align: center;
   padding: 0;
+}
+img {
+  max-height: 100%;
+  width: auto;
+  opacity: 0.8;
 }
 </style>

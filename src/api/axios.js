@@ -1,9 +1,13 @@
 import axios from 'axios'
 import { getToken } from '@/utils/assist/cookies'
+import config from '@/config'
+
+import NProgress from 'nprogress' // progress bar
+import 'nprogress/nprogress.css' // progress bar style
 
 class HttpRequest {
   // 如果传入参数就用传入的，没有就用baseURL.dev
-  constructor (baseUrl) {
+  constructor (baseUrl = config.baseURL.dev) {
     this.baseUrl = baseUrl
     this.queue = {}
   }
@@ -25,25 +29,29 @@ class HttpRequest {
     // 请求拦截
     instance.interceptors.request.use(
       config => {
+        NProgress.start()
         let token = getToken()
         if (token !== null) {
-          config.headers.Authorization = 'Bearer ' + token // 让每个请求携带自定义 token 请根据实际情况自行修改
+          config.headers.Authorization = "Bearer " + token; // 让每个请求携带自定义 token 请根据实际情况自行修改
         }
-        this.queue[url] = true
-        return config
+        this.queue[url] = true;
+        return config;
       },
       error => {
+        NProgress.done()
         return Promise.reject(error)
       }
     )
     // 响应拦截
     instance.interceptors.response.use(
       res => {
+        NProgress.done()
         this.destroy(url)
         const { data, status } = res
         return { data, status }
       },
       error => {
+        NProgress.done()
         this.destroy(url)
         return Promise.reject(error)
       }
