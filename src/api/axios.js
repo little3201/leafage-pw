@@ -1,43 +1,67 @@
 import axios from 'axios'
-import Vue from 'vue'
-import { LoadingBar } from 'view-design'
+import { getToken } from '@/utils/assist/cookies'
+import config from '@/config'
 
-Vue.component('LoadingBar', LoadingBar)
+import NProgress from 'nprogress' // progress bar
+import 'nprogress/nprogress.css' // progress bar style
 
-// 创建axios实例
-let service: any = {}
-service = axios.create({
-  baseURL: '/api', // api的base_url
-  timeout: 50000 // 请求超时时间
-})
-
-// request拦截器 axios的一些配置
-service.interceptors.request.use(
-  (config: any) => {
-    LoadingBar.start()
-    let token = '123'
-    if (token !== null) {
-      config.headers.Authorization = 'Bearer ' + token // 让每个请求携带自定义 token 请根据实际情况自行修改
+class HttpRequest {
+  // 如果传入参数就用传入的，没有就用baseURL.dev
+  constructor (baseUrl = config.baseURL.dev) {
+    this.baseUrl = baseUrl
+    this.queue = {}
+  }
+  // 统一添加请求参数
+  getInsideConfig () {
+    const config = {
+      // axios.create 参数 baseUrl将被添加到`url`前面，除非`url`是绝对的。
+      baseURL: this.baseUrl,
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
     }
     return config
-  },
-  (error: any) => {
-    LoadingBar.finish()
-    // Do something with request error
-    console.error('error: ', error) // for debug
-    Promise.reject(error)
   }
-)
-
-// respone拦截器 axios的一些配置
-service.interceptors.response.use(
-  (response: any) => {
-    return response
-  },
-  (error: any) => {
-    console.error('error: ' + error) // for debug
-    return Promise.reject(error)
+  destroy (url) {
+    delete this.queue[url]
   }
-)
-
-export default service
+  interceptors (instance, url) {
+    // 请求拦截
+    instance.interceptors.request.use(
+      config => {
+        NProgress.start()
+        let token = getToken()
+        if (token !== null) {
+          config.headers.Authorization = "Bearer " + token; // 让每个请求携带自定义 token 请根据实际情况自行修改
+        }
+        this.queue[url] = true;
+        return config;
+      },
+      error => {
+        NProgress.done()
+        return Promise.reject(error)
+      }
+    )
+    // 响应拦截
+    instance.interceptors.response.use(
+      res => {
+        NProgress.done()
+        this.destroy(url)
+        const { data, status } = res
+        return { data, status }
+      },
+      error => {
+        NProgress.done()
+        this.destroy(url)
+        return Promise.reject(error)
+      }
+    )
+  }
+  request (options) {
+    const instance = axios.create()
+    options = Object.assign(this.getInsideConfig(), options)
+    this.interceptors(instance, options.url)
+    return instance(options)
+  }
+}
+export default HttpRequest
