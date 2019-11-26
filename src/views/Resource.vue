@@ -1,20 +1,15 @@
 <template>
   <div id="resource">
-    <headers />
-    <el-main style="margin-top:60px">
-      <h1>眼里只有你。。。</h1>
-    </el-main>
+    <h1>眼里只有你。。。</h1>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Headers from '@/components/Headers.vue'
 
 export default {
   name: 'resource',
   components: {
-    Headers
   },
   data () {
     return {

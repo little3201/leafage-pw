@@ -1,7 +1,7 @@
 <template>
   <div id="footers">
-    <el-footer style="text-align: center; background: transparent">
-      <div :style="{ fontSize: '1rem' }">Copyright &copy; 2019 · 陕ICP备19017836号-1 · Powerd By 布吉岛</div>
+    <el-footer style="text-align: center; background: transparent;">
+      <div style="font-size: 1rem;">Copyright &copy; 2019 · 陕ICP备19017836号-1 · Powerd By 布吉岛</div>
     </el-footer>
   </div>
 </template>

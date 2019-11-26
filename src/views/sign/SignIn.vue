@@ -1,13 +1,10 @@
 <template>
   <div id="signin">
-    <el-card :hoverable="true" :style="{ maxWidth: '17rem', margin: 'auto' }">
+    <el-card :hoverable="true" style="max-width: 17rem;">
       <el-form :model="ruleForm" :rules="rules" ref="ruleForm" :hide-required-asterisk="true">
         <el-form-item>
           <router-link to="/">
-            <img
-              style="height: 3rem;"
-              src="@/assets/logo.svg"
-            />
+            <img style="height: 3rem;" src="@/assets/logo.svg" />
           </router-link>
         </el-form-item>
         <el-form-item prop="username">
@@ -17,10 +14,10 @@
           <el-input v-model="ruleForm.password" placeholder="登录密码" />
         </el-form-item>
         <el-form-item prop="remberme">
-          <el-checkbox label="记住我 ？" name="remberme" />
+          <el-checkbox label="记住我 ？"  v-model="ruleForm.remberme" />
           <el-button type="text">忘记密码 ？</el-button>
         </el-form-item>
-        <el-form-item prop="remberme">
+        <el-form-item>
           <el-button type="primary" @click="submitForm('ruleForm')">立即登录</el-button>
         </el-form-item>
       </el-form>
@@ -53,7 +50,7 @@ export default {
     submitForm (formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          alert('submit!')
+          console.log('submit!')
         } else {
           return false
         }
