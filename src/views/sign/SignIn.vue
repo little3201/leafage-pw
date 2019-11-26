@@ -50,7 +50,7 @@ export default {
     submitForm (formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          console.log('submit!')
+          alert('submit!')
         } else {
           return false
         }
