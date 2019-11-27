@@ -7,6 +7,7 @@ import {
   Container,
   Carousel,
   CarouselItem,
+  Divider,
   Drawer,
   Form,
   FormItem,
@@ -32,6 +33,7 @@ const Element = {
     Vue.use(Container)
     Vue.use(Carousel)
     Vue.use(CarouselItem)
+    Vue.use(Divider)
     Vue.use(Drawer)
     Vue.use(Form)
     Vue.use(FormItem)

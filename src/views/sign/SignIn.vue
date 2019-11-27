@@ -1,33 +1,41 @@
 <template>
-  <el-row type="flex" justify="end" align="middle" style="height: 100vh; text-align: center;">
+  <el-row type="flex" justify="center" align="middle" style="height: 100vh; text-align: center;">
     <el-col :span="16">
       <el-image src="https://oss.abeille.top/place.svg" fit="contain" />
     </el-col>
     <el-col :span="8">
-      <el-card :hoverable="true" style="max-width: 17rem;">
+      <el-card :hoverable="true" style="padding: 15px; max-width: 20rem;">
+        <router-link to="/">
+          <img style="height: 3rem;" src="@/assets/logo.svg" />
+        </router-link>
+        <h3 style="text-align: initial; margin-bottom: 0;">密码登录</h3>
+        <p style="text-align: initial; font-size: 14px; margin-top: 0;">已有邮箱账户？
+          <el-link type="primary" :underline="false" style="vertical-align: initial;">立即绑定</el-link>
+        </p>
         <el-form :model="ruleForm" :rules="rules" ref="ruleForm" :hide-required-asterisk="true">
-          <el-form-item>
-            <router-link to="/">
-              <img style="height: 3rem;" src="@/assets/logo.svg" />
-            </router-link>
-          </el-form-item>
           <el-form-item prop="username">
             <el-input prefix-icon="el-icon-user" v-model="ruleForm.username" placeholder="账号/手机号/邮箱" />
           </el-form-item>
-          <el-form-item prop="password">
+          <el-form-item prop="password" style="margin-bottom: 5px">
             <el-input prefix-icon="el-icon-lock" v-model="ruleForm.password" placeholder="登录密码" />
           </el-form-item>
-          <el-form-item prop="remberme">
-            <el-checkbox label="记住我 ？"  v-model="ruleForm.remberme" />
-            <el-button type="text">忘记密码？</el-button>
+          <el-form-item style="margin-bottom: 5px; text-align: end">
+            <el-link type="info" :underline="false" style="vertical-align: initial;">忘记密码</el-link>
           </el-form-item>
-          <el-form-item>
-            <el-button type="primary" @click="submitForm('ruleForm')" style="width : 100%">立即登录</el-button>
-          </el-form-item>
-          <el-form-item>
-            <el-button type="text">没有账号？立即注册</el-button>
+          <el-form-item style="margin-bottom: 5px">
+            <el-button type="primary" @click="submitForm('ruleForm')" style="width: 100%;">立即登录</el-button>
           </el-form-item>
         </el-form>
+        <p style="text-align: initial; font-size: 14px; margin-top: 0;">已有账号？
+          <el-link type="primary" :underline="false" style="vertical-align: initial;">立即登录</el-link>
+          <el-link type="info" :underline="false" style="vertical-align: initial;float: right;">快捷登录</el-link>
+        </p>
+        <p>第三方账号登录</p>
+        <p>
+          <el-button size="small" type="primary" icon="el-icon-eleme" circle></el-button>
+          <el-button size="small" type="success" icon="el-icon-eleme" circle></el-button>
+          <el-button size="small" type="info" icon="el-icon-eleme" circle></el-button>
+        </p>
       </el-card>
     </el-col>
   </el-row>
