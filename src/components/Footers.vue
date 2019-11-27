@@ -1,5 +1,8 @@
 <template>
   <el-footer class="footers">
+    <el-link :underline="false" style="vertical-align: initial; margin: 5px 10px;">帮助</el-link>
+    <el-link :underline="false" style="vertical-align: initial; margin: 5px 10px;">条款</el-link>
+    <el-link :underline="false" style="vertical-align: initial; margin: 5px 10px;">隐私</el-link>
     <div style="font-size: 1rem;">Copyright &copy; {{ new Date().getFullYear() }} · 陕ICP备19017836号-1 · Powerd By 布吉岛</div>
   </el-footer>
 </template>

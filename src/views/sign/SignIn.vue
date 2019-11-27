@@ -6,7 +6,7 @@
     <el-col :span="8">
       <el-card :hoverable="true" style="padding: 15px; max-width: 20rem;">
         <router-link to="/">
-          <img style="height: 3rem;" src="@/assets/logo.svg" />
+          <img style="height: 3rem;" src="@/assets/logo.png" />
         </router-link>
         <h3 style="text-align: initial; margin-bottom: 0;">密码登录</h3>
         <p style="text-align: initial; font-size: 14px; margin-top: 0;">已有邮箱账户？

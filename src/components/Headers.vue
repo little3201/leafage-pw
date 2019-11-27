@@ -6,7 +6,7 @@
             <router-link to="/" style="float: left;">
               <img
                 style="height: 40px; margin: 0.5rem auto;"
-                src="@/assets/logo.svg"
+                src="@/assets/logo.png"
               />
             </router-link>
             <i class="el-icon-menu" @click="drawer = true" style="font-size: 28px; float: right; margin: 1rem auto;"></i>

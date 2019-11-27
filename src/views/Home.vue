@@ -12,10 +12,11 @@
       >
         <el-carousel-item v-for="(item, index) in datas" :key="index">
           <el-row type="flex" justify="center" align="middle">
-            <!-- <el-col> -->
-              <h1>{{ item.content }}</h1>
-              <el-image :src="item.url" fit="contain" />
-            <!-- </el-col> -->
+            <div style="position: absolute; text-align: center; z-index: 3;">
+              <p style="font-size: 32px;" v-html="item.title"></p>
+              <p style="font-size: 18px;" v-html="item.content"></p>
+            </div>
+            <el-image :src="item.url" fit="contain" />
           </el-row>
         </el-carousel-item>
       </el-carousel>
@@ -40,20 +41,19 @@ export default {
     return {
       datas: [
         {
-          url: 'https://oss.abeille.top/creativity.svg',
-          content: '你有故事...'
-        },
-        {
           url: 'https://oss.abeille.top/content.svg',
-          content: '我有酒...'
+          title: 'Bienvenue, 欢迎来到Abeille',
+          content: 'Abeille 是蜜蜂法语词语，选择这个词也是希望这里能成为Ruche（蜂巢），<br />希望所有注册用户都像一只勤劳的小蜜蜂一样，共同做一些事情...<br />本站提供用户注册功能，注册用户可对站内有权限的资源进行操作。'
         },
         {
           url: 'https://oss.abeille.top/upload.svg',
+          title: '一点介绍',
           content: '咱两一起做朋友...'
         },
         {
           url: 'https://oss.abeille.top/onboarding.svg',
-          content: '背靠背，手拉手...'
+          title: '关于站长',
+          content: '一个菜鸟程序员，生长在观众'
         }
       ]
     }
