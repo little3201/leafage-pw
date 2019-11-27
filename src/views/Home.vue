@@ -1,22 +1,24 @@
 <template>
-  <div>
-    <el-carousel
-      height="100vh"
-      direction="vertical"
-      :autoplay="false"
-      :loop="false"
-      ref="carousel"
-      indicator-position="none"
-      style="overflow: hidden"
-    >
-      <el-carousel-item v-for="(item, index) in datas" :key="index">
-        <div>
-          <h1>{{ item.content }}</h1>
-        </div>
-        <img :src="item.url" />
-      </el-carousel-item>
-    </el-carousel>
-  </div>
+  <el-row type="flex">
+    <el-col :span="24">
+      <el-carousel
+        height="100vh"
+        direction="vertical"
+        :autoplay="false"
+        :loop="false"
+        ref="carousel"
+        indicator-position="none"
+        style="overflow: hidden"
+      >
+        <el-carousel-item v-for="(item, index) in datas" :key="index">
+          <div>
+            <h1>{{ item.content }}</h1>
+          </div>
+          <img :src="item.url" />
+        </el-carousel-item>
+      </el-carousel>
+    </el-col>
+  </el-row>
 </template>
 
 <script>

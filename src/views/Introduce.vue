@@ -1,7 +1,9 @@
 <template>
-  <div id="introduce">
-    <h1>眼里只有你。。。</h1>
-  </div>
+  <el-row type="flex">
+    <el-col :span="24">
+      <h1>眼里只有你。。。</h1>
+    </el-col>
+  </el-row>
 </template>
 
 <script>
