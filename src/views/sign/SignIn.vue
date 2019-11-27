@@ -14,21 +14,22 @@
         </p>
         <el-form :model="ruleForm" :rules="rules" ref="ruleForm" :hide-required-asterisk="true">
           <el-form-item prop="username">
-            <el-input prefix-icon="el-icon-user" v-model="ruleForm.username" placeholder="账号/手机号/邮箱" />
+            <el-input prefix-icon="el-icon-user" v-model="ruleForm.username" placeholder="账号/邮箱" />
           </el-form-item>
           <el-form-item prop="password" style="margin-bottom: 5px">
             <el-input prefix-icon="el-icon-lock" v-model="ruleForm.password" placeholder="登录密码" />
           </el-form-item>
-          <el-form-item style="margin-bottom: 5px; text-align: end">
-            <el-link type="info" :underline="false" style="vertical-align: initial;">忘记密码</el-link>
-          </el-form-item>
-          <el-form-item style="margin-bottom: 5px">
-            <el-button type="primary" @click="submitForm('ruleForm')" style="width: 100%;">立即登录</el-button>
-          </el-form-item>
         </el-form>
-        <p style="text-align: initial; font-size: 14px; margin-top: 0;">已有账号？
-          <el-link type="primary" :underline="false" style="vertical-align: initial;">立即登录</el-link>
-          <el-link type="info" :underline="false" style="vertical-align: initial;float: right;">快捷登录</el-link>
+        <p style="text-align: end">
+          <el-link type="info" :underline="false" style="vertical-align: initial;">忘记密码</el-link>
+        </p>
+        <p>
+          <el-button type="primary" @click="submitForm('ruleForm')" style="width: 100%;">登&nbsp;录</el-button>
+        </p>
+        <p style="text-align: initial;">
+          <span style="font-size: 14px;">没有账号？</span>
+          <el-link type="primary" href="/signup" :underline="false" style="vertical-align: initial;">去注册</el-link>
+          <el-link type="info" href="/bind" :underline="false" style="vertical-align: initial;float: right;">快捷登录</el-link>
         </p>
         <p>第三方账号登录</p>
         <p>

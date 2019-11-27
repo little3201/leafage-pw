@@ -19,14 +19,14 @@
           <el-form-item prop="password" style="margin-bottom: 5px">
             <el-input prefix-icon="el-icon-lock" v-model="ruleForm.password" placeholder="登录密码" />
           </el-form-item>
-          <el-form-item style="margin-bottom: 5px; text-align: initial;">
-            <span>已有账号？</span>
-            <el-button type="text">立即登录</el-button>
-          </el-form-item>
-          <el-form-item>
-            <el-button type="primary" @click="submitForm('ruleForm')" style="width : 100%">立即注册</el-button>
-          </el-form-item>
         </el-form>
+        <p style="text-align: initial;">
+          <span style="font-size: 14px;">已有账号？</span>
+          <el-link type="primary" href="/signin" :underline="false" style="vertical-align: initial;">去登录</el-link>
+        </p>
+        <p>
+          <el-button type="primary" @click="submitForm('ruleForm')" style="width : 100%">注&nbsp;册</el-button>
+        </p>
         <p style="font-size: 14px;">注册即表示同意
             <el-link type="primary" :underline="false" style="vertical-align: initial;">《Abeille用户协议》</el-link>
           </p>
