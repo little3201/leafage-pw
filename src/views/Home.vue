@@ -1,33 +1,43 @@
 <template>
-  <el-row type="flex">
-    <el-col :span="24">
-      <el-carousel
-        height="100vh"
-        direction="vertical"
-        :autoplay="false"
-        :loop="false"
-        ref="carousel"
-        indicator-position="none"
-        style="overflow: hidden"
-      >
-        <el-carousel-item v-for="(item, index) in datas" :key="index">
-          <div>
-            <h1>{{ item.content }}</h1>
-          </div>
-          <img :src="item.url" />
-        </el-carousel-item>
-      </el-carousel>
-    </el-col>
-  </el-row>
+  <el-container>
+    <Headers />
+    <el-main style="padding: 0">
+      <el-row type="flex">
+        <el-col :span="24">
+          <el-carousel
+            height="100vh"
+            direction="vertical"
+            :autoplay="false"
+            :loop="false"
+            ref="carousel"
+            indicator-position="none"
+            style="overflow: hidden"
+          >
+            <el-carousel-item v-for="(item, index) in datas" :key="index">
+              <div>
+                <h1>{{ item.content }}</h1>
+              </div>
+              <el-image :src="item.url" fit="contain" />
+            </el-carousel-item>
+          </el-carousel>
+        </el-col>
+      </el-row>
+    </el-main>
+    <Footers />
+  </el-container>
 </template>
 
 <script>
 // @ is an alias to /src
 import _ from 'lodash' // 引入节流函数
+import Headers from '@/components/Headers.vue'
+import Footers from '@/components/Footers.vue'
 
 export default {
   name: 'home',
   components: {
+    Headers,
+    Footers
   },
   data () {
     return {

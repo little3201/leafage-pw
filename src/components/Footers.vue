@@ -1,9 +1,7 @@
 <template>
-  <div id="footers">
-    <el-footer style="text-align: center; background: transparent;">
-      <div style="font-size: 1rem;">Copyright &copy; 2019 · 陕ICP备19017836号-1 · Powerd By 布吉岛</div>
-    </el-footer>
-  </div>
+  <el-footer class="footers">
+    <div style="font-size: 1rem;">Copyright &copy; {{ new Date().getFullYear() }} · 陕ICP备19017836号-1 · Powerd By 布吉岛</div>
+  </el-footer>
 </template>
 
 <script>
@@ -17,10 +15,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#footers {
+.footers {
   position: absolute;
   width: 100%;
   bottom: 0.5rem;
   z-index: 3;
+  text-align: center;
 }
 </style>
