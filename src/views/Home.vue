@@ -1,27 +1,24 @@
 <template>
   <el-container>
     <Headers />
-    <el-main style="padding: 0">
-      <el-row type="flex">
-        <el-col :span="24">
-          <el-carousel
-            height="100vh"
-            direction="vertical"
-            :autoplay="false"
-            :loop="false"
-            ref="carousel"
-            indicator-position="none"
-            style="overflow: hidden"
-          >
-            <el-carousel-item v-for="(item, index) in datas" :key="index">
-              <div>
-                <h1>{{ item.content }}</h1>
-              </div>
+    <el-main style="padding: 0;">
+      <el-carousel
+        height="100vh"
+        direction="vertical"
+        :autoplay="false"
+        :loop="false"
+        ref="carousel"
+        indicator-position="none"
+      >
+        <el-carousel-item v-for="(item, index) in datas" :key="index">
+          <el-row type="flex" justify="center" align="middle">
+            <!-- <el-col> -->
+              <h1>{{ item.content }}</h1>
               <el-image :src="item.url" fit="contain" />
-            </el-carousel-item>
-          </el-carousel>
-        </el-col>
-      </el-row>
+            <!-- </el-col> -->
+          </el-row>
+        </el-carousel-item>
+      </el-carousel>
     </el-main>
     <Footers />
   </el-container>
