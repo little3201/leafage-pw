@@ -19,6 +19,9 @@ import {
   Main,
   Footer,
   Menu,
+  MenuItem,
+  MenuItemGroup,
+  Submenu,
   Popover,
   Row
 } from 'element-ui'
@@ -45,6 +48,9 @@ const Element = {
     Vue.use(Main)
     Vue.use(Footer)
     Vue.use(Menu)
+    Vue.use(MenuItem)
+    Vue.use(MenuItemGroup)
+    Vue.use(Submenu)
     Vue.use(Popover)
     Vue.use(Row)
   }
