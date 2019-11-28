@@ -1,6 +1,6 @@
 <template>
   <el-container>
-    <Headers />
+    <Headers :activeIndex="activeIndex"/>
     <el-main style="padding: 0;">
       <el-carousel
         height="100vh"
@@ -40,6 +40,7 @@ export default {
   },
   data () {
     return {
+      activeIndex: 'home',
       datas: [
         {
           url: 'https://oss.abeille.top/content.svg',
@@ -82,9 +83,11 @@ export default {
     handleScroll (event) {
       // 页面滚动距顶部距离
       if (!event) event = window.event
-      let wheel = event.wheelDelta === undefined ? (event.detail === undefined ? false : event.detail) : event.wheelDelta
+      let wheel = event.wheelDelta === undefined ? (event.detail === undefined ? false : event.detail)
+        : event.wheelDelta
       let carousel = this.$refs.carousel
-      if (wheel) {
+      // 需要判断是否走马灯对象存在，避免鼠标左右滑动触法
+      if (wheel && carousel) {
         if (event.wheelDelta > 0) {
           // 当滑轮向上滚动时
           carousel.prev()

@@ -1,7 +1,7 @@
 <template>
   <el-container>
     <Headers />
-    <el-main style="padding: 0;">
+    <el-main>
       <h1>眼里只有你。。。</h1>
     </el-main>
     <Footers />

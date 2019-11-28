@@ -6,7 +6,7 @@
     <el-col :span="8">
       <el-card :hoverable="true" style="padding: 15px; max-width: 20rem;">
         <router-link to="/">
-          <img style="height: 3rem;" src="@/assets/logo.svg" />
+          <img style="height: 3.5rem;" src="@/assets/logo.svg" />
         </router-link>
         <h3 style="text-align: initial; margin-bottom: 0;">注册</h3>
         <p style="text-align: initial; font-size: 14px; margin-top: 0;">已有邮箱账户？
@@ -14,10 +14,10 @@
         </p>
         <el-form :model="ruleForm" :rules="rules" ref="ruleForm" :hide-required-asterisk="true">
           <el-form-item prop="username">
-            <el-input prefix-icon="el-icon-user" v-model="ruleForm.username" placeholder="账号/手机号/邮箱" />
+            <el-input prefix-icon="el-icon-user" v-model="ruleForm.username" placeholder="请输入账号/手机号/邮箱" />
           </el-form-item>
           <el-form-item prop="password" style="margin-bottom: 5px">
-            <el-input prefix-icon="el-icon-lock" v-model="ruleForm.password" placeholder="登录密码" />
+            <el-input prefix-icon="el-icon-lock" v-model="ruleForm.password" placeholder="请输入登录密码" />
           </el-form-item>
         </el-form>
         <p style="text-align: initial;">
@@ -27,9 +27,10 @@
         <p>
           <el-button type="primary" @click="submitForm('ruleForm')" style="width : 100%">注&nbsp;册</el-button>
         </p>
-        <p style="font-size: 14px;">注册即表示同意
-            <el-link type="primary" :underline="false" style="vertical-align: initial;">《Abeille用户协议》</el-link>
-          </p>
+        <p style="font-size: 14px;">
+          <span>注册即表示同意</span>
+          <el-link type="primary" :underline="false" style="vertical-align: initial;">《Abeille用户协议》</el-link>
+        </p>
         <p>第三方账号登录</p>
         <p>
           <el-button size="small" type="primary" icon="el-icon-edit" circle></el-button>

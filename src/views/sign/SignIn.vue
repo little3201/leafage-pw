@@ -6,18 +6,19 @@
     <el-col :span="8">
       <el-card :hoverable="true" style="padding: 15px; max-width: 20rem;">
         <router-link to="/">
-          <img style="height: 3rem;" src="@/assets/logo.png" />
+          <img style="height: 3.5rem;" src="@/assets/logo.png" />
         </router-link>
         <h3 style="text-align: initial; margin-bottom: 0;">密码登录</h3>
-        <p style="text-align: initial; font-size: 14px; margin-top: 0;">已有邮箱账户？
+        <p style="text-align: initial; font-size: 14px; margin-top: 0;">
+          <span>已有邮箱账户？</span>
           <el-link type="primary" :underline="false" style="vertical-align: initial;">立即绑定</el-link>
         </p>
         <el-form :model="ruleForm" :rules="rules" ref="ruleForm" :hide-required-asterisk="true">
           <el-form-item prop="username">
-            <el-input prefix-icon="el-icon-user" v-model="ruleForm.username" placeholder="账号/邮箱" />
+            <el-input prefix-icon="el-icon-user" v-model="ruleForm.username" placeholder="请输入账号/邮箱" />
           </el-form-item>
           <el-form-item prop="password" style="margin-bottom: 5px">
-            <el-input prefix-icon="el-icon-lock" v-model="ruleForm.password" placeholder="登录密码" />
+            <el-input prefix-icon="el-icon-lock" v-model="ruleForm.password" placeholder="请输入登录密码" />
           </el-form-item>
         </el-form>
         <p style="text-align: end">

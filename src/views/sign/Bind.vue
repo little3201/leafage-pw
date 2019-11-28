@@ -6,10 +6,11 @@
     <el-col :span="8">
       <el-card :hoverable="true" style="padding: 15px; max-width: 20rem;">
         <router-link to="/">
-          <img style="height: 3rem;" src="@/assets/logo.svg" />
+          <img style="height: 3.5rem;" src="@/assets/logo.svg" />
         </router-link>
         <h3 style="text-align: initial; margin-bottom: 0;">快捷登录</h3>
-        <p style="text-align: initial; font-size: 14px; margin-top: 0;">已有邮箱账户？
+        <p style="text-align: initial; font-size: 14px; margin-top: 0;">
+          <span>已有邮箱账户？</span>
           <el-link type="primary" :underline="false" style="vertical-align: initial;">立即绑定</el-link>
         </p>
         <el-form :model="ruleForm" :rules="rules" ref="ruleForm" :hide-required-asterisk="true">
@@ -27,9 +28,14 @@
         <p>
           <el-button type="primary" @click="submitForm('ruleForm')" style="width: 100%;">登&nbsp;录</el-button>
         </p>
-        <p style="text-align: initial; font-size: 14px; margin-top: 0;">没有账号？
-          <el-link type="primary" href="/signup" :underline="false" style="vertical-align: initial;">去注册</el-link>
-          <el-link type="info" href="/signin" :underline="false" style="vertical-align: initial;float: right;">密码登录</el-link>
+        <p style="text-align: initial; font-size: 14px; margin-top: 0;">
+          <span>没有账号？</span>
+          <el-link type="primary" href="/signup" :underline="false" style="vertical-align: initial;">
+            去注册
+          </el-link>
+          <el-link type="info" href="/signin" :underline="false" style="vertical-align: initial;float: right;">
+            密码登录
+          </el-link>
         </p>
         <p>第三方账号登录</p>
         <p>

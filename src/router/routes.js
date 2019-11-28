@@ -17,7 +17,7 @@ export default [
     component: () => import('@/views/Resource.vue')
   },
   {
-    path: '/article/:articleId',
+    path: '/article',
     name: 'article',
     component: () => import('@/views/article/Article.vue')
   },
