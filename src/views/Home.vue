@@ -1,50 +1,66 @@
 <template>
-  <div>
-    <el-carousel
-      height="100vh"
-      direction="vertical"
-      :autoplay="false"
-      :loop="false"
-      ref="carousel"
-      indicator-position="none"
-      style="overflow: hidden"
-    >
-      <el-carousel-item v-for="(item, index) in datas" :key="index">
-        <div>
-          <h1>{{ item.content }}</h1>
-        </div>
-        <img :src="item.url" />
-      </el-carousel-item>
-    </el-carousel>
-  </div>
+  <el-container>
+    <Headers />
+    <el-main style="padding: 0;">
+      <el-carousel
+        height="100vh"
+        direction="vertical"
+        :autoplay="false"
+        :loop="false"
+        ref="carousel"
+        indicator-position="none"
+      >
+        <el-carousel-item v-for="(item, index) in datas" :key="index">
+          <el-row type="flex" justify="center" align="middle">
+            <div style="position: absolute; text-align: center; z-index: 3;">
+              <p style="font-size: 32px;" v-html="item.title"></p>
+              <p style="font-size: 18px;" v-html="item.content"></p>
+              <el-link type="primary" style="font-size: 22px;" :href="item.link">{{ item.text }}</el-link>
+            </div>
+            <el-image :src="item.url" fit="contain" />
+          </el-row>
+        </el-carousel-item>
+      </el-carousel>
+    </el-main>
+    <Footers />
+  </el-container>
 </template>
 
 <script>
 // @ is an alias to /src
 import _ from 'lodash' // 引入节流函数
+import Headers from '@/components/Headers.vue'
+import Footers from '@/components/Footers.vue'
 
 export default {
   name: 'home',
   components: {
+    Headers,
+    Footers
   },
   data () {
     return {
       datas: [
         {
-          url: 'https://oss.abeille.top/creativity.svg',
-          content: '你有故事...'
-        },
-        {
           url: 'https://oss.abeille.top/content.svg',
-          content: '我有酒...'
+          title: 'Bienvenue, 欢迎来到Abeille',
+          link: '/article',
+          text: '阅读更多',
+          content: 'Abeille 是蜜蜂法语词语，选择这个词也是希望这里能成为Ruche（蜂巢），<br />希望所有注册用户都像一只勤劳的小蜜蜂一样，共同做一些事情...<br /><br />本站持续开发优化，梦想还是要有的，万一实现了呢。'
         },
         {
           url: 'https://oss.abeille.top/upload.svg',
-          content: '咱两一起做朋友...'
+          title: '一点介绍',
+          link: '/resource',
+          text: '获取资料',
+          content: '本站提供技术博文、游行博客、翻译文档等资料，<br />可供免费使用，同时希望大家发现问题，能指正错误...'
         },
         {
           url: 'https://oss.abeille.top/onboarding.svg',
-          content: '背靠背，手拉手...'
+          title: '关于站长',
+          link: '/introduce',
+          text: '了解站长',
+          content: '一个菜鸟程序员，主要做后端开发，前端也能写。<br />生长在关中大地上，向往美好的事物，追求完美（其实是有点挑），<br />没事出去旅旅游（瞎溜达），拍拍照、修修图，学习下技术，<br />毕竟新技术更新迭代特别快啊，不想被辞退啊...'
         }
       ]
     }
@@ -57,7 +73,7 @@ export default {
         : document.onmousewheel !== undefined ? 'mousewheel' // Webkit 和 IE一定支持"mousewheel"
           : 'DOMMouseScroll' // 低版本firefox
       if (window.addEventListener) {
-        // { 'trailing': false }调用在节流结束后，默认为true，即表示允许在 wait 期间多次调用
+        // { 'trailing': false } 调用在节流结束后，默认为true，即表示允许在 wait 期间多次调用
         window.addEventListener(mousewheelevt, _.throttle(this.handleScroll, 1200, { 'trailing': false }), false)
       }
     })

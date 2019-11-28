@@ -30,5 +30,10 @@ export default [
     path: '/signup',
     name: 'signup',
     component: () => import('@/views/sign/SignUp.vue')
+  },
+  {
+    path: '/bind',
+    name: 'bind',
+    component: () => import('@/views/sign/Bind.vue')
   }
 ]
