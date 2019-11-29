@@ -1,6 +1,6 @@
 <template>
   <el-container>
-    <Headers />
+    <Headers :activeIndex="activeIndex"/>
     <el-main style="padding: 0;">
       <h1>眼里只有你。。。</h1>
     </el-main>
@@ -21,6 +21,7 @@ export default {
   },
   data () {
     return {
+      activeIndex: 'resource'
     }
   }
 }

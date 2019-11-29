@@ -5,7 +5,7 @@ import routes from './routes'
 Vue.use(VueRouter)
 
 // 白名单
-const whiteList = ['/', '/home', '/introduce', '/resource', '/signin', '/signup']
+const whiteList = ['/', '/introduce', '/resource', '/signin', '/signup']
 
 const router = new VueRouter({
   mode: 'history',
@@ -19,9 +19,7 @@ router.beforeEach((to, from, next) => {
   // 白名单直接放行
   if (whiteList.includes(to.fullPath)) {
     next()
-  } else if (
-    to.fullPath.startsWith('/article')
-  ) {
+  } else if (to.fullPath.startsWith('/article')) {
     // 路由包含/article，即文章详情页，或者包换/photograph，即图片记录，放行
     next()
   } else if (token === null && to.fullPath !== '/signin') {

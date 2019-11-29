@@ -44,7 +44,7 @@ export default {
       datas: [
         {
           url: 'https://oss.abeille.top/content.svg',
-          title: 'Bienvenue, 欢迎来到Abeille',
+          title: 'Bienvenue, Abeille 欢迎你！',
           link: '/article',
           text: '阅读更多',
           content: 'Abeille 是蜜蜂法语词语，选择这个词也是希望这里能成为Ruche（蜂巢），<br />希望所有注册用户都像一只勤劳的小蜜蜂一样，共同做一些事情...<br /><br />本站持续开发优化，梦想还是要有的，万一实现了呢。'
