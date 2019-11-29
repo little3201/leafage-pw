@@ -21,7 +21,7 @@ export default {
   },
   data () {
     return {
-      activeIndex: 'introduce'
+      activeIndex: '/introduce'
     }
   }
 }

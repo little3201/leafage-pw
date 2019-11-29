@@ -1,9 +1,9 @@
 <template>
   <el-row type="flex" justify="end" align="middle" style="height: 100vh; text-align: center;">
-    <el-col :span="16">
+    <el-col :xs="0" :sm="12" :md="16">
       <el-image src="https://oss.abeille.top/place.svg" fit="contain" />
     </el-col>
-    <el-col :span="8">
+    <el-col :xs="22" :sm="12" :md="8">
       <el-card :hoverable="true" style="padding: 15px; max-width: 20rem;">
         <router-link to="/">
           <img style="height: 3.5rem;" src="@/assets/logo.svg" />

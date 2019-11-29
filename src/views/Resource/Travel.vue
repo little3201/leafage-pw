@@ -1,7 +1,7 @@
 <template>
   <el-row type="flex">
     <el-col :span="24">
-      <h1>眼里只有你。。。</h1>
+      <h1>Travel</h1>
     </el-col>
   </el-row>
 </template>
@@ -10,7 +10,7 @@
 // @ is an alias to /src
 
 export default {
-  name: 'introduce',
+  name: 'travel',
   components: {
   },
   data () {

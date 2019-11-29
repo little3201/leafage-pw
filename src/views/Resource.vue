@@ -2,7 +2,7 @@
   <el-container>
     <Headers :activeIndex="activeIndex"/>
     <el-main style="padding: 0;">
-      <h1>眼里只有你。。。</h1>
+      <router-view />
     </el-main>
     <Footers />
   </el-container>
@@ -21,7 +21,7 @@ export default {
   },
   data () {
     return {
-      activeIndex: 'resource'
+      activeIndex: '/resource'
     }
   }
 }

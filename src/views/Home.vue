@@ -40,7 +40,7 @@ export default {
   },
   data () {
     return {
-      activeIndex: 'home',
+      activeIndex: '/',
       datas: [
         {
           url: 'https://oss.abeille.top/content.svg',

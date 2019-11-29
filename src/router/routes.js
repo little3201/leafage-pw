@@ -14,7 +14,24 @@ export default [
   {
     path: '/resource',
     name: 'resource',
-    component: () => import('@/views/Resource.vue')
+    component: () => import('@/views/Resource.vue'),
+    children: [
+      {
+        path: '/technology',
+        name: 'technology',
+        component: () => import('@/views/Resource/Technology.vue')
+      },
+      {
+        path: '/translation',
+        name: 'translation',
+        component: () => import('@/views/Resource/Translation.vue')
+      },
+      {
+        path: '/travel',
+        name: 'travel',
+        component: () => import('@/views/Resource/Travel.vue')
+      }
+    ]
   },
   {
     path: '/article',
@@ -30,10 +47,5 @@ export default [
     path: '/signup',
     name: 'signup',
     component: () => import('@/views/sign/SignUp.vue')
-  },
-  {
-    path: '/bind',
-    name: 'bind',
-    component: () => import('@/views/sign/Bind.vue')
   }
 ]
