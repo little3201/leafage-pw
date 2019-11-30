@@ -1,7 +1,7 @@
 <template>
   <el-container>
-    <Headers :activeIndex="activeIndex"/>
-    <el-main style="padding: 0;">
+    <Headers :activeIndex.sync="activeIndex"/>
+    <el-main style="margin-top: 60px">
       <router-view />
     </el-main>
     <Footers />
@@ -22,6 +22,19 @@ export default {
   data () {
     return {
       activeIndex: '/resource'
+    }
+  },
+  created () {
+    // 组件创建完后获取数据，此时 data 已经被 observed 了
+    this.activeMenu()
+  },
+  watch: {
+    // 如果路由有变化，会再次执行该方法
+    '$route': 'activeMenu'
+  },
+  methods: {
+    activeMenu () {
+      this.activeIndex = this.$route.path
     }
   }
 }

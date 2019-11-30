@@ -3,7 +3,7 @@
     <el-link :underline="false" style="vertical-align: initial; margin: auto 10px;">帮助</el-link>
     <el-link :underline="false" style="vertical-align: initial; margin: auto 10px;">条款</el-link>
     <el-link :underline="false" style="vertical-align: initial; margin: auto 10px;">隐私</el-link>
-    <div style="font-size: 1rem; color:#606266;">
+    <div style="color:#606266;">
       Copyright &copy; {{ new Date().getFullYear() }} · 陕ICP备19017836号-1 · Powerd By 布吉岛
     </div>
   </el-footer>
