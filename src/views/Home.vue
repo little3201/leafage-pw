@@ -1,6 +1,6 @@
 <template>
   <el-container>
-    <Headers />
+    <Headers :activeIndex="activeIndex"/>
     <el-main style="padding: 0;">
       <el-carousel
         height="100vh"
@@ -13,9 +13,9 @@
         <el-carousel-item v-for="(item, index) in datas" :key="index">
           <el-row type="flex" justify="center" align="middle">
             <div style="position: absolute; text-align: center; z-index: 3;">
-              <p style="font-size: 32px;" v-html="item.title"></p>
-              <p style="font-size: 18px;" v-html="item.content"></p>
-              <el-link type="primary" style="font-size: 22px;" :href="item.link">{{ item.text }}</el-link>
+              <p style="font-size: 2rem;" v-html="item.title"></p>
+              <p v-html="item.content"></p>
+              <el-link type="primary" style="font-size: 1.3rem;" :href="item.link">{{ item.text }}</el-link>
             </div>
             <el-image :src="item.url" fit="contain" />
           </el-row>
@@ -40,10 +40,11 @@ export default {
   },
   data () {
     return {
+      activeIndex: '/',
       datas: [
         {
           url: 'https://oss.abeille.top/content.svg',
-          title: 'Bienvenue, 欢迎来到Abeille',
+          title: 'Bienvenue, Abeille 欢迎你！',
           link: '/article',
           text: '阅读更多',
           content: 'Abeille 是蜜蜂法语词语，选择这个词也是希望这里能成为Ruche（蜂巢），<br />希望所有注册用户都像一只勤劳的小蜜蜂一样，共同做一些事情...<br /><br />本站持续开发优化，梦想还是要有的，万一实现了呢。'
@@ -82,9 +83,11 @@ export default {
     handleScroll (event) {
       // 页面滚动距顶部距离
       if (!event) event = window.event
-      let wheel = event.wheelDelta === undefined ? (event.detail === undefined ? false : event.detail) : event.wheelDelta
+      let wheel = event.wheelDelta === undefined ? (event.detail === undefined ? false : event.detail)
+        : event.wheelDelta
       let carousel = this.$refs.carousel
-      if (wheel) {
+      // 需要判断是否走马灯对象存在，避免鼠标左右滑动触法
+      if (wheel && carousel) {
         if (event.wheelDelta > 0) {
           // 当滑轮向上滚动时
           carousel.prev()
@@ -99,6 +102,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.el-menu.el-menu--horizontal {
+  border-bottom: 0;
+  background: transparent;
+}
 .el-main {
   text-align: center;
   padding: 0;

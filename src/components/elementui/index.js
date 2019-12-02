@@ -2,13 +2,11 @@ import {
   Button,
   Card,
   Checkbox,
-  CheckboxGroup,
   Col,
   Container,
   Carousel,
   CarouselItem,
   Divider,
-  Drawer,
   Form,
   FormItem,
   Header,
@@ -22,7 +20,7 @@ import {
   MenuItem,
   MenuItemGroup,
   Submenu,
-  Popover,
+  Tag,
   Row
 } from 'element-ui'
 
@@ -31,13 +29,11 @@ const Element = {
     Vue.use(Button)
     Vue.use(Card)
     Vue.use(Checkbox)
-    Vue.use(CheckboxGroup)
     Vue.use(Col)
     Vue.use(Container)
     Vue.use(Carousel)
     Vue.use(CarouselItem)
     Vue.use(Divider)
-    Vue.use(Drawer)
     Vue.use(Form)
     Vue.use(FormItem)
     Vue.use(Header)
@@ -51,7 +47,7 @@ const Element = {
     Vue.use(MenuItem)
     Vue.use(MenuItemGroup)
     Vue.use(Submenu)
-    Vue.use(Popover)
+    Vue.use(Tag)
     Vue.use(Row)
   }
 }

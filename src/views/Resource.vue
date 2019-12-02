@@ -1,8 +1,8 @@
 <template>
-  <el-container>
-    <Headers />
-    <el-main style="padding: 0;">
-      <h1>眼里只有你。。。</h1>
+  <el-container style="background-color: #ffffff;">
+    <Headers :activeIndex.sync="activeIndex"/>
+    <el-main class="content">
+      <router-view />
     </el-main>
     <Footers />
   </el-container>
@@ -21,11 +21,29 @@ export default {
   },
   data () {
     return {
+      activeIndex: '/resource'
+    }
+  },
+  created () {
+    // 组件创建完后获取数据，此时 data 已经被 observed 了
+    this.activeMenu()
+  },
+  watch: {
+    // 如果路由有变化，会再次执行该方法
+    '$route': 'activeMenu'
+  },
+  methods: {
+    activeMenu () {
+      this.activeIndex = this.$route.path
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-
+.content {
+  margin-top: 60px;
+  height: 100vh;
+  background: #f8f8f8;
+}
 </style>
