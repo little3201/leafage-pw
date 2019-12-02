@@ -6,6 +6,7 @@ import {
   Container,
   Carousel,
   CarouselItem,
+  Divider,
   Form,
   FormItem,
   Header,
@@ -19,6 +20,7 @@ import {
   MenuItem,
   MenuItemGroup,
   Submenu,
+  Tag,
   Row
 } from 'element-ui'
 
@@ -31,6 +33,7 @@ const Element = {
     Vue.use(Container)
     Vue.use(Carousel)
     Vue.use(CarouselItem)
+    Vue.use(Divider)
     Vue.use(Form)
     Vue.use(FormItem)
     Vue.use(Header)
@@ -44,6 +47,7 @@ const Element = {
     Vue.use(MenuItem)
     Vue.use(MenuItemGroup)
     Vue.use(Submenu)
+    Vue.use(Tag)
     Vue.use(Row)
   }
 }

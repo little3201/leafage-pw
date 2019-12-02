@@ -1,25 +1,85 @@
 <template>
   <el-row :gutter="20" type="flex" justify="center">
-    <el-col :span="12">
-      <el-card :body-style="{ padding: '0px' }">
-        <div v-for="o in 4" :key="o">
-          {{'列表内容 ' + o }}
+    <el-col :xs="24" :sm="16" :md="15" :lg="14">
+      <el-card style="margin-bottom: 20px;">
+        <div style="display: flex;">
+          <h3>
+            <i class="el-icon-chat-line-square"></i>话题
+          </h3>
+          <div style="flex-grow: 1;"></div>
+          <div>
+            <el-link :underline="false" style="top: 4px;">换一换</el-link>
+            <el-divider direction="vertical"></el-divider>
+            <el-link :underline="false" style="top: 4px;">全部话题</el-link>
+          </div>
         </div>
-        <div>
-          <span>卡片名称</span>
-          <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
-        </div>
+        <ul>
+          <li v-for="index in 3" :key="index" style="display: flex;">
+            <el-link :underline="false" class="topic">
+              # 卡片名称 ｜ 话题</el-link>
+            <div style="flex-grow: 1;"></div>
+            <span class="count">100次围观</span>
+          </li>
+        </ul>
+      </el-card>
+      <el-card>
+        <h3 style="flex-grow: 1;">
+          <i class="el-icon-tickets"></i>推荐内容
+        </h3>
+        <ul>
+          <li v-for="index in 10" :key="index" style="margin: 20px auto;">
+            <el-link href="/article" :underline="false" style="font-size: 1rem;">如何快速掌握Redis技巧</el-link>
+            <p style="font-size: 12px;margin: 5px auto;">作者：布吉岛</p>
+            <p style="font-size: 14px;margin: 5px auto;">
+              一个类被加载、连接、初始化后它的生命周期就开始了，当对应的Class对象不再被引用，即触不可及时
+            </p>
+            <el-divider></el-divider>
+          </li>
+        </ul>
       </el-card>
     </el-col>
-    <el-col :span="6">
-      <el-card :body-style="{ padding: '0px' }">
-        <div v-for="o in 4" :key="o">
-          {{'列表内容 ' + o }}
+    <el-col :xs="0" :sm="8" :md="7" :lg="6">
+      <el-card style="margin-bottom: 20px;">
+        <div style="display: flex;">
+          <h3 style="flex-grow: 1;">
+            <i class="el-icon-hot-water"></i>热点
+          </h3>
+          <el-link :underline="false" style="top: 4px;">
+            查看更多
+            <i class="el-icon-arrow-right"></i>
+          </el-link>
         </div>
-        <div>
-          <span>卡片名称</span>
-          <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+        <div style="text-align: center;">
+          <el-divider></el-divider>
+          <el-link :underline="false">7天</el-link>
+          <el-divider direction="vertical"></el-divider>
+          <el-link :underline="false">1个月</el-link>
+          <el-divider direction="vertical"></el-divider>
+          <el-link :underline="false">6个月</el-link>
+          <el-divider></el-divider>
         </div>
+        <ul>
+          <li v-for="index in 10" :key="index">
+            <el-tag size="mini" effect="plain">{{ index }}</el-tag>
+            <el-link :underline="false" style="margin: 0 10px">七天快速入门Go语言</el-link>
+          </li>
+        </ul>
+      </el-card>
+      <el-card>
+        <div style="display: flex;">
+          <h3 style="flex-grow: 1;">
+            <i class="el-icon-hot-water"></i>新闻资讯
+          </h3>
+          <el-link :underline="false" style="top: 4px;">
+            查看更多
+            <i class="el-icon-arrow-right"></i>
+          </el-link>
+        </div>
+        <ul>
+          <li v-for="index in 10" :key="index">
+            <el-link :underline="false" style="margin: 0 10px">马云套现40亿</el-link>
+          </li>
+        </ul>
       </el-card>
     </el-col>
   </el-row>
@@ -40,4 +100,46 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.el-tag--mini {
+  width: 26px;
+  text-align: center;
+}
+.el-divider--horizontal {
+  margin: 10px 0;
+}
+.el-divider--vertical{
+  margin: 0 15px;
+}
+.el-tag--mini {
+  height: 16px;
+  padding: 0;
+  line-height: 15px;
+}
+.el-link {
+  justify-content: flex-start;
+}
+h3 {
+  margin: 0;
+  display: inline-block;
+}
+ul {
+  padding: 0;
+  list-style: none;
+  li {
+    margin: 10px 0;
+  }
+}
+.el-divider--vertical {
+  top: 4px;
+}
+.count {
+  font-size: 14px;
+  color: #828a92;
+}
+.topic {
+  font-size: 1rem;
+}
+i {
+  margin-right: 5px;
+}
 </style>

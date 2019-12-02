@@ -13,9 +13,9 @@
         <el-carousel-item v-for="(item, index) in datas" :key="index">
           <el-row type="flex" justify="center" align="middle">
             <div style="position: absolute; text-align: center; z-index: 3;">
-              <p style="font-size: 32px;" v-html="item.title"></p>
-              <p style="font-size: 18px;" v-html="item.content"></p>
-              <el-link type="primary" style="font-size: 22px;" :href="item.link">{{ item.text }}</el-link>
+              <p style="font-size: 2rem;" v-html="item.title"></p>
+              <p v-html="item.content"></p>
+              <el-link type="primary" style="font-size: 1.3rem;" :href="item.link">{{ item.text }}</el-link>
             </div>
             <el-image :src="item.url" fit="contain" />
           </el-row>
@@ -102,6 +102,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.el-menu.el-menu--horizontal {
+  border-bottom: 0;
+  background: transparent;
+}
 .el-main {
   text-align: center;
   padding: 0;
