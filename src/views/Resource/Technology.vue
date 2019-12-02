@@ -16,7 +16,7 @@
         <ul>
           <li v-for="index in 3" :key="index" style="display: flex;">
             <el-link :underline="false" class="topic">
-              # 卡片名称 ｜ 话题</el-link>
+              # 9012年了，是选择创业还是上班工作呢？ ｜ 话题</el-link>
             <div style="flex-grow: 1;"></div>
             <span class="count">100次围观</span>
           </li>
@@ -100,19 +100,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.el-tag--mini {
-  width: 26px;
-  text-align: center;
-}
 .el-divider--horizontal {
   margin: 10px 0;
 }
 .el-divider--vertical{
   margin: 0 15px;
+  top: 4px;
 }
 .el-tag--mini {
+  width: 26px;
+  text-align: center;
   height: 16px;
-  padding: 0;
   line-height: 15px;
 }
 .el-link {
@@ -128,9 +126,6 @@ ul {
   li {
     margin: 10px 0;
   }
-}
-.el-divider--vertical {
-  top: 4px;
 }
 .count {
   font-size: 14px;

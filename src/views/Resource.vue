@@ -1,7 +1,7 @@
 <template>
-  <el-container style="background-color: #ffffff">
+  <el-container style="background-color: #ffffff;">
     <Headers :activeIndex.sync="activeIndex"/>
-    <el-main style="margin-top: 60px; height: 100vh; background: #f6f7f8;">
+    <el-main class="content">
       <router-view />
     </el-main>
     <Footers />
@@ -41,5 +41,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.content {
+  margin-top: 60px;
+  height: 100vh;
+  background: #f8f8f8;
+}
 </style>
