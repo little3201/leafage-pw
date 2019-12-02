@@ -1,7 +1,7 @@
 <template>
   <el-container style="background-color: #ffffff">
     <Headers :activeIndex.sync="activeIndex"/>
-    <el-main style="margin-top: 60px; background: #f6f7f8;">
+    <el-main style="margin-top: 60px; height: 100vh; background: #f6f7f8;">
       <router-view />
     </el-main>
     <Footers />

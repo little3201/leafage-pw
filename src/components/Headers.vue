@@ -9,7 +9,7 @@
           style="width: 100%;"
         >
           <el-menu-item>
-            <router-link to="/">
+            <router-link to="/" style="line-height: initial;">
               <img
                 style="height: 3rem;"
                 src="@/assets/logo.png"
@@ -57,6 +57,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.el-header{
+  padding: 0 60px;
+}
 .el-menu.el-menu--horizontal {
   border-bottom: 0;
   background: transparent;
