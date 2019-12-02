@@ -66,10 +66,7 @@ export default {
 .el-header{
   padding: 0 60px;
 }
-.el-menu.el-menu--horizontal {
-  border-bottom: 0;
-  background: transparent;
-}
+
 li {
   span{
     font-size: 1rem;
