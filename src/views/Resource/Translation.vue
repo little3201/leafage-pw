@@ -4,7 +4,7 @@
       <el-card style="margin-bottom: 20px;">
         <div style="display: flex;">
           <h3>
-            <i class="el-icon-chat-line-square"></i>翻译文档
+            <i class="el-icon-document-copy"></i>翻译文档
           </h3>
           <div style="flex-grow: 1;"></div>
           <el-link :underline="false" style="top: 4px;">查看原文</el-link>
@@ -23,7 +23,7 @@
       <el-card style="margin-bottom: 20px;">
         <div>
           <h3>
-            <i class="el-icon-hot-water"></i>《Prometheus》
+            <i class="el-icon-notebook-2"></i>《Prometheus》
           </h3>
         </div>
         <div style="text-align: center;">

@@ -24,7 +24,7 @@ export default {
 
 <style lang="scss" scoped>
 .footers {
-  position: absolute;
+  position: fixed;
   width: 100%;
   bottom: 0.5rem;
   z-index: 3;
