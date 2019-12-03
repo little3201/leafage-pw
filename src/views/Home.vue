@@ -45,14 +45,14 @@ export default {
         {
           url: 'https://oss.abeille.top/content.svg',
           title: 'Bienvenue, Abeille 欢迎你！',
-          link: '/article',
+          link: '/introduce',
           text: '阅读更多',
           content: 'Abeille 是蜜蜂法语词语，选择这个词也是希望这里能成为Ruche（蜂巢），<br />希望所有注册用户都像一只勤劳的小蜜蜂一样，共同做一些事情...<br /><br />本站持续开发优化，梦想还是要有的，万一实现了呢。'
         },
         {
           url: 'https://oss.abeille.top/upload.svg',
           title: '一点介绍',
-          link: '/resource',
+          link: '/article',
           text: '获取资料',
           content: '本站提供技术博文、游行博客、翻译文档等资料，<br />可供免费使用，同时希望大家发现问题，能指正错误...'
         },

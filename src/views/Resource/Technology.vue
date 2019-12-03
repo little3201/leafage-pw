@@ -15,7 +15,7 @@
         </div>
         <ul>
           <li v-for="index in 3" :key="index" style="display: flex;">
-            <el-link :underline="false" class="topic">
+            <el-link :underline="false" href="/article" class="topic">
               # 9012年了，是选择创业还是上班工作呢？ ｜ 话题</el-link>
             <div style="flex-grow: 1;"></div>
             <span class="count">100次围观</span>
@@ -61,7 +61,7 @@
         <ul>
           <li v-for="index in 10" :key="index">
             <el-tag size="mini" effect="plain">{{ index }}</el-tag>
-            <el-link :underline="false" style="margin: 0 10px">七天快速入门Go语言</el-link>
+            <el-link :underline="false" href="/article" style="margin: 0 10px">七天快速入门Go语言</el-link>
           </li>
         </ul>
       </el-card>

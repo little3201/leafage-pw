@@ -5,7 +5,7 @@ import routes from './routes'
 Vue.use(VueRouter)
 
 // 白名单
-const whiteList = ['/', '/introduce', '/technology', '/translation', '/travel', '/signin', '/signup']
+const whiteList = ['/', '/introduce', '/technology', '/translation', '/article', '/travel', '/signin', '/signup']
 
 const router = new VueRouter({
   mode: 'history',
