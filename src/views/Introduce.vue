@@ -43,7 +43,6 @@ export default {
 }
 .content {
   margin-top: 60px;
-  height: 100vh;
   background: #f8f8f8;
 }
 </style>
