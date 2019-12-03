@@ -102,13 +102,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.el-menu.el-menu--horizontal {
+.el-header /deep/ .el-menu {
   border-bottom: 0;
-  background: transparent;
+  background-color: transparent;
 }
 .el-main {
   text-align: center;
-  padding: 0;
 }
 img {
   max-height: 100%;

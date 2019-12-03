@@ -38,6 +38,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.el-header {
+  background-color: #ffffff;
+}
 .content {
   margin-top: 60px;
   height: 100vh;
