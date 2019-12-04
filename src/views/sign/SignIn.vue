@@ -13,7 +13,7 @@
           <span>已有邮箱账户？</span>
           <el-link type="primary" :underline="false" style="vertical-align: initial;">立即绑定</el-link>
         </p>
-        <el-form :model="loginForm" :rules="rules" ref="loginForm" :hide-required-asterisk="true">
+        <el-form @submit="submitForm('loginForm')" :model="loginForm" :rules="rules" ref="loginForm" :hide-required-asterisk="true">
           <el-form-item prop="username">
             <el-input prefix-icon="el-icon-user" v-model="loginForm.username" placeholder="请输入账号/邮箱" />
           </el-form-item>
@@ -59,7 +59,7 @@ export default {
       rules: {
         username: [
           { required: true, message: '请输入用户名', trigger: 'blur' },
-          { min: 8, max: 16, message: '长度在 8 到 16 个字符', trigger: 'blur' }
+          { min: 6, max: 12, message: '长度在 6 到 12 个字符', trigger: 'blur' }
         ],
         password: [
           { required: true, message: '请输入密码', trigger: 'change' }
