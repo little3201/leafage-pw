@@ -19,6 +19,7 @@ import {
   Menu,
   MenuItem,
   MenuItemGroup,
+  Message,
   Submenu,
   Tag,
   Row
@@ -49,6 +50,7 @@ const Element = {
     Vue.use(Submenu)
     Vue.use(Tag)
     Vue.use(Row)
+    Vue.prototype.$message = Message
   }
 }
 

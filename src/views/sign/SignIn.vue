@@ -80,7 +80,7 @@ export default {
             },
             error => {
               // 执行失败的回调函数
-              alert(error.message)
+              this.$message.error(error.message)
             }
           )
         } else {
