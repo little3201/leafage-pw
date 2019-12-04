@@ -5,4 +5,6 @@ const baseUrl =
     ? 'https://abeille.top/api'
     : 'http://localhost:8760'
 
-export const axios = new HttpRequest(baseUrl)
+const axios = new HttpRequest(baseUrl)
+
+export default axios

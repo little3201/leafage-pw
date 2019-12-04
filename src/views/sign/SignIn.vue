@@ -13,19 +13,19 @@
           <span>已有邮箱账户？</span>
           <el-link type="primary" :underline="false" style="vertical-align: initial;">立即绑定</el-link>
         </p>
-        <el-form :model="ruleForm" :rules="rules" ref="ruleForm" :hide-required-asterisk="true">
+        <el-form :model="loginForm" :rules="rules" ref="loginForm" :hide-required-asterisk="true">
           <el-form-item prop="username">
-            <el-input prefix-icon="el-icon-user" v-model="ruleForm.username" placeholder="请输入账号/邮箱" />
+            <el-input prefix-icon="el-icon-user" v-model="loginForm.username" placeholder="请输入账号/邮箱" />
           </el-form-item>
           <el-form-item prop="password" style="margin-bottom: 5px">
-            <el-input prefix-icon="el-icon-lock" v-model="ruleForm.password" placeholder="请输入登录密码" />
+            <el-input prefix-icon="el-icon-lock" v-model="loginForm.password" placeholder="请输入登录密码" />
           </el-form-item>
         </el-form>
         <p style="text-align: end">
           <el-link type="info" :underline="false" style="vertical-align: initial;">忘记密码</el-link>
         </p>
         <p>
-          <el-button type="primary" @click="submitForm('ruleForm')" style="width: 100%;">登&nbsp;录</el-button>
+          <el-button type="primary" @click="submitForm('loginForm')" style="width: 100%;">登&nbsp;录</el-button>
         </p>
         <p style="text-align: initial;">
           <span style="font-size: 14px;">没有账号？</span>
@@ -45,12 +45,13 @@
 </template>
 
 <script>
+import { login } from '@/api/request'
 
 export default {
   name: 'signin',
   data () {
     return {
-      ruleForm: {
+      loginForm: {
         username: '',
         password: '',
         remberme: false
@@ -70,7 +71,18 @@ export default {
     submitForm (formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          alert('submit!')
+          login(this.loginForm).then(
+            response => {
+              // 设置token
+              this.$router.push({
+                name: 'home'
+              })
+            },
+            error => {
+              // 执行失败的回调函数
+              alert(error.message)
+            }
+          )
         } else {
           return false
         }
