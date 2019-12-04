@@ -10,6 +10,10 @@ export const login = ({ username, password }) => {
   return axios.request({
     url: '/login',
     method: 'POST',
+    auth: {
+      username: username,
+      password: password
+    },
     params
   })
 }
