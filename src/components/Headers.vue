@@ -66,7 +66,6 @@ export default {
 .el-header{
   padding: 0 60px;
 }
-
 li {
   span{
     font-size: 1rem;
