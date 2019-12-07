@@ -28,10 +28,15 @@
         </h3>
         <ul>
           <li v-for="index in 10" :key="index" style="margin: 20px auto;">
+            <el-image class="title-img" src="https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg" />
             <el-link href="/article" :underline="false" style="font-size: 1rem;">如何快速掌握Redis技巧</el-link>
-            <p style="font-size: 12px;margin: 5px auto;">作者：布吉岛</p>
-            <p style="font-size: 14px;margin: 5px auto;">
+            <p class="li-text text-tag">作者：布吉岛</p>
+            <p class="li-text text-content">
               一个类被加载、连接、初始化后它的生命周期就开始了，当对应的Class对象不再被引用，即触不可及时
+            </p>
+            <p class="li-text text-tag">
+              <span style="margin-right: 30px">评论：20</span>
+              <span>阅读：100</span>
             </p>
             <el-divider></el-divider>
           </li>
@@ -116,6 +121,9 @@ export default {
 .el-link {
   justify-content: flex-start;
 }
+.el-divider--horizontal {
+  margin: 20px auto;
+}
 h3 {
   margin: 0;
   display: inline-block;
@@ -136,5 +144,19 @@ ul {
 }
 i {
   margin-right: 5px;
+}
+.title-img {
+  width: 160px;
+  float: right;
+  border-radius: 5px;
+}
+.li-text {
+  margin: 5px auto;
+}
+.text-tag {
+  font-size: 12px;
+}
+.text-content {
+  font-size: 14px;
 }
 </style>

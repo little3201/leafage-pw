@@ -43,7 +43,7 @@ export default {
   background-color: #ffffff;
 }
 .content {
-  margin-top: 60px;
+  margin: 60px auto;
   background: #f8f8f8;
 }
 .el-footer {

@@ -32,7 +32,7 @@ export default {
 }
 .items {
   vertical-align: initial;
-  margin: 5px 10px;
+  margin: 10px 10px auto 10px;
 }
 .introduce {
   font-size: 1rem;
