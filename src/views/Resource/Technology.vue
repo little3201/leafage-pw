@@ -27,7 +27,7 @@
           <i class="el-icon-tickets"></i>推荐内容
         </h3>
         <ul>
-          <li v-for="index in 10" :key="index">
+          <li v-for="index in 10" :key="index" class="li-content">
             <el-image class="title-img" src="https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg" />
             <el-link href="/article" :underline="false" style="font-size: 1rem;">如何快速掌握Redis技巧</el-link>
             <p class="li-text text-tag">作者：布吉岛</p>
@@ -109,7 +109,6 @@ export default {
 }
 .el-divider--vertical{
   margin: 0 15px;
-  top: 4px;
 }
 .el-tag--mini {
   width: 26px;
@@ -128,6 +127,10 @@ ul {
   padding: 0;
   list-style: none;
   li {
+    margin: 10px auto;
+  }
+  .li-content {
+    margin: auto;
     padding: 20px 0;
     border-bottom: solid 1px #e6e6e6;
   }
@@ -143,8 +146,10 @@ i {
   margin-right: 5px;
 }
 .title-img {
-  width: 170px;
+  width: 171px;
+  max-height: 116px;
   float: right;
+  margin-left: 10px;
   border-radius: 5px;
 }
 .li-text {
