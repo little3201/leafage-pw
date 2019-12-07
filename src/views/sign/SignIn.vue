@@ -1,7 +1,7 @@
 <template>
   <el-row type="flex" justify="center" align="middle" class="bg-row">
     <el-col :xs="22" :sm="10" :md="8" :lg="6">
-      <el-card :hoverable="true" style="padding: 15px; width: 20rem;">
+      <el-card :hoverable="true" style="padding: 15px; max-width: 20rem;">
         <router-link to="/">
           <img style="height: 3.5rem;" src="@/assets/logo.png" />
         </router-link>
