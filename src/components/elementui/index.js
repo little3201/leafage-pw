@@ -21,6 +21,7 @@ import {
   MenuItem,
   MenuItemGroup,
   Message,
+  Pagination,
   Submenu,
   Tag,
   Row
@@ -49,6 +50,7 @@ const Element = {
     Vue.use(Menu)
     Vue.use(MenuItem)
     Vue.use(MenuItemGroup)
+    Vue.use(Pagination)
     Vue.use(Submenu)
     Vue.use(Tag)
     Vue.use(Row)
