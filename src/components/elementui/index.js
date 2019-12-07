@@ -1,4 +1,5 @@
 import {
+  Backtop,
   Button,
   Card,
   Checkbox,
@@ -27,6 +28,7 @@ import {
 
 const Element = {
   install: function (Vue) {
+    Vue.use(Backtop)
     Vue.use(Button)
     Vue.use(Card)
     Vue.use(Checkbox)

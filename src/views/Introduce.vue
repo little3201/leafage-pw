@@ -13,6 +13,7 @@
           </el-card>
         </el-col>
       </el-row>
+      <el-backtop></el-backtop>
     </el-main>
     <Footers />
   </el-container>
@@ -44,5 +45,8 @@ export default {
 .content {
   margin-top: 60px;
   background: #f8f8f8;
+}
+.el-footer {
+  background-color: #ffffff;
 }
 </style>

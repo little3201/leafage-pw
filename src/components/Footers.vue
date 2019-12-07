@@ -1,5 +1,5 @@
 <template>
-  <el-footer class="footers">
+  <el-footer class="footers" style="height: 65px;">
     <el-link :underline="false" class="items">帮助</el-link>
     <el-link :underline="false" class="items">条款</el-link>
     <el-link :underline="false" class="items">隐私</el-link>
@@ -26,7 +26,7 @@ export default {
 .footers {
   position: fixed;
   width: 100%;
-  bottom: 0.5rem;
+  bottom: 0;
   z-index: 3;
   text-align: center;
 }

@@ -3,6 +3,7 @@
     <Headers :activeIndex.sync="activeIndex"/>
     <el-main class="content">
       <router-view />
+      <el-backtop></el-backtop>
     </el-main>
     <Footers />
   </el-container>
@@ -47,5 +48,8 @@ export default {
 .content {
   margin-top: 60px;
   background: #f8f8f8;
+}
+.el-footer {
+  background-color: #ffffff;
 }
 </style>
