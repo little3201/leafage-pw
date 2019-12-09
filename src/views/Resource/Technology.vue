@@ -29,11 +29,11 @@
           <li v-for="(item, index) in datas" :key="index" class="li-content">
             <el-image class="title-img" src="https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg" />
             <el-link href="/article" :underline="false" style="font-size: 1rem;">{{ item.title }}</el-link>
-            <p class="li-text text-tag">作者：{{ item.author }}</p>
-            <p class="li-text text-content">
+            <p class="text-tag">作者：{{ item.author }}</p>
+            <p class="text-content">
               {{ item.content }}
             </p>
-            <p class="li-text text-tag">
+            <p class="text-tag">
               <span style="margin-right: 30px">评论：{{ item.comment }} 条</span>
               <span>阅读：{{ item.scan }} 次</span>
             </p>
@@ -176,6 +176,7 @@ ul {
   .li-content {
     padding: 20px 0;
     border-bottom: solid 1px #e6e6e6;
+    height: 116px;
   }
 }
 .count {
@@ -194,9 +195,6 @@ i {
   float: right;
   margin-left: 10px;
   border-radius: 5px;
-}
-.li-text {
-  margin: 5px auto;
 }
 .text-tag {
   font-size: 12px;
