@@ -1,10 +1,7 @@
 <template>
-  <el-row type="flex" justify="center" align="middle" style="height: 100vh; text-align: center;">
-    <el-col :xs="0" :sm="12" :md="13" :lg="14">
-      <el-image src="https://oss.abeille.top/place.svg" fit="contain" />
-    </el-col>
+  <el-row type="flex" justify="center" align="middle" class="bg-row">
     <el-col :xs="22" :sm="10" :md="8" :lg="6">
-      <el-card :hoverable="true" style="padding: 15px; width: 20rem;">
+      <el-card :hoverable="true" style="padding: 15px; max-width: 20rem;">
         <router-link to="/">
           <img style="height: 3.5rem;" src="@/assets/logo.png" />
         </router-link>
@@ -41,14 +38,19 @@
         </p>
       </el-card>
     </el-col>
+    <Footers />
   </el-row>
 </template>
 
 <script>
 import { login } from '@/api/request'
+import Footers from '@/components/Footers.vue'
 
 export default {
   name: 'signin',
+  components: {
+    Footers
+  },
   data () {
     return {
       loginForm: {
@@ -92,5 +94,12 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+.bg-row {
+  height: 100vh;
+  text-align: center;
+  background-image: url(https://oss.abeille.top/place.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
 </style>
