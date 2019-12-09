@@ -3,6 +3,7 @@
     <Headers :activeIndex.sync="activeIndex"/>
     <el-main class="content">
       <router-view />
+      <el-backtop></el-backtop>
     </el-main>
     <Footers />
   </el-container>
@@ -41,9 +42,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.el-header {
+  background-color: #ffffff;
+}
 .content {
-  margin-top: 60px;
-  height: 100vh;
+  margin: 60px auto;
   background: #f8f8f8;
+}
+.el-footer {
+  background-color: #ffffff;
 }
 </style>

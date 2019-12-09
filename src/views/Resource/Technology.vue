@@ -14,11 +14,10 @@
           </div>
         </div>
         <ul>
-          <li v-for="index in 3" :key="index" style="display: flex;">
-            <el-link :underline="false" class="topic">
-              # 9012年了，是选择创业还是上班工作呢？ ｜ 话题</el-link>
+          <li v-for="(item, index) in topics" :key="index" style="display: flex; margin: 10px auto;">
+            <el-link :underline="false" href="/article" class="topic">{{ item.topic }}</el-link>
             <div style="flex-grow: 1;"></div>
-            <span class="count">100次围观</span>
+            <span class="count">{{ item.onlooker }} 次围观</span>
           </li>
         </ul>
       </el-card>
@@ -27,15 +26,23 @@
           <i class="el-icon-tickets"></i>推荐内容
         </h3>
         <ul>
-          <li v-for="index in 10" :key="index" style="margin: 20px auto;">
-            <el-link href="/article" :underline="false" style="font-size: 1rem;">如何快速掌握Redis技巧</el-link>
-            <p style="font-size: 12px;margin: 5px auto;">作者：布吉岛</p>
-            <p style="font-size: 14px;margin: 5px auto;">
-              一个类被加载、连接、初始化后它的生命周期就开始了，当对应的Class对象不再被引用，即触不可及时
+          <li v-for="(item, index) in datas" :key="index" class="li-content">
+            <el-image class="title-img" src="https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg" />
+            <el-link href="/article" :underline="false" style="font-size: 1rem;">{{ item.title }}</el-link>
+            <p class="text-tag">作者：{{ item.author }}</p>
+            <p class="text-content">
+              {{ item.content }}
             </p>
-            <el-divider></el-divider>
+            <p class="text-tag">
+              <span style="margin-right: 30px">评论：{{ item.comment }} 条</span>
+              <span>阅读：{{ item.scan }} 次</span>
+            </p>
           </li>
         </ul>
+        <el-pagination
+          layout="prev, pager, next"
+          :total="50">
+        </el-pagination>
       </el-card>
     </el-col>
     <el-col :xs="0" :sm="8" :md="7" :lg="6">
@@ -61,7 +68,7 @@
         <ul>
           <li v-for="index in 10" :key="index">
             <el-tag size="mini" effect="plain">{{ index }}</el-tag>
-            <el-link :underline="false" style="margin: 0 10px">七天快速入门Go语言</el-link>
+            <el-link :underline="false" href="/article" style="margin: 0 10px">七天快速入门Go语言</el-link>
           </li>
         </ul>
       </el-card>
@@ -94,6 +101,46 @@ export default {
   },
   data () {
     return {
+      datas: [
+        {
+          title: '如何快速掌握Redis技巧',
+          author: '布吉岛',
+          content: '一个类被加载、连接、初始化后它的生命周期就开始了，当对应的Class对象不再被引用，即触不可及时',
+          url: 'https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg',
+          comment: '100',
+          scan: '23'
+        },
+        {
+          title: '如何快速掌握Redis技巧',
+          author: '布吉岛',
+          content: '一个类被加载、连接、初始化后它的生命周期就开始了，当对应的Class对象不再被引用，即触不可及时',
+          url: 'https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg',
+          comment: '100',
+          scan: '23'
+        },
+        {
+          title: '如何快速掌握Redis技巧',
+          author: '布吉岛',
+          content: '一个类被加载、连接、初始化后它的生命周期就开始了，当对应的Class对象不再被引用，即触不可及时',
+          url: 'https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg',
+          comment: '100',
+          scan: '23'
+        }
+      ],
+      topics: [
+        {
+          topic: '# 9012年了，是选择创业还是上班工作呢？ ｜ 话题',
+          onlooker: '102'
+        },
+        {
+          topic: '# 9012年了，是选择创业还是上班工作呢？ ｜ 话题',
+          onlooker: '102'
+        },
+        {
+          topic: '# 9012年了，是选择创业还是上班工作呢？ ｜ 话题',
+          onlooker: '102'
+        }
+      ]
     }
   }
 }
@@ -124,7 +171,12 @@ ul {
   padding: 0;
   list-style: none;
   li {
-    margin: 10px 0;
+    margin: 10px auto;
+  }
+  .li-content {
+    padding: 20px 0;
+    border-bottom: solid 1px #e6e6e6;
+    height: 116px;
   }
 }
 .count {
@@ -136,5 +188,18 @@ ul {
 }
 i {
   margin-right: 5px;
+}
+.title-img {
+  max-width: 206px;
+  max-height: 116px;
+  float: right;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+.text-tag {
+  font-size: 12px;
+}
+.text-content {
+  font-size: 14px;
 }
 </style>

@@ -1,4 +1,5 @@
 import {
+  Backtop,
   Button,
   Card,
   Checkbox,
@@ -19,6 +20,8 @@ import {
   Menu,
   MenuItem,
   MenuItemGroup,
+  Message,
+  Pagination,
   Submenu,
   Tag,
   Row
@@ -26,6 +29,7 @@ import {
 
 const Element = {
   install: function (Vue) {
+    Vue.use(Backtop)
     Vue.use(Button)
     Vue.use(Card)
     Vue.use(Checkbox)
@@ -46,9 +50,11 @@ const Element = {
     Vue.use(Menu)
     Vue.use(MenuItem)
     Vue.use(MenuItemGroup)
+    Vue.use(Pagination)
     Vue.use(Submenu)
     Vue.use(Tag)
     Vue.use(Row)
+    Vue.prototype.$message = Message
   }
 }
 

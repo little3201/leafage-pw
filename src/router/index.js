@@ -5,7 +5,7 @@ import routes from './routes'
 Vue.use(VueRouter)
 
 // 白名单
-const whiteList = ['/', '/introduce', '/technology', '/translation', '/travel', '/signin', '/signup']
+const whiteList = ['/', '/introduce', '/technology', '/translation', '/article', '/travel', '/signin', '/signup']
 
 const router = new VueRouter({
   mode: 'history',
@@ -15,14 +15,14 @@ const router = new VueRouter({
 
 /* 路由之前检查token */
 router.beforeEach((to, from, next) => {
-  let token = null
+  let token
   // 白名单直接放行
   if (whiteList.includes(to.fullPath)) {
     next()
   } else if (to.fullPath.startsWith('/article')) {
     // 路由包含/article，即文章详情页，或者包换/photograph，即图片记录，放行
     next()
-  } else if (token === null && to.fullPath !== '/signin') {
+  } else if (!token && to.fullPath !== '/signin') {
     // 路由不是登录，且没有拿到token，直接拦截，跳转至登录页
     next({
       name: 'signin'

@@ -1,3 +1,5 @@
+https://oss.abeille.top/logo.png
+
 # abeille
 
 基于Vue 和 Element UI写的一套面向 C 端的模版，首页鼠标监听全屏滚动

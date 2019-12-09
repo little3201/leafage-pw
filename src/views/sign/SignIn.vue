@@ -1,10 +1,7 @@
 <template>
-  <el-row type="flex" justify="center" align="middle" style="height: 100vh; text-align: center;">
-    <el-col :xs="0" :sm="12" :md="13" :lg="14">
-      <el-image src="https://oss.abeille.top/place.svg" fit="contain" />
-    </el-col>
+  <el-row type="flex" justify="center" align="middle" class="bg-row">
     <el-col :xs="22" :sm="10" :md="8" :lg="6">
-      <el-card :hoverable="true" style="padding: 15px; width: 20rem;">
+      <el-card :hoverable="true" style="padding: 15px; max-width: 20rem;">
         <router-link to="/">
           <img style="height: 3.5rem;" src="@/assets/logo.png" />
         </router-link>
@@ -13,19 +10,19 @@
           <span>已有邮箱账户？</span>
           <el-link type="primary" :underline="false" style="vertical-align: initial;">立即绑定</el-link>
         </p>
-        <el-form :model="ruleForm" :rules="rules" ref="ruleForm" :hide-required-asterisk="true">
+        <el-form @submit="submitForm('loginForm')" :model="loginForm" :rules="rules" ref="loginForm" :hide-required-asterisk="true">
           <el-form-item prop="username">
-            <el-input prefix-icon="el-icon-user" v-model="ruleForm.username" placeholder="请输入账号/邮箱" />
+            <el-input prefix-icon="el-icon-user" v-model="loginForm.username" placeholder="请输入账号/邮箱" />
           </el-form-item>
           <el-form-item prop="password" style="margin-bottom: 5px">
-            <el-input prefix-icon="el-icon-lock" v-model="ruleForm.password" placeholder="请输入登录密码" />
+            <el-input prefix-icon="el-icon-lock" v-model="loginForm.password" placeholder="请输入登录密码" />
           </el-form-item>
         </el-form>
         <p style="text-align: end">
           <el-link type="info" :underline="false" style="vertical-align: initial;">忘记密码</el-link>
         </p>
         <p>
-          <el-button type="primary" @click="submitForm('ruleForm')" style="width: 100%;">登&nbsp;录</el-button>
+          <el-button type="primary" @click="submitForm('loginForm')" style="width: 100%;">登&nbsp;录</el-button>
         </p>
         <p style="text-align: initial;">
           <span style="font-size: 14px;">没有账号？</span>
@@ -41,16 +38,22 @@
         </p>
       </el-card>
     </el-col>
+    <Footers />
   </el-row>
 </template>
 
 <script>
+import { login } from '@/api/request'
+import Footers from '@/components/Footers.vue'
 
 export default {
   name: 'signin',
+  components: {
+    Footers
+  },
   data () {
     return {
-      ruleForm: {
+      loginForm: {
         username: '',
         password: '',
         remberme: false
@@ -58,7 +61,7 @@ export default {
       rules: {
         username: [
           { required: true, message: '请输入用户名', trigger: 'blur' },
-          { min: 8, max: 16, message: '长度在 8 到 16 个字符', trigger: 'blur' }
+          { min: 6, max: 12, message: '长度在 6 到 12 个字符', trigger: 'blur' }
         ],
         password: [
           { required: true, message: '请输入密码', trigger: 'change' }
@@ -70,7 +73,18 @@ export default {
     submitForm (formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          alert('submit!')
+          login(this.loginForm).then(
+            response => {
+              // 设置token
+              this.$router.push({
+                name: 'home'
+              })
+            },
+            error => {
+              // 执行失败的回调函数
+              this.$message.error(error.message)
+            }
+          )
         } else {
           return false
         }
@@ -80,5 +94,12 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+.bg-row {
+  height: 100vh;
+  text-align: center;
+  background-image: url(https://oss.abeille.top/place.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
 </style>

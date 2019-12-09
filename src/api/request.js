@@ -3,13 +3,17 @@ import axios from '@/api'
 /* 登录方法 */
 export const login = ({ username, password }) => {
   const params = {
-    grant_type: 'password',
     username: username,
-    password: password
+    password: password,
+    grant_type: 'password'
   }
   return axios.request({
-    url: '/login',
+    url: '/server/oauth/token',
     method: 'POST',
+    auth: {
+      username: username,
+      password: password
+    },
     params
   })
 }
