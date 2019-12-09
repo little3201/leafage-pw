@@ -1,29 +1,27 @@
 <template>
-  <el-container>
-    <Headers :activeIndex="activeIndex"/>
-    <el-main style="padding: 0;">
-      <el-carousel
-        height="100vh"
-        direction="vertical"
-        :autoplay="false"
-        :loop="false"
-        ref="carousel"
-        indicator-position="none"
+  <div>
+    <Headers />
+    <v-carousel>
+      <v-carousel-item
+        v-for="(color, i) in colors"
+        :key="color"
       >
-        <el-carousel-item v-for="(item, index) in datas" :key="index">
-          <el-row type="flex" justify="center" align="middle">
-            <div style="position: absolute; text-align: center; z-index: 3;">
-              <p style="font-size: 2rem;" v-html="item.title"></p>
-              <p v-html="item.content"></p>
-              <el-link type="primary" style="font-size: 1.3rem;" :href="item.link">{{ item.text }}</el-link>
-            </div>
-            <el-image :src="item.url" fit="contain" />
-          </el-row>
-        </el-carousel-item>
-      </el-carousel>
-    </el-main>
+        <v-sheet
+          :color="color"
+          height="100%"
+          tile
+        >
+          <v-row
+            align="center"
+            justify="center"
+          >
+            <div class="display-3">Slide {{ i + 1 }}</div>
+          </v-row>
+        </v-sheet>
+      </v-carousel-item>
+    </v-carousel>
     <Footers />
-  </el-container>
+  </div>
 </template>
 
 <script>
@@ -40,6 +38,13 @@ export default {
   },
   data () {
     return {
+      colors: [
+        'primary',
+        'secondary',
+        'yellow darken-2',
+        'red',
+        'orange'
+      ],
       activeIndex: '/',
       datas: [
         {
@@ -102,16 +107,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.el-header /deep/ .el-menu {
-  border-bottom: 0;
-  background-color: transparent;
-}
-.el-main {
-  text-align: center;
-}
-img {
-  max-height: 100%;
-  width: auto;
-  opacity: 0.8;
-}
 </style>

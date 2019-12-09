@@ -2,15 +2,16 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-// element-ui
-import Element from '@/components/elementui'
+// vuetify
+import vuetify from '@/plugins/vuetify'
 
 Vue.config.productionTip = false
 
-Vue.use(Element)
+Vue.use(vuetify)
 
 new Vue({
   router,
   store,
+  vuetify,
   render: h => h(App)
 }).$mount('#app')

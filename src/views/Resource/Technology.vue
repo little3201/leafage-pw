@@ -8,14 +8,14 @@
           </h3>
           <div style="flex-grow: 1;"></div>
           <div>
-            <el-link :underline="false" style="top: 4px;">换一换</el-link>
+            <a :underline="false" style="top: 4px;">换一换</a>
             <el-divider direction="vertical"></el-divider>
-            <el-link :underline="false" style="top: 4px;">全部话题</el-link>
+            <a :underline="false" style="top: 4px;">全部话题</a>
           </div>
         </div>
         <ul>
           <li v-for="(item, index) in topics" :key="index" style="display: flex; margin: 10px auto;">
-            <el-link :underline="false" href="/article" class="topic">{{ item.topic }}</el-link>
+            <a :underline="false" href="/article" class="topic">{{ item.topic }}</a>
             <div style="flex-grow: 1;"></div>
             <span class="count">{{ item.onlooker }} 次围观</span>
           </li>
@@ -28,7 +28,7 @@
         <ul>
           <li v-for="(item, index) in datas" :key="index" class="li-content">
             <el-image class="title-img" src="https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg" />
-            <el-link href="/article" :underline="false" style="font-size: 1rem;">{{ item.title }}</el-link>
+            <a href="/article" :underline="false" style="font-size: 1rem;">{{ item.title }}</a>
             <p class="text-tag">作者：{{ item.author }}</p>
             <p class="text-content">
               {{ item.content }}
@@ -51,24 +51,24 @@
           <h3 style="flex-grow: 1;">
             <i class="el-icon-hot-water"></i>热点
           </h3>
-          <el-link :underline="false" style="top: 4px;">
+          <a :underline="false" style="top: 4px;">
             查看更多
             <i class="el-icon-arrow-right"></i>
-          </el-link>
+          </a>
         </div>
         <div style="text-align: center;">
           <el-divider></el-divider>
-          <el-link :underline="false">7天</el-link>
+          <a :underline="false">7天</a>
           <el-divider direction="vertical"></el-divider>
-          <el-link :underline="false">1个月</el-link>
+          <a :underline="false">1个月</a>
           <el-divider direction="vertical"></el-divider>
-          <el-link :underline="false">6个月</el-link>
+          <a :underline="false">6个月</a>
           <el-divider></el-divider>
         </div>
         <ul>
           <li v-for="index in 10" :key="index">
             <el-tag size="mini" effect="plain">{{ index }}</el-tag>
-            <el-link :underline="false" href="/article" style="margin: 0 10px">七天快速入门Go语言</el-link>
+            <a :underline="false" href="/article" style="margin: 0 10px">七天快速入门Go语言</a>
           </li>
         </ul>
       </el-card>
@@ -77,14 +77,14 @@
           <h3 style="flex-grow: 1;">
             <i class="el-icon-hot-water"></i>新闻资讯
           </h3>
-          <el-link :underline="false" style="top: 4px;">
+          <a :underline="false" style="top: 4px;">
             查看更多
             <i class="el-icon-arrow-right"></i>
-          </el-link>
+          </a>
         </div>
         <ul>
           <li v-for="index in 10" :key="index">
-            <el-link :underline="false" style="margin: 0 10px">马云套现40亿</el-link>
+            <a :underline="false" style="margin: 0 10px">马云套现40亿</a>
           </li>
         </ul>
       </el-card>
@@ -160,7 +160,7 @@ export default {
   height: 16px;
   line-height: 15px;
 }
-.el-link {
+.a {
   justify-content: flex-start;
 }
 h3 {

@@ -1,20 +1,20 @@
 <template>
-  <el-row :gutter="20" type="flex" justify="center">
-    <el-col :xs="24" :sm="16" :md="15" :lg="14">
-      <el-card style="margin-bottom: 20px;">
+  <v-row :gutter="20" type="flex" justify="center">
+    <v-col :xs="24" :sm="16" :md="15" :lg="14">
+      <v-card style="margin-bottom: 20px;">
         <div style="display: flex;">
           <h3>
             <i class="el-icon-document-copy"></i>翻译文档
           </h3>
           <div style="flex-grow: 1;"></div>
-          <el-link :underline="false" style="top: 4px;">查看原文</el-link>
+          <a :underline="false" style="top: 4px;">查看原文</a>
         </div>
         <h2>《Prometheus》</h2>
         <p v-html="content"></p>
-      </el-card>
-    </el-col>
-    <el-col :xs="0" :sm="8" :md="7" :lg="6">
-      <el-card style="margin-bottom: 20px;">
+      </v-card>
+    </v-col>
+    <v-col :xs="0" :sm="8" :md="7" :lg="6">
+      <v-card style="margin-bottom: 20px;">
         <div>
           <h3>
             <i class="el-icon-notebook-2"></i>《Prometheus》
@@ -24,9 +24,9 @@
           <p>概览</p>
           <p>开始</p>
         </div>
-      </el-card>
-    </el-col>
-  </el-row>
+      </v-card>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
@@ -45,7 +45,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.el-link {
+.a {
   justify-content: flex-start;
 }
 h3 {
