@@ -109,7 +109,4 @@ export default {
   padding: 35px;
   max-width: 23rem;
 }
-a {
-  text-decoration: none;
-}
 </style>
