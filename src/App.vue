@@ -1,16 +1,18 @@
 <template>
-  <div id="app">
-    <router-view />
-  </div>
+  <v-app>
+    <!-- Sizes your content based upon application components -->
+    <v-content>
+      <!-- Provides the application the proper gutter -->
+      <v-container fluid>
+        <!-- If using vue-router -->
+        <router-view></router-view>
+      </v-container>
+    </v-content>
+  </v-app>
 </template>
 
 <style lang="scss">
-body{
-  margin: 0;
-}
-#app {
-  font-family: Helvetica, 'PingFang SC', "Microsoft YaHei", Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+a {
+  text-decoration: none;
 }
 </style>
