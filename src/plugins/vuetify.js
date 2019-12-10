@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import '@mdi/font/css/materialdesignicons.css'
+
 import Vuetify, {
   VApp,
   VAppBar,
@@ -71,6 +72,13 @@ Vue.use(Vuetify, {
 })
 
 const opts = {
+//  theme: {
+//    themes: {
+//      light: {
+//        primary: '#FF9900'
+//      }
+//    }
+//  },
   icons: {
     iconfont: 'mdi' // default - only for display purposes
   }

@@ -1,23 +1,12 @@
 <template>
   <div>
     <Headers />
-    <v-carousel>
+    <v-carousel height="calc(100vh - 130px)" :hide-delimiters="true" :vertical="true" :continuous="false">
       <v-carousel-item
-        v-for="(color, i) in colors"
-        :key="color"
+        v-for="(item, i) in datas"
+        :key="i"
+        :src="item.src"
       >
-        <v-sheet
-          :color="color"
-          height="100%"
-          tile
-        >
-          <v-row
-            align="center"
-            justify="center"
-          >
-            <div class="display-3">Slide {{ i + 1 }}</div>
-          </v-row>
-        </v-sheet>
       </v-carousel-item>
     </v-carousel>
     <Footers />
@@ -48,21 +37,21 @@ export default {
       activeIndex: '/',
       datas: [
         {
-          url: 'https://oss.abeille.top/content.svg',
+          src: 'https://oss.abeille.top/content.svg',
           title: 'Bienvenue, Abeille 欢迎你！',
           link: '/introduce',
           text: '阅读更多',
           content: 'Abeille 是蜜蜂法语词语，选择这个词也是希望这里能成为Ruche（蜂巢），<br />希望所有注册用户都像一只勤劳的小蜜蜂一样，共同做一些事情...<br /><br />本站持续开发优化，梦想还是要有的，万一实现了呢。'
         },
         {
-          url: 'https://oss.abeille.top/upload.svg',
+          src: 'https://oss.abeille.top/upload.svg',
           title: '一点介绍',
           link: '/article',
           text: '获取资料',
           content: '本站提供技术博文、游行博客、翻译文档等资料，<br />可供免费使用，同时希望大家发现问题，能指正错误...'
         },
         {
-          url: 'https://oss.abeille.top/onboarding.svg',
+          src: 'https://oss.abeille.top/onboarding.svg',
           title: '关于站长',
           link: '/introduce',
           text: '了解站长',
