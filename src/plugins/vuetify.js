@@ -30,6 +30,8 @@ import Vuetify, {
   VSheet,
   VSpacer,
   VTextField,
+  VToolbar,
+  VToolbarItems,
   VToolbarTitle
 } from 'vuetify/lib'
 import { Ripple } from 'vuetify/lib/directives'
@@ -64,6 +66,8 @@ Vue.use(Vuetify, {
     VSheet,
     VSpacer,
     VTextField,
+    VToolbar,
+    VToolbarItems,
     VToolbarTitle
   },
   directives: {

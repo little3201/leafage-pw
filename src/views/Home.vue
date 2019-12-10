@@ -1,7 +1,6 @@
 <template>
   <div>
-    <Headers />
-    <v-carousel height="calc(100vh - 130px)" :hide-delimiters="true" :vertical="true" :continuous="false">
+    <v-carousel height="100vh" :hide-delimiters="true" :vertical="true" :continuous="false">
       <v-carousel-item
         v-for="(item, i) in datas"
         :key="i"
@@ -9,22 +8,15 @@
       >
       </v-carousel-item>
     </v-carousel>
-    <Footers />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import _ from 'lodash' // 引入节流函数
-import Headers from '@/components/Headers.vue'
-import Footers from '@/components/Footers.vue'
 
 export default {
   name: 'home',
-  components: {
-    Headers,
-    Footers
-  },
   data () {
     return {
       colors: [

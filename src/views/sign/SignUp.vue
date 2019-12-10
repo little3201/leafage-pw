@@ -39,13 +39,13 @@
         <h3>第三方账号登录</h3>
         <p>
           <v-btn text icon :x-large="true">
+            <v-icon>mdi-twitter</v-icon>
+          </v-btn>
+          <v-btn text icon :x-large="true">
             <v-icon>mdi-github-circle</v-icon>
           </v-btn>
           <v-btn text icon :x-large="true">
-            <v-icon>mdi-linkedin</v-icon>
-          </v-btn>
-          <v-btn text icon :x-large="true">
-            <v-icon>mdi-google</v-icon>
+            <v-icon>mdi-wechat</v-icon>
           </v-btn>
         </p>
       </v-card>
