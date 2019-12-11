@@ -20,6 +20,7 @@ import Vuetify, {
   VImg,
   VList,
   VListItem,
+  VListItemAction,
   VListItemContent,
   VListItemIcon,
   VListItemSubtitle,
@@ -30,8 +31,6 @@ import Vuetify, {
   VSheet,
   VSpacer,
   VTextField,
-  VToolbar,
-  VToolbarItems,
   VToolbarTitle
 } from 'vuetify/lib'
 import { Ripple } from 'vuetify/lib/directives'
@@ -56,6 +55,7 @@ Vue.use(Vuetify, {
     VImg,
     VList,
     VListItem,
+    VListItemAction,
     VListItemContent,
     VListItemIcon,
     VListItemSubtitle,
@@ -66,8 +66,6 @@ Vue.use(Vuetify, {
     VSheet,
     VSpacer,
     VTextField,
-    VToolbar,
-    VToolbarItems,
     VToolbarTitle
   },
   directives: {

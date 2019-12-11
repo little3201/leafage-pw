@@ -85,7 +85,7 @@ export default {
   methods: {
     submitForm (formName) {
       if (this.$refs.form.validate()) {
-        login(this.loginForm).then(
+        login(this.formData).then(
           response => {
             // 设置token
             this.$router.push({

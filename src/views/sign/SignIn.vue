@@ -76,7 +76,7 @@ export default {
         ],
         password: [
           v => !!v || '请输入密码',
-          v => (v && v.length <= 10) || 'Name must be less than 10 characters'
+          v => (v && (v.length > 6 && v.length <= 16)) || 'Name must between 6 and 16 characters'
         ]
       }
     }
@@ -84,7 +84,7 @@ export default {
   methods: {
     submitForm (formName) {
       if (this.$refs.form.validate()) {
-        login(this.loginForm).then(
+        login(this.formData).then(
           response => {
             // 设置token
             this.$router.push({

@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <div>
     <Headers/>
     <!-- Sizes your content based upon application components -->
     <v-content>
@@ -10,7 +10,7 @@
       </v-container>
     </v-content>
     <Footers />
-  </v-container>
+  </div>
 </template>
 
 <script>
