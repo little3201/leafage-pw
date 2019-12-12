@@ -1,37 +1,21 @@
 <template>
-  <div>
-    <Headers />
-      <!-- Sizes your content based upon application components -->
-      <v-content>
-        <!-- Provides the application the proper gutter -->
-        <v-container>
-        <v-carousel height="100vh" :hide-delimiters="true" :vertical="true" :continuous="false">
-          <v-carousel-item
-            v-for="(item, i) in datas"
-            :key="i"
-            :src="item.src"
-          >
-            <p v-html="item.content"></p>
-          </v-carousel-item>
-        </v-carousel>
-      </v-container>
-    </v-content>
-    <Footers />
-  </div>
+  <v-carousel height="100vh" :hide-delimiters="true" :vertical="true" :continuous="false">
+    <v-carousel-item
+      v-for="(item, i) in datas"
+      :key="i"
+      :src="item.src"
+    >
+      <p v-html="item.content"></p>
+    </v-carousel-item>
+  </v-carousel>
 </template>
 
 <script>
 // @ is an alias to /src
 import _ from 'lodash' // 引入节流函数
-import Headers from '@/components/Headers.vue'
-import Footers from '@/components/Footers.vue'
 
 export default {
   name: 'home',
-  components: {
-    Headers,
-    Footers
-  },
   data () {
     return {
       colors: [
