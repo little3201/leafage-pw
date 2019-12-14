@@ -27,13 +27,16 @@
 
 <script>
 export default {
+  name: 'navigations',
+  props: {
+    drawer: Boolean
+  },
   data () {
     return {
-      drawer: null
     }
   }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 </style>

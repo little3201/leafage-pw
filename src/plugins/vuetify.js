@@ -14,6 +14,7 @@ import Vuetify, {
   VContainer,
   VCheckbox,
   VDivider,
+  VExpandTransition,
   VFooter,
   VForm,
   VIcon,
@@ -31,7 +32,8 @@ import Vuetify, {
   VSheet,
   VSpacer,
   VTextField,
-  VToolbarTitle
+  VToolbarTitle,
+  VToolbarItems
 } from 'vuetify/lib'
 import { Ripple } from 'vuetify/lib/directives'
 
@@ -49,6 +51,7 @@ Vue.use(Vuetify, {
     VContainer,
     VCheckbox,
     VDivider,
+    VExpandTransition,
     VFooter,
     VForm,
     VIcon,
@@ -66,7 +69,8 @@ Vue.use(Vuetify, {
     VSheet,
     VSpacer,
     VTextField,
-    VToolbarTitle
+    VToolbarTitle,
+    VToolbarItems
   },
   directives: {
     Ripple

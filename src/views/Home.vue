@@ -1,21 +1,35 @@
 <template>
-  <v-carousel height="100vh" :hide-delimiters="true" :vertical="true" :continuous="false">
-    <v-carousel-item
-      v-for="(item, i) in datas"
-      :key="i"
-      :src="item.src"
-    >
-      <p v-html="item.content"></p>
-    </v-carousel-item>
-  </v-carousel>
+  <div>
+    <Headers :flat="true"/>
+    <v-content style="padding: 0;">
+      <v-container>
+        <v-carousel height="100vh" :hide-delimiters="true" :vertical="true" :continuous="false">
+          <v-carousel-item
+            v-for="(item, i) in datas"
+            :key="i"
+            :src="item.src"
+          >
+            <p class="text-center" v-html="item.content"></p>
+          </v-carousel-item>
+        </v-carousel>
+      </v-container>
+    </v-content>
+    <Footers />
+  </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import _ from 'lodash' // 引入节流函数
+import Headers from '@/components/Headers'
+import Footers from '@/components/Footers'
 
 export default {
   name: 'home',
+  components: {
+    Headers,
+    Footers
+  },
   data () {
     return {
       colors: [
@@ -32,7 +46,7 @@ export default {
           title: 'Bienvenue, Abeille 欢迎你！',
           link: '/introduce',
           text: '阅读更多',
-          content: 'Abeille 是蜜蜂法语词语，选择这个词也是希望这里能成为Ruche（蜂巢），<br />希望所有注册用户都像一只勤劳的小蜜蜂一样，共同做一些事情...<br /><br />本站持续开发优化，梦想还是要有的，万一实现了呢。'
+          content: 'Abeille 是蜜蜂法语词语，选择这个词也是希望这里能成为Ruche（蜂巢）<br />希望所有注册用户都像一只勤劳的小蜜蜂一样，共同做一些事情...'
         },
         {
           src: 'https://oss.abeille.top/upload.svg',
@@ -87,6 +101,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.theme--light.v-sheet {
+  background-color: transparent;
+}
 .container {
   padding: 0;
 }

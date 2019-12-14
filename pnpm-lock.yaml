@@ -1,10 +1,10 @@
 dependencies:
   axios: 0.19.0
-  core-js: 3.4.8
+  core-js: 3.5.0
   nprogress: 0.2.0
-  vue: 2.6.10
+  vue: 2.6.11
   vue-router: 3.1.3
-  vuetify: 2.1.13_vue@2.6.10
+  vuetify: 2.1.14_vue@2.6.11
   vuex: 3.1.2
 devDependencies:
   '@mdi/font': 4.7.95
@@ -13,7 +13,7 @@ devDependencies:
   '@vue/cli-plugin-pwa': 4.1.1_@vue+cli-service@4.1.1
   '@vue/cli-plugin-router': 4.1.1_@vue+cli-service@4.1.1
   '@vue/cli-plugin-vuex': 4.1.1_@vue+cli-service@4.1.1
-  '@vue/cli-service': 4.1.1_b29776c8753afe9eb833005cb5311170
+  '@vue/cli-service': 4.1.1_b91d3e4c82783f42948446fd997f2cc8
   '@vue/eslint-config-standard': 4.0.0_eslint@5.16.0
   babel-eslint: 10.0.3_eslint@5.16.0
   deepmerge: 4.2.2
@@ -23,7 +23,7 @@ devDependencies:
   lint-staged: 9.5.0
   sass: 1.23.7
   sass-loader: 8.0.0_fibers@4.0.2+sass@1.23.7
-  vue-template-compiler: 2.6.10
+  vue-template-compiler: 2.6.11
 lockfileVersion: 5.1
 packages:
   /@babel/code-frame/7.5.5:
@@ -844,7 +844,7 @@ packages:
       '@babel/plugin-transform-unicode-regex': 7.7.4_@babel+core@7.7.5
       '@babel/types': 7.7.4
       browserslist: 4.8.2
-      core-js-compat: 3.4.8
+      core-js-compat: 3.5.0
       invariant: 2.2.4
       js-levenshtein: 1.1.6
       semver: 5.7.1
@@ -1022,7 +1022,7 @@ packages:
     dependencies:
       '@types/events': 3.0.0
       '@types/minimatch': 3.0.3
-      '@types/node': 12.12.14
+      '@types/node': 12.12.17
     dev: true
     resolution:
       integrity: sha1-qlmhxuP7xCHgfM0xqUTDDrpSFXU=
@@ -1032,11 +1032,11 @@ packages:
     resolution:
       integrity: sha1-PcoOPzOyAPx9ETnAzZbBJoyt/Z0=
       tarball: '@types/minimatch/download/@types/minimatch-3.0.3.tgz'
-  /@types/node/12.12.14:
+  /@types/node/12.12.17:
     dev: true
     resolution:
-      integrity: sha1-HB1uPHXbpGbgMmlI1W6L1yoZA9I=
-      tarball: '@types/node/download/@types/node-12.12.14.tgz'
+      integrity: sha1-GRtx5/TDJe4PsjvEqZZHfZK4w5s=
+      tarball: '@types/node/download/@types/node-12.12.17.tgz'
   /@types/normalize-package-data/2.4.0:
     dev: true
     resolution:
@@ -1080,8 +1080,8 @@ packages:
       '@babel/runtime': 7.7.6
       '@vue/babel-preset-jsx': 1.1.2_@babel+core@7.7.5
       babel-plugin-dynamic-import-node: 2.3.0
-      core-js: 3.4.8
-      core-js-compat: 3.4.8
+      core-js: 3.5.0
+      core-js-compat: 3.5.0
     dev: true
     resolution:
       integrity: sha1-o5gqyi4ahNN0V/39/I2pBNKzOxA=
@@ -1157,7 +1157,7 @@ packages:
     dependencies:
       '@babel/core': 7.7.5
       '@vue/babel-preset-app': 4.1.1
-      '@vue/cli-service': 4.1.1_b29776c8753afe9eb833005cb5311170
+      '@vue/cli-service': 4.1.1_b91d3e4c82783f42948446fd997f2cc8
       '@vue/cli-shared-utils': 4.1.1
       babel-loader: 8.0.6_@babel+core@7.7.5+webpack@4.41.2
       cache-loader: 4.1.0_webpack@4.41.2
@@ -1171,7 +1171,7 @@ packages:
       tarball: '@vue/cli-plugin-babel/download/@vue/cli-plugin-babel-4.1.1.tgz'
   /@vue/cli-plugin-eslint/4.1.1_50faee43f06f3647a6a5a1b421b5d26a:
     dependencies:
-      '@vue/cli-service': 4.1.1_b29776c8753afe9eb833005cb5311170
+      '@vue/cli-service': 4.1.1_b91d3e4c82783f42948446fd997f2cc8
       '@vue/cli-shared-utils': 4.1.1
       eslint: 5.16.0
       eslint-loader: 2.2.1_eslint@5.16.0+webpack@4.41.2
@@ -1187,7 +1187,7 @@ packages:
       tarball: '@vue/cli-plugin-eslint/download/@vue/cli-plugin-eslint-4.1.1.tgz'
   /@vue/cli-plugin-pwa/4.1.1_@vue+cli-service@4.1.1:
     dependencies:
-      '@vue/cli-service': 4.1.1_b29776c8753afe9eb833005cb5311170
+      '@vue/cli-service': 4.1.1_b91d3e4c82783f42948446fd997f2cc8
       '@vue/cli-shared-utils': 4.1.1
       webpack: 4.41.2_webpack@4.41.2
       workbox-webpack-plugin: 4.3.1_webpack@4.41.2
@@ -1199,7 +1199,7 @@ packages:
       tarball: '@vue/cli-plugin-pwa/download/@vue/cli-plugin-pwa-4.1.1.tgz'
   /@vue/cli-plugin-router/4.1.1_@vue+cli-service@4.1.1:
     dependencies:
-      '@vue/cli-service': 4.1.1_b29776c8753afe9eb833005cb5311170
+      '@vue/cli-service': 4.1.1_b91d3e4c82783f42948446fd997f2cc8
       '@vue/cli-shared-utils': 4.1.1
     dev: true
     peerDependencies:
@@ -1209,14 +1209,14 @@ packages:
       tarball: '@vue/cli-plugin-router/download/@vue/cli-plugin-router-4.1.1.tgz'
   /@vue/cli-plugin-vuex/4.1.1_@vue+cli-service@4.1.1:
     dependencies:
-      '@vue/cli-service': 4.1.1_b29776c8753afe9eb833005cb5311170
+      '@vue/cli-service': 4.1.1_b91d3e4c82783f42948446fd997f2cc8
     dev: true
     peerDependencies:
       '@vue/cli-service': ^3.0.0 || ^4.0.0-0
     resolution:
       integrity: sha1-gZCO5mNw3aFitVF6/IafkdOr4r8=
       tarball: '@vue/cli-plugin-vuex/download/@vue/cli-plugin-vuex-4.1.1.tgz'
-  /@vue/cli-service/4.1.1_b29776c8753afe9eb833005cb5311170:
+  /@vue/cli-service/4.1.1_b91d3e4c82783f42948446fd997f2cc8:
     dependencies:
       '@intervolga/optimize-cssnano-plugin': 1.0.6_webpack@4.41.2
       '@soda/friendly-errors-webpack-plugin': 1.7.1_webpack@4.41.2
@@ -1238,8 +1238,8 @@ packages:
       cli-highlight: 2.1.4
       clipboardy: 2.1.0
       cliui: 5.0.0
-      copy-webpack-plugin: 5.0.5_webpack@4.41.2
-      css-loader: 3.2.1_webpack@4.41.2
+      copy-webpack-plugin: 5.1.1_webpack@4.41.2
+      css-loader: 3.3.2_webpack@4.41.2
       cssnano: 4.1.10
       current-script-polyfill: 1.0.0
       debug: 4.1.1
@@ -1266,15 +1266,15 @@ packages:
       source-map-url: 0.4.0
       ssri: 6.0.1
       string.prototype.padend: 3.0.0
-      terser-webpack-plugin: 2.2.2_webpack@4.41.2
+      terser-webpack-plugin: 2.3.0_webpack@4.41.2
       thread-loader: 2.1.3_webpack@4.41.2
       url-loader: 2.3.0_file-loader@4.3.0+webpack@4.41.2
-      vue-loader: 15.7.2_css-loader@3.2.1+webpack@4.41.2
+      vue-loader: 15.7.2_css-loader@3.3.2+webpack@4.41.2
       vue-style-loader: 4.1.2
-      vue-template-compiler: 2.6.10
+      vue-template-compiler: 2.6.11
       webpack: 4.41.2_webpack@4.41.2
       webpack-bundle-analyzer: 3.6.0
-      webpack-chain: 6.0.0
+      webpack-chain: 6.1.0
       webpack-dev-server: 3.9.0_webpack@4.41.2
       webpack-merge: 4.2.2
     dev: true
@@ -1746,16 +1746,16 @@ packages:
     resolution:
       integrity: sha1-JO+AoowaiTYX4hSbDG0NeIKTsJk=
       tarball: array-flatten/download/array-flatten-2.1.2.tgz
-  /array-includes/3.0.3:
+  /array-includes/3.1.0:
     dependencies:
       define-properties: 1.1.3
-      es-abstract: 1.16.3
+      es-abstract: 1.17.0-next.1
     dev: true
     engines:
       node: '>= 0.4'
     resolution:
-      integrity: sha1-GEtI9i2S10UrsxsyMWXH+L0CJm0=
-      tarball: array-includes/download/array-includes-3.0.3.tgz
+      integrity: sha1-SKkp70xrsfptxKksmwI6JhsMpAQ=
+      tarball: array-includes/download/array-includes-3.1.0.tgz
   /array-union/1.0.2:
     dependencies:
       array-uniq: 1.0.3
@@ -1786,17 +1786,16 @@ packages:
     resolution:
       integrity: sha1-qJS3XUvE9s1nnvMkSp/Y9Gri1Cg=
       tarball: array-unique/download/array-unique-0.3.2.tgz
-  /array.prototype.flat/1.2.2:
+  /array.prototype.flat/1.2.3:
     dependencies:
       define-properties: 1.1.3
-      es-abstract: 1.16.3
-      function-bind: 1.1.1
+      es-abstract: 1.17.0-next.1
     dev: true
     engines:
       node: '>= 0.4'
     resolution:
-      integrity: sha1-jzxx0kW6NJtrZLQHj3b1V28f1yM=
-      tarball: array.prototype.flat/download/array.prototype.flat-1.2.2.tgz
+      integrity: sha1-DegrQmsDGNv9uUAInjiwQ9N/bHs=
+      tarball: array.prototype.flat/download/array.prototype.flat-1.2.3.tgz
   /asn1.js/4.10.1:
     dependencies:
       bn.js: 4.11.8
@@ -2325,7 +2324,7 @@ packages:
   /cache-loader/4.1.0_webpack@4.41.2:
     dependencies:
       buffer-json: 2.0.0
-      find-cache-dir: 3.1.0
+      find-cache-dir: 3.2.0
       loader-utils: 1.2.3
       mkdirp: 0.5.1
       neo-async: 2.6.1
@@ -2477,7 +2476,7 @@ packages:
       upath: 1.2.0
     dev: true
     optionalDependencies:
-      fsevents: 1.2.9
+      fsevents: 1.2.10
     resolution:
       integrity: sha1-gEs6e2qZNYw8XGHnHYco8EHP+Rc=
       tarball: chokidar/download/chokidar-2.1.8.tgz
@@ -2565,7 +2564,7 @@ packages:
   /cli-highlight/2.1.4:
     dependencies:
       chalk: 3.0.0
-      highlight.js: 9.16.2
+      highlight.js: 9.17.1
       mz: 2.7.0
       parse5: 5.1.1
       parse5-htmlparser2-tree-adapter: 5.1.1
@@ -2894,7 +2893,7 @@ packages:
     resolution:
       integrity: sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
       tarball: copy-descriptor/download/copy-descriptor-0.1.1.tgz
-  /copy-webpack-plugin/5.0.5_webpack@4.41.2:
+  /copy-webpack-plugin/5.1.1_webpack@4.41.2:
     dependencies:
       cacache: 12.0.3
       find-cache-dir: 2.1.0
@@ -2913,29 +2912,30 @@ packages:
     engines:
       node: '>= 6.9.0'
     peerDependencies:
-      webpack: ^4.0.0
+      webpack: ^4.0.0 || ^5.0.0
     resolution:
-      integrity: sha1-cx32qDei7w+PjiNFvf6bfGKi2mg=
-      tarball: copy-webpack-plugin/download/copy-webpack-plugin-5.0.5.tgz
-  /core-js-compat/3.4.8:
+      integrity: sha1-VIGgPeoRI9iKmIxv+LeCRyFPC4g=
+      tarball: copy-webpack-plugin/download/copy-webpack-plugin-5.1.1.tgz
+  /core-js-compat/3.5.0:
     dependencies:
       browserslist: 4.8.2
       semver: 6.3.0
     dev: true
     resolution:
-      integrity: sha1-9y5qTtdkN+pxCSj0RhX5JqgWB9U=
-      tarball: core-js-compat/download/core-js-compat-3.4.8.tgz
+      integrity: sha1-WhGmGanp3S3PHHQrIGC8SiFD5bY=
+      tarball: core-js-compat/download/core-js-compat-3.5.0.tgz
   /core-js/2.6.11:
+    deprecated: 'core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.'
     dev: true
     requiresBuild: true
     resolution:
       integrity: sha1-OIMUafmSK97Y7iHJ3EaYXgOZMIw=
       tarball: core-js/download/core-js-2.6.11.tgz
-  /core-js/3.4.8:
+  /core-js/3.5.0:
     requiresBuild: true
     resolution:
-      integrity: sha1-4PwMYfLvkMvBDFMdv/qkbftxUt0=
-      tarball: core-js/download/core-js-3.4.8.tgz
+      integrity: sha1-Zt+OSb5L13Xm+VKp0IO3Vq1Bwe0=
+      tarball: core-js/download/core-js-3.5.0.tgz
   /core-util-is/1.0.2:
     dev: true
     resolution:
@@ -3049,7 +3049,7 @@ packages:
     resolution:
       integrity: sha1-wZiUD2OnbX42wecQGLABchBUyyI=
       tarball: css-declaration-sorter/download/css-declaration-sorter-4.0.1.tgz
-  /css-loader/3.2.1_webpack@4.41.2:
+  /css-loader/3.3.2_webpack@4.41.2:
     dependencies:
       camelcase: 5.3.1
       cssesc: 3.0.0
@@ -3070,8 +3070,8 @@ packages:
     peerDependencies:
       webpack: ^4.0.0
     resolution:
-      integrity: sha1-YoSbRaQUt73gv7oXMloCZHEEDq4=
-      tarball: css-loader/download/css-loader-3.2.1.tgz
+      integrity: sha1-QbIIZSiqT7+MBpLodLwU8IESmyE=
+      tarball: css-loader/download/css-loader-3.3.2.tgz
   /css-select-base-adapter/0.1.1:
     dev: true
     resolution:
@@ -3623,7 +3623,7 @@ packages:
       end-of-stream: 1.4.4
       inherits: 2.0.4
       readable-stream: 2.3.6
-      stream-shift: 1.0.0
+      stream-shift: 1.0.1
     dev: true
     resolution:
       integrity: sha1-Kk31MX9sz9kfhtb9JdjYoQO4gwk=
@@ -3773,6 +3773,25 @@ packages:
     resolution:
       integrity: sha1-UkkNl4+W/5+J7BW1zyRDBKW8oWE=
       tarball: es-abstract/download/es-abstract-1.16.3.tgz
+  /es-abstract/1.17.0-next.1:
+    dependencies:
+      es-to-primitive: 1.2.1
+      function-bind: 1.1.1
+      has: 1.0.3
+      has-symbols: 1.0.1
+      is-callable: 1.1.4
+      is-regex: 1.0.4
+      object-inspect: 1.7.0
+      object-keys: 1.1.1
+      object.assign: 4.1.0
+      string.prototype.trimleft: 2.1.0
+      string.prototype.trimright: 2.1.0
+    dev: true
+    engines:
+      node: '>= 0.4'
+    resolution:
+      integrity: sha1-lKzJPiCwWm6W2stasvHLOoH8IXI=
+      tarball: es-abstract/download/es-abstract-1.17.0-next.1.tgz
   /es-to-primitive/1.2.1:
     dependencies:
       is-callable: 1.1.4
@@ -3862,8 +3881,8 @@ packages:
       tarball: eslint-plugin-es/download/eslint-plugin-es-1.4.1.tgz
   /eslint-plugin-import/2.19.1_eslint@5.16.0:
     dependencies:
-      array-includes: 3.0.3
-      array.prototype.flat: 1.2.2
+      array-includes: 3.1.0
+      array.prototype.flat: 1.2.3
       contains-path: 0.1.0
       debug: 2.6.9
       doctrine: 1.5.0
@@ -3872,7 +3891,7 @@ packages:
       eslint-module-utils: 2.5.0
       has: 1.0.3
       minimatch: 3.0.4
-      object.values: 1.1.0
+      object.values: 1.1.1
       read-pkg-up: 2.0.0
       resolve: 1.13.1
     dev: true
@@ -4468,7 +4487,7 @@ packages:
     resolution:
       integrity: sha1-jQ+UzRP+Q8bHwmGg2GEVypGMBfc=
       tarball: find-cache-dir/download/find-cache-dir-2.1.0.tgz
-  /find-cache-dir/3.1.0:
+  /find-cache-dir/3.2.0:
     dependencies:
       commondir: 1.0.1
       make-dir: 3.0.0
@@ -4477,8 +4496,8 @@ packages:
     engines:
       node: '>=8'
     resolution:
-      integrity: sha1-mTWJSZnevvTPn2d/32RtACxM3ss=
-      tarball: find-cache-dir/download/find-cache-dir-3.1.0.tgz
+      integrity: sha1-5/5EwavBKZ9RYUblYxCP0QBsGHQ=
+      tarball: find-cache-dir/download/find-cache-dir-3.2.0.tgz
   /find-up/1.1.2:
     dependencies:
       path-exists: 2.1.0
@@ -4657,20 +4676,19 @@ packages:
     resolution:
       integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
       tarball: fs.realpath/download/fs.realpath-1.0.0.tgz
-  /fsevents/1.2.9:
+  /fsevents/1.2.10:
     bundledDependencies:
       - node-pre-gyp
     dependencies:
       nan: 2.14.0
-    deprecated: 'One of your dependencies needs to upgrade to fsevents v2: 1) Proper nodejs v10+ support 2) No more fetching binaries from AWS, smaller package size'
     dev: true
     engines:
       node: '>=4.0'
     optional: true
     requiresBuild: true
     resolution:
-      integrity: sha1-P17WZYPM1vQAtaANtvfoYTY+OI8=
-      tarball: fsevents/download/fsevents-1.2.9.tgz
+      integrity: sha1-RyUnk76KYlpflt+qHIhUf0sgWVo=
+      tarball: fsevents/download/fsevents-1.2.10.tgz
   /fsevents/2.1.2:
     dev: true
     engines:
@@ -4701,11 +4719,11 @@ packages:
     resolution:
       integrity: sha1-T5RBKoLbMvNuOwuXQfipf+sDH34=
       tarball: get-caller-file/download/get-caller-file-2.0.5.tgz
-  /get-own-enumerable-property-symbols/3.0.1:
+  /get-own-enumerable-property-symbols/3.0.2:
     dev: true
     resolution:
-      integrity: sha1-b3dk+I6hHgtRS9m9hgoTIlmZLKQ=
-      tarball: get-own-enumerable-property-symbols/download/get-own-enumerable-property-symbols-3.0.1.tgz
+      integrity: sha1-tf3nfyLL4185C04ImSLFC85u9mQ=
+      tarball: get-own-enumerable-property-symbols/download/get-own-enumerable-property-symbols-3.0.2.tgz
   /get-stream/3.0.0:
     dev: true
     engines:
@@ -4865,6 +4883,20 @@ packages:
     resolution:
       integrity: sha1-DgOWlf9QyT/CiFV9aW88HcZ3Z1Q=
       tarball: handle-thing/download/handle-thing-2.0.0.tgz
+  /handlebars/4.5.3:
+    dependencies:
+      neo-async: 2.6.1
+      optimist: 0.6.1
+      source-map: 0.6.1
+    dev: true
+    engines:
+      node: '>=0.4.7'
+    hasBin: true
+    optionalDependencies:
+      uglify-js: 3.7.2
+    resolution:
+      integrity: sha1-XPdb2HFPdgVxNRGla+fDSb7LBII=
+      tarball: handlebars/download/handlebars-4.5.3.tgz
   /har-schema/2.0.0:
     dev: true
     engines:
@@ -4994,11 +5026,13 @@ packages:
     resolution:
       integrity: sha1-TAb8y0YC/iYCs8k9+C1+fb8aio4=
       tarball: hex-color-regex/download/hex-color-regex-1.1.0.tgz
-  /highlight.js/9.16.2:
+  /highlight.js/9.17.1:
+    dependencies:
+      handlebars: 4.5.3
     dev: true
     resolution:
-      integrity: sha1-aDaNA5/+HGIRvMB+SD2vld4+QD4=
-      tarball: highlight.js/download/highlight.js-9.16.2.tgz
+      integrity: sha1-FKTt7SP9MUsFiGdYu5BuOd1if5o=
+      tarball: highlight.js/download/highlight.js-9.17.1.tgz
   /hmac-drbg/1.0.1:
     dependencies:
       hash.js: 1.1.7
@@ -6596,6 +6630,11 @@ packages:
     resolution:
       integrity: sha1-UWbihkV/AzBgZL5Ul+jbsMPTIIM=
       tarball: minimatch/download/minimatch-3.0.4.tgz
+  /minimist/0.0.10:
+    dev: true
+    resolution:
+      integrity: sha1-3j+YVD2/lggr5IrRoMfNqDYwHc8=
+      tarball: minimist/download/minimist-0.0.10.tgz
   /minimist/0.0.8:
     dev: true
     resolution:
@@ -7020,16 +7059,16 @@ packages:
     resolution:
       integrity: sha1-lovxEA15Vrs8oIbwBvhGs7xACNo=
       tarball: object.assign/download/object.assign-4.1.0.tgz
-  /object.getownpropertydescriptors/2.0.3:
+  /object.getownpropertydescriptors/2.1.0:
     dependencies:
       define-properties: 1.1.3
-      es-abstract: 1.16.3
+      es-abstract: 1.17.0-next.1
     dev: true
     engines:
       node: '>= 0.8'
     resolution:
-      integrity: sha1-h1jIRvW0B62rDyNuCYbxSwUcqhY=
-      tarball: object.getownpropertydescriptors/download/object.getownpropertydescriptors-2.0.3.tgz
+      integrity: sha1-Npvx+VktiridcS3O1cuBx8U1Jkk=
+      tarball: object.getownpropertydescriptors/download/object.getownpropertydescriptors-2.1.0.tgz
   /object.pick/1.3.0:
     dependencies:
       isobject: 3.0.1
@@ -7039,18 +7078,18 @@ packages:
     resolution:
       integrity: sha1-h6EKxMFpS9Lhy/U1kaZhQftd10c=
       tarball: object.pick/download/object.pick-1.3.0.tgz
-  /object.values/1.1.0:
+  /object.values/1.1.1:
     dependencies:
       define-properties: 1.1.3
-      es-abstract: 1.16.3
+      es-abstract: 1.17.0-next.1
       function-bind: 1.1.1
       has: 1.0.3
     dev: true
     engines:
       node: '>= 0.4'
     resolution:
-      integrity: sha1-v2gQ712j5TJXkOqqK+IT6oRiTak=
-      tarball: object.values/download/object.values-1.1.0.tgz
+      integrity: sha1-aKmezeNWt+kpWjxeDOMdyMlT3l4=
+      tarball: object.values/download/object.values-1.1.1.tgz
   /obuf/1.1.2:
     dev: true
     resolution:
@@ -7121,6 +7160,14 @@ packages:
     resolution:
       integrity: sha1-/HFk+rVtI1kExRw7J9pnWMo7m/w=
       tarball: opn/download/opn-5.5.0.tgz
+  /optimist/0.6.1:
+    dependencies:
+      minimist: 0.0.10
+      wordwrap: 0.0.3
+    dev: true
+    resolution:
+      integrity: sha1-2j6nRob6IaGaERwybpDrFaAZZoY=
+      tarball: optimist/download/optimist-0.6.1.tgz
   /optionator/0.8.3:
     dependencies:
       deep-is: 0.1.3
@@ -8393,7 +8440,7 @@ packages:
       regenerate: 1.4.0
       regenerate-unicode-properties: 8.1.0
       regjsgen: 0.5.1
-      regjsparser: 0.6.0
+      regjsparser: 0.6.1
       unicode-match-property-ecmascript: 1.0.4
       unicode-match-property-value-ecmascript: 1.1.0
     dev: true
@@ -8407,14 +8454,14 @@ packages:
     resolution:
       integrity: sha1-SPC/Gl6iBRlpKcDZeYtC0e2YRDw=
       tarball: regjsgen/download/regjsgen-0.5.1.tgz
-  /regjsparser/0.6.0:
+  /regjsparser/0.6.1:
     dependencies:
       jsesc: 0.5.0
     dev: true
     hasBin: true
     resolution:
-      integrity: sha1-8eaui32iuulsmTmbhozWyTOiupw=
-      tarball: regjsparser/download/regjsparser-0.6.0.tgz
+      integrity: sha1-W2soxBjzEu9CiY3Ghlri1Lnw96I=
+      tarball: regjsparser/download/regjsparser-0.6.1.tgz
   /relateurl/0.2.7:
     dev: true
     engines:
@@ -9218,7 +9265,7 @@ packages:
   /stream-each/1.2.3:
     dependencies:
       end-of-stream: 1.4.4
-      stream-shift: 1.0.0
+      stream-shift: 1.0.1
     dev: true
     resolution:
       integrity: sha1-6+J6DDibBPvMIzZClS4Qcxr6m64=
@@ -9234,11 +9281,11 @@ packages:
     resolution:
       integrity: sha1-stJCRpKIpaJ+xP6JM6z2I95lFPw=
       tarball: stream-http/download/stream-http-2.8.3.tgz
-  /stream-shift/1.0.0:
+  /stream-shift/1.0.1:
     dev: true
     resolution:
-      integrity: sha1-1cdSgl5TZ+eG944Y5EXqIjoVWVI=
-      tarball: stream-shift/download/stream-shift-1.0.0.tgz
+      integrity: sha1-1wiCgVWasneEJCebCHfaPDktWj0=
+      tarball: stream-shift/download/stream-shift-1.0.1.tgz
   /strict-uri-encode/1.1.0:
     dev: true
     engines:
@@ -9354,7 +9401,7 @@ packages:
       tarball: string_decoder/download/string_decoder-1.3.0.tgz
   /stringify-object/3.3.0:
     dependencies:
-      get-own-enumerable-property-symbols: 3.0.1
+      get-own-enumerable-property-symbols: 3.0.2
       is-obj: 1.0.1
       is-regexp: 1.0.0
     dev: true
@@ -9504,7 +9551,7 @@ packages:
       csso: 4.0.2
       js-yaml: 3.13.1
       mkdirp: 0.5.1
-      object.values: 1.1.0
+      object.values: 1.1.1
       sax: 1.2.4
       stable: 0.1.8
       unquote: 1.1.1
@@ -9542,7 +9589,7 @@ packages:
     resolution:
       integrity: sha1-ofzMBrWNth/XpF2i2kT186Pme6I=
       tarball: tapable/download/tapable-1.1.3.tgz
-  /terser-webpack-plugin/1.4.2_webpack@4.41.2:
+  /terser-webpack-plugin/1.4.3_webpack@4.41.2:
     dependencies:
       cacache: 12.0.3
       find-cache-dir: 2.1.0
@@ -9560,12 +9607,12 @@ packages:
     peerDependencies:
       webpack: ^4.0.0
     resolution:
-      integrity: sha1-4jwNVUWH0fRzvQz2hidyDnM4kKQ=
-      tarball: terser-webpack-plugin/download/terser-webpack-plugin-1.4.2.tgz?cache=0&sync_timestamp=1575715630424&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fterser-webpack-plugin%2Fdownload%2Fterser-webpack-plugin-1.4.2.tgz
-  /terser-webpack-plugin/2.2.2_webpack@4.41.2:
+      integrity: sha1-Xsry29xfuZdF/QZ5H0b8ndscmnw=
+      tarball: terser-webpack-plugin/download/terser-webpack-plugin-1.4.3.tgz?cache=0&sync_timestamp=1576156826692&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fterser-webpack-plugin%2Fdownload%2Fterser-webpack-plugin-1.4.3.tgz
+  /terser-webpack-plugin/2.3.0_webpack@4.41.2:
     dependencies:
       cacache: 13.0.1
-      find-cache-dir: 3.1.0
+      find-cache-dir: 3.2.0
       jest-worker: 24.9.0
       schema-utils: 2.6.1
       serialize-javascript: 2.1.2
@@ -9579,8 +9626,8 @@ packages:
     peerDependencies:
       webpack: ^4.0.0 || ^5.0.0
     resolution:
-      integrity: sha1-Km4AI3ElVkpFWtabIuCO5ZQgRzo=
-      tarball: terser-webpack-plugin/download/terser-webpack-plugin-2.2.2.tgz?cache=0&sync_timestamp=1575715630424&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fterser-webpack-plugin%2Fdownload%2Fterser-webpack-plugin-2.2.2.tgz
+      integrity: sha1-AP2PeSozDcVy4uK0aP18tf/X6lE=
+      tarball: terser-webpack-plugin/download/terser-webpack-plugin-2.3.0.tgz?cache=0&sync_timestamp=1576156826692&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fterser-webpack-plugin%2Fdownload%2Fterser-webpack-plugin-2.3.0.tgz
   /terser/4.4.2:
     dependencies:
       commander: 2.20.3
@@ -9822,6 +9869,18 @@ packages:
     resolution:
       integrity: sha1-mtlWPY6zrN+404WX0q8dgV9qdV8=
       tarball: uglify-js/download/uglify-js-3.4.10.tgz
+  /uglify-js/3.7.2:
+    dependencies:
+      commander: 2.20.3
+      source-map: 0.6.1
+    dev: true
+    engines:
+      node: '>=0.8.0'
+    hasBin: true
+    optional: true
+    resolution:
+      integrity: sha1-yxpgHmdTbp7QlKkt0eMzRZZD0/k=
+      tarball: uglify-js/download/uglify-js-3.7.2.tgz
   /unicode-canonical-property-names-ecmascript/1.0.4:
     dev: true
     engines:
@@ -9989,7 +10048,7 @@ packages:
   /util.promisify/1.0.0:
     dependencies:
       define-properties: 1.1.3
-      object.getownpropertydescriptors: 2.0.3
+      object.getownpropertydescriptors: 2.1.0
     dev: true
     resolution:
       integrity: sha1-RA9xZaRZyaFtwUXrjnLzVocJcDA=
@@ -10084,10 +10143,10 @@ packages:
     resolution:
       integrity: sha1-UylVzB6yCKPZkLOp+acFdGV+CPI=
       tarball: vue-hot-reload-api/download/vue-hot-reload-api-2.3.4.tgz
-  /vue-loader/15.7.2_css-loader@3.2.1+webpack@4.41.2:
+  /vue-loader/15.7.2_css-loader@3.3.2+webpack@4.41.2:
     dependencies:
       '@vue/component-compiler-utils': 3.1.0
-      css-loader: 3.2.1_webpack@4.41.2
+      css-loader: 3.3.2_webpack@4.41.2
       hash-sum: 1.0.2
       loader-utils: 1.2.3
       vue-hot-reload-api: 2.3.4
@@ -10113,33 +10172,33 @@ packages:
     resolution:
       integrity: sha1-3t80mAbyXOtOZPOtfApE+6c1/Pg=
       tarball: vue-style-loader/download/vue-style-loader-4.1.2.tgz
-  /vue-template-compiler/2.6.10:
+  /vue-template-compiler/2.6.11:
     dependencies:
       de-indent: 1.0.2
       he: 1.2.0
     dev: true
     resolution:
-      integrity: sha1-MjtPNJXwT6o1AzN6gvXWUHeZycw=
-      tarball: vue-template-compiler/download/vue-template-compiler-2.6.10.tgz
+      integrity: sha1-wEcE749JixUxMAGJk+VjCdRpgIA=
+      tarball: vue-template-compiler/download/vue-template-compiler-2.6.11.tgz
   /vue-template-es2015-compiler/1.9.1:
     dev: true
     resolution:
       integrity: sha1-HuO8mhbsv1EYvjNLsV+cRvgvWCU=
       tarball: vue-template-es2015-compiler/download/vue-template-es2015-compiler-1.9.1.tgz
-  /vue/2.6.10:
+  /vue/2.6.11:
     dev: false
     resolution:
-      integrity: sha1-pysaQqTYKnIepDjRtr9V5mGVxjc=
-      tarball: vue/download/vue-2.6.10.tgz
-  /vuetify/2.1.13_vue@2.6.10:
+      integrity: sha1-dllNh31LEiNEBuhONSdcbVFBJcU=
+      tarball: vue/download/vue-2.6.11.tgz
+  /vuetify/2.1.14_vue@2.6.11:
     dependencies:
-      vue: 2.6.10
+      vue: 2.6.11
     dev: false
     peerDependencies:
       vue: ^2.6.4
     resolution:
-      integrity: sha1-WGEAJ7gBTGQFEOt24CxalOVr7wQ=
-      tarball: vuetify/download/vuetify-2.1.13.tgz
+      integrity: sha1-9T9anIEVxGLtpHQz2aATZoaALdU=
+      tarball: vuetify/download/vuetify-2.1.14.tgz
   /vuex/3.1.2:
     dev: false
     resolution:
@@ -10190,14 +10249,14 @@ packages:
     resolution:
       integrity: sha1-ObOo+CnKBEaCvG+eARyV3rVUrv0=
       tarball: webpack-bundle-analyzer/download/webpack-bundle-analyzer-3.6.0.tgz
-  /webpack-chain/6.0.0:
+  /webpack-chain/6.1.0:
     dependencies:
       deepmerge: 1.5.2
       javascript-stringify: 2.0.1
     dev: true
     resolution:
-      integrity: sha1-nDZSWhJxpU57/ReRGZs5X0AK5PE=
-      tarball: webpack-chain/download/webpack-chain-6.0.0.tgz
+      integrity: sha1-8T4MdzBZwKuOrlnHXMNWK7HIKCQ=
+      tarball: webpack-chain/download/webpack-chain-6.1.0.tgz
   /webpack-dev-middleware/3.7.2_webpack@4.41.2:
     dependencies:
       memory-fs: 0.4.1
@@ -10306,7 +10365,7 @@ packages:
       node-libs-browser: 2.2.1
       schema-utils: 1.0.0
       tapable: 1.1.3
-      terser-webpack-plugin: 1.4.2_webpack@4.41.2
+      terser-webpack-plugin: 1.4.3_webpack@4.41.2
       watchpack: 1.6.0
       webpack-sources: 1.4.3
     dev: true
@@ -10366,6 +10425,13 @@ packages:
     resolution:
       integrity: sha1-YQY29rH3A4kb00dxzLF/uTtHB5w=
       tarball: word-wrap/download/word-wrap-1.2.3.tgz
+  /wordwrap/0.0.3:
+    dev: true
+    engines:
+      node: '>=0.4.0'
+    resolution:
+      integrity: sha1-o9XabNXAvAAI03I0u68b7WMFkQc=
+      tarball: wordwrap/download/wordwrap-0.0.3.tgz
   /workbox-background-sync/4.3.1:
     dependencies:
       workbox-core: 4.3.1
@@ -10680,7 +10746,7 @@ specifiers:
   '@vue/eslint-config-standard': ^4.0.0
   axios: ^0.19.0
   babel-eslint: ^10.0.3
-  core-js: ^3.4.8
+  core-js: ^3.5.0
   deepmerge: ^4.2.2
   eslint: ^5.16.0
   eslint-plugin-vue: ^5.2.3
@@ -10689,8 +10755,8 @@ specifiers:
   nprogress: ^0.2.0
   sass: ^1.23.7
   sass-loader: ^8.0.0
-  vue: ^2.6.10
+  vue: ^2.6.11
   vue-router: ^3.1.3
-  vue-template-compiler: ^2.6.10
-  vuetify: ^2.1.13
+  vue-template-compiler: ^2.6.11
+  vuetify: ^2.1.14
   vuex: ^3.1.2
