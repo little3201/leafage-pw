@@ -1,95 +1,95 @@
 <template>
-  <el-row :gutter="20" type="flex" justify="center">
-    <el-col :xs="24" :sm="16" :md="15" :lg="14">
-      <el-card style="margin-bottom: 20px;">
+  <v-row :gutter="20" justify="center">
+    <v-col :xs="0" sm="0" md="6" lg="8" >
+      <v-card>
         <div style="display: flex;">
           <h3>
             <i class="el-icon-chat-line-square"></i>话题
           </h3>
-          <div style="flex-grow: 1;"></div>
+          <v-spacer></v-spacer>
           <div>
-            <a :underline="false" style="top: 4px;">换一换</a>
-            <el-divider direction="vertical"></el-divider>
-            <a :underline="false" style="top: 4px;">全部话题</a>
+            <a>换一换</a><span style="margin:0 10px;">|</span><a>全部话题</a>
           </div>
         </div>
-        <ul>
-          <li v-for="(item, index) in topics" :key="index" style="display: flex; margin: 10px auto;">
-            <a :underline="false" href="/article" class="topic">{{ item.topic }}</a>
-            <div style="flex-grow: 1;"></div>
-            <span class="count">{{ item.onlooker }} 次围观</span>
-          </li>
-        </ul>
-      </el-card>
-      <el-card>
-        <h3 style="flex-grow: 1;">
-          <i class="el-icon-tickets"></i>推荐内容
+        <v-list dense flat>
+          <v-list-item-group color="primary">
+            <v-list-item v-for="(topic, index) in topics" :key="index">
+              <v-list-item-icon>
+                <v-icon>mdi-flag</v-icon>
+              </v-list-item-icon>
+              <v-list-item-content>
+                <v-list-item-title v-html="topic"></v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list-item-group>
+        </v-list>
+      </v-card>
+      <v-card>
+        <h3>
+          <v-icon></v-icon>推荐内容
         </h3>
-        <ul>
-          <li v-for="(item, index) in datas" :key="index" class="li-content">
-            <el-image class="title-img" src="https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg" />
-            <a href="/article" :underline="false" style="font-size: 1rem;">{{ item.title }}</a>
-            <p class="text-tag">作者：{{ item.author }}</p>
-            <p class="text-content">
-              {{ item.content }}
-            </p>
-            <p class="text-tag">
-              <span style="margin-right: 30px">评论：{{ item.comment }} 条</span>
-              <span>阅读：{{ item.scan }} 次</span>
-            </p>
-          </li>
-        </ul>
-        <el-pagination
+        <v-list three-line>
+          <v-list-item-group color="primary">
+            <v-list-item v-for="(item, i) in datas" :key="i">
+              <v-list-item-avatar>
+                <v-img :src="item.avatar"></v-img>
+              </v-list-item-avatar>
+              <v-list-item-content>
+                <v-list-item-title v-html="item.title"></v-list-item-title>
+                <v-list-item-subtitle v-html="item.subtitle"></v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list-item-group>
+        </v-list>
+        <v-pagination
           layout="prev, pager, next"
           :total="50">
-        </el-pagination>
-      </el-card>
-    </el-col>
-    <el-col :xs="0" :sm="8" :md="7" :lg="6">
-      <el-card style="margin-bottom: 20px;">
+        </v-pagination>
+      </v-card>
+    </v-col>
+    <v-col xs="24" sm="24" md="20" lg="18">
+      <v-card>
         <div style="display: flex;">
-          <h3 style="flex-grow: 1;">
-            <i class="el-icon-hot-water"></i>热点
+          <h3>
+            <v-icon>mdi-official</v-icon>官方编辑
           </h3>
-          <a :underline="false" style="top: 4px;">
+          <v-spacer></v-spacer>
+          <a>
             查看更多
-            <i class="el-icon-arrow-right"></i>
           </a>
         </div>
-        <div style="text-align: center;">
-          <el-divider></el-divider>
-          <a :underline="false">7天</a>
-          <el-divider direction="vertical"></el-divider>
-          <a :underline="false">1个月</a>
-          <el-divider direction="vertical"></el-divider>
-          <a :underline="false">6个月</a>
-          <el-divider></el-divider>
-        </div>
-        <ul>
-          <li v-for="index in 10" :key="index">
-            <el-tag size="mini" effect="plain">{{ index }}</el-tag>
-            <a :underline="false" href="/article" style="margin: 0 10px">七天快速入门Go语言</a>
-          </li>
-        </ul>
-      </el-card>
-      <el-card>
+        <v-list dense shaped>
+          <v-list-item-group color="primary">
+            <v-list-item v-for="(hot, index) in hots" :key="index">
+              <v-list-item-content>
+                <v-list-item-title v-html="hot"></v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list-item-group>
+        </v-list>
+      </v-card>
+      <v-card>
         <div style="display: flex;">
-          <h3 style="flex-grow: 1;">
+          <h3>
             <i class="el-icon-hot-water"></i>新闻资讯
           </h3>
-          <a :underline="false" style="top: 4px;">
+          <v-spacer></v-spacer>
+          <a>
             查看更多
-            <i class="el-icon-arrow-right"></i>
           </a>
         </div>
-        <ul>
-          <li v-for="index in 10" :key="index">
-            <a :underline="false" style="margin: 0 10px">马云套现40亿</a>
-          </li>
-        </ul>
-      </el-card>
-    </el-col>
-  </el-row>
+        <v-list dense shaped>
+          <v-list-item-group color="primary">
+            <v-list-item v-for="(info, index) in news" :key="index">
+              <v-list-item-content>
+                <v-list-item-title v-html="info"></v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list-item-group>
+        </v-list>
+      </v-card>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
@@ -105,41 +105,112 @@ export default {
         {
           title: '如何快速掌握Redis技巧',
           author: '布吉岛',
-          content: '一个类被加载、连接、初始化后它的生命周期就开始了，当对应的Class对象不再被引用，即触不可及时',
-          url: 'https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg',
+          subtitle: '缓存',
+          avatar: 'https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg',
           comment: '100',
           scan: '23'
         },
         {
-          title: '如何快速掌握Redis技巧',
+          title: '如何快速掌握RocketMQ技巧',
           author: '布吉岛',
-          content: '一个类被加载、连接、初始化后它的生命周期就开始了，当对应的Class对象不再被引用，即触不可及时',
-          url: 'https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg',
+          subtitle: '一个消息',
+          avatar: 'https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg',
           comment: '100',
           scan: '23'
         },
         {
-          title: '如何快速掌握Redis技巧',
+          title: '如何快速掌握Elasticsearch技巧',
           author: '布吉岛',
-          content: '一个类被加载、连接、初始化后它的生命周期就开始了，当对应的Class对象不再被引用，即触不可及时',
-          url: 'https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg',
+          subtitle: 'Elasticsearch',
+          avatar: 'https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg',
+          comment: '100',
+          scan: '23'
+        },
+        {
+          title: '如何快速掌握Elasticsearch技巧',
+          author: '布吉岛',
+          subtitle: 'Elasticsearch',
+          avatar: 'https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg',
+          comment: '100',
+          scan: '23'
+        },
+        {
+          title: '如何快速掌握Elasticsearch技巧',
+          author: '布吉岛',
+          subtitle: 'Elasticsearch',
+          avatar: 'https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg',
+          comment: '100',
+          scan: '23'
+        },
+        {
+          title: '如何快速掌握Elasticsearch技巧',
+          author: '布吉岛',
+          subtitle: 'Elasticsearch',
+          avatar: 'https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg',
+          comment: '100',
+          scan: '23'
+        },
+        {
+          title: '如何快速掌握Elasticsearch技巧',
+          author: '布吉岛',
+          subtitle: 'Elasticsearch',
+          avatar: 'https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg',
+          comment: '100',
+          scan: '23'
+        },
+        {
+          title: '如何快速掌握Elasticsearch技巧',
+          author: '布吉岛',
+          subtitle: 'Elasticsearch',
+          avatar: 'https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg',
+          comment: '100',
+          scan: '23'
+        },
+        {
+          title: '如何快速掌握Elasticsearch技巧',
+          author: '布吉岛',
+          subtitle: 'Elasticsearch',
+          avatar: 'https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg',
+          comment: '100',
+          scan: '23'
+        },
+        {
+          title: '如何快速掌握Elasticsearch技巧',
+          author: '布吉岛',
+          subtitle: 'Elasticsearch',
+          avatar: 'https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg',
           comment: '100',
           scan: '23'
         }
       ],
       topics: [
-        {
-          topic: '# 9012年了，是选择创业还是上班工作呢？ ｜ 话题',
-          onlooker: '102'
-        },
-        {
-          topic: '# 9012年了，是选择创业还是上班工作呢？ ｜ 话题',
-          onlooker: '102'
-        },
-        {
-          topic: '# 9012年了，是选择创业还是上班工作呢？ ｜ 话题',
-          onlooker: '102'
-        }
+        '9012年了，买房买车了没有啊？',
+        '9012年了，对象谈了没有啊？',
+        '9012年了，工资现在多少啊？'
+      ],
+      hots: [
+        '七天快速入门Go语言',
+        '七天快速入门C++语言',
+        '七天快速入门C#语言',
+        '七天快速入门C语言',
+        '七天快速入门Ruby语言',
+        '七天快速入门.net语言',
+        '七天快速入门Docker',
+        '七天快速入门R语言',
+        '七天快速入门VB语言',
+        '七天快速入门Python语言'
+      ],
+      news: [
+        '马云套现40亿',
+        '刘强东套现40亿',
+        '李彦宏套现40亿',
+        '俞敏洪现40亿',
+        '马化腾套现40亿',
+        '王健林套现40亿',
+        '王思聪套现40亿',
+        '贾跃亭套现40亿',
+        '王石套现40亿',
+        '孙斌套现40亿'
       ]
     }
   }
@@ -147,59 +218,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.el-divider--horizontal {
-  margin: 10px 0;
+.v-card {
+  padding: 30px;
+  margin-bottom: 20px;
 }
-.el-divider--vertical{
-  margin: 0 15px;
-  top: 4px;
-}
-.el-tag--mini {
-  width: 26px;
-  text-align: center;
-  height: 16px;
-  line-height: 15px;
-}
-.a {
-  justify-content: flex-start;
-}
-h3 {
-  margin: 0;
-  display: inline-block;
-}
-ul {
-  padding: 0;
-  list-style: none;
-  li {
-    margin: 10px auto;
-  }
-  .li-content {
-    padding: 20px 0;
-    border-bottom: solid 1px #e6e6e6;
-    height: 116px;
-  }
-}
-.count {
-  font-size: 14px;
-  color: #828a92;
-}
-.topic {
-  font-size: 1rem;
-}
-i {
-  margin-right: 5px;
-}
-.title-img {
-  max-width: 206px;
-  max-height: 116px;
-  float: right;
-  margin-left: 10px;
-  border-radius: 5px;
-}
-.text-tag {
-  font-size: 12px;
-}
-.text-content {
-  font-size: 14px;
+.v-list-item__icon:first-child {
+  margin-right: 10px;
 }
 </style>

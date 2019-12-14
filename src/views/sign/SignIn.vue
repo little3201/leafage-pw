@@ -30,7 +30,7 @@
           <a href="#">忘记密码</a>
         </p>
         <p>
-          <v-btn rounded color="primary" block @click="submitForm('loginForm')">
+          <v-btn rounded color="primary" block @click="submitForm">
             登&nbsp;录
           </v-btn>
         </p>
@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import { login } from '@/api/request'
+import { loginFunc } from '@/api/request'
 
 export default {
   name: 'signin',
@@ -82,9 +82,9 @@ export default {
     }
   },
   methods: {
-    submitForm (formName) {
+    submitForm () {
       if (this.$refs.form.validate()) {
-        login(this.formData).then(
+        loginFunc(this.formData).then(
           response => {
             // 设置token
             this.$router.push({

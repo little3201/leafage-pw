@@ -30,7 +30,7 @@
           <a href="/signin" style="vertical-align: initial;">去登录</a>
         </p>
         <p>
-          <v-btn rounded color="primary" block @click="submitForm('loginForm')">注&nbsp;册</v-btn>
+          <v-btn rounded color="primary" block @click="submitForm">注&nbsp;册</v-btn>
         </p>
         <p>
           <span>注册即表示同意</span>
@@ -83,7 +83,7 @@ export default {
     }
   },
   methods: {
-    submitForm (formName) {
+    submitForm () {
       if (this.$refs.form.validate()) {
         login(this.formData).then(
           response => {
