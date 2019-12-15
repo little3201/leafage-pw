@@ -5,7 +5,7 @@
       <v-container>
         <v-row :gutter="20" type="flex" justify="center">
           <v-col xs="24" sm="22" md="20" lg="18">
-            <v-card style="{ padding: '20px 40px' }">
+            <v-card class="max-atuo">
               <h2>简介</h2>
               <p>还没想好写点啥</p>
               <h3>联系方式：</h3>

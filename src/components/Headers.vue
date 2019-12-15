@@ -8,9 +8,9 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-btn text>首页</v-btn>
-        <v-btn text>资源</v-btn>
-        <v-btn text>游记</v-btn>
+        <v-btn href="/" text>首页</v-btn>
+        <v-btn href="/introduce" text>资源</v-btn>
+        <v-btn href="/travel" text>游记</v-btn>
       </v-toolbar-items>
     </v-app-bar>
 </template>

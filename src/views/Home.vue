@@ -9,7 +9,9 @@
             :key="i"
             :src="item.src"
           >
-            <p class="text-center" v-html="item.content"></p>
+            <v-row align="center" justify="center">
+              <p v-html="item.content"></p>
+            </v-row>
           </v-carousel-item>
         </v-carousel>
       </v-container>

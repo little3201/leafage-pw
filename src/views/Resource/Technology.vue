@@ -1,6 +1,6 @@
 <template>
-  <v-row :gutter="20" justify="center">
-    <v-col :xs="0" sm="0" md="6" lg="8" >
+  <v-row justify="center">
+    <v-col xs="0" sm="0" md="6" lg="8" >
       <v-card>
         <div style="display: flex;">
           <h3>
@@ -47,7 +47,7 @@
         </v-pagination>
       </v-card>
     </v-col>
-    <v-col xs="24" sm="24" md="20" lg="18">
+    <v-col xs="24" sm="22" md="18" lg="16">
       <v-card>
         <div style="display: flex;">
           <h3>
@@ -220,7 +220,7 @@ export default {
 <style lang="scss" scoped>
 .v-card {
   padding: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 .v-list-item__icon:first-child {
   margin-right: 10px;
