@@ -1,6 +1,6 @@
 <template>
   <v-row type="flex" justify="center" align="center">
-    <v-col :xs="22" :sm="6" :md="5" :lg="4">
+    <v-col xs="22" sm="6" md="5" lg="3">
       <v-card class="card-sign" style="text-align:center;">
         <router-link to="/">
           <img style="height: 4rem;" src="@/assets/logo.svg" />
@@ -13,7 +13,7 @@
           <v-text-field
             v-model="formData.username"
             :rules="formRules.username"
-            label="账号/手机号/邮箱"
+            label="手机号/邮箱"
             prepend-inner-icon="mdi-account"
             required
           ></v-text-field>
@@ -37,7 +37,7 @@
           <a href="#" style="vertical-align: initial;">《Abeille用户协议》</a>
         </p>
         <h3>第三方账号登录</h3>
-        <p>
+        <p style="margin-bottom: 0">
           <v-btn text icon :x-large="true">
             <v-icon>mdi-twitter</v-icon>
           </v-btn>
@@ -50,19 +50,14 @@
         </p>
       </v-card>
     </v-col>
-    <Footers />
   </v-row>
 </template>
 
 <script>
 import { loginFunc } from '@/api/method'
-import Footers from '@/components/Footers.vue'
 
 export default {
   name: 'signup',
-  components: {
-    Footers
-  },
   data () {
     return {
       valid: true,
@@ -72,7 +67,7 @@ export default {
       },
       formRules: {
         username: [
-          v => !!v || '请输入账号',
+          v => !!v || '请输入手机号/邮箱',
           v => (v && v.length <= 10) || 'Name must be less than 10 characters'
         ],
         password: [
@@ -106,8 +101,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.card-sign {
-  padding: 35px;
-  max-width: 23rem;
+.row {
+  margin: 0;
+}
+.v-card {
+  padding: 30px;
 }
 </style>
