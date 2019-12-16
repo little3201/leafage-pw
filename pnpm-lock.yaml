@@ -1265,16 +1265,16 @@ packages:
       slash: 3.0.0
       source-map-url: 0.4.0
       ssri: 6.0.1
-      string.prototype.padend: 3.0.0
+      string.prototype.padend: 3.1.0
       terser-webpack-plugin: 2.3.0_webpack@4.41.2
       thread-loader: 2.1.3_webpack@4.41.2
       url-loader: 2.3.0_file-loader@4.3.0+webpack@4.41.2
-      vue-loader: 15.7.2_css-loader@3.3.2+webpack@4.41.2
+      vue-loader: 15.8.1_css-loader@3.3.2+webpack@4.41.2
       vue-style-loader: 4.1.2
       vue-template-compiler: 2.6.11
       webpack: 4.41.2_webpack@4.41.2
       webpack-bundle-analyzer: 3.6.0
-      webpack-chain: 6.1.0
+      webpack-chain: 6.2.0
       webpack-dev-server: 3.9.0_webpack@4.41.2
       webpack-merge: 4.2.2
     dev: true
@@ -1300,7 +1300,7 @@ packages:
       request: 2.88.0
       request-promise-native: 1.0.8_request@2.88.0
       semver: 6.3.0
-      string.prototype.padstart: 3.0.0
+      string.prototype.padstart: 3.1.0
       strip-ansi: 6.0.0
     dev: true
     resolution:
@@ -1580,7 +1580,7 @@ packages:
   /ajv/6.10.2:
     dependencies:
       fast-deep-equal: 2.0.1
-      fast-json-stable-stringify: 2.0.0
+      fast-json-stable-stringify: 2.1.0
       json-schema-traverse: 0.4.1
       uri-js: 4.2.2
     dev: true
@@ -1874,7 +1874,7 @@ packages:
   /autoprefixer/9.7.3:
     dependencies:
       browserslist: 4.8.2
-      caniuse-lite: 1.0.30001015
+      caniuse-lite: 1.0.30001016
       chalk: 2.4.2
       normalize-range: 0.1.2
       num2fraction: 1.2.2
@@ -2055,6 +2055,14 @@ packages:
     resolution:
       integrity: sha1-I8DfFPaogHf1+YbA0WfsA8PVU3w=
       tarball: binary-extensions/download/binary-extensions-2.0.0.tgz
+  /bindings/1.5.0:
+    dependencies:
+      file-uri-to-path: 1.0.0
+    dev: true
+    optional: true
+    resolution:
+      integrity: sha1-EDU8npRTNLwFEabZCzj7x8nFBN8=
+      tarball: bindings/download/bindings-1.5.0.tgz
   /bluebird/3.7.2:
     dev: true
     resolution:
@@ -2201,7 +2209,7 @@ packages:
       tarball: browserify-zlib/download/browserify-zlib-0.2.0.tgz
   /browserslist/4.8.2:
     dependencies:
-      caniuse-lite: 1.0.30001015
+      caniuse-lite: 1.0.30001016
       electron-to-chromium: 1.3.322
       node-releases: 1.1.42
     dev: true
@@ -2393,18 +2401,18 @@ packages:
   /caniuse-api/3.0.0:
     dependencies:
       browserslist: 4.8.2
-      caniuse-lite: 1.0.30001015
+      caniuse-lite: 1.0.30001016
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
     dev: true
     resolution:
       integrity: sha1-Xk2Q4idJYdRikZl99Znj7QCO5MA=
       tarball: caniuse-api/download/caniuse-api-3.0.0.tgz
-  /caniuse-lite/1.0.30001015:
+  /caniuse-lite/1.0.30001016:
     dev: true
     resolution:
-      integrity: sha1-Fafd9mq6eGpx2ZYmvI8rkcbw9fA=
-      tarball: caniuse-lite/download/caniuse-lite-1.0.30001015.tgz
+      integrity: sha1-FupI19boyvPK0ylcLXRv44xOf2Y=
+      tarball: caniuse-lite/download/caniuse-lite-1.0.30001016.tgz
   /case-sensitive-paths-webpack-plugin/2.2.0:
     dev: true
     engines:
@@ -2476,7 +2484,7 @@ packages:
       upath: 1.2.0
     dev: true
     optionalDependencies:
-      fsevents: 1.2.10
+      fsevents: 1.2.11
     resolution:
       integrity: sha1-gEs6e2qZNYw8XGHnHYco8EHP+Rc=
       tarball: chokidar/download/chokidar-2.1.8.tgz
@@ -3309,10 +3317,10 @@ packages:
     dependencies:
       is-arguments: 1.0.4
       is-date-object: 1.0.1
-      is-regex: 1.0.4
-      object-is: 1.0.1
+      is-regex: 1.0.5
+      object-is: 1.0.2
       object-keys: 1.1.1
-      regexp.prototype.flags: 1.2.0
+      regexp.prototype.flags: 1.3.0
     dev: true
     resolution:
       integrity: sha1-tcmMlCzv+vfLBR4k4UNKJaLmB2o=
@@ -3755,24 +3763,6 @@ packages:
     resolution:
       integrity: sha1-p1c5fcXZ3pc6yaXX1Oit58+ukQE=
       tarball: error-stack-parser/download/error-stack-parser-2.0.4.tgz
-  /es-abstract/1.16.3:
-    dependencies:
-      es-to-primitive: 1.2.1
-      function-bind: 1.1.1
-      has: 1.0.3
-      has-symbols: 1.0.1
-      is-callable: 1.1.4
-      is-regex: 1.0.4
-      object-inspect: 1.7.0
-      object-keys: 1.1.1
-      string.prototype.trimleft: 2.1.0
-      string.prototype.trimright: 2.1.0
-    dev: true
-    engines:
-      node: '>= 0.4'
-    resolution:
-      integrity: sha1-UkkNl4+W/5+J7BW1zyRDBKW8oWE=
-      tarball: es-abstract/download/es-abstract-1.16.3.tgz
   /es-abstract/1.17.0-next.1:
     dependencies:
       es-to-primitive: 1.2.1
@@ -3780,7 +3770,7 @@ packages:
       has: 1.0.3
       has-symbols: 1.0.1
       is-callable: 1.1.4
-      is-regex: 1.0.4
+      is-regex: 1.0.5
       object-inspect: 1.7.0
       object-keys: 1.1.1
       object.assign: 4.1.0
@@ -4331,11 +4321,11 @@ packages:
     resolution:
       integrity: sha1-h+4w6enz60DW8lSnmXZV2nU9fII=
       tarball: fast-glob/download/fast-glob-3.1.1.tgz
-  /fast-json-stable-stringify/2.0.0:
+  /fast-json-stable-stringify/2.1.0:
     dev: true
     resolution:
-      integrity: sha1-1RQsDK7msRifh9OnYREGT4bIu/I=
-      tarball: fast-json-stable-stringify/download/fast-json-stable-stringify-2.0.0.tgz
+      integrity: sha1-h0v2nG9ATCtdmcSBNBOZ/VWJJjM=
+      tarball: fast-json-stable-stringify/download/fast-json-stable-stringify-2.1.0.tgz
   /fast-levenshtein/2.0.6:
     dev: true
     resolution:
@@ -4422,6 +4412,12 @@ packages:
     resolution:
       integrity: sha1-eA8ED3KbPRgBnyBgX3I+hEuKWK8=
       tarball: file-loader/download/file-loader-4.3.0.tgz
+  /file-uri-to-path/1.0.0:
+    dev: true
+    optional: true
+    resolution:
+      integrity: sha1-VTp7hEb/b2hDWcRF8eN6BdrMM90=
+      tarball: file-uri-to-path/download/file-uri-to-path-1.0.0.tgz
   /filesize/3.6.1:
     dev: true
     engines:
@@ -4676,10 +4672,11 @@ packages:
     resolution:
       integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
       tarball: fs.realpath/download/fs.realpath-1.0.0.tgz
-  /fsevents/1.2.10:
+  /fsevents/1.2.11:
     bundledDependencies:
       - node-pre-gyp
     dependencies:
+      bindings: 1.5.0
       nan: 2.14.0
     dev: true
     engines:
@@ -4687,8 +4684,8 @@ packages:
     optional: true
     requiresBuild: true
     resolution:
-      integrity: sha1-RyUnk76KYlpflt+qHIhUf0sgWVo=
-      tarball: fsevents/download/fsevents-1.2.10.tgz
+      integrity: sha1-Z79X9HWPAu3oj7KhcS/vTRU1i+M=
+      tarball: fsevents/download/fsevents-1.2.11.tgz
   /fsevents/2.1.2:
     dev: true
     engines:
@@ -5764,15 +5761,15 @@ packages:
     resolution:
       integrity: sha1-eaKp7OfwlugPNtKy87wWwf9L8/o=
       tarball: is-promise/download/is-promise-2.1.0.tgz
-  /is-regex/1.0.4:
+  /is-regex/1.0.5:
     dependencies:
       has: 1.0.3
     dev: true
     engines:
       node: '>= 0.4'
     resolution:
-      integrity: sha1-VRdIm1RwkbCTDglWVM7SXul+lJE=
-      tarball: is-regex/download/is-regex-1.0.4.tgz
+      integrity: sha1-OdWJo1i/GJZ/cmlnEguPwa7XTq4=
+      tarball: is-regex/download/is-regex-1.0.5.tgz
   /is-regexp/1.0.0:
     dev: true
     engines:
@@ -7024,13 +7021,13 @@ packages:
     resolution:
       integrity: sha1-9Pa9GBrXfwBrXs5gvQtvOY/3Smc=
       tarball: object-inspect/download/object-inspect-1.7.0.tgz
-  /object-is/1.0.1:
+  /object-is/1.0.2:
     dev: true
     engines:
       node: '>= 0.4'
     resolution:
-      integrity: sha1-CqYOyZiaCz7Xlc9NBvYs8a1lObY=
-      tarball: object-is/download/object-is-1.0.1.tgz
+      integrity: sha1-a4DrhP5FFJj2UAeYLwNaW0Re3sQ=
+      tarball: object-is/download/object-is-1.0.2.tgz
   /object-keys/1.1.1:
     dev: true
     engines:
@@ -8419,15 +8416,16 @@ packages:
     resolution:
       integrity: sha1-H07OJ+ALC2XgJHpoEOaoXYOldSw=
       tarball: regex-not/download/regex-not-1.0.2.tgz
-  /regexp.prototype.flags/1.2.0:
+  /regexp.prototype.flags/1.3.0:
     dependencies:
       define-properties: 1.1.3
+      es-abstract: 1.17.0-next.1
     dev: true
     engines:
       node: '>= 0.4'
     resolution:
-      integrity: sha1-azByTjBqJ4M+6xcbZqyIkLo35Bw=
-      tarball: regexp.prototype.flags/download/regexp.prototype.flags-1.2.0.tgz
+      integrity: sha1-erqJs8E6ZFCdq888qNn7ub31y3U=
+      tarball: regexp.prototype.flags/download/regexp.prototype.flags-1.3.0.tgz
   /regexpp/2.0.1:
     dev: true
     engines:
@@ -9343,28 +9341,26 @@ packages:
     resolution:
       integrity: sha1-lSGCxGzHssMT0VluYjmSvRY7crU=
       tarball: string-width/download/string-width-4.2.0.tgz
-  /string.prototype.padend/3.0.0:
+  /string.prototype.padend/3.1.0:
     dependencies:
       define-properties: 1.1.3
-      es-abstract: 1.16.3
-      function-bind: 1.1.1
+      es-abstract: 1.17.0-next.1
     dev: true
     engines:
       node: '>= 0.4'
     resolution:
-      integrity: sha1-86rvfBcZ8XDF6rHDK/eA2W4h8vA=
-      tarball: string.prototype.padend/download/string.prototype.padend-3.0.0.tgz
-  /string.prototype.padstart/3.0.0:
+      integrity: sha1-3Aj1eoAQ3FwVNVAxj2fhOtu3KsM=
+      tarball: string.prototype.padend/download/string.prototype.padend-3.1.0.tgz
+  /string.prototype.padstart/3.1.0:
     dependencies:
       define-properties: 1.1.3
-      es-abstract: 1.16.3
-      function-bind: 1.1.1
+      es-abstract: 1.17.0-next.1
     dev: true
     engines:
       node: '>= 0.4'
     resolution:
-      integrity: sha1-W8+tOfRkm7LQMSkuGbzwtRDUskI=
-      tarball: string.prototype.padstart/download/string.prototype.padstart-3.0.0.tgz
+      integrity: sha1-tHwIdUDQcQvlpJN1dRoKYnvU/5A=
+      tarball: string.prototype.padstart/download/string.prototype.padstart-3.1.0.tgz
   /string.prototype.trimleft/2.1.0:
     dependencies:
       define-properties: 1.1.3
@@ -10143,7 +10139,7 @@ packages:
     resolution:
       integrity: sha1-UylVzB6yCKPZkLOp+acFdGV+CPI=
       tarball: vue-hot-reload-api/download/vue-hot-reload-api-2.3.4.tgz
-  /vue-loader/15.7.2_css-loader@3.3.2+webpack@4.41.2:
+  /vue-loader/15.8.1_css-loader@3.3.2+webpack@4.41.2:
     dependencies:
       '@vue/component-compiler-utils': 3.1.0
       css-loader: 3.3.2_webpack@4.41.2
@@ -10157,8 +10153,8 @@ packages:
       css-loader: '*'
       webpack: ^4.1.0 || ^5.0.0-0
     resolution:
-      integrity: sha1-zInicW34f3D+ZWydqdf4vsBsc9Y=
-      tarball: vue-loader/download/vue-loader-15.7.2.tgz
+      integrity: sha1-TSfFqHmUYnMa85hiBaH+HAHcp+s=
+      tarball: vue-loader/download/vue-loader-15.8.1.tgz
   /vue-router/3.1.3:
     dev: false
     resolution:
@@ -10249,14 +10245,14 @@ packages:
     resolution:
       integrity: sha1-ObOo+CnKBEaCvG+eARyV3rVUrv0=
       tarball: webpack-bundle-analyzer/download/webpack-bundle-analyzer-3.6.0.tgz
-  /webpack-chain/6.1.0:
+  /webpack-chain/6.2.0:
     dependencies:
       deepmerge: 1.5.2
       javascript-stringify: 2.0.1
     dev: true
     resolution:
-      integrity: sha1-8T4MdzBZwKuOrlnHXMNWK7HIKCQ=
-      tarball: webpack-chain/download/webpack-chain-6.1.0.tgz
+      integrity: sha1-vOp7CtX+rmhF1w5v16BIlT+K53w=
+      tarball: webpack-chain/download/webpack-chain-6.2.0.tgz
   /webpack-dev-middleware/3.7.2_webpack@4.41.2:
     dependencies:
       memory-fs: 0.4.1

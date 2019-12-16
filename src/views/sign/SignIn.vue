@@ -1,6 +1,6 @@
 <template>
   <v-row justify="center" align="center">
-    <v-col :xs="22" :sm="6" :md="5" :lg="4">
+    <v-col xs="22" sm="6" md="5" lg="4">
       <v-card class="card-login" style="text-align: center;">
         <router-link to="/">
           <img style="height: 4rem;" src="@/assets/logo.png" />
@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import { loginFunc } from '@/api/request'
+import { loginFunc } from '@/api/method'
 
 export default {
   name: 'signin',

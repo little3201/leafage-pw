@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import { login } from '@/api/request'
+import { loginFunc } from '@/api/method'
 import Footers from '@/components/Footers.vue'
 
 export default {
@@ -85,7 +85,7 @@ export default {
   methods: {
     submitForm () {
       if (this.$refs.form.validate()) {
-        login(this.formData).then(
+        loginFunc(this.formData).then(
           response => {
             // 设置token
             this.$router.push({
