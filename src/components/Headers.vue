@@ -9,8 +9,24 @@
       <v-spacer></v-spacer>
       <v-toolbar-items>
         <v-btn href="/" text>首页</v-btn>
-        <v-btn href="/introduce" text>资源</v-btn>
-        <v-btn href="/travel" text>游记</v-btn>
+        <v-menu offset-y>
+          <template v-slot:activator="{ on }">
+            <v-btn v-on="on" text style="padding-right: 0;">
+              文档<v-icon>mdi-menu-down</v-icon>
+            </v-btn>
+          </template>
+          <v-list>
+            <v-list-item
+              v-for="(item, index) in items"
+              :key="index"
+              :href="item.url"
+            >
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+        <v-btn href="/introduce" text>介绍</v-btn>
+        <v-btn href="/console" text>控制台</v-btn>
       </v-toolbar-items>
     </v-app-bar>
 </template>
@@ -23,7 +39,21 @@ export default {
   },
   data () {
     return {
-      drawer: false
+      drawer: false,
+      items: [
+        {
+          title: '技术博文',
+          url: '/technology'
+        },
+        {
+          title: '翻译文档',
+          url: '/translation'
+        },
+        {
+          title: '旅行游记',
+          url: '/travel'
+        }
+      ]
     }
   },
   methods: {

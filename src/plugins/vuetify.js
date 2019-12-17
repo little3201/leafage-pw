@@ -86,13 +86,13 @@ Vue.use(Vuetify, {
 })
 
 const opts = {
-//  theme: {
-//    themes: {
-//      light: {
-//        primary: '#FF9900'
-//      }
-//    }
-//  },
+  theme: {
+    themes: {
+      light: {
+        primary: '#faad14'
+      }
+    }
+  },
   icons: {
     iconfont: 'mdi' // default - only for display purposes
   }

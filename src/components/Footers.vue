@@ -1,9 +1,11 @@
 <template>
   <v-footer app>
-    Copyright &copy; {{ new Date().getFullYear() }} · 陕ICP备19017836号-1 · Powerd By
-    <a href="/introduce">
-      布吉岛
-    </a>
+    <v-row justify="center">
+      <v-col>
+        Copyright &copy; {{ new Date().getFullYear() }} · 陕ICP备19017836号-1 · Powerd By
+        <a href="/introduce" style="color: rgba(0, 0, 0, 0.87);">布吉岛</a>
+      </v-col>
+    </v-row>
   </v-footer>
 </template>
 
@@ -18,5 +20,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.col {
+  text-align: center;
+}
 </style>

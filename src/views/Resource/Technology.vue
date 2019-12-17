@@ -1,6 +1,6 @@
 <template>
-  <v-row justify="center">
-    <v-col xs="0" sm="0" md="6" lg="8" >
+  <v-row>
+    <v-col xs="0" sm="0" md="6" lg="6" >
       <v-card>
         <div style="display: flex;">
           <h3>
@@ -26,7 +26,7 @@
       </v-card>
       <v-card>
         <h3>
-          <v-icon></v-icon>推荐内容
+          <v-icon>mdi-file-document-box-multiple-outline</v-icon>推荐内容
         </h3>
         <v-list three-line>
           <v-list-item-group color="primary">
@@ -42,7 +42,7 @@
           </v-list-item-group>
         </v-list>
         <v-pagination
-          layout="prev, pager, next"
+          v-model="page"
           :total="50">
         </v-pagination>
       </v-card>
@@ -71,7 +71,7 @@
       <v-card>
         <div style="display: flex;">
           <h3>
-            <i class="el-icon-hot-water"></i>新闻资讯
+            <v-icon>mdi-newspaper</v-icon>新闻资讯
           </h3>
           <v-spacer></v-spacer>
           <a>
@@ -101,6 +101,7 @@ export default {
   },
   data () {
     return {
+      page: 1,
       datas: [
         {
           title: '如何快速掌握Redis技巧',

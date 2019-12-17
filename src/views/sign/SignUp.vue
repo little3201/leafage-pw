@@ -5,9 +5,9 @@
         <router-link to="/">
           <img style="height: 4rem;" src="@/assets/logo.svg" />
         </router-link>
-        <h2 style="text-align: initial; margin-bottom: 0;">注册</h2>
-        <p style="text-align: initial; margin-top: 0;">已有邮箱账户？
-         <a type="primary" :underline="false" style="vertical-align: initial;">立即绑定</a>
+        <p class="headline mb" style="text-align: initial;">注册</p>
+        <p class="link" style="text-align: initial;">已有邮箱账户？
+         <a type="primary" :underline="false" class="link" style="vertical-align: initial;">立即绑定</a>
         </p>
         <v-form ref="form" v-model="valid" lazy-validation>
           <v-text-field
@@ -27,16 +27,16 @@
         </v-form>
         <p style="text-align: initial;">
           <span>已有账号？</span>
-          <a href="/signin" style="vertical-align: initial;">去登录</a>
+          <a href="/signin" class="link">去登录</a>
         </p>
         <p>
           <v-btn rounded color="primary" block @click="submitForm">注&nbsp;册</v-btn>
         </p>
         <p>
           <span>注册即表示同意</span>
-          <a href="#" style="vertical-align: initial;">《Abeille用户协议》</a>
+          <a href="#" style="font-size: 14px;">《Abeille用户协议》</a>
         </p>
-        <h3>第三方账号登录</h3>
+        <p class="mb">第三方账号登录</p>
         <p style="margin-bottom: 0">
           <v-btn text icon :x-large="true">
             <v-icon>mdi-twitter</v-icon>
@@ -106,5 +106,15 @@ export default {
 }
 .v-card {
   padding: 30px;
+}
+.link {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+}
+span {
+  font-size: 14px;
+}
+.mb {
+  margin-bottom: 0;
 }
 </style>

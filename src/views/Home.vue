@@ -3,14 +3,23 @@
     <Headers :flat="true"/>
     <v-content style="padding: 0;">
       <v-container>
-        <v-carousel height="100vh" :hide-delimiters="true" :vertical="true" :continuous="false">
+        <v-carousel
+          :show-arrows="false"
+          ref="carousel"
+          height="100vh"
+          :hide-delimiters="true"
+          :vertical="true"
+          :continuous="false"
+        >
           <v-carousel-item
             v-for="(item, i) in datas"
             :key="i"
             :src="item.src"
           >
             <v-row align="center" justify="center">
-              <p v-html="item.content"></p>
+              <v-col>
+                <p v-html="item.content"></p>
+              </v-col>
             </v-row>
           </v-carousel-item>
         </v-carousel>
@@ -34,14 +43,6 @@ export default {
   },
   data () {
     return {
-      colors: [
-        'primary',
-        'secondary',
-        'yellow darken-2',
-        'red',
-        'orange'
-      ],
-      activeIndex: '/',
       datas: [
         {
           src: 'https://oss.abeille.top/content.svg',

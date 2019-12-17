@@ -5,10 +5,10 @@
         <router-link to="/">
           <img style="height: 4rem;" src="@/assets/logo.png" />
         </router-link>
-        <h2 style="text-align: initial; margin-bottom: 0;">登录</h2>
-        <p style="text-align: initial; margin-top: 0;">
+        <p class="headline mb" style="text-align: initial;">登录</p>
+        <p style="text-align: initial;">
           <span>已有邮箱账户？</span>
-          <a href="#" style="vertical-align: initial;">立即绑定</a>
+          <a href="#" class="link" style="vertical-align: initial;">立即绑定</a>
         </p>
         <v-form ref="form" v-model="valid" lazy-validation>
           <v-text-field
@@ -27,7 +27,7 @@
           ></v-text-field>
         </v-form>
         <p style="text-align: end;">
-          <a href="#">忘记密码</a>
+          <a href="#"  class="link">忘记密码</a>
         </p>
         <p>
           <v-btn rounded color="primary" block @click="submitForm">
@@ -36,11 +36,11 @@
         </p>
         <p style="text-align: initial;">
           <span>没有账号？</span>
-          <a href="/signup">
+          <a href="/signup" class="link">
             去注册
           </a>
         </p>
-        <h3>第三方账号登录</h3>
+        <p class="mb">第三方账号登录</p>
         <p style="margin-bottom: 0">
           <v-btn text icon :x-large="true">
             <v-icon>mdi-twitter</v-icon>
@@ -110,5 +110,15 @@ export default {
 }
 .v-card {
   padding: 30px;
+}
+.link {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+}
+span {
+  font-size: 14px;
+}
+.mb {
+  margin-bottom: 0;
 }
 </style>
