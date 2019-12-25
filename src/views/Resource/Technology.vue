@@ -1,6 +1,6 @@
 <template>
   <v-row>
-    <v-col xs="0" sm="0" md="6" lg="6" >
+    <v-col cols="12" xs="0" sm="0" md="8" lg="8" xl="6">
       <v-card>
         <div style="display: flex;">
           <h3>
@@ -11,7 +11,7 @@
             <a>换一换</a><span style="margin:0 10px;">|</span><a>全部话题</a>
           </div>
         </div>
-        <v-list dense flat>
+        <v-list dense>
           <v-list-item-group color="primary">
             <v-list-item v-for="(topic, index) in topics" :key="index">
               <v-list-item-icon>
@@ -47,7 +47,7 @@
         </v-pagination>
       </v-card>
     </v-col>
-    <v-col xs="24" sm="22" md="18" lg="16">
+    <v-col cols="12" xs="12" sm="12" md="4" lg="4" xl="3">
       <v-card>
         <div style="display: flex;">
           <h3>

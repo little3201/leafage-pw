@@ -3,7 +3,7 @@
     <v-col xs="22" sm="6" md="5" lg="3">
       <v-card class="card-sign" style="text-align:center;">
         <router-link to="/">
-          <img style="height: 4rem;" src="@/assets/logo.svg" />
+          <img style="height: 3.5rem;" src="@/assets/logo.svg" />
         </router-link>
         <p class="headline mb" style="text-align: initial;">注册</p>
         <p class="link" style="text-align: initial;">已有邮箱账户？

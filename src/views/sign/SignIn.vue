@@ -3,7 +3,7 @@
     <v-col xs="22" sm="6" md="5" lg="3">
       <v-card class="card-login" style="text-align: center;">
         <router-link to="/">
-          <img style="height: 4rem;" src="@/assets/logo.png" />
+          <img style="height: 3.5rem;" src="@/assets/logo.png" />
         </router-link>
         <p class="headline mb" style="text-align: initial;">登录</p>
         <p style="text-align: initial;">
@@ -71,12 +71,10 @@ export default {
       },
       formRules: {
         username: [
-          v => !!v || '请输入手机号/邮箱',
-          v => (v && v.length <= 10) || 'Name must be less than 10 characters'
+          v => !!v || '请输入手机号/邮箱'
         ],
         password: [
-          v => !!v || '请输入密码',
-          v => (v && (v.length > 6 && v.length <= 16)) || 'Name must between 6 and 16 characters'
+          v => !!v || '请输入密码'
         ]
       }
     }

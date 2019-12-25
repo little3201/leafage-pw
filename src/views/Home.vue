@@ -16,9 +16,9 @@
             :key="i"
             :src="item.src"
           >
-            <v-sheet title height="100%">
+            <v-sheet light height="100%">
               <v-row align="center" justify="center" class="fill-height">
-                <v-col  class="text-center">
+                <v-col cols="12" class="text-center">
                   <p v-html="item.content"></p>
                 </v-col>
               </v-row>
@@ -47,25 +47,18 @@ export default {
     return {
       datas: [
         {
-          src: 'https://oss.abeille.top/road.jpg',
+          src: 'https://oss.abeille.top/travel.png',
           title: 'Bienvenue, Abeille 欢迎你！',
           link: '/introduce',
           text: '阅读更多',
           content: 'Abeille 是蜜蜂法语词语，选择这个词也是希望这里能成为Ruche（蜂巢）<br />希望所有注册用户都像一只勤劳的小蜜蜂一样，共同做一些事情...'
         },
         {
-          src: 'https://oss.abeille.top/eye.jpg',
+          src: 'https://oss.abeille.top/folder.png',
           title: '一点介绍',
           link: '/article',
           text: '获取资料',
           content: '本站提供技术博文、游行博客、翻译文档等资料，<br />可供免费使用，同时希望大家发现问题，能指正错误...'
-        },
-        {
-          src: 'https://oss.abeille.top/fantasy.jpg',
-          title: '关于站长',
-          link: '/introduce',
-          text: '了解站长',
-          content: '一个菜鸟程序员，主要做后端开发，前端也能写。<br />生长在关中大地上，向往美好的事物，追求完美（其实是有点挑），<br />没事出去旅旅游（瞎溜达），拍拍照、修修图，学习下技术，<br />毕竟新技术更新迭代特别快啊，不想被辞退啊...'
         }
       ]
     }
@@ -107,9 +100,6 @@ export default {
 
 <style lang="scss" scoped>
 .theme--light.v-sheet {
-  background-color: transparent;
-}
-.theme--dark.v-sheet {
   background-color: transparent;
 }
 .container {

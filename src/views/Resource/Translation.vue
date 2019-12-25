@@ -1,6 +1,6 @@
 <template>
   <v-row :gutter="20" justify="center">
-    <v-col xs="24" sm="24" md="18" lg="16">
+    <v-col cols="12" xs="12" sm="12" md="8" lg="8" xl="6">
       <v-card>
         <div style="display: flex;">
           <h3>
@@ -13,7 +13,7 @@
         <p v-html="content"></p>
       </v-card>
     </v-col>
-    <v-col xs="24" sm="24" md="20" lg="18">
+    <v-col cols="12" xs="0" sm="0" md="4" lg="4" xl="3">
       <v-card style="margin-bottom: 20px;">
         <div>
           <h3>
