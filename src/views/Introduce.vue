@@ -2,7 +2,7 @@
   <div>
     <Headers :flat="false"/>
     <v-content>
-      <v-container>
+      <v-container fluid>
         <v-row :gutter="20" type="flex" justify="center">
           <v-col xs="24" sm="22" md="20" lg="18">
             <v-card class="max-atuo">

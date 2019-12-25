@@ -2,13 +2,13 @@
   <div>
     <Headers :flat="true"/>
     <v-content style="padding: 0;">
-      <v-container>
+      <v-container fluid>
         <v-carousel
           :show-arrows="false"
           ref="carousel"
-          height="100vh"
           :hide-delimiters="true"
           :vertical="true"
+          height="100vh"
           :continuous="false"
         >
           <v-carousel-item
@@ -16,11 +16,13 @@
             :key="i"
             :src="item.src"
           >
-            <v-row align="center" justify="center">
-              <v-col>
-                <p v-html="item.content"></p>
-              </v-col>
-            </v-row>
+            <v-sheet title height="100%">
+              <v-row align="center" justify="center" class="fill-height">
+                <v-col  class="text-center">
+                  <p v-html="item.content"></p>
+                </v-col>
+              </v-row>
+            </v-sheet>
           </v-carousel-item>
         </v-carousel>
       </v-container>
@@ -45,21 +47,21 @@ export default {
     return {
       datas: [
         {
-          src: 'https://oss.abeille.top/content.svg',
+          src: 'https://oss.abeille.top/road.jpg',
           title: 'Bienvenue, Abeille 欢迎你！',
           link: '/introduce',
           text: '阅读更多',
           content: 'Abeille 是蜜蜂法语词语，选择这个词也是希望这里能成为Ruche（蜂巢）<br />希望所有注册用户都像一只勤劳的小蜜蜂一样，共同做一些事情...'
         },
         {
-          src: 'https://oss.abeille.top/upload.svg',
+          src: 'https://oss.abeille.top/eye.jpg',
           title: '一点介绍',
           link: '/article',
           text: '获取资料',
           content: '本站提供技术博文、游行博客、翻译文档等资料，<br />可供免费使用，同时希望大家发现问题，能指正错误...'
         },
         {
-          src: 'https://oss.abeille.top/onboarding.svg',
+          src: 'https://oss.abeille.top/fantasy.jpg',
           title: '关于站长',
           link: '/introduce',
           text: '了解站长',
@@ -105,6 +107,9 @@ export default {
 
 <style lang="scss" scoped>
 .theme--light.v-sheet {
+  background-color: transparent;
+}
+.theme--dark.v-sheet {
   background-color: transparent;
 }
 .container {
