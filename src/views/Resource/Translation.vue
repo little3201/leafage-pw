@@ -13,7 +13,7 @@
         <p v-html="content"></p>
       </v-card>
     </v-col>
-    <v-col cols="12" xs="0" sm="0" md="4" lg="4" xl="3">
+    <v-col cols="12" xs="0" sm="0" md="4" lg="4" xl="2">
       <v-card style="margin-bottom: 20px;">
         <div>
           <h3>

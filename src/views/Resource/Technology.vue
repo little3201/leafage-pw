@@ -1,5 +1,5 @@
 <template>
-  <v-row>
+  <v-row justify="center">
     <v-col cols="12" xs="0" sm="0" md="8" lg="8" xl="6">
       <v-card>
         <div style="display: flex;">
@@ -47,7 +47,7 @@
         </v-pagination>
       </v-card>
     </v-col>
-    <v-col cols="12" xs="12" sm="12" md="4" lg="4" xl="3">
+    <v-col cols="12" xs="12" sm="12" md="4" lg="4" xl="2">
       <v-card>
         <div style="display: flex;">
           <h3>

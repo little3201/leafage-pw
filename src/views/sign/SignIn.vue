@@ -1,6 +1,6 @@
 <template>
   <v-row justify="center" align="center">
-    <v-col xs="22" sm="6" md="5" lg="3">
+    <v-col cols="12" xs="12" sm="6" md="5" lg="3" xl="2">
       <v-card class="card-login" style="text-align: center;">
         <router-link to="/">
           <img style="height: 3.5rem;" src="@/assets/logo.png" />
