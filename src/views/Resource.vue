@@ -2,7 +2,7 @@
   <div>
     <Headers :flat="false"/>
     <v-content>
-      <v-container fluid>
+      <v-container>
         <!-- If using vue-router -->
         <router-view></router-view>
       </v-container>
