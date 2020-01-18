@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Headers :flat="false"/>
+    <Headers :flat="true"/>
     <v-content>
       <v-container>
         <!-- If using vue-router -->
