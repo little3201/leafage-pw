@@ -4,7 +4,7 @@
     <v-content>
       <v-container fluid>
         <v-row :gutter="20" type="flex" justify="center">
-          <v-col cols="12" xs="12" sm="12" md="10" lg="10">
+          <v-col cols="12" xs="12" sm="12" md="10" lg="10" xl="8">
             <v-card class="max-atuo">
               <h2>简介</h2>
               <p>还没想好写点啥</p>
