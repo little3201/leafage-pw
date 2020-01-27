@@ -1,5 +1,5 @@
 <template>
-  <v-row :gutter="20" justify="center">
+   <v-row justify="center">
     <v-col cols="12" xs="12" sm="12" md="8" lg="8" xl="6">
       <v-card>
         <div style="display: flex;">
@@ -13,7 +13,7 @@
         <p v-html="content"></p>
       </v-card>
     </v-col>
-    <v-col cols="12" xs="0" sm="0" md="4" lg="4" xl="2">
+    <v-col cols="12" xs="0" sm="12" md="4" lg="3" xl="2">
       <v-card style="margin-bottom: 20px;">
         <div>
           <h3>
@@ -48,5 +48,9 @@ export default {
 .v-card {
   padding: 30px;
   margin-bottom: 20px;
+}
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
 }
 </style>

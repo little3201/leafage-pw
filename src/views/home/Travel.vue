@@ -1,6 +1,6 @@
 <template>
   <v-row justify="center">
-    <v-col v-for="n in 9" :key="n" xs="22" sm="6" md="6" lg="4">
+    <v-col v-for="n in 9" :key="n" cols="12" xs="11" sm="6" md="6" lg="4" xl="3">
       <v-card flat tile>
         <v-img
           :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
@@ -26,5 +26,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
 </style>

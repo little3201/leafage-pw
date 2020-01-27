@@ -26,7 +26,7 @@
       </v-card>
       <v-card>
         <h3>
-          <v-icon>mdi-file-document-box-multiple-outline</v-icon>推荐内容
+          推荐内容
         </h3>
         <v-list three-line>
           <v-list-item-group color="primary">
@@ -51,7 +51,7 @@
       <v-card>
         <div style="display: flex;">
           <h3>
-            <v-icon>mdi-official</v-icon>官方编辑
+            官方编辑
           </h3>
           <v-spacer></v-spacer>
           <a>
@@ -71,7 +71,7 @@
       <v-card>
         <div style="display: flex;">
           <h3>
-            <v-icon>mdi-newspaper</v-icon>新闻资讯
+            新闻资讯
           </h3>
           <v-spacer></v-spacer>
           <a>
@@ -225,5 +225,9 @@ export default {
 }
 .v-list-item__icon:first-child {
   margin-right: 10px;
+}
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
 }
 </style>

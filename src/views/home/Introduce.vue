@@ -1,5 +1,5 @@
 <template>
-  <v-row :gutter="20" justify="center">
+  <v-row justify="center">
     <v-col cols="12" xs="12" sm="12" md="10" lg="10" xl="8">
       <v-card>
         <h2>简介</h2>
@@ -26,5 +26,9 @@ export default {
 <style lang="scss" scoped>
 .v-card {
   padding: 30px;
+}
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
 }
 </style>

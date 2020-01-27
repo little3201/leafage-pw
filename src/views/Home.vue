@@ -81,7 +81,7 @@
       color="blue darken-3"
       dark
     >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="hidden-md-and-up"/>
       <v-toolbar-title
         style="width: 300px"
         class="ml-0 pl-4"
@@ -99,38 +99,36 @@
         dense
       />
       <v-spacer />
-      <v-btn icon to="/technology">
-        <v-icon>mdi-apps</v-icon>
-      </v-btn>
-      <v-btn icon to="/introduce">
-        <v-icon>mdi-bell</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        large
-      >
-        <v-avatar
-          size="32px"
-          item
-        >
-          <v-img
-            src="https://cdn.vuetifyjs.com/images/logos/logo.svg"
-            alt="Vuetify"
-          /></v-avatar>
-      </v-btn>
+      <v-toolbar-items class="hidden-sm-and-down">
+      <v-btn href="/" text>首页</v-btn>
+      <v-menu offset-y>
+        <template v-slot:activator="{ on }">
+          <v-btn v-on="on" text style="padding-right: 0;">
+            文档<v-icon>mdi-menu-down</v-icon>
+          </v-btn>
+        </template>
+        <v-list>
+          <v-list-item
+            v-for="(item, index) in menus"
+            :key="index"
+            :href="item.url"
+          >
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+      <v-btn href="/introduce" text>介绍</v-btn>
+      <v-btn href="/signin" text>登录</v-btn>
+      <v-btn href="/signup" text>注册</v-btn>
+    </v-toolbar-items>
     </v-app-bar>
     <v-content>
       <v-container
         class="fill-height"
         fluid
       >
-        <v-row
-          align="center"
-          justify="center"
-        >
-          <!-- If using vue-router -->
-          <router-view></router-view>
-        </v-row>
+        <!-- If using vue-router -->
+        <router-view></router-view>
       </v-container>
     </v-content>
     <v-btn
@@ -268,10 +266,25 @@ export default {
       { icon: 'mdi-help-circle', text: 'Help' },
       { icon: 'mdi-cellphone-link', text: 'App downloads' },
       { icon: 'mdi-keyboard', text: 'Go to the old version' }
+    ],
+    menus: [
+      {
+        title: '技术博文',
+        url: '/technology'
+      },
+      {
+        title: '翻译文档',
+        url: '/translation'
+      },
+      {
+        title: '旅行游记',
+        url: '/travel'
+      }
     ]
   })
 }
 </script>
 
 <style lang="scss" scoped>
+
 </style>

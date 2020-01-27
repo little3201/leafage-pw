@@ -102,7 +102,8 @@ export default {
 
 <style lang="scss" scoped>
 .row {
-  margin: 0;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 .v-card {
   padding: 30px;
