@@ -4,32 +4,27 @@ export default [
   {
     path: '/',
     name: 'home',
-    component: Home
-  },
-  {
-    path: '/introduce',
-    name: 'introduce',
-    component: () => import('@/views/Introduce.vue')
-  },
-  {
-    path: '/resource',
-    name: 'resource',
-    component: () => import('@/views/Resource.vue'),
+    component: Home,
     children: [
       {
         path: '/technology',
         name: 'technology',
-        component: () => import('@/views/Resource/Technology.vue')
+        component: () => import('@/views/home/Technology.vue')
       },
       {
         path: '/translation',
         name: 'translation',
-        component: () => import('@/views/Resource/Translation.vue')
+        component: () => import('@/views/home/Translation.vue')
       },
       {
         path: '/travel',
         name: 'travel',
-        component: () => import('@/views/Resource/Travel.vue')
+        component: () => import('@/views/home/Travel.vue')
+      },
+      {
+        path: '/introduce',
+        name: 'introduce',
+        component: () => import('@/views/home/Introduce.vue')
       }
     ]
   },

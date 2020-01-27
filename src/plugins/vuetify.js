@@ -5,8 +5,11 @@ import Vuetify, {
   VApp,
   VAppBar,
   VAppBarNavIcon,
+  VAvatar,
   VBtn,
   VCard,
+  VCardActions,
+  VCardTitle,
   VCardText,
   VCarousel,
   VCarouselItem,
@@ -15,11 +18,13 @@ import Vuetify, {
   VContainer,
   VCheckbox,
   VDivider,
+  VDialog,
   VFooter,
   VForm,
   VIcon,
   VImg,
   VList,
+  VListGroup,
   VListItem,
   VListItemAction,
   VListItemAvatar,
@@ -36,6 +41,7 @@ import Vuetify, {
   VSpacer,
   VSubheader,
   VTextField,
+  VTooltip,
   VToolbarTitle,
   VToolbarItems
 } from 'vuetify/lib'
@@ -46,8 +52,11 @@ Vue.use(Vuetify, {
     VApp,
     VAppBar,
     VAppBarNavIcon,
+    VAvatar,
     VBtn,
     VCard,
+    VCardActions,
+    VCardTitle,
     VCardText,
     VCarousel,
     VCarouselItem,
@@ -56,11 +65,13 @@ Vue.use(Vuetify, {
     VContainer,
     VCheckbox,
     VDivider,
+    VDialog,
     VFooter,
     VForm,
     VIcon,
     VImg,
     VList,
+    VListGroup,
     VListItem,
     VListItemAction,
     VListItemAvatar,
@@ -77,6 +88,7 @@ Vue.use(Vuetify, {
     VSpacer,
     VSubheader,
     VTextField,
+    VTooltip,
     VToolbarTitle,
     VToolbarItems
   },
@@ -86,13 +98,13 @@ Vue.use(Vuetify, {
 })
 
 const opts = {
-  theme: {
-    themes: {
-      light: {
-        primary: '#faad14'
-      }
-    }
-  },
+//  theme: {
+//    themes: {
+//      light: {
+//        primary: '#faad14'
+//      }
+//    }
+//  },
   icons: {
     iconfont: 'mdi' // default - only for display purposes
   }

@@ -1,108 +1,277 @@
 <template>
-  <div>
-    <Headers :flat="true"/>
-    <v-content style="padding: 0;">
-      <v-container fluid>
-        <v-carousel
-          :show-arrows="false"
-          ref="carousel"
-          :hide-delimiters="true"
-          :vertical="true"
-          height="100vh"
-          :continuous="false"
-        >
-          <v-carousel-item
-            v-for="(item, i) in datas"
-            :key="i"
-            :src="item.src"
+  <v-app id="inspire">
+    <v-navigation-drawer
+      v-model="drawer"
+      :clipped="$vuetify.breakpoint.lgAndUp"
+      app
+      temporary
+    >
+      <v-list dense>
+        <template v-for="item in items">
+          <v-row
+            v-if="item.heading"
+            :key="item.heading"
+            align="center"
           >
-            <v-sheet light height="100%">
-              <v-row align="center" justify="center" class="fill-height">
-                <v-col cols="12" class="text-center">
-                  <p v-html="item.content"></p>
-                </v-col>
-              </v-row>
-            </v-sheet>
-          </v-carousel-item>
-        </v-carousel>
+            <v-col cols="6">
+              <v-subheader v-if="item.heading">
+                {{ item.heading }}
+              </v-subheader>
+            </v-col>
+            <v-col
+              cols="6"
+              class="text-center"
+            >
+              <a
+                href="#!"
+                class="body-2 black--text"
+              >EDIT</a>
+            </v-col>
+          </v-row>
+          <v-list-group
+            v-else-if="item.children"
+            :key="item.text"
+            v-model="item.model"
+            :prepend-icon="item.model ? item.icon : item['icon-alt']"
+            append-icon=""
+          >
+            <template v-slot:activator>
+              <v-list-item-content>
+                <v-list-item-title>
+                  {{ item.text }}
+                </v-list-item-title>
+              </v-list-item-content>
+            </template>
+            <v-list-item
+              v-for="(child, i) in item.children"
+              :key="i"
+              link
+            >
+              <v-list-item-action v-if="child.icon">
+                <v-icon>{{ child.icon }}</v-icon>
+              </v-list-item-action>
+              <v-list-item-content>
+                <v-list-item-title>
+                  {{ child.text }}
+                </v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list-group>
+          <v-list-item
+            v-else
+            :key="item.text"
+            link
+          >
+            <v-list-item-action>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>
+                {{ item.text }}
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </template>
+      </v-list>
+    </v-navigation-drawer>
+
+    <v-app-bar
+      :clipped-left="$vuetify.breakpoint.lgAndUp"
+      app
+      color="blue darken-3"
+      dark
+    >
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-toolbar-title
+        style="width: 300px"
+        class="ml-0 pl-4"
+      >
+        <span class="hidden-sm-and-down">Google Contacts</span>
+      </v-toolbar-title>
+      <v-text-field
+        flat
+        solo-inverted
+        hide-details
+        prepend-inner-icon="mdi-magnify"
+        label="Search"
+        class="hidden-sm-and-down"
+        rounded
+        dense
+      />
+      <v-spacer />
+      <v-btn icon to="/technology">
+        <v-icon>mdi-apps</v-icon>
+      </v-btn>
+      <v-btn icon to="/introduce">
+        <v-icon>mdi-bell</v-icon>
+      </v-btn>
+      <v-btn
+        icon
+        large
+      >
+        <v-avatar
+          size="32px"
+          item
+        >
+          <v-img
+            src="https://cdn.vuetifyjs.com/images/logos/logo.svg"
+            alt="Vuetify"
+          /></v-avatar>
+      </v-btn>
+    </v-app-bar>
+    <v-content>
+      <v-container
+        class="fill-height"
+        fluid
+      >
+        <v-row
+          align="center"
+          justify="center"
+        >
+          <!-- If using vue-router -->
+          <router-view></router-view>
+        </v-row>
       </v-container>
     </v-content>
-    <Footers />
-  </div>
+    <v-btn
+      bottom
+      color="pink"
+      dark
+      fab
+      fixed
+      right
+      @click="dialog = !dialog"
+    >
+      <v-icon>mdi-plus</v-icon>
+    </v-btn>
+    <v-dialog
+      v-model="dialog"
+      width="800px"
+    >
+      <v-card>
+        <v-card-title class="grey darken-2">
+          Create contact
+        </v-card-title>
+        <v-container>
+          <v-row class="mx-2">
+            <v-col
+              class="align-center justify-space-between"
+              cols="12"
+            >
+              <v-row
+                align="center"
+                class="mr-0"
+              >
+                <v-avatar
+                  size="40px"
+                  class="mx-3"
+                >
+                  <img
+                    src="//ssl.gstatic.com/s2/oz/images/sge/grey_silhouette.png"
+                    alt=""
+                  >
+                </v-avatar>
+                <v-text-field
+                  placeholder="Name"
+                />
+              </v-row>
+            </v-col>
+            <v-col cols="6">
+              <v-text-field
+                prepend-icon="mdi-account-card-details-outline"
+                placeholder="Company"
+              />
+            </v-col>
+            <v-col cols="6">
+              <v-text-field
+                placeholder="Job title"
+              />
+            </v-col>
+            <v-col cols="12">
+              <v-text-field
+                prepend-icon="mdi-mail"
+                placeholder="Email"
+              />
+            </v-col>
+            <v-col cols="12">
+              <v-text-field
+                type="tel"
+                prepend-icon="mdi-phone"
+                placeholder="(000) 000 - 0000"
+              />
+            </v-col>
+            <v-col cols="12">
+              <v-text-field
+                prepend-icon="mdi-text"
+                placeholder="Notes"
+              />
+            </v-col>
+          </v-row>
+        </v-container>
+        <v-card-actions>
+          <v-btn
+            text
+            color="primary"
+          >More</v-btn>
+          <v-spacer />
+          <v-btn
+            text
+            color="primary"
+            @click="dialog = false"
+          >Cancel</v-btn>
+          <v-btn
+            text
+            @click="dialog = false"
+          >Save</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+  </v-app>
 </template>
 
 <script>
-// @ is an alias to /src
-import _ from 'lodash' // 引入节流函数
-import Headers from '@/components/Headers'
-import Footers from '@/components/Footers'
-
 export default {
-  name: 'home',
-  components: {
-    Headers,
-    Footers
+  props: {
+    source: String
   },
-  data () {
-    return {
-      datas: [
-        {
-          src: 'https://oss.abeille.top/travel.png',
-          title: 'Bienvenue, Abeille 欢迎你！',
-          link: '/introduce',
-          text: '阅读更多',
-          content: 'Abeille 是蜜蜂法语词语，选择这个词也是希望这里能成为Ruche（蜂巢）<br />希望所有注册用户都像一只勤劳的小蜜蜂一样，共同做一些事情...'
-        },
-        {
-          src: 'https://oss.abeille.top/folder.png',
-          title: '一点介绍',
-          link: '/article',
-          text: '获取资料',
-          content: '本站提供技术博文、游行博客、翻译文档等资料，<br />可供免费使用，同时希望大家发现问题，能指正错误...'
-        }
-      ]
-    }
-  },
-  mounted () {
-    // 监听（绑定）滚轮 滚动事件, safari, firefox, chrome
-    this.$nextTick(function () {
-      // 监听当前组件的滚动事件
-      let mousewheelevt = 'onwheel' in document.createElement('div') ? 'wheel'// 各个厂商的高版本浏览器都支持"wheel"
-        : document.onmousewheel !== undefined ? 'mousewheel' // Webkit 和 IE一定支持"mousewheel"
-          : 'DOMMouseScroll' // 低版本firefox
-      if (window.addEventListener) {
-        // { 'trailing': false } 调用在节流结束后，默认为true，即表示允许在 wait 期间多次调用
-        window.addEventListener(mousewheelevt, _.throttle(this.handleScroll, 1200, { 'trailing': false }), false)
-      }
-    })
-  },
-  methods: {
-    handleScroll (event) {
-      // 页面滚动距顶部距离
-      if (!event) event = window.event
-      let wheel = event.wheelDelta === undefined ? (event.detail === undefined ? false : event.detail)
-        : event.wheelDelta
-      let carousel = this.$refs.carousel
-      // 需要判断是否走马灯对象存在，避免鼠标左右滑动触法
-      if (wheel && carousel) {
-        if (event.wheelDelta > 0) {
-          // 当滑轮向上滚动时
-          carousel.prev()
-        } else {
-          // 当滑轮向下滚动时
-          carousel.next()
-        }
-      }
-    }
-  }
+  data: () => ({
+    dialog: false,
+    drawer: null,
+    items: [
+      { icon: 'mdi-contacts', text: 'Contacts' },
+      { icon: 'mdi-history', text: 'Frequently contacted' },
+      { icon: 'mdi-content-copy', text: 'Duplicates' },
+      {
+        icon: 'mdi-chevron-up',
+        'icon-alt': 'mdi-chevron-down',
+        text: 'Labels',
+        model: true,
+        children: [
+          { icon: 'mdi-plus', text: 'Create label' }
+        ]
+      },
+      {
+        icon: 'mdi-chevron-up',
+        'icon-alt': 'mdi-chevron-down',
+        text: 'More',
+        model: false,
+        children: [
+          { text: 'Import' },
+          { text: 'Export' },
+          { text: 'Print' },
+          { text: 'Undo changes' },
+          { text: 'Other contacts' }
+        ]
+      },
+      { icon: 'mdi-settings', text: 'Settings' },
+      { icon: 'mdi-message', text: 'Send feedback' },
+      { icon: 'mdi-help-circle', text: 'Help' },
+      { icon: 'mdi-cellphone-link', text: 'App downloads' },
+      { icon: 'mdi-keyboard', text: 'Go to the old version' }
+    ]
+  })
 }
 </script>
 
 <style lang="scss" scoped>
-.theme--light.v-sheet {
-  background-color: transparent;
-}
-.container {
-  padding: 0;
-}
 </style>
