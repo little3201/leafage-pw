@@ -1,34 +1,25 @@
 <template>
-  <v-navigation-drawer app>
-    <!-- -->
-    <v-list-item>
-      <v-list-item-content>
-        <v-list-item-title class="title">
-          Application
-        </v-list-item-title>
-        <v-list-item-subtitle>
-          subtext
-        </v-list-item-subtitle>
-      </v-list-item-content>
-    </v-list-item>
-
-    <v-divider></v-divider>
-
-    <v-list
-      dense
-      nav
-    >
-      <v-list-item
-        v-for="item in items"
-        :key="item.title"
-        link
-      >
-        <v-list-item-icon>
-          <v-icon>{{ item.icon }}</v-icon>
-        </v-list-item-icon>
-
+  <!-- -->
+  <v-navigation-drawer
+    v-model="drawer"
+    app
+    temporary
+  >
+    <v-list dense>
+      <v-list-item link>
+        <v-list-item-action>
+          <v-icon>mdi-home</v-icon>
+        </v-list-item-action>
         <v-list-item-content>
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
+          <v-list-item-title>Home</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+      <v-list-item link>
+        <v-list-item-action>
+          <v-icon>mdi-contact-mail</v-icon>
+        </v-list-item-action>
+        <v-list-item-content>
+          <v-list-item-title>Contact</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
     </v-list>
@@ -37,18 +28,16 @@
 
 <script>
 export default {
+  name: 'navigations',
+  props: {
+    drawer: Boolean
+  },
   data () {
     return {
-      items: [
-        { title: 'Dashboard', icon: 'mdi-view-dashboard' },
-        { title: 'Photos', icon: 'mdi-image' },
-        { title: 'About', icon: 'mdi-help-box' }
-      ],
-      right: null
     }
   }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 </style>

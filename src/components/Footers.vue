@@ -1,15 +1,9 @@
 <template>
   <v-footer app>
-    <!-- -->
-    <a>帮助</a>
-    <a>条款</a>
-    <a>隐私</a>
-    <div>
+    <span>
       Copyright &copy; {{ new Date().getFullYear() }} · 陕ICP备19017836号-1 · Powerd By
-      <a href="/introduce">
-        布吉岛
-      </a>
-    </div>
+    </span>
+    <a href="/introduce" style="color: rgba(0, 0, 0, 0.87);">布吉岛</a>
   </v-footer>
 </template>
 
@@ -24,5 +18,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 </style>

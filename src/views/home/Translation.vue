@@ -1,7 +1,7 @@
 <template>
-  <v-row :gutter="20" type="flex" justify="center">
-    <v-col :xs="24" :sm="16" :md="15" :lg="14">
-      <v-card style="margin-bottom: 20px;">
+  <v-row :gutter="20" justify="center">
+    <v-col cols="12" xs="12" sm="12" md="8" lg="8" xl="6">
+      <v-card>
         <div style="display: flex;">
           <h3>
             <i class="el-icon-document-copy"></i>翻译文档
@@ -13,7 +13,7 @@
         <p v-html="content"></p>
       </v-card>
     </v-col>
-    <v-col :xs="0" :sm="8" :md="7" :lg="6">
+    <v-col cols="12" xs="0" sm="0" md="4" lg="4" xl="2">
       <v-card style="margin-bottom: 20px;">
         <div>
           <h3>
@@ -45,25 +45,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.a {
-  justify-content: flex-start;
-}
-h3 {
-  margin: 0;
-  display: inline-block;
-}
-ul {
-  padding: 0;
-  list-style: none;
-  li {
-    margin: 10px 0;
-  }
-}
-.count {
-  font-size: 14px;
-  color: #828a92;
-}
-i {
-  margin-right: 5px;
+.v-card {
+  padding: 30px;
+  margin-bottom: 20px;
 }
 </style>
