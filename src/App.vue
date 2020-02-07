@@ -1,14 +1,7 @@
 <template>
-  <v-app>
-    <!-- If using vue-router -->
-    <router-view></router-view>
-  </v-app>
+  <!-- If using vue-router -->
+  <router-view></router-view>
 </template>
-
-<script>
-export default {
-}
-</script>
 
 <style lang="scss">
 a {
