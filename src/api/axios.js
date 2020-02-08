@@ -1,7 +1,41 @@
 import axios from 'axios'
+import router from '@/router'
 import NProgress from 'nprogress' // progress bar
 import 'nprogress/nprogress.css' // progress bar style
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
+
+const toLogin = () => {
+  router.replace({
+    path: '/login',
+    query: {
+      redirect: router.currentRoute.fullPath
+    }
+  })
+}
+
+const errorHandle = (status) => {
+  // 状态码判断
+  switch (status) {
+    // 401: 未登录状态，跳转登录页
+    case 401:
+      toLogin()
+      break
+    // 403 token过期
+    // 清除token并跳转登录页
+    case 403:
+      alert('登录过期，请重新登录')
+      // localStorage.removeItem('token');
+      // store.commit('loginSuccess', null);
+      setTimeout(() => { toLogin() }, 1000)
+      break
+    // 404请求不存在
+    case 404:
+      alert('请求的资源不存在')
+      break
+    default:
+      alert('请求的资源不存在')
+  }
+}
 
 class HttpRequest {
   // 如果传入参数就用传入的，没有就用baseURL.dev
@@ -29,7 +63,7 @@ class HttpRequest {
       config => {
         NProgress.start()
         let token = 'token'
-        if (token !== null) {
+        if (token) {
           config.headers.Authorization = 'Bearer ' + token // 让每个请求携带自定义 token 请根据实际情况自行修改
         }
         this.queue[url] = true
@@ -45,18 +79,31 @@ class HttpRequest {
       res => {
         NProgress.done()
         this.destroy(url)
-        const { data, status } = res
+        let { data, status } = res
         return { data, status }
       },
       error => {
         NProgress.done()
-        this.destroy(url)
+        let { response } = error
+        if (response) {
+        // 请求已发出，但是不在2xx的范围
+          errorHandle(response.status)
+          return Promise.reject(response)
+        } else {
+        // 处理断网的情况
+        // eg:请求超时或断网时，更新state的network状态
+        // network状态在app.vue中控制着一个全局的断网提示组件的显示隐藏
+        // 关于断网组件中的刷新重新获取数据，会在断网组件中说明
+        // store.commit('changeNetwork', false)
+        }
         return Promise.reject(error)
       }
     )
   }
   request (options) {
-    const instance = axios.create()
+    let instance = axios.create()
+    // 覆写库的超时默认值，所有请求都会等待 1 秒
+    instance.defaults.timeout = 1000
     options = Object.assign(this.getInsideConfig(), options)
     this.interceptors(instance, options.url)
     return instance(options)

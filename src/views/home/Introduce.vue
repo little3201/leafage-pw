@@ -1,17 +1,8 @@
 <template>
-  <v-row justify="center">
+  <v-row justify="center" align="start">
     <v-col cols="12" xs="12" sm="12" md="10" lg="10" xl="8">
       <v-card>
         <h2>简介</h2>
-        <p>还没想好写点啥</p>
-        <p>还没想好写点啥</p>
-        <p>还没想好写点啥</p>
-        <p>还没想好写点啥</p>
-        <p>还没想好写点啥</p>
-        <p>还没想好写点啥</p>
-        <p>还没想好写点啥</p>
-        <p>还没想好写点啥</p>
-        <p>还没想好写点啥</p>
         <p>还没想好写点啥</p>
         <p>还没想好写点啥</p>
         <p>还没想好写点啥</p>

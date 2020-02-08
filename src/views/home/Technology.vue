@@ -51,7 +51,7 @@
       <v-card>
         <div style="display: flex;">
           <h3>
-            官方编辑
+            最新编辑
           </h3>
           <v-spacer></v-spacer>
           <a>
@@ -71,7 +71,7 @@
       <v-card>
         <div style="display: flex;">
           <h3>
-            新闻资讯
+            翻译更新
           </h3>
           <v-spacer></v-spacer>
           <a>
@@ -213,6 +213,11 @@ export default {
         '王石套现40亿',
         '孙斌套现40亿'
       ]
+    }
+  },
+  methods: {
+    fetchTopic () {
+      return null
     }
   }
 }

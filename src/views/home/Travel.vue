@@ -1,6 +1,6 @@
 <template>
   <v-row>
-    <v-col v-for="n in 9" :key="n" cols="12" xs="12" sm="6" md="4" lg="3" xl="3">
+    <v-col v-for="n in 8" :key="n" cols="12" xs="12" sm="6" md="4" lg="3" xl="3">
       <v-card
         max-width="344"
         class="mx-auto"
