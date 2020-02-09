@@ -6,18 +6,12 @@
         fluid
       >
         <!-- content -->
-        <v-row justify="center">
-          <!-- cols="12" xs="12" sm="12" md="10" lg="10" xl="8" -->
+        <v-row justify="center" class="my-0">
           <v-col cols="12" xs="12" sm="6" md="5" lg="3" xl="2">
-            <v-card class="card-login" style="text-align: center;">
+            <v-card class="pa-7 text-center">
               <router-link to="/">
-                <img style="height: 3.5rem;" src="@/assets/logo.png" />
+                <img style="height: 4rem;" src="@/assets/logo.png" />
               </router-link>
-              <p class="headline mb" style="text-align: initial;">登录</p>
-              <p style="text-align: initial;">
-                <span>已有邮箱账户？</span>
-                <a href="#" class="link" style="vertical-align: initial;">立即绑定</a>
-              </p>
               <v-form ref="form" v-model="valid" lazy-validation>
                 <v-text-field
                   v-model="formData.username"
@@ -34,29 +28,29 @@
                   required
                 ></v-text-field>
               </v-form>
-              <p style="text-align: end;">
-                <a href="#"  class="link">忘记密码</a>
+              <p class="text-right">
+                <a href="#" class="subtitle-2">忘记密码</a>
               </p>
               <p>
-                <v-btn rounded color="primary" block @click="submitForm">
-                  登&nbsp;录
+                <v-btn rounded class="body-1" color="primary" block @click="submitForm">
+                  登&emsp;录
                 </v-btn>
               </p>
-              <p style="text-align: initial;">
-                <span>没有账号？</span>
-                <a href="/signup" class="link">
+              <p class="text-left">
+                <span class="subtitle-2">没有账号？</span>
+                <a href="/signup" class="subtitle-2">
                   去注册
                 </a>
               </p>
-              <p class="mb">第三方账号登录</p>
-              <p style="margin-bottom: 0">
-                <v-btn text icon :x-large="true">
+              <p class="mb-0">第三方账号登录</p>
+              <p class="mb-0">
+                <v-btn text icon :x-large="true" color="blue">
                   <v-icon>mdi-twitter</v-icon>
                 </v-btn>
-                <v-btn text icon :x-large="true">
+                <v-btn text icon :x-large="true" color="black">
                   <v-icon>mdi-github-circle</v-icon>
                 </v-btn>
-                <v-btn text icon :x-large="true">
+                <v-btn text icon :x-large="true" color="green">
                   <v-icon>mdi-wechat</v-icon>
                 </v-btn>
               </p>
@@ -114,21 +108,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.row {
-  margin-left: 0px;
-  margin-right: 0px;
-}
-.v-card {
-  padding: 30px;
-}
-.link {
-  color: rgba(0, 0, 0, 0.6);
-  font-size: 14px;
-}
-span {
-  font-size: 14px;
-}
-.mb {
-  margin-bottom: 0;
-}
 </style>

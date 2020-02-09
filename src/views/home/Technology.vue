@@ -1,14 +1,14 @@
 <template>
-  <v-row justify="center">
+  <v-row justify="center" class="my-0">
     <v-col cols="12" xs="12" sm="12" md="8" lg="8" xl="6">
-      <v-card>
-        <div style="display: flex;">
+      <v-card class="pa-7">
+        <div class="d-flex">
           <h3>
             <i class="el-icon-chat-line-square"></i>话题
           </h3>
           <v-spacer></v-spacer>
           <div>
-            <a>换一换</a><span style="margin:0 10px;">|</span><a>全部话题</a>
+            <a>换一换</a><span class="my-10 mx-5">|</span><a>全部话题</a>
           </div>
         </div>
         <v-list dense>
@@ -24,13 +24,13 @@
           </v-list-item-group>
         </v-list>
       </v-card>
-      <v-card>
+      <v-card class="pa-7 mt-6">
         <h3>
           推荐内容
         </h3>
         <v-list three-line>
           <v-list-item-group color="primary">
-            <v-list-item v-for="(item, i) in datas" :key="i">
+            <v-list-item v-for="(item, i) in recommendatories" :key="i">
               <v-list-item-avatar>
                 <v-img :src="item.avatar"></v-img>
               </v-list-item-avatar>
@@ -43,13 +43,16 @@
         </v-list>
         <v-pagination
           v-model="page"
-          :total="50">
+          :length="15"
+          :total-visible="7"
+          circle
+        >
         </v-pagination>
       </v-card>
     </v-col>
     <v-col cols="12" xs="0" sm="12" md="4" lg="3" xl="2">
-      <v-card>
-        <div style="display: flex;">
+      <v-card class="pa-7">
+        <div class="d-flex">
           <h3>
             最新编辑
           </h3>
@@ -60,16 +63,16 @@
         </div>
         <v-list dense shaped>
           <v-list-item-group color="primary">
-            <v-list-item v-for="(hot, index) in hots" :key="index">
+            <v-list-item v-for="(info, index) in latest" :key="index">
               <v-list-item-content>
-                <v-list-item-title v-html="hot"></v-list-item-title>
+                <v-list-item-title v-html="info"></v-list-item-title>
               </v-list-item-content>
             </v-list-item>
           </v-list-item-group>
         </v-list>
       </v-card>
-      <v-card>
-        <div style="display: flex;">
+      <v-card class="pa-7 mt-6">
+        <div class="d-flex">
           <h3>
             翻译更新
           </h3>
@@ -80,9 +83,9 @@
         </div>
         <v-list dense shaped>
           <v-list-item-group color="primary">
-            <v-list-item v-for="(info, index) in news" :key="index">
+            <v-list-item v-for="(translation, index) in translations" :key="index">
               <v-list-item-content>
-                <v-list-item-title v-html="info"></v-list-item-title>
+                <v-list-item-title v-html="translation"></v-list-item-title>
               </v-list-item-content>
             </v-list-item>
           </v-list-item-group>
@@ -94,6 +97,7 @@
 
 <script>
 // @ is an alias to /src
+import { fetchArticleFunc, fetchTopicFunc, fetchTranslationFunc } from '@/api/method'
 
 export default {
   name: 'technology',
@@ -102,7 +106,7 @@ export default {
   data () {
     return {
       page: 1,
-      datas: [
+      recommendatories: [
         {
           title: '如何快速掌握Redis技巧',
           author: '布吉岛',
@@ -189,7 +193,7 @@ export default {
         '9012年了，对象谈了没有啊？',
         '9012年了，工资现在多少啊？'
       ],
-      hots: [
+      latest: [
         '七天快速入门Go语言',
         '七天快速入门C++语言',
         '七天快速入门C#语言',
@@ -201,38 +205,57 @@ export default {
         '七天快速入门VB语言',
         '七天快速入门Python语言'
       ],
-      news: [
-        '马云套现40亿',
-        '刘强东套现40亿',
-        '李彦宏套现40亿',
-        '俞敏洪现40亿',
-        '马化腾套现40亿',
-        '王健林套现40亿',
-        '王思聪套现40亿',
-        '贾跃亭套现40亿',
-        '王石套现40亿',
-        '孙斌套现40亿'
+      translations: [
+        'Docker',
+        'Prometheus',
+        'Kubernetes',
+        'RabbitMQ'
       ]
     }
   },
   methods: {
+    // 获取推荐内容
+    fetchrecommendatory () {
+      fetchArticleFunc().then(
+        response => {
+          // 设置recommendatories
+          this.recommendatories = response.data
+        },
+        error => {
+          // 执行失败的回调函数
+          alert(error.message)
+        }
+      )
+    },
+    // 获取热门话题
     fetchTopic () {
-      return null
+      fetchTopicFunc().then(
+        response => {
+          // 设置topics
+          this.topics = response.data
+        },
+        error => {
+          // 执行失败的回调函数
+          alert(error.message)
+        }
+      )
+    },
+    // 获取翻译更新
+    fetchTranslation () {
+      fetchTranslationFunc().then(
+        response => {
+          // 设置translations
+          this.translations = response.data
+        },
+        error => {
+          // 执行失败的回调函数
+          alert(error.message)
+        }
+      )
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.v-card {
-  padding: 30px;
-  margin-bottom: 25px;
-}
-.v-list-item__icon:first-child {
-  margin-right: 10px;
-}
-.row {
-  margin-left: 0px;
-  margin-right: 0px;
-}
 </style>

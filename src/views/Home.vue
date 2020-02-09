@@ -78,14 +78,15 @@
     <v-app-bar
       :clipped-left="$vuetify.breakpoint.lgAndUp"
       app
-      lignt
+      color="blue darken-3"
+      dark
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="hidden-md-and-up"/>
       <v-toolbar-title
         class="ml-0 pl-4"
       >
         <router-link to="/">
-          <img style="height: 3.5rem;" src="@/assets/logo.png" />
+          <img class="mt-3" style="max-height: 3rem;" src="@/assets/logo.png" />
         </router-link>
       </v-toolbar-title>
       <v-spacer />
@@ -105,7 +106,7 @@
         <v-menu offset-y>
           <template v-slot:activator="{ on }">
             <v-btn v-on="on" text style="padding-right: 0;">
-              文档<v-icon>mdi-menu-down</v-icon>
+              博客<v-icon>mdi-menu-down</v-icon>
             </v-btn>
           </template>
           <v-list>
@@ -119,13 +120,13 @@
           </v-list>
         </v-menu>
         <v-btn href="/introduce" text>介绍</v-btn>
+        <v-btn href="/" text>帮助</v-btn>
         <v-btn href="/signin" text>登录</v-btn>
         <v-btn href="/signup" text>注册</v-btn>
       </v-toolbar-items>
     </v-app-bar>
     <v-content>
       <v-container
-        class="fill-height"
         fluid
       >
         <!-- If using vue-router -->
@@ -239,36 +240,22 @@ export default {
     dialog: false,
     drawer: null,
     items: [
-      { icon: 'mdi-contacts', text: 'Contacts' },
-      { icon: 'mdi-history', text: 'Frequently contacted' },
-      { icon: 'mdi-content-copy', text: 'Duplicates' },
+      { icon: 'mdi-home', text: '首页' },
       {
         icon: 'mdi-chevron-up',
         'icon-alt': 'mdi-chevron-down',
-        text: 'Labels',
-        model: true,
-        children: [
-          { icon: 'mdi-plus', text: 'Create label' }
-        ]
-      },
-      {
-        icon: 'mdi-chevron-up',
-        'icon-alt': 'mdi-chevron-down',
-        text: 'More',
+        text: '博客',
         model: false,
         children: [
-          { text: 'Import' },
-          { text: 'Export' },
-          { text: 'Print' },
-          { text: 'Undo changes' },
-          { text: 'Other contacts' }
+          { text: '技术博文' },
+          { text: '翻译文档' },
+          { text: '摄影记录' }
         ]
       },
-      { icon: 'mdi-settings', text: 'Settings' },
-      { icon: 'mdi-message', text: 'Send feedback' },
-      { icon: 'mdi-help-circle', text: 'Help' },
-      { icon: 'mdi-cellphone-link', text: 'App downloads' },
-      { icon: 'mdi-keyboard', text: 'Go to the old version' }
+      { icon: 'mdi-message', text: '介绍' },
+      { icon: 'mdi-help-circle', text: '帮助' },
+      { icon: 'mdi-login', text: '登录' },
+      { icon: 'mdi-signup', text: '注册' }
     ],
     menus: [
       {
@@ -280,7 +267,7 @@ export default {
         url: '/translation'
       },
       {
-        title: '旅行游记',
+        title: '摄影记录',
         url: '/travel'
       }
     ]
@@ -289,5 +276,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 </style>
