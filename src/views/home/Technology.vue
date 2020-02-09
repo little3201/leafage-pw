@@ -42,9 +42,9 @@
           </v-list-item-group>
         </v-list>
         <v-pagination
-          v-model="page"
-          :length="15"
-          :total-visible="7"
+          v-model="currentPage"
+          :length="totalPage"
+          :total-visible="totalVisible"
           circle
         >
         </v-pagination>
@@ -105,7 +105,9 @@ export default {
   },
   data () {
     return {
-      page: 1,
+      currentPage: 1,
+      totalPage: 15,
+      totalVisible: 7,
       recommendatories: [
         {
           title: '如何快速掌握Redis技巧',
@@ -220,6 +222,8 @@ export default {
         response => {
           // 设置recommendatories
           this.recommendatories = response.data
+          this.totalPage = response.pages
+          this.totalVisible = Math.ceil(this.totalPage / 2)
         },
         error => {
           // 执行失败的回调函数
