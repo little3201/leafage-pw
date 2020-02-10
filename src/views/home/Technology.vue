@@ -1,6 +1,6 @@
 <template>
   <v-row justify="center" class="my-0">
-    <v-col cols="12" xs="12" sm="12" md="8" lg="8" xl="6">
+    <v-col cols="12" md="8" lg="8" xl="6">
       <v-card class="pa-7">
         <div class="d-flex">
           <h3>
@@ -50,7 +50,7 @@
         </v-pagination>
       </v-card>
     </v-col>
-    <v-col cols="12" xs="0" sm="12" md="4" lg="3" xl="2">
+    <v-col cols="12" md="4" lg="3" xl="2" class="hidden-sm-and-down">
       <v-card class="pa-7">
         <div class="d-flex">
           <h3>

@@ -1,6 +1,6 @@
 <template>
   <v-row justify="center" class="my-0">
-    <v-col cols="12" xs="12" sm="12" md="10" lg="10" xl="8">
+    <v-col cols="12" md="10" lg="10" xl="8">
       <v-card class="pa-7">
         <v-sparkline
           :value="value"

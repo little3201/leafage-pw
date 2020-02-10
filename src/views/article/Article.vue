@@ -1,5 +1,5 @@
 <template>
-  <Details :details="article"></Details>
+  <Details :information="tranlsation"></Details>
 </template>
 
 <script>
