@@ -106,8 +106,8 @@ export default {
   data () {
     return {
       currentPage: 1,
-      totalPage: 15,
-      totalVisible: 7,
+      totalPage: 0,
+      totalVisible: 0,
       recommendatories: [
         {
           title: '如何快速掌握Redis技巧',
@@ -116,101 +116,15 @@ export default {
           avatar: 'https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg',
           comment: '100',
           scan: '23'
-        },
-        {
-          title: '如何快速掌握RocketMQ技巧',
-          author: '布吉岛',
-          subtitle: '一个消息',
-          avatar: 'https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg',
-          comment: '100',
-          scan: '23'
-        },
-        {
-          title: '如何快速掌握Elasticsearch技巧',
-          author: '布吉岛',
-          subtitle: 'Elasticsearch',
-          avatar: 'https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg',
-          comment: '100',
-          scan: '23'
-        },
-        {
-          title: '如何快速掌握Elasticsearch技巧',
-          author: '布吉岛',
-          subtitle: 'Elasticsearch',
-          avatar: 'https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg',
-          comment: '100',
-          scan: '23'
-        },
-        {
-          title: '如何快速掌握Elasticsearch技巧',
-          author: '布吉岛',
-          subtitle: 'Elasticsearch',
-          avatar: 'https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg',
-          comment: '100',
-          scan: '23'
-        },
-        {
-          title: '如何快速掌握Elasticsearch技巧',
-          author: '布吉岛',
-          subtitle: 'Elasticsearch',
-          avatar: 'https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg',
-          comment: '100',
-          scan: '23'
-        },
-        {
-          title: '如何快速掌握Elasticsearch技巧',
-          author: '布吉岛',
-          subtitle: 'Elasticsearch',
-          avatar: 'https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg',
-          comment: '100',
-          scan: '23'
-        },
-        {
-          title: '如何快速掌握Elasticsearch技巧',
-          author: '布吉岛',
-          subtitle: 'Elasticsearch',
-          avatar: 'https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg',
-          comment: '100',
-          scan: '23'
-        },
-        {
-          title: '如何快速掌握Elasticsearch技巧',
-          author: '布吉岛',
-          subtitle: 'Elasticsearch',
-          avatar: 'https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg',
-          comment: '100',
-          scan: '23'
-        },
-        {
-          title: '如何快速掌握Elasticsearch技巧',
-          author: '布吉岛',
-          subtitle: 'Elasticsearch',
-          avatar: 'https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg',
-          comment: '100',
-          scan: '23'
         }
       ],
       topics: [
-        '9012年了，买房买车了没有啊？',
-        '9012年了，对象谈了没有啊？',
         '9012年了，工资现在多少啊？'
       ],
       latest: [
-        '七天快速入门Go语言',
-        '七天快速入门C++语言',
-        '七天快速入门C#语言',
-        '七天快速入门C语言',
-        '七天快速入门Ruby语言',
-        '七天快速入门.net语言',
-        '七天快速入门Docker',
-        '七天快速入门R语言',
-        '七天快速入门VB语言',
         '七天快速入门Python语言'
       ],
       translations: [
-        'Docker',
-        'Prometheus',
-        'Kubernetes',
         'RabbitMQ'
       ]
     }
