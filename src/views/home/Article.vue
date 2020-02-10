@@ -1,10 +1,11 @@
 <template>
-  <Details :information="tranlsation"></Details>
+  <Details :information="article"></Details>
 </template>
 
 <script>
 // @ is an alias to /src
 import Details from '@/components/Details'
+import { queryArticleFunc } from '@/api/method'
 
 export default {
   name: 'article',
@@ -19,6 +20,18 @@ export default {
         content: '',
         author: ''
       }
+    }
+  },
+  methods: {
+    queryArticle () {
+      queryArticleFunc().then(
+        response => {
+          this.article = response.data
+        },
+        error => {
+          alert(error.message)
+        }
+      )
     }
   }
 }

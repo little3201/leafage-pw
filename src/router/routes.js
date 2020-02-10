@@ -25,13 +25,13 @@ export default [
         path: '/introduce',
         name: 'introduce',
         component: () => import('@/views/home/Introduce.vue')
+      },
+      {
+        path: '/article',
+        name: 'article',
+        component: () => import('@/views/home/Article.vue')
       }
     ]
-  },
-  {
-    path: '/article',
-    name: 'article',
-    component: () => import('@/views/article/Article.vue')
   },
   {
     path: '/signin',
