@@ -4,7 +4,7 @@
       <v-card class="pa-7">
         <div class="d-flex">
           <h3>
-            <i class="el-icon-chat-line-square"></i>话题
+            热门话题
           </h3>
           <v-spacer></v-spacer>
           <div>
