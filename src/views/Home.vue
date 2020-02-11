@@ -55,7 +55,7 @@
         fluid
       >
         <!-- If using vue-router -->
-        <v-row justify="center" class="my-0" unlined>
+        <v-row justify="center" class="my-0" outlined hover>
           <v-col cols="12" md="10" lg="10" xl="8">
             <v-card class="pa-7">
               <v-sparkline
@@ -71,9 +71,6 @@
                 :auto-line-width="autoLineWidth"
                 auto-draw
               ></v-sparkline>
-              <h2>{{ introduction.title }}</h2>
-              <p v-html="introduction.content"></p>
-              <p v-html="introduction.contact"></p>
             </v-card>
           </v-col>
         </v-row>
