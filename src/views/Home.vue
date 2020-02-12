@@ -10,16 +10,18 @@
       <v-toolbar-title
         class="ml-0 pl-4"
       >
-        <router-link to="/">
-          <img class="mt-3" style="max-height: 3rem;" src="@/assets/logo.png" />
+        <router-link to="/" class="black--text">
+          <v-img class="mt-3" style="max-height: 3rem;" src="@/assets/logo.png">
+            Abeille
+          </v-img>
         </router-link>
       </v-toolbar-title>
       <v-spacer />
       <v-toolbar-items>
         <v-btn href="/" text>首页</v-btn>
-        <v-btn href="/blog" text>博客系统</v-btn>
+        <v-btn href="/blog" text>博客</v-btn>
         <v-btn href="/resource" text>资源</v-btn>
-        <v-btn href="/" text>帮助</v-btn>
+        <v-btn href="/" text>文档</v-btn>
       </v-toolbar-items>
     </v-app-bar>
     <v-content>
@@ -27,7 +29,17 @@
         fluid
       >
         <v-row>
-          <v-img max-height="500" src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"></v-img>
+          <v-img
+            max-height="500"
+            src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+            class="text-center white--text align-center"
+          >
+            <h1>开放，开源</h1>
+            <p>开放心态，开源代码</p>
+          </v-img>
+        </v-row>
+        <v-row justify="center">
+          <h2>开源项目</h2>
         </v-row>
         <v-row justify="center" class="my-0">
           <v-col cols="12" sm="6" md="4" lg="3" xl="3">
@@ -118,7 +130,9 @@
             </v-card>
           </v-col>
         </v-row>
-        <!-- chart -->
+        <v-row justify="center">
+          <h2>项目热度</h2>
+        </v-row>
         <v-row justify="center" class="my-0">
           <v-col cols="12" md="10" lg="10" xl="8">
             <v-card class="pa-7" outlined>
