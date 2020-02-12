@@ -7,7 +7,6 @@
       light
       flat
     >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="hidden-md-and-up"/>
       <v-toolbar-title
         class="ml-0 pl-4"
       >
@@ -16,7 +15,7 @@
         </router-link>
       </v-toolbar-title>
       <v-spacer />
-      <v-toolbar-items class="hidden-sm-and-down">
+      <v-toolbar-items>
         <v-btn href="/" text>首页</v-btn>
         <v-btn href="/blog" text>博客系统</v-btn>
         <v-btn href="/resource" text>资源</v-btn>
