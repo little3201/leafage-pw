@@ -27,7 +27,9 @@
       <v-container
         fluid
       >
-        <v-img max-height="500" src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"></v-img>
+        <v-row>
+          <v-img max-height="500" src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"></v-img>
+        </v-row>
         <v-row justify="center" class="my-0">
           <v-col cols="12" sm="6" md="4" lg="3" xl="3">
             <v-card
