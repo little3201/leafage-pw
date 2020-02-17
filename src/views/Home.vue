@@ -22,14 +22,16 @@
         <v-btn href="/blog" text>博客</v-btn>
         <v-btn href="/resource" text>资源</v-btn>
         <v-btn href="/" text>文档</v-btn>
+        <v-btn href="/introduce" text>介绍</v-btn>
       </v-toolbar-items>
     </v-app-bar>
     <v-content>
       <v-container
         fluid
+        class="full-height"
       >
-        <!-- <v-row>
-          <v-img max-height="500" src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"></v-img>
+        <v-row class="mt-n3">
+          <v-img max-height="500" src="http://streetwill.co/uploads/post/photo/895/medium_2x_XSFQncCMaiKZwg0vmd6BWU43pRN-3GW7O_4OTFWW9SA.jpg"></v-img>
         </v-row>
         <v-row justify="center" class="my-0">
           <v-col cols="12" sm="6" md="4" lg="3" xl="3">
@@ -42,7 +44,7 @@
               <v-img
                 class="white--text align-end"
                 height="200px"
-                src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+                src="http://streetwill.co/uploads/post/photo/889/medium_2x_iiz_sR-AWZvDOosSq5oB9wdtL78Z_xjDvd0T6fO8A0w.jpg"
               >
                 <v-card-title>abeillt-ui</v-card-title>
               </v-img>
@@ -52,10 +54,10 @@
                 <div>可直接使用，包括源码</div>
               </v-card-text>
               <v-card-actions>
-                <v-btn color="orange" text>
+                <v-btn text>
                   查看演示
                 </v-btn>
-                <v-btn color="orange" text>
+                <v-btn text>
                   源码获取
                 </v-btn>
               </v-card-actions>
@@ -70,8 +72,7 @@
             >
               <v-img
                 class="white--text align-end"
-                height="200px"
-                src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+                height="200px" src="http://streetwill.co/uploads/post/photo/888/medium_2x_8bbMKlZUndWjKSHqvjkVaeyCfLELY4jhN1DO_BVHWxY.jpg"
               >
                 <v-card-title>abeille</v-card-title>
               </v-img>
@@ -81,10 +82,10 @@
                 <div>可直接使用，包括源码</div>
               </v-card-text>
               <v-card-actions>
-                <v-btn color="orange" text>
+                <v-btn text>
                   查看演示
                 </v-btn>
-                <v-btn color="orange" text>
+                <v-btn text>
                   源码获取
                 </v-btn>
               </v-card-actions>
@@ -99,8 +100,7 @@
             >
               <v-img
                 class="white--text align-end"
-                height="200px"
-                src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+                height="200px" src="http://streetwill.co/uploads/post/photo/891/medium_2x_ateyvagPgadu0nptcKm_0kqBCim_BpguWr3TJbQ0nE4.jpg"
               >
                 <v-card-title>abeille-manager</v-card-title>
               </v-img>
@@ -110,18 +110,18 @@
                 <div>可直接使用，包括源码</div>
               </v-card-text>
               <v-card-actions>
-                <v-btn color="orange" text>
+                <v-btn text>
                   查看演示
                 </v-btn>
-                <v-btn color="orange" text>
+                <v-btn text>
                   源码获取
                 </v-btn>
               </v-card-actions>
             </v-card>
           </v-col>
-        </v-row> -->
+        </v-row>
         <!-- chart -->
-        <!-- <v-row justify="center" class="my-0">
+         <v-row justify="center" class="my-0">
           <v-col cols="12" md="10" lg="10" xl="8">
             <v-card class="pa-7" outlined>
               <v-sparkline
@@ -139,8 +139,7 @@
               ></v-sparkline>
             </v-card>
           </v-col>
-        </v-row> -->
-        <router-view></router-view>
+        </v-row>
       </v-container>
     </v-content>
     <v-footer
@@ -150,7 +149,7 @@
       <v-card
         flat
         tile
-        class="indigo lighten-1 white--text text-center"
+        class="blue-grey darken-4 white--text text-center"
       >
         <v-card-text>
           <v-btn

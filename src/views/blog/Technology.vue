@@ -73,7 +73,7 @@
           <v-list-item-group color="primary">
             <v-list-item v-for="(info, index) in authors" :key="index">
               <v-list-item-content>
-                <v-list-item-title v-text="info.name"></v-list-item-title>
+                <v-list-item-title v-text="info.nickname"></v-list-item-title>
               </v-list-item-content>
             </v-list-item>
           </v-list-item-group>
@@ -131,7 +131,7 @@ export default {
       ],
       authors: [
         {
-          nickname: '如何快速掌握Redis技巧',
+          nickname: '布吉岛'
         }
       ],
       translations: [

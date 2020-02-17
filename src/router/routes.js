@@ -4,34 +4,39 @@ export default [
   {
     path: '/',
     name: 'home',
-    component: Home,
+    component: Home
+  },
+  {
+    path: '/blog',
+    name: 'blog',
+    component: () => import('@/views/Blog.vue'),
     children: [
       {
         path: '/technology',
         name: 'technology',
-        component: () => import('@/views/home/Technology.vue')
+        component: () => import('@/views/blog/Technology.vue')
       },
       {
         path: '/translation',
         name: 'translation',
-        component: () => import('@/views/home/Translation.vue')
-      },
-      {
-        path: '/travel',
-        name: 'travel',
-        component: () => import('@/views/home/Travel.vue')
-      },
-      {
-        path: '/introduce',
-        name: 'introduce',
-        component: () => import('@/views/home/Introduce.vue')
+        component: () => import('@/views/blog/Translation.vue')
       },
       {
         path: '/article',
         name: 'article',
-        component: () => import('@/views/home/Article.vue')
+        component: () => import('@/views/blog/Article.vue')
       }
     ]
+  },
+  {
+    path: '/resource',
+    name: 'resource',
+    component: () => import('@/views/Resource.vue')
+  },
+  {
+    path: '/introduce',
+    name: 'introduce',
+    component: () => import('@/views/Introduce.vue')
   },
   {
     path: '/signin',
