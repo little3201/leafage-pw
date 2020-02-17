@@ -18,7 +18,7 @@
                 <v-icon>mdi-flag</v-icon>
               </v-list-item-icon>
               <v-list-item-content>
-                <v-list-item-title v-html="topic"></v-list-item-title>
+                <v-list-item-title v-text="topic"></v-list-item-title>
               </v-list-item-content>
             </v-list-item>
           </v-list-item-group>
@@ -31,13 +31,21 @@
         <v-list three-line>
           <v-list-item-group color="primary">
             <v-list-item v-for="(item, i) in recommendatories" :key="i">
-              <v-list-item-avatar>
+              <!-- <v-list-item-avatar>
                 <v-img :src="item.avatar"></v-img>
-              </v-list-item-avatar>
+              </v-list-item-avatar> -->
               <v-list-item-content>
-                <v-list-item-title v-html="item.title"></v-list-item-title>
-                <v-list-item-subtitle v-html="item.subtitle"></v-list-item-subtitle>
+                <v-list-item-title v-text="item.title"></v-list-item-title>
+                <v-list-item-subtitle v-text="item.subtitle"></v-list-item-subtitle>
+                <v-list-item-subtitle >
+                  <span class="mr-3">作者：{{ item.author }}</span>
+                  <span class="mx-3">评论：{{ item.comment }}</span>
+                  <span class="ml-3">阅读：{{ item.scan }}</span>
+                </v-list-item-subtitle>
               </v-list-item-content>
+              <v-list-item-action>
+                <v-img :src="item.avatar" width="208" height="116" style="border-radius: 3px;"></v-img>
+              </v-list-item-action>
             </v-list-item>
           </v-list-item-group>
         </v-list>
@@ -54,7 +62,7 @@
       <v-card class="pa-7">
         <div class="d-flex">
           <h3>
-            最新编辑
+            编辑推荐
           </h3>
           <v-spacer></v-spacer>
           <a>
@@ -63,9 +71,9 @@
         </div>
         <v-list dense shaped>
           <v-list-item-group color="primary">
-            <v-list-item v-for="(info, index) in latest" :key="index">
+            <v-list-item v-for="(info, index) in authors" :key="index">
               <v-list-item-content>
-                <v-list-item-title v-html="info"></v-list-item-title>
+                <v-list-item-title v-text="info.name"></v-list-item-title>
               </v-list-item-content>
             </v-list-item>
           </v-list-item-group>
@@ -85,7 +93,7 @@
           <v-list-item-group color="primary">
             <v-list-item v-for="(translation, index) in translations" :key="index">
               <v-list-item-content>
-                <v-list-item-title v-html="translation"></v-list-item-title>
+                <v-list-item-title v-text="translation"></v-list-item-title>
               </v-list-item-content>
             </v-list-item>
           </v-list-item-group>
@@ -112,7 +120,7 @@ export default {
         {
           title: '如何快速掌握Redis技巧',
           author: '布吉岛',
-          subtitle: '缓存',
+          subtitle: '缓存缓存缓存缓存缓存缓存缓存缓存缓存缓存缓存缓存缓存缓存缓存缓存缓存缓存缓存缓存缓存缓存',
           avatar: 'https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg',
           comment: '100',
           scan: '23'
@@ -121,8 +129,10 @@ export default {
       topics: [
         '9012年了，工资现在多少啊？'
       ],
-      latest: [
-        '七天快速入门Python语言'
+      authors: [
+        {
+          nickname: '如何快速掌握Redis技巧',
+        }
       ],
       translations: [
         'RabbitMQ'

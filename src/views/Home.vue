@@ -26,7 +26,7 @@
       <v-container
         fluid
       >
-        <v-row>
+        <!-- <v-row>
           <v-img max-height="500" src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"></v-img>
         </v-row>
         <v-row justify="center" class="my-0">
@@ -117,9 +117,9 @@
               </v-card-actions>
             </v-card>
           </v-col>
-        </v-row>
+        </v-row> -->
         <!-- chart -->
-        <v-row justify="center" class="my-0">
+        <!-- <v-row justify="center" class="my-0">
           <v-col cols="12" md="10" lg="10" xl="8">
             <v-card class="pa-7" outlined>
               <v-sparkline
@@ -137,7 +137,8 @@
               ></v-sparkline>
             </v-card>
           </v-col>
-        </v-row>
+        </v-row> -->
+        <router-view></router-view>
       </v-container>
     </v-content>
     <v-footer
@@ -196,7 +197,14 @@ export default {
     type: 'trend',
     autoLineWidth: false,
     dialog: false,
-    drawer: null
+    drawer: null,
+    icons: [
+      'fab fa-facebook',
+      'fab fa-twitter',
+      'fab fa-google-plus',
+      'fab fa-linkedin',
+      'fab fa-instagram'
+    ]
   })
 }
 </script>
