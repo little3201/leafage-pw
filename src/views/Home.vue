@@ -10,16 +10,18 @@
       <v-toolbar-title
         class="ml-0 pl-4"
       >
-        <router-link to="/">
-          <img class="mt-3" style="max-height: 3rem;" src="@/assets/logo.png" />
+        <router-link to="/" class="black--text">
+          <v-img class="mt-3" style="max-height: 3rem;" src="@/assets/logo.png">
+            Abeille
+          </v-img>
         </router-link>
       </v-toolbar-title>
       <v-spacer />
       <v-toolbar-items>
         <v-btn href="/" text>首页</v-btn>
-        <v-btn href="/blog" text>博客系统</v-btn>
+        <v-btn href="/blog" text>博客</v-btn>
         <v-btn href="/resource" text>资源</v-btn>
-        <v-btn href="/" text>帮助</v-btn>
+        <v-btn href="/" text>文档</v-btn>
       </v-toolbar-items>
     </v-app-bar>
     <v-content>
