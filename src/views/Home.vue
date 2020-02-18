@@ -10,19 +10,17 @@
       <v-toolbar-title
         class="ml-0 pl-4"
       >
-        <router-link to="/" class="black--text">
+        <router-link to="/">
           <v-img class="mt-3" style="max-height: 3rem;" src="@/assets/logo.png">
-            Abeille
+            <v-btn text>Abeille</v-btn>
           </v-img>
         </router-link>
       </v-toolbar-title>
-      <v-spacer />
       <v-toolbar-items>
-        <v-btn href="/" text>首页</v-btn>
-        <v-btn href="/blog" text>博客</v-btn>
-        <v-btn href="/resource" text>资源</v-btn>
-        <v-btn href="/" text>文档</v-btn>
-        <v-btn href="/introduce" text>介绍</v-btn>
+        <v-btn href="/blog" text>COMMUNITY</v-btn>
+        <v-btn href="/resource" text>RESOURCE</v-btn>
+        <v-btn href="/" text>DOCUMENT</v-btn>
+        <v-btn href="/introduce" text>ABOUT</v-btn>
       </v-toolbar-items>
     </v-app-bar>
     <v-content>
@@ -38,7 +36,6 @@
             <v-card
               class="mx-auto"
               max-width="400"
-              outlined
               hover
             >
               <v-img
@@ -67,7 +64,6 @@
             <v-card
               class="mx-auto"
               max-width="400"
-              outlined
               hover
             >
               <v-img
@@ -95,7 +91,6 @@
             <v-card
               class="mx-auto"
               max-width="400"
-              outlined
               hover
             >
               <v-img
@@ -143,29 +138,28 @@
       </v-container>
     </v-content>
     <v-footer
-      dark
       padless
     >
       <v-card
         flat
         tile
-        class="blue-grey darken-4 white--text text-center"
+        class="text-center"
       >
         <v-card-text>
           <v-btn
             v-for="icon in icons"
             :key="icon"
-            class="mx-4 white--text"
+            class="mx-4"
             icon
           >
             <v-icon size="24px">{{ icon }}</v-icon>
           </v-btn>
         </v-card-text>
-        <v-card-text class="white--text pt-0">
+        <v-card-text class="pt-0">
           Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
         </v-card-text>
         <v-divider></v-divider>
-        <v-card-text class="white--text">
+        <v-card-text>
           {{ new Date().getFullYear() }} — <strong>Abeille</strong>
         </v-card-text>
       </v-card>
