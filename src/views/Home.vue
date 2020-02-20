@@ -6,14 +6,12 @@
       light
       flat
     >
-      <v-toolbar-title
-        class="ml-0 pl-4"
-      >
-        <router-link to="/">
+      <v-toolbar-items>
+        <v-btn to="/" text class="headline">
           <img style="max-height: 3rem;" src="@/assets/logo.png" />
-          <v-btn text class="headline">Abeille</v-btn>
-        </router-link>
-      </v-toolbar-title>
+          Abeille
+        </v-btn>
+      </v-toolbar-items>
       <v-divider vertical inset></v-divider>
       <v-toolbar-items>
         <v-btn to="/community" text>COMMUNITY</v-btn>
@@ -44,15 +42,13 @@
               max-width="400"
               hover
             >
-<!--
               <v-img
                 class="white--text align-end"
                 height="200px"
                 src="http://streetwill.co/uploads/post/photo/889/medium_2x_iiz_sR-AWZvDOosSq5oB9wdtL78Z_xjDvd0T6fO8A0w.jpg"
               >
--->
                 <v-card-title>abeillt-ui</v-card-title>
-<!--              </v-img>-->
+             </v-img>
               <v-card-subtitle class="pb-0">前台展示</v-card-subtitle>
               <v-card-text class="text--primary">
                 <div>完全开源</div>
@@ -74,14 +70,12 @@
               max-width="400"
               hover
             >
-<!--
               <v-img
                 class="white--text align-end"
                 height="200px" src="http://streetwill.co/uploads/post/photo/888/medium_2x_8bbMKlZUndWjKSHqvjkVaeyCfLELY4jhN1DO_BVHWxY.jpg"
               >
--->
                 <v-card-title>abeille</v-card-title>
-<!--              </v-img>-->
+             </v-img>
               <v-card-subtitle class="pb-0">后端服务</v-card-subtitle>
               <v-card-text class="text--primary">
                 <div>完全开源</div>
@@ -103,14 +97,12 @@
               max-width="400"
               hover
             >
-<!--
               <v-img
                 class="white--text align-end"
                 height="200px" src="http://streetwill.co/uploads/post/photo/891/medium_2x_ateyvagPgadu0nptcKm_0kqBCim_BpguWr3TJbQ0nE4.jpg"
               >
--->
                 <v-card-title>abeille-manager</v-card-title>
-<!--              </v-img>-->
+             </v-img>
               <v-card-subtitle class="pb-0">后台管理</v-card-subtitle>
               <v-card-text class="text--primary">
                 <div>完全开源</div>
@@ -147,7 +139,7 @@
         tile
         class="text-center"
       >
-        <v-card-text>
+        <!-- <v-card-text>
           <v-btn
             v-for="icon in icons"
             :key="icon"
@@ -156,7 +148,7 @@
           >
             <v-icon size="24px">{{ icon }}</v-icon>
           </v-btn>
-        </v-card-text>
+        </v-card-text> -->
         <v-card-text class="pt-0">
           Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
         </v-card-text>
@@ -174,6 +166,7 @@
 <script>
 export default {
   data: () => ({
+    drawer: null
   })
 }
 </script>

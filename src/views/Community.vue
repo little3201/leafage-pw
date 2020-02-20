@@ -83,13 +83,13 @@
       app
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="hidden-md-and-up"/>
-      <v-toolbar-title
-        class="ml-0 pl-4"
-      >
-        <router-link to="/">
-          <img class="mt-3" style="max-height: 3rem;" src="@/assets/logo.png" />
-        </router-link>
-      </v-toolbar-title>
+      <v-toolbar-items>
+        <v-btn to="/" text class="headline">
+          <img style="max-height: 3rem;" src="@/assets/logo.png" />
+          Abeille
+        </v-btn>
+      </v-toolbar-items>
+      <v-divider vertical inset></v-divider>
       <v-toolbar-items>
         <v-btn to="/community" text>COMMUNITY</v-btn>
         <v-btn to="/resource" text>RESOURCE</v-btn>
@@ -136,29 +136,30 @@
 export default {
   data: () => ({
     drawer: null,
-    menus: [
+    activeClass: '',
+    items: [
       {
-        title: 'COMMUNITY',
+        text: 'COMMUNITY',
         url: '/community'
       },
       {
-        title: 'RESOURCE',
+        text: 'RESOURCE',
         url: '/resource'
       },
       {
-        title: 'DOCUMENT',
+        text: 'DOCUMENT',
         url: '/'
       },
       {
-        title: 'ABOUT',
+        text: 'ABOUT',
         url: '/introduce'
       },
       {
-        title: 'SIGN IN',
+        text: 'SIGN IN',
         url: '/signin'
       },
       {
-        title: 'SIGN UP',
+        text: 'SIGN UP',
         url: '/signup'
       }
     ]

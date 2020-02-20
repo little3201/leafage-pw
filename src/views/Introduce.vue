@@ -6,14 +6,12 @@
       light
       flat
     >
-      <v-toolbar-title
-        class="ml-0 pl-4"
-      >
-        <router-link to="/">
+      <v-toolbar-items>
+        <v-btn to="/" text class="headline">
           <img style="max-height: 3rem;" src="@/assets/logo.png" />
-          <v-btn text class="headline">Abeille</v-btn>
-        </router-link>
-      </v-toolbar-title>
+          Abeille
+        </v-btn>
+      </v-toolbar-items>
       <v-divider vertical inset></v-divider>
       <v-toolbar-items>
         <v-btn to="/community" text>COMMUNITY</v-btn>
@@ -46,7 +44,7 @@
         tile
         class="text-center"
       >
-        <v-card-text>
+        <!-- <v-card-text>
           <v-btn
             v-for="icon in icons"
             :key="icon"
@@ -55,7 +53,7 @@
           >
             <v-icon size="24px">{{ icon }}</v-icon>
           </v-btn>
-        </v-card-text>
+        </v-card-text> -->
         <v-card-text class="pt-0">
           Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
         </v-card-text>
@@ -79,25 +77,29 @@ export default {
   data () {
     return {
       drawer: null,
-      menus: [
+      items: [
         {
-          title: '首页',
+          text: 'COMMUNITY',
+          url: '/community'
+        },
+        {
+          text: 'RESOURCE',
+          url: '/resource'
+        },
+        {
+          text: 'DOCUMENT',
           url: '/'
         },
         {
-          title: '博客',
-          url: '/blog'
+          text: 'ABOUT',
+          url: '/introduce'
         },
         {
-          title: '翻译',
-          url: '/translation'
-        },
-        {
-          title: '登录',
+          text: 'SIGN IN',
           url: '/signin'
         },
         {
-          title: '注册',
+          text: 'SIGN UP',
           url: '/signup'
         }
       ],
