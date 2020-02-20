@@ -7,4 +7,7 @@
 a {
   text-decoration: none;
 }
+v-btn:before {
+  background-color: white;
+}
 </style>

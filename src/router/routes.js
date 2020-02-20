@@ -12,11 +12,6 @@ export default [
     component: () => import('@/views/Community.vue'),
     children: [
       {
-        path: '/technology',
-        name: 'technology',
-        component: () => import('@/views/community/Technology.vue')
-      },
-      {
         path: '/translation',
         name: 'translation',
         component: () => import('@/views/community/Translation.vue')
