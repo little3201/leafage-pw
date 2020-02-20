@@ -2,7 +2,6 @@
   <v-app app>
     <v-app-bar
       :clipped-left="$vuetify.breakpoint.lgAndUp"
-      app
       color="white"
       light
       flat
@@ -11,16 +10,16 @@
         class="ml-0 pl-4"
       >
         <router-link to="/">
-          <v-img class="mt-3" style="max-height: 3rem;" src="@/assets/logo.png">
-            <v-btn text>Abeille</v-btn>
-          </v-img>
+          <img style="max-height: 3rem;" src="@/assets/logo.png" />
+          <v-btn text class="headline">Abeille</v-btn>
         </router-link>
       </v-toolbar-title>
+      <v-divider vertical inset></v-divider>
       <v-toolbar-items>
-        <v-btn href="/blog" text>COMMUNITY</v-btn>
-        <v-btn href="/resource" text>RESOURCE</v-btn>
-        <v-btn href="/" text>DOCUMENT</v-btn>
-        <v-btn href="/introduce" text>ABOUT</v-btn>
+        <v-btn to="/community" text>COMMUNITY</v-btn>
+        <v-btn to="/resource" text>RESOURCE</v-btn>
+        <v-btn to="/document" text>DOCUMENT</v-btn>
+        <v-btn to="/introduce" text>ABOUT</v-btn>
       </v-toolbar-items>
     </v-app-bar>
     <v-content>
@@ -29,7 +28,14 @@
         class="full-height"
       >
         <v-row class="mt-n3">
-          <v-img max-height="500" src="http://streetwill.co/uploads/post/photo/895/medium_2x_XSFQncCMaiKZwg0vmd6BWU43pRN-3GW7O_4OTFWW9SA.jpg"></v-img>
+          <v-img max-height="600"
+            class="text-center white--text align-center"
+            src="http://streetwill.co/uploads/post/photo/895/medium_2x_XSFQncCMaiKZwg0vmd6BWU43pRN-3GW7O_4OTFWW9SA.jpg">
+            <p class="display-4 font-weight-bold">The beautiful、powerful products</p>
+            <p class="headline font-weight-bold">The beautifuf and powerful products</p>
+            <v-btn to="/document" color="orange" class="mx-6" x-large>DOCUMENT</v-btn>
+            <v-btn to="/introduce" class="mx-6" x-large>ABOUT US</v-btn>
+          </v-img>
         </v-row>
         <v-row justify="center" class="my-0">
           <v-col cols="12" sm="6" md="4" lg="3" xl="3">
@@ -38,13 +44,15 @@
               max-width="400"
               hover
             >
+<!--
               <v-img
                 class="white--text align-end"
                 height="200px"
                 src="http://streetwill.co/uploads/post/photo/889/medium_2x_iiz_sR-AWZvDOosSq5oB9wdtL78Z_xjDvd0T6fO8A0w.jpg"
               >
+-->
                 <v-card-title>abeillt-ui</v-card-title>
-              </v-img>
+<!--              </v-img>-->
               <v-card-subtitle class="pb-0">前台展示</v-card-subtitle>
               <v-card-text class="text--primary">
                 <div>完全开源</div>
@@ -66,12 +74,14 @@
               max-width="400"
               hover
             >
+<!--
               <v-img
                 class="white--text align-end"
                 height="200px" src="http://streetwill.co/uploads/post/photo/888/medium_2x_8bbMKlZUndWjKSHqvjkVaeyCfLELY4jhN1DO_BVHWxY.jpg"
               >
+-->
                 <v-card-title>abeille</v-card-title>
-              </v-img>
+<!--              </v-img>-->
               <v-card-subtitle class="pb-0">后端服务</v-card-subtitle>
               <v-card-text class="text--primary">
                 <div>完全开源</div>
@@ -93,12 +103,14 @@
               max-width="400"
               hover
             >
+<!--
               <v-img
                 class="white--text align-end"
                 height="200px" src="http://streetwill.co/uploads/post/photo/891/medium_2x_ateyvagPgadu0nptcKm_0kqBCim_BpguWr3TJbQ0nE4.jpg"
               >
+-->
                 <v-card-title>abeille-manager</v-card-title>
-              </v-img>
+<!--              </v-img>-->
               <v-card-subtitle class="pb-0">后台管理</v-card-subtitle>
               <v-card-text class="text--primary">
                 <div>完全开源</div>
@@ -115,23 +127,13 @@
             </v-card>
           </v-col>
         </v-row>
-        <!-- chart -->
-         <v-row justify="center" class="my-0">
-          <v-col cols="12" md="10" lg="10" xl="8">
-            <v-card class="pa-7" outlined>
-              <v-sparkline
-                :value="value"
-                :gradient="gradient"
-                :smooth="radius || false"
-                :padding="padding"
-                :line-width="width"
-                :stroke-linecap="lineCap"
-                :gradient-direction="gradientDirection"
-                :fill="fill"
-                :type="type"
-                :auto-line-width="autoLineWidth"
-                auto-draw
-              ></v-sparkline>
+        <v-row justify="center">
+          <v-col cols="12">
+            <v-card class="ma-4 grey darken-3 text-center" height="200">
+              <v-card-text class="mx-12 white--text display-1 font-weight-bold">Get started with Abeille today
+                <v-btn color="orange" class="mx-8" x-large>try to free</v-btn>
+                <v-btn outlined color="white" x-large>learn more</v-btn>
+              </v-card-text>
             </v-card>
           </v-col>
         </v-row>
@@ -160,7 +162,9 @@
         </v-card-text>
         <v-divider></v-divider>
         <v-card-text>
-          {{ new Date().getFullYear() }} — <strong>Abeille</strong>
+          <span>
+            Copyright &copy; {{ new Date().getFullYear() }} · 陕ICP备19017836号-1 · Powerd By <strong>布吉岛</strong>
+          </span>
         </v-card-text>
       </v-card>
     </v-footer>
@@ -168,38 +172,8 @@
 </template>
 
 <script>
-
-const gradients = [
-  ['#222'],
-  ['#42b3f4'],
-  ['red', 'orange', 'yellow'],
-  ['purple', 'violet'],
-  ['#00c6ff', '#F0F', '#FF0'],
-  ['#f72047', '#ffd200', '#1feaea']
-]
-
 export default {
   data: () => ({
-    width: 2,
-    radius: 10,
-    padding: 8,
-    lineCap: 'round',
-    gradient: gradients[5],
-    value: [0, 2, 5, 9, 5, 10, 3, 5, 0, 0, 1, 8, 2, 9, 0],
-    gradientDirection: 'top',
-    gradients,
-    fill: false,
-    type: 'trend',
-    autoLineWidth: false,
-    dialog: false,
-    drawer: null,
-    icons: [
-      'fab fa-facebook',
-      'fab fa-twitter',
-      'fab fa-google-plus',
-      'fab fa-linkedin',
-      'fab fa-instagram'
-    ]
   })
 }
 </script>

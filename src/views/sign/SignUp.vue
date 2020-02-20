@@ -43,13 +43,13 @@
               </p>
               <p class="mb-0">第三方账号登录</p>
               <p class="mb-0">
-                <v-btn text icon :x-large="true" color="blue">
+                <v-btn text icon x-large color="blue">
                   <v-icon>mdi-twitter</v-icon>
                 </v-btn>
-                <v-btn text icon :x-large="true" color="black">
+                <v-btn text icon x-large color="black">
                   <v-icon>mdi-github-circle</v-icon>
                 </v-btn>
-                <v-btn text icon :x-large="true" color="green">
+                <v-btn text icon x-large color="green">
                   <v-icon>mdi-wechat</v-icon>
                 </v-btn>
               </p>

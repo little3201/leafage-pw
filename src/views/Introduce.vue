@@ -1,119 +1,32 @@
 <template>
   <v-app app>
-    <v-navigation-drawer
-      v-model="drawer"
-      :clipped="$vuetify.breakpoint.lgAndUp"
-      app
-      temporary
-    >
-      <v-list dense>
-        <template v-for="item in items">
-          <v-row
-            v-if="item.heading"
-            :key="item.heading"
-            align="center"
-          >
-            <v-col cols="6">
-              <v-subheader v-if="item.heading">
-                {{ item.heading }}
-              </v-subheader>
-            </v-col>
-            <v-col
-              cols="6"
-              class="text-center"
-            >
-              <a
-                href="#!"
-                class="body-2 black--text"
-              >EDIT</a>
-            </v-col>
-          </v-row>
-          <v-list-group
-            v-else-if="item.children"
-            :key="item.text"
-            v-model="item.model"
-            :prepend-icon="item.model ? item.icon : item['icon-alt']"
-            append-icon=""
-          >
-            <template v-slot:activator>
-              <v-list-item-content>
-                <v-list-item-title>
-                  {{ item.text }}
-                </v-list-item-title>
-              </v-list-item-content>
-            </template>
-            <v-list-item
-              v-for="(child, i) in item.children"
-              :key="i"
-              link
-            >
-              <v-list-item-action v-if="child.icon">
-                <v-icon>{{ child.icon }}</v-icon>
-              </v-list-item-action>
-              <v-list-item-content>
-                <v-list-item-title>
-                  {{ child.text }}
-                </v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-          </v-list-group>
-          <v-list-item
-            v-else
-            :key="item.text"
-            link
-          >
-            <v-list-item-action>
-              <v-icon>{{ item.icon }}</v-icon>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title>
-                {{ item.text }}
-              </v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </template>
-      </v-list>
-    </v-navigation-drawer>
-
     <v-app-bar
       :clipped-left="$vuetify.breakpoint.lgAndUp"
-      app
-      color="blue darken-3"
-      dark
+      color="white"
+      light
+      flat
     >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="hidden-md-and-up"/>
       <v-toolbar-title
         class="ml-0 pl-4"
       >
         <router-link to="/">
-          <img class="mt-3" style="max-height: 3rem;" src="@/assets/logo.png" />
+          <img style="max-height: 3rem;" src="@/assets/logo.png" />
+          <v-btn text class="headline">Abeille</v-btn>
         </router-link>
       </v-toolbar-title>
-      <v-spacer />
-      <v-text-field
-        flat
-        solo-inverted
-        hide-details
-        prepend-inner-icon="mdi-magnify"
-        label="Search"
-        class="hidden-sm-and-down"
-        rounded
-        dense
-      />
-      <v-spacer />
-      <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn href="/" text>首页</v-btn>
-        <v-btn href="/blog" text>博客</v-btn>
-        <v-btn href="/translation" text>翻译</v-btn>
-        <v-btn href="/signin" text>登录</v-btn>
-        <v-btn href="/signup" text>注册</v-btn>
+      <v-divider vertical inset></v-divider>
+      <v-toolbar-items>
+        <v-btn to="/community" text>COMMUNITY</v-btn>
+        <v-btn to="/resource" text>RESOURCE</v-btn>
+        <v-btn to="/document" text>DOCUMENT</v-btn>
+        <v-btn to="/introduce" text>ABOUT</v-btn>
       </v-toolbar-items>
     </v-app-bar>
     <v-content>
       <v-container
         fluid
+        class="full-height"
       >
-        <!-- If using vue-router -->
         <v-row justify="center" class="my-0">
           <v-col cols="12" md="10" lg="10" xl="8">
             <v-card class="pa-7">
@@ -125,16 +38,35 @@
         </v-row>
       </v-container>
     </v-content>
-    <v-btn
-      bottom
-      color="pink"
-      dark
-      fab
-      fixed
-      right
+    <v-footer
+      padless
     >
-      <v-icon>mdi-plus</v-icon>
-    </v-btn>
+      <v-card
+        flat
+        tile
+        class="text-center"
+      >
+        <v-card-text>
+          <v-btn
+            v-for="icon in icons"
+            :key="icon"
+            class="mx-4"
+            icon
+          >
+            <v-icon size="24px">{{ icon }}</v-icon>
+          </v-btn>
+        </v-card-text>
+        <v-card-text class="pt-0">
+          Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        </v-card-text>
+        <v-divider></v-divider>
+        <v-card-text>
+          <span>
+            Copyright &copy; {{ new Date().getFullYear() }} · 陕ICP备19017836号-1 · Powerd By <strong>布吉岛</strong>
+          </span>
+        </v-card-text>
+      </v-card>
+    </v-footer>
   </v-app>
 </template>
 

@@ -7,24 +7,24 @@ export default [
     component: Home
   },
   {
-    path: '/blog',
-    name: 'blog',
-    component: () => import('@/views/Blog.vue'),
+    path: '/community',
+    name: 'community',
+    component: () => import('@/views/Community.vue'),
     children: [
       {
         path: '/technology',
         name: 'technology',
-        component: () => import('@/views/blog/Technology.vue')
+        component: () => import('@/views/community/Technology.vue')
       },
       {
         path: '/translation',
         name: 'translation',
-        component: () => import('@/views/blog/Translation.vue')
+        component: () => import('@/views/community/Translation.vue')
       },
       {
         path: '/article',
         name: 'article',
-        component: () => import('@/views/blog/Article.vue')
+        component: () => import('@/views/community/Article.vue')
       }
     ]
   },

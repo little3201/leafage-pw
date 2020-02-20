@@ -77,9 +77,10 @@
 
     <v-app-bar
       :clipped-left="$vuetify.breakpoint.lgAndUp"
+      color="white"
+      light
+      flat
       app
-      color="blue darken-3"
-      dark
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="hidden-md-and-up"/>
       <v-toolbar-title
@@ -89,6 +90,12 @@
           <img class="mt-3" style="max-height: 3rem;" src="@/assets/logo.png" />
         </router-link>
       </v-toolbar-title>
+      <v-toolbar-items>
+        <v-btn to="/community" text>COMMUNITY</v-btn>
+        <v-btn to="/resource" text>RESOURCE</v-btn>
+        <v-btn to="/" text>DOCUMENT</v-btn>
+        <v-btn to="/introduce" text>ABOUT</v-btn>
+      </v-toolbar-items>
       <v-spacer />
       <v-text-field
         flat
@@ -101,13 +108,8 @@
         dense
       />
       <v-spacer />
-      <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn href="/" text>首页</v-btn>
-        <v-btn href="/blog" text>博客</v-btn>
-        <v-btn href="/translation" text>翻译</v-btn>
-        <v-btn href="/signin" text>登录</v-btn>
-        <v-btn href="/signup" text>注册</v-btn>
-      </v-toolbar-items>
+      <v-btn depressed to="/signin" text>SIGN IN</v-btn>
+      <v-btn depressed to="/signup" text>SIGN UP</v-btn>
     </v-app-bar>
     <v-content>
       <v-container
@@ -136,23 +138,27 @@ export default {
     drawer: null,
     menus: [
       {
-        title: '首页',
+        title: 'COMMUNITY',
+        url: '/community'
+      },
+      {
+        title: 'RESOURCE',
+        url: '/resource'
+      },
+      {
+        title: 'DOCUMENT',
         url: '/'
       },
       {
-        title: '博客',
-        url: '/blog'
+        title: 'ABOUT',
+        url: '/introduce'
       },
       {
-        title: '翻译',
-        url: '/translation'
-      },
-      {
-        title: '登录',
+        title: 'SIGN IN',
         url: '/signin'
       },
       {
-        title: '注册',
+        title: 'SIGN UP',
         url: '/signup'
       }
     ]
