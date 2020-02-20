@@ -30,95 +30,95 @@
             class="text-center white--text align-center"
             src="http://streetwill.co/uploads/post/photo/895/medium_2x_XSFQncCMaiKZwg0vmd6BWU43pRN-3GW7O_4OTFWW9SA.jpg">
             <p class="display-4 font-weight-bold">The beautiful、powerful products</p>
-            <p class="headline font-weight-bold">The beautifuf and powerful products</p>
+            <p class="headline font-weight-bold my-12">Base with Vue.js，development by vuetifyjs、Responsive、Metrial Design</p>
             <v-btn to="/document" color="orange" class="mx-6" x-large>DOCUMENT</v-btn>
             <v-btn to="/introduce" class="mx-6" x-large>ABOUT US</v-btn>
           </v-img>
         </v-row>
+        <p class="text-center ma-12 display-2">Products</p>
         <v-row justify="center" class="my-0">
-          <v-col cols="12" sm="6" md="4" lg="3" xl="3">
-            <v-card
-              class="mx-auto"
-              max-width="400"
-              hover
-            >
-              <v-img
-                class="white--text align-end"
-                height="200px"
-                src="http://streetwill.co/uploads/post/photo/889/medium_2x_iiz_sR-AWZvDOosSq5oB9wdtL78Z_xjDvd0T6fO8A0w.jpg"
+          <v-col cols="12">
+            <v-row justify="center">
+              <v-card
+                class="mx-3"
+                max-width="360"
+                hover
               >
-                <v-card-title>abeillt-ui</v-card-title>
-             </v-img>
-              <v-card-subtitle class="pb-0">前台展示</v-card-subtitle>
-              <v-card-text class="text--primary">
-                <div>完全开源</div>
-                <div>可直接使用，包括源码</div>
-              </v-card-text>
-              <v-card-actions>
-                <v-btn text>
-                  查看演示
-                </v-btn>
-                <v-btn text>
-                  源码获取
-                </v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-col>
-          <v-col cols="12" sm="6" md="4" lg="3" xl="3">
-            <v-card
-              class="mx-auto"
-              max-width="400"
-              hover
-            >
-              <v-img
-                class="white--text align-end"
-                height="200px" src="http://streetwill.co/uploads/post/photo/888/medium_2x_8bbMKlZUndWjKSHqvjkVaeyCfLELY4jhN1DO_BVHWxY.jpg"
+                <v-img
+                  class="white--text align-end"
+                  height="200px"
+                  src="http://streetwill.co/uploads/post/photo/889/medium_2x_iiz_sR-AWZvDOosSq5oB9wdtL78Z_xjDvd0T6fO8A0w.jpg"
+                >
+                  <v-card-title>abeillt-ui</v-card-title>
+               </v-img>
+                <v-card-subtitle class="pb-0">前台展示</v-card-subtitle>
+                <v-card-text class="text--primary">
+                  <div>完全开源</div>
+                  <div>可直接使用，包括源码</div>
+                </v-card-text>
+                <v-card-actions>
+                  <v-btn text>
+                    查看演示
+                  </v-btn>
+                  <v-btn text>
+                    源码获取
+                  </v-btn>
+                </v-card-actions>
+              </v-card>
+              <v-card
+                class="mx-3"
+                max-width="360"
+                hover
               >
-                <v-card-title>abeille</v-card-title>
-             </v-img>
-              <v-card-subtitle class="pb-0">后端服务</v-card-subtitle>
-              <v-card-text class="text--primary">
-                <div>完全开源</div>
-                <div>可直接使用，包括源码</div>
-              </v-card-text>
-              <v-card-actions>
-                <v-btn text>
-                  查看演示
-                </v-btn>
-                <v-btn text>
-                  源码获取
-                </v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-col>
-          <v-col cols="12" sm="6" md="4" lg="3" xl="3">
-            <v-card
-              class="mx-auto"
-              max-width="400"
-              hover
-            >
-              <v-img
-                class="white--text align-end"
-                height="200px" src="http://streetwill.co/uploads/post/photo/891/medium_2x_ateyvagPgadu0nptcKm_0kqBCim_BpguWr3TJbQ0nE4.jpg"
+                <v-img
+                  class="white--text align-end"
+                  height="200px" src="http://streetwill.co/uploads/post/photo/888/medium_2x_8bbMKlZUndWjKSHqvjkVaeyCfLELY4jhN1DO_BVHWxY.jpg"
+                >
+                  <v-card-title>abeille</v-card-title>
+               </v-img>
+                <v-card-subtitle class="pb-0">后端服务</v-card-subtitle>
+                <v-card-text class="text--primary">
+                  <div>完全开源</div>
+                  <div>可直接使用，包括源码</div>
+                </v-card-text>
+                <v-card-actions>
+                  <v-btn text>
+                    查看演示
+                  </v-btn>
+                  <v-btn text>
+                    源码获取
+                  </v-btn>
+                </v-card-actions>
+              </v-card>
+              <v-card
+                class="mx-3"
+                max-width="360"
+                hover
               >
-                <v-card-title>abeille-manager</v-card-title>
-             </v-img>
-              <v-card-subtitle class="pb-0">后台管理</v-card-subtitle>
-              <v-card-text class="text--primary">
-                <div>完全开源</div>
-                <div>可直接使用，包括源码</div>
-              </v-card-text>
-              <v-card-actions>
-                <v-btn text>
-                  查看演示
-                </v-btn>
-                <v-btn text>
-                  源码获取
-                </v-btn>
-              </v-card-actions>
-            </v-card>
+                <v-img
+                  class="white--text align-end"
+                  height="200px" src="http://streetwill.co/uploads/post/photo/891/medium_2x_ateyvagPgadu0nptcKm_0kqBCim_BpguWr3TJbQ0nE4.jpg"
+                >
+                  <v-card-title>abeille-manager</v-card-title>
+               </v-img>
+                <v-card-subtitle class="pb-0">后台管理</v-card-subtitle>
+                <v-card-text class="text--primary">
+                  <div>完全开源</div>
+                  <div>可直接使用，包括源码</div>
+                </v-card-text>
+                <v-card-actions>
+                  <v-btn text>
+                    查看演示
+                  </v-btn>
+                  <v-btn text>
+                    源码获取
+                  </v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-row>
           </v-col>
         </v-row>
+        <p class="text-center ma-12 display-2">About</p>
         <v-row justify="center">
           <v-col cols="12">
             <v-card class="ma-4 grey darken-3 text-center" height="200">
