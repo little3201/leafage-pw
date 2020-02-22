@@ -1,25 +1,6 @@
 <template>
   <v-app app>
-    <v-app-bar
-      :clipped-left="$vuetify.breakpoint.lgAndUp"
-      color="white"
-      light
-      flat
-    >
-      <v-toolbar-items>
-        <v-btn to="/" text class="headline">
-          <img style="max-height: 3rem;" src="@/assets/logo.png" />
-          Abeille
-        </v-btn>
-      </v-toolbar-items>
-      <v-divider vertical inset></v-divider>
-      <v-toolbar-items>
-        <v-btn to="/community" text>COMMUNITY</v-btn>
-        <v-btn to="/resource" text>RESOURCE</v-btn>
-        <v-btn to="/document" text>DOCUMENT</v-btn>
-        <v-btn to="/introduce" text>ABOUT</v-btn>
-      </v-toolbar-items>
-    </v-app-bar>
+    <Headers />
     <v-content>
       <v-container
         fluid
@@ -30,8 +11,8 @@
             class="text-center white--text align-center"
             src="http://streetwill.co/uploads/post/photo/895/medium_2x_XSFQncCMaiKZwg0vmd6BWU43pRN-3GW7O_4OTFWW9SA.jpg">
             <p class="display-4 font-weight-bold">The beautiful、powerful products</p>
-            <p class="headline font-weight-bold my-12">Base with Vue.js，development by vuetifyjs、Responsive、Metrial Design</p>
-            <v-btn to="/document" color="orange" class="mx-6" x-large>DOCUMENT</v-btn>
+            <p class="headline font-weight-bold my-12">Base with Vue.js、vuetifyjs and is Responsive、Beautiful</p>
+            <v-btn to="/document" color="primary" class="mx-6" x-large>DOCUMENT</v-btn>
             <v-btn to="/introduce" class="mx-6" x-large>ABOUT US</v-btn>
           </v-img>
         </v-row>
@@ -41,7 +22,7 @@
             <v-row justify="center">
               <v-card
                 class="mx-3"
-                max-width="360"
+                max-width="344"
                 hover
               >
                 <v-img
@@ -67,7 +48,7 @@
               </v-card>
               <v-card
                 class="mx-3"
-                max-width="360"
+                max-width="344"
                 hover
               >
                 <v-img
@@ -92,7 +73,7 @@
               </v-card>
               <v-card
                 class="mx-3"
-                max-width="360"
+                max-width="344"
                 hover
               >
                 <v-img
@@ -123,7 +104,7 @@
           <v-col cols="12">
             <v-card class="ma-4 grey darken-3 text-center" height="200">
               <v-card-text class="mx-12 white--text display-1 font-weight-bold">Get started with Abeille today
-                <v-btn color="orange" class="mx-8" x-large>try to free</v-btn>
+                <v-btn color="primary" class="mx-8" x-large>try to free</v-btn>
                 <v-btn outlined color="white" x-large>learn more</v-btn>
               </v-card-text>
             </v-card>
@@ -164,7 +145,13 @@
 </template>
 
 <script>
+import Headers from '@/components/Headers'
+
 export default {
+  name: 'home',
+  components: {
+    Headers
+  },
   data: () => ({
     drawer: null
   })

@@ -1,5 +1,7 @@
 import Vue from 'vue'
+import { Ripple } from 'vuetify/lib/directives'
 import '@mdi/font/css/materialdesignicons.css'
+import colors from 'vuetify/lib/util/colors'
 
 import Vuetify, {
   VApp,
@@ -47,7 +49,6 @@ import Vuetify, {
   VToolbarTitle,
   VToolbarItems
 } from 'vuetify/lib'
-import { Ripple } from 'vuetify/lib/directives'
 
 Vue.use(Vuetify, {
   components: {
@@ -102,13 +103,13 @@ Vue.use(Vuetify, {
 })
 
 const opts = {
-//  theme: {
-//    themes: {
-//      light: {
-//        primary: '#faad14'
-//      }
-//    }
-//  },
+  theme: {
+    themes: {
+      light: {
+        primary: colors.amber.darken4
+      }
+    }
+  },
   icons: {
     iconfont: 'mdi' // default - only for display purposes
   }

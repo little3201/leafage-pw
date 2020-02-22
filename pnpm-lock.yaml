@@ -4,7 +4,7 @@ dependencies:
   nprogress: 0.2.0
   vue: 2.6.11
   vue-router: 3.1.5
-  vuetify: 2.2.12_vue@2.6.11
+  vuetify: 2.2.14_vue@2.6.11
   vuex: 3.1.2
 devDependencies:
   '@mdi/font': 4.9.95
@@ -1003,7 +1003,7 @@ packages:
     dependencies:
       cssnano: 4.1.10
       cssnano-preset-default: 4.0.7
-      postcss: 7.0.26
+      postcss: 7.0.27
       webpack: 4.41.6_webpack@4.41.6
     dev: true
     peerDependencies:
@@ -1095,7 +1095,7 @@ packages:
     dependencies:
       '@types/events': 3.0.0
       '@types/minimatch': 3.0.3
-      '@types/node': 13.7.1
+      '@types/node': 13.7.4
     dev: true
     resolution:
       integrity: sha1-qlmhxuP7xCHgfM0xqUTDDrpSFXU=
@@ -1105,11 +1105,11 @@ packages:
     resolution:
       integrity: sha1-PcoOPzOyAPx9ETnAzZbBJoyt/Z0=
       tarball: '@types/minimatch/download/@types/minimatch-3.0.3.tgz'
-  /@types/node/13.7.1:
+  /@types/node/13.7.4:
     dev: true
     resolution:
-      integrity: sha1-I46zSmZDG3HSqt3qp9sWbyWXGg0=
-      tarball: '@types/node/download/@types/node-13.7.1.tgz'
+      integrity: sha1-dsPLOhKQlRD1Ll3ASmKYzflQT/0=
+      tarball: '@types/node/download/@types/node-13.7.4.tgz'
   /@types/normalize-package-data/2.4.0:
     dev: true
     resolution:
@@ -1331,7 +1331,7 @@ packages:
       lodash.transform: 4.6.0
       mini-css-extract-plugin: 0.9.0_webpack@4.41.6
       minimist: 1.2.0
-      pnp-webpack-plugin: 1.6.0
+      pnp-webpack-plugin: 1.6.4
       portfinder: 1.0.25
       postcss-loader: 3.0.0
       ssri: 7.1.0
@@ -1381,7 +1381,7 @@ packages:
       hash-sum: 1.0.2
       lru-cache: 4.1.5
       merge-source-map: 1.1.0
-      postcss: 7.0.26
+      postcss: 7.0.27
       postcss-selector-parser: 6.0.2
       prettier: 1.19.1
       source-map: 0.6.1
@@ -1643,25 +1643,25 @@ packages:
     resolution:
       integrity: sha1-2y/nJG5Tb0DZtUQqOeEX191qJOA=
       tarball: aggregate-error/download/aggregate-error-3.0.1.tgz
-  /ajv-errors/1.0.1_ajv@6.11.0:
+  /ajv-errors/1.0.1_ajv@6.12.0:
     dependencies:
-      ajv: 6.11.0
+      ajv: 6.12.0
     dev: true
     peerDependencies:
       ajv: '>=5.0.0'
     resolution:
       integrity: sha1-81mGrOuRr63sQQL72FAUlQzvpk0=
       tarball: ajv-errors/download/ajv-errors-1.0.1.tgz
-  /ajv-keywords/3.4.1_ajv@6.11.0:
+  /ajv-keywords/3.4.1_ajv@6.12.0:
     dependencies:
-      ajv: 6.11.0
+      ajv: 6.12.0
     dev: true
     peerDependencies:
       ajv: ^6.9.1
     resolution:
       integrity: sha1-75FuJxxkrBIXH9g4TqrmsjRYVNo=
       tarball: ajv-keywords/download/ajv-keywords-3.4.1.tgz
-  /ajv/6.11.0:
+  /ajv/6.12.0:
     dependencies:
       fast-deep-equal: 3.1.1
       fast-json-stable-stringify: 2.1.0
@@ -1669,8 +1669,8 @@ packages:
       uri-js: 4.2.2
     dev: true
     resolution:
-      integrity: sha1-w2B8vIrjktilpTbyWyH45fP4f+k=
-      tarball: ajv/download/ajv-6.11.0.tgz
+      integrity: sha1-BtYLlth7hFSlrauobnhU2mKdtLc=
+      tarball: ajv/download/ajv-6.12.0.tgz
   /alphanum-sort/1.0.2:
     dev: true
     resolution:
@@ -1959,12 +1959,12 @@ packages:
   /autoprefixer/9.7.4:
     dependencies:
       browserslist: 4.8.7
-      caniuse-lite: 1.0.30001027
+      caniuse-lite: 1.0.30001028
       chalk: 2.4.2
       normalize-range: 0.1.2
       num2fraction: 1.2.2
-      postcss: 7.0.26
-      postcss-value-parser: 4.0.2
+      postcss: 7.0.27
+      postcss-value-parser: 4.0.3
     dev: true
     engines:
       node: '>=6.0.0'
@@ -2019,7 +2019,7 @@ packages:
     dependencies:
       '@babel/core': 7.8.4
       find-cache-dir: 2.1.0
-      loader-utils: 1.2.3
+      loader-utils: 1.4.0
       mkdirp: 0.5.1
       pify: 4.0.1
       webpack: 4.41.6_webpack@4.41.6
@@ -2293,9 +2293,9 @@ packages:
       tarball: browserify-zlib/download/browserify-zlib-0.2.0.tgz
   /browserslist/4.8.7:
     dependencies:
-      caniuse-lite: 1.0.30001027
-      electron-to-chromium: 1.3.353
-      node-releases: 1.1.49
+      caniuse-lite: 1.0.30001028
+      electron-to-chromium: 1.3.358
+      node-releases: 1.1.50
     dev: true
     hasBin: true
     resolution:
@@ -2417,7 +2417,7 @@ packages:
     dependencies:
       buffer-json: 2.0.0
       find-cache-dir: 3.2.0
-      loader-utils: 1.2.3
+      loader-utils: 1.4.0
       mkdirp: 0.5.1
       neo-async: 2.6.1
       schema-utils: 2.6.4
@@ -2485,18 +2485,18 @@ packages:
   /caniuse-api/3.0.0:
     dependencies:
       browserslist: 4.8.7
-      caniuse-lite: 1.0.30001027
+      caniuse-lite: 1.0.30001028
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
     dev: true
     resolution:
       integrity: sha1-Xk2Q4idJYdRikZl99Znj7QCO5MA=
       tarball: caniuse-api/download/caniuse-api-3.0.0.tgz
-  /caniuse-lite/1.0.30001027:
+  /caniuse-lite/1.0.30001028:
     dev: true
     resolution:
-      integrity: sha1-KD4u8X2UiJzCFqIsb4UwPXjKhS0=
-      tarball: caniuse-lite/download/caniuse-lite-1.0.30001027.tgz
+      integrity: sha1-8iQSQqxw4Pqc2lXCd20yoIZ5ccI=
+      tarball: caniuse-lite/download/caniuse-lite-1.0.30001028.tgz
   /case-sensitive-paths-webpack-plugin/2.3.0:
     dev: true
     engines:
@@ -2596,7 +2596,7 @@ packages:
       tarball: chownr/download/chownr-1.1.4.tgz
   /chrome-trace-event/1.0.2:
     dependencies:
-      tslib: 1.10.0
+      tslib: 1.11.0
     dev: true
     engines:
       node: '>=6.0'
@@ -2984,7 +2984,7 @@ packages:
       glob-parent: 3.1.0
       globby: 7.1.1
       is-glob: 4.0.1
-      loader-utils: 1.2.3
+      loader-utils: 1.4.0
       minimatch: 3.0.4
       normalize-path: 3.0.0
       p-limit: 2.2.2
@@ -3125,7 +3125,7 @@ packages:
       tarball: css-color-names/download/css-color-names-0.0.4.tgz
   /css-declaration-sorter/4.0.1:
     dependencies:
-      postcss: 7.0.26
+      postcss: 7.0.27
       timsort: 0.3.0
     dev: true
     engines:
@@ -3138,14 +3138,14 @@ packages:
       camelcase: 5.3.1
       cssesc: 3.0.0
       icss-utils: 4.1.1
-      loader-utils: 1.2.3
+      loader-utils: 1.4.0
       normalize-path: 3.0.0
-      postcss: 7.0.26
+      postcss: 7.0.27
       postcss-modules-extract-imports: 2.0.0
       postcss-modules-local-by-default: 3.0.2
       postcss-modules-scope: 2.1.1
       postcss-modules-values: 3.0.0
-      postcss-value-parser: 4.0.2
+      postcss-value-parser: 4.0.3
       schema-utils: 2.6.4
       webpack: 4.41.6_webpack@4.41.6
     dev: true
@@ -3191,11 +3191,6 @@ packages:
     resolution:
       integrity: sha1-mL69YsTB2flg7DQM+fdSLjBwmiI=
       tarball: css-tree/download/css-tree-1.0.0-alpha.37.tgz
-  /css-unit-converter/1.1.1:
-    dev: true
-    resolution:
-      integrity: sha1-2bkoGtz9jO2TW9urqDeGiX9k6ZY=
-      tarball: css-unit-converter/download/css-unit-converter-1.1.1.tgz
   /css-what/2.1.3:
     dev: true
     resolution:
@@ -3208,14 +3203,6 @@ packages:
     resolution:
       integrity: sha1-9KjxJCEGRiG0VnVeNKA6LCLfXaE=
       tarball: css-what/download/css-what-3.2.1.tgz
-  /cssesc/2.0.0:
-    dev: true
-    engines:
-      node: '>=4'
-    hasBin: true
-    resolution:
-      integrity: sha1-OxO9G7HLNuG8taTc0n9UxdyzVwM=
-      tarball: cssesc/download/cssesc-2.0.0.tgz
   /cssesc/3.0.0:
     dev: true
     engines:
@@ -3228,8 +3215,8 @@ packages:
     dependencies:
       css-declaration-sorter: 4.0.1
       cssnano-util-raw-cache: 4.0.1
-      postcss: 7.0.26
-      postcss-calc: 7.0.1
+      postcss: 7.0.27
+      postcss-calc: 7.0.2
       postcss-colormin: 4.0.3
       postcss-convert-values: 4.0.1
       postcss-discard-comments: 4.0.2
@@ -3278,7 +3265,7 @@ packages:
       tarball: cssnano-util-get-match/download/cssnano-util-get-match-4.0.0.tgz
   /cssnano-util-raw-cache/4.0.1:
     dependencies:
-      postcss: 7.0.26
+      postcss: 7.0.27
     dev: true
     engines:
       node: '>=6.9.0'
@@ -3297,7 +3284,7 @@ packages:
       cosmiconfig: 5.2.1
       cssnano-preset-default: 4.0.7
       is-resolvable: 1.1.0
-      postcss: 7.0.26
+      postcss: 7.0.27
     dev: true
     engines:
       node: '>=6.9.0'
@@ -3740,11 +3727,11 @@ packages:
     resolution:
       integrity: sha1-SGYSh1c9zFPjZsehrlLDoSDuybo=
       tarball: ejs/download/ejs-2.7.4.tgz
-  /electron-to-chromium/1.3.353:
+  /electron-to-chromium/1.3.358:
     dev: true
     resolution:
-      integrity: sha1-xvE/J9UhJkOXmGekAMGl6KTvBCo=
-      tarball: electron-to-chromium/download/electron-to-chromium-1.3.353.tgz
+      integrity: sha1-GWTKs39X1JpaQhpN5NujxrrxRgg=
+      tarball: electron-to-chromium/download/electron-to-chromium-1.3.358.tgz
   /elegant-spinner/1.0.1:
     dev: true
     engines:
@@ -3782,6 +3769,13 @@ packages:
     resolution:
       integrity: sha1-TapNnbAPmBmIDHn6RXrlsJof04k=
       tarball: emojis-list/download/emojis-list-2.1.0.tgz
+  /emojis-list/3.0.0:
+    dev: true
+    engines:
+      node: '>= 4'
+    resolution:
+      integrity: sha1-VXBmIEatKeLpFucariYKvf9Pang=
+      tarball: emojis-list/download/emojis-list-3.0.0.tgz
   /encodeurl/1.0.2:
     dev: true
     engines:
@@ -3910,7 +3904,7 @@ packages:
     dependencies:
       eslint: 5.16.0
       loader-fs-cache: 1.0.2
-      loader-utils: 1.2.3
+      loader-utils: 1.4.0
       object-assign: 4.1.1
       object-hash: 1.3.1
       rimraf: 2.7.1
@@ -4042,7 +4036,7 @@ packages:
   /eslint/5.16.0:
     dependencies:
       '@babel/code-frame': 7.8.3
-      ajv: 6.11.0
+      ajv: 6.12.0
       chalk: 2.4.2
       cross-spawn: 6.0.5
       debug: 4.1.1
@@ -4384,19 +4378,20 @@ packages:
     resolution:
       integrity: sha1-aVOFfDr6R1//ku5gFdUtpwpM050=
       tarball: fast-glob/download/fast-glob-2.2.7.tgz
-  /fast-glob/3.1.1:
+  /fast-glob/3.2.2:
     dependencies:
       '@nodelib/fs.stat': 2.0.3
       '@nodelib/fs.walk': 1.2.4
       glob-parent: 5.1.0
       merge2: 1.3.0
       micromatch: 4.0.2
+      picomatch: 2.2.1
     dev: true
     engines:
       node: '>=8'
     resolution:
-      integrity: sha1-h+4w6enz60DW8lSnmXZV2nU9fII=
-      tarball: fast-glob/download/fast-glob-3.1.1.tgz
+      integrity: sha1-reGp2RFIll1L98UfcuHKZi0y5j0=
+      tarball: fast-glob/download/fast-glob-3.2.2.tgz
   /fast-json-stable-stringify/2.1.0:
     dev: true
     resolution:
@@ -4477,7 +4472,7 @@ packages:
       tarball: file-entry-cache/download/file-entry-cache-5.0.1.tgz
   /file-loader/4.3.0_webpack@4.41.6:
     dependencies:
-      loader-utils: 1.2.3
+      loader-utils: 1.4.0
       schema-utils: 2.6.4
       webpack: 4.41.6_webpack@4.41.6
     dev: true
@@ -4889,7 +4884,7 @@ packages:
       '@types/glob': 7.1.1
       array-union: 2.1.0
       dir-glob: 3.0.1
-      fast-glob: 3.1.1
+      fast-glob: 3.2.2
       glob: 7.1.6
       ignore: 5.1.4
       merge2: 1.3.0
@@ -4972,7 +4967,7 @@ packages:
       tarball: har-schema/download/har-schema-2.0.0.tgz
   /har-validator/5.1.3:
     dependencies:
-      ajv: 6.11.0
+      ajv: 6.12.0
       har-schema: 2.0.0
     dev: true
     engines:
@@ -5314,7 +5309,7 @@ packages:
       tarball: iconv-lite/download/iconv-lite-0.4.24.tgz
   /icss-utils/4.1.1:
     dependencies:
-      postcss: 7.0.26
+      postcss: 7.0.27
     dev: true
     engines:
       node: '>= 6'
@@ -6306,17 +6301,17 @@ packages:
     resolution:
       integrity: sha1-+G5jdNQyBabmxg6RlvF8Apm/s0g=
       tarball: loader-utils/download/loader-utils-0.2.17.tgz
-  /loader-utils/1.2.3:
+  /loader-utils/1.4.0:
     dependencies:
       big.js: 5.2.2
-      emojis-list: 2.1.0
+      emojis-list: 3.0.0
       json5: 1.0.1
     dev: true
     engines:
       node: '>=4.0.0'
     resolution:
-      integrity: sha1-H/XcaRHJ8KBiUxpMBLYJQGEIwsc=
-      tarball: loader-utils/download/loader-utils-1.2.3.tgz
+      integrity: sha1-xXm140yzSxp07cbB+za/o3HVphM=
+      tarball: loader-utils/download/loader-utils-1.4.0.tgz
   /locate-path/2.0.0:
     dependencies:
       p-locate: 2.0.0
@@ -6692,7 +6687,7 @@ packages:
       tarball: mimic-fn/download/mimic-fn-2.1.0.tgz
   /mini-css-extract-plugin/0.9.0_webpack@4.41.6:
     dependencies:
-      loader-utils: 1.2.3
+      loader-utils: 1.4.0
       normalize-url: 1.9.1
       schema-utils: 1.0.0
       webpack: 4.41.6_webpack@4.41.6
@@ -6959,13 +6954,13 @@ packages:
     resolution:
       integrity: sha1-tk9RPRgzhiX5A0bSew0jXmMfZCU=
       tarball: node-libs-browser/download/node-libs-browser-2.2.1.tgz
-  /node-releases/1.1.49:
+  /node-releases/1.1.50:
     dependencies:
       semver: 6.3.0
     dev: true
     resolution:
-      integrity: sha1-Z7paP6wjGSYmde+GTtVnmLszuT4=
-      tarball: node-releases/download/node-releases-1.1.49.tgz
+      integrity: sha1-gDxA0sRdsXLQQQ5O/sg6qMatBZI=
+      tarball: node-releases/download/node-releases-1.1.50.tgz
   /normalize-package-data/2.5.0:
     dependencies:
       hosted-git-info: 2.8.5
@@ -7715,15 +7710,15 @@ packages:
     resolution:
       integrity: sha1-rt3T+ZTJM+StmLmdmlVu+g4v6UI=
       tarball: please-upgrade-node/download/please-upgrade-node-3.2.0.tgz
-  /pnp-webpack-plugin/1.6.0:
+  /pnp-webpack-plugin/1.6.4:
     dependencies:
-      ts-pnp: 1.1.5
+      ts-pnp: 1.1.6
     dev: true
     engines:
       node: '>=6'
     resolution:
-      integrity: sha1-1cBoATov3IIiTKUO0XnI+6kDao4=
-      tarball: pnp-webpack-plugin/download/pnp-webpack-plugin-1.6.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpnp-webpack-plugin%2Fdownload%2Fpnp-webpack-plugin-1.6.0.tgz
+      integrity: sha1-yXEaxNxIpoXauvyG+Lbdn434QUk=
+      tarball: pnp-webpack-plugin/download/pnp-webpack-plugin-1.6.4.tgz
   /portfinder/1.0.25:
     dependencies:
       async: 2.6.3
@@ -7742,22 +7737,21 @@ packages:
     resolution:
       integrity: sha1-AerA/jta9xoqbAL+q7jB/vfgDqs=
       tarball: posix-character-classes/download/posix-character-classes-0.1.1.tgz
-  /postcss-calc/7.0.1:
+  /postcss-calc/7.0.2:
     dependencies:
-      css-unit-converter: 1.1.1
-      postcss: 7.0.26
-      postcss-selector-parser: 5.0.0
-      postcss-value-parser: 3.3.1
+      postcss: 7.0.27
+      postcss-selector-parser: 6.0.2
+      postcss-value-parser: 4.0.3
     dev: true
     resolution:
-      integrity: sha1-Ntd7qwI7Dsu5eJ2E3LI8SUEUVDY=
-      tarball: postcss-calc/download/postcss-calc-7.0.1.tgz
+      integrity: sha1-UE780AjKAnMSBWiweSsWzc3oqsE=
+      tarball: postcss-calc/download/postcss-calc-7.0.2.tgz
   /postcss-colormin/4.0.3:
     dependencies:
       browserslist: 4.8.7
       color: 3.1.2
       has: 1.0.3
-      postcss: 7.0.26
+      postcss: 7.0.27
       postcss-value-parser: 3.3.1
     dev: true
     engines:
@@ -7767,7 +7761,7 @@ packages:
       tarball: postcss-colormin/download/postcss-colormin-4.0.3.tgz
   /postcss-convert-values/4.0.1:
     dependencies:
-      postcss: 7.0.26
+      postcss: 7.0.27
       postcss-value-parser: 3.3.1
     dev: true
     engines:
@@ -7777,7 +7771,7 @@ packages:
       tarball: postcss-convert-values/download/postcss-convert-values-4.0.1.tgz
   /postcss-discard-comments/4.0.2:
     dependencies:
-      postcss: 7.0.26
+      postcss: 7.0.27
     dev: true
     engines:
       node: '>=6.9.0'
@@ -7786,7 +7780,7 @@ packages:
       tarball: postcss-discard-comments/download/postcss-discard-comments-4.0.2.tgz
   /postcss-discard-duplicates/4.0.2:
     dependencies:
-      postcss: 7.0.26
+      postcss: 7.0.27
     dev: true
     engines:
       node: '>=6.9.0'
@@ -7795,7 +7789,7 @@ packages:
       tarball: postcss-discard-duplicates/download/postcss-discard-duplicates-4.0.2.tgz
   /postcss-discard-empty/4.0.1:
     dependencies:
-      postcss: 7.0.26
+      postcss: 7.0.27
     dev: true
     engines:
       node: '>=6.9.0'
@@ -7804,7 +7798,7 @@ packages:
       tarball: postcss-discard-empty/download/postcss-discard-empty-4.0.1.tgz
   /postcss-discard-overridden/4.0.1:
     dependencies:
-      postcss: 7.0.26
+      postcss: 7.0.27
     dev: true
     engines:
       node: '>=6.9.0'
@@ -7823,8 +7817,8 @@ packages:
       tarball: postcss-load-config/download/postcss-load-config-2.1.0.tgz
   /postcss-loader/3.0.0:
     dependencies:
-      loader-utils: 1.2.3
-      postcss: 7.0.26
+      loader-utils: 1.4.0
+      postcss: 7.0.27
       postcss-load-config: 2.1.0
       schema-utils: 1.0.0
     dev: true
@@ -7836,7 +7830,7 @@ packages:
   /postcss-merge-longhand/4.0.11:
     dependencies:
       css-color-names: 0.0.4
-      postcss: 7.0.26
+      postcss: 7.0.27
       postcss-value-parser: 3.3.1
       stylehacks: 4.0.3
     dev: true
@@ -7850,7 +7844,7 @@ packages:
       browserslist: 4.8.7
       caniuse-api: 3.0.0
       cssnano-util-same-parent: 4.0.1
-      postcss: 7.0.26
+      postcss: 7.0.27
       postcss-selector-parser: 3.1.2
       vendors: 1.0.4
     dev: true
@@ -7861,7 +7855,7 @@ packages:
       tarball: postcss-merge-rules/download/postcss-merge-rules-4.0.3.tgz
   /postcss-minify-font-values/4.0.2:
     dependencies:
-      postcss: 7.0.26
+      postcss: 7.0.27
       postcss-value-parser: 3.3.1
     dev: true
     engines:
@@ -7873,7 +7867,7 @@ packages:
     dependencies:
       cssnano-util-get-arguments: 4.0.0
       is-color-stop: 1.1.0
-      postcss: 7.0.26
+      postcss: 7.0.27
       postcss-value-parser: 3.3.1
     dev: true
     engines:
@@ -7886,7 +7880,7 @@ packages:
       alphanum-sort: 1.0.2
       browserslist: 4.8.7
       cssnano-util-get-arguments: 4.0.0
-      postcss: 7.0.26
+      postcss: 7.0.27
       postcss-value-parser: 3.3.1
       uniqs: 2.0.0
     dev: true
@@ -7899,7 +7893,7 @@ packages:
     dependencies:
       alphanum-sort: 1.0.2
       has: 1.0.3
-      postcss: 7.0.26
+      postcss: 7.0.27
       postcss-selector-parser: 3.1.2
     dev: true
     engines:
@@ -7909,7 +7903,7 @@ packages:
       tarball: postcss-minify-selectors/download/postcss-minify-selectors-4.0.2.tgz
   /postcss-modules-extract-imports/2.0.0:
     dependencies:
-      postcss: 7.0.26
+      postcss: 7.0.27
     dev: true
     engines:
       node: '>= 6'
@@ -7919,9 +7913,9 @@ packages:
   /postcss-modules-local-by-default/3.0.2:
     dependencies:
       icss-utils: 4.1.1
-      postcss: 7.0.26
+      postcss: 7.0.27
       postcss-selector-parser: 6.0.2
-      postcss-value-parser: 4.0.2
+      postcss-value-parser: 4.0.3
     dev: true
     engines:
       node: '>= 6'
@@ -7930,7 +7924,7 @@ packages:
       tarball: postcss-modules-local-by-default/download/postcss-modules-local-by-default-3.0.2.tgz
   /postcss-modules-scope/2.1.1:
     dependencies:
-      postcss: 7.0.26
+      postcss: 7.0.27
       postcss-selector-parser: 6.0.2
     dev: true
     engines:
@@ -7941,14 +7935,14 @@ packages:
   /postcss-modules-values/3.0.0:
     dependencies:
       icss-utils: 4.1.1
-      postcss: 7.0.26
+      postcss: 7.0.27
     dev: true
     resolution:
       integrity: sha1-W1AA1uuuKbQlUwG0o6VFdEI+fxA=
       tarball: postcss-modules-values/download/postcss-modules-values-3.0.0.tgz
   /postcss-normalize-charset/4.0.1:
     dependencies:
-      postcss: 7.0.26
+      postcss: 7.0.27
     dev: true
     engines:
       node: '>=6.9.0'
@@ -7958,7 +7952,7 @@ packages:
   /postcss-normalize-display-values/4.0.2:
     dependencies:
       cssnano-util-get-match: 4.0.0
-      postcss: 7.0.26
+      postcss: 7.0.27
       postcss-value-parser: 3.3.1
     dev: true
     engines:
@@ -7970,7 +7964,7 @@ packages:
     dependencies:
       cssnano-util-get-arguments: 4.0.0
       has: 1.0.3
-      postcss: 7.0.26
+      postcss: 7.0.27
       postcss-value-parser: 3.3.1
     dev: true
     engines:
@@ -7982,7 +7976,7 @@ packages:
     dependencies:
       cssnano-util-get-arguments: 4.0.0
       cssnano-util-get-match: 4.0.0
-      postcss: 7.0.26
+      postcss: 7.0.27
       postcss-value-parser: 3.3.1
     dev: true
     engines:
@@ -7993,7 +7987,7 @@ packages:
   /postcss-normalize-string/4.0.2:
     dependencies:
       has: 1.0.3
-      postcss: 7.0.26
+      postcss: 7.0.27
       postcss-value-parser: 3.3.1
     dev: true
     engines:
@@ -8004,7 +7998,7 @@ packages:
   /postcss-normalize-timing-functions/4.0.2:
     dependencies:
       cssnano-util-get-match: 4.0.0
-      postcss: 7.0.26
+      postcss: 7.0.27
       postcss-value-parser: 3.3.1
     dev: true
     engines:
@@ -8015,7 +8009,7 @@ packages:
   /postcss-normalize-unicode/4.0.1:
     dependencies:
       browserslist: 4.8.7
-      postcss: 7.0.26
+      postcss: 7.0.27
       postcss-value-parser: 3.3.1
     dev: true
     engines:
@@ -8027,7 +8021,7 @@ packages:
     dependencies:
       is-absolute-url: 2.1.0
       normalize-url: 3.3.0
-      postcss: 7.0.26
+      postcss: 7.0.27
       postcss-value-parser: 3.3.1
     dev: true
     engines:
@@ -8037,7 +8031,7 @@ packages:
       tarball: postcss-normalize-url/download/postcss-normalize-url-4.0.1.tgz
   /postcss-normalize-whitespace/4.0.2:
     dependencies:
-      postcss: 7.0.26
+      postcss: 7.0.27
       postcss-value-parser: 3.3.1
     dev: true
     engines:
@@ -8048,7 +8042,7 @@ packages:
   /postcss-ordered-values/4.1.2:
     dependencies:
       cssnano-util-get-arguments: 4.0.0
-      postcss: 7.0.26
+      postcss: 7.0.27
       postcss-value-parser: 3.3.1
     dev: true
     engines:
@@ -8061,7 +8055,7 @@ packages:
       browserslist: 4.8.7
       caniuse-api: 3.0.0
       has: 1.0.3
-      postcss: 7.0.26
+      postcss: 7.0.27
     dev: true
     engines:
       node: '>=6.9.0'
@@ -8072,7 +8066,7 @@ packages:
     dependencies:
       cssnano-util-get-match: 4.0.0
       has: 1.0.3
-      postcss: 7.0.26
+      postcss: 7.0.27
       postcss-value-parser: 3.3.1
     dev: true
     engines:
@@ -8091,17 +8085,6 @@ packages:
     resolution:
       integrity: sha1-sxD1xMD9r3b5SQK7qjDbaqhPUnA=
       tarball: postcss-selector-parser/download/postcss-selector-parser-3.1.2.tgz
-  /postcss-selector-parser/5.0.0:
-    dependencies:
-      cssesc: 2.0.0
-      indexes-of: 1.0.1
-      uniq: 1.0.1
-    dev: true
-    engines:
-      node: '>=4'
-    resolution:
-      integrity: sha1-JJBENWaXsztk8aj3yAki3d7nGVw=
-      tarball: postcss-selector-parser/download/postcss-selector-parser-5.0.0.tgz
   /postcss-selector-parser/6.0.2:
     dependencies:
       cssesc: 3.0.0
@@ -8116,7 +8099,7 @@ packages:
   /postcss-svgo/4.0.2:
     dependencies:
       is-svg: 3.0.0
-      postcss: 7.0.26
+      postcss: 7.0.27
       postcss-value-parser: 3.3.1
       svgo: 1.3.2
     dev: true
@@ -8128,7 +8111,7 @@ packages:
   /postcss-unique-selectors/4.0.1:
     dependencies:
       alphanum-sort: 1.0.2
-      postcss: 7.0.26
+      postcss: 7.0.27
       uniqs: 2.0.0
     dev: true
     engines:
@@ -8141,12 +8124,12 @@ packages:
     resolution:
       integrity: sha1-n/giVH4okyE88cMO+lGsX9G6goE=
       tarball: postcss-value-parser/download/postcss-value-parser-3.3.1.tgz
-  /postcss-value-parser/4.0.2:
+  /postcss-value-parser/4.0.3:
     dev: true
     resolution:
-      integrity: sha1-SCKCwJpCcG0fyaBptz9E7Ag5Hck=
-      tarball: postcss-value-parser/download/postcss-value-parser-4.0.2.tgz
-  /postcss/7.0.26:
+      integrity: sha1-ZR/0WTqp7ajV0NZlk6JBeurrMl0=
+      tarball: postcss-value-parser/download/postcss-value-parser-4.0.3.tgz
+  /postcss/7.0.27:
     dependencies:
       chalk: 2.4.2
       source-map: 0.6.1
@@ -8155,8 +8138,8 @@ packages:
     engines:
       node: '>=6.0.0'
     resolution:
-      integrity: sha1-XtYVz8qzW6m7uCQUpPqI6hBClYc=
-      tarball: postcss/download/postcss-7.0.26.tgz?cache=0&sync_timestamp=1577850581147&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpostcss%2Fdownload%2Fpostcss-7.0.26.tgz
+      integrity: sha1-zGfNxrDao3UQW3xCSoVWc0X8VNk=
+      tarball: postcss/download/postcss-7.0.27.tgz?cache=0&sync_timestamp=1581999519629&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpostcss%2Fdownload%2Fpostcss-7.0.27.tgz
   /prelude-ls/1.1.2:
     dev: true
     engines:
@@ -8797,7 +8780,7 @@ packages:
       tarball: run-queue/download/run-queue-1.0.3.tgz
   /rxjs/6.5.4:
     dependencies:
-      tslib: 1.10.0
+      tslib: 1.11.0
     dev: true
     engines:
       npm: '>=2.0.0'
@@ -8830,7 +8813,7 @@ packages:
     dependencies:
       clone-deep: 4.0.1
       fibers: 4.0.2
-      loader-utils: 1.2.3
+      loader-utils: 1.4.0
       neo-async: 2.6.1
       sass: 1.25.0
       schema-utils: 2.6.4
@@ -8863,9 +8846,9 @@ packages:
       tarball: sax/download/sax-1.2.4.tgz
   /schema-utils/1.0.0:
     dependencies:
-      ajv: 6.11.0
-      ajv-errors: 1.0.1_ajv@6.11.0
-      ajv-keywords: 3.4.1_ajv@6.11.0
+      ajv: 6.12.0
+      ajv-errors: 1.0.1_ajv@6.12.0
+      ajv-keywords: 3.4.1_ajv@6.12.0
     dev: true
     engines:
       node: '>= 4'
@@ -8874,8 +8857,8 @@ packages:
       tarball: schema-utils/download/schema-utils-1.0.0.tgz
   /schema-utils/2.6.4:
     dependencies:
-      ajv: 6.11.0
-      ajv-keywords: 3.4.1_ajv@6.11.0
+      ajv: 6.12.0
+      ajv-keywords: 3.4.1_ajv@6.12.0
     dev: true
     engines:
       node: '>= 8.9.0'
@@ -9568,7 +9551,7 @@ packages:
   /stylehacks/4.0.3:
     dependencies:
       browserslist: 4.8.7
-      postcss: 7.0.26
+      postcss: 7.0.27
       postcss-selector-parser: 3.1.2
     dev: true
     engines:
@@ -9646,7 +9629,7 @@ packages:
       tarball: symbol-observable/download/symbol-observable-1.2.0.tgz
   /table/5.4.6:
     dependencies:
-      ajv: 6.11.0
+      ajv: 6.12.0
       lodash: 4.17.15
       slice-ansi: 2.1.0
       string-width: 3.1.0
@@ -9739,7 +9722,7 @@ packages:
   /thread-loader/2.1.3_webpack@4.41.6:
     dependencies:
       loader-runner: 2.4.0
-      loader-utils: 1.2.3
+      loader-utils: 1.4.0
       neo-async: 2.6.1
       webpack: 4.41.6_webpack@4.41.6
     dev: true
@@ -9870,18 +9853,18 @@ packages:
     resolution:
       integrity: sha1-8shUBoALmw90yfdGW4HqrSQSUvg=
       tarball: tryer/download/tryer-1.0.1.tgz
-  /ts-pnp/1.1.5:
+  /ts-pnp/1.1.6:
     dev: true
     engines:
       node: '>=6'
     resolution:
-      integrity: sha1-hA4HOcifzl86vZA3uwkdv/Ftnew=
-      tarball: ts-pnp/download/ts-pnp-1.1.5.tgz
-  /tslib/1.10.0:
+      integrity: sha1-OJokOW1CWg0xYultK0Y4kA/cKJo=
+      tarball: ts-pnp/download/ts-pnp-1.1.6.tgz
+  /tslib/1.11.0:
     dev: true
     resolution:
-      integrity: sha1-w8GflZc/sKYpc/sJ2Q2WHuQ+XIo=
-      tarball: tslib/download/tslib-1.10.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftslib%2Fdownload%2Ftslib-1.10.0.tgz
+      integrity: sha1-8fNSgwFiGlMiDVg3OuUQ/3R6Zrw=
+      tarball: tslib/download/tslib-1.11.0.tgz
   /tty-browserify/0.0.0:
     dev: true
     resolution:
@@ -10064,7 +10047,7 @@ packages:
   /url-loader/2.3.0_file-loader@4.3.0+webpack@4.41.6:
     dependencies:
       file-loader: 4.3.0_webpack@4.41.6
-      loader-utils: 1.2.3
+      loader-utils: 1.4.0
       mime: 2.4.4
       schema-utils: 2.6.4
       webpack: 4.41.6_webpack@4.41.6
@@ -10218,7 +10201,7 @@ packages:
       '@vue/component-compiler-utils': 3.1.1
       css-loader: 3.4.2_webpack@4.41.6
       hash-sum: 1.0.2
-      loader-utils: 1.2.3
+      loader-utils: 1.4.0
       vue-hot-reload-api: 2.3.4
       vue-style-loader: 4.1.2
       webpack: 4.41.6_webpack@4.41.6
@@ -10237,7 +10220,7 @@ packages:
   /vue-style-loader/4.1.2:
     dependencies:
       hash-sum: 1.0.2
-      loader-utils: 1.2.3
+      loader-utils: 1.4.0
     dev: true
     resolution:
       integrity: sha1-3t80mAbyXOtOZPOtfApE+6c1/Pg=
@@ -10260,15 +10243,15 @@ packages:
     resolution:
       integrity: sha1-dllNh31LEiNEBuhONSdcbVFBJcU=
       tarball: vue/download/vue-2.6.11.tgz
-  /vuetify/2.2.12_vue@2.6.11:
+  /vuetify/2.2.14_vue@2.6.11:
     dependencies:
       vue: 2.6.11
     dev: false
     peerDependencies:
       vue: ^2.6.4
     resolution:
-      integrity: sha1-S71UhYAbBdGk6XeXTsGx+pQ8FuM=
-      tarball: vuetify/download/vuetify-2.2.12.tgz
+      integrity: sha1-2EboGBLZCxx8BoSh6ri8ycoNWrI=
+      tarball: vuetify/download/vuetify-2.2.14.tgz
   /vuex/3.1.2:
     dev: false
     resolution:
@@ -10422,14 +10405,14 @@ packages:
       '@webassemblyjs/wasm-edit': 1.8.5
       '@webassemblyjs/wasm-parser': 1.8.5
       acorn: 6.4.0
-      ajv: 6.11.0
-      ajv-keywords: 3.4.1_ajv@6.11.0
+      ajv: 6.12.0
+      ajv-keywords: 3.4.1_ajv@6.12.0
       chrome-trace-event: 1.0.2
       enhanced-resolve: 4.1.1
       eslint-scope: 4.0.3
       json-parse-better-errors: 1.0.2
       loader-runner: 2.4.0
-      loader-utils: 1.2.3
+      loader-utils: 1.4.0
       memory-fs: 0.4.1
       micromatch: 3.1.10
       mkdirp: 0.5.1
@@ -10814,5 +10797,5 @@ specifiers:
   vue: ^2.6.11
   vue-router: ^3.1.5
   vue-template-compiler: ^2.6.11
-  vuetify: ^2.2.12
+  vuetify: ^2.2.14
   vuex: ^3.1.2

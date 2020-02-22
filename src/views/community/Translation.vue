@@ -8,7 +8,7 @@ import { queryTranslationFunc } from '@/api/method'
 import Details from '@/components/Details'
 
 export default {
-  name: 'introduce',
+  name: 'translation',
   components: {
     Details
   },

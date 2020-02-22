@@ -10,7 +10,7 @@ export const loginFunc = ({ username, password }) => {
   }
   return axios.request({
     url: SERVER_URL.signin,
-    method: 'POST',
+    method: 'post',
     auth: {
       username: AUTH.client_id,
       password: AUTH.client_secret
@@ -23,7 +23,7 @@ export const loginFunc = ({ username, password }) => {
 export const logoutFunc = username => {
   return axios.request({
     url: '/logout',
-    method: 'DELETE',
+    method: 'delete',
     username
   })
 }
@@ -32,7 +32,6 @@ export const logoutFunc = username => {
 export const querySmsCaptchaFunc = mobile => {
   return axios.request({
     url: SERVER_URL.user,
-    method: 'GET',
     mobile
   })
 }
@@ -42,21 +41,14 @@ export const querySmsCaptchaFunc = mobile => {
 /* 根据userId获取用户信息 */
 export const queryUserFunc = userId => {
   return axios.request({
-    url: SERVER_URL.user + userId,
-    method: 'GET'
+    url: SERVER_URL.user + userId
   })
 }
 
 /* 获取用户信息列表 */
-export const fetchUserFunc = ({ pageNum, pageSize }) => {
-  let params = {
-    pageNum,
-    pageSize
-  }
+export const fetchUserFunc = () => {
   return axios.request({
-    url: SERVER_URL.user,
-    method: 'GET',
-    params
+    url: SERVER_URL.user
   })
 }
 
@@ -65,21 +57,14 @@ export const fetchUserFunc = ({ pageNum, pageSize }) => {
 /* 根据文章ID获取文章详情 */
 export const queryArticleFunc = articleId => {
   return axios.request({
-    url: SERVER_URL.article + articleId,
-    method: 'GET'
+    url: SERVER_URL.article + articleId
   })
 }
 
 /* 获取用户信息列表 */
-export const fetchArticleFunc = ({ pageNum, pageSize }) => {
-  let params = {
-    pageNum,
-    pageSize
-  }
+export const fetchArticleFunc = () => {
   return axios.request({
-    url: SERVER_URL.article,
-    method: 'GET',
-    params
+    url: SERVER_URL.article
   })
 }
 
@@ -88,21 +73,14 @@ export const fetchArticleFunc = ({ pageNum, pageSize }) => {
 /* 根据翻译ID获取翻译详情 */
 export const queryTranslationFunc = translationId => {
   return axios.request({
-    url: SERVER_URL.translation + translationId,
-    method: 'GET'
+    url: SERVER_URL.translation + translationId
   })
 }
 
 /* 获取翻译信息列表 */
-export const fetchTranslationFunc = ({ pageNum, pageSize }) => {
-  let params = {
-    pageNum,
-    pageSize
-  }
+export const fetchTranslationFunc = () => {
   return axios.request({
-    url: SERVER_URL.translation,
-    method: 'GET',
-    params
+    url: SERVER_URL.translation
   })
 }
 
@@ -111,20 +89,13 @@ export const fetchTranslationFunc = ({ pageNum, pageSize }) => {
 /* 根据翻译ID获取翻译详情 */
 export const queryTopicFunc = topicId => {
   return axios.request({
-    url: SERVER_URL.topic + topicId,
-    method: 'GET'
+    url: SERVER_URL.topic + topicId
   })
 }
 
 /* 获取翻译信息列表 */
-export const fetchTopicFunc = ({ pageNum, pageSize }) => {
-  let params = {
-    pageNum,
-    pageSize
-  }
+export const fetchTopicFunc = () => {
   return axios.request({
-    url: SERVER_URL.topic,
-    method: 'GET',
-    params
+    url: SERVER_URL.topic
   })
 }

@@ -1,5 +1,28 @@
 <template>
+<!--
   <v-app app>
+    <v-app-bar
+      :clipped-left="$vuetify.breakpoint.lgAndUp"
+      color="white"
+      light
+      flat
+    >
+      <v-toolbar-items>
+        <v-btn to="/" text class="headline">
+          <v-img max-width="3rem" src="https://oss.abeille.top/logo.png"></v-img>
+          Abeille
+        </v-btn>
+      </v-toolbar-items>
+      <v-divider vertical inset></v-divider>
+      <v-toolbar-items>
+        <v-btn to="/community" text>COMMUNITY</v-btn>
+        <v-btn to="/resource" text>RESOURCE</v-btn>
+        <v-btn to="/document" text>DOCUMENT</v-btn>
+        <v-btn to="/introduce" text>ABOUT</v-btn>
+      </v-toolbar-items>
+    </v-app-bar>
+-->
+  <v-app>
     <Headers />
     <v-content>
       <v-container
@@ -47,6 +70,7 @@
       </v-card>
     </v-footer>
   </v-app>
+<!--  </v-app>-->
 </template>
 
 <script>
@@ -55,7 +79,7 @@ import Headers from '@/components/Headers'
 import { queryTranslationFunc } from '@/api/method'
 
 export default {
-  name: 'introduce',
+  name: 'document',
   components: {
     Headers
   },
@@ -73,7 +97,7 @@ export default {
         },
         {
           text: 'DOCUMENT',
-          url: '/document'
+          url: '/'
         },
         {
           text: 'ABOUT',

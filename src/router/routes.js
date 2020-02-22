@@ -24,6 +24,11 @@ export default [
     ]
   },
   {
+    path: '/document',
+    name: 'document',
+    component: () => import('@/views/Document.vue')
+  },
+  {
     path: '/resource',
     name: 'resource',
     component: () => import('@/views/Resource.vue')
