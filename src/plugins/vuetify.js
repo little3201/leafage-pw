@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import { Ripple } from 'vuetify/lib/directives'
 import '@mdi/font/css/materialdesignicons.css'
-import colors from 'vuetify/lib/util/colors'
 
 import Vuetify, {
   VApp,
@@ -82,7 +81,7 @@ const opts = {
   theme: {
     themes: {
       light: {
-        primary: colors.amber.darken4
+        primary: '#FF6F00'
       }
     }
   },
