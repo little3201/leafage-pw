@@ -49,7 +49,7 @@
           Abeille
         </v-btn>
       </v-toolbar-items>
-      <v-divider class="ma-3 hidden-sm-and-down" vertical inset></v-divider>
+      <v-divider class="mx-3 hidden-sm-and-down" vertical inset></v-divider>
       <v-spacer class="hidden-sm-and-down" />
       <v-text-field
         flat
