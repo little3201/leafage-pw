@@ -164,10 +164,10 @@ export default {
       }
     ]
   }),
-  created: () => {
-    // this.fetchrecommendatory()
-    // this.fetchTopic()
-    // this.fetchTranslation()
+  created: function () {
+    this.fetchrecommendatory()
+    this.fetchTopic()
+    this.fetchTranslation()
   },
   methods: {
     // 获取推荐内容
