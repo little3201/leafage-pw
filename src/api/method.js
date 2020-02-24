@@ -41,7 +41,7 @@ export const querySmsCaptchaFunc = mobile => {
 /* 根据userId获取用户信息 */
 export const queryUserFunc = userId => {
   return axios.request({
-    url: SERVER_URL.user + userId
+    url: SERVER_URL.user.concat('/').concat(userId)
   })
 }
 
@@ -57,7 +57,7 @@ export const fetchUserFunc = () => {
 /* 根据文章ID获取文章详情 */
 export const queryArticleFunc = articleId => {
   return axios.request({
-    url: SERVER_URL.article + articleId
+    url: SERVER_URL.article.concat('/').concat(articleId)
   })
 }
 
@@ -73,7 +73,7 @@ export const fetchArticleFunc = () => {
 /* 根据翻译ID获取翻译详情 */
 export const queryTranslationFunc = translationId => {
   return axios.request({
-    url: SERVER_URL.translation + translationId
+    url: SERVER_URL.translation.concat('/').concat(translationId)
   })
 }
 
@@ -89,7 +89,7 @@ export const fetchTranslationFunc = () => {
 /* 根据翻译ID获取翻译详情 */
 export const queryTopicFunc = topicId => {
   return axios.request({
-    url: SERVER_URL.topic + topicId
+    url: SERVER_URL.topic.concat('/').concat(topicId)
   })
 }
 
@@ -97,5 +97,21 @@ export const queryTopicFunc = topicId => {
 export const fetchTopicFunc = () => {
   return axios.request({
     url: SERVER_URL.topic
+  })
+}
+
+/* ===================资源接口方法=================== */
+
+/* 根据翻译ID获取翻译详情 */
+export const querySourceFunc = topicId => {
+  return axios.request({
+    url: SERVER_URL.source.concat('/').concat(topicId)
+  })
+}
+
+/* 获取翻译信息列表 */
+export const fetchSourceFunc = () => {
+  return axios.request({
+    url: SERVER_URL.source
   })
 }

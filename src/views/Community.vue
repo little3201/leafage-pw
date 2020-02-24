@@ -115,53 +115,26 @@ export default {
   },
   data: () => ({
     drawer: null,
-    activeClass: 'background-color: white',
     recommendatories: [
       {
-        title: '如何快速掌握Redis技巧',
-        author: '布吉岛',
-        subtitle: '缓存缓存缓存缓存缓存缓存缓存缓存缓存缓存缓存缓存缓存缓存缓存缓存缓存缓存缓存缓存缓存缓存',
-        avatar: 'https://cdn.pixabay.com/photo/2019/11/23/07/24/christmas-4646421_1280.jpg',
-        comment: '100',
-        scan: '23'
+        title: '',
+        author: '',
+        subtitle: '',
+        avatar: '',
+        comment: '',
+        scan: ''
       }
     ],
     topics: [
-      '9012年了，工资现在多少啊？'
+      ''
     ],
     authors: [
       {
-        nickname: '布吉岛'
+        nickname: ''
       }
     ],
     translations: [
-      'RabbitMQ'
-    ],
-    items: [
-      {
-        text: 'COMMUNITY',
-        url: '/community'
-      },
-      {
-        text: 'RESOURCE',
-        url: '/resource'
-      },
-      {
-        text: 'DOCUMENT',
-        url: '/'
-      },
-      {
-        text: 'ABOUT',
-        url: '/introduce'
-      },
-      {
-        text: 'SIGN IN',
-        url: '/signin'
-      },
-      {
-        text: 'SIGN UP',
-        url: '/signup'
-      }
+      ''
     ]
   }),
   created: function () {
@@ -176,8 +149,6 @@ export default {
         response => {
           // 设置recommendatories
           this.recommendatories = response.data
-          this.totalPage = response.pages
-          this.totalVisible = Math.ceil(this.totalPage / 2)
         },
         error => {
           // 执行失败的回调函数
