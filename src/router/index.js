@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import routes from './routes'
+import NProgress from 'nprogress' // progress bar
+import 'nprogress/nprogress.css' // progress bar style
+NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
 Vue.use(VueRouter)
 
@@ -15,6 +18,7 @@ const router = new VueRouter({
 
 /* 路由之前检查token */
 router.beforeEach((to, from, next) => {
+  NProgress.start()
   let token
   // 白名单直接放行
   if (whiteList.includes(to.fullPath)) {
@@ -35,6 +39,7 @@ router.beforeEach((to, from, next) => {
 
 /* 路由之后关闭进度条 */
 router.afterEach(() => {
+  NProgress.done()
 })
 
 export default router
