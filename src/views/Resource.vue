@@ -15,14 +15,14 @@
                 hover
               >
                 <v-img
-                  :src="source.url"
+                  :src="source.imageUrl"
                   height="194"
                 ></v-img>
                 <v-card-title>
                   {{ source.title }}
                 </v-card-title>
                 <v-card-text>
-                  {{ source.subTitle }}
+                  {{ source.subtitle }}
                 </v-card-text>
               </v-card>
             </v-row>
@@ -48,8 +48,8 @@ export default {
     sources: [
       {
         title: 'Top western road trips',
-        subTitle: 'Visit ten places on our planet that are undergoing the biggest changes today.',
-        url: 'https://cdn.vuetifyjs.com/images/cards/mountain.jpg'
+        subtitle: 'Visit ten places on our planet that are undergoing the biggest changes today.',
+        imageUrl: 'https://cdn.vuetifyjs.com/images/cards/mountain.jpg'
       }
     ]
   }),

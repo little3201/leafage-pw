@@ -25,7 +25,7 @@
                       <v-icon>mdi-flag</v-icon>
                     </v-list-item-icon>
                     <v-list-item-content>
-                      <v-list-item-title v-text="topic"></v-list-item-title>
+                      <v-list-item-title v-text="topic.title"></v-list-item-title>
                     </v-list-item-content>
                   </v-list-item>
                 </v-list-item-group>
@@ -48,7 +48,7 @@
                       </v-list-item-subtitle>
                     </v-list-item-content>
                     <v-list-item-action>
-                      <v-img :src="item.avatar" width="208" height="116" style="border-radius: 3px;"></v-img>
+                      <v-img :src="item.imageUrl" width="208" height="116" style="border-radius: 3px;"></v-img>
                     </v-list-item-action>
                   </v-list-item>
                 </v-list-item-group>
@@ -70,7 +70,7 @@
                 <v-list-item-group color="primary">
                   <v-list-item v-for="(translation, index) in translations" :key="index">
                     <v-list-item-content>
-                      <v-list-item-title v-text="translation"></v-list-item-title>
+                      <v-list-item-title v-text="translation.title"></v-list-item-title>
                     </v-list-item-content>
                   </v-list-item>
                 </v-list-item-group>
@@ -120,13 +120,15 @@ export default {
         title: '',
         author: '',
         subtitle: '',
-        avatar: '',
+        imageUrl: '',
         comment: '',
         scan: ''
       }
     ],
     topics: [
-      ''
+      {
+        title: ''
+      }
     ],
     authors: [
       {
@@ -134,7 +136,9 @@ export default {
       }
     ],
     translations: [
-      ''
+      {
+        title: ''
+      }
     ]
   }),
   created: function () {
