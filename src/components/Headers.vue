@@ -5,6 +5,7 @@
       :clipped="$vuetify.breakpoint.lgAndUp"
       app
       temporary
+      dark
     >
       <v-list dense>
         <v-row>
