@@ -12,12 +12,12 @@ export default [
     component: () => import('@/views/Community.vue'),
     children: [
       {
-        path: '/translation',
+        path: '/translation/:businessId',
         name: 'translation',
         component: () => import('@/views/community/Translation.vue')
       },
       {
-        path: '/article',
+        path: '/article/:businessId',
         name: 'article',
         component: () => import('@/views/community/Article.vue')
       }
@@ -31,7 +31,14 @@ export default [
   {
     path: '/resource',
     name: 'resource',
-    component: () => import('@/views/Resource.vue')
+    component: () => import('@/views/Resource.vue'),
+    children: [
+      {
+        path: '/details/:businessId',
+        name: 'details',
+        component: () => import('@/components/Details.vue')
+      }
+    ]
   },
   {
     path: '/introduce',

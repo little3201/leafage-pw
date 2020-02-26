@@ -13,6 +13,7 @@
                 class="ma-3"
                 max-width="344"
                 hover
+                :to="'/details/' + source.businessId"
               >
                 <v-img
                   :src="source.imageUrl"
@@ -47,6 +48,7 @@ export default {
     drawer: null,
     sources: [
       {
+        businessId: '',
         title: 'Top western road trips',
         subtitle: 'Visit ten places on our planet that are undergoing the biggest changes today.',
         imageUrl: 'https://cdn.vuetifyjs.com/images/cards/mountain.jpg'

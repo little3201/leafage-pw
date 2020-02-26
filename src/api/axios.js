@@ -4,9 +4,18 @@ import NProgress from 'nprogress' // progress bar
 import 'nprogress/nprogress.css' // progress bar style
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
-const toLogin = () => {
+const toSignin = () => {
   router.replace({
-    path: '/login',
+    path: '/signin',
+    query: {
+      redirect: router.currentRoute.fullPath
+    }
+  })
+}
+
+const toException = () => {
+  router.replace({
+    path: '/exception',
     query: {
       redirect: router.currentRoute.fullPath
     }
@@ -18,22 +27,20 @@ const errorHandle = (status) => {
   switch (status) {
     // 401: 未登录状态，跳转登录页
     case 401:
-      toLogin()
+      toSignin()
       break
-    // 403 token过期
-    // 清除token并跳转登录页
+    // 403 token过期，清除token并跳转登录页
     case 403:
-      alert('登录过期，请重新登录')
       // localStorage.removeItem('token');
       // store.commit('loginSuccess', null);
-      setTimeout(() => { toLogin() }, 1000)
+      setTimeout(() => { toSignin() }, 1000)
       break
     // 404请求不存在
     case 404:
-      alert('请求的资源不存在')
+      toException()
       break
     default:
-      alert('请求的资源不存在')
+      alert('请求可能跑丢了，请重试。')
   }
 }
 

@@ -8,7 +8,15 @@ NProgress.configure({ showSpinner: false }) // NProgress Configuration
 Vue.use(VueRouter)
 
 // 白名单
-const whiteList = ['/', '/community', '/document', '/introduce', '/resource', '/signin', '/signup']
+const whiteList = [
+  '/',
+  '/community', '/article/${businessId}', '/translation/${businessId}',
+  '/document',
+  '/introduce',
+  '/resource', '/details/${businessId}',
+  '/signin',
+  '/signup'
+]
 
 const router = new VueRouter({
   mode: 'history',
@@ -18,6 +26,7 @@ const router = new VueRouter({
 
 /* 路由之前检查token */
 router.beforeEach((to, from, next) => {
+  debugger
   NProgress.start()
   let token
   // 白名单直接放行

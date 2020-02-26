@@ -24,14 +24,16 @@ export default {
   },
   methods: {
     queryArticle () {
-      queryArticleFunc().then(
-        response => {
-          this.article = response.data
-        },
-        error => {
-          alert(error.message)
-        }
-      )
+      if (this.$route.params.businessId) {
+        queryArticleFunc(this.$route.params.businessId).then(
+          response => {
+            this.article = response.data
+          },
+          error => {
+            alert(error.message)
+          }
+        )
+      }
     }
   }
 }

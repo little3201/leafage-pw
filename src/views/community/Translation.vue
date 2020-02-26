@@ -24,14 +24,16 @@ export default {
   },
   methods: {
     queryTranslation () {
-      queryTranslationFunc().then(
-        response => {
-          this.translation = response.data
-        },
-        error => {
-          alert(error.message)
-        }
-      )
+      if (this.$route.params.businessId) {
+        queryTranslationFunc(this.$route.params.businessId).then(
+          response => {
+            this.translation = response.data
+          },
+          error => {
+            alert(error.message)
+          }
+        )
+      }
     }
   }
 }
