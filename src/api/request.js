@@ -17,5 +17,5 @@ export const SERVER_URL = {
   article: SERVER_PRE.assets.concat('/article'), // 文章
   translation: SERVER_PRE.assets.concat('/translation'), // 翻译
   topic: SERVER_PRE.assets.concat('/topic'), // 话题
-  source: SERVER_PRE.assets.concat('/source') // 话题
+  source: SERVER_PRE.assets.concat('/resource') // 资源
 }
