@@ -1,27 +1,4 @@
 <template>
-<!--
-  <v-app app>
-    <v-app-bar
-      :clipped-left="$vuetify.breakpoint.lgAndUp"
-      color="white"
-      light
-      flat
-    >
-      <v-toolbar-items>
-        <v-btn to="/" text class="headline">
-          <v-img max-width="3rem" src="https://oss.abeille.top/logo.png"></v-img>
-          Abeille
-        </v-btn>
-      </v-toolbar-items>
-      <v-divider vertical inset></v-divider>
-      <v-toolbar-items>
-        <v-btn to="/community" text>COMMUNITY</v-btn>
-        <v-btn to="/resource" text>RESOURCE</v-btn>
-        <v-btn to="/document" text>DOCUMENT</v-btn>
-        <v-btn to="/introduce" text>ABOUT</v-btn>
-      </v-toolbar-items>
-    </v-app-bar>
--->
   <v-app>
     <Headers />
     <v-content>
@@ -48,16 +25,6 @@
         tile
         class="text-center"
       >
-        <!-- <v-card-text>
-          <v-btn
-            v-for="icon in icons"
-            :key="icon"
-            class="mx-4"
-            icon
-          >
-            <v-icon size="24px">{{ icon }}</v-icon>
-          </v-btn>
-        </v-card-text> -->
         <v-card-text class="pt-0">
           Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
         </v-card-text>

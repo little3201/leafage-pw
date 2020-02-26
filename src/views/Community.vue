@@ -37,7 +37,7 @@
               </h3>
               <v-list three-line>
                 <v-list-item-group color="primary">
-                  <v-list-item :to="'/article/' + item.businessId" v-for="(item, i) in recommendatories" :key="i">
+                  <v-list-item :to="'/details/' + item.businessId" v-for="(item, index) in recommendatories" :key="index">
                     <v-list-item-content>
                       <v-list-item-title v-text="item.title"></v-list-item-title>
                       <v-list-item-subtitle v-text="item.subtitle"></v-list-item-subtitle>
@@ -68,7 +68,7 @@
               </div>
               <v-list dense shaped>
                 <v-list-item-group color="primary">
-                  <v-list-item :to="'/translation/' + translation.businessId" v-for="(translation, index) in translations" :key="index">
+                  <v-list-item :to="'/details/' + translation.businessId" v-for="(translation, index) in translations" :key="index">
                     <v-list-item-content>
                       <v-list-item-title v-text="translation.title"></v-list-item-title>
                     </v-list-item-content>

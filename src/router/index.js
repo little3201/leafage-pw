@@ -10,10 +10,10 @@ Vue.use(VueRouter)
 // 白名单
 const whiteList = [
   '/',
-  '/community', '/article/${businessId}', '/translation/${businessId}',
+  '/community',
   '/document',
   '/introduce',
-  '/resource', '/details/${businessId}',
+  '/resource',
   '/signin',
   '/signup'
 ]
@@ -26,13 +26,12 @@ const router = new VueRouter({
 
 /* 路由之前检查token */
 router.beforeEach((to, from, next) => {
-  debugger
   NProgress.start()
   let token
   // 白名单直接放行
   if (whiteList.includes(to.fullPath)) {
     next()
-  } else if (to.fullPath.startsWith('/article') || to.fullPath.startsWith('/translation')) {
+  } else if (to.fullPath.startsWith('/details')) {
     // 路由包含/article，即文章详情页，或者包换/photograph，即图片记录，放行
     next()
   } else if (!token && to.fullPath !== '/signin') {

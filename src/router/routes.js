@@ -9,19 +9,7 @@ export default [
   {
     path: '/community',
     name: 'community',
-    component: () => import('@/views/Community.vue'),
-    children: [
-      {
-        path: '/translation/:businessId',
-        name: 'translation',
-        component: () => import('@/views/community/Translation.vue')
-      },
-      {
-        path: '/article/:businessId',
-        name: 'article',
-        component: () => import('@/views/community/Article.vue')
-      }
-    ]
+    component: () => import('@/views/Community.vue')
   },
   {
     path: '/document',
@@ -31,14 +19,12 @@ export default [
   {
     path: '/resource',
     name: 'resource',
-    component: () => import('@/views/Resource.vue'),
-    children: [
-      {
-        path: '/details/:businessId',
-        name: 'details',
-        component: () => import('@/components/Details.vue')
-      }
-    ]
+    component: () => import('@/views/Resource.vue')
+  },
+  {
+    path: '/details/:businessId',
+    name: 'details',
+    component: () => import('@/components/Details.vue')
   },
   {
     path: '/introduce',
