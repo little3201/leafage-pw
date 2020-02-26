@@ -48,7 +48,6 @@ export default {
     }
   }),
   created: function () {
-    debugger
     if (this.$route.params.businessId) {
       this.queryArticle(this.$route.params.businessId)
     }
