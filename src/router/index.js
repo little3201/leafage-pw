@@ -32,7 +32,7 @@ router.beforeEach((to, from, next) => {
   if (whiteList.includes(to.fullPath)) {
     next()
   } else if (to.fullPath.startsWith('/details')) {
-    // 路由包含/article，即文章详情页，或者包换/photograph，即图片记录，放行
+    // 路由包含/details，即详情页，放行
     next()
   } else if (!token && to.fullPath !== '/signin') {
     // 路由不是登录，且没有拿到token，直接拦截，跳转至登录页
