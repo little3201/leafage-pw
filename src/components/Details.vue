@@ -59,7 +59,7 @@ export default {
           this.details = response.data
         },
         error => {
-          alert(error.message)
+          alert(error.statusText)
         }
       )
     }

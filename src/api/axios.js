@@ -13,37 +13,6 @@ const toSignin = () => {
   })
 }
 
-const toException = () => {
-  router.replace({
-    path: '/exception',
-    query: {
-      redirect: router.currentRoute.fullPath
-    }
-  })
-}
-
-const errorHandle = (status) => {
-  // 状态码判断
-  switch (status) {
-    // 401: 未登录状态，跳转登录页
-    case 401:
-      toSignin()
-      break
-    // 403 token过期，清除token并跳转登录页
-    case 403:
-      // localStorage.removeItem('token');
-      // store.commit('loginSuccess', null);
-      setTimeout(() => { toSignin() }, 1000)
-      break
-    // 404请求不存在
-    case 404:
-      toException()
-      break
-    default:
-      alert('请求可能跑丢了，请重试。')
-  }
-}
-
 class HttpRequest {
   // 如果传入参数就用传入的，没有就用baseURL.dev
   constructor (baseUrl) {
@@ -94,7 +63,25 @@ class HttpRequest {
         let { response } = error
         if (response) {
         // 请求已发出，但是不在2xx的范围
-          errorHandle(response.status)
+          // 状态码判断
+          switch (response.status) {
+            // 401: 未登录状态，跳转登录页
+            case 401:
+              toSignin()
+              break
+            // 403 token过期，清除token并跳转登录页
+            case 403:
+              // localStorage.removeItem('token');
+              // store.commit('loginSuccess', null);
+              setTimeout(() => { toSignin() }, 1000)
+              break
+            // 404请求不存在
+            case 404:
+              response.statusText = '服务罢工了，请重试。'
+              break
+            default:
+              response.statusText = '请求可能跑丢了，请重试。'
+          }
           return Promise.reject(response)
         } else {
         // 处理断网的情况

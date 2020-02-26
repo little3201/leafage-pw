@@ -14,6 +14,7 @@ const whiteList = [
   '/document',
   '/introduce',
   '/resource',
+  '/exception',
   '/signin',
   '/signup'
 ]

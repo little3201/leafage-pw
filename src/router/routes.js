@@ -32,6 +32,11 @@ export default [
     component: () => import('@/views/Introduce.vue')
   },
   {
+    path: '/exception',
+    name: 'exception',
+    component: () => import('@/components/Exception.vue')
+  },
+  {
     path: '/signin',
     name: 'signin',
     component: () => import('@/views/sign/SignIn.vue')

@@ -93,7 +93,7 @@ export default {
           this.introduction = response.data
         },
         error => {
-          alert(error.message)
+          alert(error.statusText)
         }
       )
     }
