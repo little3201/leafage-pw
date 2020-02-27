@@ -62,7 +62,6 @@ class HttpRequest {
         NProgress.done()
         let { response } = error
         if (response) {
-        // 请求已发出，但是不在2xx的范围
           // 状态码判断
           switch (response.status) {
             // 401: 未登录状态，跳转登录页
@@ -77,10 +76,10 @@ class HttpRequest {
               break
             // 404请求不存在
             case 404:
-              response.statusText = '服务罢工了，请重试。'
+              response.statusText = '服务可能罢工了，再试一下。'
               break
             default:
-              response.statusText = '请求可能跑丢了，请重试。'
+              response.statusText = '请求可能跑丢了，再试一下。'
           }
           return Promise.reject(response)
         } else {
