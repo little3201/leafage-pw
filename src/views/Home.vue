@@ -16,12 +16,13 @@
             <v-btn to="/introduce" class="mx-6" x-large>ABOUT US</v-btn>
           </v-img>
         </v-row>
+        <v-sheet color="grey lighten-3">
         <p class="text-center ma-12 display-2">Products</p>
         <v-row justify="center" class="my-0">
           <v-col cols="12">
             <v-row justify="center">
               <v-card
-                class="mx-3"
+                class="ma-3"
                 max-width="344"
                 hover
               >
@@ -31,23 +32,19 @@
                   src="https://oss.abeille.top/project.jpg"
                 >
                   <v-card-title>abeillt-ui</v-card-title>
-               </v-img>
-                <v-card-subtitle class="pb-0">前台展示</v-card-subtitle>
+                </v-img>
+                <v-card-title>abeillt-ui</v-card-title>
                 <v-card-text class="text--primary">
-                  <div>完全开源</div>
-                  <div>可直接使用，包括源码</div>
+                  <div>Vue、Vuetifyjs、Metrial Design, it's so beautiful</div>
                 </v-card-text>
                 <v-card-actions>
-                  <v-btn text>
-                    查看演示
-                  </v-btn>
-                  <v-btn text>
-                    源码获取
+                  <v-btn text color="primary">
+                    Learn more
                   </v-btn>
                 </v-card-actions>
               </v-card>
               <v-card
-                class="mx-3"
+                class="ma-3"
                 max-width="344"
                 hover
               >
@@ -56,24 +53,19 @@
                   height="200px"
                   src="https://oss.abeille.top/aucbool.jpg"
                 >
-                  <v-card-title>abeille</v-card-title>
-               </v-img>
-                <v-card-subtitle class="pb-0">后端服务</v-card-subtitle>
+                </v-img>
+                <v-card-title>abeille</v-card-title>
                 <v-card-text class="text--primary">
-                  <div>完全开源</div>
-                  <div>可直接使用，包括源码</div>
+                  <div>Spring Cloud Gateway、Spring Boot Security、Webflux, So it's so powerful</div>
                 </v-card-text>
                 <v-card-actions>
-                  <v-btn text>
-                    查看演示
-                  </v-btn>
-                  <v-btn text>
-                    源码获取
+                  <v-btn text color="primary">
+                    Learn more
                   </v-btn>
                 </v-card-actions>
               </v-card>
               <v-card
-                class="mx-3"
+                class="ma-3"
                 max-width="344"
                 hover
               >
@@ -82,31 +74,27 @@
                   height="200px"
                   src="https://oss.abeille.top/castle.jpg"
                 >
-                  <v-card-title>abeille-manager</v-card-title>
-               </v-img>
-                <v-card-subtitle class="pb-0">后台管理</v-card-subtitle>
+                </v-img>
+                <v-card-title>abeille-manager</v-card-title>
                 <v-card-text class="text--primary">
-                  <div>完全开源</div>
-                  <div>可直接使用，包括源码</div>
+                  <div>Vue、Vuetifyjs、Metrial Design, it's so lighteen</div>
                 </v-card-text>
                 <v-card-actions>
-                  <v-btn text>
-                    查看演示
-                  </v-btn>
-                  <v-btn text>
-                    源码获取
+                  <v-btn text color="primary">
+                    Learn more
                   </v-btn>
                 </v-card-actions>
               </v-card>
             </v-row>
           </v-col>
         </v-row>
+        </v-sheet>
         <p class="text-center ma-12 display-2">About</p>
         <v-row justify="center">
           <v-col cols="12">
-            <v-card class="ma-4 grey darken-3 text-center" height="200">
+            <v-card class="ma-md-4 grey darken-3 text-center">
               <v-card-text class="mx-12 white--text display-1 font-weight-bold">Get started with Abeille today
-                <v-btn color="primary" class="mx-8" x-large>try to free</v-btn>
+                <v-btn color="primary" class="ma-8" x-large>try to free</v-btn>
                 <v-btn outlined color="white" x-large>learn more</v-btn>
               </v-card-text>
             </v-card>
@@ -114,45 +102,19 @@
         </v-row>
       </v-container>
     </v-content>
-    <v-footer
-      padless
-    >
-      <v-card
-        flat
-        tile
-        class="text-center"
-      >
-        <!-- <v-card-text>
-          <v-btn
-            v-for="icon in icons"
-            :key="icon"
-            class="mx-4"
-            icon
-          >
-            <v-icon size="24px">{{ icon }}</v-icon>
-          </v-btn>
-        </v-card-text> -->
-        <v-card-text class="pt-0">
-          Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-        </v-card-text>
-        <v-divider></v-divider>
-        <v-card-text>
-          <span>
-            Copyright &copy; {{ new Date().getFullYear() }} · 陕ICP备19017836号-1 · Powerd By <strong>布吉岛</strong>
-          </span>
-        </v-card-text>
-      </v-card>
-    </v-footer>
+    <Footers />
   </v-app>
 </template>
 
 <script>
 import Headers from '@/components/Headers'
+import Footers from '@/components/Footers'
 
 export default {
   name: 'home',
   components: {
-    Headers
+    Headers,
+    Footers
   },
   data: () => ({
     drawer: null
