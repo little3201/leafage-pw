@@ -32,6 +32,7 @@ import Vuetify, {
   VNavigationDrawer,
   VRow,
   VSpacer,
+  VSheet,
   VSubheader,
   VTextField,
   VToolbarItems
@@ -68,6 +69,7 @@ Vue.use(Vuetify, {
     VNavigationDrawer,
     VRow,
     VSpacer,
+    VSheet,
     VSubheader,
     VTextField,
     VToolbarItems
