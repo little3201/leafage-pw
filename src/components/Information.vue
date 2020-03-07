@@ -16,7 +16,7 @@
                 <a style="top: 4px;">查看原文</a>
               </div>
               <v-divider/>
-              <p class="pt-3">{{ details.content }}</p>
+              <p v-html="details.content"></p>
             </v-card>
           </v-col>
           <v-col cols="12" md="4" lg="3" xl="2" class="hidden-sm-and-down">
@@ -33,7 +33,7 @@
 <script>
 import Headers from '@/components/Headers'
 import { queryArticleFunc } from '@/api/method'
-import markdown from '@/markdown'
+import md from '@/markdown'
 
 export default {
   name: 'information',
@@ -57,9 +57,8 @@ export default {
     queryArticle (businessId) {
       queryArticleFunc(businessId).then(
         response => {
-          debugger
           this.details = response.data
-          this.details.content = markdown.render(response.data.content)
+          this.details.content = md.render(this.details.content)
         },
         error => {
           alert(error.statusText)

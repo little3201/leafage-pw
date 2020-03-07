@@ -13,7 +13,7 @@
                 class="ma-3"
                 max-width="344"
                 hover
-                :to="'/details/' + source.businessId"
+                :to="'/information/' + source.businessId"
               >
                 <v-img
                   :src="source.imageUrl"

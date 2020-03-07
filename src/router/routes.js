@@ -22,9 +22,9 @@ export default [
     component: () => import('@/views/Resource.vue')
   },
   {
-    path: '/details/:businessId',
-    name: 'details',
-    component: () => import('@/components/Details.vue')
+    path: '/information/:businessId',
+    name: 'information',
+    component: () => import('@/components/Information.vue')
   },
   {
     path: '/introduce',
