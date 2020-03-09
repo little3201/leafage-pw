@@ -68,6 +68,23 @@ export const fetchArticleFunc = () => {
   })
 }
 
+/* 获取用户信息列表 */
+export const createArticleFunc = () => {
+  return axios.request({
+    url: SERVER_URL.article,
+    method: 'post'
+  })
+}
+
+/* 获取用户信息列表 */
+export const modifyArticleFunc = (articleId, params) => {
+  return axios.request({
+    url: SERVER_URL.article.concat('/').concat(articleId),
+    method: 'put',
+    data: params
+  })
+}
+
 /* ===================翻译接口方法=================== */
 
 /* 根据翻译ID获取翻译详情 */

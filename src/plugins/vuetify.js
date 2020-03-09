@@ -35,6 +35,7 @@ import Vuetify, {
   VSheet,
   VSubheader,
   VTextField,
+  VTextarea,
   VToolbarItems
 } from 'vuetify/lib'
 
@@ -72,6 +73,7 @@ Vue.use(Vuetify, {
     VSheet,
     VSubheader,
     VTextField,
+    VTextarea,
     VToolbarItems
   },
   directives: {

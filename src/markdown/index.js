@@ -10,10 +10,10 @@ const md = new MarkdownIt({
     if (lang && hljs.getLanguage(lang)) {
       try {
         return '<pre class="hljs"><code>' + hljs.highlight(lang, str, true).value +
-          '</code></pre>'
+          '</code></pre>';
       } catch (__) { }
     }
-    return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>'
+    return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
   },
   html: true,
   linkify: true,

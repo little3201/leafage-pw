@@ -23,10 +23,7 @@ class HttpRequest {
   getInsideConfig () {
     const config = {
       // axios.create 参数 baseUrl将被添加到`url`前面，除非`url`是绝对的。
-      baseURL: this.baseUrl,
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }
+      baseURL: this.baseUrl
     }
     return config
   }
