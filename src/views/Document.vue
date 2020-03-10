@@ -8,77 +8,32 @@
       >
         <v-row justify="center" class="my-0">
           <v-col cols="12" md="10" lg="10" xl="8">
-            <v-card class="pa-7">
-              <h2>{{ introduction.title }}</h2>
-              <p v-html="introduction.content"></p>
-              <p v-html="introduction.contact"></p>
-            </v-card>
+            <h2>{{ introduction.title }}</h2>
+            <p v-html="introduction.content"></p>
+            <p v-html="introduction.contact"></p>
           </v-col>
         </v-row>
       </v-container>
     </v-content>
-    <v-footer
-      padless
-    >
-      <v-card
-        flat
-        tile
-        class="text-center"
-      >
-        <v-card-text class="pt-0">
-          Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-        </v-card-text>
-        <v-divider></v-divider>
-        <v-card-text>
-          <span>
-            Copyright &copy; {{ new Date().getFullYear() }} · 陕ICP备19017836号-1 · Powerd By <strong>布吉岛</strong>
-          </span>
-        </v-card-text>
-      </v-card>
-    </v-footer>
+    <Footers />
   </v-app>
-<!--  </v-app>-->
 </template>
 
 <script>
 // @ is an alias to /src
 import Headers from '@/components/Headers'
+import Footers from '@/components/Footers'
 import { queryTranslationFunc } from '@/api/method'
 
 export default {
   name: 'document',
   components: {
-    Headers
+    Headers,
+    Footers
   },
   data () {
     return {
       drawer: null,
-      items: [
-        {
-          text: 'COMMUNITY',
-          url: '/community'
-        },
-        {
-          text: 'RESOURCE',
-          url: '/resource'
-        },
-        {
-          text: 'DOCUMENT',
-          url: '/'
-        },
-        {
-          text: 'ABOUT',
-          url: '/introduce'
-        },
-        {
-          text: 'SIGN IN',
-          url: '/signin'
-        },
-        {
-          text: 'SIGN UP',
-          url: '/signup'
-        }
-      ],
       introduction: {
         title: '关于我',
         content: '还没想好写点啥',

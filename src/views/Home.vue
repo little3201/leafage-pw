@@ -16,7 +16,7 @@
             <v-btn to="/introduce" class="mx-6" x-large>ABOUT US</v-btn>
           </v-img>
         </v-row>
-        <v-sheet color="grey lighten-3">
+        <v-sheet class="py-3 my-12 px-0" color="grey lighten-3">
         <p class="text-center ma-12 display-2">Products</p>
         <v-row justify="center" class="my-0">
           <v-col cols="12">
@@ -31,7 +31,6 @@
                   height="200px"
                   src="https://oss.abeille.top/project.jpg"
                 >
-                  <v-card-title>abeillt-ui</v-card-title>
                 </v-img>
                 <v-card-title>abeillt-ui</v-card-title>
                 <v-card-text class="text--primary">

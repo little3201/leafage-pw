@@ -4,6 +4,7 @@
     <v-content>
       <v-container
         fluid
+        color="grey lighten-3"
       >
         <!-- If using vue-router -->
         <v-row justify="center" class="my-0">
@@ -100,18 +101,21 @@
         </v-row>
       </v-container>
     </v-content>
+    <Footers />
   </v-app>
 </template>
 
 <script>
 // @ is an alias to /src
 import Headers from '@/components/Headers'
+import Footers from '@/components/Footers'
 import { fetchArticleFunc, fetchTopicFunc, fetchTranslationFunc } from '@/api/method'
 
 export default {
   name: 'community',
   components: {
-    Headers
+    Headers,
+    Footers
   },
   data: () => ({
     drawer: null,
