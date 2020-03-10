@@ -68,6 +68,9 @@ export default {
 }
 </script>
 
-<style>
-@import '/highlight.js/styles/pojoaque.css';
+<style lang="scss">
+.v-application code {
+  display: block;
+  color: darkkhaki;
+}
 </style>
