@@ -9,7 +9,7 @@
         <!-- If using vue-router -->
         <v-row justify="center" class="my-0">
           <v-col cols="12" md="8" lg="8" xl="6">
-            <v-card class="pa-7">
+            <v-card class="pa-7" outlined>
               <div class="d-flex">
                 <h3>
                   热门话题
@@ -32,7 +32,7 @@
                 </v-list-item-group>
               </v-list>
             </v-card>
-            <v-card class="pa-7 mt-6">
+            <v-card class="pa-7 mt-6" outlined>
               <h3>
                 推荐内容
               </h3>
@@ -57,7 +57,7 @@
             </v-card>
           </v-col>
           <v-col cols="12" md="4" lg="3" xl="2" class="hidden-sm-and-down">
-            <v-card class="pa-7">
+            <v-card class="pa-7" outlined>
               <div class="d-flex">
                 <h3>
                   翻译更新
@@ -77,7 +77,7 @@
                 </v-list-item-group>
               </v-list>
             </v-card>
-            <v-card class="pa-7 mt-6">
+            <v-card class="pa-7 mt-6" outlined>
               <div class="d-flex">
                 <h3>
                   编辑推荐
