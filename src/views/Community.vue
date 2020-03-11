@@ -4,7 +4,6 @@
     <v-content>
       <v-container
         fluid
-        color="grey lighten-3"
       >
         <!-- If using vue-router -->
         <v-row justify="center" class="my-0">
