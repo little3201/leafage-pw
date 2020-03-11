@@ -63,7 +63,7 @@
         dense
       />
       <v-spacer />
-      <v-toolbar-items class="me-5 hidden-sm-and-down">
+      <v-toolbar-items class="hidden-sm-and-down">
         <v-btn  v-for="(item, index) in menus" :key="index" :to="item.url" text>{{ item.title }}</v-btn>
       </v-toolbar-items>
       <v-btn icon class="hidden-md-and-up">

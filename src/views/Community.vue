@@ -35,6 +35,7 @@
               class="mb-3 hidden-sm-and-up"
               outlined
               v-for="(item, index) in recommendatories" :key="index"
+              :to="'/information/' + item.businessId"
             >
               <v-img
                 class="white--text align-end"

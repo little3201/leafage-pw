@@ -9,11 +9,12 @@
         <v-row class="mt-n3">
           <v-img max-height="600"
             class="text-center white--text align-center"
-            src="https://oss.abeille.top/auc.jpg">
-            <p class="display-4 font-weight-bold">The beautiful、powerful products</p>
+            src="https://cdn.vuetifyjs.com/images/cards/docks.jpg">
+            <p class="display-4 hidden-sm-and-down font-weight-bold">The beautiful、powerful products</p>
+            <p class="display-1 hidden-md-and-up font-weight-bold">The beautiful、powerful products</p>
             <p class="headline font-weight-bold my-12">Base with Vue.js、vuetifyjs and is Responsive、Beautiful</p>
-            <v-btn to="/document" color="primary" class="mx-6" x-large>DOCUMENT</v-btn>
-            <v-btn to="/introduce" class="mx-6" x-large>ABOUT US</v-btn>
+            <!-- <v-btn to="/document" color="primary" class="mx-6" x-large>DOCUMENT</v-btn>
+            <v-btn to="/introduce" class="mx-6" x-large>ABOUT US</v-btn> -->
           </v-img>
         </v-row>
         <v-sheet class="py-3 my-12 px-0" color="grey lighten-3">
