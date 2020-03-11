@@ -8,7 +8,7 @@
         <!-- If using vue-router -->
         <v-row justify="center" class="my-0">
           <v-col cols="12" md="8" lg="8" xl="6">
-            <v-card class="pa-7" outlined>
+            <v-card class="pa-7 hidden-sm-and-down" outlined>
               <div class="d-flex">
                 <h3>
                   热门话题
@@ -31,7 +31,22 @@
                 </v-list-item-group>
               </v-list>
             </v-card>
-            <v-card class="pa-7 mt-6" outlined>
+            <v-card
+              class="mb-3 hidden-sm-and-up"
+              outlined
+              v-for="(item, index) in recommendatories" :key="index"
+            >
+              <v-img
+                class="white--text align-end"
+                height="200"
+                :src="item.imageUrl"
+              >
+                <v-card-title v-text="item.title"></v-card-title>
+                <v-card-subtitle v-text="item.subtitle" class="mt-1 white--text text-truncate">
+                </v-card-subtitle>
+              </v-img>
+            </v-card>
+            <v-card class="pa-7 mt-6 hidden-xs-only" outlined>
               <h3>
                 推荐内容
               </h3>
