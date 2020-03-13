@@ -13,7 +13,7 @@
             <p class="display-4 hidden-sm-and-down font-weight-bold">The beautiful、powerful products</p>
             <p class="display-1 hidden-md-and-up font-weight-bold">The beautiful、powerful products</p>
             <p class="headline font-weight-bold my-12">Base with Vue.js、vuetifyjs and is Responsive、Beautiful</p>
-            <!-- <v-btn to="/document" color="primary" class="mx-6" x-large>DOCUMENT</v-btn>
+            <!-- <v-btn v-permission="23" to="/document" color="primary" class="mx-6" x-large>DOCUMENT</v-btn>
             <v-btn to="/introduce" class="mx-6" x-large>ABOUT US</v-btn> -->
           </v-img>
         </v-row>

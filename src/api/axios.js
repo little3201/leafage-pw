@@ -3,6 +3,7 @@ import router from '@/router'
 import NProgress from 'nprogress' // progress bar
 import 'nprogress/nprogress.css' // progress bar style
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
+// import jwt_decode from 'jwt-decode'
 
 const toSignin = () => {
   router.replace({
@@ -36,7 +37,21 @@ class HttpRequest {
       config => {
         NProgress.start()
         let token = 'token'
+        // if (localStorage.Token) {
         if (token) {
+        // const decoded = jwt_decode(localStorage.Token)
+        // const currentTime = Date.now() / 1000
+        // console.log('Token_Decode & currentTime', decoded, currentTime)
+        // if (decoded.exp < currentTime) {
+          // Vue.prototype.$notify({
+          // title: 'Tips',
+          // message: 'Token过期，重新登录',
+          // type: 'error',
+          // duration: 3000
+          // })
+          // store.dispatch('clearCurrentState') // 清空vuex
+          // next('/')
+        // }
           config.headers.Authorization = 'Bearer ' + token // 让每个请求携带自定义 token 请根据实际情况自行修改
         }
         this.queue[url] = true

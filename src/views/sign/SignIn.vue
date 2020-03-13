@@ -93,6 +93,10 @@ export default {
         this.loading = true
         loginFunc(this.formData).then(
           response => {
+            const token = response.data.token
+            window.localStorage.setItem('access_token', token)
+            // 更新授权状态
+            // this.$store.dispatch('setIsAuthenticated',true)
             // 设置token
             this.$router.push({
               name: 'home'
