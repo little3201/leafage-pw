@@ -78,13 +78,13 @@ class HttpRequest {
           switch (response.status) {
             // 401: 未登录状态，跳转登录页
             case 401:
-              toSignin()
+              setTimeout(() => { toSignin() }, 300)
               break
             // 403 token过期，清除token并跳转登录页
             case 403:
               // localStorage.removeItem('token');
               // store.commit('loginSuccess', null);
-              setTimeout(() => { toSignin() }, 1000)
+              setTimeout(() => { toSignin() }, 300)
               break
             // 404请求不存在
             case 404:

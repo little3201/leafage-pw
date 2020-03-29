@@ -13,7 +13,7 @@
     "nprogress": "^0.2.0",
     "vue": "^2.6.11",
     "vue-router": "^3.1.6",
-    "vuetify": "^2.2.15",
+    "vuetify": "^2.2.18",
     "vuex": "^3.1.3"
   },
   "devDependencies": {
@@ -37,7 +37,7 @@
     "markdown-it-container": "^2.0.0",
     "markdown-it-emoji": "^1.4.0",
     "markdown-it-table-of-contents": "^0.4.4",
-    "sass": "^1.26.2",
+    "sass": "^1.26.3",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11"
   },
