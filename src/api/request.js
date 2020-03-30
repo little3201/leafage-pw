@@ -1,15 +1,21 @@
-// 服务匹配前缀
-export const SERVER_PRE = {
-  hypervisor: '/hypervisor', // 系统
-  assets: '/assets' // 资源
-}
 // 认证资源信息
 export const AUTH = {
   client_id: 'abeille',
   client_secret: 'abeille'
 }
-// 服务url
+
+// 服务匹配前缀
+const SERVER_PRE = {
+  hypervisor: '/hypervisor', // 系统
+  assets: '/assets' // 资源
+}
+
+// 接口请求路径
 export const SERVER_URL = {
-  user: '/user', // 用户
-  article: '/article' // 文章
+  user: SERVER_PRE.hypervisor.concat('/user'), // 用户
+  signin: SERVER_PRE.hypervisor.concat('/oauth/token'), // 登录
+  article: SERVER_PRE.assets.concat('/article'), // 文章
+  translation: SERVER_PRE.assets.concat('/translation'), // 翻译
+  topic: SERVER_PRE.assets.concat('/topic'), // 话题
+  source: SERVER_PRE.assets.concat('/resource') // 资源
 }

@@ -4,34 +4,37 @@ export default [
   {
     path: '/',
     name: 'home',
-    component: Home,
-    children: [
-      {
-        path: '/technology',
-        name: 'technology',
-        component: () => import('@/views/home/Technology.vue')
-      },
-      {
-        path: '/translation',
-        name: 'translation',
-        component: () => import('@/views/home/Translation.vue')
-      },
-      {
-        path: '/travel',
-        name: 'travel',
-        component: () => import('@/views/home/Travel.vue')
-      },
-      {
-        path: '/introduce',
-        name: 'introduce',
-        component: () => import('@/views/home/Introduce.vue')
-      }
-    ]
+    component: Home
   },
   {
-    path: '/article',
-    name: 'article',
-    component: () => import('@/views/article/Article.vue')
+    path: '/community',
+    name: 'community',
+    component: () => import('@/views/Community.vue')
+  },
+  {
+    path: '/document',
+    name: 'document',
+    component: () => import('@/views/Document.vue')
+  },
+  {
+    path: '/resource',
+    name: 'resource',
+    component: () => import('@/views/Resource.vue')
+  },
+  {
+    path: '/information/:businessId',
+    name: 'information',
+    component: () => import('@/components/Information.vue')
+  },
+  {
+    path: '/introduce',
+    name: 'introduce',
+    component: () => import('@/views/Introduce.vue')
+  },
+  {
+    path: '/exception',
+    name: 'exception',
+    component: () => import('@/components/Exception.vue')
   },
   {
     path: '/signin',

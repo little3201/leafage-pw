@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import { Ripple } from 'vuetify/lib/directives'
 import '@mdi/font/css/materialdesignicons.css'
 
 import Vuetify, {
@@ -9,43 +10,34 @@ import Vuetify, {
   VBtn,
   VCard,
   VCardActions,
+  VCardSubtitle,
   VCardTitle,
   VCardText,
-  VCarousel,
-  VCarouselItem,
   VCol,
   VContent,
   VContainer,
-  VCheckbox,
   VDivider,
-  VDialog,
   VFooter,
   VForm,
   VIcon,
   VImg,
   VList,
-  VListGroup,
   VListItem,
   VListItemAction,
-  VListItemAvatar,
   VListItemContent,
   VListItemGroup,
   VListItemIcon,
   VListItemSubtitle,
   VListItemTitle,
-  VMenu,
   VNavigationDrawer,
-  VPagination,
   VRow,
-  VSheet,
   VSpacer,
+  VSheet,
   VSubheader,
   VTextField,
-  VTooltip,
-  VToolbarTitle,
+  VTextarea,
   VToolbarItems
 } from 'vuetify/lib'
-import { Ripple } from 'vuetify/lib/directives'
 
 Vue.use(Vuetify, {
   components: {
@@ -56,40 +48,32 @@ Vue.use(Vuetify, {
     VBtn,
     VCard,
     VCardActions,
+    VCardSubtitle,
     VCardTitle,
     VCardText,
-    VCarousel,
-    VCarouselItem,
     VCol,
     VContent,
     VContainer,
-    VCheckbox,
     VDivider,
-    VDialog,
     VFooter,
     VForm,
     VIcon,
     VImg,
     VList,
-    VListGroup,
     VListItem,
     VListItemAction,
-    VListItemAvatar,
     VListItemContent,
     VListItemGroup,
     VListItemIcon,
     VListItemSubtitle,
     VListItemTitle,
-    VMenu,
     VNavigationDrawer,
-    VPagination,
     VRow,
-    VSheet,
     VSpacer,
+    VSheet,
     VSubheader,
     VTextField,
-    VTooltip,
-    VToolbarTitle,
+    VTextarea,
     VToolbarItems
   },
   directives: {
@@ -98,13 +82,13 @@ Vue.use(Vuetify, {
 })
 
 const opts = {
-//  theme: {
-//    themes: {
-//      light: {
-//        primary: '#faad14'
-//      }
-//    }
-//  },
+  theme: {
+    themes: {
+      light: {
+        primary: '#FF6F00'
+      }
+    }
+  },
   icons: {
     iconfont: 'mdi' // default - only for display purposes
   }

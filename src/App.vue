@@ -1,19 +1,7 @@
 <template>
-  <v-app>
-    <!-- If using vue-router -->
-    <router-view></router-view>
-  </v-app>
+  <!-- If using vue-router -->
+  <router-view></router-view>
 </template>
-
-<script>
-export default {
-  data () {
-    return {
-      drawer: null
-    }
-  }
-}
-</script>
 
 <style lang="scss">
 a {

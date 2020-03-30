@@ -1,60 +1,67 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" xs="12" sm="6" md="5" lg="3" xl="2">
-      <v-card class="card-login" style="text-align: center;">
-        <router-link to="/">
-          <img style="height: 3.5rem;" src="@/assets/logo.png" />
-        </router-link>
-        <p class="headline mb" style="text-align: initial;">登录</p>
-        <p style="text-align: initial;">
-          <span>已有邮箱账户？</span>
-          <a href="#" class="link" style="vertical-align: initial;">立即绑定</a>
-        </p>
-        <v-form ref="form" v-model="valid" lazy-validation>
-          <v-text-field
-            v-model="formData.username"
-            :rules="formRules.username"
-            label="手机号/邮箱"
-            prepend-inner-icon="mdi-account"
-            required
-          ></v-text-field>
-          <v-text-field
-            v-model="formData.password"
-            :rules="formRules.password"
-            label="登录密码"
-            prepend-inner-icon="mdi-lock"
-            required
-          ></v-text-field>
-        </v-form>
-        <p style="text-align: end;">
-          <a href="#"  class="link">忘记密码</a>
-        </p>
-        <p>
-          <v-btn rounded color="primary" block @click="submitForm">
-            登&nbsp;录
-          </v-btn>
-        </p>
-        <p style="text-align: initial;">
-          <span>没有账号？</span>
-          <a href="/signup" class="link">
-            去注册
-          </a>
-        </p>
-        <p class="mb">第三方账号登录</p>
-        <p style="margin-bottom: 0">
-          <v-btn text icon :x-large="true">
-            <v-icon>mdi-twitter</v-icon>
-          </v-btn>
-          <v-btn text icon :x-large="true">
-            <v-icon>mdi-github-circle</v-icon>
-          </v-btn>
-          <v-btn text icon :x-large="true">
-            <v-icon>mdi-wechat</v-icon>
-          </v-btn>
-        </p>
-      </v-card>
-    </v-col>
-  </v-row>
+  <v-app>
+    <v-content>
+      <v-container
+        class="fill-height"
+        fluid
+      >
+        <!-- content -->
+        <v-row justify="center" class="my-0">
+          <v-col cols="12" xs="12" sm="6" md="5" lg="3" xl="2">
+            <v-card class="pa-7">
+              <v-row justify="center">
+                <router-link to="/">
+                  <v-img max-width="4rem" src="https://oss.abeille.top/logo.png"></v-img>
+                </router-link>
+              </v-row>
+              <v-form ref="form" v-model="valid" lazy-validation>
+                <v-text-field
+                  v-model="formData.username"
+                  :rules="formRules.username"
+                  label="手机号/邮箱"
+                  prepend-inner-icon="mdi-account"
+                  required
+                ></v-text-field>
+                <v-text-field
+                  v-model="formData.password"
+                  :rules="formRules.password"
+                  label="登录密码"
+                  prepend-inner-icon="mdi-lock"
+                  required
+                ></v-text-field>
+              </v-form>
+              <p class="text-right">
+                <a href="#" class="subtitle-2">忘记密码</a>
+              </p>
+              <p>
+                <v-btn rounded class="body-1" :loading="loading" color="primary" block @click="submitForm">
+                  登&emsp;录
+                </v-btn>
+              </p>
+              <p>
+                <span class="subtitle-2">没有账号？</span>
+                <a href="/signup" class="subtitle-2">
+                  去注册
+                </a>
+              </p>
+              <p class="mb-0 text-center">第三方账号登录</p>
+              <p class="mb-0 text-center">
+                <v-btn text icon x-large>
+                  <v-icon>mdi-twitter</v-icon>
+                </v-btn>
+                <v-btn text icon x-large>
+                  <v-icon>mdi-github-circle</v-icon>
+                </v-btn>
+                <v-btn text icon x-large>
+                  <v-icon>mdi-wechat</v-icon>
+                </v-btn>
+              </p>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
@@ -64,6 +71,7 @@ export default {
   name: 'signin',
   data () {
     return {
+      loading: false,
       valid: true,
       formData: {
         username: '',
@@ -82,8 +90,13 @@ export default {
   methods: {
     submitForm () {
       if (this.$refs.form.validate()) {
+        this.loading = true
         loginFunc(this.formData).then(
           response => {
+            const token = response.data.token
+            window.localStorage.setItem('access_token', token)
+            // 更新授权状态
+            // this.$store.dispatch('setIsAuthenticated',true)
             // 设置token
             this.$router.push({
               name: 'home'
@@ -92,6 +105,7 @@ export default {
           error => {
             // 执行失败的回调函数
             alert(error.message)
+            this.loading = false
           }
         )
       } else {
@@ -103,20 +117,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.row {
-  margin: 0;
-}
-.v-card {
-  padding: 30px;
-}
-.link {
-  color: rgba(0, 0, 0, 0.6);
-  font-size: 14px;
-}
-span {
-  font-size: 14px;
-}
-.mb {
-  margin-bottom: 0;
-}
 </style>
