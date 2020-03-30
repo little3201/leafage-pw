@@ -40,7 +40,6 @@
       color="white"
       light
       flat
-      hide-on-scroll
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="hidden-md-and-up" />
       <v-spacer class="hidden-md-and-up" />
