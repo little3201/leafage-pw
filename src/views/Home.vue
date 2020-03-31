@@ -7,17 +7,11 @@
         class="full-height"
       >
         <v-row class="mt-n3">
-          <v-img max-height="600"
-            class="text-center white--text align-center"
+          <v-img contain
+            class="full-height text-center white--text align-center"
             src="https://cdn.vuetifyjs.com/images/cards/docks.jpg">
-            <p class="display-4 hidden-sm-and-down font-weight-bold">The beautiful、powerful products</p>
-            <p class="display-1 hidden-md-and-up font-weight-bold">The beautiful、powerful products</p>
-            <p class="headline font-weight-bold my-12">Base with Vue.js、vuetifyjs and is Responsive、Beautiful</p>
-            <!-- <v-btn v-permission="23" to="/document" color="primary" class="mx-6" x-large>DOCUMENT</v-btn>
-            <v-btn to="/introduce" class="mx-6" x-large>ABOUT US</v-btn> -->
           </v-img>
         </v-row>
-        <v-sheet class="py-3 my-12 px-0" color="grey lighten-3">
         <p class="text-center ma-12 display-2">Products</p>
         <v-row justify="center" class="my-0">
           <v-col cols="12">
@@ -88,7 +82,6 @@
             </v-row>
           </v-col>
         </v-row>
-        </v-sheet>
         <p class="text-center ma-12 display-2">About</p>
         <v-row justify="center">
           <v-col cols="12">
