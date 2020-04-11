@@ -7,9 +7,10 @@
         class="full-height"
       >
         <v-row class="mt-n3">
-          <v-img contain
-            class="full-height text-center white--text align-center"
-            src="https://cdn.vuetifyjs.com/images/cards/docks.jpg">
+          <v-img
+            max-height="600"
+            class="text-center white--text align-center"
+            src="https://cdn.dribbble.com/users/2753723/screenshots/5733949/36.jpg">
           </v-img>
         </v-row>
         <p class="text-center ma-12 display-2">Products</p>

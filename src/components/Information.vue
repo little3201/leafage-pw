@@ -5,31 +5,14 @@
       <v-container
         fluid
       >
-        <v-row justify="center" align="start" class="my-0">
-          <v-img max-height="280" :src="information.imageUrl" class="text-center white--text align-center">
-            <h1>{{ information.title }}</h1>
-            <p class="mt-3">作者：{{ information.author }}</p>
+        <v-row justify="center" align="start" class="mt-n3">
+          <v-img max-height="320" :src="information.imageUrl" class="text-center white--text align-center">
+            <h1 style="text-shadow:2px 2px 8px #000000;">{{ information.title }}</h1>
+            <p class="mt-3">作者：{{ information.author.nickname }}</p>
           </v-img>
         </v-row>
         <v-row justify="center" align="start" class="my-0">
           <v-col cols="12" md="8" lg="8" xl="6">
-            <h1>{{ information.title }}</h1>
-            <p class="mt-3">
-              <v-avatar src="https://cdn.vuetifyjs.com/images/john.jpg">
-              </v-avatar>
-              <v-divider
-                class="mx-4"
-                inset
-                vertical
-              ></v-divider>
-              布吉岛
-              <v-divider
-                class="mx-4"
-                inset
-                vertical
-              ></v-divider>
-              <v-icon>mdi-local-offer</v-icon>
-            </p>
             <p class="my-3" v-html="information.content"></p>
             上一篇：spring security 5.x使用及分析（二：自定义配置—oauth2原理解析）
             <v-divider></v-divider>
@@ -68,13 +51,7 @@ export default {
         avatar: '',
         nickname: ''
       }
-    },
-    articles: [
-      {
-        businessId: '1',
-        title: 'haiyoushui'
-      }
-    ]
+    }
   }),
   created: function () {
     if (this.$route.params.businessId) {
