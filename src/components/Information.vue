@@ -74,11 +74,4 @@ export default {
 </script>
 
 <style lang="scss">
-.v-application code {
-  display: block;
-  color: darkkhaki;
-}
-#app {
-  line-height: 1.5;
-}
 </style>
