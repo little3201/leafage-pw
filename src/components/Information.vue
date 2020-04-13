@@ -8,7 +8,7 @@
         <v-row justify="center" align="start" class="mt-n3">
           <v-img max-height="320" :src="information.imageUrl" class="text-center white--text align-center">
             <h1 class="text_shadow">{{ information.title }}</h1>
-            <p class="mt-3 text_shadow"><strong>作者：</strong> {{ information.author == undefind ?  '' : information.author.nickname}}</p>
+            <p class="mt-3 text_shadow"><strong>作者：</strong> {{ information.author == null ?  '' : information.author.nickname}}</p>
           </v-img>
         </v-row>
         <v-row justify="center" align="start" class="my-0">
@@ -75,5 +75,9 @@ export default {
 <style lang="scss">
 .text_shadow {
   text-shadow:2px 2px 8px #000000;
+}
+.v-application code {
+  display: block;
+  color: antiquewhite;
 }
 </style>
