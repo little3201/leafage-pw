@@ -100,22 +100,22 @@
     <v-app-bar
       app
       color="white"
-      height="100"
+      height="86"
     >
       <v-avatar
         class="mr-3"
         color="grey lighten-5"
-        size="70"
+        size="60"
       >
         <v-img
           contain
-          max-height="70%"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          max-height="60%"
+          src="@/assets/logo.png"
         ></v-img>
       </v-avatar>
 
       <v-toolbar-title class="font-weight-black headline">
-        VUETIFY
+        ABEILLE
       </v-toolbar-title>
     </v-app-bar>
 
@@ -151,7 +151,7 @@
                       :class="[$vuetify.breakpoint.smAndDown ? 'display-3': 'display-4']"
                       class="font-weight-black"
                     >
-                      VUETIFY
+                      ABEILLE
                     </span>
 
                   </v-col>
@@ -209,7 +209,7 @@
             large
           >
             <span class="grey--text text--darken-1 font-weight-bold">
-              Vuetify Documentation
+              Abeille Documentation
             </span>
           </v-btn>
         </v-container>
@@ -224,7 +224,7 @@
         <div class="py-12"></div>
 
         <v-container class="text-center">
-          <h2 class="display-2 font-weight-bold mb-3">VUETIFY FEATURES</h2>
+          <h2 class="display-2 font-weight-bold mb-3">ABEILLE FEATURES</h2>
 
           <v-responsive
             class="mx-auto mb-12"
@@ -434,28 +434,20 @@
         <div class="py-12"></div>
       </v-sheet>
     </v-content>
-
-    <v-footer
-      class="justify-center"
-      color="#292929"
-      height="100"
-    >
-      <div class="title font-weight-light grey--text text--lighten-1 text-center">
-        &copy; {{ (new Date()).getFullYear() }} — Vuetify, LLC — Made with 💜 by John Leider
-      </div>
-    </v-footer>
+    <!-- footer -->
+    <Footers/>
   </v-app>
 </template>
 
 <script>
 // import Headers from '@/components/Headers'
-// import Footers from '@/components/Footers'
+import Footers from '@/components/Footers'
 
 export default {
   name: 'home',
   components: {
     // Headers,
-    // Footers
+    Footers
   },
   data: () => ({
     articles: [

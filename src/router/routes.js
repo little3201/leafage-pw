@@ -1,40 +1,37 @@
-import Home from '../views/Home.vue'
-
 export default [
   {
     path: '/',
-    name: 'home',
-    component: Home
-  },
-  {
-    path: '/community',
-    name: 'community',
-    component: () => import('@/views/Community.vue')
-  },
-  {
-    path: '/document',
-    name: 'document',
-    component: () => import('@/views/Document.vue')
-  },
-  {
-    path: '/resource',
-    name: 'resource',
-    component: () => import('@/views/Resource.vue')
-  },
-  {
-    path: '/information/:businessId',
-    name: 'information',
-    component: () => import('@/components/Information.vue')
-  },
-  {
-    path: '/introduce',
-    name: 'introduce',
-    component: () => import('@/views/Introduce.vue')
-  },
-  {
-    path: '/exception',
-    name: 'exception',
-    component: () => import('@/components/Exception.vue')
+    component: () => import('@/layouts/home/Index.vue'),
+    children: [
+      {
+        path: '',
+        name: 'Home',
+        component: () => import('@/views/home/Index.vue')
+      },
+      {
+        path: 'about',
+        name: 'About',
+        component: () => import('@/views/about/Index.vue'),
+        meta: { src: require('@/assets/about.jpg') }
+      },
+      {
+        path: 'contact-us',
+        name: 'Contact',
+        component: () => import('@/views/contact-us/Index.vue'),
+        meta: { src: require('@/assets/contact.jpg') }
+      },
+      {
+        path: 'pro',
+        name: 'Pro',
+        component: () => import('@/views/pro/Index.vue'),
+        meta: { src: require('@/assets/pro.jpg') }
+      },
+      {
+        path: '*',
+        name: 'FourOhFour',
+        component: () => import('@/views/404/Index.vue')
+      }
+    ]
   },
   {
     path: '/signin',

@@ -13,7 +13,7 @@ devDependencies:
   '@vue/cli-plugin-pwa': 4.3.1_@vue+cli-service@4.3.1
   '@vue/cli-plugin-router': 4.3.1_@vue+cli-service@4.3.1
   '@vue/cli-plugin-vuex': 4.3.1_@vue+cli-service@4.3.1
-  '@vue/cli-service': 4.3.1_93f68061ca0d86937b881275f9db2069
+  '@vue/cli-service': 4.3.1_a449a4310575c8c1f7fffbc91332e4de
   '@vue/eslint-config-standard': 4.0.0_eslint@5.16.0
   babel-eslint: 10.1.0_eslint@5.16.0
   deepmerge: 4.2.2
@@ -22,6 +22,7 @@ devDependencies:
   fibers: 4.0.2
   highlight.js: 9.18.1
   lint-staged: 9.5.0
+  lodash: 4.17.15
   markdown-it: 10.0.0
   markdown-it-anchor: 5.2.7_markdown-it@10.0.0
   markdown-it-container: 2.0.0
@@ -30,6 +31,7 @@ devDependencies:
   sass: 1.26.3
   sass-loader: 8.0.2_fibers@4.0.2+sass@1.26.3
   vue-template-compiler: 2.6.11
+  webfontloader: 1.6.28
 lockfileVersion: 5.1
 packages:
   /@babel/code-frame/7.8.3:
@@ -946,7 +948,7 @@ packages:
       '@babel/preset-modules': 0.1.3_@babel+core@7.9.0
       '@babel/types': 7.9.5
       browserslist: 4.11.1
-      core-js-compat: 3.6.4
+      core-js-compat: 3.6.5
       invariant: 2.2.4
       levenary: 1.1.1
       semver: 5.7.1
@@ -1203,7 +1205,7 @@ packages:
       '@vue/babel-preset-jsx': 1.1.2_@babel+core@7.9.0
       babel-plugin-dynamic-import-node: 2.3.0
       core-js: 3.6.5
-      core-js-compat: 3.6.4
+      core-js-compat: 3.6.5
     dev: true
     resolution:
       integrity: sha1-u2eq5WKYMGfFskLCf7feF/QM8Qk=
@@ -1279,7 +1281,7 @@ packages:
     dependencies:
       '@babel/core': 7.9.0
       '@vue/babel-preset-app': 4.3.1
-      '@vue/cli-service': 4.3.1_93f68061ca0d86937b881275f9db2069
+      '@vue/cli-service': 4.3.1_a449a4310575c8c1f7fffbc91332e4de
       '@vue/cli-shared-utils': 4.3.1
       babel-loader: 8.1.0_@babel+core@7.9.0+webpack@4.42.1
       cache-loader: 4.1.0_webpack@4.42.1
@@ -1293,7 +1295,7 @@ packages:
       tarball: '@vue/cli-plugin-babel/download/@vue/cli-plugin-babel-4.3.1.tgz'
   /@vue/cli-plugin-eslint/4.3.1_26b4135a6a7ea6e5db753560c48793ec:
     dependencies:
-      '@vue/cli-service': 4.3.1_93f68061ca0d86937b881275f9db2069
+      '@vue/cli-service': 4.3.1_a449a4310575c8c1f7fffbc91332e4de
       '@vue/cli-shared-utils': 4.3.1
       eslint: 5.16.0
       eslint-loader: 2.2.1_eslint@5.16.0+webpack@4.42.1
@@ -1310,7 +1312,7 @@ packages:
       tarball: '@vue/cli-plugin-eslint/download/@vue/cli-plugin-eslint-4.3.1.tgz'
   /@vue/cli-plugin-pwa/4.3.1_@vue+cli-service@4.3.1:
     dependencies:
-      '@vue/cli-service': 4.3.1_93f68061ca0d86937b881275f9db2069
+      '@vue/cli-service': 4.3.1_a449a4310575c8c1f7fffbc91332e4de
       '@vue/cli-shared-utils': 4.3.1
       webpack: 4.42.1_webpack@4.42.1
       workbox-webpack-plugin: 4.3.1_webpack@4.42.1
@@ -1322,7 +1324,7 @@ packages:
       tarball: '@vue/cli-plugin-pwa/download/@vue/cli-plugin-pwa-4.3.1.tgz'
   /@vue/cli-plugin-router/4.3.1_@vue+cli-service@4.3.1:
     dependencies:
-      '@vue/cli-service': 4.3.1_93f68061ca0d86937b881275f9db2069
+      '@vue/cli-service': 4.3.1_a449a4310575c8c1f7fffbc91332e4de
       '@vue/cli-shared-utils': 4.3.1
     dev: true
     peerDependencies:
@@ -1332,14 +1334,14 @@ packages:
       tarball: '@vue/cli-plugin-router/download/@vue/cli-plugin-router-4.3.1.tgz'
   /@vue/cli-plugin-vuex/4.3.1_@vue+cli-service@4.3.1:
     dependencies:
-      '@vue/cli-service': 4.3.1_93f68061ca0d86937b881275f9db2069
+      '@vue/cli-service': 4.3.1_a449a4310575c8c1f7fffbc91332e4de
     dev: true
     peerDependencies:
       '@vue/cli-service': ^3.0.0 || ^4.0.0-0
     resolution:
       integrity: sha1-K3Ov9W+eG+MQGIc9XtLVnxVedHY=
       tarball: '@vue/cli-plugin-vuex/download/@vue/cli-plugin-vuex-4.3.1.tgz'
-  /@vue/cli-service/4.3.1_93f68061ca0d86937b881275f9db2069:
+  /@vue/cli-service/4.3.1_a449a4310575c8c1f7fffbc91332e4de:
     dependencies:
       '@intervolga/optimize-cssnano-plugin': 1.0.6_webpack@4.42.1
       '@soda/friendly-errors-webpack-plugin': 1.7.1_webpack@4.42.1
@@ -1362,7 +1364,7 @@ packages:
       clipboardy: 2.3.0
       cliui: 6.0.0
       copy-webpack-plugin: 5.1.1_webpack@4.42.1
-      css-loader: 3.5.1_webpack@4.42.1
+      css-loader: 3.5.2_webpack@4.42.1
       cssnano: 4.1.10
       debug: 4.1.1
       default-gateway: 5.0.5
@@ -1382,11 +1384,12 @@ packages:
       pnp-webpack-plugin: 1.6.4
       portfinder: 1.0.25
       postcss-loader: 3.0.0
+      sass-loader: 8.0.2_fibers@4.0.2+sass@1.26.3
       ssri: 7.1.0
       terser-webpack-plugin: 2.3.5_webpack@4.42.1
       thread-loader: 2.1.3_webpack@4.42.1
       url-loader: 2.3.0_file-loader@4.3.0+webpack@4.42.1
-      vue-loader: 15.9.1_css-loader@3.5.1+webpack@4.42.1
+      vue-loader: 15.9.1_1afa42f4f5bcd5610bd17c24e9bdc0f1
       vue-style-loader: 4.1.2
       vue-template-compiler: 2.6.11
       webpack: 4.42.1_webpack@4.42.1
@@ -1400,7 +1403,25 @@ packages:
     hasBin: true
     peerDependencies:
       '@vue/cli-service': '*'
+      less-loader: '*'
+      pug-plain-loader: '*'
+      raw-loader: '*'
+      sass-loader: '*'
+      stylus-loader: '*'
       vue-template-compiler: ^2.0.0
+    peerDependenciesMeta:
+      less-loader:
+        optional: true
+      pug-plain-loader:
+        optional: true
+      raw-loader:
+        optional: true
+      sass-loader:
+        optional: true
+      stylus-loader:
+        optional: true
+      vue-template-compiler:
+        optional: true
     resolution:
       integrity: sha1-lLISHQjjQ6Vffs7yYK9SV6n/5+U=
       tarball: '@vue/cli-service/download/@vue/cli-service-4.3.1.tgz'
@@ -2009,7 +2030,7 @@ packages:
   /autoprefixer/9.7.6:
     dependencies:
       browserslist: 4.11.1
-      caniuse-lite: 1.0.30001040
+      caniuse-lite: 1.0.30001041
       chalk: 2.4.2
       normalize-range: 0.1.2
       num2fraction: 1.2.2
@@ -2344,8 +2365,8 @@ packages:
       tarball: browserify-zlib/download/browserify-zlib-0.2.0.tgz
   /browserslist/4.11.1:
     dependencies:
-      caniuse-lite: 1.0.30001040
-      electron-to-chromium: 1.3.402
+      caniuse-lite: 1.0.30001041
+      electron-to-chromium: 1.3.403
       node-releases: 1.1.53
       pkg-up: 2.0.0
     dev: true
@@ -2537,18 +2558,18 @@ packages:
   /caniuse-api/3.0.0:
     dependencies:
       browserslist: 4.11.1
-      caniuse-lite: 1.0.30001040
+      caniuse-lite: 1.0.30001041
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
     dev: true
     resolution:
       integrity: sha1-Xk2Q4idJYdRikZl99Znj7QCO5MA=
       tarball: caniuse-api/download/caniuse-api-3.0.0.tgz
-  /caniuse-lite/1.0.30001040:
+  /caniuse-lite/1.0.30001041:
     dev: true
     resolution:
-      integrity: sha1-ED/I5usdc5fpUTTNDplnQzU9WOo=
-      tarball: caniuse-lite/download/caniuse-lite-1.0.30001040.tgz
+      integrity: sha1-wuoTja/G/gOHeSHdzd1KAqFNr3Y=
+      tarball: caniuse-lite/download/caniuse-lite-1.0.30001041.tgz
   /case-sensitive-paths-webpack-plugin/2.3.0:
     dev: true
     engines:
@@ -3061,14 +3082,14 @@ packages:
     resolution:
       integrity: sha1-VIGgPeoRI9iKmIxv+LeCRyFPC4g=
       tarball: copy-webpack-plugin/download/copy-webpack-plugin-5.1.1.tgz
-  /core-js-compat/3.6.4:
+  /core-js-compat/3.6.5:
     dependencies:
       browserslist: 4.11.1
       semver: 7.0.0
     dev: true
     resolution:
-      integrity: sha1-k4R2Vp67bNqA0zm88Zn65PFv/xc=
-      tarball: core-js-compat/download/core-js-compat-3.6.4.tgz
+      integrity: sha1-KlHZpOJd/W5pAlGqgfmePAVIHxw=
+      tarball: core-js-compat/download/core-js-compat-3.6.5.tgz
   /core-js/2.6.11:
     deprecated: 'core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.'
     dev: true
@@ -3194,7 +3215,7 @@ packages:
     resolution:
       integrity: sha1-wZiUD2OnbX42wecQGLABchBUyyI=
       tarball: css-declaration-sorter/download/css-declaration-sorter-4.0.1.tgz
-  /css-loader/3.5.1_webpack@4.42.1:
+  /css-loader/3.5.2_webpack@4.42.1:
     dependencies:
       camelcase: 5.3.1
       cssesc: 3.0.0
@@ -3216,8 +3237,8 @@ packages:
     peerDependencies:
       webpack: ^4.0.0 || ^5.0.0
     resolution:
-      integrity: sha1-2ysjNvQWntto5qgprU/TZVJke3c=
-      tarball: css-loader/download/css-loader-3.5.1.tgz
+      integrity: sha1-ZIOuVvSKf5Afvgfd4vyWsB6vqzw=
+      tarball: css-loader/download/css-loader-3.5.2.tgz
   /css-select-base-adapter/0.1.1:
     dev: true
     resolution:
@@ -3794,11 +3815,11 @@ packages:
     resolution:
       integrity: sha1-SGYSh1c9zFPjZsehrlLDoSDuybo=
       tarball: ejs/download/ejs-2.7.4.tgz
-  /electron-to-chromium/1.3.402:
+  /electron-to-chromium/1.3.403:
     dev: true
     resolution:
-      integrity: sha1-mtk8DI6i5XFDFzng12vWvJeIqEY=
-      tarball: electron-to-chromium/download/electron-to-chromium-1.3.402.tgz
+      integrity: sha1-yLq04ucr94vCi60cw1XAYfnMGRg=
+      tarball: electron-to-chromium/download/electron-to-chromium-1.3.403.tgz
   /elegant-spinner/1.0.1:
     dev: true
     engines:
@@ -5226,13 +5247,11 @@ packages:
     resolution:
       integrity: sha1-l9RoiutcgYhqNk+qDK0d2hTUM6c=
       tarball: html-comment-regex/download/html-comment-regex-1.1.2.tgz
-  /html-entities/1.2.1:
+  /html-entities/1.3.1:
     dev: true
-    engines:
-      '0': node >= 0.4.0
     resolution:
-      integrity: sha1-DfKTUfByEWNRXfueVUPl9u7VFi8=
-      tarball: html-entities/download/html-entities-1.2.1.tgz
+      integrity: sha1-+5oaS1sUxdq6gtPjTGrk/nAaDkQ=
+      tarball: html-entities/download/html-entities-1.3.1.tgz
   /html-minifier/3.5.21:
     dependencies:
       camel-case: 3.0.0
@@ -8992,6 +9011,13 @@ packages:
       node-sass: ^4.0.0
       sass: ^1.3.0
       webpack: ^4.36.0 || ^5.0.0
+    peerDependenciesMeta:
+      fibers:
+        optional: true
+      node-sass:
+        optional: true
+      sass:
+        optional: true
     resolution:
       integrity: sha1-3r7NjDziQ8dkVPLoKQSCFQOACQ0=
       tarball: sass-loader/download/sass-loader-8.0.2.tgz
@@ -10253,6 +10279,9 @@ packages:
     peerDependencies:
       file-loader: '*'
       webpack: ^4.0.0
+    peerDependenciesMeta:
+      file-loader:
+        optional: true
     resolution:
       integrity: sha1-4OLvZY8APvuMpBsPP/v3a6uIZYs=
       tarball: url-loader/download/url-loader-2.3.0.tgz?cache=0&sync_timestamp=1574836374009&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Furl-loader%2Fdownload%2Furl-loader-2.3.0.tgz
@@ -10392,19 +10421,28 @@ packages:
     resolution:
       integrity: sha1-UylVzB6yCKPZkLOp+acFdGV+CPI=
       tarball: vue-hot-reload-api/download/vue-hot-reload-api-2.3.4.tgz
-  /vue-loader/15.9.1_css-loader@3.5.1+webpack@4.42.1:
+  /vue-loader/15.9.1_1afa42f4f5bcd5610bd17c24e9bdc0f1:
     dependencies:
       '@vue/component-compiler-utils': 3.1.2
-      css-loader: 3.5.1_webpack@4.42.1
+      cache-loader: 4.1.0_webpack@4.42.1
+      css-loader: 3.5.2_webpack@4.42.1
       hash-sum: 1.0.2
       loader-utils: 1.4.0
       vue-hot-reload-api: 2.3.4
       vue-style-loader: 4.1.2
+      vue-template-compiler: 2.6.11
       webpack: 4.42.1_webpack@4.42.1
     dev: true
     peerDependencies:
+      cache-loader: '*'
       css-loader: '*'
+      vue-template-compiler: '*'
       webpack: ^3.0.0 || ^4.1.0 || ^5.0.0-0
+    peerDependenciesMeta:
+      cache-loader:
+        optional: true
+      vue-template-compiler:
+        optional: true
     resolution:
       integrity: sha1-vSq489KB5R17gdFTkKWEJNFCJD4=
       tarball: vue-loader/download/vue-loader-15.9.1.tgz
@@ -10480,6 +10518,11 @@ packages:
     resolution:
       integrity: sha1-8LDc+RW8X/FSivrbLA4XtTLaL+g=
       tarball: wcwidth/download/wcwidth-1.0.1.tgz
+  /webfontloader/1.6.28:
+    dev: true
+    resolution:
+      integrity: sha1-23hhKSU8tujq5UwvsF+HCvZnW64=
+      tarball: webfontloader/download/webfontloader-1.6.28.tgz
   /webpack-bundle-analyzer/3.6.1:
     dependencies:
       acorn: 7.1.1
@@ -10538,7 +10581,7 @@ packages:
       debug: 4.1.1
       del: 4.1.1
       express: 4.17.1
-      html-entities: 1.2.1
+      html-entities: 1.3.1
       http-proxy-middleware: 0.19.1
       import-local: 2.0.0
       internal-ip: 4.3.0
@@ -10570,6 +10613,10 @@ packages:
     hasBin: true
     peerDependencies:
       webpack: ^4.0.0 || ^5.0.0
+      webpack-cli: '*'
+    peerDependenciesMeta:
+      webpack-cli:
+        optional: true
     resolution:
       integrity: sha1-81lFA2gT5X71gsJCDve0cOFNOvA=
       tarball: webpack-dev-server/download/webpack-dev-server-3.10.3.tgz
@@ -10994,6 +11041,7 @@ specifiers:
   fibers: ^4.0.2
   highlight.js: ^9.18.1
   lint-staged: ^9.5.0
+  lodash: ^4.17.15
   markdown-it: ^10.0.0
   markdown-it-anchor: ^5.2.7
   markdown-it-container: ^2.0.0
@@ -11007,3 +11055,4 @@ specifiers:
   vue-template-compiler: ^2.6.11
   vuetify: ^2.2.21
   vuex: ^3.1.3
+  webfontloader: ^1.6.28
