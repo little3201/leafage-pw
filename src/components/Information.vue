@@ -7,8 +7,8 @@
       >
         <v-row justify="center" align="start" class="mt-n3">
           <v-img max-height="320" :src="information.imageUrl" class="text-center white--text align-center">
-            <h1 style="text-shadow:2px 2px 8px #000000;">{{ information.title }}</h1>
-            <p class="mt-3">作者：{{ information.author.nickname }}</p>
+            <h1 class="text_shadow">{{ information.title }}</h1>
+            <p class="mt-3 text_shadow"><strong>作者：</strong> {{ information.author == undefind ?  '' : information.author.nickname}}</p>
           </v-img>
         </v-row>
         <v-row justify="center" align="start" class="my-0">
@@ -18,7 +18,6 @@
             <v-divider></v-divider>
             下一篇：spring security 5.x使用及分析（四：自定义配置—oauth2原理解析）
           </v-col>
-
           <v-col cols="12" md="4" lg="2" xl="2" class="hidden-sm-and-down">
             <p v-html="information.catalog"></p>
           </v-col>
@@ -74,4 +73,7 @@ export default {
 </script>
 
 <style lang="scss">
+.text_shadow {
+  text-shadow:2px 2px 8px #000000;
+}
 </style>
