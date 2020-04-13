@@ -4,5 +4,12 @@ module.exports = {
     themeColor: '#FF6F00'
   },
 
-  productionSourceMap: false
+  productionSourceMap: false,
+
+  devServer: {
+    disableHostCheck: true
+  },
+  transpileDependencies: [
+    'vuetify'
+  ]
 }

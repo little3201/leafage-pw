@@ -1,7 +1,7 @@
 // Utilities
 import {
   camelCase,
-  upperFirst,
+  upperFirst
 } from 'lodash'
 
 export default function (sections = []) {
@@ -19,6 +19,6 @@ export default function (sections = []) {
       return acc
     }, {}),
 
-    data: () => ({ sections }),
+    data: () => ({ sections })
   }
 }
