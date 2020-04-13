@@ -29,13 +29,17 @@ import Vuetify, {
   VListItemIcon,
   VListItemSubtitle,
   VListItemTitle,
+  VParallax,
   VNavigationDrawer,
   VRow,
+  VResponsive,
   VSpacer,
   VSheet,
   VSubheader,
   VTextField,
   VTextarea,
+  VThemeProvider,
+  VToolbarTitle,
   VToolbarItems
 } from 'vuetify/lib'
 
@@ -67,13 +71,17 @@ Vue.use(Vuetify, {
     VListItemIcon,
     VListItemSubtitle,
     VListItemTitle,
+    VParallax,
     VNavigationDrawer,
     VRow,
+    VResponsive,
     VSpacer,
     VSheet,
     VSubheader,
     VTextField,
     VTextarea,
+    VThemeProvider,
+    VToolbarTitle,
     VToolbarItems
   },
   directives: {
