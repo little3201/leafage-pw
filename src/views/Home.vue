@@ -10,7 +10,7 @@
           <v-img
             max-height="600"
             class="text-center white--text align-center"
-            src="https://cdn.dribbble.com/users/2753723/screenshots/5733949/36.jpg">
+            src="https://oss.abeille.top/auc.jpg">
           </v-img>
         </v-row>
         <p class="text-center ma-12 display-2">Products</p>
