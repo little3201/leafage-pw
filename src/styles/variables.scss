@@ -1,0 +1,27 @@
+$body-font-family: 'PT Sans', sans-serif;
+$heading-font-family: 'Work Sans', sans-serif;
+
+$headings: (
+  'h4': (
+    'letter-spacing': 0.1875rem,
+    'weight': 900
+  ),
+  'h5': (
+    'letter-spacing': 0.1875rem,
+    'weight': 700
+  ),
+  'h6': (
+    'letter-spacing': 0.1875rem,
+    'size': 1rem,
+    'weight': 700
+  ),
+  'subtitle-1': (
+    'letter-spacing': 0.1875rem,
+  ),
+  'subtitle-2': (
+    'letter-spacing': 0.1875rem,
+  ),
+  'body-1': (
+    'size': .9375rem,
+  )
+);
