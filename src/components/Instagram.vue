@@ -18,7 +18,7 @@
 </template>
 
 <script>
-  export default {
-    name: 'Instagram',
-  }
+export default {
+  name: 'Instagram'
+}
 </script>

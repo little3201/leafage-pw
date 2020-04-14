@@ -3,7 +3,7 @@ import { SERVER_URL, AUTH } from './request'
 
 /* 登录方法 */
 export const loginFunc = ({ username, password }) => {
-  let params = {
+  const params = {
     username: username,
     password: password,
     grant_type: 'password'

@@ -9,12 +9,11 @@ export default function (sections = []) {
     name: 'LoadSections',
 
     // Iterates the provide list of components
-    // and returns a function that returns a
-    // Promise.
+    // and returns a function that returns a Promise.
     components: sections.reduce((acc, cur) => {
       const name = upperFirst(camelCase(cur))
 
-      acc[`Section${name}`] = () => import(`@/views/sections/${name}.vue`)
+      acc[`Section${name}`] = () => require(`@/views/sections/${name}.vue`)
 
       return acc
     }, {}),
