@@ -9,14 +9,14 @@
   >
     <a
       class="d-flex align-center"
-      href="https://vuetifyjs.com/?ref=vtyd-pro-demo-system-bar"
+      href="https://abeille.top"
       target="_blank"
     >
       <v-img
         alt="Vuetify Logo"
         class="mr-2"
         contain
-        src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+        src="@/assets/logo.png"
         width="32"
       />
 
@@ -24,7 +24,7 @@
         alt="Vuetify Name"
         contain
         width="96"
-        src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
+        src=""
       />
     </a>
 
@@ -33,10 +33,10 @@
     <v-btn
       class="text-capitalize subtitle-2"
       color="success"
-      href="https://store.vuetifyjs.com/product/daedal-responsive-multi-purpose-theme-pro?ref=vtyd-pro-page-features"
+      href="https://abeille.top"
       min-width="112"
     >
-      Buy Now
+      Read More
     </v-btn>
 
     <v-divider

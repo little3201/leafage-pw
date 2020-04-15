@@ -8,7 +8,7 @@
       height="80"
     >
       <base-img
-        :src="require('@/assets/logo.svg')"
+        :src="require('@/assets/logo.png')"
         class="mr-3 hidden-xs-only"
         contain
         max-width="52"
@@ -16,7 +16,7 @@
       />
 
       <base-img
-        :src="require('@/assets/daedal-logo-light.png')"
+        src=""
         contain
         max-width="128"
         width="100%"
