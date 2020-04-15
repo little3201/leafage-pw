@@ -1,97 +1,29 @@
-import Vue from 'vue'
-import { Ripple } from 'vuetify/lib/directives'
-import '@mdi/font/css/materialdesignicons.css'
+// Vuetify Documentation https://vuetifyjs.com
 
-import Vuetify, {
-  VApp,
-  VAppBar,
-  VAppBarNavIcon,
-  VAvatar,
-  VBtn,
-  VCard,
-  VCardActions,
-  VCardSubtitle,
-  VCardTitle,
-  VCardText,
+import Vue from 'vue'
+import Vuetify from 'vuetify/lib/framework'
+import {
   VCol,
-  VContent,
-  VContainer,
-  VDivider,
-  VFooter,
-  VForm,
-  VIcon,
-  VImg,
-  VList,
-  VListItem,
-  VListItemAction,
-  VListItemContent,
-  VListItemGroup,
-  VListItemIcon,
-  VListItemSubtitle,
-  VListItemTitle,
-  VNavigationDrawer,
-  VRow,
-  VSpacer,
-  VSheet,
-  VSubheader,
-  VTextField,
-  VTextarea,
-  VToolbarItems
+  VRow
 } from 'vuetify/lib'
 
 Vue.use(Vuetify, {
   components: {
-    VApp,
-    VAppBar,
-    VAppBarNavIcon,
-    VAvatar,
-    VBtn,
-    VCard,
-    VCardActions,
-    VCardSubtitle,
-    VCardTitle,
-    VCardText,
     VCol,
-    VContent,
-    VContainer,
-    VDivider,
-    VFooter,
-    VForm,
-    VIcon,
-    VImg,
-    VList,
-    VListItem,
-    VListItemAction,
-    VListItemContent,
-    VListItemGroup,
-    VListItemIcon,
-    VListItemSubtitle,
-    VListItemTitle,
-    VNavigationDrawer,
-    VRow,
-    VSpacer,
-    VSheet,
-    VSubheader,
-    VTextField,
-    VTextarea,
-    VToolbarItems
-  },
-  directives: {
-    Ripple
+    VRow
   }
 })
 
-const opts = {
+export default new Vuetify({
   theme: {
+    dark: false,
     themes: {
       light: {
-        primary: '#FF6F00'
-      }
+        primary: '#FF6F00',
+        secondary: '#050b1f',
+        accent: '#204165'
+      },
+      dark: {}
     }
-  },
-  icons: {
-    iconfont: 'mdi' // default - only for display purposes
   }
-}
-
-export default new Vuetify(opts)
+})

@@ -34,6 +34,7 @@
         </template>
       </v-list>
     </v-navigation-drawer>
+<!--
     <v-app-bar
       app
       :clipped-left="$vuetify.breakpoint.lgAndUp"
@@ -68,6 +69,28 @@
       <v-btn icon class="hidden-md-and-up">
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
+    </v-app-bar>
+-->
+    <v-app-bar
+      app
+      color="white"
+      height="86"
+    >
+      <v-avatar
+        class="mr-3"
+        color="grey lighten-5"
+        size="60"
+      >
+        <v-img
+          contain
+          max-height="60%"
+          src="@/assets/logo.png"
+        ></v-img>
+      </v-avatar>
+
+      <v-toolbar-title class="font-weight-medium headline">
+        ABEILLE
+      </v-toolbar-title>
     </v-app-bar>
   </div>
 </template>

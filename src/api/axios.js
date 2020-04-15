@@ -20,6 +20,7 @@ class HttpRequest {
     this.baseUrl = baseUrl
     this.queue = {}
   }
+
   // 统一添加请求参数
   getInsideConfig () {
     const config = {
@@ -28,15 +29,17 @@ class HttpRequest {
     }
     return config
   }
+
   destroy (url) {
     delete this.queue[url]
   }
+
   interceptors (instance, url) {
     // 请求拦截
     instance.interceptors.request.use(
       config => {
         NProgress.start()
-        let token = 'token'
+        const token = 'token'
         // if (localStorage.Token) {
         if (token) {
         // const decoded = jwt_decode(localStorage.Token)
@@ -62,17 +65,18 @@ class HttpRequest {
         return Promise.reject(error)
       }
     )
+
     // 响应拦截
     instance.interceptors.response.use(
       res => {
         NProgress.done()
         this.destroy(url)
-        let { data, status } = res
+        const { data, status } = res
         return { data, status }
       },
       error => {
         NProgress.done()
-        let { response } = error
+        const { response } = error
         if (response) {
           // 状态码判断
           switch (response.status) {
@@ -105,8 +109,9 @@ class HttpRequest {
       }
     )
   }
+
   request (options) {
-    let instance = axios.create()
+    const instance = axios.create()
     // 覆写库的超时默认值，所有请求都会等待 1 秒
     instance.defaults.timeout = 1000
     options = Object.assign(this.getInsideConfig(), options)
