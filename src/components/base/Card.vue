@@ -29,16 +29,16 @@
 </template>
 
 <script>
-  export default {
-    name: 'BaseCard',
+export default {
+  name: 'BaseCard',
 
-    inheritAttrs: false,
+  inheritAttrs: false,
 
-    props: {
-      height: [Number, String],
-      width: [Number, String],
-      subtitle: String,
-      title: String,
-    },
+  props: {
+    height: [Number, String],
+    width: [Number, String],
+    subtitle: String,
+    title: String
   }
+}
 </script>

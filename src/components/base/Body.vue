@@ -23,47 +23,47 @@
 </template>
 
 <script>
-  // Mixins
-  import Heading from '@/mixins/heading'
+// Mixins
+import Heading from '@/mixins/heading'
 
-  export default {
-    name: 'BaseBody',
+export default {
+  name: 'BaseBody',
 
-    mixins: [Heading],
+  mixins: [Heading],
 
-    inject: ['theme'],
+  inject: ['theme'],
 
-    props: {
-      html: String,
-      maxWidth: {
-        type: [Number, String],
-        default: undefined,
-      },
-      space: {
-        type: [Number, String],
-        default: 10,
-      },
-      tag: {
-        type: String,
-        default: 'p',
-      },
-      text: String,
+  props: {
+    html: String,
+    maxWidth: {
+      type: [Number, String],
+      default: undefined
     },
-
-    computed: {
-      classes () {
-        return [
-          'grey--text',
-          this.theme.isDark ? 'text--lighten-1' : 'text--darken-1',
-          `text-${this.heading.align}`,
-          `mb-${this.space}`,
-        ]
-      },
-      styles () {
-        return {
-          maxWidth: `${this.maxWidth}px`,
-        }
-      },
+    space: {
+      type: [Number, String],
+      default: 10
     },
+    tag: {
+      type: String,
+      default: 'p'
+    },
+    text: String
+  },
+
+  computed: {
+    classes () {
+      return [
+        'grey--text',
+        this.theme.isDark ? 'text--lighten-1' : 'text--darken-1',
+        `text-${this.heading.align}`,
+        `mb-${this.space}`
+      ]
+    },
+    styles () {
+      return {
+        maxWidth: `${this.maxWidth}px`
+      }
+    }
   }
+}
 </script>

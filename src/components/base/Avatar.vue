@@ -31,43 +31,43 @@
 </template>
 
 <script>
-  export default {
-    name: 'BaseAvatar',
+export default {
+  name: 'BaseAvatar',
 
-    props: {
-      color: String,
-      dark: Boolean,
-      icon: String,
-      outlined: Boolean,
-      size: {
-        type: [Number, String],
-        default: 56,
-      },
+  props: {
+    color: String,
+    dark: Boolean,
+    icon: String,
+    outlined: Boolean,
+    size: {
+      type: [Number, String],
+      default: 56
+    }
+  },
+
+  data: () => ({
+    multiply: 6
+  }),
+
+  computed: {
+    classes () {
+      return [
+        this.outlined && 'base-avatar--outlined'
+      ]
     },
-
-    data: () => ({
-      multiply: 6,
-    }),
-
-    computed: {
-      classes () {
-        return [
-          this.outlined && 'base-avatar--outlined',
-        ]
-      },
-      outlineSize () {
-        return Number(this.size) + (this.size / this.multiply)
-      },
-      styles () {
-        const margin = this.size / (this.multiply * 2)
-
-        return {
-          // Aligns the outline content with the content
-          margin: `-${margin}px 0 0 -${margin}px`,
-        }
-      },
+    outlineSize () {
+      return Number(this.size) + (this.size / this.multiply)
     },
+    styles () {
+      const margin = this.size / (this.multiply * 2)
+
+      return {
+        // Aligns the outline content with the content
+        margin: `-${margin}px 0 0 -${margin}px`
+      }
+    }
   }
+}
 </script>
 
 <style lang="sass">

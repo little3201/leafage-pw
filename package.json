@@ -45,7 +45,9 @@
     "markdown-it-table-of-contents": "^0.4.4",
     "sass": "^1.26.3",
     "sass-loader": "^8.0.2",
+    "vue-cli-plugin-vuetify": "^2.0.5",
     "vue-template-compiler": "^2.6.11",
+    "vuetify-loader": "^1.4.3",
     "webfontloader": "^1.6.28"
   },
   "gitHooks": {

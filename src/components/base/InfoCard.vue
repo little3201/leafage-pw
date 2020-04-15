@@ -58,25 +58,25 @@
 </template>
 
 <script>
-  // Mixins
-  import Heading from '@/mixins/heading'
+// Mixins
+import Heading from '@/mixins/heading'
 
-  export default {
-    name: 'BaseInfoCard',
+export default {
+  name: 'BaseInfoCard',
 
-    mixins: [Heading],
+  mixins: [Heading],
 
-    props: {
-      dark: Boolean,
-      callout: String,
-      color: {
-        type: String,
-        default: 'primary',
-      },
-      icon: String,
-      subtitle: String,
-      text: String,
-      title: String,
+  props: {
+    dark: Boolean,
+    callout: String,
+    color: {
+      type: String,
+      default: 'primary'
     },
+    icon: String,
+    subtitle: String,
+    text: String,
+    title: String
   }
+}
 </script>

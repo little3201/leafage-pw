@@ -9,14 +9,14 @@
 </template>
 
 <script>
-  export default {
-    name: 'BaseIcon',
+export default {
+  name: 'BaseIcon',
 
-    props: {
-      size: {
-        type: [Number, String],
-        default: 56,
-      },
-    },
+  props: {
+    size: {
+      type: [Number, String],
+      default: 56
+    }
   }
+}
 </script>

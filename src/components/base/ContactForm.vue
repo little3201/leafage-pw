@@ -30,18 +30,18 @@
 </template>
 
 <script>
-  export default {
-    name: 'BaseContactForm',
+export default {
+  name: 'BaseContactForm',
 
-    // Injected from the Vuetify Themeable mixin
-    inject: ['theme'],
+  // Injected from the Vuetify Themeable mixin
+  inject: ['theme'],
 
-    props: {
-      subtitle: String,
-      title: {
-        type: String,
-        default: 'MAIL US YOUR MESSAGE',
-      },
-    },
+  props: {
+    subtitle: String,
+    title: {
+      type: String,
+      default: 'MAIL US YOUR MESSAGE'
+    }
   }
+}
 </script>

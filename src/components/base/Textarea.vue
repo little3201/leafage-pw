@@ -12,9 +12,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'BaseTextarea',
-  }
+export default {
+  name: 'BaseTextarea'
+}
 </script>
 
 <style lang="sass">

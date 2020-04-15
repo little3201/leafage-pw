@@ -5,6 +5,7 @@ import store from './store'
 import 'highlight.js/styles/pojoaque.css'
 // vuetify
 import vuetify from '@/plugins/vuetify'
+import './plugins'
 
 Vue.config.productionTip = false
 

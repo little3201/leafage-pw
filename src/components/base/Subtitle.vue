@@ -1,41 +1,41 @@
 <script>
-  import Heading from './Heading'
+import Heading from './Heading'
 
-  export default {
-    name: 'BaseSubtitle',
+export default {
+  name: 'BaseSubtitle',
 
-    extends: Heading,
+  extends: Heading,
 
-    props: {
-      size: {
-        type: String,
-        default: 'body-2',
-      },
-      mobileSize: {
-        type: String,
-        default: 'body-1',
-      },
-      space: {
-        type: [String, Number],
-        default: 0,
-      },
-      tag: {
-        type: String,
-        default: 'div',
-      },
-      weight: {
-        type: [Number, String],
-        default: 'regular',
-      },
+  props: {
+    size: {
+      type: String,
+      default: 'body-2'
     },
-
-    computed: {
-      classes () {
-        return [
-          ...Heading.computed.classes.call(this),
-          'grey--text',
-        ]
-      },
+    mobileSize: {
+      type: String,
+      default: 'body-1'
     },
+    space: {
+      type: [String, Number],
+      default: 0
+    },
+    tag: {
+      type: String,
+      default: 'div'
+    },
+    weight: {
+      type: [Number, String],
+      default: 'regular'
+    }
+  },
+
+  computed: {
+    classes () {
+      return [
+        ...Heading.computed.classes.call(this),
+        'grey--text'
+      ]
+    }
   }
+}
 </script>
