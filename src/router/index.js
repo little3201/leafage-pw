@@ -10,6 +10,10 @@ Vue.use(VueRouter)
 // 白名单
 const whiteList = [
   '/',
+  '/blog',
+  '/photos',
+  '/about',
+  '/contact-us',
   '/signin',
   '/signup'
 ]

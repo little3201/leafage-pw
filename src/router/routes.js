@@ -9,6 +9,18 @@ export default [
         component: () => import('@/views/home/Index.vue')
       },
       {
+        path: 'blog',
+        name: 'Blog',
+        component: () => import('@/views/blog/Index.vue'),
+        meta: { src: require('@/assets/about.jpg') }
+      },
+      {
+        path: 'photos',
+        name: 'Photos',
+        component: () => import('@/views/photo/Index.vue'),
+        meta: { src: require('@/assets/about.jpg') }
+      },
+      {
         path: 'about',
         name: 'About',
         component: () => import('@/views/about/Index.vue'),

@@ -1,6 +1,5 @@
 <template>
  <v-app app>
-    <Headers />
     <v-content>
       <v-container
         fluid
@@ -24,20 +23,15 @@
         </v-row>
       </v-container>
     </v-content>
-   <Footers />
   </v-app>
 </template>
 
 <script>
-import Headers from '@/components/Headers'
-import Footers from '@/components/Footers'
 import { queryArticleFunc } from '@/api/method'
 
 export default {
   name: 'information',
   components: {
-    Headers,
-    Footers
   },
   data: () => ({
     information: {

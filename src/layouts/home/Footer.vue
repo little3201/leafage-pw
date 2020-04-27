@@ -37,7 +37,8 @@
           cols="12"
           md="6"
         >
-          Copyright &copy; 2020 Vuetify, LLC
+          Copyright &copy; {{ new Date().getFullYear() }} · 陕ICP备19017836号-1 · Made with 💜 by
+          <strong>布吉岛</strong>
         </v-col>
       </v-row>
     </v-container>

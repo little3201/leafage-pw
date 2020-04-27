@@ -70,6 +70,8 @@ export default {
     drawer: null,
     items: [
       'Home',
+      'Blog',
+      'Photos',
       'About',
       'Contact'
     ]
