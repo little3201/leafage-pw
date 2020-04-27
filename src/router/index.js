@@ -13,7 +13,7 @@ const whiteList = [
   '/blog',
   '/photos',
   '/about',
-  '/contact-us',
+  'contact',
   '/signin',
   '/signup'
 ]
