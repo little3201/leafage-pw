@@ -63,7 +63,7 @@
 
         <base-btn
           block
-          href="https://store.vuetifyjs.com/product/daedal-responsive-multi-purpose-theme-free?ref=vtyd-pro-page-settings"
+          href="#"
           class="mb-6"
           color="accent"
           target="_blank"
@@ -85,7 +85,7 @@
 
         <base-img
           class="mx-auto mb-6"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-light.png"
+          src="@/assets/logo.png"
           width="88"
         />
 
@@ -116,8 +116,7 @@ export default {
     return {
       colors: [
         this.$vuetify.theme.themes.light.primary,
-        '#9368e9',
-        '#F4511E'
+        '#9368e9'
       ],
       menu: false
     }

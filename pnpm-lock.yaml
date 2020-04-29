@@ -14,17 +14,15 @@ devDependencies:
   '@vue/cli-plugin-pwa': 4.3.1_@vue+cli-service@4.3.1
   '@vue/cli-plugin-router': 4.3.1_@vue+cli-service@4.3.1
   '@vue/cli-plugin-vuex': 4.3.1_@vue+cli-service@4.3.1
-  '@vue/cli-service': 4.3.1_93f68061ca0d86937b881275f9db2069
+  '@vue/cli-service': 4.3.1_a449a4310575c8c1f7fffbc91332e4de
   '@vue/eslint-config-standard': 5.1.2_545e8380960b170b2c69b2a2c12b16c6
   babel-eslint: 10.1.0_eslint@6.8.0
-  deepmerge: 4.2.2
   eslint: 6.8.0
   eslint-plugin-import: 2.20.2_eslint@6.8.0
   eslint-plugin-node: 11.1.0_eslint@6.8.0
   eslint-plugin-promise: 4.2.1
   eslint-plugin-standard: 4.0.1_eslint@6.8.0
   eslint-plugin-vue: 6.2.2_eslint@6.8.0
-  fibers: 5.0.0
   highlight.js: 9.18.1
   lint-staged: 10.2.0
   lodash: 4.17.15
@@ -34,7 +32,7 @@ devDependencies:
   markdown-it-emoji: 1.4.0
   markdown-it-table-of-contents: 0.4.4
   sass: 1.26.5
-  sass-loader: 8.0.2_fibers@5.0.0+sass@1.26.5
+  sass-loader: 8.0.2_sass@1.26.5
   vue-cli-plugin-vuetify: 2.0.5
   vue-template-compiler: 2.6.11
   vuetify-loader: 1.4.3_cdad26a763b45e4b0bc5d2a287217ab5
@@ -1266,7 +1264,7 @@ packages:
     dependencies:
       '@babel/core': 7.9.0
       '@vue/babel-preset-app': 4.3.1
-      '@vue/cli-service': 4.3.1_93f68061ca0d86937b881275f9db2069
+      '@vue/cli-service': 4.3.1_a449a4310575c8c1f7fffbc91332e4de
       '@vue/cli-shared-utils': 4.3.1
       babel-loader: 8.1.0_@babel+core@7.9.0+webpack@4.43.0
       cache-loader: 4.1.0_webpack@4.43.0
@@ -1280,7 +1278,7 @@ packages:
       tarball: '@vue/cli-plugin-babel/download/@vue/cli-plugin-babel-4.3.1.tgz'
   /@vue/cli-plugin-eslint/4.3.1_39c37a0df7d91dff77b5226a724bc947:
     dependencies:
-      '@vue/cli-service': 4.3.1_93f68061ca0d86937b881275f9db2069
+      '@vue/cli-service': 4.3.1_a449a4310575c8c1f7fffbc91332e4de
       '@vue/cli-shared-utils': 4.3.1
       eslint: 6.8.0
       eslint-loader: 2.2.1_eslint@6.8.0+webpack@4.43.0
@@ -1297,7 +1295,7 @@ packages:
       tarball: '@vue/cli-plugin-eslint/download/@vue/cli-plugin-eslint-4.3.1.tgz'
   /@vue/cli-plugin-pwa/4.3.1_@vue+cli-service@4.3.1:
     dependencies:
-      '@vue/cli-service': 4.3.1_93f68061ca0d86937b881275f9db2069
+      '@vue/cli-service': 4.3.1_a449a4310575c8c1f7fffbc91332e4de
       '@vue/cli-shared-utils': 4.3.1
       webpack: 4.43.0_webpack@4.43.0
       workbox-webpack-plugin: 4.3.1_webpack@4.43.0
@@ -1309,7 +1307,7 @@ packages:
       tarball: '@vue/cli-plugin-pwa/download/@vue/cli-plugin-pwa-4.3.1.tgz'
   /@vue/cli-plugin-router/4.3.1_@vue+cli-service@4.3.1:
     dependencies:
-      '@vue/cli-service': 4.3.1_93f68061ca0d86937b881275f9db2069
+      '@vue/cli-service': 4.3.1_a449a4310575c8c1f7fffbc91332e4de
       '@vue/cli-shared-utils': 4.3.1
     dev: true
     peerDependencies:
@@ -1319,14 +1317,14 @@ packages:
       tarball: '@vue/cli-plugin-router/download/@vue/cli-plugin-router-4.3.1.tgz'
   /@vue/cli-plugin-vuex/4.3.1_@vue+cli-service@4.3.1:
     dependencies:
-      '@vue/cli-service': 4.3.1_93f68061ca0d86937b881275f9db2069
+      '@vue/cli-service': 4.3.1_a449a4310575c8c1f7fffbc91332e4de
     dev: true
     peerDependencies:
       '@vue/cli-service': ^3.0.0 || ^4.0.0-0
     resolution:
       integrity: sha1-K3Ov9W+eG+MQGIc9XtLVnxVedHY=
       tarball: '@vue/cli-plugin-vuex/download/@vue/cli-plugin-vuex-4.3.1.tgz'
-  /@vue/cli-service/4.3.1_93f68061ca0d86937b881275f9db2069:
+  /@vue/cli-service/4.3.1_a449a4310575c8c1f7fffbc91332e4de:
     dependencies:
       '@intervolga/optimize-cssnano-plugin': 1.0.6_webpack@4.43.0
       '@soda/friendly-errors-webpack-plugin': 1.7.1_webpack@4.43.0
@@ -1369,11 +1367,12 @@ packages:
       pnp-webpack-plugin: 1.6.4
       portfinder: 1.0.26
       postcss-loader: 3.0.0
+      sass-loader: 8.0.2_sass@1.26.5
       ssri: 7.1.0
       terser-webpack-plugin: 2.3.6_webpack@4.43.0
       thread-loader: 2.1.3_webpack@4.43.0
       url-loader: 2.3.0_file-loader@4.3.0+webpack@4.43.0
-      vue-loader: 15.9.1_css-loader@3.5.3+webpack@4.43.0
+      vue-loader: 15.9.1_1ebeed51c9db1c19ddd7ada5173f91fd
       vue-style-loader: 4.1.2
       vue-template-compiler: 2.6.11
       webpack: 4.43.0_webpack@4.43.0
@@ -1387,7 +1386,25 @@ packages:
     hasBin: true
     peerDependencies:
       '@vue/cli-service': '*'
+      less-loader: '*'
+      pug-plain-loader: '*'
+      raw-loader: '*'
+      sass-loader: '*'
+      stylus-loader: '*'
       vue-template-compiler: ^2.0.0
+    peerDependenciesMeta:
+      less-loader:
+        optional: true
+      pug-plain-loader:
+        optional: true
+      raw-loader:
+        optional: true
+      sass-loader:
+        optional: true
+      stylus-loader:
+        optional: true
+      vue-template-compiler:
+        optional: true
     resolution:
       integrity: sha1-lLISHQjjQ6Vffs7yYK9SV6n/5+U=
       tarball: '@vue/cli-service/download/@vue/cli-service-4.3.1.tgz'
@@ -1428,7 +1445,7 @@ packages:
       tarball: '@vue/component-compiler-utils/download/@vue/component-compiler-utils-3.1.2.tgz'
   /@vue/eslint-config-standard/5.1.2_545e8380960b170b2c69b2a2c12b16c6:
     dependencies:
-      '@vue/cli-service': 4.3.1_93f68061ca0d86937b881275f9db2069
+      '@vue/cli-service': 4.3.1_a449a4310575c8c1f7fffbc91332e4de
       eslint: 6.8.0
       eslint-config-standard: 14.1.1_f330a586160a35a0c1e8c97fddc2f91c
       eslint-import-resolver-node: 0.3.3
@@ -1447,6 +1464,9 @@ packages:
       eslint-plugin-promise: '>= 4.2.1'
       eslint-plugin-standard: '>= 4.0.0'
       eslint-plugin-vue: '>= 6.1.2'
+    peerDependenciesMeta:
+      '@vue/cli-service':
+        optional: true
     resolution:
       integrity: sha1-xdVa+JSjriO2Wxr0pCV3esAXC0I=
       tarball: '@vue/eslint-config-standard/download/@vue/eslint-config-standard-5.1.2.tgz'
@@ -3490,6 +3510,7 @@ packages:
       integrity: sha1-EEmdhohEza1P7ghC34x/bwyVp1M=
       tarball: deepmerge/download/deepmerge-1.5.2.tgz
   /deepmerge/4.2.2:
+    dev: false
     engines:
       node: '>=0.10.0'
     resolution:
@@ -3600,14 +3621,6 @@ packages:
     resolution:
       integrity: sha1-l4hXRCxEdJ5CBmE+N5RiBYJqvYA=
       tarball: destroy/download/destroy-1.0.4.tgz
-  /detect-libc/1.0.3:
-    dev: true
-    engines:
-      node: '>=0.10'
-    hasBin: true
-    resolution:
-      integrity: sha1-+hN8S9aY7fVc1c0CrFWfkaTEups=
-      tarball: detect-libc/download/detect-libc-1.0.3.tgz
   /detect-node/2.0.4:
     dev: true
     resolution:
@@ -4527,16 +4540,6 @@ packages:
     resolution:
       integrity: sha1-XA6aiWjokSwoZjn96XeosgnyUI4=
       tarball: faye-websocket/download/faye-websocket-0.11.3.tgz
-  /fibers/5.0.0:
-    dependencies:
-      detect-libc: 1.0.3
-    dev: true
-    engines:
-      node: '>=10.0.0'
-    requiresBuild: true
-    resolution:
-      integrity: sha1-OmDgaVs+5fbblOYnJnFvp6WazEE=
-      tarball: fibers/download/fibers-5.0.0.tgz
   /figgy-pudding/3.5.2:
     dev: true
     resolution:
@@ -5565,7 +5568,7 @@ packages:
       node: '>= 0.10'
     resolution:
       integrity: sha1-1QYaYiS+WOgIOYX1AU2EQ1lXYpY=
-      tarball: interpret/download/interpret-1.2.0.tgz
+      tarball: interpret/download/interpret-1.2.0.tgz?cache=0&sync_timestamp=1571708817823&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Finterpret%2Fdownload%2Finterpret-1.2.0.tgz
   /invariant/2.2.4:
     dependencies:
       loose-envify: 1.4.0
@@ -5815,7 +5818,7 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-dWfb6fL14kZ7x3q4PEopSCQHpdw=
-      tarball: is-glob/download/is-glob-4.0.1.tgz
+      tarball: is-glob/download/is-glob-4.0.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fis-glob%2Fdownload%2Fis-glob-4.0.1.tgz
   /is-number/3.0.0:
     dependencies:
       kind-of: 3.2.2
@@ -8898,10 +8901,9 @@ packages:
     resolution:
       integrity: sha1-RPoWGwGHuVSd2Eu5GAL5vYOFzWo=
       tarball: safer-buffer/download/safer-buffer-2.1.2.tgz
-  /sass-loader/8.0.2_fibers@5.0.0+sass@1.26.5:
+  /sass-loader/8.0.2_sass@1.26.5:
     dependencies:
       clone-deep: 4.0.1
-      fibers: 5.0.0
       loader-utils: 1.4.0
       neo-async: 2.6.1
       sass: 1.26.5
@@ -8915,6 +8917,13 @@ packages:
       node-sass: ^4.0.0
       sass: ^1.3.0
       webpack: ^4.36.0 || ^5.0.0
+    peerDependenciesMeta:
+      fibers:
+        optional: true
+      node-sass:
+        optional: true
+      sass:
+        optional: true
     resolution:
       integrity: sha1-3r7NjDziQ8dkVPLoKQSCFQOACQ0=
       tarball: sass-loader/download/sass-loader-8.0.2.tgz
@@ -10216,6 +10225,9 @@ packages:
     peerDependencies:
       file-loader: '*'
       webpack: ^4.0.0
+    peerDependenciesMeta:
+      file-loader:
+        optional: true
     resolution:
       integrity: sha1-4OLvZY8APvuMpBsPP/v3a6uIZYs=
       tarball: url-loader/download/url-loader-2.3.0.tgz
@@ -10374,19 +10386,28 @@ packages:
     resolution:
       integrity: sha1-UylVzB6yCKPZkLOp+acFdGV+CPI=
       tarball: vue-hot-reload-api/download/vue-hot-reload-api-2.3.4.tgz
-  /vue-loader/15.9.1_css-loader@3.5.3+webpack@4.43.0:
+  /vue-loader/15.9.1_1ebeed51c9db1c19ddd7ada5173f91fd:
     dependencies:
       '@vue/component-compiler-utils': 3.1.2
+      cache-loader: 4.1.0_webpack@4.43.0
       css-loader: 3.5.3_webpack@4.43.0
       hash-sum: 1.0.2
       loader-utils: 1.4.0
       vue-hot-reload-api: 2.3.4
       vue-style-loader: 4.1.2
+      vue-template-compiler: 2.6.11
       webpack: 4.43.0_webpack@4.43.0
     dev: true
     peerDependencies:
+      cache-loader: '*'
       css-loader: '*'
+      vue-template-compiler: '*'
       webpack: ^3.0.0 || ^4.1.0 || ^5.0.0-0
+    peerDependenciesMeta:
+      cache-loader:
+        optional: true
+      vue-template-compiler:
+        optional: true
     resolution:
       integrity: sha1-vSq489KB5R17gdFTkKWEJNFCJD4=
       tarball: vue-loader/download/vue-loader-15.9.1.tgz
@@ -10575,6 +10596,10 @@ packages:
     hasBin: true
     peerDependencies:
       webpack: ^4.0.0 || ^5.0.0
+      webpack-cli: '*'
+    peerDependenciesMeta:
+      webpack-cli:
+        optional: true
     resolution:
       integrity: sha1-81lFA2gT5X71gsJCDve0cOFNOvA=
       tarball: webpack-dev-server/download/webpack-dev-server-3.10.3.tgz
@@ -10992,14 +11017,12 @@ specifiers:
   axios: ^0.19.2
   babel-eslint: ^10.1.0
   core-js: ^3.6.5
-  deepmerge: ^4.2.2
   eslint: ^6.8.0
   eslint-plugin-import: ^2.20.2
   eslint-plugin-node: ^11.1.0
   eslint-plugin-promise: ^4.2.1
   eslint-plugin-standard: ^4.0.1
   eslint-plugin-vue: ^6.2.2
-  fibers: ^5.0.0
   highlight.js: ^9.18.1
   lint-staged: ^10.2.0
   lodash: ^4.17.15
