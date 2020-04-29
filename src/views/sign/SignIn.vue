@@ -11,7 +11,7 @@
             <v-card class="pa-7">
               <v-row justify="center">
                 <router-link to="/">
-                  <v-img max-width="4rem" src="https://oss.abeille.top/logo.png"></v-img>
+                  <v-img max-width="4rem" src="@/assets/logo.png"></v-img>
                 </router-link>
               </v-row>
               <v-form ref="form" v-model="valid" lazy-validation>
