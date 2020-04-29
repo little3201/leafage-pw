@@ -1,7 +1,6 @@
-// Vuetify Documentation https://vuetifyjs.com
-
 import Vue from 'vue'
 import Vuetify from 'vuetify/lib/framework'
+import '@mdi/font/css/materialdesignicons.css'
 import {
   VCol,
   VRow

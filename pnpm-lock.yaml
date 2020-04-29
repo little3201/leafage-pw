@@ -24,7 +24,7 @@ devDependencies:
   eslint-plugin-promise: 4.2.1
   eslint-plugin-standard: 4.0.1_eslint@6.8.0
   eslint-plugin-vue: 6.2.2_eslint@6.8.0
-  fibers: 4.0.3
+  fibers: 5.0.0
   highlight.js: 9.18.1
   lint-staged: 10.2.0
   lodash: 4.17.15
@@ -34,7 +34,7 @@ devDependencies:
   markdown-it-emoji: 1.4.0
   markdown-it-table-of-contents: 0.4.4
   sass: 1.26.5
-  sass-loader: 8.0.2_fibers@4.0.3+sass@1.26.5
+  sass-loader: 8.0.2_fibers@5.0.0+sass@1.26.5
   vue-cli-plugin-vuetify: 2.0.5
   vue-template-compiler: 2.6.11
   vuetify-loader: 1.4.3_cdad26a763b45e4b0bc5d2a287217ab5
@@ -2341,7 +2341,7 @@ packages:
   /browserslist/4.12.0:
     dependencies:
       caniuse-lite: 1.0.30001048
-      electron-to-chromium: 1.3.421
+      electron-to-chromium: 1.3.423
       node-releases: 1.1.53
       pkg-up: 2.0.0
     dev: true
@@ -3790,11 +3790,11 @@ packages:
     resolution:
       integrity: sha1-SGYSh1c9zFPjZsehrlLDoSDuybo=
       tarball: ejs/download/ejs-2.7.4.tgz
-  /electron-to-chromium/1.3.421:
+  /electron-to-chromium/1.3.423:
     dev: true
     resolution:
-      integrity: sha1-Sr/n5JBwtbQ37CzkQlQ63Y62aAA=
-      tarball: electron-to-chromium/download/electron-to-chromium-1.3.421.tgz
+      integrity: sha1-HcyeVNZC3Zs1TGYJhIq/i6eyVw8=
+      tarball: electron-to-chromium/download/electron-to-chromium-1.3.423.tgz
   /elegant-spinner/2.0.0:
     dev: true
     engines:
@@ -4527,7 +4527,7 @@ packages:
     resolution:
       integrity: sha1-XA6aiWjokSwoZjn96XeosgnyUI4=
       tarball: faye-websocket/download/faye-websocket-0.11.3.tgz
-  /fibers/4.0.3:
+  /fibers/5.0.0:
     dependencies:
       detect-libc: 1.0.3
     dev: true
@@ -4535,8 +4535,8 @@ packages:
       node: '>=10.0.0'
     requiresBuild: true
     resolution:
-      integrity: sha1-3aWRgoCkhQf12Klt2aUl6PSlMuI=
-      tarball: fibers/download/fibers-4.0.3.tgz
+      integrity: sha1-OmDgaVs+5fbblOYnJnFvp6WazEE=
+      tarball: fibers/download/fibers-5.0.0.tgz
   /figgy-pudding/3.5.2:
     dev: true
     resolution:
@@ -8898,10 +8898,10 @@ packages:
     resolution:
       integrity: sha1-RPoWGwGHuVSd2Eu5GAL5vYOFzWo=
       tarball: safer-buffer/download/safer-buffer-2.1.2.tgz
-  /sass-loader/8.0.2_fibers@4.0.3+sass@1.26.5:
+  /sass-loader/8.0.2_fibers@5.0.0+sass@1.26.5:
     dependencies:
       clone-deep: 4.0.1
-      fibers: 4.0.3
+      fibers: 5.0.0
       loader-utils: 1.4.0
       neo-async: 2.6.1
       sass: 1.26.5
@@ -10999,7 +10999,7 @@ specifiers:
   eslint-plugin-promise: ^4.2.1
   eslint-plugin-standard: ^4.0.1
   eslint-plugin-vue: ^6.2.2
-  fibers: ^4.0.3
+  fibers: ^5.0.0
   highlight.js: ^9.18.1
   lint-staged: ^10.2.0
   lodash: ^4.17.15
