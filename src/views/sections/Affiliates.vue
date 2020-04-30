@@ -5,10 +5,10 @@
     space="36"
   >
     <v-container>
-      <base-section-heading title="Who's using Daedal?" />
+      <base-section-heading title="Who's using Abeille?" />
 
       <v-slide-group>
-        <template v-for="n in 6">
+        <template v-for="n in 0">
           <v-slide-item
             :key="n"
             class="align-self-center"

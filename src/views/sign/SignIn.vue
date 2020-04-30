@@ -50,7 +50,7 @@
                   <v-icon>mdi-twitter</v-icon>
                 </v-btn>
                 <v-btn text icon x-large>
-                  <v-icon>mdi-github-circle</v-icon>
+                  <v-icon>mdi-github</v-icon>
                 </v-btn>
                 <v-btn text icon x-large>
                   <v-icon>mdi-wechat</v-icon>

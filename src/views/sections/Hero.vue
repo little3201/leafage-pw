@@ -13,7 +13,7 @@
           max-width="700"
           width="100%"
         >
-          <base-heading title="PROMOTE YOUR BUSINESS WITH DAEDAL" />
+          <base-heading title="PROMOTE YOUR BUSINESS WITH ABEILLE" />
 
           <base-body>
             Infographic hypotheses influencer user experience Long madel ture gen-z paradigm shift client partner network product seilans solve management influencer analytics leverage virality.

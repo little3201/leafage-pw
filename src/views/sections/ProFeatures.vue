@@ -9,7 +9,7 @@
     />
 
     <base-section-heading title="Feature Comparison">
-      Get the PRO version of <strong>Daedal</strong> and level up your theme<br>with additional components, pages, and Free updates.
+      Get the Last version of <strong>Abeille</strong> and level up your theme<br>with additional components, pages, and Free updates.
     </base-section-heading>
 
     <v-container>
@@ -26,10 +26,10 @@
               <tr>
                 <th />
                 <th class="body-1 font-weight-bold text-center">
-                  What's in the Demo?
+                  What's alerday done?
                 </th>
                 <th class="body-1 font-weight-bold text-center">
-                  What's in the PRO version?
+                  What's next do?
                 </th>
               </tr>
             </thead>
@@ -69,7 +69,7 @@
           </v-simple-table>
         </v-col>
 
-        <v-col
+        <!-- <v-col
           cols="12"
           md="5"
         >
@@ -79,7 +79,7 @@
           >
             <base-img
               max-width="100%"
-              src="https://cdn.vuetifyjs.com/images/themes/daedal/daedal-hero.png"
+              src="@/assets/logo.png"
             />
           </v-card>
 
@@ -87,17 +87,17 @@
             <base-btn
               :tile="false"
               color="primary"
-              href="https://store.vuetifyjs.com/product/daedal-responsive-multi-purpose-theme-pro?ref=vtyd-pro-page-features"
+              href="#"
               rounded
             >
-              Buy Pro Now
+              Get More Now
 
               <v-icon right>
                 mdi-rocket
               </v-icon>
             </base-btn>
           </div>
-        </v-col>
+        </v-col> -->
       </v-row>
     </v-container>
   </base-section>
@@ -113,9 +113,9 @@ export default {
       ['Example Pages', 3, 10],
       ['Bugfixes and Issues', true, true],
       ['Vue CLI Support', true, true],
-      ['News, Project, and Pricing Pages', false, true],
-      ['6 Months Free Updates', false, true],
-      ['Price', 'Free', '$60']
+      ['Blog', false, true],
+      ['Photos', false, true],
+      ['Project', false, true]
     ]
   })
 }

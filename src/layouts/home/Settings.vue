@@ -83,11 +83,11 @@
 
         <v-divider class="my-6" />
 
-        <base-img
+        <!-- <base-img
           class="mx-auto mb-6"
           src="@/assets/logo.png"
           width="88"
-        />
+        /> -->
 
         <div class="text-center">
           <base-btn
@@ -96,7 +96,7 @@
             rounded
             @click="menu = false"
           >
-            Go Pro
+            Get More
 
             <v-icon right>
               mdi-rocket

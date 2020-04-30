@@ -2,7 +2,7 @@
   <v-theme-provider :dark="dark">
     <div>
       <base-img
-        :src="require('@/assets/daedal-logo-dark.png')"
+        :src="require('@/assets/logo.png')"
         contain
         max-width="128"
         min-height="78"
@@ -12,7 +12,7 @@
       <base-title
         size="body-1"
         space="4"
-        title="MULTI-PURPOSE THEME"
+        title="MAKE YOUR SELF BEST"
         weight="regular"
       />
 

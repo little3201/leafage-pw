@@ -14,13 +14,7 @@
         max-width="52"
         width="100%"
       />
-
-      <base-img
-        src=""
-        contain
-        max-width="128"
-        width="100%"
-      />
+      <span class="headline">ABEILLE</span>
 
       <v-spacer />
 

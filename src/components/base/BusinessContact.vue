@@ -48,17 +48,17 @@ export default {
       {
         icon: 'mdi-map-marker-outline',
         title: 'Address',
-        text: '8553 N. Beach St. Ste. 227<br>Fort Worth, Texas 76137'
+        text: '陕西省 · 西安市<br>碑林区 · 长安北路'
       },
       {
-        icon: 'mdi-cellphone',
-        title: 'Phone',
-        text: '01 (800) 433 744<br>01 (800) 433 633'
+        icon: 'mdi-wechat',
+        title: 'Wechat',
+        text: '布吉岛<br>q335699669'
       },
       {
         icon: 'mdi-email',
         title: 'Email',
-        text: 'john@vuetifyjs.com<br>heather@vuetifyjs.com'
+        text: 'little3201@gmail.com<br>little3201@163.com'
       }
     ]
   })

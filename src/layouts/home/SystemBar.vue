@@ -13,19 +13,13 @@
       target="_blank"
     >
       <v-img
-        alt="Vuetify Logo"
+        alt="Abeille Logo"
         class="mr-2"
         contain
         src="@/assets/logo.png"
         width="32"
       />
-
-      <v-img
-        alt="Vuetify Name"
-        contain
-        width="96"
-        src=""
-      />
+      <span class="title">ABEILLE</span>
     </a>
 
     <v-spacer />

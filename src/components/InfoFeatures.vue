@@ -17,7 +17,7 @@ export default {
 
   data: () => ({
     features: [
-      'Daedal Installation',
+      'Abeille Installation',
       'Easy Customization',
       'User Friendly Design',
       '24/7 Support Desk',
