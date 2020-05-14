@@ -15,11 +15,8 @@ export default {
   mixins: [
     LoadSections([
       'hero-alt',
-      'about-our-product',
-      'theme-features',
-      'affiliates',
+      'detail',
       'newsletter',
-      'pro-features',
       'info'
     ])
   ],

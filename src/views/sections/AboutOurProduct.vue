@@ -46,6 +46,12 @@ export default {
         callout: '03'
       }
     ]
-  })
+  }),
+
+  methods: {
+    initProducts () {
+      console.log('')
+    }
+  }
 }
 </script>
