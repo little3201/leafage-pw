@@ -1,6 +1,6 @@
 <template>
   <v-theme-provider :dark="dark">
-    <section id="detail">
+    <v-responsive class="mx-auto" max-width="1400">
       <v-row justify="center" align="start" class="mt-n3">
         <v-img max-height="320" :src="detail.imageUrl" class="text-center white--text align-center">
           <h1 class="text_shadow">{{ detail.title }}</h1>
@@ -18,7 +18,7 @@
           <p v-html="detail.catalog"></p>
         </v-col>
       </v-row>
-    </section>
+    </v-responsive>
   </v-theme-provider>
 </template>
 
@@ -26,11 +26,12 @@
 import { queryArticleFunc } from '@/api/method'
 
 export default {
-  name: 'SectionDetail',
+  name: 'Detail',
 
   props: {
     title: String,
-    dark: Boolean
+    dark: Boolean,
+    businessId: String
   },
 
   data: () => ({
@@ -59,8 +60,8 @@ export default {
     ]
   }),
   created () {
-    if (this.$route.params.businessId) {
-      this.queryArticle(this.$route.params.businessId)
+    if (this.businessId) {
+      this.queryArticle(this.businessId)
     }
   },
   methods: {

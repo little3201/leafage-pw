@@ -16,9 +16,7 @@ export default {
     LoadSections([
       'hero-alt',
       'keep-in-touch',
-      'map',
-      'newsletter',
-      'pro-features'
+      'newsletter'
     ])
   ],
 

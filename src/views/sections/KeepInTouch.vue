@@ -10,7 +10,7 @@
           md="5"
         >
           <base-business-info title="KEEP IN TOUCH WITH US">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo pariatur quidem, quis modi iure nihil commodi suscipit, corporis dicta adipisci, voluptatum quia cupiditate.
+            Hi, thanks for using Abeille, this is a personal open source project, initially to do a personal blog class project, while doing some technical verification testing, hope to be useful to you, if there are problems, please contact me!
           </base-business-info>
         </v-col>
 

@@ -12,7 +12,7 @@
               <v-list-item-content>
                 <v-list-item-title v-text="article.title"></v-list-item-title>
                 <v-list-item-subtitle v-text="article.subtitle"></v-list-item-subtitle>
-                <v-list-item-subtitle >
+                <v-list-item-subtitle>
                   <span class="mr-3">作者：{{ article.author }}</span>
                   <span class="mx-3">评论：{{ article.comment }}</span>
                   <span class="ml-3">阅读：{{ article.scan }}</span>

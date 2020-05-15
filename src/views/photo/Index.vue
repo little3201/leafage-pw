@@ -16,7 +16,6 @@ export default {
     LoadSections([
       'hero-alt',
       'theme-features',
-      'newsletter',
       'info'
     ])
   ],

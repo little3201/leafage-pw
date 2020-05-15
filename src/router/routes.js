@@ -12,14 +12,7 @@ export default [
         path: 'blog',
         name: 'Blog',
         component: () => import('@/views/blog/Index.vue'),
-        meta: { src: require('@/assets/about.jpg') },
-        children: [
-          {
-            path: '',
-            name: 'Detail',
-            component: () => import('@/views/sections/Detail.vue')
-          }
-        ]
+        meta: { src: require('@/assets/about.jpg') }
       },
       {
         path: 'photos',
@@ -34,7 +27,7 @@ export default [
         meta: { src: require('@/assets/about.jpg') }
       },
       {
-        path: 'contact-us',
+        path: 'contact',
         name: 'Contact',
         component: () => import('@/views/contact-us/Index.vue'),
         meta: { src: require('@/assets/contact.jpg') }
@@ -47,12 +40,18 @@ export default [
     ]
   },
   {
-    path: '/signin',
+    path: 'detail/:budinessId',
+    name: 'Detail',
+    component: () => import('@/views/detail/Index.vue'),
+    props: true
+  },
+  {
+    path: 'signin',
     name: 'signin',
     component: () => import('@/views/sign/SignIn.vue')
   },
   {
-    path: '/signup',
+    path: 'signup',
     name: 'signup',
     component: () => import('@/views/sign/SignUp.vue')
   }
