@@ -36,7 +36,7 @@ router.beforeEach((to, from, next) => {
   // 白名单直接放行
   if (whiteList.includes(to.fullPath)) {
     next()
-  } else if (to.fullPath.startsWith('/information')) {
+  } else if (to.fullPath.startsWith('/detail')) {
     // 路由包含/details，即详情页，放行
     next()
   } else if (!token && to.fullPath !== '/signin') {

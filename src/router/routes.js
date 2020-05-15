@@ -12,7 +12,14 @@ export default [
         path: 'blog',
         name: 'Blog',
         component: () => import('@/views/blog/Index.vue'),
-        meta: { src: require('@/assets/about.jpg') }
+        meta: { src: require('@/assets/about.jpg') },
+        children: [
+          {
+            path: '',
+            name: 'Detail',
+            component: () => import('@/views/sections/Detail.vue')
+          }
+        ]
       },
       {
         path: 'photos',

@@ -58,7 +58,7 @@ export default {
       { text: 'Spring Security' }
     ]
   }),
-  created: function () {
+  created () {
     if (this.$route.params.businessId) {
       this.queryArticle(this.$route.params.businessId)
     }
