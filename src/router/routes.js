@@ -33,17 +33,17 @@ export default [
         meta: { src: require('@/assets/contact.jpg') }
       },
       {
+        path: 'detail/:businessId',
+        name: 'Detail',
+        component: () => import('@/views/detail/Index.vue'),
+        props: true
+      },
+      {
         path: '*',
         name: 'FourOhFour',
         component: () => import('@/views/404/Index.vue')
       }
     ]
-  },
-  {
-    path: 'detail/:budinessId',
-    name: 'Detail',
-    component: () => import('@/views/detail/Index.vue'),
-    props: true
   },
   {
     path: 'signin',

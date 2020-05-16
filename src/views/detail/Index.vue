@@ -1,18 +1,28 @@
 <template>
   <v-theme-provider :dark="dark">
     <v-responsive class="mx-auto" max-width="1400">
-      <v-row justify="center" align="start" class="mt-n3">
-        <v-img max-height="320" :src="detail.imageUrl" class="text-center white--text align-center">
+      <v-row justify="center" align="start" class="ma-0">
+        <!-- <base-img
+          :height="$vuetify.breakpoint.mdAndUp ? 350 : 225"
+          :gradient="gradient"
+          :src="detail.imageUrl"
+          color="#45516b"
+          flat
+          max-width="100%"
+          tile
+        > -->
+        <v-img :height="$vuetify.breakpoint.mdAndUp ? 350 : 225" :src="detail.imageUrl" class="text-center white--text align-center">
           <h1 class="text_shadow">{{ detail.title }}</h1>
           <p class="mt-3 text_shadow"><strong>作者：</strong> {{ detail.author == null ?  '' : detail.author.nickname}}</p>
         </v-img>
+        <!-- </base-img> -->
       </v-row>
       <v-row justify="center" align="start" class="my-0">
         <v-col cols="12" md="8" lg="8" xl="6">
           <p class="my-3" v-html="detail.content"></p>
-          上一篇：{{ detail.previous.title }}
+          <!-- 上一篇：{{ detail.previous.title }} -->
           <v-divider></v-divider>
-          下一篇：{{ detail.next.title }}
+          <!-- 下一篇：{{ detail.next.title }} -->
         </v-col>
         <v-col cols="12" md="4" lg="2" xl="2" class="hidden-sm-and-down">
           <p v-html="detail.catalog"></p>
@@ -68,7 +78,7 @@ export default {
     queryArticle (businessId) {
       queryArticleFunc(businessId).then(
         response => {
-          this.information = response.data
+          this.detail = response.data
         },
         error => {
           alert(error.statusText)

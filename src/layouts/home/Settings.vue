@@ -61,7 +61,7 @@
 
         <v-divider class="my-6" />
 
-        <base-btn
+        <!-- <base-btn
           block
           href="#"
           class="mb-6"
@@ -81,7 +81,7 @@
           View All Components
         </base-btn>
 
-        <v-divider class="my-6" />
+        <v-divider class="my-6" /> -->
 
         <!-- <base-img
           class="mx-auto mb-6"
@@ -89,7 +89,7 @@
           width="88"
         /> -->
 
-        <div class="text-center">
+        <!-- <div class="text-center">
           <base-btn
             :tile="false"
             :to="{ name: 'Pro' }"
@@ -102,7 +102,7 @@
               mdi-rocket
             </v-icon>
           </base-btn>
-        </div>
+        </div> -->
       </v-card-text>
     </v-card>
   </v-menu>
