@@ -1,6 +1,6 @@
 <template>
   <v-theme-provider :dark="dark">
-    <v-responsive class="mx-auto" max-width="1400">
+    <v-responsive class="mx-auto">
       <v-row justify="center" align="start" class="ma-0">
         <!-- <base-img
           :height="$vuetify.breakpoint.mdAndUp ? 350 : 225"
