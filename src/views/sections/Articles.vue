@@ -1,8 +1,6 @@
 <template>
   <v-theme-provider :dark="dark">
     <section id="articles">
-        <div class="py-12"></div>
-
         <v-container>
           <v-row>
             <v-col
@@ -12,9 +10,9 @@
               md="4"
             >
               <v-img
-                :src="src"
+                :src="article.imageUrl"
                 class="mb-4"
-                height="275"
+                height="225"
                 max-width="100%"
               ></v-img>
 
@@ -37,8 +35,6 @@
             </v-col>
           </v-row>
         </v-container>
-
-        <div class="py-12"></div>
       </section>
   </v-theme-provider>
 </template>
