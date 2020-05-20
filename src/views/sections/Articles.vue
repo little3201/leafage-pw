@@ -1,32 +1,45 @@
 <template>
   <v-theme-provider :dark="dark">
     <section id="articles">
-      <v-responsive
-        class="mx-auto"
-        max-width="1400"
-      >
-      <v-row class="ma-0 fill-height">
-        <v-list three-line>
-          <v-list-item-group color="primary">
-            <v-list-item :to="'/detail/' + article.businessId" v-for="(article, i) in articles" :key="i">
-              <v-list-item-content>
-                <v-list-item-title v-text="article.title"></v-list-item-title>
-                <v-list-item-subtitle v-text="article.subtitle"></v-list-item-subtitle>
-                <v-list-item-subtitle>
-                  <span class="mr-3">作者：{{ article.author }}</span>
-                  <span class="mx-3">评论：{{ article.comment }}</span>
-                  <span class="ml-3">阅读：{{ article.scan }}</span>
-                </v-list-item-subtitle>
-              </v-list-item-content>
-              <v-list-item-action>
-                <v-img :src="article.imageUrl" width="208" height="116" style="border-radius: 3px;"></v-img>
-              </v-list-item-action>
-            </v-list-item>
-          </v-list-item-group>
-        </v-list>
-      </v-row>
-      </v-responsive>
-    </section>
+        <div class="py-12"></div>
+
+        <v-container>
+          <v-row>
+            <v-col
+              v-for="(article, i) in articles"
+              :key="i"
+              cols="12"
+              md="4"
+            >
+              <v-img
+                :src="src"
+                class="mb-4"
+                height="275"
+                max-width="100%"
+              ></v-img>
+
+              <h3
+                class="font-weight-black mb-4 text-uppercase text-truncate"
+                v-text="article.title"
+              ></h3>
+
+              <div
+                class="title font-weight-light mb-5 text-truncate"
+                v-text="article.subtitle"
+              ></div>
+
+              <v-btn
+                class="ml-n4 font-weight-black"
+                text
+              >
+                点击阅读
+              </v-btn>
+            </v-col>
+          </v-row>
+        </v-container>
+
+        <div class="py-12"></div>
+      </section>
   </v-theme-provider>
 </template>
 
@@ -45,8 +58,7 @@ export default {
     articles: [{
       businessId: '',
       title: '',
-      catalog: '',
-      content: '',
+      subtitle: '',
       imageUrl: '',
       author: {
         avatar: '',
