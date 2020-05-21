@@ -15,11 +15,10 @@ export default {
   mixins: [
     LoadSections([
       'hero',
-      'project-features',
       'features',
-      'social-media',
+      'stats',
       'newsletter',
-      'pro-features',
+      'about-me',
       'info'
     ])
   ],

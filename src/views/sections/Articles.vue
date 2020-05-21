@@ -12,7 +12,7 @@
               <v-img
                 :src="article.imageUrl"
                 class="mb-4"
-                height="225"
+                height="275"
                 max-width="100%"
               ></v-img>
 
