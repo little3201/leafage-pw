@@ -8,7 +8,6 @@
               :key="i"
               cols="12"
               md="4"
-              xl="4"
             >
               <v-img
                 :src="article.imageUrl"
