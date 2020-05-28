@@ -39,6 +39,11 @@ export default [
         props: true
       },
       {
+        path: 'markdown',
+        name: 'Markdown',
+        component: () => import('@/views/markdown/Index.vue')
+      },
+      {
         path: '*',
         name: 'FourOhFour',
         component: () => import('@/views/404/Index.vue')

@@ -14,6 +14,7 @@ const whiteList = [
   '/photos',
   '/about',
   '/contact',
+  '/markdown',
   '/signin',
   '/signup'
 ]
@@ -39,7 +40,7 @@ router.beforeEach((to, from, next) => {
   } else if (to.fullPath.startsWith('/detail')) {
     // 路由包含/details，即详情页，放行
     next()
-  } else if (!token && to.fullPath !== '/signin') {
+  } else if (!token && to.fullPath !== 'signin') {
     // 路由不是登录，且没有拿到token，直接拦截，跳转至登录页
     next({
       name: 'signin'

@@ -68,15 +68,16 @@ export const fetchArticleFunc = () => {
   })
 }
 
-/* 获取用户信息列表 */
-export const createArticleFunc = () => {
+/* 新增文章 */
+export const createArticleFunc = (params) => {
   return axios.request({
     url: SERVER_URL.article,
-    method: 'post'
+    method: 'post',
+    data: params
   })
 }
 
-/* 获取用户信息列表 */
+/* 修改文章 */
 export const modifyArticleFunc = (articleId, params) => {
   return axios.request({
     url: SERVER_URL.article.concat('/').concat(articleId),

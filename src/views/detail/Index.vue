@@ -2,7 +2,7 @@
   <v-theme-provider :dark="dark">
     <v-responsive class="mx-auto">
       <v-row justify="center" align="start" class="ma-0">
-        <!-- <base-img
+        <base-img
           :height="$vuetify.breakpoint.mdAndUp ? 350 : 225"
           :gradient="gradient"
           :src="detail.imageUrl"
@@ -10,16 +10,15 @@
           flat
           max-width="100%"
           tile
-        > -->
-        <v-img :height="$vuetify.breakpoint.mdAndUp ? 350 : 225" :src="detail.imageUrl" class="text-center white--text align-center">
+          class="text-center white--text align-center"
+        >
           <h1 class="text_shadow">{{ detail.title }}</h1>
           <p class="mt-3 text_shadow"><strong>作者：</strong> {{ detail.author == null ?  '' : detail.author.nickname}}</p>
-        </v-img>
-        <!-- </base-img> -->
+        </base-img>
       </v-row>
       <v-row justify="center" align="start" class="my-0">
         <v-col cols="12" md="8" lg="8" xl="6">
-          <p class="my-3" v-html="detail.content"></p>
+          <v-md-editor mode="preview" :text="detail.content"></v-md-editor>
           <!-- 上一篇：{{ detail.previous.title }} -->
           <v-divider></v-divider>
           <!-- 下一篇：{{ detail.next.title }} -->
@@ -34,6 +33,10 @@
 
 <script>
 import { queryArticleFunc } from '@/api/method'
+import {
+  HexToRGBA,
+  RGBAtoCSS
+} from 'vuetify/lib/util/colorUtils'
 
 export default {
   name: 'Detail',
@@ -74,6 +77,13 @@ export default {
       this.queryArticle(this.businessId)
     }
   },
+  computed: {
+    gradient () {
+      const color = `${this.$vuetify.theme.themes.light.secondary}CC`
+      const overlay = RGBAtoCSS(HexToRGBA(color))
+      return `to top, ${overlay}, ${overlay}`
+    }
+  },
   methods: {
     queryArticle (businessId) {
       queryArticleFunc(businessId).then(
@@ -95,6 +105,6 @@ export default {
 }
 .v-application code {
   display: block;
-  color: antiquewhite;
+  color: #525252;
 }
 </style>

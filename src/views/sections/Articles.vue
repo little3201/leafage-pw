@@ -29,6 +29,7 @@
               <v-btn
                 class="ml-n4 font-weight-black"
                 text
+                :to="'detail/' + article.businessId"
               >
                 点击阅读
               </v-btn>

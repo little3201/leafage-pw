@@ -8,6 +8,7 @@ dependencies:
   vuetify: 2.2.28_vue@2.6.11
   vuex: 3.4.0_vue@2.6.11
 devDependencies:
+  '@kangc/v-md-editor': 1.2.13_d81dac297579cfd5597855dabf60f13b
   '@mdi/font': 5.2.45
   '@vue/cli-plugin-babel': 4.3.1_@vue+cli-service@4.3.1
   '@vue/cli-plugin-eslint': 4.3.1_39c37a0df7d91dff77b5226a724bc947
@@ -25,7 +26,6 @@ devDependencies:
   eslint-plugin-vue: 6.2.2_eslint@6.8.0
   lint-staged: 10.2.2
   lodash: 4.17.15
-  mavon-editor: 2.9.0
   sass: 1.26.5
   sass-loader: 8.0.2_sass@1.26.5
   vue-cli-plugin-vuetify: 2.0.5
@@ -1056,6 +1056,28 @@ packages:
     resolution:
       integrity: sha1-vnx4RhKLiPapsdEmGgrQbrXA/fg=
       tarball: '@intervolga/optimize-cssnano-plugin/download/@intervolga/optimize-cssnano-plugin-1.0.6.tgz'
+  /@kangc/v-md-editor/1.2.13_d81dac297579cfd5597855dabf60f13b:
+    dependencies:
+      '@vuepress/markdown': 1.5.0
+      codemirror: 5.54.0
+      highlight.js: 9.18.1
+      insert-text-at-cursor: 0.3.0
+      katex: 0.11.1
+      markdown-it: 10.0.0
+      markdown-it-attrs: 3.0.2_markdown-it@10.0.0
+      markdown-it-container: 2.0.0
+      prismjs: 1.20.0
+      resize-observer-polyfill: 1.5.1
+      vue: 2.6.11
+      vue-template-compiler: 2.6.11
+      xss: 1.0.6
+    dev: true
+    peerDependencies:
+      vue: ^2.6.11
+      vue-template-compiler: ^2.6.11
+    resolution:
+      integrity: sha1-fp6yJMXNatglwbBNyT8UxB/sq6Q=
+      tarball: '@kangc/v-md-editor/download/@kangc/v-md-editor-1.2.13.tgz'
   /@mdi/font/5.2.45:
     dev: true
     resolution:
@@ -1483,6 +1505,34 @@ packages:
     resolution:
       integrity: sha1-uw5G8VhafiibTuYGfcxaauYvHdE=
       tarball: '@vue/web-component-wrapper/download/@vue/web-component-wrapper-1.2.0.tgz'
+  /@vuepress/markdown/1.5.0:
+    dependencies:
+      '@vuepress/shared-utils': 1.5.0
+      markdown-it: 8.4.2
+      markdown-it-anchor: 5.3.0_markdown-it@8.4.2
+      markdown-it-chain: 1.3.0_markdown-it@8.4.2
+      markdown-it-emoji: 1.4.0
+      markdown-it-table-of-contents: 0.4.4
+      prismjs: 1.20.0
+    dev: true
+    resolution:
+      integrity: sha1-YIUCOAyy2S89RzA882xCJueaY+c=
+      tarball: '@vuepress/markdown/download/@vuepress/markdown-1.5.0.tgz'
+  /@vuepress/shared-utils/1.5.0:
+    dependencies:
+      chalk: 2.4.2
+      diacritics: 1.3.0
+      escape-html: 1.0.3
+      fs-extra: 7.0.1
+      globby: 9.2.0
+      gray-matter: 4.0.2
+      hash-sum: 1.0.2
+      semver: 6.3.0
+      upath: 1.2.0
+    dev: true
+    resolution:
+      integrity: sha1-uOH2BYGZ4DRHYwOU8qtmxnSa0OM=
+      tarball: '@vuepress/shared-utils/download/@vuepress/shared-utils-1.5.0.tgz'
   /@webassemblyjs/ast/1.9.0:
     dependencies:
       '@webassemblyjs/helper-module-context': 1.9.0
@@ -2601,7 +2651,7 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-zUJUFnelQzPPVBpJEIwUMrRMlCQ=
-      tarball: chalk/download/chalk-2.4.2.tgz?cache=0&sync_timestamp=1585817445584&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fchalk%2Fdownload%2Fchalk-2.4.2.tgz
+      tarball: chalk/download/chalk-2.4.2.tgz
   /chalk/3.0.0:
     dependencies:
       ansi-styles: 4.2.1
@@ -2780,6 +2830,16 @@ packages:
     resolution:
       integrity: sha1-sEM9C06chH7xiGik7xb9X8gnHEg=
       tarball: cli-width/download/cli-width-2.2.1.tgz
+  /clipboard/2.0.6:
+    dependencies:
+      good-listener: 1.2.2
+      select: 1.1.2
+      tiny-emitter: 2.1.0
+    dev: true
+    optional: true
+    resolution:
+      integrity: sha1-UpISlu7A/fd+rRdJQhshyWhkc3Y=
+      tarball: clipboard/download/clipboard-2.0.6.tgz
   /clipboardy/2.3.0:
     dependencies:
       arch: 2.1.2
@@ -2838,6 +2898,11 @@ packages:
     resolution:
       integrity: sha1-Q/bCEVG07yv1cYfbDXPeIp4+fsM=
       tarball: coa/download/coa-2.0.2.tgz
+  /codemirror/5.54.0:
+    dev: true
+    resolution:
+      integrity: sha1-grat9mKynut7hn/ng51J4l5KCzg=
+      tarball: codemirror/download/codemirror-5.54.0.tgz
   /collection-visit/1.0.0:
     dependencies:
       map-visit: 1.0.0
@@ -3450,7 +3515,7 @@ packages:
     dev: false
     resolution:
       integrity: sha1-W7WgZyYotkFJVmuhaBnmFRjGcmE=
-      tarball: debug/download/debug-3.1.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fdebug%2Fdownload%2Fdebug-3.1.0.tgz
+      tarball: debug/download/debug-3.1.0.tgz?cache=0&sync_timestamp=1589893678820&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fdebug%2Fdownload%2Fdebug-3.1.0.tgz
   /debug/3.2.6:
     dependencies:
       ms: 2.1.2
@@ -3507,7 +3572,7 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-EEmdhohEza1P7ghC34x/bwyVp1M=
-      tarball: deepmerge/download/deepmerge-1.5.2.tgz
+      tarball: deepmerge/download/deepmerge-1.5.2.tgz?cache=0&sync_timestamp=1572307492742&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fdeepmerge%2Fdownload%2Fdeepmerge-1.5.2.tgz
   /deepmerge/4.2.2:
     dev: false
     engines:
@@ -3600,6 +3665,12 @@ packages:
     resolution:
       integrity: sha1-3zrhmayt+31ECqrgsp4icrJOxhk=
       tarball: delayed-stream/download/delayed-stream-1.0.0.tgz
+  /delegate/3.2.0:
+    dev: true
+    optional: true
+    resolution:
+      integrity: sha1-tmtxwxWFIuirV0T3INjKDCr1kWY=
+      tarball: delegate/download/delegate-3.2.0.tgz
   /depd/1.1.2:
     dev: true
     engines:
@@ -3625,6 +3696,11 @@ packages:
     resolution:
       integrity: sha1-AU7o+PZpxcWAI9pkuBecCDooxGw=
       tarball: detect-node/download/detect-node-2.0.4.tgz
+  /diacritics/1.3.0:
+    dev: true
+    resolution:
+      integrity: sha1-PvqHMj67hj5mls67AILUj/PW96E=
+      tarball: diacritics/download/diacritics-1.3.0.tgz
   /diffie-hellman/5.0.3:
     dependencies:
       bn.js: 4.11.8
@@ -3831,12 +3907,12 @@ packages:
     dev: true
     resolution:
       integrity: sha1-kzoEBShgyF6DwSJHnEdIqOTHIVY=
-      tarball: emoji-regex/download/emoji-regex-7.0.3.tgz?cache=0&sync_timestamp=1586512354326&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Femoji-regex%2Fdownload%2Femoji-regex-7.0.3.tgz
+      tarball: emoji-regex/download/emoji-regex-7.0.3.tgz
   /emoji-regex/8.0.0:
     dev: true
     resolution:
       integrity: sha1-6Bj9ac5cz8tARZT4QpY79TFkzDc=
-      tarball: emoji-regex/download/emoji-regex-8.0.0.tgz?cache=0&sync_timestamp=1586512354326&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Femoji-regex%2Fdownload%2Femoji-regex-8.0.0.tgz
+      tarball: emoji-regex/download/emoji-regex-8.0.0.tgz
   /emojis-list/2.1.0:
     dev: true
     engines:
@@ -4914,7 +4990,7 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha1-ASA83JJZf5uQkGfD5lbMH008Tck=
-      tarball: get-stream/download/get-stream-5.1.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fget-stream%2Fdownload%2Fget-stream-5.1.0.tgz
+      tarball: get-stream/download/get-stream-5.1.0.tgz
   /get-value/2.0.6:
     dev: true
     engines:
@@ -5022,11 +5098,31 @@ packages:
     resolution:
       integrity: sha1-/QKacGxwPSm90XD0tts6P3p8tj0=
       tarball: globby/download/globby-9.2.0.tgz
+  /good-listener/1.2.2:
+    dependencies:
+      delegate: 3.2.0
+    dev: true
+    optional: true
+    resolution:
+      integrity: sha1-1TswzfkxPf+33JoNR3CWqm0UXFA=
+      tarball: good-listener/download/good-listener-1.2.2.tgz
   /graceful-fs/4.2.4:
     dev: true
     resolution:
       integrity: sha1-Ila94U02MpWMRl68ltxGfKB6Kfs=
-      tarball: graceful-fs/download/graceful-fs-4.2.4.tgz?cache=0&sync_timestamp=1588119528110&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fgraceful-fs%2Fdownload%2Fgraceful-fs-4.2.4.tgz
+      tarball: graceful-fs/download/graceful-fs-4.2.4.tgz?cache=0&sync_timestamp=1588120880075&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fgraceful-fs%2Fdownload%2Fgraceful-fs-4.2.4.tgz
+  /gray-matter/4.0.2:
+    dependencies:
+      js-yaml: 3.14.0
+      kind-of: 6.0.3
+      section-matter: 1.0.0
+      strip-bom-string: 1.0.0
+    dev: true
+    engines:
+      node: '>=6.0'
+    resolution:
+      integrity: sha1-mqN546yvQhGT/OfSoozr1FGKxFQ=
+      tarball: gray-matter/download/gray-matter-4.0.2.tgz
   /gzip-size/5.1.1:
     dependencies:
       duplexer: 0.1.1
@@ -5177,11 +5273,6 @@ packages:
     resolution:
       integrity: sha1-TAb8y0YC/iYCs8k9+C1+fb8aio4=
       tarball: hex-color-regex/download/hex-color-regex-1.1.0.tgz
-  /highlight.js-async-webpack/1.0.4:
-    dev: true
-    resolution:
-      integrity: sha1-wGtnv5nwSQRdYrdW5YVbCRLsYWw=
-      tarball: highlight.js-async-webpack/download/highlight.js-async-webpack-1.0.4.tgz
   /highlight.js/9.18.1:
     dev: true
     resolution:
@@ -5550,6 +5641,11 @@ packages:
     resolution:
       integrity: sha1-EpigGFmIPhfHJkuChwrhA0+S3Sk=
       tarball: inquirer/download/inquirer-7.1.0.tgz?cache=0&sync_timestamp=1583821134158&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Finquirer%2Fdownload%2Finquirer-7.1.0.tgz
+  /insert-text-at-cursor/0.3.0:
+    dev: true
+    resolution:
+      integrity: sha1-GBlgdoDsFXBhg0fEzUdeeR+qJdo=
+      tarball: insert-text-at-cursor/download/insert-text-at-cursor-0.3.0.tgz
   /internal-ip/4.3.0:
     dependencies:
       default-gateway: 4.2.0
@@ -5998,6 +6094,11 @@ packages:
     resolution:
       integrity: sha1-R+Y/evVa+m+S4VAOaQ64uFKcCZo=
       tarball: isstream/download/isstream-0.1.2.tgz
+  /javascript-stringify/1.6.0:
+    dev: true
+    resolution:
+      integrity: sha1-FC0RHzpuPa6PSpr9d9RYVbWpzOM=
+      tarball: javascript-stringify/download/javascript-stringify-1.6.0.tgz
   /javascript-stringify/2.0.1:
     dev: true
     resolution:
@@ -6043,6 +6144,15 @@ packages:
     resolution:
       integrity: sha1-r/FRswv9+o5J4F2iLnQV6d+jeEc=
       tarball: js-yaml/download/js-yaml-3.13.1.tgz?cache=0&sync_timestamp=1566411975738&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fjs-yaml%2Fdownload%2Fjs-yaml-3.13.1.tgz
+  /js-yaml/3.14.0:
+    dependencies:
+      argparse: 1.0.10
+      esprima: 4.0.1
+    dev: true
+    hasBin: true
+    resolution:
+      integrity: sha1-p6NBcPJqIbsWJCTYray0ETpp5II=
+      tarball: js-yaml/download/js-yaml-3.14.0.tgz
   /jsbn/0.1.1:
     dev: true
     resolution:
@@ -6147,6 +6257,14 @@ packages:
     resolution:
       integrity: sha1-MT5mvB5cwG5Di8G3SZwuXFastqI=
       tarball: jsprim/download/jsprim-1.4.1.tgz
+  /katex/0.11.1:
+    dependencies:
+      commander: 2.20.3
+    dev: true
+    hasBin: true
+    resolution:
+      integrity: sha1-3zDKQMVlyd8BpGagDVPgeehP+qI=
+      tarball: katex/download/katex-0.11.1.tgz
   /killable/1.0.1:
     dev: true
     resolution:
@@ -6230,6 +6348,13 @@ packages:
     resolution:
       integrity: sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
       tarball: lines-and-columns/download/lines-and-columns-1.1.6.tgz
+  /linkify-it/2.2.0:
+    dependencies:
+      uc.micro: 1.0.6
+    dev: true
+    resolution:
+      integrity: sha1-47VGl+eL+RXHCjis14/QngBYsc8=
+      tarball: linkify-it/download/linkify-it-2.2.0.tgz
   /lint-staged/10.2.2:
     dependencies:
       chalk: 4.0.0
@@ -6504,15 +6629,79 @@ packages:
     resolution:
       integrity: sha1-7Nyo8TFE5mDxtb1B8S80edmN+48=
       tarball: map-visit/download/map-visit-1.0.0.tgz
-  /mavon-editor/2.9.0:
+  /markdown-it-anchor/5.3.0_markdown-it@8.4.2:
     dependencies:
-      highlight.js: 9.18.1
-      highlight.js-async-webpack: 1.0.4
-      xss: 1.0.6
+      markdown-it: 8.4.2
+    dev: true
+    peerDependencies:
+      markdown-it: '*'
+    resolution:
+      integrity: sha1-1Ums1khWqOzRvqWDZe84Xv+6x0Q=
+      tarball: markdown-it-anchor/download/markdown-it-anchor-5.3.0.tgz
+  /markdown-it-attrs/3.0.2_markdown-it@10.0.0:
+    dependencies:
+      markdown-it: 10.0.0
+    dev: true
+    engines:
+      node: '>=6'
+    peerDependencies:
+      markdown-it: '>= 9.0.0 < 11.0.0'
+    resolution:
+      integrity: sha1-VaRmsrYNdVsqdyiN/xdedB/BFD0=
+      tarball: markdown-it-attrs/download/markdown-it-attrs-3.0.2.tgz
+  /markdown-it-chain/1.3.0_markdown-it@8.4.2:
+    dependencies:
+      markdown-it: 8.4.2
+      webpack-chain: 4.12.1
+    dev: true
+    engines:
+      node: '>=6.9'
+    peerDependencies:
+      markdown-it: '>=5.0.0'
+    resolution:
+      integrity: sha1-zPb+hsECZrr7TlRzgN/X8nfMF7w=
+      tarball: markdown-it-chain/download/markdown-it-chain-1.3.0.tgz
+  /markdown-it-container/2.0.0:
     dev: true
     resolution:
-      integrity: sha1-5Ru83N4YuSNjM6nOsS/tLYRUKQA=
-      tarball: mavon-editor/download/mavon-editor-2.9.0.tgz
+      integrity: sha1-ABm0P9Au7+zi8ZYKKJX7qBpARpU=
+      tarball: markdown-it-container/download/markdown-it-container-2.0.0.tgz
+  /markdown-it-emoji/1.4.0:
+    dev: true
+    resolution:
+      integrity: sha1-m+4OmpkKljupbfaYDE/dsF37Tcw=
+      tarball: markdown-it-emoji/download/markdown-it-emoji-1.4.0.tgz
+  /markdown-it-table-of-contents/0.4.4:
+    dev: true
+    engines:
+      node: '>6.4.0'
+    resolution:
+      integrity: sha1-PcfOi4/BflmBx3zDmNF4Ixnzf7w=
+      tarball: markdown-it-table-of-contents/download/markdown-it-table-of-contents-0.4.4.tgz
+  /markdown-it/10.0.0:
+    dependencies:
+      argparse: 1.0.10
+      entities: 2.0.2
+      linkify-it: 2.2.0
+      mdurl: 1.0.1
+      uc.micro: 1.0.6
+    dev: true
+    hasBin: true
+    resolution:
+      integrity: sha1-q/xk8UGxci1mNAIETkOSfx9QqNw=
+      tarball: markdown-it/download/markdown-it-10.0.0.tgz
+  /markdown-it/8.4.2:
+    dependencies:
+      argparse: 1.0.10
+      entities: 1.1.2
+      linkify-it: 2.2.0
+      mdurl: 1.0.1
+      uc.micro: 1.0.6
+    dev: true
+    hasBin: true
+    resolution:
+      integrity: sha1-OG+YmY3BWjdyKqdyIIT0Agvdm1Q=
+      tarball: markdown-it/download/markdown-it-8.4.2.tgz
   /md5.js/1.3.5:
     dependencies:
       hash-base: 3.1.0
@@ -6532,6 +6721,11 @@ packages:
     resolution:
       integrity: sha1-hS3GD8ql2qLoz2yRicRA7T4EKXg=
       tarball: mdn-data/download/mdn-data-2.0.6.tgz
+  /mdurl/1.0.1:
+    dev: true
+    resolution:
+      integrity: sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=
+      tarball: mdurl/download/mdurl-1.0.1.tgz
   /media-typer/0.3.0:
     dev: true
     engines:
@@ -8154,6 +8348,13 @@ packages:
     resolution:
       integrity: sha1-X0+HyPkeWuPzuoerTPXgOxoX8aM=
       tarball: pretty-error/download/pretty-error-2.1.1.tgz
+  /prismjs/1.20.0:
+    dev: true
+    optionalDependencies:
+      clipboard: 2.0.6
+    resolution:
+      integrity: sha1-m2hfxICjUU7nGY6sajv1AkMZ/wM=
+      tarball: prismjs/download/prismjs-1.20.0.tgz
   /private/0.1.8:
     dev: true
     engines:
@@ -8637,6 +8838,11 @@ packages:
     resolution:
       integrity: sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
       tarball: requires-port/download/requires-port-1.0.0.tgz
+  /resize-observer-polyfill/1.5.1:
+    dev: true
+    resolution:
+      integrity: sha1-DpAg3T0hAkRY1OvSfiPkAmmBBGQ=
+      tarball: resize-observer-polyfill/download/resize-observer-polyfill-1.5.1.tgz
   /resolve-cwd/2.0.0:
     dependencies:
       resolve-from: 3.0.0
@@ -8847,11 +9053,27 @@ packages:
     resolution:
       integrity: sha1-KZ/mvUozZdwj2Z/URsr/jx1sMww=
       tarball: schema-utils/download/schema-utils-2.6.6.tgz
+  /section-matter/1.0.0:
+    dependencies:
+      extend-shallow: 2.0.1
+      kind-of: 6.0.3
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-6QQZU1BngOwB1Z8pKhnHuFC4QWc=
+      tarball: section-matter/download/section-matter-1.0.0.tgz
   /select-hose/2.0.0:
     dev: true
     resolution:
       integrity: sha1-Yl2GWPhlr0Psliv8N2o3NZpJlMo=
       tarball: select-hose/download/select-hose-2.0.0.tgz
+  /select/1.1.2:
+    dev: true
+    optional: true
+    resolution:
+      integrity: sha1-DnNQrN7ICxEIUoeG7B1EGNEbOW0=
+      tarball: select/download/select-1.1.2.tgz
   /selfsigned/1.10.7:
     dependencies:
       node-forge: 0.9.0
@@ -9415,7 +9637,7 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha1-InZ74htirxCBV0MG9prFG2IgOWE=
-      tarball: string-width/download/string-width-3.1.0.tgz?cache=0&sync_timestamp=1573522568465&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fstring-width%2Fdownload%2Fstring-width-3.1.0.tgz
+      tarball: string-width/download/string-width-3.1.0.tgz
   /string-width/4.2.0:
     dependencies:
       emoji-regex: 8.0.0
@@ -9426,7 +9648,7 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha1-lSGCxGzHssMT0VluYjmSvRY7crU=
-      tarball: string-width/download/string-width-4.2.0.tgz?cache=0&sync_timestamp=1573522568465&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fstring-width%2Fdownload%2Fstring-width-4.2.0.tgz
+      tarball: string-width/download/string-width-4.2.0.tgz
   /string.prototype.trimend/1.0.1:
     dependencies:
       define-properties: 1.1.3
@@ -9526,6 +9748,13 @@ packages:
     resolution:
       integrity: sha1-CxVx3XZpzNTz4G4U7x7tJiJa5TI=
       tarball: strip-ansi/download/strip-ansi-6.0.0.tgz
+  /strip-bom-string/1.0.0:
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-5SEekiQ2n7uB1jOi8ABE3IztrZI=
+      tarball: strip-bom-string/download/strip-bom-string-1.0.0.tgz
   /strip-bom/3.0.0:
     dev: true
     engines:
@@ -9788,6 +10017,12 @@ packages:
     resolution:
       integrity: sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
       tarball: timsort/download/timsort-0.3.0.tgz
+  /tiny-emitter/2.1.0:
+    dev: true
+    optional: true
+    resolution:
+      integrity: sha1-HRpW7fxRxD6GPLtTgqcjMONVVCM=
+      tarball: tiny-emitter/download/tiny-emitter-2.1.0.tgz
   /tmp/0.0.33:
     dependencies:
       os-tmpdir: 1.0.2
@@ -9950,6 +10185,11 @@ packages:
     resolution:
       integrity: sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
       tarball: typedarray/download/typedarray-0.0.6.tgz
+  /uc.micro/1.0.6:
+    dev: true
+    resolution:
+      integrity: sha1-nEEagCpAmpH8bPdAgbq6NLJEmaw=
+      tarball: uc.micro/download/uc.micro-1.0.6.tgz
   /uglify-js/3.4.10:
     dependencies:
       commander: 2.19.0
@@ -10397,6 +10637,14 @@ packages:
     resolution:
       integrity: sha1-hNpDTolEKJm4hNmtOORm0NsCpW8=
       tarball: webpack-bundle-analyzer/download/webpack-bundle-analyzer-3.7.0.tgz
+  /webpack-chain/4.12.1:
+    dependencies:
+      deepmerge: 1.5.2
+      javascript-stringify: 1.6.0
+    dev: true
+    resolution:
+      integrity: sha1-bIQ5u7KrVQlS1g4eqTGRQZBsAqY=
+      tarball: webpack-chain/download/webpack-chain-4.12.1.tgz
   /webpack-chain/6.4.0:
     dependencies:
       deepmerge: 1.5.2
@@ -10894,6 +11142,7 @@ packages:
       integrity: sha1-kkEZEtQ1IU4SxRwq4Qk+VLa7g9k=
       tarball: yorkie/download/yorkie-2.0.0.tgz
 specifiers:
+  '@kangc/v-md-editor': ^1.2.13
   '@mdi/font': ^5.2.45
   '@vue/cli-plugin-babel': ^4.3.1
   '@vue/cli-plugin-eslint': ^4.3.1
@@ -10913,7 +11162,6 @@ specifiers:
   eslint-plugin-vue: ^6.2.2
   lint-staged: ^10.2.2
   lodash: ^4.17.15
-  mavon-editor: ^2.9.0
   nprogress: ^0.2.0
   sass: ^1.26.5
   sass-loader: ^8.0.2
