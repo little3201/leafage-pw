@@ -5,7 +5,7 @@
         <base-img
           :height="$vuetify.breakpoint.mdAndUp ? 350 : 225"
           :gradient="gradient"
-          :src="detail.imageUrl"
+          :src="detail.imageUrl == null ? 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQJ_TkN4cRTu4EXQdP64NwT-rewYTPlyqkfwTud9tZZ30dvJaYu&usqp=CAU' : detail.imageUrll"
           color="#45516b"
           flat
           max-width="100%"
@@ -13,7 +13,7 @@
           class="text-center white--text align-center"
         >
           <h1 class="text_shadow">{{ detail.title }}</h1>
-          <p class="mt-3 text_shadow"><strong>作者：</strong> {{ detail.author == null ?  '' : detail.author.nickname}}</p>
+          <p class="mt-3 text_shadow"><strong v-if="detail.author != null">作者：</strong> {{ detail.author == null ?  '' : detail.author.nickname}}</p>
         </base-img>
       </v-row>
       <v-row justify="center" align="start" class="my-0">
