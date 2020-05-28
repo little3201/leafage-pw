@@ -16,7 +16,7 @@
           <p class="mt-3 text_shadow"><strong v-if="detail.author != null">作者：</strong> {{ detail.author == null ?  '' : detail.author.nickname}}</p>
         </base-img>
       </v-row>
-      <v-row justify="center" align="start" class="my-0">
+      <v-row justify="center" align="start" class="my-0 mx-auto">
         <v-col cols="12" md="8" lg="8" xl="6">
           <p v-html="detail.content"></p>
           <!-- 上一篇：{{ detail.previous.title }} -->
@@ -102,10 +102,11 @@ export default {
 
 <style lang="scss">
 .text_shadow {
-  text-shadow:2px 2px 8px #000000;
+  text-shadow: 2px 2px 8px #000000;
 }
 .v-application code {
   display: block;
+  overflow: auto;
   color: #525252;
   padding: 10px;
   box-shadow: inherit;
