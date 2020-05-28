@@ -18,7 +18,7 @@
       </v-row>
       <v-row justify="center" align="start" class="my-0">
         <v-col cols="12" md="8" lg="8" xl="6">
-          <v-md-editor mode="preview" :text="detail.content"></v-md-editor>
+          <p v-html="detail.content"></p>
           <!-- 上一篇：{{ detail.previous.title }} -->
           <v-divider></v-divider>
           <!-- 下一篇：{{ detail.next.title }} -->
@@ -48,6 +48,7 @@ export default {
   },
 
   data: () => ({
+    preview: 'preview',
     detail: {
       businessId: '',
       title: '',
@@ -106,5 +107,8 @@ export default {
 .v-application code {
   display: block;
   color: #525252;
+  padding: 10px;
+  box-shadow: inherit;
+  font-size: inherit;
 }
 </style>
