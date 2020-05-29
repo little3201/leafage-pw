@@ -10,7 +10,7 @@
               md="4"
             >
               <v-img
-                :src="article.imageUrl == null ? 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQJ_TkN4cRTu4EXQdP64NwT-rewYTPlyqkfwTud9tZZ30dvJaYu&usqp=CAU' : article.imageUrl"
+                :src="article.imageUrl"
                 height="245"
                 max-width="100%"
               ></v-img>

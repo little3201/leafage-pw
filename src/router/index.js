@@ -14,7 +14,6 @@ const whiteList = [
   '/photos',
   '/about',
   '/contact',
-  '/markdown',
   '/signin',
   '/signup'
 ]

@@ -50,7 +50,6 @@ export default {
 
   methods: {
     initProducts () {
-      console.log('')
     }
   }
 }

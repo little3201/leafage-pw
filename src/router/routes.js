@@ -39,11 +39,6 @@ export default [
         props: true
       },
       {
-        path: 'markdown',
-        name: 'Markdown',
-        component: () => import('@/views/markdown/Index.vue')
-      },
-      {
         path: '*',
         name: 'FourOhFour',
         component: () => import('@/views/404/Index.vue')
@@ -51,12 +46,12 @@ export default [
     ]
   },
   {
-    path: 'signin',
+    path: '/signin',
     name: 'signin',
     component: () => import('@/views/sign/SignIn.vue')
   },
   {
-    path: 'signup',
+    path: '/signup',
     name: 'signup',
     component: () => import('@/views/sign/SignUp.vue')
   }
