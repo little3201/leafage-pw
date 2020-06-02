@@ -107,6 +107,5 @@ export default {
   color: #525252;
   padding: 10px;
   box-shadow: inherit;
-  font-size: inherit;
 }
 </style>
