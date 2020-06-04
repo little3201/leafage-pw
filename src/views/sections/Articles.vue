@@ -1,6 +1,10 @@
 <template>
   <v-theme-provider :dark="dark">
     <section id="articles">
+      <v-responsive
+        class="mx-auto"
+        max-width="1400"
+      >
         <v-container>
           <v-row>
             <v-col
@@ -35,7 +39,8 @@
             </v-col>
           </v-row>
         </v-container>
-      </section>
+      </v-responsive>
+    </section>
   </v-theme-provider>
 </template>
 
