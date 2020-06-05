@@ -30,7 +30,6 @@ devDependencies:
   vue-cli-plugin-vuetify: 2.0.5
   vue-template-compiler: 2.6.11
   vuetify-loader: 1.4.4_4a02a77ab25e3c55c66d3d0a474763a5
-  webfontloader: 1.6.28
 lockfileVersion: 5.1
 packages:
   /@babel/code-frame/7.10.1:
@@ -10415,11 +10414,6 @@ packages:
     resolution:
       integrity: sha1-8LDc+RW8X/FSivrbLA4XtTLaL+g=
       tarball: wcwidth/download/wcwidth-1.0.1.tgz
-  /webfontloader/1.6.28:
-    dev: true
-    resolution:
-      integrity: sha1-23hhKSU8tujq5UwvsF+HCvZnW64=
-      tarball: webfontloader/download/webfontloader-1.6.28.tgz
   /webpack-bundle-analyzer/3.8.0:
     dependencies:
       acorn: 7.2.0
@@ -10956,4 +10950,3 @@ specifiers:
   vuetify: ^2.2.30
   vuetify-loader: ^1.4.4
   vuex: ^3.4.0
-  webfontloader: ^1.6.28

@@ -39,8 +39,7 @@
     "sass-loader": "^8.0.2",
     "vue-cli-plugin-vuetify": "^2.0.5",
     "vue-template-compiler": "^2.6.11",
-    "vuetify-loader": "^1.4.4",
-    "webfontloader": "^1.6.28"
+    "vuetify-loader": "^1.4.4"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
