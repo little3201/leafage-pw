@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import { fetchArticleFunc } from '@/api/method'
+import { retrieveArticleFunc } from '@/api/method'
 
 export default {
   name: 'SectionArticles',
@@ -72,11 +72,11 @@ export default {
     ]
   }),
   created () {
-    this.fetchArticle()
+    this.retrieveArticle()
   },
   methods: {
-    fetchArticle () {
-      fetchArticleFunc().then(
+    retrieveArticle () {
+      retrieveArticleFunc().then(
         response => {
           this.articles = response.data
         },

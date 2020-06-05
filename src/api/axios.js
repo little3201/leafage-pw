@@ -113,7 +113,6 @@ class HttpRequest {
   request (options) {
     const instance = axios.create()
     // 覆写库的超时默认值，所有请求都会等待 1 秒
-    instance.defaults.timeout = 1000
     options = Object.assign(this.getInsideConfig(), options)
     this.interceptors(instance, options.url)
     return instance(options)

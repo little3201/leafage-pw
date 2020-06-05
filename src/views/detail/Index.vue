@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import { queryArticleFunc } from '@/api/method'
+import { fetchArticleFunc } from '@/api/method'
 import {
   HexToRGBA,
   RGBAtoCSS
@@ -75,7 +75,7 @@ export default {
   }),
   created () {
     if (this.businessId) {
-      this.queryArticle(this.businessId)
+      this.fetchArticle(this.businessId)
     }
   },
   computed: {
@@ -86,8 +86,8 @@ export default {
     }
   },
   methods: {
-    queryArticle (businessId) {
-      queryArticleFunc(businessId).then(
+    fetchArticle (businessId) {
+      fetchArticleFunc(businessId).then(
         response => {
           this.detail = response.data
         },

@@ -1,21 +1,14 @@
 import axios from '@/api'
-import { SERVER_URL, AUTH } from './request'
+import qs from 'qs'
+import { SERVER_URL } from './request'
 
 /* 登录方法 */
-export const loginFunc = ({ username, password }) => {
-  const params = {
-    username: username,
-    password: password,
-    grant_type: 'password'
-  }
+export const loginFunc = (params) => {
   return axios.request({
     url: SERVER_URL.signin,
     method: 'post',
-    auth: {
-      username: AUTH.client_id,
-      password: AUTH.client_secret
-    },
-    params
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    data: qs.stringify(params, { indices: false })
   })
 }
 
@@ -29,7 +22,7 @@ export const logoutFunc = username => {
 }
 
 /* 获取手机验证码 */
-export const querySmsCaptchaFunc = mobile => {
+export const fetchSmsCaptchaFunc = mobile => {
   return axios.request({
     url: SERVER_URL.user,
     mobile
@@ -39,14 +32,14 @@ export const querySmsCaptchaFunc = mobile => {
 /* ===================用户接口方法=================== */
 
 /* 根据userId获取用户信息 */
-export const queryUserFunc = userId => {
+export const fetchUserFunc = userId => {
   return axios.request({
     url: SERVER_URL.user.concat('/').concat(userId)
   })
 }
 
 /* 获取用户信息列表 */
-export const fetchUserFunc = () => {
+export const retrieveUserFunc = () => {
   return axios.request({
     url: SERVER_URL.user
   })
@@ -55,14 +48,14 @@ export const fetchUserFunc = () => {
 /* ===================文章接口方法=================== */
 
 /* 根据文章ID获取文章详情 */
-export const queryArticleFunc = articleId => {
+export const fetchArticleFunc = articleId => {
   return axios.request({
     url: SERVER_URL.article.concat('/').concat(articleId)
   })
 }
 
 /* 获取用户信息列表 */
-export const fetchArticleFunc = () => {
+export const retrieveArticleFunc = () => {
   return axios.request({
     url: SERVER_URL.article
   })
@@ -89,14 +82,14 @@ export const modifyArticleFunc = (articleId, params) => {
 /* ===================翻译接口方法=================== */
 
 /* 根据翻译ID获取翻译详情 */
-export const queryTranslationFunc = translationId => {
+export const fetchTranslationFunc = translationId => {
   return axios.request({
     url: SERVER_URL.translation.concat('/').concat(translationId)
   })
 }
 
 /* 获取翻译信息列表 */
-export const fetchTranslationFunc = () => {
+export const retrieveTranslationFunc = () => {
   return axios.request({
     url: SERVER_URL.translation
   })
@@ -105,31 +98,15 @@ export const fetchTranslationFunc = () => {
 /* ===================话题接口方法=================== */
 
 /* 根据翻译ID获取翻译详情 */
-export const queryTopicFunc = topicId => {
+export const fetchTopicFunc = topicId => {
   return axios.request({
     url: SERVER_URL.topic.concat('/').concat(topicId)
   })
 }
 
 /* 获取翻译信息列表 */
-export const fetchTopicFunc = () => {
+export const retrieveTopicFunc = () => {
   return axios.request({
     url: SERVER_URL.topic
-  })
-}
-
-/* ===================资源接口方法=================== */
-
-/* 根据翻译ID获取翻译详情 */
-export const querySourceFunc = topicId => {
-  return axios.request({
-    url: SERVER_URL.source.concat('/').concat(topicId)
-  })
-}
-
-/* 获取翻译信息列表 */
-export const fetchSourceFunc = () => {
-  return axios.request({
-    url: SERVER_URL.source
   })
 }
