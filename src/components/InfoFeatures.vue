@@ -1,5 +1,5 @@
 <template>
-  <base-info-card title="Features">
+  <base-info-card title="FeaturesAlt">
     <a
       v-for="feature in features"
       :key="feature"
@@ -17,11 +17,9 @@ export default {
 
   data: () => ({
     features: [
-      'Abeille Installation',
-      'Easy Customization',
-      'User Friendly Design',
-      '24/7 Support Desk',
-      'SEO Optimized'
+      '资源开放',
+      '代码开源',
+      '长期支持'
     ]
   })
 }

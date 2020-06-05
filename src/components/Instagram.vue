@@ -1,5 +1,5 @@
 <template>
-  <base-info-card title="Instagram">
+  <base-info-card title="Photos">
     <v-row dense>
       <v-col
         v-for="n in 6"

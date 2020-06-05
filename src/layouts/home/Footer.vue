@@ -51,10 +51,10 @@ export default {
 
   data: () => ({
     social: [
-      'Facebook',
-      'Twitter',
-      'Instagram',
-      'Linkedin'
+      'Github',
+      'Gitee',
+      'Wechat',
+      'Weibo'
     ]
   })
 }

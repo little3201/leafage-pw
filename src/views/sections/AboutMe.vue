@@ -18,7 +18,7 @@
         class="mx-auto title font-weight-light mb-8"
         max-width="720"
       >
-        Vuetify is the #1 component library for Vue.js and has been in active development since 2016. The goal of the project is to provide users with everything that is needed to build rich and engaging web applications using the Material Design specification. It accomplishes that with a consistent update cycle, Long-term Support (LTS) for previous versions, responsive community engagement, a vast ecosystem of resources and a dedication to quality components.
+        Hi! 布吉岛，对，是我，嗯。。。内容还在思考中
       </v-responsive>
 
       <v-avatar
@@ -32,12 +32,12 @@
 
       <v-btn
         color="grey"
-        href="https://vuetifyjs.com"
+        to="/about"
         outlined
         large
       >
         <span class="grey--text text--darken-1 font-weight-bold">
-          Vuetify Documentation
+          了解更多
         </span>
       </v-btn>
     </v-container>

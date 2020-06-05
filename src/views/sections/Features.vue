@@ -1,31 +1,4 @@
 <template>
-  <!-- <base-section
-    id="features"
-    class="secondary"
-  >
-    <v-responsive
-      class="mx-auto"
-      max-width="1350"
-    >
-      <v-container fluid>
-        <v-row>
-          <v-col
-            v-for="card in cards"
-            :key="card.title"
-            cols="12"
-            sm="4"
-            md="3"
-          >
-            <base-info-card
-              align="center"
-              dark
-              v-bind="card"
-            />
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-responsive>
-  </base-section> -->
   <section
     id="features"
     class="grey lighten-3"
@@ -33,7 +6,7 @@
     <div class="py-12"></div>
 
     <v-container class="text-center">
-      <h2 class="display-2 font-weight-bold mb-3">VUETIFY FEATURES</h2>
+      <h2 class="display-2 font-weight-bold mb-3">关于项目介绍</h2>
 
       <v-responsive
         class="mx-auto mb-12"
@@ -94,43 +67,21 @@ export default {
   name: 'SectionFeatures',
 
   data: () => ({
-    cards: [
-      {
-        icon: 'mdi-keyboard-outline',
-        title: 'Trendy Design',
-        text: 'Efficiently unleash media information without cross-media value. Quickly maximize value timely deliverables schemas.'
-      },
-      {
-        icon: 'mdi-camera-outline',
-        title: 'Photography',
-        text: 'Efficiently unleash media information without cross-media value. Quickly maximize value timely deliverables schemas.'
-      },
-      {
-        icon: 'mdi-pencil-outline',
-        title: 'Brand Making',
-        text: 'Efficiently unleash media information without cross-media value. Quickly maximize value timely deliverables schemas.'
-      },
-      {
-        icon: 'mdi-puzzle-outline',
-        title: '24/7 Support',
-        text: 'Efficiently unleash media information without cross-media value. Quickly maximize value timely deliverables schemas.'
-      }
-    ],
     features: [
       {
         icon: 'mdi-account-group-outline',
-        title: 'Vibrant Community',
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto cupiditate sint possimus quidem atque harum excepturi nemo velit tempora! Enim inventore fuga, qui ipsum eveniet facilis obcaecati corrupti asperiores nam'
+        title: '资源开放',
+        text: '全站所有资源免费，如遇版权，请联系处理'
       },
       {
         icon: 'mdi-update',
-        title: 'Frequent Updates',
-        text: 'Sed ut elementum justo. Suspendisse non justo enim. Vestibulum cursus mauris dui, a luctus ex blandit. Lorem ipsum dolor sit amet consectetur adipisicing elit. qui ipsum eveniet facilis obcaecati corrupti consectetur adipisicing elit.'
+        title: '代码开源',
+        text: '相关代码全部开源，包括前端、后端'
       },
       {
         icon: 'mdi-shield-outline',
-        title: 'Long-term Support',
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto cupiditate sint possimus quidem atque harum excepturi nemo velit tempora! Enim inventore fuga, qui ipsum eveniet facilis obcaecati corrupti asperiores nam'
+        title: '长期支持',
+        text: '前后端代码均长期维护，欢迎关注，升级'
       }
     ]
   })

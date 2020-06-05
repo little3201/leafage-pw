@@ -5,7 +5,7 @@
         title="KEEP IN TOUCH WITH US"
         pace="6"
       >
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo pariatur quidem, quis modi iure nihil commodi suscipit, corporis dicta adipisci, voluptatum quia cupiditate. Nulla minus voluptatum nostrum deleniti, asperiores facere.
+        还在开发中。。。
       </base-info-card>
 
       <base-business-contact dense />
