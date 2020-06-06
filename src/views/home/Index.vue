@@ -8,7 +8,7 @@ import LoadSections from '@/mixins/load-sections'
 export default {
   name: 'Home',
 
-  metaInfo: { 
+  metaInfo: {
     title: 'Home',
     meta: [
       { name: 'keywords', content: '网站由布吉岛开发维护' },
