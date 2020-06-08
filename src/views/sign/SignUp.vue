@@ -94,7 +94,7 @@ export default {
           response => {
             // 设置token
             this.$router.push({
-              name: 'home'
+              name: 'Home'
             })
           },
           error => {

@@ -27,6 +27,7 @@ devDependencies:
   sass: 1.26.7
   sass-loader: 8.0.2_sass@1.26.7
   vue-cli-plugin-vuetify: 2.0.5
+  vue-cookies: 1.7.0
   vue-template-compiler: 2.6.11
   vuetify-loader: 1.4.4_4a02a77ab25e3c55c66d3d0a474763a5
 lockfileVersion: 5.1
@@ -10258,6 +10259,11 @@ packages:
     resolution:
       integrity: sha1-Cbp4koZT/H44Aeo35RIPlXQT3aQ=
       tarball: vue-cli-plugin-vuetify/download/vue-cli-plugin-vuetify-2.0.5.tgz
+  /vue-cookies/1.7.0:
+    dev: true
+    resolution:
+      integrity: sha1-3Y8Uf/FXngy9XzUtxd/yaW2HYLg=
+      tarball: vue-cookies/download/vue-cookies-1.7.0.tgz
   /vue-eslint-parser/7.1.0_eslint@6.8.0:
     dependencies:
       debug: 4.1.1
@@ -10937,6 +10943,7 @@ specifiers:
   sass-loader: ^8.0.2
   vue: ^2.6.11
   vue-cli-plugin-vuetify: ^2.0.5
+  vue-cookies: ^1.7.0
   vue-meta: ^2.3.4
   vue-router: ^3.3.1
   vue-template-compiler: ^2.6.11

@@ -21,6 +21,7 @@
                   label="手机号/邮箱"
                   prepend-inner-icon="mdi-account"
                   required
+                  autocomplete="false"
                 ></v-text-field>
                 <v-text-field
                   v-model="formData.password"
@@ -28,6 +29,10 @@
                   label="登录密码"
                   prepend-inner-icon="mdi-lock"
                   required
+                  autocomplete="false"
+                  :type="pwdShow ? 'text' : 'password'"
+                  :append-icon="pwdShow ? 'mdi-eye' : 'mdi-eye-off'"
+                  @click:append="pwdShow = !pwdShow"
                 ></v-text-field>
               </v-form>
               <p class="text-right">
@@ -73,6 +78,7 @@ export default {
     return {
       loading: false,
       valid: true,
+      pwdShow: false,
       formData: {
         username: '',
         password: ''
@@ -93,13 +99,12 @@ export default {
         this.loading = true
         loginFunc(this.formData).then(
           response => {
-            const token = response.data.token
-            window.localStorage.setItem('access_token', token)
             // 更新授权状态
             // this.$store.dispatch('setIsAuthenticated',true)
-            // 设置token
+            // 设置cookies
+            this.$cookies.set('user_session', '25j_7Sl6xDq2Kc3ym0fmrSSk2xV2XkUkX', '2h')
             this.$router.push({
-              name: 'home'
+              name: 'Home'
             })
           },
           error => {
