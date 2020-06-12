@@ -98,7 +98,6 @@ export default {
         loginFunc(this.formData).then(
           response => {
             // 更新授权状态
-            debugger
             // this.$store.dispatch('setIsAuthenticated',true)
             // 设置cookies
             this.$cookies.set('user_session', '25j_7Sl6xDq2Kc3ym0fmrSSk2xV2XkUkX', '2h')
