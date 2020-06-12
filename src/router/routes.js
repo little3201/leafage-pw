@@ -15,9 +15,9 @@ export default [
         meta: { src: require('@/assets/about.jpg') }
       },
       {
-        path: 'photos',
-        name: 'Photos',
-        component: () => import('@/views/photo/Index.vue'),
+        path: 'portfolio',
+        name: 'Portfolio',
+        component: () => import('@/views/portfolio/Index.vue'),
         meta: { src: require('@/assets/about.jpg') }
       },
       {
@@ -47,12 +47,12 @@ export default [
   },
   {
     path: '/signin',
-    name: 'signin',
+    name: 'Signin',
     component: () => import('@/views/sign/SignIn.vue')
   },
   {
     path: '/signup',
-    name: 'signup',
+    name: 'Signup',
     component: () => import('@/views/sign/SignUp.vue')
   }
 ]

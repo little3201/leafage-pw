@@ -65,7 +65,7 @@ export default {
     items: [
       'Home',
       'Blog',
-      'Photos',
+      'Portfolio',
       'About',
       'Contact'
     ]

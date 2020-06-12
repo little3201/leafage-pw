@@ -15,8 +15,8 @@ export default {
   mixins: [
     LoadSections([
       'hero-alt',
-      'keep-in-touch',
-      'newsletter'
+      'contact-us',
+      'keep-in-touch'
     ])
   ],
 

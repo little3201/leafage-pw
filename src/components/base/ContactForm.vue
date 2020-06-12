@@ -19,7 +19,7 @@
     />
 
     <base-btn
-      :color="!theme.isDark ? 'accent' : 'white'"
+      :color="!theme.isDark ? 'primary' : 'white'"
       href="mailto:little3201@163.com?subject=Abeille%20Website%20Question"
       outlined
       target="_blank"

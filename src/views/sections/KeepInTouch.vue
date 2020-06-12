@@ -9,9 +9,7 @@
           cols="12"
           md="5"
         >
-          <base-business-info title="KEEP IN TOUCH WITH US">
-            模块还在开发中。。。
-          </base-business-info>
+          <base-business-info title="KEEP IN TOUCH WITH US" />
         </v-col>
 
         <v-col

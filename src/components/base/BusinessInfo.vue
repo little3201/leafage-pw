@@ -5,7 +5,7 @@
         title="KEEP IN TOUCH WITH US"
         pace="6"
       >
-        还在开发中。。。
+        大千世界，你我的相逢、相识，都是缘分所使，如有需要，请联系我。
       </base-info-card>
 
       <base-business-contact dense />

@@ -8,16 +8,16 @@
     />
 
     <base-subheading
-      space="8"
+      space="6"
       title="Looks like this page doesn't exist"
     />
 
     <base-img
       :src="require('@/assets/logo.png')"
-      class="mx-auto mb-12"
+      class="mx-auto mb-4"
       contain
-      height="350"
-      width="250"
+      height="340"
+      width="230"
     />
 
     <div class="text-center">

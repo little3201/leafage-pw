@@ -11,7 +11,7 @@ Vue.use(VueRouter)
 const whiteList = [
   '/',
   '/blog',
-  '/photos',
+  '/portfolio',
   '/about',
   '/contact',
   '/signin',

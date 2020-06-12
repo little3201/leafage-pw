@@ -58,51 +58,6 @@
             </template>
           </v-item>
         </v-item-group>
-
-        <v-divider class="my-6" />
-
-        <!-- <base-btn
-          block
-          href="#"
-          class="mb-6"
-          color="accent"
-          target="_blank"
-        >
-          Free Download
-        </base-btn>
-
-        <base-btn
-          :to="{ name: 'Sink' }"
-          block
-          color="grey darken-1"
-          dark
-          @click="menu = false"
-        >
-          View All Components
-        </base-btn>
-
-        <v-divider class="my-6" /> -->
-
-        <!-- <base-img
-          class="mx-auto mb-6"
-          src="@/assets/logo.png"
-          width="88"
-        /> -->
-
-        <!-- <div class="text-center">
-          <base-btn
-            :tile="false"
-            :to="{ name: 'Pro' }"
-            rounded
-            @click="menu = false"
-          >
-            Get More
-
-            <v-icon right>
-              mdi-rocket
-            </v-icon>
-          </base-btn>
-        </div> -->
       </v-card-text>
     </v-card>
   </v-menu>

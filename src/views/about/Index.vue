@@ -16,6 +16,7 @@ export default {
     LoadSections([
       'hero-alt',
       'about-me',
+      'social-media',
       'info'
     ])
   ],
