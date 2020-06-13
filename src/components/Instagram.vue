@@ -1,5 +1,5 @@
 <template>
-  <base-info-card title="Photos">
+  <base-info-card title="Portfolio">
     <v-row dense>
       <v-col
         v-for="n in 6"

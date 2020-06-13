@@ -15,7 +15,7 @@
       </v-responsive>
 
       <v-responsive
-        class="mx-auto title font-weight-light mb-8"
+        class="mx-auto text-h6 font-weight-light mb-8"
         max-width="720"
       >
         Hi! 布吉岛，对，是我，嗯。。。内容还在思考中

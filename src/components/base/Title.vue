@@ -12,7 +12,7 @@ export default {
   props: {
     size: {
       type: String,
-      default: 'title'
+      default: 'text-h6'
     },
     mobileSize: {
       type: String,
