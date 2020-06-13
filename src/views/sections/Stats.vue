@@ -14,7 +14,7 @@
           >
             <div class="text-center">
               <div
-                class="display-3 font-weight-black mb-4"
+                class="text-h2 font-weight-black mb-4"
                 v-text="value"
               ></div>
 

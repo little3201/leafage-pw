@@ -63,7 +63,7 @@
                     tag="h1"
                   >
                     <span
-                    :class="[$vuetify.breakpoint.smAndDown ? 'display-1' : 'display-2']"
+                    :class="[$vuetify.breakpoint.smAndDown ? 'text-h4' : 'text-h3']"
                       class="font-weight-light"
                     >
                       WELCOME TO
@@ -72,7 +72,7 @@
                     <br>
 
                     <span
-                      :class="[$vuetify.breakpoint.smAndDown ? 'display-3': 'display-4']"
+                      :class="[$vuetify.breakpoint.smAndDown ? 'text-h2': 'text-h1']"
                       class="font-weight-black"
                     >
                       ABEILLE

@@ -17,7 +17,7 @@
       v-if="title"
       :title="title"
       class="text-uppercase"
-      size="subtitle-1"
+      size="text-subtitle-1"
       space="0"
     />
 

@@ -10,7 +10,7 @@
       />
 
       <base-title
-        size="body-1"
+        size="text-body-1"
         space="4"
         title="ABEILLE"
         weight="regular"

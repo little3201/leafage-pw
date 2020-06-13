@@ -6,7 +6,7 @@
     <div class="py-12"></div>
 
     <v-container class="text-center">
-      <h2 class="display-2 font-weight-bold mb-3">FEATURES</h2>
+      <h2 class="text-h3 font-weight-bold mb-3">FEATURES</h2>
 
       <v-responsive
         class="mx-auto mb-12"
@@ -49,7 +49,7 @@
             ></v-card-title>
 
             <v-card-text
-              class="subtitle-1"
+              class="text-subtitle-1"
               v-text="text"
             >
             </v-card-text>

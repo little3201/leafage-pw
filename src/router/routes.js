@@ -44,15 +44,5 @@ export default [
         component: () => import('@/views/404/Index.vue')
       }
     ]
-  },
-  {
-    path: '/signin',
-    name: 'Signin',
-    component: () => import('@/views/sign/SignIn.vue')
-  },
-  {
-    path: '/signup',
-    name: 'Signup',
-    component: () => import('@/views/sign/SignUp.vue')
   }
 ]

@@ -14,7 +14,7 @@
         max-width="52"
         width="100%"
       />
-      <span class="headline">ABEILLE</span>
+      <span class="text-h5">ABEILLE</span>
 
       <v-spacer />
 

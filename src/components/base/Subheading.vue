@@ -9,11 +9,11 @@ export default {
   props: {
     size: {
       type: String,
-      default: 'headline'
+      default: 'text-h5'
     },
     sizeMobile: {
       type: String,
-      default: 'title'
+      default: 'text-h6'
     },
     weight: {
       type: String,

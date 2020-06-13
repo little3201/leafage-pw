@@ -9,11 +9,11 @@ export default {
   props: {
     size: {
       type: String,
-      default: 'body-2'
+      default: 'text-body-2'
     },
     mobileSize: {
       type: String,
-      default: 'body-1'
+      default: 'text-body-1'
     },
     space: {
       type: [String, Number],

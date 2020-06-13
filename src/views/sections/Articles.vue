@@ -25,7 +25,7 @@
               ></h3>
 
               <div
-                class="title font-weight-light text-truncate"
+                class="text-h6 font-weight-light text-truncate"
                 v-text="article.subtitle"
               ></div>
 

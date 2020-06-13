@@ -16,7 +16,7 @@ export default {
     },
     mobileSize: {
       type: String,
-      default: 'subtitle-1'
+      default: 'text-subtitle-1'
     },
     tag: {
       type: String,
