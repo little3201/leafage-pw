@@ -9,9 +9,7 @@
           cols="12"
           md="5"
         >
-          <base-business-info title="KEEP IN TOUCH WITH US">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo pariatur quidem, quis modi iure nihil commodi suscipit, corporis dicta adipisci, voluptatum quia cupiditate.
-          </base-business-info>
+          <base-business-info title="KEEP IN TOUCH WITH US" />
         </v-col>
 
         <v-col

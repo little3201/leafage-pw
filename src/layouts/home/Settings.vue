@@ -58,51 +58,6 @@
             </template>
           </v-item>
         </v-item-group>
-
-        <v-divider class="my-6" />
-
-        <base-btn
-          block
-          href="https://store.vuetifyjs.com/product/daedal-responsive-multi-purpose-theme-free?ref=vtyd-pro-page-settings"
-          class="mb-6"
-          color="accent"
-          target="_blank"
-        >
-          Free Download
-        </base-btn>
-
-        <base-btn
-          :to="{ name: 'Sink' }"
-          block
-          color="grey darken-1"
-          dark
-          @click="menu = false"
-        >
-          View All Components
-        </base-btn>
-
-        <v-divider class="my-6" />
-
-        <base-img
-          class="mx-auto mb-6"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-light.png"
-          width="88"
-        />
-
-        <div class="text-center">
-          <base-btn
-            :tile="false"
-            :to="{ name: 'Pro' }"
-            rounded
-            @click="menu = false"
-          >
-            Go Pro
-
-            <v-icon right>
-              mdi-rocket
-            </v-icon>
-          </base-btn>
-        </div>
       </v-card-text>
     </v-card>
   </v-menu>
@@ -116,8 +71,7 @@ export default {
     return {
       colors: [
         this.$vuetify.theme.themes.light.primary,
-        '#9368e9',
-        '#F4511E'
+        '#9368e9'
       ],
       menu: false
     }

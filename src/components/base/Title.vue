@@ -12,11 +12,11 @@ export default {
   props: {
     size: {
       type: String,
-      default: 'title'
+      default: 'text-h6'
     },
     mobileSize: {
       type: String,
-      default: 'subtitle-1'
+      default: 'text-subtitle-1'
     },
     tag: {
       type: String,

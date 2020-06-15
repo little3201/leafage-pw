@@ -6,23 +6,23 @@ import View from '@/views/View'
 import LoadSections from '@/mixins/load-sections'
 
 export default {
-  name: 'Pro',
+  name: 'Portfolio',
 
-  metaInfo: { title: 'Pro Features' },
+  metaInfo: { title: 'Portfolio' },
 
   extends: View,
 
   mixins: [
     LoadSections([
       'hero-alt',
-      'pro-features'
+      'info'
     ])
   ],
 
   props: {
     id: {
       type: String,
-      default: 'pro'
+      default: 'portfolio'
     }
   }
 }

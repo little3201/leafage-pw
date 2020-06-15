@@ -2,7 +2,7 @@
   <v-theme-provider :dark="dark">
     <div>
       <base-img
-        :src="require('@/assets/daedal-logo-dark.png')"
+        :src="require('@/assets/logo.png')"
         contain
         max-width="128"
         min-height="78"
@@ -10,14 +10,14 @@
       />
 
       <base-title
-        size="body-1"
+        size="text-body-1"
         space="4"
-        title="MULTI-PURPOSE THEME"
+        title="ABEILLE"
         weight="regular"
       />
 
       <base-body>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo pariatur quidem, quis modi iure nihil commodi suscipit, corporis dicta adipisci, voluptatum quia cupiditate. Nulla minus voluptatum nostrum deleniti, asperiores facere.
+        一套免费、开源的前后端服务产品、包括精美的前端展示、后端运营和完整的后端服务，更惊喜的是，这一切都是免费的，并且长期维护的！
       </base-body>
 
       <base-btn
@@ -38,26 +38,6 @@ export default {
   props: {
     title: String,
     dark: Boolean
-  },
-
-  data: () => ({
-    business: [
-      {
-        icon: 'mdi-map-marker-outline',
-        title: 'Address',
-        text: '8553 N. Beach St. Ste. 227<br>Fort Worth, Texas 76137'
-      },
-      {
-        icon: 'mdi-cellphone',
-        title: 'Phone',
-        text: '01 (800) 433 744<br>01 (800) 433 633'
-      },
-      {
-        icon: 'mdi-email',
-        title: 'Email',
-        text: 'john@vuetifyjs.com<br>heather@vuetifyjs.com'
-      }
-    ]
-  })
+  }
 }
 </script>

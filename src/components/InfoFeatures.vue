@@ -1,10 +1,10 @@
 <template>
-  <base-info-card title="Features">
+  <base-info-card title="FeaturesAlt">
     <a
       v-for="feature in features"
       :key="feature"
       :text="feature"
-      class="mb-8 grey--text body-1 d-block text-none"
+      class="mb-8 grey--text text-body-1 d-block text-none"
       href="#"
       v-html="`&rsaquo; ${feature}`"
     />
@@ -17,11 +17,9 @@ export default {
 
   data: () => ({
     features: [
-      'Daedal Installation',
-      'Easy Customization',
-      'User Friendly Design',
-      '24/7 Support Desk',
-      'SEO Optimized'
+      '资源开放',
+      '代码开源',
+      '长期支持'
     ]
   })
 }

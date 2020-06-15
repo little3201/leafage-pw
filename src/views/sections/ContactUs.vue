@@ -15,7 +15,7 @@
 
             <base-body space="0">
               <span class="white--text">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor itaque modi ab accusantium architecto voluptates ipsa molestiae.
+                有问题请联系我.
               </span>
             </base-body>
           </v-col>
@@ -27,12 +27,12 @@
             <base-btn
               :block="$vuetify.breakpoint.smAndDown"
               color="white"
-              href="mailto:shop@vuetifyjs.com?subject=Daedal%20Theme%20Question"
+              href="mailto:liwenqiang@163.com?subject=Abeille%20Website%20Question"
               large
               outlined
               target="_blank"
             >
-              Contact Us
+              Contact Me
             </base-btn>
           </v-col>
         </v-row>

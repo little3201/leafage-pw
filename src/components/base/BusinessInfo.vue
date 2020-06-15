@@ -5,7 +5,7 @@
         title="KEEP IN TOUCH WITH US"
         pace="6"
       >
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo pariatur quidem, quis modi iure nihil commodi suscipit, corporis dicta adipisci, voluptatum quia cupiditate. Nulla minus voluptatum nostrum deleniti, asperiores facere.
+        大千世界，你我的相逢、相识，都是缘分所使，如有需要，请联系我。
       </base-info-card>
 
       <base-business-contact dense />
@@ -24,17 +24,17 @@ export default {
       {
         icon: 'mdi-map-marker-outline',
         title: 'Address',
-        text: '8553 N. Beach St. Ste. 227<br>Fort Worth, Texas 76137'
+        text: '陕西省 · 西安市<br>碑林区 · 长安北路'
       },
       {
-        icon: 'mdi-cellphone',
-        title: 'Phone',
-        text: '01 (800) 433 744<br>01 (800) 433 633'
+        icon: 'mdi-wechat',
+        title: 'Wechat',
+        text: '布吉岛<br>q335699669'
       },
       {
         icon: 'mdi-email',
         title: 'Email',
-        text: 'john@vuetifyjs.com<br>heather@vuetifyjs.com'
+        text: 'little3201@gmail.com<br>little3201@163.com'
       }
     ]
   })

@@ -6,23 +6,23 @@
       space="56"
     >
       <base-icon class="mb-8">
-        mdi-twitter
+        mdi-github
       </base-icon>
 
       <base-section-heading
         color="transparent"
         title="Social Media"
       >
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi aspernatur recusandae aut repudiandae illo error obcaecati dolores voluptate, tempore.
+        所有项目都在github开源，了解更多代码详情，点击链接查看.
       </base-section-heading>
 
       <a
         class="d-inline-block mb-8"
-        href="https://vuetifyjs.com"
+        href="https://abeille.top"
         style="text-decoration: none;"
         target="_blank"
       >
-        https://vuetifyjs.com
+        https://abeille.top
       </a>
 
       <div class="py-4" />
@@ -30,13 +30,13 @@
       <v-btn
         class="font-weight-bold"
         color="white"
-        href="https://twitter.com/vuetifyjs"
+        href="https://github.com/little3201"
         light
         min-width="168"
         target="_blank"
         x-large
       >
-        Follow Us
+        Follow Me
 
         <v-icon right>
           mdi-open-in-new
@@ -48,7 +48,7 @@
 
 <script>
 export default {
-  name: 'SectionNews',
+  name: 'SectionSocial',
 
   provide: {
     heading: { align: 'center' }

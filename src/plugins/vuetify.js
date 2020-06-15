@@ -1,5 +1,3 @@
-// Vuetify Documentation https://vuetifyjs.com
-
 import Vue from 'vue'
 import Vuetify from 'vuetify/lib/framework'
 import {
@@ -25,5 +23,8 @@ export default new Vuetify({
       },
       dark: {}
     }
+  },
+  icons: {
+    iconfont: 'mdi' // default - only for display purposes
   }
 })

@@ -14,13 +14,7 @@
         max-width="52"
         width="100%"
       />
-
-      <base-img
-        src=""
-        contain
-        max-width="128"
-        width="100%"
-      />
+      <span class="text-h5">ABEILLE</span>
 
       <v-spacer />
 
@@ -70,6 +64,8 @@ export default {
     drawer: null,
     items: [
       'Home',
+      'Blog',
+      'Portfolio',
       'About',
       'Contact'
     ]

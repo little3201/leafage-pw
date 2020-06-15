@@ -9,22 +9,34 @@ export default [
         component: () => import('@/views/home/Index.vue')
       },
       {
+        path: 'blog',
+        name: 'Blog',
+        component: () => import('@/views/blog/Index.vue'),
+        meta: { src: require('@/assets/blog.jpg') }
+      },
+      {
+        path: 'portfolio',
+        name: 'Portfolio',
+        component: () => import('@/views/portfolio/Index.vue'),
+        meta: { src: require('@/assets/portfolio.jpg') }
+      },
+      {
         path: 'about',
         name: 'About',
         component: () => import('@/views/about/Index.vue'),
         meta: { src: require('@/assets/about.jpg') }
       },
       {
-        path: 'contact-us',
+        path: 'contact',
         name: 'Contact',
         component: () => import('@/views/contact-us/Index.vue'),
         meta: { src: require('@/assets/contact.jpg') }
       },
       {
-        path: 'pro',
-        name: 'Pro',
-        component: () => import('@/views/pro/Index.vue'),
-        meta: { src: require('@/assets/pro.jpg') }
+        path: 'detail/:businessId',
+        name: 'Detail',
+        component: () => import('@/views/detail/Index.vue'),
+        props: true
       },
       {
         path: '*',
@@ -32,15 +44,5 @@ export default [
         component: () => import('@/views/404/Index.vue')
       }
     ]
-  },
-  {
-    path: '/signin',
-    name: 'signin',
-    component: () => import('@/views/sign/SignIn.vue')
-  },
-  {
-    path: '/signup',
-    name: 'signup',
-    component: () => import('@/views/sign/SignUp.vue')
   }
 ]

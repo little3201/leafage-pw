@@ -14,9 +14,7 @@ export default {
 
   mixins: [
     LoadSections([
-      '404',
-      'newsletter',
-      'info-alt'
+      '404'
     ])
   ],
 

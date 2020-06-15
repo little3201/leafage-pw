@@ -3,7 +3,7 @@
     :is="tag"
     :class="classes"
     :style="styles"
-    class="base-body body-1"
+    class="base-body text-body-1"
     v-bind="$attrs"
     v-on="$listeners"
   >
