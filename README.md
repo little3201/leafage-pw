@@ -9,8 +9,8 @@
 
 <p align="center">
   <br>
-  <a href="https://github.com/vuetifyjs/vuetify/blob/master/LICENSE.md">
-    <img src="https://img.shields.io/npm/l/vuetify.svg" alt="License">
+  <a href="https://github.com/little3201/abeille-ui/blob/develop/LICENSE">
+    <img src="https://img.shields.io/github/license/little3201/abeille-ui.svg" alt="License">
   </a>
 </p>
 
