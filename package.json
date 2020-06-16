@@ -37,7 +37,6 @@
     "sass": "^1.26.8",
     "sass-loader": "^8.0.2",
     "vue-cli-plugin-vuetify": "^2.0.5",
-    "vue-cookies": "^1.7.0",
     "vue-template-compiler": "^2.6.11",
     "vuetify-loader": "^1.5.0"
   },
