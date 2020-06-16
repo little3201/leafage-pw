@@ -32,7 +32,7 @@ Abeille，一个基于微服务架构的前后端分离的个人网站，包含�
 
 目前项目托管在Gitee和Github平台上中，欢迎大家star 和 fork 支持~
 
-- Gitee地址：https://gitee.com/puket/abeille-ui
+- Gitee地址：https://gitee.com/little3201/abeille-ui
 - Github地址：https://github.com/little3201/abeille-ui
 
 ## FAQ文档
