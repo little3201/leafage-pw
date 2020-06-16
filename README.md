@@ -3,7 +3,7 @@
 
 <p align="center">
   <a href="https://abeille.top" target="_blank">
-    <img alt="Abeille Logo" width="100" src="https://github.com/little3201/abeille-ui/blob/master/src/assets/logo.png">
+    <img alt="Abeille Logo" width="100" src="https://gitee.com/puket/abeille-ui/blob/master/src/assets/logo.svg">
   </a>
 </p>
 
@@ -18,12 +18,15 @@
 
 ## 项目介绍
 
-Abeille，一个基于微服务架构的前后端分离博客系统。前台使用Vue + Vuetify , 项目开始很久了，迟迟没有完成，原因有种种，但是也一直再进行中。
-- 作为一个后端开发程序猿，无奈找了很久没有好看的博客系统，只能自己写了。加油吧！！！
+Abeille，一个基于微服务架构的前后端分离的个人网站，包含博客、照片墙等。
 
-## 项目文档
+前台使用Vue + Vuetify , 项目开始很久了，迟迟没有完成，原因有种种，但是也一直再进行中。
 
-文档地址：
+作为一个后端开发程序猿，无奈找了很久没有好看的博客系统，只能自己写了。加油吧！！！
+
+## 项目展示
+
+站点地址：https://abeille.top
 
 ## 项目地址
 
@@ -45,33 +48,11 @@ Abeille，一个基于微服务架构的前后端分离博客系统。前台使�
 | :-------------------: | :-----------------------: | :----------------------------------------------------------: |
 |        Vue.js         |         前端框架          |                      https://vuejs.org/                      |
 |      Vue-router       |         路由框架          |                  https://router.vuejs.org/                   |
-|         Vuex          |     全局状态管理框架      |                   https://vuex.vuejs.org/                    |
-|        Vuetify        |        前端ui框架         |[ https://vuetifyjs.com/](https://https://vuetifyjs.com//)    |
-|         Axios         |       前端HTTP框架        | [ https://github.com/axios](https://github.com/axios/)|
+|         Vuex          |     全局状态管理框架       |                   https://vuex.vuejs.org/                     |
+|        Vuetify        |        前端ui框架         |  [ https://vuetifyjs.com/](https://https://vuetifyjs.com//)   |
+|         Axios         |       前端HTTP框架        |     [ https://github.com/axios](https://github.com/axios/)    |
 
 
-
-## Project setup
-```
-pnpm install
-```
-
-### Compiles and hot-reloads for development
-```
-pnpm run serve
-```
-
-### Compiles and minifies for production
-```
-pnpm run build
-```
-
-### Lints and fixes files
-```
-pnpm run lint
-```
-
-MIT
 
 基于Vue 和 vuetify 组件库
 
@@ -102,3 +83,8 @@ pnpm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+<a href="https://github.com/little3201/abeille-ui/blob/develop/LICENSE">
+  <h2>MIT</h2>
+</a>
