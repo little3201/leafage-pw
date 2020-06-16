@@ -51,6 +51,7 @@ Abeille，一个基于微服务架构的前后端分离的个人网站，包含�
 |         Vuex          |     全局状态管理框架       |                   https://vuex.vuejs.org/                     |
 |        Vuetify        |        前端ui框架         |  [ https://vuetifyjs.com/](https://https://vuetifyjs.com//)   |
 |         Axios         |       前端HTTP框架        |     [ https://github.com/axios](https://github.com/axios/)    |
+|         Mixins        |       前端HTTP框架        |     [ https://github.com/axios](https://cn.vuejs.org/v2/guide/mixins.html/)    |
 
 
 

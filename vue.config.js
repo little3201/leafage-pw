@@ -9,7 +9,12 @@ module.exports = {
   devServer: {
     disableHostCheck: true
   },
+
   transpileDependencies: [
     'vuetify'
-  ]
+  ],
+
+  css: {
+    extract: false
+  }
 }
