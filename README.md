@@ -3,7 +3,7 @@
 
 <p align="center">
   <a href="https://abeille.top" target="_blank">
-    <img alt="Abeille Logo" width="100" src="https://gitee.com/puket/abeille-ui/blob/master/src/assets/logo.svg">
+    <img alt="Abeille Logo" width="100" src="https://github.com/little3201/abeille-ui/blob/master/src/assets/logo.svg">
   </a>
 </p>
 
