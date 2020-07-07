@@ -18,7 +18,7 @@
         class="mx-auto text-h6 font-weight-light mb-8"
         max-width="720"
       >
-        Hi! 布吉岛，对，是我，嗯。。。内容还在思考中
+        一套免费、开源的前后端服务产品、包括精美的前端展示、后端运营和完整的后端服务，更惊喜的是，这一切都是免费的，并且长期维护的！
       </v-responsive>
 
       <v-avatar

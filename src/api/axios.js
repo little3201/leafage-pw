@@ -2,7 +2,6 @@ import axios from 'axios'
 import NProgress from 'nprogress' // progress bar
 import 'nprogress/nprogress.css' // progress bar style
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
-// import jwt_decode from 'jwt-decode'
 
 class HttpRequest {
   // 如果传入参数就用传入的，没有就用baseURL.dev
