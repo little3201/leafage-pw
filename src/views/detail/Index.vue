@@ -17,14 +17,11 @@
         </base-img>
       </v-row>
       <v-row justify="center" align="start" class="my-0 mx-auto">
-        <v-col cols="12" md="8" lg="8" xl="6">
+        <v-col cols="12">
           <p v-html="detail.content"></p>
           <!-- 上一篇：{{ detail.previous.title }} -->
           <v-divider></v-divider>
           <!-- 下一篇：{{ detail.next.title }} -->
-        </v-col>
-        <v-col cols="12" md="4" lg="2" xl="2" class="hidden-sm-and-down">
-          <p v-html="detail.catalog"></p>
         </v-col>
       </v-row>
     </v-responsive>
