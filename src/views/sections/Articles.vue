@@ -22,7 +22,7 @@
                   <v-expand-transition>
                     <div
                       v-if="hover"
-                      class="d-flex transition-fast-in-fast-out orange darken-2 white--text"
+                      class="d-flex transition-fast-in-fast-out reveal grey darken-3 white--text pa-3"
                       style="height: 100%;"
                     >
                       {{ article.subtitle }}
@@ -39,7 +39,7 @@
                 class="ml-n4 font-weight-black"
                 text
                 :to="'detail/' + article.businessId"
-                v-if="i"
+                v-if="article"
               >
                 点击阅读
               </v-btn>
@@ -97,4 +97,10 @@ export default {
 </script>
 
 <style lang="scss">
+.reveal {
+  align-items: center;
+  bottom: 0;
+  opacity: .8;
+  position: absolute;
+}
 </style>

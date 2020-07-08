@@ -15,6 +15,7 @@ export default {
   mixins: [
     LoadSections([
       'hero-alt',
+      'photo-wall',
       'info'
     ])
   ],
