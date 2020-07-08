@@ -18,7 +18,7 @@
                 tag="h1"
               >
                 <span
-                :class="[$vuetify.breakpoint.smAndDown ? 'text-h4' : 'text-h3']"
+                  :class="[$vuetify.breakpoint.smAndDown ? 'text-h4' : 'text-h3']"
                   class="font-weight-light"
                 >
                   WELCOME TO
