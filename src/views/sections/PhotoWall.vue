@@ -1,5 +1,5 @@
 <template>
-  <section id="articles">
+  <section id="photoWall">
     <v-responsive
       class="mx-auto"
       max-width="1400"
@@ -10,7 +10,8 @@
             v-for="n in 9"
             :key="n"
             class="d-flex child-flex"
-            cols="4"
+            cols="12"
+            md="4"
           >
             <v-card flat tile class="d-flex">
               <v-img

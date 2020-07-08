@@ -17,7 +17,7 @@
         </base-img>
       </v-row>
       <v-row justify="center" align="start" class="my-0 mx-auto">
-        <v-col cols="12">
+        <v-col cols="12" md="8">
           <p v-html="detail.content"></p>
           <!-- 上一篇：{{ detail.previous.title }} -->
           <v-divider></v-divider>
