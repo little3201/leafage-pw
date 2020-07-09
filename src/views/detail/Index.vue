@@ -99,10 +99,7 @@ export default {
 
 <style lang="scss">
 .v-application code {
-  display: block;
-  overflow: auto;
-  color: #525252;
-  padding: 10px;
-  box-shadow: inherit;
+  background-color: transparent;
+  color: #f8f8f2;
 }
 </style>
