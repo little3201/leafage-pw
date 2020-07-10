@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import i18n from '@/plugins/i18n'
 import Vuetify from 'vuetify/lib/framework'
 import {
   VCol,
@@ -12,19 +13,23 @@ Vue.use(Vuetify, {
   }
 })
 
-export default new Vuetify({
+const opts = {
+  lang: {
+    t: (key, ...params) => i18n.t(key, params)
+  },
   theme: {
-    dark: false,
     themes: {
-      light: {
-        primary: '#FF6F00',
-        secondary: '#050b1f',
-        accent: '#204165'
+      dark: {
+        primary: '#FF6F00'
       },
-      dark: {}
+      light: {
+        primary: '#FF6F00'
+      }
     }
   },
   icons: {
     iconfont: 'mdi' // default - only for display purposes
   }
-})
+}
+
+export default new Vuetify(opts)
