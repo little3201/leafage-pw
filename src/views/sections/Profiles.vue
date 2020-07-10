@@ -1,6 +1,6 @@
 <template>
   <v-theme-provider :dark="dark">
-    <section id="articles">
+    <section id="profiles">
       <v-responsive
         class="mx-auto"
         max-width="1400"
@@ -38,7 +38,7 @@
               <v-btn
                 class="ml-n4 font-weight-black"
                 text
-                :to="'detail/' + article.businessId"
+                :to="'/article/detail/' + article.businessId"
                 v-if="article"
               >
                 点击阅读
@@ -55,7 +55,7 @@
 import { retrieveArticleFunc } from '@/api/method'
 
 export default {
-  name: 'SectionArticles',
+  name: 'SectionProfiles',
 
   props: {
     title: String,

@@ -12,7 +12,21 @@ export default [
         path: 'blog',
         name: 'Blog',
         component: () => import('@/views/blog/Index.vue'),
-        meta: { src: require('@/assets/blog.jpg') }
+        meta: { src: require('@/assets/blog.jpg') },
+        children: [
+          {
+            path: '/',
+            name: 'Profile',
+            component: () => import('@/views/blog/Profile.vue'),
+            props: true
+          },
+          {
+            path: 'detail/:businessId',
+            name: 'Detail',
+            component: () => import('@/views/blog/Detail.vue'),
+            props: true
+          }
+        ]
       },
       {
         path: 'portfolio',
@@ -31,12 +45,6 @@ export default [
         name: 'Contact',
         component: () => import('@/views/contact-us/Index.vue'),
         meta: { src: require('@/assets/contact.jpg') }
-      },
-      {
-        path: 'detail/:businessId',
-        name: 'Detail',
-        component: () => import('@/views/detail/Index.vue'),
-        props: true
       },
       {
         path: '*',
