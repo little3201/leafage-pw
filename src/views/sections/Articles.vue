@@ -63,24 +63,13 @@ export default {
   },
 
   data: () => ({
-    articles: [{
-      businessId: '',
-      title: '',
-      subtitle: '',
-      imageUrl: '',
-      author: {
-        avatar: '',
-        nickname: ''
-      }
-    }],
-    items: [
-      { text: 'Spring', to: '/' },
-      { text: 'Spring Security' }
-    ]
+    articles: []
   }),
+
   created () {
     this.retrieveArticle()
   },
+
   methods: {
     retrieveArticle () {
       retrieveArticleFunc().then(
