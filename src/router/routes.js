@@ -16,8 +16,8 @@ export default [
         children: [
           {
             path: '/',
-            name: 'Profile',
-            component: () => import('@/views/blog/Profile.vue'),
+            name: 'Item',
+            component: () => import('@/views/blog/Item.vue'),
             props: true
           },
           {
