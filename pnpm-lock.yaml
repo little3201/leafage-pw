@@ -15,7 +15,7 @@ devDependencies:
   '@vue/cli-plugin-pwa': 4.4.6_@vue+cli-service@4.4.6
   '@vue/cli-plugin-router': 4.4.6_@vue+cli-service@4.4.6
   '@vue/cli-plugin-vuex': 4.4.6_@vue+cli-service@4.4.6
-  '@vue/cli-service': 4.4.6_1210932730d27ada1e6456e672bf472d
+  '@vue/cli-service': 4.4.6_7df22e45d43176cb0c60fbfd320f55b3
   '@vue/eslint-config-standard': 4.0.0_eslint@5.16.0
   babel-eslint: 10.1.0_eslint@5.16.0
   eslint: 5.16.0
@@ -1002,14 +1002,6 @@ packages:
     resolution:
       integrity: sha1-EyQrU7XvjIg8PPfd3VWzbOgPvHI=
       tarball: '@babel/preset-modules/download/@babel/preset-modules-0.1.3.tgz?cache=0&sync_timestamp=1588754710615&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fpreset-modules%2Fdownload%2F%40babel%2Fpreset-modules-0.1.3.tgz'
-  /@babel/runtime-corejs3/7.10.4:
-    dependencies:
-      core-js-pure: 3.6.5
-      regenerator-runtime: 0.13.5
-    dev: true
-    resolution:
-      integrity: sha1-8p/BmQMHxMV7ENvWzmZ7JxWdng0=
-      tarball: '@babel/runtime-corejs3/download/@babel/runtime-corejs3-7.10.4.tgz'
   /@babel/runtime/7.10.4:
     dependencies:
       regenerator-runtime: 0.13.5
@@ -1143,7 +1135,7 @@ packages:
   /@types/glob/7.1.3:
     dependencies:
       '@types/minimatch': 3.0.3
-      '@types/node': 14.0.20
+      '@types/node': 14.0.22
     dev: true
     resolution:
       integrity: sha1-5rqA82t9qtLGhazZJmOC5omFwYM=
@@ -1163,11 +1155,11 @@ packages:
     resolution:
       integrity: sha1-PcoOPzOyAPx9ETnAzZbBJoyt/Z0=
       tarball: '@types/minimatch/download/@types/minimatch-3.0.3.tgz'
-  /@types/node/14.0.20:
+  /@types/node/14.0.22:
     dev: true
     resolution:
-      integrity: sha1-DaBc3bx2Hh+piviKFyRMjB/zcjE=
-      tarball: '@types/node/download/@types/node-14.0.20.tgz'
+      integrity: sha1-I+pNiBic7H1Y+ea2b3hrIV62G9w=
+      tarball: '@types/node/download/@types/node-14.0.22.tgz'
   /@types/normalize-package-data/2.4.0:
     dev: true
     resolution:
@@ -1295,7 +1287,7 @@ packages:
     dependencies:
       '@babel/core': 7.10.4
       '@vue/babel-preset-app': 4.4.6
-      '@vue/cli-service': 4.4.6_1210932730d27ada1e6456e672bf472d
+      '@vue/cli-service': 4.4.6_7df22e45d43176cb0c60fbfd320f55b3
       '@vue/cli-shared-utils': 4.4.6
       babel-loader: 8.1.0_0cfd9791b7d0e032fda143e7498c778b
       cache-loader: 4.1.0_webpack@4.43.0
@@ -1309,12 +1301,12 @@ packages:
       tarball: '@vue/cli-plugin-babel/download/@vue/cli-plugin-babel-4.4.6.tgz'
   /@vue/cli-plugin-eslint/4.4.6_5b0e6faaaec738ec7207dfe655c0822c:
     dependencies:
-      '@vue/cli-service': 4.4.6_1210932730d27ada1e6456e672bf472d
+      '@vue/cli-service': 4.4.6_7df22e45d43176cb0c60fbfd320f55b3
       '@vue/cli-shared-utils': 4.4.6
       eslint: 5.16.0
       eslint-loader: 2.2.1_eslint@5.16.0+webpack@4.43.0
       globby: 9.2.0
-      inquirer: 7.3.0
+      inquirer: 7.3.1
       webpack: 4.43.0_webpack@4.43.0
       yorkie: 2.0.0
     dev: true
@@ -1326,7 +1318,7 @@ packages:
       tarball: '@vue/cli-plugin-eslint/download/@vue/cli-plugin-eslint-4.4.6.tgz'
   /@vue/cli-plugin-pwa/4.4.6_@vue+cli-service@4.4.6:
     dependencies:
-      '@vue/cli-service': 4.4.6_1210932730d27ada1e6456e672bf472d
+      '@vue/cli-service': 4.4.6_7df22e45d43176cb0c60fbfd320f55b3
       '@vue/cli-shared-utils': 4.4.6
       webpack: 4.43.0_webpack@4.43.0
       workbox-webpack-plugin: 4.3.1_webpack@4.43.0
@@ -1338,7 +1330,7 @@ packages:
       tarball: '@vue/cli-plugin-pwa/download/@vue/cli-plugin-pwa-4.4.6.tgz'
   /@vue/cli-plugin-router/4.4.6_@vue+cli-service@4.4.6:
     dependencies:
-      '@vue/cli-service': 4.4.6_1210932730d27ada1e6456e672bf472d
+      '@vue/cli-service': 4.4.6_7df22e45d43176cb0c60fbfd320f55b3
       '@vue/cli-shared-utils': 4.4.6
     dev: true
     peerDependencies:
@@ -1348,14 +1340,14 @@ packages:
       tarball: '@vue/cli-plugin-router/download/@vue/cli-plugin-router-4.4.6.tgz'
   /@vue/cli-plugin-vuex/4.4.6_@vue+cli-service@4.4.6:
     dependencies:
-      '@vue/cli-service': 4.4.6_1210932730d27ada1e6456e672bf472d
+      '@vue/cli-service': 4.4.6_7df22e45d43176cb0c60fbfd320f55b3
     dev: true
     peerDependencies:
       '@vue/cli-service': ^3.0.0 || ^4.0.0-0
     resolution:
       integrity: sha1-RLWW8NUjbgos4apHV72lIHwjC+A=
       tarball: '@vue/cli-plugin-vuex/download/@vue/cli-plugin-vuex-4.4.6.tgz'
-  /@vue/cli-service/4.4.6_1210932730d27ada1e6456e672bf472d:
+  /@vue/cli-service/4.4.6_7df22e45d43176cb0c60fbfd320f55b3:
     dependencies:
       '@intervolga/optimize-cssnano-plugin': 1.0.6_webpack@4.43.0
       '@soda/friendly-errors-webpack-plugin': 1.7.1_webpack@4.43.0
@@ -1370,7 +1362,7 @@ packages:
       acorn: 7.3.1
       acorn-walk: 7.2.0
       address: 1.1.2
-      autoprefixer: 9.8.4
+      autoprefixer: 9.8.5
       browserslist: 4.13.0
       cache-loader: 4.1.0_webpack@4.43.0
       case-sensitive-paths-webpack-plugin: 2.3.0
@@ -1398,12 +1390,11 @@ packages:
       pnp-webpack-plugin: 1.6.4
       portfinder: 1.0.26
       postcss-loader: 3.0.0
-      sass-loader: 8.0.2_sass@1.26.10
       ssri: 7.1.0
       terser-webpack-plugin: 2.3.7_webpack@4.43.0
       thread-loader: 2.1.3_webpack@4.43.0
       url-loader: 2.3.0_file-loader@4.3.0+webpack@4.43.0
-      vue-loader: 15.9.3_19eca3d246a5abd3297fc67c463bf5f8
+      vue-loader: 15.9.3_css-loader@3.6.0+webpack@4.43.0
       vue-style-loader: 4.1.2
       vue-template-compiler: 2.6.11
       webpack: 4.43.0_webpack@4.43.0
@@ -1417,25 +1408,7 @@ packages:
     hasBin: true
     peerDependencies:
       '@vue/cli-service': '*'
-      less-loader: '*'
-      pug-plain-loader: '*'
-      raw-loader: '*'
-      sass-loader: '*'
-      stylus-loader: '*'
       vue-template-compiler: ^2.0.0
-    peerDependenciesMeta:
-      less-loader:
-        optional: true
-      pug-plain-loader:
-        optional: true
-      raw-loader:
-        optional: true
-      sass-loader:
-        optional: true
-      stylus-loader:
-        optional: true
-      vue-template-compiler:
-        optional: true
     resolution:
       integrity: sha1-g8oFjQgesUW7wa4v6AadLZ3ffhg=
       tarball: '@vue/cli-service/download/@vue/cli-service-4.4.6.tgz'
@@ -2040,7 +2013,7 @@ packages:
     resolution:
       integrity: sha1-bZUX654DDSQ2ZmZR6GvZ9vE1M8k=
       tarball: atob/download/atob-2.1.2.tgz
-  /autoprefixer/9.8.4:
+  /autoprefixer/9.8.5:
     dependencies:
       browserslist: 4.13.0
       caniuse-lite: 1.0.30001097
@@ -2052,8 +2025,8 @@ packages:
     dev: true
     hasBin: true
     resolution:
-      integrity: sha1-c28QEmc6cPo0ZGcdeNQavVRRKGM=
-      tarball: autoprefixer/download/autoprefixer-9.8.4.tgz
+      integrity: sha1-LCJd4indr+HRQkwCeR0MPhDMzKo=
+      tarball: autoprefixer/download/autoprefixer-9.8.5.tgz?cache=0&sync_timestamp=1594457711704&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fautoprefixer%2Fdownload%2Fautoprefixer-9.8.5.tgz
   /aws-sign2/0.7.0:
     dev: true
     resolution:
@@ -2773,7 +2746,7 @@ packages:
       mz: 2.7.0
       parse5: 5.1.1
       parse5-htmlparser2-tree-adapter: 5.1.1
-      yargs: 15.4.0
+      yargs: 15.4.1
     dev: true
     engines:
       node: '>=8.0.0'
@@ -3133,12 +3106,6 @@ packages:
     resolution:
       integrity: sha1-KlHZpOJd/W5pAlGqgfmePAVIHxw=
       tarball: core-js-compat/download/core-js-compat-3.6.5.tgz
-  /core-js-pure/3.6.5:
-    dev: true
-    requiresBuild: true
-    resolution:
-      integrity: sha1-x5519eONvIWmYtke6lK4JW1TuBM=
-      tarball: core-js-pure/download/core-js-pure-3.6.5.tgz
   /core-js/2.6.11:
     deprecated: 'core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.'
     dev: true
@@ -3509,15 +3476,6 @@ packages:
     resolution:
       integrity: sha1-9lNNFRSCabIDUue+4m9QH5oZEpA=
       tarball: decamelize/download/decamelize-1.2.0.tgz
-  /decamelize/3.2.0:
-    dependencies:
-      xregexp: 4.3.0
-    dev: true
-    engines:
-      node: '>=6'
-    resolution:
-      integrity: sha1-hLjo9PjFefk4414sxwJJB+AJCFE=
-      tarball: decamelize/download/decamelize-3.2.0.tgz
   /decode-uri-component/0.2.0:
     dev: true
     engines:
@@ -5555,7 +5513,7 @@ packages:
     resolution:
       integrity: sha1-rVCUI3XQNtMn/1KMCL1fqwiZKMo=
       tarball: inquirer/download/inquirer-6.5.2.tgz?cache=0&sync_timestamp=1593667673948&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Finquirer%2Fdownload%2Finquirer-6.5.2.tgz
-  /inquirer/7.3.0:
+  /inquirer/7.3.1:
     dependencies:
       ansi-escapes: 4.3.1
       chalk: 4.1.0
@@ -5574,8 +5532,8 @@ packages:
     engines:
       node: '>=8.0.0'
     resolution:
-      integrity: sha1-qj58sMGKQQw8Fs3SvJ3L6DxNMz4=
-      tarball: inquirer/download/inquirer-7.3.0.tgz?cache=0&sync_timestamp=1593667673948&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Finquirer%2Fdownload%2Finquirer-7.3.0.tgz
+      integrity: sha1-rGq6Gr391a005waTcEEe26F/ZDk=
+      tarball: inquirer/download/inquirer-7.3.1.tgz
   /internal-ip/4.3.0:
     dependencies:
       default-gateway: 4.2.0
@@ -8758,13 +8716,6 @@ packages:
       node-sass: ^4.0.0
       sass: ^1.3.0
       webpack: ^4.36.0 || ^5.0.0
-    peerDependenciesMeta:
-      fibers:
-        optional: true
-      node-sass:
-        optional: true
-      sass:
-        optional: true
     resolution:
       integrity: sha1-3r7NjDziQ8dkVPLoKQSCFQOACQ0=
       tarball: sass-loader/download/sass-loader-8.0.2.tgz
@@ -10021,9 +9972,6 @@ packages:
     peerDependencies:
       file-loader: '*'
       webpack: ^4.0.0
-    peerDependenciesMeta:
-      file-loader:
-        optional: true
     resolution:
       integrity: sha1-4OLvZY8APvuMpBsPP/v3a6uIZYs=
       tarball: url-loader/download/url-loader-2.3.0.tgz
@@ -10176,28 +10124,19 @@ packages:
     resolution:
       integrity: sha1-zXwS8uF45vqiOw48/S97rJMF+Pw=
       tarball: vue-i18n/download/vue-i18n-8.18.2.tgz
-  /vue-loader/15.9.3_19eca3d246a5abd3297fc67c463bf5f8:
+  /vue-loader/15.9.3_css-loader@3.6.0+webpack@4.43.0:
     dependencies:
       '@vue/component-compiler-utils': 3.1.2
-      cache-loader: 4.1.0_webpack@4.43.0
       css-loader: 3.6.0_webpack@4.43.0
       hash-sum: 1.0.2
       loader-utils: 1.4.0
       vue-hot-reload-api: 2.3.4
       vue-style-loader: 4.1.2
-      vue-template-compiler: 2.6.11
       webpack: 4.43.0_webpack@4.43.0
     dev: true
     peerDependencies:
-      cache-loader: '*'
       css-loader: '*'
-      vue-template-compiler: '*'
       webpack: ^3.0.0 || ^4.1.0 || ^5.0.0-0
-    peerDependenciesMeta:
-      cache-loader:
-        optional: true
-      vue-template-compiler:
-        optional: true
     resolution:
       integrity: sha1-DeNdnlVdPtU5aVFsrFziVTEpndo=
       tarball: vue-loader/download/vue-loader-15.9.3.tgz
@@ -10394,10 +10333,6 @@ packages:
     hasBin: true
     peerDependencies:
       webpack: ^4.0.0 || ^5.0.0
-      webpack-cli: '*'
-    peerDependenciesMeta:
-      webpack-cli:
-        optional: true
     resolution:
       integrity: sha1-jxVKO84bz9HMYY705wMniFXn/4w=
       tarball: webpack-dev-server/download/webpack-dev-server-3.11.0.tgz?cache=0&sync_timestamp=1588997845607&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fwebpack-dev-server%2Fdownload%2Fwebpack-dev-server-3.11.0.tgz
@@ -10709,13 +10644,6 @@ packages:
     resolution:
       integrity: sha1-RC/fCkftZPWbal2P8TD0dI7VJPs=
       tarball: ws/download/ws-6.2.1.tgz?cache=0&sync_timestamp=1594073030741&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fws%2Fdownload%2Fws-6.2.1.tgz
-  /xregexp/4.3.0:
-    dependencies:
-      '@babel/runtime-corejs3': 7.10.4
-    dev: true
-    resolution:
-      integrity: sha1-fpLnPZF0qZpZdD9npM6HmgS1rlA=
-      tarball: xregexp/download/xregexp-4.3.0.tgz
   /xtend/4.0.2:
     dev: true
     engines:
@@ -10784,10 +10712,10 @@ packages:
     resolution:
       integrity: sha1-rX/+/sGqWVZayRX4Lcyzipwxot0=
       tarball: yargs/download/yargs-13.3.2.tgz?cache=0&sync_timestamp=1593731420730&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fyargs%2Fdownload%2Fyargs-13.3.2.tgz
-  /yargs/15.4.0:
+  /yargs/15.4.1:
     dependencies:
       cliui: 6.0.0
-      decamelize: 3.2.0
+      decamelize: 1.2.0
       find-up: 4.1.0
       get-caller-file: 2.0.5
       require-directory: 2.1.1
@@ -10801,8 +10729,8 @@ packages:
     engines:
       node: '>=8'
     resolution:
-      integrity: sha1-U5Sft2gwm6wYQ96bF7gAUemAXsI=
-      tarball: yargs/download/yargs-15.4.0.tgz?cache=0&sync_timestamp=1593731420730&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fyargs%2Fdownload%2Fyargs-15.4.0.tgz
+      integrity: sha1-DYehbeAa7p2L7Cv7909nhRcw9Pg=
+      tarball: yargs/download/yargs-15.4.1.tgz
   /yorkie/2.0.0:
     dependencies:
       execa: 0.8.0
@@ -10818,29 +10746,29 @@ packages:
       tarball: yorkie/download/yorkie-2.0.0.tgz
 specifiers:
   '@mdi/font': ^5.3.45
-  '@vue/cli-plugin-babel': ^4.4.4
-  '@vue/cli-plugin-eslint': ^4.4.4
-  '@vue/cli-plugin-pwa': ^4.4.4
-  '@vue/cli-plugin-router': ^4.4.4
-  '@vue/cli-plugin-vuex': ^4.4.4
-  '@vue/cli-service': ^4.4.4
+  '@vue/cli-plugin-babel': ^4.4.6
+  '@vue/cli-plugin-eslint': ^4.4.6
+  '@vue/cli-plugin-pwa': ^4.4.6
+  '@vue/cli-plugin-router': ^4.4.6
+  '@vue/cli-plugin-vuex': ^4.4.6
+  '@vue/cli-service': ^4.4.6
   '@vue/eslint-config-standard': ^4.0.0
   axios: ^0.19.2
   babel-eslint: ^10.1.0
   core-js: ^3.6.5
   eslint: ^5.16.0
   eslint-plugin-vue: ^5.2.3
-  lint-staged: ^10.2.10
-  lodash: ^4.17.15
+  lint-staged: ^10.2.11
+  lodash: ^4.17.19
   nprogress: ^0.2.0
-  sass: ^1.26.8
+  sass: ^1.26.10
   sass-loader: ^8.0.2
   vue: ^2.6.11
-  vue-cli-plugin-vuetify: ^2.0.5
+  vue-cli-plugin-vuetify: ^2.0.6
   vue-i18n: ^8.18.2
   vue-meta: ^2.4.0
   vue-router: ^3.3.4
   vue-template-compiler: ^2.6.11
-  vuetify: ^2.3.0
+  vuetify: ^2.3.4
   vuetify-loader: ^1.5.0
-  vuex: ^3.4.0
+  vuex: ^3.5.1
