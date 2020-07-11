@@ -74,6 +74,7 @@ export default {
     retrieveArticle () {
       retrieveArticleFunc().then(
         response => {
+          // imageUrl处理imageMogr2/thumbnail/640x640/interlace/1/blur/1x0/quality/100
           this.articles = response.data
         },
         error => {

@@ -86,6 +86,7 @@ export default {
     fetchArticle (businessId) {
       fetchArticleFunc(businessId).then(
         response => {
+          // imageUrl 处理imageMogr2/auto-orient/thumbnail/!x50p/interlace/1/blur/1x0/quality/100
           this.detail = response.data
         },
         error => {
