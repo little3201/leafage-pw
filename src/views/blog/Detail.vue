@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import 'prismjs/themes/prism-okaidia.css'
 import { fetchArticleFunc } from '@/api/method'
 import {
   HexToRGBA,

@@ -15,7 +15,7 @@
             >
               <v-hover v-slot:default="{ hover }">
                 <v-img
-                  :src="article.imageUrl"
+                  :src="require(`${article.imageUrl}?imageMogr2/thumbnail/640x640/interlace/1/blur/1x0/quality/100.jpg`)"
                   height="245"
                   max-width="100%"
                 >
@@ -38,7 +38,7 @@
               <v-btn
                 class="ml-n4 font-weight-black"
                 text
-                :to="'/article/detail/' + article.businessId"
+                :to="'/blog/detail/' + article.businessId"
                 v-if="article"
               >
                 点击阅读

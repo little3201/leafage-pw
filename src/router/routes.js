@@ -10,13 +10,12 @@ export default [
       },
       {
         path: 'blog',
-        name: 'Blog',
         component: () => import('@/views/blog/Index.vue'),
         meta: { src: require('@/assets/blog.jpg') },
         children: [
           {
-            path: '/',
-            name: 'Item',
+            path: '',
+            name: 'Blog',
             component: () => import('@/views/blog/Item.vue'),
             props: true
           },
