@@ -15,7 +15,7 @@
             >
               <v-hover v-slot:default="{ hover }">
                 <v-img
-                  :src="require(`${article.imageUrl}?imageMogr2/thumbnail/640x640/interlace/1/blur/1x0/quality/100.jpg`)"
+                  :src="`${article.imageUrl}?imageMogr2/thumbnail/640x640/interlace/1/blur/1x0/quality/100.jpg`"
                   height="245"
                   max-width="100%"
                 >
