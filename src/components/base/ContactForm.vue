@@ -9,8 +9,6 @@
 
     <base-text-field label="Name" />
 
-    <base-text-field label="Email" />
-
     <base-text-field label="Subject" />
 
     <base-textarea

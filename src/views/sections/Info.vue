@@ -28,16 +28,9 @@
 
             <v-col
               cols="12"
-              md="3"
+              md="6"
             >
-              <info-features />
-            </v-col>
-
-            <v-col
-              cols="12"
-              md="3"
-            >
-              <instagram />
+              <contact-form />
             </v-col>
           </v-row>
         </v-container>
@@ -51,8 +44,8 @@ export default {
   name: 'SectionBusinessInfo',
 
   components: {
-    InfoFeatures: () => import('@/components/InfoFeatures'),
-    Instagram: () => import('@/components/Instagram')
+    ContactForm: () => import('@/components/base/ContactForm')
+    // Portfolio: () => import('@/components/Portfolio')
   }
 }
 </script>
