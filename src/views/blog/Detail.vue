@@ -5,7 +5,7 @@
         <base-img
           :height="$vuetify.breakpoint.mdAndUp ? 350 : 225"
           :gradient="gradient"
-          :src="detail.imageUrl"
+          :src="`${detail.imageUrl}?imageMogr2/auto-orient/thumbnail/!x50p/interlace/1/blur/1x0/quality/100`"
           color="#45516b"
           flat
           max-width="100%"
@@ -17,14 +17,11 @@
         </base-img>
       </v-row>
       <v-row justify="center" align="start" class="my-0 mx-auto">
-        <v-col cols="12" md="8" lg="8" xl="6">
+        <v-col cols="12" md="8">
           <p v-html="detail.content"></p>
           <!-- 上一篇：{{ detail.previous.title }} -->
           <v-divider></v-divider>
           <!-- 下一篇：{{ detail.next.title }} -->
-        </v-col>
-        <v-col cols="12" md="4" lg="2" xl="2" class="hidden-sm-and-down">
-          <p v-html="detail.catalog"></p>
         </v-col>
       </v-row>
     </v-responsive>
@@ -32,6 +29,7 @@
 </template>
 
 <script>
+import 'prismjs/themes/prism-okaidia.css'
 import { fetchArticleFunc } from '@/api/method'
 import {
   HexToRGBA,
@@ -89,6 +87,7 @@ export default {
     fetchArticle (businessId) {
       fetchArticleFunc(businessId).then(
         response => {
+          // imageUrl 处理imageMogr2/auto-orient/thumbnail/!x50p/interlace/1/blur/1x0/quality/100
           this.detail = response.data
         },
         error => {
@@ -102,10 +101,7 @@ export default {
 
 <style lang="scss">
 .v-application code {
-  display: block;
-  overflow: auto;
-  color: #525252;
-  padding: 10px;
-  box-shadow: inherit;
+  background-color: transparent;
+  color: #f8f8f2;
 }
 </style>

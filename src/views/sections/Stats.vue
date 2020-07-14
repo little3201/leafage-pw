@@ -36,10 +36,10 @@ export default {
 
   data: () => ({
     stats: [
-      ['24k', 'Github Stars'],
-      ['330+', 'Releases'],
-      ['1m', 'Downloads/mo'],
-      ['5m', 'Total Downloads']
+      ['2', 'Github Stars'],
+      ['0', 'Releases'],
+      ['1', 'Forks'],
+      ['5', 'Total Downloads']
     ]
   })
 }

@@ -20,9 +20,11 @@ const router = new VueRouter({
 
 /* 路由之前检查token */
 router.beforeEach((to, from, next) => {
-  NProgress.start()
+  if (to.path !== from.path && !Vue.component(to.name)) {
+    NProgress.start()
+  }
   // 放行
-    next()
+  next()
 })
 
 /* 路由之后关闭进度条 */

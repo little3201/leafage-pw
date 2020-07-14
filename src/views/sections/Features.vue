@@ -71,7 +71,7 @@ export default {
       {
         icon: 'mdi-account-group-outline',
         title: '资源开放',
-        text: '全站所有资源免费，如遇版权，请联系处理'
+        text: '所有资源免费下载使用，请联系处理'
       },
       {
         icon: 'mdi-update',
@@ -81,7 +81,7 @@ export default {
       {
         icon: 'mdi-shield-outline',
         title: '长期支持',
-        text: '前后端代码均长期维护，欢迎关注，升级'
+        text: '所有代码长期维护，欢迎关注，升级'
       }
     ]
   })
