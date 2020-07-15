@@ -1,7 +1,7 @@
 <template>
-  <v-container fluid>
-      <starts />
-      <about-me />
+  <v-container fluid class="pa-0">
+    <starts />
+    <about-me />
   </v-container>
 </template>
 

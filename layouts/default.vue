@@ -35,13 +35,13 @@
       elevation="1"
     >
       <v-img
-        src="@/assets/images/logo.png"
+        src="images/logo.png"
         class="mr-3 hidden-xs-only"
         contain
-        max-width="52"
+        max-width="42"
         width="100%"
       />
-      <span class="text-h5">ABEILLE</span>
+      <span :class="[$vuetify.breakpoint.smAndDown ? 'text-h6' : 'text-h5']">ABEILLE</span>
 
       <v-spacer />
 
@@ -54,7 +54,7 @@
             v-for="(name, i) in items"
             :key="i"
             :to="{ name }"
-            :exact="name === 'Home'"
+            :exact="name === 'home'"
             :ripple="false"
             active-class="text--primary"
             class="font-weight-bold"
@@ -132,11 +132,11 @@ export default {
     return {
       drawer: null,
       items: [
-        'Home',
-//        'Blog',
-//        'Portfolio',
-        'About',
-//        'Contact'
+        'home',
+        'blog',
+        'portfolio',
+        'about',
+        'contact'
       ],
       social: [
         'Github',

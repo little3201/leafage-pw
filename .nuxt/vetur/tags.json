@@ -1,0 +1,20 @@
+{
+  "AboutMe": {
+    "description": "Auto imported from components/AboutMe.vue"
+  },
+  "LazyAboutMe": {
+    "description": "Auto imported from components/AboutMe.vue"
+  },
+  "Social": {
+    "description": "Auto imported from components/Social.vue"
+  },
+  "LazySocial": {
+    "description": "Auto imported from components/Social.vue"
+  },
+  "Starts": {
+    "description": "Auto imported from components/Starts.vue"
+  },
+  "LazyStarts": {
+    "description": "Auto imported from components/Starts.vue"
+  }
+}

@@ -1,10 +1,10 @@
 <template>
-  <v-theme-provider dark>
-    <section
-      id="social"
-      class="accent text-center"
-      space="56"
-    >
+  <section
+    id="social"
+    class="accent text-center"
+    space="56"
+  >
+    <v-container fill-height class="text-center">
       <v-icon class="mb-8">
         mdi-github
       </v-icon>
@@ -42,8 +42,8 @@
           mdi-open-in-new
         </v-icon>
       </v-btn>
-    </section>
-  </v-theme-provider>
+    </v-container>
+  </section>
 </template>
 
 <script>

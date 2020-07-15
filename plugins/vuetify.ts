@@ -16,7 +16,7 @@ const opts = {
     }
   },
   icons: {
-    iconfont: 'mdi' // default - only for display purposes
+    iconfont: 'mdi' as 'mdi' // default - only for display purposes
   }
 }
 

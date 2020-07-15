@@ -26,7 +26,7 @@
     "types": [
       "@types/node",
       "@nuxt/types",
-      "@nuxt/vuetify"
+      "@nuxtjs/vuetify"
     ]
   },
   "exclude": [

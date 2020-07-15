@@ -1,24 +1,37 @@
 <template>
   <section id="404">
-    <span
-      :class="[$vuetify.breakpoint.smAndDown ? 'text-h4' : 'text-h3']"
-      class="font-weight-light"
-    >
-      Looks like this page doesn't exis
-    </span>
+    <v-container class="text-center">
+    <div class="text-center mb-6">
+      <p
+        :class="[$vuetify.breakpoint.smAndDown ? 'text-h4' : 'text-h5']"
+        class="font-weight-black">
+        404
+      </p>
+      <p
+        :class="[$vuetify.breakpoint.smAndDown ? 'text-h4' : 'text-h5']"
+        class="font-weight-black">
+        Oh!
+      </p>
+      <p
+        :class="[$vuetify.breakpoint.smAndDown ? 'text-h4' : 'text-h5']"
+        class="font-weight-black">
+        Looks like this page doesn't exis
+      </p>
+    </div>
     
     <v-img
-      :src="require('@/assets/images/logo.png')"
+      src="images/logo.png"
       class="mx-auto mb-4"
       contain
       width="200"
     />
 
     <div class="text-center">
-      <v-btn :to="{ name: 'Home' }">
+      <v-btn :to="{ name: 'home' }" depressed>
         Get me Out of Here
       </v-btn>
     </div>
+    </v-container>
   </section>
 </template>
 
