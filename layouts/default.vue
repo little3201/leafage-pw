@@ -85,10 +85,7 @@
     >
       <v-container> 
         <v-row>
-          <v-col
-            cols="12"
-            md="6"
-          >
+          <v-col cols="12" md="6">
             <div class="d-flex flex-wrap justify-md-start justify-center justify-md-none">
               <template v-for="(s, i) in social">
                 <a
@@ -148,7 +145,7 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 .v-tabs-slider
   max-width: 24px
   margin: 0 auto

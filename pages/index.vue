@@ -1,18 +1,15 @@
 <template>
   <v-container fluid class="pa-0">
     <starts />
-    <about-me />
   </v-container>
 </template>
 
 <script>
-import Starts from '~/components/Starts.vue'
-import AboutMe from '~/components/AboutMe.vue'
+import Starts from '~/components/sections/Starts.vue'
 
 export default {
   components: {
-    Starts,
-    AboutMe
+    Starts
   }
 }
 </script>
