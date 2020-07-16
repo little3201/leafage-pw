@@ -16,5 +16,29 @@
   },
   "LazyStarts": {
     "description": "Auto imported from components/Starts.vue"
+  },
+  "ContactFrom": {
+    "description": "Auto imported from components/sections/ContactFrom.vue"
+  },
+  "LazyContactFrom": {
+    "description": "Auto imported from components/sections/ContactFrom.vue"
+  },
+  "ContactUs": {
+    "description": "Auto imported from components/sections/ContactUs.vue"
+  },
+  "LazyContactUs": {
+    "description": "Auto imported from components/sections/ContactUs.vue"
+  },
+  "NewsLeter": {
+    "description": "Auto imported from components/sections/NewsLeter.vue"
+  },
+  "LazyNewsLeter": {
+    "description": "Auto imported from components/sections/NewsLeter.vue"
+  },
+  "Profiles": {
+    "description": "Auto imported from components/sections/Profiles.vue"
+  },
+  "LazyProfiles": {
+    "description": "Auto imported from components/sections/Profiles.vue"
   }
 }

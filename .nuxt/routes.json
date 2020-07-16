@@ -2,43 +2,43 @@
   {
     "name": "about",
     "path": "/about",
-    "component": "D:\\\\Projects\\\\abeille-ui\\\\pages\\\\about.vue",
+    "component": "/Users/wilsonli/spaces/abeille-ui/pages/about.vue",
     "chunkName": "pages/about",
-    "_name": "_29ff1f68"
+    "_name": "_3af3be54"
   },
   {
     "name": "blog",
     "path": "/blog",
-    "component": "D:\\\\Projects\\\\abeille-ui\\\\pages\\\\blog.vue",
+    "component": "/Users/wilsonli/spaces/abeille-ui/pages/blog.vue",
     "chunkName": "pages/blog",
-    "_name": "_682a35d2"
+    "_name": "_989e8eaa"
   },
   {
     "name": "contact",
     "path": "/contact",
-    "component": "D:\\\\Projects\\\\abeille-ui\\\\pages\\\\contact.vue",
+    "component": "/Users/wilsonli/spaces/abeille-ui/pages/contact.vue",
     "chunkName": "pages/contact",
-    "_name": "_ad9c8c8a"
+    "_name": "_4f7a4da7"
   },
   {
     "name": "home",
     "path": "/home",
-    "component": "D:\\\\Projects\\\\abeille-ui\\\\pages\\\\home.vue",
+    "component": "/Users/wilsonli/spaces/abeille-ui/pages/home.vue",
     "chunkName": "pages/home",
-    "_name": "_53427858"
+    "_name": "_83b6d130"
   },
   {
     "name": "portfolio",
     "path": "/portfolio",
-    "component": "D:\\\\Projects\\\\abeille-ui\\\\pages\\\\portfolio.vue",
+    "component": "/Users/wilsonli/spaces/abeille-ui/pages/portfolio.vue",
     "chunkName": "pages/portfolio",
-    "_name": "_14c21223"
+    "_name": "_4b355b0f"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "D:\\\\Projects\\\\abeille-ui\\\\pages\\\\index.vue",
+    "component": "/Users/wilsonli/spaces/abeille-ui/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_49b6fa2d"
+    "_name": "_5aab9919"
   }
 ]

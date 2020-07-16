@@ -1,12 +1,14 @@
 import Vue from 'vue'
 
 import { getMatchedComponentsInstances, getChildrenComponentInstancesUsingFetch, promisify, globalHandleError, urlJoin, sanitizeComponent } from './utils'
-import NuxtError from '..\\layouts\\error.vue'
+import NuxtError from '../layouts/error.vue'
 import NuxtLoading from './components/nuxt-loading.vue'
 
-import '..\\node_modules\\prismjs\\themes\\prism.css'
+import '../node_modules/prismjs/themes/prism.css'
 
-import _6f6c098b from '..\\layouts\\default.vue'
+import '../node_modules/vuetify/dist/vuetify.css'
+
+import _6f6c098b from '../layouts/default.vue'
 
 const layouts = { "_default": sanitizeComponent(_6f6c098b) }
 

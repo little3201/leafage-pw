@@ -1,6 +1,7 @@
 <template>
   <v-app dark>
     <v-navigation-drawer
+      v-model="drawer"
       bottom
       color="transparent"
       fixed
@@ -8,8 +9,6 @@
       overlay-color="secondary"
       overlay-opacity=".8"
       temporary
-      v-bind="$attrs"
-      v-on="$listeners"
     >
       <v-list
         color="white"
@@ -81,7 +80,6 @@
 
     <!-- footer -->
     <v-footer
-      id="home-footer"
       color="grey darken-4"
       dark
     >
@@ -97,6 +95,7 @@
                   :key="s"
                   class="white--text pa-1 pa-md-0"
                   href="#"
+                  style="text-decoration: none"
                   v-text="s"
                 />
 
@@ -130,7 +129,7 @@
 export default {
   data () {
     return {
-      drawer: null,
+      drawer: false,
       items: [
         'home',
         'blog',

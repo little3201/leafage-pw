@@ -3,12 +3,12 @@ import Router from 'vue-router'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _29ff1f68 = () => interopDefault(import('..\\pages\\about.vue' /* webpackChunkName: "pages/about" */))
-const _682a35d2 = () => interopDefault(import('..\\pages\\blog.vue' /* webpackChunkName: "pages/blog" */))
-const _ad9c8c8a = () => interopDefault(import('..\\pages\\contact.vue' /* webpackChunkName: "pages/contact" */))
-const _53427858 = () => interopDefault(import('..\\pages\\home.vue' /* webpackChunkName: "pages/home" */))
-const _14c21223 = () => interopDefault(import('..\\pages\\portfolio.vue' /* webpackChunkName: "pages/portfolio" */))
-const _49b6fa2d = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
+const _3af3be54 = () => interopDefault(import('../pages/about.vue' /* webpackChunkName: "pages/about" */))
+const _989e8eaa = () => interopDefault(import('../pages/blog.vue' /* webpackChunkName: "pages/blog" */))
+const _4f7a4da7 = () => interopDefault(import('../pages/contact.vue' /* webpackChunkName: "pages/contact" */))
+const _83b6d130 = () => interopDefault(import('../pages/home.vue' /* webpackChunkName: "pages/home" */))
+const _4b355b0f = () => interopDefault(import('../pages/portfolio.vue' /* webpackChunkName: "pages/portfolio" */))
+const _5aab9919 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 // TODO: remove in Nuxt 3
 const emptyFn = () => {}
@@ -28,27 +28,27 @@ export const routerOptions = {
 
   routes: [{
     path: "/about",
-    component: _29ff1f68,
+    component: _3af3be54,
     name: "about"
   }, {
     path: "/blog",
-    component: _682a35d2,
+    component: _989e8eaa,
     name: "blog"
   }, {
     path: "/contact",
-    component: _ad9c8c8a,
+    component: _4f7a4da7,
     name: "contact"
   }, {
     path: "/home",
-    component: _53427858,
+    component: _83b6d130,
     name: "home"
   }, {
     path: "/portfolio",
-    component: _14c21223,
+    component: _4b355b0f,
     name: "portfolio"
   }, {
     path: "/",
-    component: _49b6fa2d,
+    component: _5aab9919,
     name: "index"
   }],
 
