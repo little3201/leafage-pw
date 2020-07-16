@@ -6,7 +6,26 @@
           cols="12"
           md="5"
         >
-          <base-business-info title="KEEP IN TOUCH WITH US" />
+          <h2>KEEP IN TOUCH WITH US</h2>
+          
+          <v-divider class="mb-6 primary" />
+          
+          <v-list>
+            <v-list-item-group v-model="item" color="primary">
+              <v-list-item
+                v-for="(item, i) in items"
+                :key="i"
+              >
+                <v-list-item-icon>
+                  <v-icon large v-text="item.icon"></v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                  <v-list-item-title v-html="item.text"></v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </v-list-item-group>
+          </v-list>
+          
         </v-col>
 
         <v-col
@@ -15,7 +34,7 @@
         >
           <h2>MAIL US YOUR MESSAGE</h2>
           
-          <v-divider class="mb-6 primary" style="border-width: 2px 0 0 0 !important;" />
+          <v-divider class="mb-6 primary" />
           
           <v-text-field outlined dense single-line label="Name" />
 
@@ -47,6 +66,32 @@ export default {
   name: 'BaseContactForm',
   
   // Injected from the Vuetify Themeable mixin
-  inject: ['theme']
+  inject: ['theme'],
+  
+  data: () => ({
+    items: [
+      {
+        icon: 'mdi-map-marker-outline',
+        title: 'Address',
+        text: '陕西省 · 西安市 <br/> 碑林区 · 长安北路'
+      },
+      {
+        icon: 'mdi-wechat',
+        title: 'Wechat',
+        text: '布吉岛 <br/> q335699669'
+      },
+      {
+        icon: 'mdi-email',
+        title: 'Email',
+        text: 'little3201@gmail.com <br/> little3201@163.com'
+      }
+    ]
+  })
 }
 </script>
+
+<style lang="sass">
+.v-divider
+  border-width: 3px 0 0 0 !important
+  max-width: 28px
+</style>
