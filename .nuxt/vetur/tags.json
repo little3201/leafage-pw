@@ -1,33 +1,33 @@
 {
   "AboutMe": {
-    "description": "Auto imported from components/AboutMe.vue"
+    "description": "Auto imported from components/sections/AboutMe.vue"
   },
   "LazyAboutMe": {
-    "description": "Auto imported from components/AboutMe.vue"
+    "description": "Auto imported from components/sections/AboutMe.vue"
   },
-  "Social": {
-    "description": "Auto imported from components/Social.vue"
+  "ContactForm": {
+    "description": "Auto imported from components/sections/ContactForm.vue"
   },
-  "LazySocial": {
-    "description": "Auto imported from components/Social.vue"
-  },
-  "Starts": {
-    "description": "Auto imported from components/Starts.vue"
-  },
-  "LazyStarts": {
-    "description": "Auto imported from components/Starts.vue"
-  },
-  "ContactFrom": {
-    "description": "Auto imported from components/sections/ContactFrom.vue"
-  },
-  "LazyContactFrom": {
-    "description": "Auto imported from components/sections/ContactFrom.vue"
+  "LazyContactForm": {
+    "description": "Auto imported from components/sections/ContactForm.vue"
   },
   "ContactUs": {
     "description": "Auto imported from components/sections/ContactUs.vue"
   },
   "LazyContactUs": {
     "description": "Auto imported from components/sections/ContactUs.vue"
+  },
+  "Features": {
+    "description": "Auto imported from components/sections/Features.vue"
+  },
+  "LazyFeatures": {
+    "description": "Auto imported from components/sections/Features.vue"
+  },
+  "Hero": {
+    "description": "Auto imported from components/sections/Hero.vue"
+  },
+  "LazyHero": {
+    "description": "Auto imported from components/sections/Hero.vue"
   },
   "NewsLeter": {
     "description": "Auto imported from components/sections/NewsLeter.vue"
@@ -40,5 +40,17 @@
   },
   "LazyProfiles": {
     "description": "Auto imported from components/sections/Profiles.vue"
+  },
+  "Social": {
+    "description": "Auto imported from components/sections/Social.vue"
+  },
+  "LazySocial": {
+    "description": "Auto imported from components/sections/Social.vue"
+  },
+  "Starts": {
+    "description": "Auto imported from components/sections/Starts.vue"
+  },
+  "LazyStarts": {
+    "description": "Auto imported from components/sections/Starts.vue"
   }
 }

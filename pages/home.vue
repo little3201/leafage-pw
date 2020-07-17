@@ -1,15 +1,15 @@
 <template>
   <v-container fluid class="pa-0">
-    <social />
+    <hero />
   </v-container>
 </template>
 
 <script>
-import Social from '~/components/Social.vue'
+import Hero from '~/components/sections/Hero.vue'
 
 export default {
   components: {
-    Social
+    Hero
   }
 }
 </script>

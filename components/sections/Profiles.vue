@@ -52,8 +52,6 @@
 </template>
 
 <script>
-import { retrieveArticleFunc } from '@/api/method'
-
 export default {
   name: 'SectionProfiles',
 
@@ -72,25 +70,19 @@ export default {
 
   methods: {
     retrieveArticle () {
-      retrieveArticleFunc().then(
-        response => {
-          // imageUrl处理imageMogr2/thumbnail/640x640/interlace/1/blur/1x0/quality/100
-          this.articles = response.data
-        },
-        error => {
-          alert(error.statusText)
-        }
-      )
+//      retrieveArticleFunc().then(
+//        response => {
+//          // imageUrl处理imageMogr2/thumbnail/640x640/interlace/1/blur/1x0/quality/100
+//          this.articles = response.data
+//        },
+//        error => {
+//          alert(error.statusText)
+//        }
+//      )
     }
   }
 }
 </script>
 
-<style lang="scss">
-.reveal {
-  align-items: center;
-  bottom: 0;
-  opacity: .8;
-  position: absolute;
-}
+<style lang="sass">
 </style>

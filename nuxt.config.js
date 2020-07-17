@@ -73,7 +73,17 @@ export default {
   ** https://github.com/nuxt-community/vuetify-module
   */
   vuetify: {
-    optionsPath: './plugins/vuetify'
+    customVariables: ['~/assets/variables.scss'],
+    theme: {
+      themes: {
+        dark: {
+          primary: '#FF6F00'
+        },
+        light: {
+          primary: '#FF6F00'
+        }
+      }
+    }
   },
   /*
   ** Build configuration
