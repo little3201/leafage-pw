@@ -62,7 +62,10 @@ export default {
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
-  axios: {},
+  axios: {
+    https: true,
+    // prefix: '/api'
+  },
   /*
   ** Content module configuration
   ** See https://content.nuxtjs.org/configuration

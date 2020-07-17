@@ -2,43 +2,52 @@
   {
     "name": "about",
     "path": "/about",
-    "component": "/Users/wilsonli/spaces/abeille-ui/pages/about.vue",
+    "component": "D:\\\\Projects\\\\abeille-ui\\\\pages\\\\about.vue",
     "chunkName": "pages/about",
-    "_name": "_3af3be54"
+    "_name": "_29ff1f68"
   },
   {
     "name": "blog",
     "path": "/blog",
-    "component": "/Users/wilsonli/spaces/abeille-ui/pages/blog.vue",
+    "component": "D:\\\\Projects\\\\abeille-ui\\\\pages\\\\blog.vue",
     "chunkName": "pages/blog",
-    "_name": "_989e8eaa"
+    "children": [
+      {
+        "name": "blog-detail",
+        "path": "detail",
+        "component": "D:\\\\Projects\\\\abeille-ui\\\\pages\\\\blog\\\\detail.vue",
+        "chunkName": "pages/blog/detail",
+        "_name": "_a8b1ad30"
+      }
+    ],
+    "_name": "_682a35d2"
   },
   {
     "name": "contact",
     "path": "/contact",
-    "component": "/Users/wilsonli/spaces/abeille-ui/pages/contact.vue",
+    "component": "D:\\\\Projects\\\\abeille-ui\\\\pages\\\\contact.vue",
     "chunkName": "pages/contact",
-    "_name": "_4f7a4da7"
+    "_name": "_ad9c8c8a"
   },
   {
     "name": "home",
     "path": "/home",
-    "component": "/Users/wilsonli/spaces/abeille-ui/pages/home.vue",
+    "component": "D:\\\\Projects\\\\abeille-ui\\\\pages\\\\home.vue",
     "chunkName": "pages/home",
-    "_name": "_83b6d130"
+    "_name": "_53427858"
   },
   {
     "name": "portfolio",
     "path": "/portfolio",
-    "component": "/Users/wilsonli/spaces/abeille-ui/pages/portfolio.vue",
+    "component": "D:\\\\Projects\\\\abeille-ui\\\\pages\\\\portfolio.vue",
     "chunkName": "pages/portfolio",
-    "_name": "_4b355b0f"
+    "_name": "_14c21223"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/Users/wilsonli/spaces/abeille-ui/pages/index.vue",
+    "component": "D:\\\\Projects\\\\abeille-ui\\\\pages\\\\index.vue",
     "chunkName": "pages/index",
-    "_name": "_5aab9919"
+    "_name": "_49b6fa2d"
   }
 ]
