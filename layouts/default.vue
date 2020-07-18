@@ -13,13 +13,14 @@
       <v-list color="white" shaped>
         <v-list-item
           v-for="(item, index) in items"
-          :key="index"
+          :key="`drawer-${index}`"
           :to="item.path"
           :exact="item.name === 'home'"
           color="primary"
+          nuxt
         >
           <v-list-item-content>
-            <v-list-item-title v-text="item.name" />
+            <v-list-item-title class="text-uppercase" v-text="item.name" />
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -35,7 +36,7 @@
         <v-tabs class="hidden-sm-and-down" optional>
           <v-tab
             v-for="(item, index) in items"
-            :key="index"
+            :key="`tab-${index}`"
             :to="item.path"
             :exact="item.name === 'home'"
             :ripple="false"
@@ -65,18 +66,18 @@
         <v-row>
           <v-col cols="12" md="6">
             <div class="d-flex flex-wrap justify-md-start justify-center justify-md-none">
-              <template v-for="(s, i) in social">
+              <template v-for="(text, index) in social">
                 <a
-                  :key="s"
+                  :key="`tab-${index}`"
                   class="white--text pa-1 pa-md-0"
                   href="#"
                   style="text-decoration: none"
-                  v-text="s"
+                  v-text="text"
                 />
 
                 <v-responsive
-                  v-if="i < social.length - 1"
-                  :key="`divider-${s}`"
+                  v-if="index + 1 < social.length"
+                  :key="`divider-vertical=${index}`"
                   class="mx-4 shrink hidden-sm-and-down"
                   max-height="24"
                 >

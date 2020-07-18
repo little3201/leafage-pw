@@ -10,7 +10,7 @@
           <v-divider class="mb-6 primary divider-under" />
           <v-list>
             <template v-for="(item, index) in items">
-              <v-list-item :key="item.title">
+              <v-list-item :key="index">
                 <v-list-item-icon>
                   <v-icon large class="my-4" v-text="item.icon" />
                 </v-list-item-icon>
@@ -21,7 +21,7 @@
 
               <v-divider
                 v-if="index + 1 < items.length"
-                :key="index"
+                :key="`divider-${index}`"
               />
             </template>
           </v-list>

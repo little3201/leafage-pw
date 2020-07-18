@@ -1,5 +1,5 @@
 {
-  "name": "abeille-ui",
+  "name": "abeille",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -30,5 +30,22 @@
     "eslint-plugin-nuxt": "^1.0.0",
     "jest": "^26.0.1",
     "vue-jest": "^3.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/little3201/abeille-ui.git"
+  },
+  "keywords": [
+    "nuxt.js",
+    "vuejs",
+    "nextjs",
+    "js",
+    "abeille",
+    "布吉岛"
+  ],
+  "author": "李文强",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/little3201/abeille-ui/issues"
   }
 }
