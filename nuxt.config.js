@@ -35,6 +35,7 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    '~/plugins/axios'
   ],
   /*
   ** Auto import components
@@ -64,7 +65,8 @@ export default {
   */
   axios: {
     https: true,
-    // prefix: '/api'
+    baseURL: 'http://abeile.top',
+    prefix: '/api'
   },
   /*
   ** Content module configuration

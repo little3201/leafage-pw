@@ -5,9 +5,7 @@ import scrollBehavior from './router.scrollBehavior.js'
 
 const _29ff1f68 = () => interopDefault(import('..\\pages\\about.vue' /* webpackChunkName: "pages/about" */))
 const _682a35d2 = () => interopDefault(import('..\\pages\\blog.vue' /* webpackChunkName: "pages/blog" */))
-const _a8b1ad30 = () => interopDefault(import('..\\pages\\blog\\detail.vue' /* webpackChunkName: "pages/blog/detail" */))
 const _ad9c8c8a = () => interopDefault(import('..\\pages\\contact.vue' /* webpackChunkName: "pages/contact" */))
-const _53427858 = () => interopDefault(import('..\\pages\\home.vue' /* webpackChunkName: "pages/home" */))
 const _14c21223 = () => interopDefault(import('..\\pages\\portfolio.vue' /* webpackChunkName: "pages/portfolio" */))
 const _49b6fa2d = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 
@@ -34,20 +32,11 @@ export const routerOptions = {
   }, {
     path: "/blog",
     component: _682a35d2,
-    name: "blog",
-    children: [{
-      path: "detail",
-      component: _a8b1ad30,
-      name: "blog-detail"
-    }]
+    name: "blog"
   }, {
     path: "/contact",
     component: _ad9c8c8a,
     name: "contact"
-  }, {
-    path: "/home",
-    component: _53427858,
-    name: "home"
   }, {
     path: "/portfolio",
     component: _14c21223,

@@ -17,6 +17,7 @@
                 :src="require(`${item.imageUrl}?imageMogr2/thumbnail/640x640/interlace/1/blur/1x0/quality/100.jpg`)"
                 height="245"
                 max-width="100%"
+                alt="{ item.title }"
               >
                 <v-expand-transition>
                   <div
@@ -50,29 +51,20 @@
 </template>
 
 <script>
-import { retrieveArticleFunc } from '~/assets/api/method'
+import { SERVER_URL } from '~/assets/script/request'
 
 export default {
   name: 'SectionProfiles',
 
-  async asyncData ({ $axios }) {
-    const items = await retrieveArticle ()
-    debugger
-    return { items }
-  },
+  data: () => ({
+    items: []
+  }),
 
-  methods: {
-    retrieveArticle () {
-     retrieveArticleFunc().then(
-       response => {
-         // imageUrl处理imageMogr2/thumbnail/640x640/interlace/1/blur/1x0/quality/100
-         return response.data
-       },
-       error => {
-         return error
-       }
-     )
-    }
+  async asyncData ({ $axios }) {
+    const data = await $axios.$get(SERVER_URL.article)
+    console.log(data)
+    return { items: data }
   }
+
 }
 </script>

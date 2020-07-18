@@ -5,23 +5,11 @@
   "LazyAboutMe": {
     "description": "Auto imported from components/sections/AboutMe.vue"
   },
-  "ContactBase": {
-    "description": "Auto imported from components/sections/ContactBase.vue"
-  },
-  "LazyContactBase": {
-    "description": "Auto imported from components/sections/ContactBase.vue"
-  },
   "ContactForm": {
     "description": "Auto imported from components/sections/ContactForm.vue"
   },
   "LazyContactForm": {
     "description": "Auto imported from components/sections/ContactForm.vue"
-  },
-  "ContactUs": {
-    "description": "Auto imported from components/sections/ContactUs.vue"
-  },
-  "LazyContactUs": {
-    "description": "Auto imported from components/sections/ContactUs.vue"
   },
   "Features": {
     "description": "Auto imported from components/sections/Features.vue"

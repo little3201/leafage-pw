@@ -3,9 +3,7 @@
     id="features"
     class="grey lighten-3"
   >
-    <div class="py-12"></div>
-
-    <v-container class="text-center">
+    <v-container class="text-center py-10">
       <h2 class="text-h3 font-weight-bold mb-3">FEATURES</h2>
 
       <v-responsive
@@ -57,8 +55,6 @@
         </v-col>
       </v-row>
     </v-container>
-
-    <div class="py-12"></div>
   </section>
 </template>
 

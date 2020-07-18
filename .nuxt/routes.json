@@ -11,15 +11,6 @@
     "path": "/blog",
     "component": "D:\\\\Projects\\\\abeille-ui\\\\pages\\\\blog.vue",
     "chunkName": "pages/blog",
-    "children": [
-      {
-        "name": "blog-detail",
-        "path": "detail",
-        "component": "D:\\\\Projects\\\\abeille-ui\\\\pages\\\\blog\\\\detail.vue",
-        "chunkName": "pages/blog/detail",
-        "_name": "_a8b1ad30"
-      }
-    ],
     "_name": "_682a35d2"
   },
   {
@@ -28,13 +19,6 @@
     "component": "D:\\\\Projects\\\\abeille-ui\\\\pages\\\\contact.vue",
     "chunkName": "pages/contact",
     "_name": "_ad9c8c8a"
-  },
-  {
-    "name": "home",
-    "path": "/home",
-    "component": "D:\\\\Projects\\\\abeille-ui\\\\pages\\\\home.vue",
-    "chunkName": "pages/home",
-    "_name": "_53427858"
   },
   {
     "name": "portfolio",

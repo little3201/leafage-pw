@@ -1,19 +1,18 @@
 <template>
   <section
     id="social"
-    class="text-center"
-    space="56"
+    class="text-center mb-6"
   >
+    <v-icon class="mx-6" size="56">
+      mdi-wechat
+    </v-icon>
+
     <v-icon class="mx-6" size="56">
       mdi-github
     </v-icon>
-    
+
     <v-icon class="mx-6" size="56">
-      mdi-twitter
-    </v-icon>
-    
-    <v-icon class="mx-6" size="56">
-      mdi-wechat
+      mdi-qqchat
     </v-icon>
   </section>
 </template>
