@@ -70,3 +70,7 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+<a href="https://github.com/little3201/abeille-ui/blob/develop/LICENSE">
+  <h2>MIT</h2>
+</a>
