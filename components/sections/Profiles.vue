@@ -33,13 +33,13 @@
             <h3
               class="font-weight-black text-truncate"
               v-text="item.title"
-            ></h3>
+            />
 
             <v-btn
+              v-if="item"
               class="ml-n4 font-weight-black"
               text
               :to="'/blog/detail/' + item.businessId"
-              v-if="item"
             >
               点击阅读
             </v-btn>
@@ -56,15 +56,13 @@ import { SERVER_URL } from '~/assets/script/request'
 export default {
   name: 'SectionProfiles',
 
+  async asyncData ({ $axios }) {
+    const { datas } = await $axios.$get(SERVER_URL.article)
+    return { items: datas }
+  },
+
   data: () => ({
     items: []
-  }),
-
-  async asyncData ({ $axios }) {
-    const data = await $axios.$get(SERVER_URL.article)
-    console.log(data)
-    return { items: data }
-  }
-
+  })
 }
 </script>

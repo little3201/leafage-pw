@@ -43,7 +43,9 @@
             class="font-weight-bold"
             min-width="96"
             text
-          >{{ item.name }}</v-tab>
+          >
+            {{ item.name }}
+          </v-tab>
         </v-tabs>
       </div>
 
@@ -96,20 +98,20 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       drawer: false,
       items: [
-        { name: "home", path: "/" },
-        { name: "blog", path: "/blog" },
-        { name: "portfolio", path: "/portfolio" },
-        { name: "about", path: "/about" },
-        { name: "contact", path: "/contact" }
+        { name: 'home', path: '/' },
+        { name: 'blog', path: '/blog' },
+        { name: 'portfolio', path: '/portfolio' },
+        { name: 'about', path: '/about' },
+        { name: 'contact', path: '/contact' }
       ],
-      social: ["Github", "Gitee", "Wechat", "Weibo"]
-    };
+      social: ['Github', 'Gitee', 'Wechat', 'Weibo']
+    }
   }
-};
+}
 </script>
 
 <style lang="sass">

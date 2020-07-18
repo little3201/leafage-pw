@@ -1,45 +1,25 @@
-export default function ({ $axios, redirect }) {
-  $axios.interceptors.request.use(
-    config => {
-      // do something before request is sent
-      return config
-    },
-    error => {
-      // do something with request error
-      return Promise.reject(error)
-    }
-  )
+const httpCode = {
+  400: '请求参数错误',
+  401: '权限不足, 请重新登录',
+  403: '服务器拒绝本次访问',
+  500: '内部服务器错误',
+  501: '服务器不支持该请求中使用的方法',
+  502: '网关错误',
+  504: '网关超时'
+}
 
-  $axios.onRequest(config => {
-    console.log('Making request to ' + config.url)
+export default function ({ $axios, redirect }) {
+  $axios.onRequest((config) => {
+    return config
   })
 
-
-  $axios.interceptors.response.use(
-    /**
-     * Determine the request status by custom code
-     * Here is just an example
-     * You can also judge the status by HTTP Status Code
-     */
-    response => {
-      const res = response.data
-      if (res.code === 200) {
-        return res
-      } else {
-        redirect('/404')
-        // if the custom code is not 200, it is judged as an error.
-      }
-      return Promise.reject(new Error(res.msg || 'Error'))
-    },
-    error => {
-      console.log('err' + error) // for debug
-
-      return Promise.reject(error)
-    }
-  )
-
-  $axios.onError(error => {
+  $axios.onError((error) => {
     const code = parseInt(error.response && error.response.status)
-    return error
+    if (code === 404) {
+      redirect('/404')
+    } else {
+      error.statusText = code in httpCode ? httpCode[error.status] : '网路可能有点堵，再试一下。'
+      return error
+    }
   })
 }

@@ -1,5 +1,5 @@
 <template>
-   <section id="hero">
+  <section id="hero">
     <v-row no-gutters>
       <v-img
         :height="'calc(100vh - ' + $vuetify.application.top + 'px)'"

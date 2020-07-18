@@ -16,12 +16,12 @@
               <div
                 class="text-h2 font-weight-black mb-4"
                 v-text="value"
-              ></div>
+              />
 
               <div
                 class="title font-weight-regular text-uppercase"
                 v-text="title"
-              ></div>
+              />
             </div>
           </v-col>
         </v-row>

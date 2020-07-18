@@ -1,15 +1,16 @@
 <template>
   <section id="about-me">
     <v-container class="text-center my-8">
-      <h2 class="text-h3 font-weight-bold mb-3">ABOUT ME</h2>
-
+      <h2 class="text-h3 font-weight-bold mb-3">
+        ABOUT ME
+      </h2>
       <v-responsive
         class="mx-auto mb-8"
         width="56"
       >
-        <v-divider class="mb-1"></v-divider>
+        <v-divider class="mb-1" />
 
-        <v-divider></v-divider>
+        <v-divider />
       </v-responsive>
 
       <v-responsive
@@ -24,9 +25,8 @@
         class="elevation-12 mb-12"
         size="128"
       >
-        <v-img src="https://avatars3.githubusercontent.com/u/34156125?s=400&v=4"></v-img>
+        <v-img src="https://avatars3.githubusercontent.com/u/34156125?s=400&v=4" />
       </v-avatar>
-
     </v-container>
   </section>
 </template>

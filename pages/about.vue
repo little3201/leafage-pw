@@ -8,7 +8,7 @@
 <script>
 import AboutMe from '~/components/sections/AboutMe.vue'
 import Social from '~/components/sections/Social.vue'
-  
+
 export default {
   components: {
     AboutMe,
@@ -16,4 +16,3 @@ export default {
   }
 }
 </script>
-

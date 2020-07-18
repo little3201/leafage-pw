@@ -4,15 +4,17 @@
     class="grey lighten-3"
   >
     <v-container class="text-center py-10">
-      <h2 class="text-h3 font-weight-bold mb-3">FEATURES</h2>
+      <h2 class="text-h3 font-weight-bold mb-3">
+        FEATURES
+      </h2>
 
       <v-responsive
         class="mx-auto mb-12"
         width="56"
       >
-        <v-divider class="mb-1"></v-divider>
+        <v-divider class="mb-1" />
 
-        <v-divider></v-divider>
+        <v-divider />
       </v-responsive>
 
       <v-row>
@@ -36,7 +38,7 @@
                   <v-icon
                     large
                     v-text="icon"
-                  ></v-icon>
+                  />
                 </v-avatar>
               </div>
             </v-theme-provider>
@@ -44,13 +46,12 @@
             <v-card-title
               class="justify-center font-weight-black text-uppercase"
               v-text="title"
-            ></v-card-title>
+            />
 
             <v-card-text
               class="text-subtitle-1"
               v-text="text"
-            >
-            </v-card-text>
+            />
           </v-card>
         </v-col>
       </v-row>
