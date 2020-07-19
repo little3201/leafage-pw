@@ -89,7 +89,7 @@ export default {
       {
         icon: 'mdi-email',
         title: 'Email',
-        text: 'little3201@gmail.com little3201@163.com'
+        text: 'little3201@163.com'
       },
       {
         icon: 'mdi-wechat',

@@ -66,7 +66,7 @@ export default {
   */
   axios: {
     https: true,
-    baseURL: 'http://abeile.top',
+    baseURL: 'http://abeille.top',
     prefix: '/api'
   },
   /*

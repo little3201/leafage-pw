@@ -51,18 +51,19 @@
 </template>
 
 <script>
-import { SERVER_URL } from '~/assets/script/request'
 
 export default {
   name: 'SectionProfiles',
 
-  async asyncData ({ $axios }) {
-    const { datas } = await $axios.$get(SERVER_URL.article)
-    return { items: datas }
+  props: {
+    datas: {
+      type: Array,
+      default: () => []
+    }
   },
 
   data: () => ({
-    items: []
+    items: this.datas
   })
 }
 </script>

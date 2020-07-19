@@ -25,7 +25,7 @@
         class="elevation-12 mb-12"
         size="128"
       >
-        <v-img src="https://avatars3.githubusercontent.com/u/34156125?s=400&v=4" />
+        <v-img src="images/avatar.jpg" />
       </v-avatar>
     </v-container>
   </section>
