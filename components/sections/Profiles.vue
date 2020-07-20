@@ -7,7 +7,7 @@
       <v-container>
         <v-row>
           <v-col
-            v-for="(item, i) in items"
+            v-for="(item, i) in datas"
             :key="i"
             cols="12"
             md="4"
@@ -40,6 +40,7 @@
               class="ml-n4 font-weight-black"
               text
               :to="'/blog/detail/' + item.businessId"
+              nuxt
             >
               点击阅读
             </v-btn>
@@ -60,10 +61,6 @@ export default {
       type: Array,
       default: () => []
     }
-  },
-
-  data: () => ({
-    items: this.datas
-  })
+  }
 }
 </script>

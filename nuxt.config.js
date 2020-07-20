@@ -66,8 +66,7 @@ export default {
   */
   axios: {
     https: true,
-    baseURL: 'http://abeille.top',
-    prefix: '/api'
+    baseURL: 'http://abeille.top/api'
   },
   /*
   ** Content module configuration

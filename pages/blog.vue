@@ -1,6 +1,6 @@
 <template>
   <v-container fluid class="pa-0">
-    <profiles :datas="items" />
+    <profiles :datas.sync="datas" />
   </v-container>
 </template>
 
@@ -14,10 +14,8 @@ export default {
   },
 
   async asyncData ({ $axios }) {
-    console.log($axios)
     const datas = await $axios.$get(SERVER_URL.article)
-    console.log(datas)
-    return { items: datas }
+    return { datas }
   }
 }
 </script>
