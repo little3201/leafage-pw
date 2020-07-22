@@ -94,6 +94,13 @@ export default {
     }
   },
   /*
+  ** nuxt loading configuration
+  ** https://zh.nuxtjs.org/api/configuration-loading/
+  */
+  loading: {
+    color: '#FF6F00'
+  },
+  /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
   */

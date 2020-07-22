@@ -1,6 +1,6 @@
 <template>
   <v-container fluid class="pa-0">
-    <profiles :datas.sync="datas" />
+    <profiles :datas="datas" />
   </v-container>
 </template>
 
