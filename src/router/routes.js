@@ -1,12 +1,12 @@
 export default [
   {
     path: '/',
-    component: () => import('@/layouts/home/Index.vue'),
+    component: () => import('@/layouts/Index.vue'),
     children: [
       {
         path: '',
         name: 'Home',
-        component: () => import('@/views/home/Index.vue')
+        component: () => import('@/views/Index.vue')
       },
       {
         path: 'blog',
@@ -30,25 +30,25 @@ export default [
       {
         path: 'portfolio',
         name: 'Portfolio',
-        component: () => import('@/views/portfolio/Index.vue'),
+        component: () => import('@/views/Portfolio.vue'),
         meta: { src: require('@/assets/portfolio.jpg') }
       },
       {
         path: 'about',
         name: 'About',
-        component: () => import('@/views/about/Index.vue'),
+        component: () => import('@/views/About.vue'),
         meta: { src: require('@/assets/about.jpg') }
       },
       {
         path: 'contact',
         name: 'Contact',
-        component: () => import('@/views/contact-us/Index.vue'),
+        component: () => import('@/views/Contact.vue'),
         meta: { src: require('@/assets/contact.jpg') }
       },
       {
         path: '*',
         name: 'FourOhFour',
-        component: () => import('@/views/404/Index.vue')
+        component: () => import('@/views/Exception.vue')
       }
     ]
   }

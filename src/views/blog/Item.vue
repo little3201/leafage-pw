@@ -1,36 +1,37 @@
-<script>
-// Extensions
-import View from '@/views/View'
+<template>
+  <v-container fluid class="pa-0">
+    <profiles :datas.sync="datas" />
+  </v-container>
+</template>
 
-// Mixins
-import LoadSections from '@/mixins/load-sections'
+<script>
+import { retrieveArticleFunc } from '@/api/method'
+import Profiles from '@/components/sections/Profiles.vue'
 
 export default {
-  name: 'Blog',
-
-  metaInfo: {
-    title: 'Blog，博客文章',
-    meta: [
-      { name: 'keywords', content: 'abeille, blog, 博客, 高质量, 原创' },
-      { name: 'description', content: '高质量、原创文章，包括Java、Vue、Go' }
-    ]
+  components: {
+    Profiles
   },
 
-  extends: View,
+  data: () => ({
+    datas: []
+  }),
 
-  mixins: [
-    LoadSections([
-      'hero-alt',
-      'profiles',
-      'newsletter',
-      'info'
-    ])
-  ],
+  created () {
+    this.retrieveArticle()
+  },
 
-  props: {
-    id: {
-      type: String,
-      default: 'blog'
+  methods: {
+    retrieveArticle () {
+      retrieveArticleFunc().then(
+        response => {
+          // imageUrl处理imageMogr2/thumbnail/640x640/interlace/1/blur/1x0/quality/100
+          this.items = response.data
+        },
+        error => {
+          alert(error.statusText)
+        }
+      )
     }
   }
 }
