@@ -39,7 +39,7 @@
               v-if="item"
               class="ml-n4 font-weight-black"
               text
-              :to="'/blog/detail/' + item.businessId"
+              :to="'/blog/' + item.businessId"
               nuxt
             >
               点击阅读

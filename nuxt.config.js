@@ -79,6 +79,9 @@ export default {
   */
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    lang: {
+      t: (key, ...params) => i18n.t(key, params)
+    },
     theme: {
       themes: {
         dark: {

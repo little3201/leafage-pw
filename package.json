@@ -29,6 +29,7 @@
     "eslint": "^7.2.0",
     "eslint-plugin-nuxt": "^1.0.0",
     "jest": "^26.0.1",
+    "vue-i18n": "^8.18.2",
     "vue-jest": "^3.0.4"
   },
   "repository": {
