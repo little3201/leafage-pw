@@ -4,7 +4,7 @@
     class="grey lighten-3"
   >
     <v-container class="text-center py-10">
-      <h2 class="text-h3 font-weight-bold mb-3">
+      <h2 class="font-weight-bold mb-3">
         FEATURES
       </h2>
 

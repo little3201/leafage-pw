@@ -14,7 +14,7 @@
         >
           <h1>{{ data.title }}</h1>
           <p class="mt-3">
-            <strong v-if="data.author != null">作者：</strong> {{ data.author == null ? '' : data.author.nickname }}
+            <strong v-if="data.author">作者：</strong> {{ data.author ? data.author.nickname : '' }}
           </p>
         </v-img>
       </v-row>
@@ -31,12 +31,17 @@
 </template>
 
 <script>
+import { SERVER_URL } from '~/assets/script/request'
+
 export default {
-  props: {
-    data: {
-      type: Object,
-      default: undefined
-    }
+  validate ({ params }) {
+    // 必须是number类型
+    return /^\d+$/.test(params.id)
+  },
+
+  async asyncData ({ $axios, $route }) {
+    const data = await $axios.$get(SERVER_URL.article.cont($route.params.id))
+    return { data }
   }
 }
 </script>
