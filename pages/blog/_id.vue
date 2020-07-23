@@ -4,7 +4,6 @@
       <v-row justify="center" align="start" class="ma-0">
         <v-img
           :height="$vuetify.breakpoint.mdAndUp ? 350 : 225"
-          :gradient="gradient"
           :src="data.imageUrl+'?imageMogr2/auto-orient/thumbnail/!x50p/interlace/1/blur/1x0/quality/100'"
           color="#45516b"
           flat
