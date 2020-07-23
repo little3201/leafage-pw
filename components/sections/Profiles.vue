@@ -39,7 +39,7 @@
               v-if="item"
               class="ml-n4 font-weight-black"
               text
-              :to="'/blog/' + item.businessId"
+              :to="'/blog/detail/' + item.businessId"
               nuxt
             >
               点击阅读
@@ -72,4 +72,5 @@ export default {
   justify-content: center
   opacity: .5
   position: absolute
+  width: 100%
 </style>

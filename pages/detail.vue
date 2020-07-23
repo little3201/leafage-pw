@@ -20,9 +20,9 @@
       <v-row justify="center" align="start" class="my-0 mx-auto">
         <v-col cols="12" md="8">
           <p v-html="data.content" />
-          <!-- 上一篇：{{ detail.previous.title }} -->
+          <!-- 上一篇：{{ data.previous.title }} -->
           <v-divider />
-          <!-- 下一篇：{{ detail.next.title }} -->
+          <!-- 下一篇：{{ data.next.title }} -->
         </v-col>
       </v-row>
     </v-responsive>

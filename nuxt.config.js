@@ -78,6 +78,7 @@ export default {
   ** https://github.com/nuxt-community/vuetify-module
   */
   vuetify: {
+    treeShake: true,
     customVariables: ['~/assets/variables.scss'],
     lang: {
       t: (key, ...params) => i18n.t(key, params)
