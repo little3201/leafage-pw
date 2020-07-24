@@ -17,7 +17,7 @@
                 :src="item.imageUrl+'?imageMogr2/thumbnail/640x640/interlace/1/blur/1x0/quality/100'"
                 height="245"
                 max-width="100%"
-                alt="item.title"
+                :alt="item.title"
               >
                 <v-expand-transition>
                   <div
@@ -70,7 +70,7 @@ export default {
   align-items: center
   bottom: 0
   justify-content: center
-  opacity: .5
+  opacity: .8
   position: absolute
   width: 100%
 </style>
