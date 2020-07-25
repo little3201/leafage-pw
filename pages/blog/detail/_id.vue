@@ -33,13 +33,8 @@
 import { SERVER_URL } from '~/assets/script/request'
 
 export default {
-  validate ({ params }) {
-    // 必须是number类型
-    return /^\d+$/.test(params.id)
-  },
-
-  async asyncData ({ $axios, $route }) {
-    const data = await $axios.$get(SERVER_URL.article.cont($route.params.id))
+  async asyncData ({ $axios, params }) {
+    const data = await $axios.$get(SERVER_URL.article.concat('/').concat(params.id))
     return { data }
   }
 }
