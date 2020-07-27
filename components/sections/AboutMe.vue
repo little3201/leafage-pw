@@ -25,7 +25,7 @@
         class="elevation-12 mb-12"
         size="128"
       >
-        <v-img src="images/avatar.jpg" />
+        <v-img src="images/avatar.jpg" alt="abeille" />
       </v-avatar>
     </v-container>
   </section>

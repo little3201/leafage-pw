@@ -8,6 +8,7 @@
         color="#45516b"
         max-width="100%"
         class="text-center white--text align-center"
+        :alt="data.title"
       >
         <h1>{{ data.title }}</h1>
         <h3 class="mt-3">
