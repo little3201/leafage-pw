@@ -96,6 +96,28 @@ export default {
     }
   },
   /*
+  ** nuxt prismjs configuration
+  ** https://zh.nuxtjs.org/api/configuration-loading/
+  */
+  prismjs: {
+    languages: [
+      'html',
+      'css',
+      'javascript',
+      'bash',
+      'nginx',
+      'sql',
+      'java'
+    ],
+    plugins: [
+      'line-numbers',
+      'show-language',
+      'copy-to-clipboard'
+    ],
+    theme: 'coy',
+    css: true
+  },
+  /*
   ** nuxt loading configuration
   ** https://zh.nuxtjs.org/api/configuration-loading/
   */
