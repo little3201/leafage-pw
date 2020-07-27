@@ -80,6 +80,7 @@ export default {
   */
   vuetify: {
     treeShake: true,
+    extractCSS: true,
     customVariables: ['~/assets/variables.scss'],
     lang: {
       t: (key, ...params) => i18n.t(key, params)
