@@ -17,8 +17,6 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'keywords', content: 'abeille, 布吉岛' },
-      { name: 'baidu-site-verification', content: 'cgExCs4VEB' },
       { name: 'msvalidate.01', content: 'E02DDF417CA7C7D33A55805B3E9A81C7' },
       { name: 'google-site-verification', content: 'ph8yiMtTCaq7CbTlp0ut2JvjqhpAZE4QPCbNBgaDcwQ' }
     ],

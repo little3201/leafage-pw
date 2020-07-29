@@ -36,13 +36,6 @@
     "type": "git",
     "url": "git+https://github.com/little3201/abeille-ui.git"
   },
-  "keywords": [
-    "nuxt.js",
-    "vuejs",
-    "js",
-    "abeille",
-    "布吉岛"
-  ],
   "author": "李文强",
   "license": "MIT",
   "bugs": {

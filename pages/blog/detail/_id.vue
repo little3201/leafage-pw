@@ -46,6 +46,15 @@ export default {
       const overlay = RGBAtoCSS(HexToRGBA(color))
       return `to top, ${overlay}, ${overlay}`
     }
+  },
+
+  head () {
+    return {
+      title: 'Abeille-布吉岛，一座永不沉没的网络小岛',
+      meta: [
+        { hid: 'keywords', name: 'keywords', content: data.title }
+      ]
+    }
   }
 }
 </script>
