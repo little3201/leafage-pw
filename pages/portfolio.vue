@@ -33,9 +33,9 @@ export default {
 
   head () {
     return {
-      title: 'Abeille-布吉岛，一座永不沉没的网络小岛',
+      title: 'Portfolio - Abeille | 布吉岛',
       meta: [
-        { hid: 'keywords', name: 'keywords', content: 'abeille, 布吉岛, portfolio, 作品集' }
+        { hid: 'description', name: 'description', content: 'Portfolio of Abeille' }
       ]
     }
   }

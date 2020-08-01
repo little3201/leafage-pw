@@ -17,7 +17,7 @@ export default {
 
   head () {
     return {
-      title: 'Abeille-布吉岛，一座永不沉没的网络小岛',
+      title: 'About - abeille | 布吉岛',
       meta: [
         { hid: 'keywords', name: 'keywords', content: 'abeille, 布吉岛, about, 关于' }
       ]
