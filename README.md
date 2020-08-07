@@ -3,7 +3,7 @@
 
 <p align="center">
   <a href="https://abeille.top" target="_blank">
-    <img alt="Abeille Logo" width="100" src="https://github.com/little3201/abeille-ui/blob/master/src/assets/logo.svg">
+    <img alt="Abeille Logo" width="100" src="https://gitee.com/puket/abeille-ui/blob/master/src/assets/logo.svg">
   </a>
 </p>
 
@@ -46,45 +46,30 @@ Abeille，一个基于微服务架构的前后端分离的个人网站，包含�
 
 |         技术          |           说明            |                             链接                             |
 | :-------------------: | :-----------------------: | :----------------------------------------------------------: |
-|        Vue.js         |         前端框架          |                      https://vuejs.org/                      |
-|      Vue-router       |         路由框架          |                  https://router.vuejs.org/                   |
-|         Vuex          |     全局状态管理框架       |                   https://vuex.vuejs.org/                     |
-|        Vuetify        |        前端ui框架         |  [ https://vuetifyjs.com/](https://https://vuetifyjs.com//)   |
-|         Axios         |       前端HTTP框架        |     [ https://github.com/axios](https://github.com/axios/)    |
-|         Mixins        |       前端HTTP框架        |     [ https://github.com/axios](https://cn.vuejs.org/v2/guide/mixins.html/)    |
+|        Vue.js         |         开发框架           |         [https://vuejs.org/](https://vuejs.org/)             |
+|        Nuxt.js        |         SSR优化           |        [https://zh.nuxtjs.org/](https://zh.nuxtjs.org/)       |
+|        Vuetify        |        前端ui框架          |   [https://vuetifyjs.com/](https://https://vuetifyjs.com//)  |
+|         Axios         |       前端HTTP框架         |     [https://github.com/axios](https://github.com/axios/)    |
 
 
+## Build Setup
 
-基于Vue 和 vuetify 组件库
+```bash
+# install dependencies
+$ yarn install
 
-## Project setup
-```
-pnpm install
-```
+# serve with hot reload at localhost:3000
+$ yarn dev
 
-### Compiles and hot-reloads for development
-```
-pnpm run serve
-```
+# build for production and launch server
+$ yarn build
+$ yarn start
 
-### Compiles and minifies for production
-```
-pnpm run build
-```
-
-### Run your unit tests
-```
-pnpm run test:unit
+# export static project
+$ yarn export
 ```
 
-### Lints and fixes files
-```
-pnpm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
 <a href="https://github.com/little3201/abeille-ui/blob/develop/LICENSE">
   <h2>MIT</h2>
