@@ -66,17 +66,17 @@
         <v-row>
           <v-col cols="12" md="6">
             <div class="d-flex flex-wrap justify-md-start justify-center justify-md-none">
-              <template v-for="(text, index) in social">
+              <template v-for="(social, index) in socials">
                 <a
                   :key="`tab-${index}`"
                   class="white--text pa-1 pa-md-0"
-                  href="#"
+                  :href="social.path"
                   style="text-decoration: none"
-                  v-text="text"
+                  v-text="social.name"
                 />
 
                 <v-responsive
-                  v-if="index + 1 < social.length"
+                  v-if="index + 1 < socials.length"
                   :key="`divider-vertical=${index}`"
                   class="mx-4 shrink hidden-sm-and-down"
                   max-height="24"
@@ -109,7 +109,15 @@ export default {
         { name: 'about', path: '/about' },
         { name: 'contact', path: '/contact' }
       ],
-      social: ['Github', 'Gitee', 'Wechat', 'Weibo']
+      socials: [
+        { name: 'Github', path: 'https://github.com/little3201' },
+        { name: 'Gitee', path: 'https://gitee.com/little3201' },
+        { name: 'CSDN', path: 'https://blog.csdn.net/zx110503' },
+        { name: 'Segmentfault', path: 'https://segmentfault.com/u/bujidao_5d0c24ce7055e/articles' },
+        { name: '掘金', path: 'https://juejin.im/user/184373686838312/posts' },
+        { name: '简书', path: 'https://www.jianshu.com/u/64a4c0e96b80' },
+        { name: '知乎', path: 'https://www.zhihu.com/people/bu-ji-dao-27-28/posts' }
+      ]
     }
   }
 }
