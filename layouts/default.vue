@@ -72,6 +72,7 @@
                   class="white--text pa-1 pa-md-0"
                   :href="social.path"
                   style="text-decoration: none"
+                  target="_blank"
                   v-text="social.name"
                 />
 
