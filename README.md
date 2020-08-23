@@ -3,7 +3,7 @@
 
 <p align="center">
   <a href="https://abeille.top" target="_blank">
-    <img alt="Abeille Logo" width="100" src="https://gitee.com/puket/abeille-ui/blob/master/src/assets/logo.svg">
+    <img alt="Abeille Logo" width="100" src="static/images/logo.svg">
   </a>
 </p>
 
@@ -24,11 +24,17 @@ Abeille，一个基于微服务架构的前后端分离的个人网站，包含�
 
 作为一个后端开发程序猿，无奈找了很久没有好看的博客系统，只能自己写了。加油吧！！！
 
-## 项目展示
+### 项目展示
 
 站点地址：https://abeille.top
 
-## 项目地址
+### 展示截图
+
+![image](https://github.com/little3201/abeille-ui/blob/nuxt/images/home.png)
+![image](https://github.com/little3201/abeille-ui/blob/nuxt/images/blog.png)
+![image](https://github.com/little3201/abeille-ui/blob/nuxt/images/detail.png)
+
+### 项目地址
 
 目前项目托管在Gitee和Github平台上中，欢迎大家star 和 fork 支持~
 
@@ -37,9 +43,9 @@ Abeille，一个基于微服务架构的前后端分离的个人网站，包含�
 
 ## FAQ文档
 
-[FAQ文档](./FAQ) 开发中。
+[FAQ文档](FAQ.md) 开发中。
 
-如果你遇到了 [FAQ文档](./FAQ) 中没有出现的问题，并且已经解决了，欢迎联系我进行修改。
+如果你遇到了 [FAQ文档](FAQ.md) 中没有出现的问题，并且已经解决了，欢迎联系我进行修改。
 
 
 ### 前端技术
@@ -65,8 +71,8 @@ $ yarn dev
 $ yarn build
 $ yarn start
 
-# export static project
-$ yarn export
+# generate static project
+$ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
