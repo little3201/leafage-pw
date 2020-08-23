@@ -3,7 +3,7 @@
 
 <p align="center">
   <a href="https://abeille.top" target="_blank">
-    <img alt="Abeille Logo" width="100" src="https://gitee.com/puket/abeille-ui/blob/master/src/assets/logo.svg">
+    <img alt="Abeille Logo" width="100" src="static/images/logo.svg">
   </a>
 </p>
 
@@ -27,6 +27,12 @@ Abeille，一个基于微服务架构的前后端分离的个人网站，包含�
 ## 项目展示
 
 站点地址：https://abeille.top
+
+## 展示截图
+
+![image](https://github.com/little3201/abeille-ui/blob/nuxt/images/home.png)
+![image](https://github.com/little3201/abeille-ui/blob/nuxt/images/blog.png)
+![image](https://github.com/little3201/abeille-ui/blob/nuxt/images/detail.png)
 
 ## 项目地址
 
@@ -65,8 +71,8 @@ $ yarn dev
 $ yarn build
 $ yarn start
 
-# export static project
-$ yarn export
+# generate static project
+$ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
