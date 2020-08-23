@@ -3,7 +3,7 @@
 
 <p align="center">
   <a href="https://abeille.top" target="_blank">
-    <img alt="Abeille Logo" width="100" src="static/images/logo.svg">
+    ![image](https://github.com/little3201/abeille-ui/nuxt/images/home.png)
   </a>
 </p>
 
