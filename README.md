@@ -8,8 +8,7 @@
 </p>
 
 <p align="center">
-  <br>
-  <a href="https://github.com/little3201/abeille-ui/blob/develop/LICENSE">
+  <a href="https://github.com/little3201/abeille-ui/blob/master/LICENSE">
     <img src="https://img.shields.io/github/license/little3201/abeille-ui.svg" alt="License">
   </a>
 </p>
@@ -40,9 +39,9 @@ Abeille，一个基于微服务架构的前后端分离的个人网站，包含�
 
 ### 展示截图
 
-![image](https://github.com/little3201/abeille-ui/blob/nuxt/images/home.png)
-![image](https://github.com/little3201/abeille-ui/blob/nuxt/images/blog.png)
-![image](https://github.com/little3201/abeille-ui/blob/nuxt/images/detail.png)
+<img alt="Abeille Home" width="100%" src="static/images/home.png">
+<img alt="Abeille Blog" width="100%" src="static/images/blog.png">
+<img alt="Abeille Blog Detail" width="100%" src="static/images/detail.png">
 
 ### 项目地址
 
