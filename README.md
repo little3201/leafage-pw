@@ -8,7 +8,6 @@
 </p>
 
 <p align="center">
-  <br>
   <a href="https://github.com/little3201/abeille-ui/blob/master/LICENSE">
     <img src="https://img.shields.io/github/license/little3201/abeille-ui.svg" alt="License">
   </a>
