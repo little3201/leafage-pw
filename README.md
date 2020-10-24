@@ -36,7 +36,7 @@ Abeille，一个基于微服务架构的前后端分离的个人网站，包含�
 
 ### 展示截图
 
-<img alt="Abeille Home" width="100%" src="static/images/hero.jpg">
+<img alt="Abeille Home" width="100%" src="static/images/hero.png">
 
 ### 项目地址
 
