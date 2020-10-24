@@ -42,18 +42,24 @@
               id="hide-after-click"
               href="#about"
               class="mx-4 text-lg border-b-2 border-transparent hover:border-b-2 hover:border-indigo-300 transition duration-500"
-              >About</a
-            >
+              >Portfilio
+            </a>
             <a
               href="#whyus"
               class="mx-4 text-lg border-b-2 border-transparent hover:border-b-2 hover:border-indigo-300 transition duration-500"
-              >Why Us ?</a
-            >
+              >Record
+            </a>
+            <a
+              id="hide-after-click"
+              href="#about"
+              class="mx-4 text-lg border-b-2 border-transparent hover:border-b-2 hover:border-indigo-300 transition duration-500"
+              >About
+            </a>
             <a
               href="#showcase"
               class="mx-4 text-lg border-b-2 border-transparent hover:border-b-2 hover:border-indigo-300 transition duration-500"
-              >Our Products</a
-            >
+              >More
+            </a>
           </div>
         </div>
       </nav>
@@ -65,14 +71,17 @@
       >
         <div class="p-2 divide-y divide-gray-600 flex flex-col">
           <a href="#about" class="p-2 font-semibold hover:text-indigo-700"
-            >About</a
-          >
+            >Portfilio
+          </a>
+          <a href="#about" class="p-2 font-semibold hover:text-indigo-700"
+            >Record
+          </a>
           <a href="#whyus" class="p-2 font-semibold hover:text-indigo-700"
-            >Why Us ?</a
-          >
+            >About
+          </a>
           <a href="#showcase" class="p-2 font-semibold hover:text-indigo-700"
-            >Our Products</a
-          >
+            >More
+          </a>
         </div>
       </div>
     </header>
@@ -86,7 +95,7 @@
           >
             <div class="md:hidden">
               <button
-                onclick="toggleFooterSection(event)"
+                @click="toggleFooterSection(event)"
                 class="uppercase text-xs font-bold tracking-wider text-pink-700 focus:outline-none border-t border-white py-4 w-full text-left"
                 type="button"
               >
@@ -112,7 +121,7 @@
           >
             <div class="md:hidden">
               <button
-                onclick="toggleFooterSection(event)"
+                @click="toggleFooterSection(event)"
                 class="uppercase text-xs font-bold tracking-wider text-pink-700 focus:outline-none border-t border-white py-4 w-full text-left"
                 type="button"
               >
@@ -144,7 +153,7 @@
           >
             <div class="md:hidden">
               <button
-                onclick="toggleFooterSection(event)"
+                @click="toggleFooterSection(event)"
                 class="uppercase text-xs font-bold tracking-wider text-pink-700 focus:outline-none border-t border-white py-4 w-full text-left"
                 type="button"
               >
@@ -182,7 +191,7 @@
           >
             <div class="md:hidden">
               <button
-                onclick="toggleFooterSection(event)"
+                @click="toggleFooterSection(event)"
                 class="uppercase text-xs font-bold tracking-wider text-pink-700 focus:outline-none border-t border-white py-4 w-full text-left"
                 type="button"
               >
@@ -220,13 +229,12 @@
         >
           <div>
             <p class="leading-8 tracking-wide">
-              &copy; {{ new Date().getFullYear() }} · 陕ICP备19017836号-1 · Created by
-              <a
-                class="border-b text-blue-500"
-                href="#"
-                target="_blank"
+              &copy; {{ new Date().getFullYear() }} · 陕ICP备19017836号-1 ·
+              Created by
+              <a class="border-b text-blue-500" href="#" target="_blank"
                 >@布吉岛</a
-              > · Inspired by 
+              >
+              · Inspired by
               <a
                 href="https://tailwindcomponents.com"
                 target="_blank"
