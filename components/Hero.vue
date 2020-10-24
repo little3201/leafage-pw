@@ -41,6 +41,6 @@
 
 <style>
 #hero {
-  background-image: url('https://unsplash.com/photos/GA3RibgYFds/download?force=true&w=1920'); 
+  background-image: url('../static/images/christian.jpg'); 
 }
 </style>

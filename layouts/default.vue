@@ -42,17 +42,23 @@
               id="hide-after-click"
               href="#about"
               class="mx-4 text-lg border-b-2 border-transparent hover:border-b-2 hover:border-indigo-300 transition duration-500"
-              >About</a
+              >Portfilio</a
             >
             <a
               href="#whyus"
               class="mx-4 text-lg border-b-2 border-transparent hover:border-b-2 hover:border-indigo-300 transition duration-500"
-              >Why Us ?</a
+              >Record</a
+            >
+            <a
+              id="hide-after-click"
+              href="#about"
+              class="mx-4 text-lg border-b-2 border-transparent hover:border-b-2 hover:border-indigo-300 transition duration-500"
+              >About</a
             >
             <a
               href="#showcase"
               class="mx-4 text-lg border-b-2 border-transparent hover:border-b-2 hover:border-indigo-300 transition duration-500"
-              >Our Products</a
+              >More</a
             >
           </div>
         </div>

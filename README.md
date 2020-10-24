@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://abeille.top" target="_blank">
-    <img alt="Abeille Logo" width="100" src="static/images/logo.svg">
+    <img alt="Abeille Logo" width="100" src="static/logo.svg">
   </a>
 </p>
 
@@ -11,8 +11,6 @@
     <img src="https://img.shields.io/github/license/little3201/abeille-ui.svg" alt="License">
   </a>
 </p>
-
-<h2 align="center">Supporting Abeille</h2>
 
 ## 项目介绍
 
@@ -38,9 +36,7 @@ Abeille，一个基于微服务架构的前后端分离的个人网站，包含�
 
 ### 展示截图
 
-<img alt="Abeille Home" width="100%" src="static/images/home.png">
-<img alt="Abeille Blog" width="100%" src="static/images/blog.png">
-<img alt="Abeille Blog Detail" width="100%" src="static/images/detail.png">
+<img alt="Abeille Home" width="100%" src="static/images/hero.jpg">
 
 ### 项目地址
 
@@ -51,7 +47,7 @@ Abeille，一个基于微服务架构的前后端分离的个人网站，包含�
 
 ## FAQ文档
 
-[FAQ文档](FAQ.md) 开发中。
+[FAQ文档](FAQ.md) 
 
 如果你遇到了 [FAQ文档](FAQ.md) 中没有出现的问题，并且已经解决了，欢迎联系我进行修改。
 
