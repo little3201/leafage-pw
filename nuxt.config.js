@@ -1,133 +1,52 @@
 export default {
-  /*
-  ** Nuxt rendering mode
-  ** See https://nuxtjs.org/api/configuration-mode
-  */
-  mode: 'universal',
-  /*
-  ** Nuxt target
-  ** See https://nuxtjs.org/api/configuration-target
-  */
-  target: 'server',
-  /*
-  ** Headers of the page
-  ** See https://nuxtjs.org/api/configuration-head
-  */
+  // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
+    title: 'abeille-ui',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'msvalidate.01', content: 'E02DDF417CA7C7D33A55805B3E9A81C7' },
-      { name: 'google-site-verification', content: 'ph8yiMtTCaq7CbTlp0ut2JvjqhpAZE4QPCbNBgaDcwQ' }
+      { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'preconnect', href: 'https://www.google-analytics.com' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  /*
-  ** Global CSS
-  */
+
+  // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
   ],
-  /*
-  ** Plugins to load before mounting the App
-  ** https://nuxtjs.org/guide/plugins
-  */
+
+  // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    '~/plugins/axios'
+    '@/plugins/composition-api'
   ],
-  /*
-  ** Auto import components
-  ** See https://nuxtjs.org/api/configuration-components
-  */
+
+  // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
-  /*
-  ** Nuxt.js dev-modules
-  */
+
+  // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module',
-    '@nuxtjs/vuetify'
+    // https://go.nuxtjs.dev/typescript
+    '@nuxt/typescript-build',
+    // https://go.nuxtjs.dev/tailwindcss
+    '@nuxtjs/tailwindcss',
   ],
-  /*
-  ** Nuxt.js modules
-  */
+
+  // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
+    // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    '@nuxtjs/pwa',
-    // Doc: https://github.com/nuxt/content
-    '@nuxt/content'
+    // https://go.nuxtjs.dev/content
+    '@nuxt/content',
   ],
-  /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
-  */
-  axios: {
-    https: true,
-    baseURL: 'http://abeille.top/api'
-  },
-  /*
-  ** Content module configuration
-  ** See https://content.nuxtjs.org/configuration
-  */
+
+  // Axios module configuration (https://go.nuxtjs.dev/config-axios)
+  axios: {},
+
+  // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
-  /*
-  ** vuetify module configuration
-  ** https://github.com/nuxt-community/vuetify-module
-  */
-  vuetify: {
-    treeShake: true,
-    customVariables: ['~/assets/variables.scss'],
-    lang: {
-      t: (key, ...params) => i18n.t(key, params)
-    },
-    theme: {
-      themes: {
-        dark: {
-          primary: '#FF6F00'
-        },
-        light: {
-          primary: '#FF6F00'
-        }
-      }
-    }
-  },
-  /*
-  ** nuxt prismjs configuration
-  ** https://zh.nuxtjs.org/api/configuration-loading/
-  */
-  prismjs: {
-    languages: [
-      'html',
-      'css',
-      'javascript',
-      'bash',
-      'nginx',
-      'sql',
-      'java'
-    ],
-    plugins: [
-      'line-numbers',
-      'show-language',
-      'copy-to-clipboard'
-    ],
-    theme: 'coy',
-    css: true
-  },
-  /*
-  ** nuxt loading configuration
-  ** https://zh.nuxtjs.org/api/configuration-loading/
-  */
-  loading: {
-    color: '#FF6F00'
-  },
-  /*
-  ** Build configuration
-  ** See https://nuxtjs.org/api/configuration-build/
-  */
+
+  // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    extractCSS: true
   }
 }
