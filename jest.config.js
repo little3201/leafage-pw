@@ -1,43 +1,23 @@
 module.exports = {
-  moduleFileExtensions: [
-    'js',
-    'jsx',
-    'json',
-    'vue'
-  ],
-
-  transform: {
-    '^.+\\.vue$': 'vue-jest',
-    '.+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$': 'jest-transform-stub',
-    '^.+\\.jsx?$': 'babel-jest'
-  },
-
-  transformIgnorePatterns: [
-    '/node_modules/'
-  ],
-
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1'
+    '^@/(.*)$': '<rootDir>/$1',
+    '^~/(.*)$': '<rootDir>/$1',
+    '^vue$': 'vue/dist/vue.common.js'
   },
-
-  snapshotSerializers: [
-    'jest-serializer-vue'
+  moduleFileExtensions: [
+    'ts',
+    'js',
+    'vue',
+    'json'
   ],
-
-  testMatch: [
-    '**/__tests__/**/*.spec.js'
-  ],
-
-  testURL: 'http://localhost/',
-
-  watchPlugins: [
-    'jest-watch-typeahead/filename',
-    'jest-watch-typeahead/testname'
-  ],
-
-  setupFiles: [
-    '<rootDir>/tests/index.js'
-  ],
-
-  preset: '@vue/cli-plugin-unit-jest'
+  transform: {
+    "^.+\\.ts$": "ts-jest",
+    '^.+\\.js$': 'babel-jest',
+    '.*\\.(vue)$': 'vue-jest'
+  },
+  collectCoverage: true,
+  collectCoverageFrom: [
+    '<rootDir>/components/**/*.vue',
+    '<rootDir>/pages/**/*.vue'
+  ]
 }
