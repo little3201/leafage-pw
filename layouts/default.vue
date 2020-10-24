@@ -238,6 +238,7 @@
               <a
                 href="https://tailwindcomponents.com"
                 target="_blank"
+                rel="noopener noreferrer" 
                 class="border-b text-blue-500"
                 >tailwindcomponents</a
               >
