@@ -5,7 +5,7 @@
     <header class="flex items-center justify-between py-2">
       <a href="#" class="px-2 lg:px-0 font-bold capitalize"> Tech Blog </a>
       <button class="block md:hidden px-2 text-3xl">
-        <i class="bx bx-menu"></i>
+        <em class="bx bx-menu"></em>
       </button>
       <ul class="hidden md:inline-flex items-center">
         <li class="px-2 md:px-4">
@@ -50,6 +50,7 @@
           class="mb-4 lg:mb-0 p-4 lg:p-0 w-full md:w-4/7 relative rounded block"
         >
           <img
+            alt="1427751840561"
             src="https://images.unsplash.com/photo-1427751840561-9852520f8ce8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
             class="rounded-md object-cover w-full h-64"
           />
@@ -80,6 +81,7 @@
           <!-- post 1 -->
           <div class="rounded w-full flex flex-col md:flex-row mb-10">
             <img
+              alt="1519389950473"
               src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
               class="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0"
             />
@@ -102,6 +104,7 @@
           <!-- post 2 -->
           <div class="rounded w-full flex flex-col md:flex-row mb-10">
             <img
+              alt="1531297484001"
               src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
               class="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0"
             />
@@ -122,6 +125,7 @@
           <!-- post 3 -->
           <div class="rounded w-full flex flex-col md:flex-row mb-10">
             <img
+              alt="1498050108023"
               src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
               class="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0"
             />
@@ -142,6 +146,7 @@
           <!-- post 4 -->
           <div class="rounded w-full flex flex-col md:flex-row mb-10">
             <img
+              alt="1489844097929"
               src="https://images.unsplash.com/photo-1489844097929-c8d5b91c456e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
               class="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0"
             />
@@ -254,6 +259,7 @@
       <!-- subscribe -->
       <div class="rounded flex md:shadow mt-12">
         <img
+          alt="1579275542618"
           src="https://images.unsplash.com/photo-1579275542618-a1dfed5f54ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
           class="w-0 md:w-1/4 object-cover rounded-l"
         />
@@ -273,7 +279,7 @@
             />
             <button class="px-4 py-2 rounded bg-green-800 text-gray-100">
               Subscribe
-              <i class="bx bx-right-arrow-alt"></i>
+              <em class="bx bx-right-arrow-alt"></em>
             </button>
             <p class="text-green-900 opacity-50 text-sm mt-1">
               No spam. We promise
