@@ -1,7 +1,7 @@
 <template>
   <div>
     <header>
-      <nav class="fixed inset-x-0 top-0 z-10 text-white">
+      <nav class="fixed inset-x-0 top-0 text-white">
         <div
           class="md:max-w-6xl xl:max-w-screen-xl md:mx-auto md:flex md:items-center md:justify-between"
         >
@@ -96,22 +96,22 @@
             <div class="md:hidden">
               <button
                 @click="toggleFooterSection(event)"
-                class="uppercase text-xs font-bold tracking-wider text-pink-700 focus:outline-none border-t border-white py-4 w-full text-left"
+                class="uppercase text-xs font-bold tracking-wider text-black-700 focus:outline-none border-t border-white py-4 w-full text-left"
                 type="button"
               >
-                Aenean gravida orci in sem varius
+                System
               </button>
             </div>
             <a
-              class="uppercase text-xs font-bold tracking-wider text-pink-700 hidden md:block"
+              class="uppercase text-xs font-bold tracking-wider text-black-700 hidden md:block"
               href="#"
             >
-              Aenean gravida orci in sem varius
+              System
             </a>
             <article class="h-0 md:h-auto -mt-4 md:mt-0 overflow-hidden">
               <ul class="my-5 text-sm tracking-wide">
                 <li class="my-3 tracking-wide">
-                  <a href="#">Cras id ipsum</a>
+                  <a href="#">Console</a>
                 </li>
               </ul>
             </article>
@@ -122,28 +122,25 @@
             <div class="md:hidden">
               <button
                 @click="toggleFooterSection(event)"
-                class="uppercase text-xs font-bold tracking-wider text-pink-700 focus:outline-none border-t border-white py-4 w-full text-left"
+                class="uppercase text-xs font-bold tracking-wider text-black-700 focus:outline-none border-t border-white py-4 w-full text-left"
                 type="button"
               >
-                Donec a lorem
+                Resource
               </button>
             </div>
             <a
-              class="uppercase text-xs font-bold tracking-wider text-pink-700 hidden md:block"
+              class="uppercase text-xs font-bold tracking-wider text-black-700 hidden md:block"
               href="#"
             >
-              Donec a lorem
+              Resource
             </a>
             <article class="h-0 md:h-auto -mt-4 md:mt-0 overflow-hidden">
               <ul class="my-5 text-sm tracking-wide">
                 <li class="my-3 tracking-wide">
-                  <a href="#">Sed a diam</a>
+                  <a href="#">Github</a>
                 </li>
                 <li class="my-3 tracking-wide">
-                  <a href="#">Nullam luctus felis</a>
-                </li>
-                <li class="my-3 tracking-wide">
-                  <a href="#">Sed euismod</a>
+                  <a href="#">Gitee</a>
                 </li>
               </ul>
             </article>
@@ -154,34 +151,34 @@
             <div class="md:hidden">
               <button
                 @click="toggleFooterSection(event)"
-                class="uppercase text-xs font-bold tracking-wider text-pink-700 focus:outline-none border-t border-white py-4 w-full text-left"
+                class="uppercase text-xs font-bold tracking-wider text-black-700 focus:outline-none border-t border-white py-4 w-full text-left"
                 type="button"
               >
-                Integer interdum
+                Link
               </button>
             </div>
             <a
-              class="uppercase text-xs font-bold tracking-wider text-pink-700 hidden md:block"
+              class="uppercase text-xs font-bold tracking-wider text-black-700 hidden md:block"
               href="#"
             >
-              Integer interdum
+              Link
             </a>
             <article class="h-0 md:h-auto -mt-4 md:mt-0 overflow-hidden">
               <ul class="my-5 text-sm tracking-wide">
                 <li class="my-3 tracking-wide">
-                  <a href="#">Dignissim gravida</a>
+                  <a href="#">csdn</a>
                 </li>
                 <li class="my-3 tracking-wide">
-                  <a href="#">Eu mollis elit</a>
+                  <a href="#">掘金</a>
                 </li>
                 <li class="my-3 tracking-wide">
-                  <a href="#">Hendrerit purus id</a>
+                  <a href="#">知乎</a>
                 </li>
                 <li class="my-3 tracking-wide">
-                  <a href="#">Ut luctus dui tincidunt</a>
+                  <a href="#">思否</a>
                 </li>
                 <li class="my-3 tracking-wide">
-                  <a href="#">Pellentesque at ligula</a>
+                  <a href="#">简书</a>
                 </li>
               </ul>
             </article>
@@ -192,14 +189,14 @@
             <div class="md:hidden">
               <button
                 @click="toggleFooterSection(event)"
-                class="uppercase text-xs font-bold tracking-wider text-pink-700 focus:outline-none border-t border-white py-4 w-full text-left"
+                class="uppercase text-xs font-bold tracking-wider text-black-700 focus:outline-none border-t border-white py-4 w-full text-left"
                 type="button"
               >
                 Quisque
               </button>
             </div>
             <a
-              class="uppercase text-xs font-bold tracking-wider text-pink-700 hidden md:block"
+              class="uppercase text-xs font-bold tracking-wider text-black-700 hidden md:block"
               href="#"
             >
               Quisque
@@ -233,14 +230,6 @@
               Created by
               <a class="border-b text-blue-500" href="#" target="_blank"
                 >@布吉岛</a
-              >
-              · Inspired by
-              <a
-                href="https://tailwindcomponents.com"
-                target="_blank"
-                rel="noopener noreferrer" 
-                class="border-b text-blue-500"
-                >tailwindcomponents</a
               >
             </p>
           </div>

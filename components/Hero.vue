@@ -17,7 +17,7 @@
           Get a <span class="text-white">Better</span> and
           <span class="text-white">Professionals</span> Design
         </h2>
-        <nuxt-link to="#" class="inline-flex mt-16">
+        <nuxt-link to="#hero" class="inline-flex mt-16">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="36"
