@@ -44,11 +44,11 @@
               class="mx-4 text-lg border-b-2 border-transparent hover:border-b-2 hover:border-indigo-300 transition duration-500"
               >Portfilio
             </a>
-            <a
-              href="#whyus"
+            <nuxt-link
+              to="/blog"
               class="mx-4 text-lg border-b-2 border-transparent hover:border-b-2 hover:border-indigo-300 transition duration-500"
-              >Record
-            </a>
+              >Blog
+            </nuxt-link>
             <a
               id="hide-after-click"
               href="#about"
@@ -74,7 +74,7 @@
             >Portfilio
           </a>
           <a href="#about" class="p-2 font-semibold hover:text-indigo-700"
-            >Record
+            >Blog
           </a>
           <a href="#whyus" class="p-2 font-semibold hover:text-indigo-700"
             >About
@@ -85,7 +85,9 @@
         </div>
       </div>
     </header>
-    <Nuxt />
+    <main>
+      <Nuxt />
+    </main>
     <!-- component -->
     <footer class="mt-16">
       <div class="border-t md:px-4 md:pt-10 md:pb-5">
