@@ -12,7 +12,7 @@
             src="https://images.unsplash.com/photo-1427751840561-9852520f8ce8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
             class="rounded-md object-cover w-full h-64"
           />
-          <span class="text-green-700 text-sm hidden md:block mt-4">
+          <span class="text-orange-600 text-sm hidden md:block mt-4">
             Technology
           </span>
           <h1 class="text-gray-800 text-4xl font-bold mt-2 mb-2 leading-tight">
@@ -28,7 +28,7 @@
           </p>
           <a
             href="./blog.html"
-            class="inline-block px-6 py-3 mt-2 rounded-md bg-green-700 text-gray-100"
+            class="inline-block px-6 py-3 mt-2 rounded-md bg-orange-600 text-gray-100"
           >
             Read more
           </a>
@@ -136,7 +136,7 @@
         </a>
       </div>
       <div class="block space-x-0 lg:flex lg:space-x-6">
-        <div class="rounded w-full lg:w-1/2 lg:w-1/3 p-4 lg:p-0">
+        <div class="rounded w-full lg:w-1/2 p-4 lg:p-0">
           <img
             src="https://images.unsplash.com/photo-1526666923127-b2970f64b422?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
             class="rounded"
@@ -162,7 +162,7 @@
           </div>
         </div>
 
-        <div class="rounded w-full lg:w-1/2 lg:w-1/3 p-4 lg:p-0">
+        <div class="rounded w-full lg:w-1/2 p-4 lg:p-0">
           <img
             src="https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
             class="rounded"
@@ -187,7 +187,7 @@
           </div>
         </div>
 
-        <div class="rounded w-full lg:w-1/2 lg:w-1/3 p-4 lg:p-0">
+        <div class="rounded w-full lg:w-1/2 p-4 lg:p-0">
           <img
             src="https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
             class="rounded"
@@ -224,7 +224,7 @@
         </a>
       </div>
       <div class="block space-x-0 lg:flex lg:space-x-6">
-        <div class="rounded w-full lg:w-1/2 lg:w-1/3 p-4 lg:p-0">
+        <div class="rounded w-full lg:w-1/2 p-4 lg:p-0">
           <img
             src="https://images.unsplash.com/photo-1526666923127-b2970f64b422?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
             class="rounded"
@@ -250,7 +250,7 @@
           </div>
         </div>
 
-        <div class="rounded w-full lg:w-1/2 lg:w-1/3 p-4 lg:p-0">
+        <div class="rounded w-full lg:w-1/2 p-4 lg:p-0">
           <img
             src="https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
             class="rounded"
@@ -275,7 +275,7 @@
           </div>
         </div>
 
-        <div class="rounded w-full lg:w-1/2 lg:w-1/3 p-4 lg:p-0">
+        <div class="rounded w-full lg:w-1/2 p-4 lg:p-0">
           <img
             src="https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
             class="rounded"
@@ -293,7 +293,7 @@
 
             <a
               href="#"
-              class="inline-block py-2 rounded text-green-900 mt-2 ml-auto"
+              class="inline-block py-2 rounded mt-2 ml-auto"
             >
               Read more
             </a>
