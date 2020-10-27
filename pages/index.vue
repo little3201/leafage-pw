@@ -1,9 +1,7 @@
 <template>
   <div>
-    <Header />
     <Hero />
     <Features />
-    <Footer />
   </div>
 </template>
 
