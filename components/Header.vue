@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nav class="fixed inset-x-0 text-white">
+    <nav class="inset-x-0 text-white top-0 -mb-16">
       <div
         class="md:max-w-6xl xl:max-w-screen-xl md:mx-auto md:flex md:items-center md:justify-between"
       >
@@ -36,7 +36,7 @@
         </div>
 
         <!-- Nav Items Working on Tablet & Bigger Sceen -->
-        <div class="p-4 hidden md:flex flex-row justify-between font-bold">
+        <div class="p-4 hidden md:flex justify-between font-bold">
           <a
             id="hide-after-click"
             href="#about"

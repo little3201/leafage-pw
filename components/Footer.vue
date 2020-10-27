@@ -1,154 +1,64 @@
 <template>
-  <footer class="mt-16">
-    <div class="border-t md:px-4 md:pt-10 md:pb-5">
-      <div class="flex flex-wrap md:max-w-screen-lg mx-auto">
-        <section
-          class="relative text-gray-700 font-light border-b px-4 pb-4 md:py-3 w-full md:border-none md:w-1/4"
-        >
-          <div class="md:hidden">
-            <button
-              @click="toggleFooterSection(event)"
-              class="uppercase text-xs font-bold tracking-wider text-black-700 focus:outline-none border-t border-white py-4 w-full text-left"
-              type="button"
-            >
-              System
-            </button>
-          </div>
-          <a
-            class="uppercase text-xs font-bold tracking-wider text-black-700 hidden md:block"
-            href="#"
-          >
-            System
-          </a>
-          <article class="h-0 md:h-auto -mt-4 md:mt-0 overflow-hidden">
-            <ul class="my-5 text-sm tracking-wide">
-              <li class="my-3 tracking-wide">
-                <a href="https://console.abeille.top" target="_blank">Console</a>
-              </li>
-            </ul>
-          </article>
-        </section>
-        <section
-          class="relative text-gray-700 font-light border-b px-4 pb-4 md:py-3 w-full md:border-none md:w-1/4"
-        >
-          <div class="md:hidden">
-            <button
-              @click="toggleFooterSection(event)"
-              class="uppercase text-xs font-bold tracking-wider text-black-700 focus:outline-none border-t border-white py-4 w-full text-left"
-              type="button"
-            >
-              Resource
-            </button>
-          </div>
-          <a
-            class="uppercase text-xs font-bold tracking-wider text-black-700 hidden md:block"
-            href="#"
-          >
-            Resource
-          </a>
-          <article class="h-0 md:h-auto -mt-4 md:mt-0 overflow-hidden">
-            <ul class="my-5 text-sm tracking-wide">
-              <li class="my-3 tracking-wide">
-                <a href="#">Github</a>
-              </li>
-              <li class="my-3 tracking-wide">
-                <a href="#">Gitee</a>
-              </li>
-            </ul>
-          </article>
-        </section>
-        <section
-          class="relative text-gray-700 font-light border-b px-4 pb-4 md:py-3 w-full md:border-none md:w-1/4"
-        >
-          <div class="md:hidden">
-            <button
-              @click="toggleFooterSection(event)"
-              class="uppercase text-xs font-bold tracking-wider text-black-700 focus:outline-none border-t border-white py-4 w-full text-left"
-              type="button"
-            >
-              Link
-            </button>
-          </div>
-          <a
-            class="uppercase text-xs font-bold tracking-wider text-black-700 hidden md:block"
-            href="#"
-          >
-            Link
-          </a>
-          <article class="h-0 md:h-auto -mt-4 md:mt-0 overflow-hidden">
-            <ul class="my-5 text-sm tracking-wide">
-              <li class="my-3 tracking-wide">
-                <a href="#">csdn</a>
-              </li>
-              <li class="my-3 tracking-wide">
-                <a href="#">掘金</a>
-              </li>
-              <li class="my-3 tracking-wide">
-                <a href="#">知乎</a>
-              </li>
-              <li class="my-3 tracking-wide">
-                <a href="#">思否</a>
-              </li>
-              <li class="my-3 tracking-wide">
-                <a href="#">简书</a>
-              </li>
-            </ul>
-          </article>
-        </section>
-        <section
-          class="relative text-gray-700 font-light border-b px-4 pb-4 md:py-3 w-full md:border-none md:w-1/4"
-        >
-          <div class="md:hidden">
-            <button
-              @click="toggleFooterSection(event)"
-              class="uppercase text-xs font-bold tracking-wider text-black-700 focus:outline-none border-t border-white py-4 w-full text-left"
-              type="button"
-            >
-              Quisque
-            </button>
-          </div>
-          <a
-            class="uppercase text-xs font-bold tracking-wider text-black-700 hidden md:block"
-            href="#"
-          >
-            Quisque
-          </a>
-          <article class="h-0 md:h-auto -mt-4 md:mt-0 overflow-hidden">
-            <ul class="my-5 text-sm tracking-wide">
-              <li class="my-3 tracking-wide">
-                <a href="#">Finibus nulla eget</a>
-              </li>
-              <li class="my-3 tracking-wide">
-                <a href="#">Pellentesque</a>
-              </li>
-              <li class="my-3 tracking-wide">
-                <a href="#">Duis efficitur</a>
-              </li>
-              <li class="my-3 tracking-wide">
-                <a href="#">Cras at lacus</a>
-              </li>
-            </ul>
-          </article>
-        </section>
-      </div>
-    </div>
-    <div class="max-w-screen-lg mx-auto border-none px-4">
-      <section
-        class="flex flex-col md:flex-row md:justify-between md:border-solid md:border-t text-gray-700 font-light text-sm pt-4 pb-6 md:pt-5 md:pb-6 w-full"
-      >
-        <div>
-          <p class="leading-8 tracking-wide">
-            &copy; {{ new Date().getFullYear() }} · 陕ICP备19017836号-1 ·
-            Created by
-            <a class="border-b text-blue-500" href="#" target="_blank"
-              >@布吉岛</a
-            >
-          </p>
+    <footer class="bg-gray-800">
+        <div class="container mx-auto px-6 py-4">
+            <div class="lg:flex">
+                <div class="w-full lg:w-2/5 -mx-6">
+                    <div class="px-6">
+                        <div>
+                            <a href="#" class="text-xl font-bold text-gray-100 hover:text-gray-400">Abeille</a>
+                        </div>
+                        
+                        <p class="mt-2 text-gray-400 max-w-md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, nisi! Id.</p>
+                        
+                        <div class="flex mt-4 -mx-2">
+                            <a href="#" class="mx-2 text-gray-100 hover:text-gray-400" aria-label="Linkden">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            </a>
+
+                            <a href="#" class="mx-2 text-gray-100 hover:text-gray-400" aria-label="Facebook">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-gitlab"><path d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 0 1-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 0 1 4.82 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.49h8.1l2.44-7.51A.42.42 0 0 1 18.6 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.51L23 13.45a.84.84 0 0 1-.35.94z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 lg:mt-0 lg:flex-1">
+                    <div class="grid gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+                        <div>
+                            <h3 class="text-gray-100 uppercase">About</h3>
+                            <a href="#" class="block mt-2 text-sm text-gray-400">Company</a>
+                            <a href="#" class="block mt-2 text-sm text-gray-400">community</a>
+                            <a href="#" class="block mt-2 text-sm text-gray-400">Careers</a>
+                        </div>
+
+                        <div>
+                            <h3 class="text-gray-100 uppercase">Blog</h3>
+                            <a href="#" class="block mt-2 text-sm text-gray-400">Tec</a>
+                            <a href="#" class="block mt-2 text-sm text-gray-400">Music</a>
+                            <a href="#" class="block mt-2 text-sm text-gray-400">Videos</a>
+                        </div>
+
+                        <div>
+                            <h3 class="text-gray-100 uppercase">Products</h3>
+                            <a href="#" class="block mt-2 text-sm text-gray-400">Mega cloud</a>
+                            <a href="#" class="block mt-2 text-sm text-gray-400">Aperion UI</a>
+                            <a href="#" class="block mt-2 text-sm text-gray-400">Meraki UI</a>
+                        </div>
+
+                        <div>
+                            <h3 class="text-gray-100 uppercase">Contact</h3>
+                            <span class="block mt-2 text-sm text-gray-400">+1 526 654 8965</span>
+                            <span class="block mt-2 text-sm text-gray-400">example@email.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="h-px my-6 bg-gray-700 border-none">
+
+            <div>
+                <p class="text-center text-gray-100">© Abeille {{ new Date().getFullYear() }} - All rights reserved - 陕ICP备19017836号-1</p>
+            </div>
         </div>
-        <div>
-          <p class="leading-8 tracking-wide">Privacy Policy</p>
-        </div>
-      </section>
-    </div>
-  </footer>
+    </footer>
 </template>

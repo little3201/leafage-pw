@@ -44,7 +44,7 @@
               class="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0"
             />
             <div class="bg-white rounded px-4">
-              <span class="text-green-700 text-sm hidden md:block">
+              <span class="text-orange-600 text-sm hidden md:block">
                 Gadgets
               </span>
               <div class="md:mt-0 text-gray-800 font-semibold text-xl mb-2">
@@ -67,7 +67,7 @@
               class="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0"
             />
             <div class="bg-white rounded px-4">
-              <span class="text-green-700 text-sm hidden md:block">
+              <span class="text-orange-600 text-sm hidden md:block">
                 Bitcoin
               </span>
               <div class="md:mt-0 text-gray-800 font-semibold text-xl mb-2">
@@ -88,7 +88,7 @@
               class="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0"
             />
             <div class="bg-white rounded px-4">
-              <span class="text-green-700 text-sm hidden md:block">
+              <span class="text-orange-600 text-sm hidden md:block">
                 Insights
               </span>
               <div class="md:mt-0 text-gray-800 font-semibold text-xl mb-2">
@@ -109,7 +109,7 @@
               class="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0"
             />
             <div class="bg-white rounded px-4">
-              <span class="text-green-700 text-sm hidden md:block">
+              <span class="text-orange-600 text-sm hidden md:block">
                 Cryptocurrency
               </span>
               <div class="md:mt-0 text-gray-800 font-semibold text-xl mb-2">
