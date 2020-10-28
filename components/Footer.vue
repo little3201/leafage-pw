@@ -112,7 +112,7 @@
 
       <div>
         <p class="text-center text-gray-100">
-          &copy; Abeille {{ new Date().getFullYear() }} - All rights reserved -
+          &copy; Abeille {{ new Date().getFullYear() }} - All Rights Reserved -
           陕ICP备19017836号-1
         </p>
       </div>
