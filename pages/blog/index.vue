@@ -1,5 +1,5 @@
 <template>
-<div class="max-w-screen-lg mx-auto">
+  <div class="max-w-screen-lg mx-auto">
     <div class="mt-12">
       <!-- featured section -->
       <div class="flex flex-wrap md:flex-no-wrap space-x-0 md:space-x-6 mb-16">
@@ -291,10 +291,7 @@
               diminution can considered sentiments interested discretion.
             </p>
 
-            <a
-              href="#"
-              class="inline-block py-2 rounded mt-2 ml-auto"
-            >
+            <a href="#" class="inline-block py-2 rounded mt-2 ml-auto">
               Read more
             </a>
           </div>
