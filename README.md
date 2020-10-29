@@ -14,9 +14,7 @@
 
 ## 项目介绍
 
-Abeille，一个基于微服务架构的前后端分离的个人网站，包含博客、照片墙等。
-
-前台使用Vue + Vuetify , 项目开始很久了，迟迟没有完成，原因有种种，但是也一直再进行中。
+Abeille，一个前（使用 Vue.js + Nuxt.js + Tailwindcss）、后端（spring boot）分离的个人网站，包含博客、照片墙等。
 
 作为一个后端开发程序猿，无奈找了很久没有好看的博客系统，只能自己写了。加油吧！！！
 
@@ -32,11 +30,11 @@ Abeille，一个基于微服务架构的前后端分离的个人网站，包含�
 
 ### 项目展示
 
-站点地址：https://abeille.top
+站点地址：https://www.abeille.top
 
 ### 展示截图
 
-<img alt="Abeille Home" width="100%" src="static/images/hero.png">
+<img alt="hero" width="100%" src="static/images/hero.png">
 
 ### 项目地址
 

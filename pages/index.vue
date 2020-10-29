@@ -1,19 +1,19 @@
 <template>
   <div>
-      <!-- <Landing /> -->
-      <Hero />
-      <Features />
+    <Hero />
+    <Features />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from '@vue/composition-api'
+import { defineComponent, ref } from "@vue/composition-api";
 export default defineComponent({
-  setup () {
-    const message = ref('This is a message')
+  name: 'Home',
+  setup() {
+    const message = ref("This is a message");
     return {
-      message
-    }
-  }
-})
+      message,
+    };
+  },
+});
 </script>
