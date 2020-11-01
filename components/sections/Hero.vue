@@ -1,6 +1,6 @@
 <template>
   <!-- Overlay Background + Center Control -->
-  <section id="hero" class="bg-center bg-no-repeat bg-cover">
+  <section class="bg-center bg-no-repeat bg-cover" :style="{ 'background-image': 'url(' + require('@/static/images/cf.jpg') + ')' }">
     <div
       class="h-screen bg-opacity-50 bg-black flex items-center justify-center"
       style="background: rgba(0, 0, 0, 0.3)"
@@ -38,9 +38,3 @@
     </div>
   </section>
 </template>
-
-<style>
-#hero {
-  background-image: url('../../static/images/cf.jpg'); 
-}
-</style>

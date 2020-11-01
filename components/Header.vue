@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nav class="inset-x-0 text-white top-0 -mb-16">
+    <nav class="inset-x-0 text-white top-0 z-10" style="margin-bottom: -62px">
       <div
         class="md:max-w-6xl xl:max-w-screen-xl md:mx-auto md:flex md:items-center md:justify-between"
       >
@@ -8,7 +8,7 @@
           <div
             class="flex justify-between items-center font-extrabold tracking-widest text-xl"
           >
-            <a href="#" class="duration-500 hover:text-orange-600">ABEILLE</a>
+            <a href="/" class="duration-500 hover:text-orange-600">ABEILLE</a>
             <!-- Burger Nav Button on Mobile -->
             <div
               id="nav-open"
@@ -63,16 +63,16 @@
       </div>
     </nav>
 
-    <!-- Opened Nav in Mobile, you can use javascript/jQuery -->
-    <div
+    <!-- Opened Nav in Mobile -->
+    <nav
       v-show="opened"
-      class="fixed left-0 right-0 hidden mx-2 mt-16 rounded-br rounded-bl shadow z-10"
+      class="inset-x-0 md:hidden bg-black h-full w-2/3 pt-16 text-white z-10"  style="margin-bottom: -62px"
     >
       <div class="p-2 divide-y divide-gray-600 flex flex-col">
         <a href="#about" class="p-2 font-semibold hover:text-orange-700"
           >Portfilio
         </a>
-        <a href="#about" class="p-2 font-semibold hover:text-orange-700"
+        <a href="/blog" class="p-2 font-semibold hover:text-orange-700"
           >Blog
         </a>
         <a href="#whyus" class="p-2 font-semibold hover:text-orange-700"
@@ -82,7 +82,7 @@
           >More
         </a>
       </div>
-    </div>
+    </nav>
   </header>
 </template>
 
