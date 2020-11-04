@@ -5,6 +5,7 @@
         <div class="w-full lg:w-2/5 -mx-6">
           <div class="px-6">
             <div>
+              <img src="../static/logo.svg" class="w-12">
               <a
                 href="#"
                 class="text-xl font-bold text-gray-100 hover:text-gray-400"
@@ -13,7 +14,7 @@
             </div>
 
             <p class="mt-2 text-gray-400 max-w-md">
-              倔强，不讲究.
+              布吉岛，一座永不沉没的网络小岛！
             </p>
 
             <div class="flex mt-4 -mx-2">
@@ -72,36 +73,35 @@
           <div class="grid gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
             <div>
               <h3 class="text-gray-100 uppercase">About</h3>
-              <a href="#" class="block mt-2 text-sm text-gray-400">Company</a>
-              <a href="#" class="block mt-2 text-sm text-gray-400">community</a>
-              <a href="#" class="block mt-2 text-sm text-gray-400">Careers</a>
+              <a href="#" class="block mt-2 text-sm text-gray-400">Living</a>
+              <a href="#" class="block mt-2 text-sm text-gray-400">Vita</a>
             </div>
 
             <div>
               <h3 class="text-gray-100 uppercase">Blog</h3>
-              <a href="#" class="block mt-2 text-sm text-gray-400">Tec</a>
-              <a href="#" class="block mt-2 text-sm text-gray-400">Music</a>
-              <a href="#" class="block mt-2 text-sm text-gray-400">Videos</a>
+              <a href="#" class="block mt-2 text-sm text-gray-400">Technology</a>
+              <a href="#" class="block mt-2 text-sm text-gray-400">Travels</a>
+              <a href="#" class="block mt-2 text-sm text-gray-400">Daily</a>
             </div>
 
             <div>
-              <h3 class="text-gray-100 uppercase">Products</h3>
+              <h3 class="text-gray-100 uppercase">Resources</h3>
               <a href="#" class="block mt-2 text-sm text-gray-400"
-                >Mega cloud</a
+                >Nginx Config</a
               >
               <a href="#" class="block mt-2 text-sm text-gray-400"
-                >Aperion UI</a
+                >Nuxt.js</a
               >
-              <a href="#" class="block mt-2 text-sm text-gray-400">Meraki UI</a>
+              <a href="#" class="block mt-2 text-sm text-gray-400">Tailwindcss</a>
             </div>
 
             <div>
               <h3 class="text-gray-100 uppercase">Contact</h3>
               <span class="block mt-2 text-sm text-gray-400"
-                >+1 526 654 8965</span
+                >973587585</span
               >
               <span class="block mt-2 text-sm text-gray-400"
-                >example@email.com</span
+                >little3201@163.com</span
               >
             </div>
           </div>

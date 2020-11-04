@@ -7,7 +7,7 @@
         <img
           class="object-cover object-center rounded"
           alt="hero"
-          src="https://dummyimage.com/600x500/edf2f7/0f1631"
+          :src="url"
         />
       </div>
       <div
@@ -16,13 +16,11 @@
         <h1
           class="title-font sm:text-4xl text-3xl mb-4 font-medium text-black"
         >
-          The title for your feature.
+          {{ title }}
           <br class="hidden lg:inline-block" />goes here.
         </h1>
         <p class="mb-8 leading-relaxed">
-          Central Saint Martins graduate Jessan Macatangay incorporated
-          deconstructed chairs into his striking fashion collection, to
-          symbolise how people carry the weight of personal struggles. More.
+          {{ content }}
         </p>
         <div class="flex justify-center">
           <button
@@ -35,3 +33,16 @@
     </div>
   </section>
 </template>
+
+<script lang="ts">
+import { defineComponent, ref } from "@vue/composition-api";
+export default defineComponent({
+  name: 'LParagraph',
+  
+  props: {
+    url: String,
+    title: String,
+    content: String
+  }
+})
+</script>

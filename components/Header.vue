@@ -8,7 +8,7 @@
           <div
             class="flex justify-between items-center font-extrabold tracking-widest text-xl"
           >
-            <a href="#" class="duration-500 hover:text-orange-600">ABEILLE</a>
+            <a href="/" class="duration-500 hover:text-orange-600">ABEILLE</a>
             <!-- Burger Nav Button on Mobile -->
             <div
               id="nav-open"
