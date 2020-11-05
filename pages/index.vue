@@ -1,10 +1,9 @@
 <template>
   <div>
     <Hero />
-    <Features />
-    <LParagraph :url="technology.url" :title="technology.title" :content="technology.content"/>
-    <RParagraph :url="travels.url" :title="travels.title" :content="travels.content" />
-    <LParagraph :url="reading.url" :title="reading.title" :content="reading.content" />
+    <Technology />
+    <Travels />
+    <Reading />
   </div>
 </template>
 
@@ -47,21 +46,7 @@ export default defineComponent({
 
   setup() {
     return {
-      technology: {
-        url: "@/static/lesson.svg",
-        title: "好好学习，天天向上",
-        content: "学习使我快乐"
-      },
-      travels: {
-        url: "@/static/flatline.svg",
-        title: "好好学习，天天向上",
-        content: "学习使我快乐"
-      },
-      reading: {
-        url: "@/static/reading.svg",
-        title: "好好学习，天天向上",
-        content: "学习使我快乐"
-      },
+      
     };
   },
 });

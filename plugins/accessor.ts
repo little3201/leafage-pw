@@ -20,7 +20,7 @@ const accessor: Plugin = ({ error, app: { $axios }, redirect }) => {
   $axios.onError((err: AxiosError<any>) => {
     const status: any = err.response?.status
     if (status === 404) {
-      redirect('/404')
+      redirect('/error')
     } else {
       error({ message: statusCode[status] })
       return Promise.reject(err)

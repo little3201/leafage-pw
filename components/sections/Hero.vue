@@ -17,7 +17,7 @@
           Get a <span class="text-white">Better</span> and
           <span class="text-white">Professionals</span> Design
         </h2>
-        <a href="#features" class="inline-flex mt-16">
+        <a href="#technology" class="inline-flex mt-16">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="36"

@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nav class="inset-x-0 text-white top-0 z-10" style="margin-bottom: -62px">
+    <nav class="inset-x-0 top-0 z-10" style="margin-bottom: -62px" :class="mode ? 'text-white' : ''">
       <div
         class="md:max-w-6xl xl:max-w-screen-xl md:mx-auto md:flex md:items-center md:justify-between"
       >
@@ -66,7 +66,7 @@
     <!-- Opened Nav in Mobile -->
     <nav
       v-show="opened"
-      class="inset-x-0 md:hidden bg-black h-full w-2/3 pt-16 text-white z-10"  style="margin-bottom: -62px"
+      class="fixed inset-x-0 md:hidden bg-black bg-opacity-75 h-full w-2/3 pt-16 text-white z-10"  style="margin-bottom: -62px"
     >
       <div class="p-2 divide-y divide-gray-600 flex flex-col">
         <a href="#about" class="p-2 font-semibold hover:text-orange-700"
@@ -87,15 +87,20 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "@vue/composition-api";
+import { defineComponent, onMounted, } from "@vue/composition-api";
 
 export default defineComponent({
   name: 'Header',
+  
   setup() {
     const opened = false;
+    const mode = false;
+
     return {
       opened,
+      mode
     };
+
   },
 });
 </script>

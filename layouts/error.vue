@@ -7,6 +7,7 @@
       <img
         alt="error"
         class="h-48 lg:h-auto"
+        style="width: 450px"
         src="@/static/error-illustration.svg"
       />
     </div>
@@ -20,34 +21,13 @@
       <div class="intro-x text-lg mt-3">
         You may have mistyped the address or the page may have moved.
       </div>
-      <button class="intro-x button button--lg border mt-10">
+      <button class="intro-x py-1 px-2 md:py-2 md:px-3 lg:py-3 lg:px-4 rounded-md font-medium cursor-pointer border mt-10 focus:outline-none focus:shadow-outline">
         Back to Home
       </button>
     </div>
   </div>
   <!-- END: Error Page -->
 </template>
-
-<style scoped>
-.error-page img {
-  width: 450px;
-}
-.button {
-  @apply py-2 px-3 rounded-md font-medium cursor-pointer;
-  &:focus {
-    @apply outline-none shadow-outline;
-  }
-  &:not(button) {
-    @apply text-center;
-  }
-  &.button--sm {
-    @apply py-1 px-2;
-  }
-  &.button--lg {
-    @apply py-3 px-4;
-  }
-}
-</style>
 
 <script lang="ts">
 import { defineComponent, ref } from "@vue/composition-api";

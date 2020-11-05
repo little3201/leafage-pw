@@ -1,6 +1,6 @@
 <template>
   <div class="max-w-screen-lg mx-auto">
-    <div class="mt-12">
+    <div class="mt-16">
       <!-- featured section -->
       <div class="flex flex-wrap md:flex-no-wrap space-x-0 md:space-x-6 mb-16">
         <!-- main post -->
@@ -8,30 +8,25 @@
           class="mb-4 lg:mb-0 p-4 lg:p-0 w-full md:w-4/7 relative rounded block"
         >
           <img
-            alt="1427751840561"
-            src="https://images.unsplash.com/photo-1427751840561-9852520f8ce8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
+            :alt="datas[0].title"
+            :src="datas[0].imageUrl + '?imageMogr2/thumbnail/640x640/interlace/1/blur/1x0/quality/100'"
             class="rounded-md object-cover w-full h-64"
           />
           <span class="text-orange-600 text-sm hidden md:block mt-4">
             Technology
           </span>
-          <h1 class="text-gray-800 text-4xl font-bold mt-2 mb-2 leading-tight">
-            Ignorant branched humanity led now marianne too.
+          <h1 class="text-gray-800 text-3xl font-bold mt-2 mb-2 leading-tight">
+            {{ datas[0].title }}
           </h1>
           <p class="text-gray-600 mb-4">
-            Necessary ye contented newspaper zealously breakfast he prevailed.
-            Melancholy middletons yet understood decisively boy law she. Answer
-            him easily are its barton little. Oh no though mother be things
-            simple itself. Oh be me, sure wise sons, no. Piqued ye of am spirit
-            regret. Stimulated discretion impossible admiration in particular
-            conviction up.
+            {{ datas[0].subtitle }}
           </p>
-          <a
-            href="./blog.html"
+          <nuxt-link
+            :to="'/blog/detail/' + datas[0].businessId"
             class="inline-block px-6 py-3 mt-2 rounded-md bg-orange-600 text-gray-100"
           >
             Read more
-          </a>
+          </nuxt-link>
         </div>
 
         <!-- sub-main posts -->
