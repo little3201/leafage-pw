@@ -4,7 +4,7 @@
       id="slug"
       class="bg-opacity-50 bg-black flex items-center justify-center"
       :style="{
-        'background-image': 'url(https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80)',
+        'background-image': 'url(' + data.imageUrl + '?imageMogr2/auto-orient/thumbnail/!x50p/interlace/1/blur/1x0/quality/100)',
         'height':'24em',
       }"
     >
@@ -14,9 +14,7 @@
           class="px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center mb-2"
           >Nutrition</a
         >
-        <h2 class="text-4xl font-semibold text-gray-100 leading-tight">
-          Pellentesque a consectetur velit, ac molestie ipsum. Donec sodales,
-          massa et auctor.
+        <h2 class="text-4xl font-semibold text-gray-100 leading-tight" v-text="data.title">
         </h2>
         <div class="flex mt-3">
           <img
@@ -24,8 +22,8 @@
             class="h-10 w-10 rounded-full mr-2 object-cover"
           />
           <div>
-            <p class="font-semibold text-gray-200 text-sm">Mike Sullivan</p>
-            <p class="font-semibold text-gray-400 text-xs">14 Aug</p>
+            <p class="font-semibold text-gray-200 text-sm" v-text="data.author.nickname" />
+            <!-- <p class="font-semibold text-gray-400 text-xs">14 Aug</p> -->
           </div>
         </div>
       </div>
@@ -33,7 +31,7 @@
     <div
       class="mt-12 text-gray-700 max-w-screen-xl mx-auto text-lg leading-relaxed"
     >
-      <p class="pb-6" v-text="data.content" />
+      <p class="pb-6 px-4" v-html="data.content" />
     </div>
   </article>
 </template>
@@ -44,11 +42,6 @@ import { SERVER_URL } from '~/assets/request'
 
 export default defineComponent({
   name: 'Slug',
-
-  async asyncData ({ app: { $axios, params } }) {
-    const data = await $axios.$get(SERVER_URL.article.concat('/').concat(params.value.slug))
-    return { data }
-  },
 
   head () {
     const title = 'Blog - Abeille | 布吉岛'
@@ -65,6 +58,11 @@ export default defineComponent({
         { hid: 'twitter:description', name: 'twitter:description', content: description }
       ]
     }
+  },
+
+  async asyncData ({ app: { $axios }, route }) {
+    const data = await $axios.$get(SERVER_URL.article.concat('/').concat(route.params.slug))
+    return { data }
   }
 })
 </script>
