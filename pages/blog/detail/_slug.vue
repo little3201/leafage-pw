@@ -33,15 +33,38 @@
     <div
       class="mt-12 text-gray-700 max-w-screen-xl mx-auto text-lg leading-relaxed"
     >
-      <p class="pb-6">
-        Adieus except say barton put feebly favour him. Entreaties unpleasant
-        sufficient few pianoforte discovered uncommonly ask. Morning cousins
-        amongst in mr weather do neither. Warmth object matter course active law
-        spring six. Pursuit showing tedious unknown winding see had man add. And
-        park eyes too more him. Simple excuse active had son wholly coming
-        number add. Though all excuse ladies rather regard assure yet. If
-        feelings so prospect no as raptures quitting.
-      </p>
+      <p class="pb-6" v-text="data.content" />
     </div>
   </article>
 </template>
+
+<script lang="ts">
+import { defineComponent } from "@vue/composition-api";
+import { SERVER_URL } from '~/assets/request'
+
+export default defineComponent({
+  name: 'Slug',
+
+  async asyncData ({ app: { $axios, params } }) {
+    const data = await $axios.$get(SERVER_URL.article.concat('/').concat(params.value.slug))
+    return { data }
+  },
+
+  head () {
+    const title = 'Blog - Abeille | 布吉岛'
+    const description = 'Blog of Abeille'
+    return {
+      title,
+      meta: [
+        { hid: 'description', name: 'description', content: description },
+        // Open Graph
+        { hid: 'og:title', property: 'og:title', content: title },
+        { hid: 'og:description', property: 'og:description', content: description },
+        // Twitter Card
+        { hid: 'twitter:title', name: 'twitter:title', content: title },
+        { hid: 'twitter:description', name: 'twitter:description', content: description }
+      ]
+    }
+  }
+})
+</script>

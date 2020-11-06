@@ -52,6 +52,11 @@ export default {
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
 
+  // nuxt loading configuration (https://zh.nuxtjs.org/api/configuration-loading)
+  loading: {
+    color: '#FF6F00'
+  },
+  
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     extractCSS: true

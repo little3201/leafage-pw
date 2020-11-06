@@ -11,7 +11,7 @@ const statusCode: any = {
   504: '网关超时'
 }
 
-const accessor: Plugin = ({ error, app: { $axios }, redirect }) => {
+export const accessor: Plugin = ({ error, app: { $axios }, redirect }) => {
 
   $axios.onRequest((config: AxiosRequestConfig) => {
     return config
@@ -27,5 +27,3 @@ const accessor: Plugin = ({ error, app: { $axios }, redirect }) => {
     }
   })
 }
-
-export default accessor

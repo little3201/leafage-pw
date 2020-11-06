@@ -1,6 +1,6 @@
 <template>
   <div class="max-w-screen-lg mx-auto">
-    <div class="mt-16">
+    <div class="mt-24 md:mx-auto">
       <!-- featured section -->
       <div class="flex flex-wrap md:flex-no-wrap space-x-0 md:space-x-6 mb-16">
         <!-- main post -->
@@ -15,10 +15,10 @@
           <span class="text-orange-600 text-sm hidden md:block mt-4">
             Technology
           </span>
-          <h1 class="text-gray-800 text-3xl font-bold mt-2 mb-2 leading-tight">
+          <h1 class="text-gray-800 text-4xl font-bold mt-2 mb-2 leading-tight">
             {{ datas[0].title }}
           </h1>
-          <p class="text-gray-600 mb-4">
+          <p class="text-gray-600 mb-4 text-xl">
             {{ datas[0].subtitle }}
           </p>
           <nuxt-link
@@ -31,11 +31,10 @@
 
         <!-- sub-main posts -->
         <div class="w-full md:w-4/7">
-          <!-- post 1 -->
-          <div class="rounded w-full flex flex-col md:flex-row mb-10">
+          <div v-for="subindex in 4" :key="subindex" class="rounded w-full flex flex-col md:flex-row mb-10">
             <img
-              alt="1519389950473"
-              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
+              :alt="datas[subindex].title"
+              :src="datas[subindex].imageUrl + '?imageMogr2/thumbnail/640x640/interlace/1/blur/1x0/quality/100'"
               class="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0"
             />
             <div class="bg-white rounded px-4">
@@ -43,77 +42,10 @@
                 Gadgets
               </span>
               <div class="md:mt-0 text-gray-800 font-semibold text-xl mb-2">
-                At every tiled on ye defer do. No attention suspected oh
-                difficult.
+                {{ datas[subindex].title }}
               </div>
               <p class="block md:hidden p-2 pl-0 pt-1 text-sm text-gray-600">
-                Wonder matter now can estate esteem assure fat roused. Am
-                performed on existence as discourse is. Pleasure friendly at
-                marriage blessing or
-              </p>
-            </div>
-          </div>
-
-          <!-- post 2 -->
-          <div class="rounded w-full flex flex-col md:flex-row mb-10">
-            <img
-              alt="1531297484001"
-              src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
-              class="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0"
-            />
-            <div class="bg-white rounded px-4">
-              <span class="text-orange-600 text-sm hidden md:block">
-                Bitcoin
-              </span>
-              <div class="md:mt-0 text-gray-800 font-semibold text-xl mb-2">
-                Fond his say old meet cold find come whom. The sir park sake
-                bred.
-              </div>
-              <p class="block md:hidden p-2 pl-0 pt-1 text-sm text-gray-600">
-                Integer commodo, sapien ut vulputate viverra, Integer commodo
-                Integer commodo, sapien ut vulputate viverra, Integer commodo
-              </p>
-            </div>
-          </div>
-          <!-- post 3 -->
-          <div class="rounded w-full flex flex-col md:flex-row mb-10">
-            <img
-              alt="1498050108023"
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
-              class="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0"
-            />
-            <div class="bg-white rounded px-4">
-              <span class="text-orange-600 text-sm hidden md:block">
-                Insights
-              </span>
-              <div class="md:mt-0 text-gray-800 font-semibold text-xl mb-2">
-                Advice me cousin an spring of needed. Tell use paid law ever yet
-                new.
-              </div>
-              <p class="block md:hidden p-2 pl-0 pt-1 text-sm text-gray-600">
-                Meant to learn of vexed if style allow he there. Tiled man stand
-                tears ten joy there terms any widen.
-              </p>
-            </div>
-          </div>
-          <!-- post 4 -->
-          <div class="rounded w-full flex flex-col md:flex-row mb-10">
-            <img
-              alt="1489844097929"
-              src="https://images.unsplash.com/photo-1489844097929-c8d5b91c456e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
-              class="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0"
-            />
-            <div class="bg-white rounded px-4">
-              <span class="text-orange-600 text-sm hidden md:block">
-                Cryptocurrency
-              </span>
-              <div class="md:mt-0 text-gray-800 font-semibold text-xl mb-2">
-                Advice me cousin an spring of needed. Tell use paid law ever yet
-                new.
-              </div>
-              <p class="block md:hidden p-2 pl-0 pt-1 text-sm text-gray-600">
-                Meant to learn of vexed if style allow he there. Tiled man stand
-                tears ten joy there terms any widen.
+                {{ datas[subindex].subtitle }}
               </p>
             </div>
           </div>
@@ -131,79 +63,26 @@
         </a>
       </div>
       <div class="block space-x-0 lg:flex lg:space-x-6">
-        <div class="rounded w-full lg:w-1/2 p-4 lg:p-0">
+        <div v-for="recentIndex in ((datas.length - 5) > 3 ? 3 : (datas.length - 5))" :key="recentIndex" class="rounded w-full lg:w-1/2 p-4 lg:p-0">
           <img
-            src="https://images.unsplash.com/photo-1526666923127-b2970f64b422?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
+            :alt="datas[recentIndex + 4].title"
+            :src="datas[recentIndex + 4].imageUrl + '?imageMogr2/thumbnail/640x640/interlace/1/blur/1x0/quality/100'"
             class="rounded"
-            alt="technology"
           />
           <div class="p-4 pl-0">
             <h2 class="font-bold text-2xl text-gray-800">
-              Put all speaking her delicate recurred possible.
+              {{ datas[recentIndex + 4].title }}
             </h2>
             <p class="text-gray-700 mt-2">
-              Set indulgence inquietude discretion insensible bed why
-              announcing. Middleton fat two satisfied additions. So continued he
-              or commanded household smallness delivered. Door poor on do walk
-              in half. Roof his head the what.
+              {{ datas[recentIndex + 4].subtitle }}
             </p>
 
-            <a
-              href="#"
+            <nuxt-link
+              :to="'/blog/detail/' + datas[recentIndex + 4].businessId"
               class="inline-block py-2 rounded text-green-900 mt-2 ml-auto"
             >
               Read more
-            </a>
-          </div>
-        </div>
-
-        <div class="rounded w-full lg:w-1/2 p-4 lg:p-0">
-          <img
-            src="https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
-            class="rounded"
-            alt="technology"
-          />
-          <div class="p-4 pl-0">
-            <h2 class="font-bold text-2xl text-gray-800">
-              Is at purse tried jokes china ready decay an.
-            </h2>
-            <p class="text-gray-700 mt-2">
-              Small its shy way had woody downs power. To denoting admitted
-              speaking learning my exercise so in. Procured shutters mr it
-              feelings. To or three offer house begin taken am at.
-            </p>
-
-            <a
-              href="#"
-              class="inline-block py-2 rounded text-green-900 mt-2 ml-auto"
-            >
-              Read more
-            </a>
-          </div>
-        </div>
-
-        <div class="rounded w-full lg:w-1/2 p-4 lg:p-0">
-          <img
-            src="https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
-            class="rounded"
-            alt="technology"
-          />
-          <div class="p-4 pl-0">
-            <h2 class="font-bold text-2xl text-gray-800">
-              As dissuade cheerful overcame so of friendly he indulged unpacked.
-            </h2>
-            <p class="text-gray-700 mt-2">
-              Alteration connection to so as collecting me. Difficult in
-              delivered extensive at direction allowance. Alteration put use
-              diminution can considered sentiments interested discretion.
-            </p>
-
-            <a
-              href="#"
-              class="inline-block py-2 rounded text-green-900 mt-2 ml-auto"
-            >
-              Read more
-            </a>
+            </nuxt-link>
           </div>
         </div>
       </div>
@@ -219,76 +98,26 @@
         </a>
       </div>
       <div class="block space-x-0 lg:flex lg:space-x-6">
-        <div class="rounded w-full lg:w-1/2 p-4 lg:p-0">
+        <div v-for="popularIndex in ((datas.length - 8) > 3 ? 3 : (datas.length - 8))" :key="popularIndex" class="rounded w-full lg:w-1/2 p-4 lg:p-0">
           <img
-            src="https://images.unsplash.com/photo-1526666923127-b2970f64b422?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
+            :alt="datas[popularIndex + 7].title"
+            :src="datas[popularIndex + 7].imageUrl + '?imageMogr2/thumbnail/640x640/interlace/1/blur/1x0/quality/100'"
             class="rounded"
-            alt="technology"
           />
           <div class="p-4 pl-0">
             <h2 class="font-bold text-2xl text-gray-800">
-              Put all speaking her delicate recurred possible.
+              {{ datas[popularIndex + 7].title }}
             </h2>
             <p class="text-gray-700 mt-2">
-              Set indulgence inquietude discretion insensible bed why
-              announcing. Middleton fat two satisfied additions. So continued he
-              or commanded household smallness delivered. Door poor on do walk
-              in half. Roof his head the what.
+              {{ datas[popularIndex + 7].subtitle }}
             </p>
 
-            <a
-              href="#"
+            <nuxt-link
+              :to="'/blog/detail/' + datas[popularIndex + 7].businessId"
               class="inline-block py-2 rounded text-green-900 mt-2 ml-auto"
             >
               Read more
-            </a>
-          </div>
-        </div>
-
-        <div class="rounded w-full lg:w-1/2 p-4 lg:p-0">
-          <img
-            src="https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
-            class="rounded"
-            alt="technology"
-          />
-          <div class="p-4 pl-0">
-            <h2 class="font-bold text-2xl text-gray-800">
-              Is at purse tried jokes china ready decay an.
-            </h2>
-            <p class="text-gray-700 mt-2">
-              Small its shy way had woody downs power. To denoting admitted
-              speaking learning my exercise so in. Procured shutters mr it
-              feelings. To or three offer house begin taken am at.
-            </p>
-
-            <a
-              href="#"
-              class="inline-block py-2 rounded text-green-900 mt-2 ml-auto"
-            >
-              Read more
-            </a>
-          </div>
-        </div>
-
-        <div class="rounded w-full lg:w-1/2 p-4 lg:p-0">
-          <img
-            src="https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
-            class="rounded"
-            alt="technology"
-          />
-          <div class="p-4 pl-0">
-            <h2 class="font-bold text-2xl text-gray-800">
-              As dissuade cheerful overcame so of friendly he indulged unpacked.
-            </h2>
-            <p class="text-gray-700 mt-2">
-              Alteration connection to so as collecting me. Difficult in
-              delivered extensive at direction allowance. Alteration put use
-              diminution can considered sentiments interested discretion.
-            </p>
-
-            <a href="#" class="inline-block py-2 rounded mt-2 ml-auto">
-              Read more
-            </a>
+            </nuxt-link>
           </div>
         </div>
       </div>
@@ -299,12 +128,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "@vue/composition-api";
+import { defineComponent } from "@vue/composition-api";
+import { SERVER_URL } from '~/assets/request'
+
 export default defineComponent({
   name: 'BLog',
 
   async asyncData ({ app: { $axios } }) {
-    const datas = await $axios.$get('/assets/article')
+    const datas = await $axios.$get(SERVER_URL.article)
     return { datas }
   },
 

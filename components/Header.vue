@@ -87,14 +87,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, } from "@vue/composition-api";
+import { defineComponent, ref, onMounted } from "@vue/composition-api";
 
 export default defineComponent({
   name: 'Header',
   
   setup() {
-    const opened = false;
-    const mode = false;
+    const opened = ref(false);
+    const mode = ref(false);
 
     return {
       opened,

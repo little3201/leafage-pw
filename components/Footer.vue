@@ -5,12 +5,12 @@
         <div class="w-full lg:w-2/5 -mx-6">
           <div class="px-6">
             <div>
-              <img src="../static/logo.svg" class="w-12">
-              <a
-                href="#"
+              <nuxt-link
+                to="/"
                 class="text-xl font-bold text-gray-100 hover:text-gray-400"
-                >Abeille</a
               >
+                <img src="../static/logo.svg" class="w-12">
+              </nuxt-link>
             </div>
 
             <p class="mt-2 text-gray-400 max-w-md">
@@ -69,7 +69,7 @@
           </div>
         </div>
 
-        <div class="mt-6 lg:mt-0 lg:flex-1">
+        <div class="mt-8 lg:mt-0 lg:flex-1">
           <div class="grid gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
             <div>
               <h3 class="text-gray-100 uppercase">About</h3>
