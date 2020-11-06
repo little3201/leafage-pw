@@ -328,18 +328,19 @@
         class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center"
       >
         <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-black">
-          好记性，不如烂笔头
-          <br class="hidden lg:inline-block" />总结记录
+          好记性不如烂笔头
         </h1>
-        <p class="mb-8 leading-relaxed">
-          每一次的记录，都见证了在技术方面的成长，循序渐进。几乎所有的学习都需要坚持，实践，需要建立体系，技术需要实践，坚持...
+        <p class="mb-2 leading-relaxed">
+          人们常觉得准备的阶段是在浪费时间，只有当真正机会来临，而自己没有能力把握的时候，才能觉悟自己平时没有准备才是浪费了时间...
         </p>
+        <h1 class="mb-6 text-xl">——罗曼·罗兰</h1>
         <div class="flex justify-center">
-          <button
-            class="border-2 border-black text-black rounded-sm font-bold py-4 px-6 mr-2 flex items-center hover:bg-white hover:text-indigo-500 transition ease-in-out duration-700"
+          <nuxt-link
+            to="/"
+            class="inline-block px-6 py-3 mt-6 rounded-md border border-current hover:border-orange-600 hover:text-orange-600"
           >
-            Button
-          </button>
+            Get More
+          </nuxt-link>
         </div>
       </div>
     </div>

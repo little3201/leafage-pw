@@ -256,18 +256,19 @@
         class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center"
       >
         <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-black">
-          书中自有颜如玉，书中自有黄金屋
-          <br class="hidden lg:inline-block" />读书使我快乐
+          补漏趁天晴，读书趁年轻
         </h1>
-        <p class="mb-8 leading-relaxed">
-          总说身体和灵魂总要有一个在路上，那么灵魂的过往，是否需要一些记录或者记忆，我想是的，你最近在看什么呢..
+        <p class="mb-2 leading-relaxed">
+          在所阅读的书本中找出可以把自己引到深处的东西，把其它一切统统抛掉，就是抛掉使头脑负担过重和会把自己诱离要点的一切...
         </p>
+        <h1 class="mb-6 text-xl">——爱因斯坦</h1>
         <div class="flex justify-center">
-          <button
-            class="border-2 border-black text-black rounded-sm font-bold py-4 px-6 mr-2 flex items-center hover:bg-white hover:text-indigo-500 transition ease-in-out duration-700"
+          <nuxt-link
+            to="/"
+            class="inline-block px-6 py-3 mt-6 rounded-md border border-current hover:border-orange-600 hover:text-orange-600"
           >
-            Button
-          </button>
+            Get More
+          </nuxt-link>
         </div>
       </div>
     </div>

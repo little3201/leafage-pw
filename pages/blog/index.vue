@@ -1,6 +1,6 @@
 <template>
   <div class="max-w-screen-lg mx-auto">
-    <div class="mt-24 md:mx-auto">
+    <div class="mt-20 md:mx-auto">
       <!-- featured section -->
       <div class="flex flex-wrap md:flex-no-wrap space-x-0 md:space-x-6 mb-16">
         <!-- main post -->
@@ -10,7 +10,7 @@
           <img
             :alt="datas[0].title"
             :src="datas[0].imageUrl + '?imageMogr2/thumbnail/640x640/interlace/1/blur/1x0/quality/100'"
-            class="rounded-md object-cover w-full h-64"
+            class="rounded-md object-cover h-64 w-full"
           />
           <span class="text-orange-600 text-sm hidden md:block mt-4">
             Technology
@@ -23,7 +23,7 @@
           </p>
           <nuxt-link
             :to="'/blog/detail/' + datas[0].businessId"
-            class="inline-block px-6 py-3 mt-2 rounded-md bg-orange-600 text-gray-100"
+            class="inline-block px-6 py-3 mt-2 rounded-md bg-orange-600 text-gray-100 hover:bg-orange-500"
           >
             Read more
           </nuxt-link>
@@ -31,15 +31,15 @@
 
         <!-- sub-main posts -->
         <div class="w-full md:w-4/7">
-          <div v-for="subindex in 4" :key="subindex" class="rounded w-full flex flex-col md:flex-row mb-10">
+          <div v-for="subindex in 4" :key="subindex" class="rounded w-full flex flex-col md:flex-row mb-6 p-4 lg:p-0">
             <img
               :alt="datas[subindex].title"
               :src="datas[subindex].imageUrl + '?imageMogr2/thumbnail/640x640/interlace/1/blur/1x0/quality/100'"
-              class="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0"
+              class="block md:hidden lg:block rounded w-full lg:w-64 md:h-32"
             />
-            <div class="bg-white rounded px-4">
+            <div class="bg-white rounded md:px-4 pt-4 md:pt-0">
               <span class="text-orange-600 text-sm hidden md:block">
-                Gadgets
+                Technology
               </span>
               <div class="md:mt-0 text-gray-800 font-semibold text-xl mb-2">
                 {{ datas[subindex].title }}
@@ -54,8 +54,8 @@
       <!-- end featured section -->
 
       <!-- recent posts -->
-      <div class="flex mt-16 mb-4 px-4 lg:px-0 items-center justify-between">
-        <h2 class="font-bold text-3xl">Latest news</h2>
+      <div class="flex mt-12 mb-4 px-4 lg:px-0 items-center justify-between">
+        <h2 class="font-bold text-3xl">Latest articles</h2>
         <a
           class="bg-gray-200 hover:bg-green-200 text-gray-800 px-3 py-1 rounded cursor-pointer"
         >
@@ -67,7 +67,7 @@
           <img
             :alt="datas[recentIndex + 4].title"
             :src="datas[recentIndex + 4].imageUrl + '?imageMogr2/thumbnail/640x640/interlace/1/blur/1x0/quality/100'"
-            class="rounded"
+            class="rounded h-56 w-full"
           />
           <div class="p-4 pl-0">
             <h2 class="font-bold text-2xl text-gray-800">
@@ -79,7 +79,7 @@
 
             <nuxt-link
               :to="'/blog/detail/' + datas[recentIndex + 4].businessId"
-              class="inline-block py-2 rounded text-green-900 mt-2 ml-auto"
+              class="inline-block py-2 rounded text-gray-800 hover:text-orange-600 mt-2 ml-auto"
             >
               Read more
             </nuxt-link>
@@ -89,8 +89,8 @@
       <!-- end recent posts -->
 
       <!-- popular posts -->
-      <div class="flex mt-16 mb-4 px-4 lg:px-0 items-center justify-between">
-        <h2 class="font-bold text-3xl">Popular news</h2>
+      <div class="flex mt-12 mb-4 px-4 lg:px-0 items-center justify-between">
+        <h2 class="font-bold text-3xl">Popular articles</h2>
         <a
           class="bg-gray-200 hover:bg-green-200 text-gray-800 px-3 py-1 rounded cursor-pointer"
         >
@@ -102,7 +102,7 @@
           <img
             :alt="datas[popularIndex + 7].title"
             :src="datas[popularIndex + 7].imageUrl + '?imageMogr2/thumbnail/640x640/interlace/1/blur/1x0/quality/100'"
-            class="rounded"
+            class="rounded h-56 w-full"
           />
           <div class="p-4 pl-0">
             <h2 class="font-bold text-2xl text-gray-800">
@@ -114,7 +114,7 @@
 
             <nuxt-link
               :to="'/blog/detail/' + datas[popularIndex + 7].businessId"
-              class="inline-block py-2 rounded text-green-900 mt-2 ml-auto"
+              class="inline-block py-2 rounded text-gray-800 hover:text-orange-600 mt-2 ml-auto"
             >
               Read more
             </nuxt-link>
@@ -134,11 +134,6 @@ import { SERVER_URL } from '~/assets/request'
 export default defineComponent({
   name: 'BLog',
 
-  async asyncData ({ app: { $axios } }) {
-    const datas = await $axios.$get(SERVER_URL.article)
-    return { datas }
-  },
-
   head () {
     const title = 'Blog - Abeille | 布吉岛'
     const description = 'Blog of Abeille'
@@ -154,6 +149,11 @@ export default defineComponent({
         { hid: 'twitter:description', name: 'twitter:description', content: description }
       ]
     }
+  },
+  
+  async asyncData ({ app: { $axios } }) {
+    const datas = await $axios.$get(SERVER_URL.article)
+    return { datas }
   }
 })
 </script>

@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nav class="inset-x-0 top-0 z-10" style="margin-bottom: -62px" :class="mode ? 'text-white' : ''">
+    <nav class="inset-x-0 top-0 z-10 text-white" style="margin-bottom: -62px">
       <div
         class="md:max-w-6xl xl:max-w-screen-xl md:mx-auto md:flex md:items-center md:justify-between"
       >
@@ -94,11 +94,9 @@ export default defineComponent({
   
   setup() {
     const opened = ref(false);
-    const mode = ref(false);
 
     return {
-      opened,
-      mode
+      opened
     };
 
   },

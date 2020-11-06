@@ -1,7 +1,7 @@
 <template>
   <div>
     <Hero />
-    <Technology />
+    <Lesson />
     <Travels />
     <Reading />
   </div>

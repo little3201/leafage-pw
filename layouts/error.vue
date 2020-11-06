@@ -21,9 +21,12 @@
       <div class="intro-x text-lg mt-3">
         You may have mistyped the address or the page may have moved.
       </div>
-      <button class="intro-x py-1 px-2 md:py-2 md:px-3 lg:py-3 lg:px-4 rounded-md font-medium cursor-pointer border mt-10 focus:outline-none focus:shadow-outline">
+      <nuxt-link
+        to="/"
+        class="inline-block px-6 py-3 mt-6 rounded-md border border-current hover:border-orange-500 hover:text-orange-500"
+      >
         Back to Home
-      </button>
+      </nuxt-link>
     </div>
   </div>
   <!-- END: Error Page -->

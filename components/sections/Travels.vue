@@ -4,21 +4,22 @@
       class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center"
     >
       <div
-        class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center"
+        class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-end md:text-right mb-16 md:mb-0 text-center"
       >
         <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-black">
-          身体和灵魂，总有一个要在路上
-          <br class="hidden lg:inline-block text-black" />一路向西
+          振衣千仞岗，濯足万里流
         </h1>
-        <p class="mb-8 leading-relaxed">
-          美好的大千世界，形形色色的人，有趣的，美妙的，等着你去发现，旅途中的记忆，也要有个记录的地方，记录这些，日后回忆...
+        <p class="mb-2 leading-relaxed">
+          在远天底下，有许多我迟早要去，也终必能去的地方——我摆脱不了在心灵中流浪，又要在天地间流浪的命运的诱惑...
         </p>
+        <h1 class="mb-6 text-xl">——余纯顺</h1>
         <div class="flex justify-center">
-          <button
-            class="border-2 border-black text-black rounded-sm font-bold py-4 px-6 mr-2 flex items-center hover:bg-white hover:text-indigo-500 transition ease-in-out duration-700"
+          <nuxt-link
+            to="/"
+            class="inline-block px-6 py-3 mt-6 rounded-md border border-current hover:border-orange-600 hover:text-orange-600"
           >
-            Button
-          </button>
+            Get More
+          </nuxt-link>
         </div>
       </div>
       <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
