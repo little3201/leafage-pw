@@ -1,5 +1,5 @@
 <template>
-<div class="max-w-6xl px-4 mx-auto">
+<div class="container px-4 mx-auto">
     <div class="mt-20 md:mx-auto">
       <!-- featured section -->
       <div class="flex flex-wrap md:flex-no-wrap space-x-0 md:space-x-6 mb-16">
@@ -35,7 +35,7 @@
             <img
               :alt="datas[subindex].title"
               :src="datas[subindex].imageUrl + '?imageMogr2/thumbnail/640x640/interlace/1/blur/1x0/quality/100'"
-              class="block md:hidden lg:block rounded w-full lg:w-64 md:h-32"
+              class="block md:hidden lg:block rounded lg:w-64 md:h-32 object-cover"
             />
             <div class="bg-white rounded md:px-4 pt-4 md:pt-0">
               <span class="text-orange-600 text-sm hidden md:block">
@@ -127,23 +127,6 @@ export default defineComponent({
 
   props: {
     datas: Array
-  },
-  
-  head () {
-    const title = 'Blog - Abeille | 布吉岛'
-    const description = 'Blog of Abeille'
-    return {
-      title,
-      meta: [
-        { hid: 'description', name: 'description', content: description },
-        // Open Graph
-        { hid: 'og:title', property: 'og:title', content: title },
-        { hid: 'og:description', property: 'og:description', content: description },
-        // Twitter Card
-        { hid: 'twitter:title', name: 'twitter:title', content: title },
-        { hid: 'twitter:description', name: 'twitter:description', content: description }
-      ]
-    }
   }
 })
 </script>

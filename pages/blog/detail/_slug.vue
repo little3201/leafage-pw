@@ -11,7 +11,7 @@
         class="w-full flex items-center justify-center md:h-64"
         style="background: rgba(0, 0, 0, 0.5);"
       >
-        <div class="text-center max-w-6xl">
+        <div class="text-center container mx-auto">
           <a
             href="#"
             class="px-4 py-1 bg-orange-500 text-black inline-flex items-center justify-center my-4"

@@ -50,7 +50,9 @@ export default {
   },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
-  content: {},
+  content: {
+    liveEdit: false
+  },
 
   // nuxt loading configuration (https://zh.nuxtjs.org/api/configuration-loading)
   loading: {

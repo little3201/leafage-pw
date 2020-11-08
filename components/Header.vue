@@ -2,7 +2,7 @@
   <header>
     <nav class="inset-x-0 top-0 z-10 md:py-2">
       <div
-        class="max-w-6xl md:mx-auto md:flex md:items-center md:justify-between"
+        class="container md:mx-auto md:flex md:items-center md:justify-between"
       >
         <div class="p-2">
           <div
