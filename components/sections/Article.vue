@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-6xl px-4 mx-auto">
+<div class="max-w-6xl px-4 mx-auto">
     <div class="mt-20 md:mx-auto">
       <!-- featured section -->
       <div class="flex flex-wrap md:flex-no-wrap space-x-0 md:space-x-6 mb-16">
@@ -57,7 +57,7 @@
       <div class="flex mt-12 mb-4 px-4 lg:px-0 items-center justify-between">
         <h2 class="font-bold text-3xl">Latest articles</h2>
         <a
-          class="bg-gray-200 hover:bg-green-200 text-gray-800 px-3 py-1 rounded cursor-pointer"
+          class="bg-gray-200 hover:bg-orange-200 text-gray-800 px-3 py-1 rounded cursor-pointer"
         >
           View all
         </a>
@@ -73,13 +73,13 @@
             <h2 class="font-bold text-2xl text-gray-800">
               {{ datas[recentIndex + 4].title }}
             </h2>
-            <p class="text-gray-700 mt-2">
+            <p class="text-gray-700 mt-2 h-24">
               {{ datas[recentIndex + 4].subtitle }}
             </p>
 
             <nuxt-link
               :to="'/blog/detail/' + datas[recentIndex + 4].businessId"
-              class="inline-block py-2 rounded text-gray-800 hover:text-orange-600 mt-2 ml-auto"
+              class="inline-block px-2 py-1 bg-orange-500 text-white hover:bg-orange-600 mt-2 ml-auto"
             >
               Read more
             </nuxt-link>
@@ -92,7 +92,7 @@
       <div class="flex mt-12 mb-4 px-4 lg:px-0 items-center justify-between">
         <h2 class="font-bold text-3xl">Popular articles</h2>
         <a
-          class="bg-gray-200 hover:bg-green-200 text-gray-800 px-3 py-1 rounded cursor-pointer"
+          class="bg-gray-200 hover:bg-orange-200 text-gray-800 px-3 py-1 rounded cursor-pointer"
         >
           View all
         </a>
@@ -108,7 +108,7 @@
             <h2 class="font-bold text-2xl text-gray-800">
               {{ datas[popularIndex + 7].title }}
             </h2>
-            <p class="text-gray-700 mt-2">
+            <p class="text-gray-700 mt-2 h-24">
               {{ datas[popularIndex + 7].subtitle }}
             </p>
 
@@ -127,13 +127,18 @@
   </div>
 </template>
 
+
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
 import { SERVER_URL } from '~/assets/request'
 
 export default defineComponent({
-  name: 'BLog',
+  name: 'Article',
 
+  props: {
+    datas: Array
+  },
+  
   head () {
     const title = 'Blog - Abeille | 布吉岛'
     const description = 'Blog of Abeille'
@@ -149,11 +154,6 @@ export default defineComponent({
         { hid: 'twitter:description', name: 'twitter:description', content: description }
       ]
     }
-  },
-  
-  async asyncData ({ app: { $axios } }) {
-    const datas = await $axios.$get(SERVER_URL.article)
-    return { datas }
   }
 })
 </script>

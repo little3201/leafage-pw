@@ -54,7 +54,7 @@ export default {
 
   // nuxt loading configuration (https://zh.nuxtjs.org/api/configuration-loading)
   loading: {
-    color: '#FF6F00'
+    color: '#dd6b20'
   },
   
   // Build Configuration (https://go.nuxtjs.dev/config-build)

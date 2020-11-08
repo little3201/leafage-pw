@@ -80,8 +80,9 @@
             <div>
               <h3 class="text-gray-100 uppercase">Blog</h3>
               <a href="#" class="block mt-2 text-sm text-gray-400">Technology</a>
-              <a href="#" class="block mt-2 text-sm text-gray-400">Travels</a>
+              <a href="#" class="block mt-2 text-sm text-gray-400">Travel</a>
               <a href="#" class="block mt-2 text-sm text-gray-400">Reading</a>
+              <a href="#" class="block mt-2 text-sm text-gray-400">LifeStyle</a>
             </div>
 
             <div>

@@ -2,34 +2,38 @@
   <article>
     <div
       id="slug"
-      class="bg-opacity-50 bg-black bg-center bg-no-repeat bg-cover flex items-center justify-center"
+      class="bg-opacity-50 bg-center bg-no-repeat bg-cover flex items-center justify-center md:h-64"
       :style="{
-        'background-image': 'url(' + data.imageUrl + '?imageMogr2/auto-orient/thumbnail/!x50p/interlace/1/blur/1x0/quality/100)',
-        'height':'24em',
+        'background-image': 'url(' + data.imageUrl + '?imageMogr2/auto-orient/thumbnail/!x50p/interlace/1/blur/1x0/quality/100))'
       }"
     >
-      <div class="text-center md:max-w-6xl xl:max-w-screen-xl">
-        <a
-          href="#"
-          class="px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center mb-2"
-          >Technology</a
-        >
-        <h2 class="text-4xl font-semibold text-gray-100 leading-tight" v-text="data.title">
-        </h2>
-        <div class="flex items-center justify-center mt-3">
-          <img
-            src="https://randomuser.me/api/portraits/men/97.jpg"
-            class="h-10 w-10 rounded-full mr-2 object-cover"
-          />
-          <div>
-            <p class="font-semibold text-gray-200" v-text="data.author.nickname" />
-            <!-- <p class="font-semibold text-gray-400 text-xs">14 Aug</p> -->
+      <div
+        class="w-full flex items-center justify-center md:h-64"
+        style="background: rgba(0, 0, 0, 0.5);"
+      >
+        <div class="text-center max-w-6xl">
+          <a
+            href="#"
+            class="px-4 py-1 bg-orange-500 text-black inline-flex items-center justify-center my-4"
+            >Technology</a
+          >
+          <h2 class="md:text-4xl font-semibold text-gray-100 leading-tight" v-text="data.title"/>
+          <div class="flex items-center justify-center mt-3">
+            <img
+              src="@/static/logo.svg"
+              class="h-10 w-10 rounded-full mr-2"
+              alt="布吉岛"
+            />
+            <div class="my-4 font-semibold">
+              <p class="text-gray-200 text-left" v-text="data.author.nickname" />
+              <p class="text-gray-400 text-xs" v-text="data.modifyTime" />
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div
-      class="mt-12 text-gray-700 max-w-screen-lg mx-auto text-lg leading-relaxed"
+      class="mt-12 text-gray-700 max-w-screen-lg mx-auto leading-relaxed"
     >
       <p class="pb-6 px-4" v-html="data.content" />
     </div>
