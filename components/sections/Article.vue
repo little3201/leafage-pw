@@ -23,7 +23,7 @@
           </p>
           <nuxt-link
             :to="'/blog/detail/' + datas[0].businessId"
-            class="inline-block px-6 py-3 mt-2 rounded-md bg-orange-600 text-gray-100 hover:bg-orange-500"
+            class="inline-block px-6 py-3 mt-2 rounded-md bg-orange-600 text-gray-100 transition ease-in-out duration-150 hover:bg-orange-500"
           >
             Read more
           </nuxt-link>
@@ -31,7 +31,7 @@
 
         <!-- sub-main posts -->
         <div class="w-full md:w-4/7">
-          <div v-for="subindex in 4" :key="subindex" class="rounded w-full flex flex-col md:flex-row mb-6 p-4 lg:p-0">
+          <div v-for="subindex in ((datas.length - 1) > 4 ? 4 : (datas.length - 1))" :key="subindex" class="rounded w-full flex flex-col md:flex-row mb-6 p-4 lg:p-0">
             <img
               :alt="datas[subindex].title"
               :src="datas[subindex].imageUrl + '?imageMogr2/thumbnail/640x640/interlace/1/blur/1x0/quality/100'"
@@ -41,9 +41,9 @@
               <span class="text-orange-600 text-sm hidden md:block">
                 Technology
               </span>
-              <div class="md:mt-0 text-gray-800 font-semibold text-xl mb-2">
+              <nuxt-link :to="'/blog/detail/' + datas[subindex].businessId" class="md:mt-0 text-gray-800 font-semibold text-xl mb-2 hover:text-orange-500 transition ease-in-out duration-150">
                 {{ datas[subindex].title }}
-              </div>
+              </nuxt-link>
               <p class="block md:hidden p-2 pl-0 pt-1 text-sm text-gray-600">
                 {{ datas[subindex].subtitle }}
               </p>
@@ -57,7 +57,7 @@
       <div class="flex mt-12 mb-4 px-4 lg:px-0 items-center justify-between">
         <h2 class="font-bold text-3xl">Latest articles</h2>
         <a
-          class="bg-gray-200 hover:bg-orange-200 text-gray-800 px-3 py-1 rounded cursor-pointer"
+          class="bg-gray-200 hover:bg-orange-200 text-gray-800 px-6 py-1 rounded cursor-pointer"
         >
           View all
         </a>
@@ -70,19 +70,14 @@
             class="rounded h-56 w-full"
           />
           <div class="p-4 pl-0">
-            <h2 class="font-bold text-2xl text-gray-800">
-              {{ datas[recentIndex + 4].title }}
-            </h2>
-            <p class="text-gray-700 mt-2 h-24">
-              {{ datas[recentIndex + 4].subtitle }}
-            </p>
-
             <nuxt-link
               :to="'/blog/detail/' + datas[recentIndex + 4].businessId"
-              class="inline-block px-2 py-1 bg-orange-500 text-white hover:bg-orange-600 mt-2 ml-auto"
-            >
-              Read more
+              class="font-bold text-2xl text-gray-800 hover:text-orange-500 transition ease-in-out duration-150">
+              {{ datas[recentIndex + 4].title }}
             </nuxt-link>
+            <p class="text-gray-700 mt-2">
+              {{ datas[recentIndex + 4].subtitle }}
+            </p>
           </div>
         </div>
       </div>
@@ -97,7 +92,7 @@
           View all
         </a>
       </div>
-      <div class="block space-x-0 lg:flex lg:space-x-6">
+      <div class="block space-x-0 lg:flex lg:space-x-6 mb-12">
         <div v-for="popularIndex in ((datas.length - 8) > 3 ? 3 : (datas.length - 8))" :key="popularIndex" class="rounded w-full lg:w-1/2 p-4 lg:p-0">
           <img
             :alt="datas[popularIndex + 7].title"
@@ -105,19 +100,14 @@
             class="rounded h-56 w-full"
           />
           <div class="p-4 pl-0">
-            <h2 class="font-bold text-2xl text-gray-800">
+            <nuxt-link
+              :to="'/blog/detail/' + datas[popularIndex + 4].businessId"
+              class="font-bold text-2xl text-gray-800 hover:text-orange-500">
               {{ datas[popularIndex + 7].title }}
-            </h2>
-            <p class="text-gray-700 mt-2 h-24">
+            </nuxt-link>
+            <p class="text-gray-700 mt-2">
               {{ datas[popularIndex + 7].subtitle }}
             </p>
-
-            <nuxt-link
-              :to="'/blog/detail/' + datas[popularIndex + 7].businessId"
-              class="inline-block py-2 rounded text-gray-800 hover:text-orange-600 mt-2 ml-auto"
-            >
-              Read more
-            </nuxt-link>
           </div>
         </div>
       </div>
