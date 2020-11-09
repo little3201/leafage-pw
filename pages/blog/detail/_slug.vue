@@ -2,9 +2,9 @@
   <article>
     <div
       id="slug"
-      class="bg-opacity-50 bg-center bg-no-repeat bg-cover flex items-center object-cover justify-center md:h-64"
+      class="bg-opacity-50 bg-center bg-no-repeat bg-cover flex items-center justify-center md:h-64"
       :style="{
-        'background-image': 'url(' + data.imageUrl + '?imageMogr2/auto-orient/thumbnail/!x50p/interlace/1/blur/1x0/quality/100))'
+        'background-image': 'url(' + data.imageUrl + '?imageMogr2/auto-orient/thumbnail/!x50p/interlace/1/blur/1x0/quality/100)'
       }"
     >
       <div
@@ -25,7 +25,7 @@
               alt="布吉岛"
             />
             <div class="my-4 font-semibold">
-              <p class="text-gray-200 text-left" v-text="data.author.nickname" />
+              <p class="text-gray-200 text-left" v-text="data.author.nickname ? data.author.nickname : ''" />
               <p class="text-gray-400 text-xs" v-text="data.modifyTime" />
             </div>
           </div>
