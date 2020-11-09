@@ -4,8 +4,7 @@
       id="slug"
       class="bg-opacity-50 bg-center bg-no-repeat bg-cover flex items-center justify-center md:h-64"
       :style="{
-        'background-image': 'url(' + data.imageUrl + '?imageMogr2/auto-orient/thumbnail/!x50p/interlace/1/blur/1x0/quality/100)'
-      }"
+        'background-image': 'url(' + data.imageUrl + ')'}"
     >
       <div
         class="w-full flex items-center justify-center md:h-64"

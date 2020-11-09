@@ -10,7 +10,7 @@
     >
       <div class="md:flex-shrink-0">
         <img
-          :src="data.imageUrl + '?imageMogr2/thumbnail/640x640/interlace/1/blur/1x0/quality/100'"
+          :src="data.imageUrl"
           :alt="data.title"
           class="object-fill w-full rounded-lg rounded-b-none md:h-48"
         />
@@ -88,11 +88,9 @@
         </div>
       </div>
       <div class="flex flex-wrap items-center flex-1 px-4 py-1 text-center mx-auto">
-        <a href="#" class="hover:underline">
-          <h2 class="font-bold tracking-normal text-gray-800">
+        <nuxt-link :to="'/blog/detail/' + data.businessId" class="font-bold tracking-normal text-gray-800 hover:text-orange-500">
             {{ data.title }}
-          </h2>
-        </a>
+        </nuxt-link>
       </div>
     </div>
   </div>
