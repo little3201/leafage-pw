@@ -34,7 +34,7 @@
           <div v-for="subindex in ((datas.length - 1) > 4 ? 4 : (datas.length - 1))" :key="subindex" class="rounded w-full flex flex-col md:flex-row mb-6 p-4 lg:p-0">
             <img
               :alt="datas[subindex].title"
-              :src="datas[subindex].imageUrl + '?imageMogr2/thumbnail/640x640/interlace/1/blur/1x0/quality/100'"
+              :src="datas[subindex].imageUrl"
               class="block md:hidden lg:block rounded lg:w-64 md:h-32 object-cover"
             />
             <div class="bg-white rounded md:px-4 pt-4 md:pt-0">
@@ -66,7 +66,7 @@
         <div v-for="recentIndex in ((datas.length - 5) > 3 ? 3 : (datas.length - 5))" :key="recentIndex" class="rounded w-full lg:w-1/2 p-4 lg:p-0">
           <img
             :alt="datas[recentIndex + 4].title"
-            :src="datas[recentIndex + 4].imageUrl + '?imageMogr2/thumbnail/640x640/interlace/1/blur/1x0/quality/100'"
+            :src="datas[recentIndex + 4].imageUrl"
             class="rounded h-56 w-full"
           />
           <div class="p-4 pl-0">
@@ -96,7 +96,7 @@
         <div v-for="popularIndex in ((datas.length - 8) > 3 ? 3 : (datas.length - 8))" :key="popularIndex" class="rounded w-full lg:w-1/2 p-4 lg:p-0">
           <img
             :alt="datas[popularIndex + 7].title"
-            :src="datas[popularIndex + 7].imageUrl + '?imageMogr2/thumbnail/640x640/interlace/1/blur/1x0/quality/100'"
+            :src="datas[popularIndex + 7].imageUrl"
             class="rounded h-56 w-full"
           />
           <div class="p-4 pl-0">
