@@ -46,7 +46,7 @@ export default {
     https: true,
     progress: true,
     credentials: true,
-    baseURL: process.env.NODE_ENV !== 'production' ? 'https://www.abeille.top/api' : 'http://localhost/api'
+    baseURL: 'https://www.abeille.top/api'
   },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
