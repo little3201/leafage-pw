@@ -18,7 +18,7 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    '@/plugins/axios',
+    '@/plugins/accessor',
     '@/plugins/composition-api'
   ],
 
@@ -45,14 +45,20 @@ export default {
   axios: {
     https: true,
     progress: true,
-    prefix: '/api',
     credentials: true,
-    baseURL: 'http://www.abeille.top'
+    baseURL: 'https://www.abeille.top/api'
   },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
-  content: {},
+  content: {
+    liveEdit: false
+  },
 
+  // nuxt loading configuration (https://zh.nuxtjs.org/api/configuration-loading)
+  loading: {
+    color: '#dd6b20'
+  },
+  
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     extractCSS: true

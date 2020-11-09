@@ -5,12 +5,12 @@
         <div class="w-full lg:w-2/5 -mx-6">
           <div class="px-6">
             <div>
-              <img src="../static/logo.svg" class="w-12">
-              <a
-                href="#"
+              <nuxt-link
+                to="/"
                 class="text-xl font-bold text-gray-100 hover:text-gray-400"
-                >Abeille</a
               >
+                <img src="../static/logo.svg" class="w-12">
+              </nuxt-link>
             </div>
 
             <p class="mt-2 text-gray-400 max-w-md">
@@ -69,19 +69,20 @@
           </div>
         </div>
 
-        <div class="mt-6 lg:mt-0 lg:flex-1">
+        <div class="mt-8 lg:mt-0 lg:flex-1">
           <div class="grid gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
             <div>
               <h3 class="text-gray-100 uppercase">About</h3>
-              <a href="#" class="block mt-2 text-sm text-gray-400">Living</a>
+              <a href="#" class="block mt-2 text-sm text-gray-400">Dialy</a>
               <a href="#" class="block mt-2 text-sm text-gray-400">Vita</a>
             </div>
 
             <div>
               <h3 class="text-gray-100 uppercase">Blog</h3>
               <a href="#" class="block mt-2 text-sm text-gray-400">Technology</a>
-              <a href="#" class="block mt-2 text-sm text-gray-400">Travels</a>
-              <a href="#" class="block mt-2 text-sm text-gray-400">Daily</a>
+              <a href="#" class="block mt-2 text-sm text-gray-400">Travel</a>
+              <a href="#" class="block mt-2 text-sm text-gray-400">Reading</a>
+              <a href="#" class="block mt-2 text-sm text-gray-400">LifeStyle</a>
             </div>
 
             <div>
@@ -112,7 +113,7 @@
 
       <div>
         <p class="text-center text-gray-100">
-          &copy; Abeille {{ new Date().getFullYear() }} - All Rights Reserved -
+          &copy; {{ new Date().getFullYear() }} Abeille - All Rights Reserved -
           陕ICP备19017836号-1
         </p>
       </div>

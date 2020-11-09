@@ -1,22 +1,21 @@
 <template>
   <div>
     <Hero />
-    <Features />
-    <LParagraph :url="technology.url" :title="technology.title" :content="technology.content"/>
-    <RParagraph :url="travels.url" :title="travels.title" :content="travels.content" />
-    <LParagraph :url="reading.url" :title="reading.title" :content="reading.content" />
+    <Article :datas="datas"/>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
+import { SERVER_URL } from '~/assets/request'  
+
 export default defineComponent({
   name: "Home",
 
   head() {
     const title = "Abeille-布吉岛，一座永不沉没的网络小岛";
     const description =
-      "一套完整的免费、开源的集博客、作品集、可视化等一体的前、后端服务产品。基于 Vue.js 精心制作的页面、Nuxt.js 加持的SEO优化，同时提供后端运营和基于JAVA开发的后端服务，更惊喜的是，这一切都是免费的，并且长期维护的！";
+      "在这个世界的某一个小角落，有一个人想分享自己的生活、学习中一些值得点点滴滴，TA叫布吉岛";
     return {
       title,
       meta: [
@@ -24,7 +23,7 @@ export default defineComponent({
           hid: "keywords",
           name: "keywords",
           content:
-            "abeille, 布吉岛, 博客, 文章, 照片墙, abeille.top, vue.js, vuetify, nuxt.js",
+            "abeille, 布吉岛, 学习, 生活, 旅行",
         },
         { hid: "description", name: "description", content: description },
         // Open Graph
@@ -44,25 +43,10 @@ export default defineComponent({
       ],
     };
   },
-
-  setup() {
-    return {
-      technology: {
-        url: "@/static/lesson.svg",
-        title: "好好学习，天天向上",
-        content: "学习使我快乐"
-      },
-      travels: {
-        url: "@/static/flatline.svg",
-        title: "好好学习，天天向上",
-        content: "学习使我快乐"
-      },
-      reading: {
-        url: "@/static/reading.svg",
-        title: "好好学习，天天向上",
-        content: "学习使我快乐"
-      },
-    };
-  },
+  
+  async asyncData ({ app: { $axios } }) {
+    const datas = await $axios.$get(SERVER_URL.article)
+    return { datas }
+  }
 });
 </script>
