@@ -1,6 +1,6 @@
 <template>
-<div class="container px-4 mx-auto">
-    <div class="mt-20 md:mx-auto">
+<div class="container md:px-4 mx-auto">
+    <div class="mt-10 md:mt-20 md:mx-auto">
       <!-- featured section -->
       <div class="flex flex-wrap md:flex-no-wrap space-x-0 md:space-x-6 mb-16">
         <!-- main post -->
@@ -9,8 +9,8 @@
         >
           <img
             :alt="datas[0].title"
-            :src="datas[0].imageUrl + '?imageMogr2/thumbnail/640x640/interlace/1/blur/1x0/quality/100'"
-            class="rounded-md object-cover h-64 w-full"
+            :src="datas[0].imageUrl"
+            class="rounded-md object-cover w-full"
           />
           <span class="text-orange-600 text-sm hidden md:block mt-4">
             Technology
@@ -67,7 +67,7 @@
           <img
             :alt="datas[recentIndex + 4].title"
             :src="datas[recentIndex + 4].imageUrl"
-            class="rounded h-56 w-full"
+            class="rounded md:h-56 w-full"
           />
           <div class="p-4 pl-0">
             <nuxt-link
