@@ -2,6 +2,7 @@
   <div>
     <Hero />
     <Article :datas="datas"/>
+    <Cta />
   </div>
 </template>
 
