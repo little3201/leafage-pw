@@ -12,7 +12,7 @@
             <div
               class="h-40 lg:w-64 flex-none bg-cover text-center overflow-hidden opacity-75 rounded-md"
               :style="{
-                'background-image': 'url(' + datas[index - 1].imageUrl + ')',
+                'background-image': 'url(' + datas[index + 4].imageUrl + ')',
               }"
               title="deit is very important"
             ></div>
@@ -21,14 +21,14 @@
             >
               <div>
                 <nuxt-link
-                  to="/"
+                  :to="'/blog/detail/' + datas[index + 4].businessId"
                   class="mt-3 md:mt-0 text-gray-700 font-semibold text-xl mb-2 hover:underline focus:outline-none"
-                  v-text="datas[index].title"
+                  v-text="datas[index  + 4].title"
                 >
                 </nuxt-link>
                 <p
                   class="text-gray-700 text-base"
-                  v-text="datas[index].subtitle"
+                  v-text="datas[index + 4].subtitle"
                 ></p>
               </div>
               <div class="flex mt-1">
@@ -40,7 +40,7 @@
                     v-text="
                       Math.floor(
                         (new Date().getTime() -
-                          new Date(datas[index].modifyTime).getTime()) /
+                          new Date(datas[index + 4].modifyTime).getTime()) /
                           1000 /
                           60 /
                           60 /
@@ -48,7 +48,7 @@
                       ) > 30
                         ? Math.floor(
                             (new Date().getTime() -
-                              new Date(datas[index].modifyTime).getTime()) /
+                              new Date(datas[index + 4].modifyTime).getTime()) /
                               1000 /
                               60 /
                               60 /
@@ -57,7 +57,7 @@
                           ) + '个月前'
                         : Math.floor(
                             (new Date().getTime() -
-                              new Date(datas[index].modifyTime).getTime()) /
+                              new Date(datas[index + 4].modifyTime).getTime()) /
                               1000 /
                               60 /
                               60 /
