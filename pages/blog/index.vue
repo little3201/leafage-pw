@@ -1,9 +1,8 @@
 <template>
   <div>
     <Search />
-    <Posts :datas="datas"/>
-    <List />
-    <div class="md:w-1/3"></div>
+    <Posts :datas="datas" />
+    <Blog :datas="datas" />
   </div>
 </template>
 
