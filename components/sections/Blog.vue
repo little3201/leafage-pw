@@ -5,7 +5,7 @@
         <!-- post cards -->
         <div class="w-full lg:w-2/3">
           <div
-            v-for="index in datas.length - 5"
+            v-for="index in (datas.length - 5)"
             :key="index"
             class="w-full lg:flex mb-8"
           >
