@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white font-montserrat">
-    <div class="container mx-auto m-8 px-6 sm:px-12 flex flex-col-reverse sm:flex-row items-center">
+    <div class="container h-full mx-auto m-10 px-6 sm:px-12 flex flex-col-reverse sm:flex-row items-center">
         <div class="sm:w-2/5 flex flex-col items-start mt-8 sm:mt-0">
             <h1 class="text-4xl lg:text-6xl leading-none mb-4"><strong class="font-black">Team Work</strong> Process</h1>
             <p class="lg:text-lg mb-4 sm:mb-12">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam</p>

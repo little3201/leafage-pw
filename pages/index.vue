@@ -1,14 +1,14 @@
 <template>
   <div>
     <Hero />
-    <Article :datas="datas"/>
+    <Posts :datas="datas"/>
     <Cta />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
-import { SERVER_URL } from '~/assets/request'  
+import { SERVER_URL } from '~/assets/request' 
 
 export default defineComponent({
   name: "Home",
