@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto my-8 px-6">
+  <div class="container mx-auto my-8 px-4 sm:px-6">
     <div class="md:flex mt-8 md:-mx-4">
       <div
         v-for="idx in datas.length > 2 ? 2 : datas.length"

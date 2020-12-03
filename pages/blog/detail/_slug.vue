@@ -1,5 +1,5 @@
 <template>
-  <article class="container mx-auto px-6 mt-8">
+  <article class="container mx-auto mt-8">
     <div class="mb-4 md:mb-0 w-full mx-auto relative">
       <div class="px-4 lg:px-0">
         <h2
@@ -24,9 +24,9 @@
 
     <div class="flex flex-col lg:flex-row lg:space-x-12">
       <div
-        class="px-4 lg:px-0 mt-12 text-gray-700 text-lg leading-relaxed w-full lg:w-3/4"
+        class="px-4 sm:px-6 lg:px-0 mt-12 text-gray-700 text-lg leading-relaxed w-full lg:w-3/4"
       >
-        <p class="pb-6" v-html="data.content"></p>
+        <p class="" v-html="data.content"></p>
       </div>
 
       <div class="w-full lg:w-1/4 m-auto mt-12 max-w-screen-sm">

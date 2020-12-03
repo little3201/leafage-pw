@@ -1,7 +1,7 @@
 <template>
-  <div class="container mx-auto px-6">
-    <div class="block md:flex md:space-x-2 px-6 lg:p-0">
-      <div class="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-10 mb-10">
+  <div class="container mx-auto px-4 sm:px-6">
+    <div class="block md:flex md:space-x-2">
+      <!-- <div class="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-10 mb-10"> -->
         <!-- post cards -->
         <div class="w-full lg:w-2/3">
           <div
@@ -17,7 +17,7 @@
               title="deit is very important"
             ></div>
             <div
-              class="bg-white rounded px-4 flex flex-col justify-between leading-normal"
+              class="bg-white rounded flex flex-col justify-between leading-normal md:px-4"
             >
               <div>
                 <nuxt-link
@@ -72,7 +72,7 @@
         </div>
 
         <!-- right sidebar -->
-        <div class="w-full lg:w-1/3 px-3">
+        <div class="w-full lg:w-1/3 px-4 sm:px-6">
           <!-- topics -->
           <div class="mb-4">
             <h5 class="font-bold text-lg uppercase text-gray-700 px-1 mb-2">
@@ -160,7 +160,7 @@
           <!-- divider -->
           <div class="border border-dotted"></div>
         </div>
-      </div>
+      <!-- </div> -->
     </div>
   </div>
 </template>

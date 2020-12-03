@@ -542,8 +542,8 @@
             </div>
           </div>
         </nav>
-        <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-          <a
+        <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0 text-gray-500 hover:text-gray-600">
+          <!-- <a
             href="#"
             class="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900"
           >
@@ -554,7 +554,22 @@
             class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-500 hover:bg-blue-400"
           >
             Sign up
-          </a>
+          </a> -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-search"
+          >
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>Search
         </div>
       </div>
     </div>
@@ -835,7 +850,7 @@ export default defineComponent({
     return {
       cartOpen,
       isOpen,
-      menuOpen
+      menuOpen,
     };
   },
 });
