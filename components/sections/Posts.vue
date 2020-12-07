@@ -5,7 +5,7 @@
         v-for="idx in datas.length > 2 ? 2 : datas.length"
         :key="idx"
         class="h-64 mt-8 rounded-md overflow-hidden bg-cover bg-center md:mx-4 md:w-1/2"
-        :style="{ 'background-image': 'url(' + datas[idx - 1].imageUrl + ')' }"
+        :style="{ 'background-image': 'url(' + datas[idx - 1].cover + ')' }"
       >
         <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
           <div class="px-10 max-w-xl">
@@ -17,7 +17,7 @@
             </h2>
             <p class="mt-2 text-gray-400 hidden lg:block" v-text="datas[idx].subtitle"></p>
             <nuxt-link
-              :to="'/blog/detail/' + datas[idx - 1].businessId"
+              :to="'/blog/detail/' + datas[idx - 1].code"
               class="flex items-center mt-4 px-3 py-2 text-white text-sm uppercase font-medium hover:underline focus:outline-none"
             >
               <span>Shop Now</span>
@@ -44,7 +44,7 @@
         :key="index"
         class="w-full mb-8 h-64 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:w-1/3"
         :style="{
-          'background-image': 'url(' + datas[index + 1].imageUrl + ')',
+          'background-image': 'url(' + datas[index + 1].cover + ')',
         }"
       >
         <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
@@ -58,7 +58,7 @@
               v-text="datas[index + 1].subtitle"
             ></p>
             <nuxt-link
-              :to="'/blog/detail/' + datas[index + 1].businessId"
+              :to="'/blog/detail/' + datas[index + 1].code"
               class="flex items-center mt-4 text-white text-sm uppercase font-medium rounded hover:underline focus:outline-none"
             >
               <span>Show Now</span>

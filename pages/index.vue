@@ -46,7 +46,7 @@ export default defineComponent({
   },
   
   async asyncData ({ app: { $axios } }) {
-    const datas = await $axios.$get(SERVER_URL.article)
+    const datas = await $axios.$get(SERVER_URL.posts)
     return { datas }
   }
 });

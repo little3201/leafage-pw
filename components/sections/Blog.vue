@@ -12,7 +12,7 @@
             <div
               class="h-40 lg:w-64 flex-none bg-cover text-center overflow-hidden opacity-75 rounded-md"
               :style="{
-                'background-image': 'url(' + datas[index + 4].imageUrl + ')',
+                'background-image': 'url(' + datas[index + 4].cover + ')',
               }"
               title="deit is very important"
             ></div>
@@ -21,7 +21,7 @@
             >
               <div>
                 <nuxt-link
-                  :to="'/blog/detail/' + datas[index + 4].businessId"
+                  :to="'/blog/detail/' + datas[index + 4].code"
                   class="mt-3 md:mt-0 text-gray-700 font-semibold text-xl mb-2 hover:underline focus:outline-none"
                   v-text="datas[index  + 4].title"
                 >

@@ -15,7 +15,7 @@
       </div>
 
       <img
-        :src="data.imageUrl"
+        :src="data.cover"
         :alt="data.title"
         class="w-full object-cover lg:rounded"
         style="height: 28em"
@@ -37,13 +37,12 @@
               class="h-10 w-10 rounded-full mr-2 object-cover"
             />
             <div>
-              <p class="font-semibold text-gray-700 text-sm" v-text="data.author.nickname"></p>
-              <p class="font-semibold text-gray-600 text-xs">Editor</p>
+              <p class="font-semibold text-gray-700 text-sm">布吉岛</p>
+              <p class="font-semibold text-gray-600 text-xs">作者</p>
             </div>
           </div>
           <p class="text-gray-700 py-3">
-            Mike writes about technology Yourself required no at thoughts
-            delicate landlord it be. Branched dashwood do is whatever it.
+            还没有想好写啥.
           </p>
           <button
             class="px-2 py-1 text-gray-100 bg-blue-500 flex w-full items-center justify-center rounded"
@@ -91,7 +90,7 @@ export default defineComponent({
 
   async asyncData({ app: { $axios }, route }) {
     const data = await $axios.$get(
-      SERVER_URL.article.concat("/").concat(route.params.slug)
+      SERVER_URL.posts.concat("/").concat(route.params.slug)
     );
     return { data };
   },
