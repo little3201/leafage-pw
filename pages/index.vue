@@ -1,8 +1,6 @@
 <template>
   <div>
-    <Hero />
-    <Posts :datas="datas"/>
-    <Cta />
+    
   </div>
 </template>
 

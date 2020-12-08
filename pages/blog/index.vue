@@ -1,8 +1,9 @@
 <template>
   <div>
-    <Search />
-    <Posts :datas="datas" />
-    <Blog :datas="datas" />
+    <Blog />
+    <Featured />
+    <Posts />
+    <Recommend />
   </div>
 </template>
 
