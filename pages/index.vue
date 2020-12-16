@@ -1,13 +1,14 @@
 <template>
   <div>
     <Header2 />
+    <Main />
     <Footer />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
-import { SERVER_URL } from '~/assets/request' 
+import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
   name: "Home",
@@ -22,8 +23,7 @@ export default defineComponent({
         {
           hid: "keywords",
           name: "keywords",
-          content:
-            "abeille, 布吉岛, 学习, 生活, 旅行",
+          content: "abeille, 布吉岛, 学习, 生活, 旅行",
         },
         { hid: "description", name: "description", content: description },
         // Open Graph
@@ -43,10 +43,10 @@ export default defineComponent({
       ],
     };
   },
-  
-  async asyncData ({ app: { $axios } }) {
-    const datas = await $axios.$get(SERVER_URL.posts)
-    return { datas }
-  }
+
+  async asyncData({ app: { $axios } }) {
+    const datas = await $axios.$get(SERVER_URL.posts);
+    return { datas };
+  },
 });
 </script>

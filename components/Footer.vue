@@ -3,9 +3,9 @@
     <div class="container mx-auto">
       <div class="flex justify-between items-center text-white h-32">
         <div class="text-4xl tracking-widest font-black uppercase">
-          <h1><a href="#" title="">Heeney</a></h1>
+          <h1><nuxt-link to="/" title="">Heeney</nuxt-link></h1>
         </div>
-        <div class="flex space-x-6">
+        <div class="md:flex space-x-6 -ml-12">
           <a href="#" title=""
             ><svg
               xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +59,7 @@
               <rect x="2" y="9" width="4" height="12"></rect>
               <circle cx="4" cy="4" r="2"></circle></svg
           ></a>
-          <button class="rounded-md"
+          <button class="rounded-full"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
