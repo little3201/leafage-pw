@@ -422,11 +422,11 @@ export default defineComponent({
     };
   },
 
-  async asyncData({ app: { $axios }, route }) {
-    const data = await $axios.$get(
-      SERVER_URL.posts.concat("/").concat(route.params.slug)
-    );
-    return { data };
-  },
+  // async asyncData({ app: { $axios }, route }) {
+  //   const data = await $axios.$get(
+  //     SERVER_URL.posts.concat("/").concat(route.params.slug)
+  //   );
+  //   return { data };
+  // },
 });
 </script>

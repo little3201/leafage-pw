@@ -1,25 +1,27 @@
 <template>
-  <div class="container mx-auto">
+  <section class="container mx-auto mb-12">
     <div class="grid grid-flow-col grid-rows-2 grid-cols-3 gap-4">
       <div class="row-span-2 col-span-2 flex justify-center items-center">
         <div class="relative w-full h-full overflow-hidden">
-          <img
-            src="images/resources/blog-img1.jpg"
-            alt=""
-            class="absolute w-full h-full top-0 left-0 transform hover:scale-75 transition duration-300"
-          />
           <div
-            class="absolute w-full h-full"
-            style="background-color: rgba(42, 42, 42, 0.3)"
+            class="w-full h-full transform hover:scale-105 transition duration-500"
           >
-            <a
-              href="#"
-              title=""
-              class="absolute text-white text-xs font-extrabold uppercase"
-              style="top: 30px; left: 39px"
-              >Lifestyle</a
-            >
+            <img
+              src="images/resources/blog-img1.jpg"
+              alt=""
+              class="absolute w-full h-full"
+            />
+            <div
+              class="absolute w-full h-full"
+              style="background-color: rgba(42, 42, 42, 0.3)"
+            ></div>
           </div>
+          <nuxt-link
+            to="/"
+            title=""
+            class="absolute top-0 text-white text-xs font-extrabold uppercase p-10"
+            >Lifestyle</nuxt-link
+          >
           <!--blog-img end-->
           <div class="absolute bottom-0 text-white p-10">
             <h3
@@ -64,16 +66,26 @@
           <!--blog-info end-->
         </div>
       </div>
-      <div class="relative text-white w-full h-full overflow-hidden">
-        <img
-          src="images/resources/blog-img2.jpg"
-          alt=""
-          class="w-full h-full"
-        />
+      <div class="relative text-white w-full h-64 overflow-hidden">
         <div
-          class="absolute w-full h-full"
-          style="background-color: rgba(42, 42, 42, 0.3)"
-        ></div>
+          class="w-full h-full transform hover:scale-110 transition duration-500"
+        >
+          <img
+            src="images/resources/blog-img2.jpg"
+            alt=""
+            class="absolute w-full h-full"
+          />
+          <div
+            class="absolute w-full h-full"
+            style="background-color: rgba(42, 42, 42, 0.3)"
+          ></div>
+        </div>
+        <nuxt-link
+          to="/"
+          title=""
+          class="absolute top-0 text-white text-xs font-extrabold uppercase p-8"
+          >Lifestyle</nuxt-link
+        >
         <!--blog-img end-->
         <div class="absolute px-8 text-left font-black" style="bottom: 30px">
           <h3 class="post-title">
@@ -83,25 +95,33 @@
           </h3>
         </div>
       </div>
-      <div class="relative text-white w-full h-full overflow-hidden">
-        <img
-          src="images/resources/blog-img3.jpg"
-          alt=""
-          class="absolute w-full h-full"
-        />
+      <div class="relative text-white w-full h-64 overflow-hidden">
         <div
-          class="absolute w-full h-full"
-          style="background-color: rgba(42, 42, 42, 0.3)"
-        ></div>
+          class="w-full h-full transform hover:scale-110 transition duration-500"
+        >
+          <img
+            src="images/resources/blog-img3.jpg"
+            alt=""
+            class="absolute w-full h-full"
+          />
+          <div
+            class="absolute w-full h-full"
+            style="background-color: rgba(42, 42, 42, 0.3)"
+          ></div>
+        </div>
+        <nuxt-link
+          to="/"
+          title=""
+          class="absolute top-0 text-white text-xs font-extrabold uppercase p-8"
+          >Lifestyle</nuxt-link
+        >
         <!--blog-img end-->
         <div class="absolute px-8 text-left font-black" style="bottom: 30px">
-          <h3 class="post-title">
-            <a href="standard-post.html" title=""
-              >Now You Know Zazie on Beetz Explains Net Neutrality</a
-            >
-          </h3>
+          <nuxt-link to="/blog/deatil" title=""
+            >Now You Know Zazie on Beetz Explains Net Neutrality</nuxt-link
+          >
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>

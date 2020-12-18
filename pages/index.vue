@@ -2,6 +2,8 @@
   <div>
     <Header2 />
     <Main />
+    <Featured />
+    <Recommend />
     <Footer />
   </div>
 </template>
@@ -44,9 +46,9 @@ export default defineComponent({
     };
   },
 
-  async asyncData({ app: { $axios } }) {
-    const datas = await $axios.$get(SERVER_URL.posts);
-    return { datas };
-  },
+  // async asyncData({ app: { $axios } }) {
+  //   const datas = await $axios.$get(SERVER_URL.posts);
+  //   return { datas };
+  // },
 });
 </script>

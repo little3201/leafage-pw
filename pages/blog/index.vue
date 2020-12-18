@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header />
     <Blog />
     <Featured />
     <Posts />
@@ -39,9 +40,9 @@ export default defineComponent({
     };
   },
 
-  async asyncData({ app: { $axios } }) {
-    const datas = await $axios.$get(SERVER_URL.posts);
-    return { datas };
-  },
+  // async asyncData({ app: { $axios } }) {
+  //   const datas = await $axios.$get(SERVER_URL.posts);
+  //   return { datas };
+  // },
 });
 </script>

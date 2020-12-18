@@ -29,18 +29,18 @@
         </div>
         <!--menu-btn end-->
         <nav class="hidden md:flex space-x-6 tracking-wide">
-          <a href="#" class="text-xs font-extrabold uppercase text-black">
+          <nuxt-link to="/" class="text-xs font-extrabold uppercase text-black">
             Home
-          </a>
-          <a href="#" class="text-xs font-extrabold uppercase text-black">
-            Standard Posts
-          </a>
-          <a href="#" class="text-xs font-extrabold uppercase text-black">
+          </nuxt-link>
+          <nuxt-link to="/blog" class="text-xs font-extrabold uppercase text-black">
+            Posts
+          </nuxt-link>
+          <nuxt-link to="/about" class="text-xs font-extrabold uppercase text-black">
             About
-          </a>
-          <a href="#" class="text-xs font-extrabold uppercase text-black">
+          </nuxt-link>
+          <nuxt-link to="/contact" class="text-xs font-extrabold uppercase text-black">
             Contact
-          </a>
+          </nuxt-link>
         </nav>
         <div class="hidden md:flex items-center justify-end md:flex-1">
           <a
