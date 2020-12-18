@@ -92,7 +92,7 @@
           to="/"
           class="text-4xl tracking-widest font-black uppercase text-black"
         >
-          <h1>Heeney</h1>
+          <h1>Abeille</h1>
         </nuxt-link>
       </div>
     </div>

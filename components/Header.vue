@@ -10,7 +10,7 @@
               to="/"
               class="text-2xl tracking-widest font-black uppercase text-black leading-7"
             >
-              <h2>Heeney</h2>
+              <h2>Abeille</h2>
             </nuxt-link>
           </div>
           <div class="-mr-2 -my-2 md:hidden">
