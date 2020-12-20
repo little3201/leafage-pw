@@ -4,7 +4,7 @@
       <div class="row-span-2 col-span-2 flex justify-center items-center">
         <div class="relative w-full h-full overflow-hidden">
           <div
-            class="w-full h-full transform hover:scale-105 transition duration-500"
+            class="w-full h-full transform hover:scale-110 transition duration-500"
           >
             <img
               src="images/resources/blog-img1.jpg"

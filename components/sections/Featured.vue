@@ -1,11 +1,11 @@
 <template>
   <section class="container mx-auto my-16">
-    <div class="uppercase">
+    <div class="uppercase font-extrabold">
       <h3>Featured Stories</h3>
     </div>
     <!--sec-title end-->
-    <div class="my-4">
-      <div class="grid grid-flow-col grid-rows-1 grid-cols-4 gap-4">
+    <div class="my-6">
+      <div class="grid grid-flow-col grid-rows-1 grid-cols-4 gap-6">
         <div class="w-full h-full">
           <div class="overflow-hidden">
             <div class="h-56 transform hover:scale-110 transition duration-500">
@@ -13,13 +13,13 @@
             </div>
           </div>
           <!--blog-img end-->
-          <div class="blog-info">
-            <h3 class="post-title">
+          <div class="my-4">
+            <h3 class="font-extrabold">
               <nuxt-link to="/blog/detail" title=""
                 >Don’t Risk a Red-Eye Without These Things</nuxt-link
               >
             </h3>
-            <ul class="flex text-xs space-x-6 text-gray-600">
+            <ul class="flex text-xs space-x-6 text-gray-600 my-4 uppercase">
               <li>Dec 11, 2018</li>
               <li><i class="la la-eye"></i>2478</li>
               <li>
@@ -41,13 +41,13 @@
             </div>
           </div>
           <!--blog-img end-->
-          <div class="blog-info">
-            <h3 class="post-title">
+          <div class="my-4">
+            <h3 class="font-extrabold">
               <a href="standard-post.html" title=""
                 >Healthy and Deliciously Easy Breakfast Recipes</a
               >
             </h3>
-            <ul class="flex text-xs space-x-6 text-gray-600">
+            <ul class="flex text-xs space-x-6 text-gray-600 my-4 uppercase">
               <li>Dec 10, 2018</li>
               <li><i class="la la-eye"></i>471</li>
               <li>
@@ -69,13 +69,13 @@
             </div>
           </div>
           <!--blog-img end-->
-          <div class="blog-info">
-            <h3 class="post-title">
+          <div class="my-4">
+            <h3 class="font-extrabold">
               <a href="standard-post.html" title=""
                 >The 4 Workout Pieces Every Woman Should Own</a
               >
             </h3>
-            <ul class="flex text-xs space-x-6 text-gray-600">
+            <ul class="flex text-xs space-x-6 text-gray-600 my-4 uppercase">
               <li>Dec 9, 2018</li>
               <li><i class="la la-eye"></i>234</li>
               <li>
@@ -97,13 +97,13 @@
             </div>
           </div>
           <!--blog-img end-->
-          <div class="blog-info">
-            <h3 class="post-title">
+          <div class="my-4">
+            <h3 class="font-extrabold">
               <a href="standard-post.html" title=""
                 >Now You Know Zazie Beetz Explains Net Neutrality</a
               >
             </h3>
-            <ul class="flex text-xs space-x-6 text-gray-600">
+            <ul class="flex text-xs space-x-6 text-gray-600 my-4 uppercase">
               <li>Dec 6, 2018</li>
               <li><i class="la la-eye"></i>3281</li>
               <li>

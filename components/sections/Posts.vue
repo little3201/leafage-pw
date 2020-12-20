@@ -1,11 +1,10 @@
 <template>
-  <section class="main-content pb-0">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mgr-50">
+  <section class="container mx-auto">
+      <div class="flex">
+        <div class="w-2/3">
           <div class="blog-section mb-20">
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-              <li class="nav-item">
+            <ul class="flex justify-between items-center text-center uppercase leading-10 text-xs font-bold border-black" style="border-width: 1px" id="myTab" role="tablist">
+              <li class="bg-black text-white w-1/3">
                 <a
                   class="nav-link active"
                   id="trending-tab"
@@ -17,7 +16,7 @@
                   >Trending</a
                 >
               </li>
-              <li class="nav-item">
+              <li class="w-1/3">
                 <a
                   class="nav-link"
                   id="mostview-tab"
@@ -29,7 +28,7 @@
                   >Most View</a
                 >
               </li>
-              <li class="nav-item">
+              <li class="w-1/3">
                 <a
                   class="nav-link"
                   id="popular-tab"
@@ -42,8 +41,6 @@
                 >
               </li>
             </ul>
-            <!--tabs-list end-->
-            <div class="clearfix"></div>
             <div class="tab-content" id="myTabContent">
               <div
                 class="tab-pane fade show active"
@@ -51,25 +48,25 @@
                 role="tabpanel"
                 aria-labelledby="trending-tab"
               >
-                <div class="blog-items">
-                  <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                      <div class="blog-item">
-                        <div class="blog-img">
-                          <img src="images/resources/item5.jpg" alt="" />
+                <div class="my-10">
+                  <div class="grid grid-flow-col grid-rows-2 grid-cols-2 gap-8">
+                    <div class="w-full overflow-hidden">
+                      <div class="">
+                        <div class="">
+                          <img src="images/resources/item5.jpg" alt="" class="w-full" />
                         </div>
                         <!--blog-img end-->
-                        <div class="blog-info">
-                          <a href="#" title="" class="post-category"
+                        <div class="my-4">
+                          <a href="#" title="" class="text-xs space-x-6 text-gray-600 uppercase font-bold"
                             >Photograph</a
                           >
-                          <h3 class="post-title">
+                          <h3 class=" text-xl font-extrabold my-3">
                             <a href="standard-post.html" title=""
                               >Roland Mouret New Book About Life Work Brings His
                               Past
                             </a>
                           </h3>
-                          <ul class="meta">
+                          <ul class="flex text-xs space-x-6 text-gray-600 uppercase">
                             <li>December 31, 2018</li>
                             <li><i class="la la-eye"></i>3258</li>
                             <li>
@@ -86,18 +83,18 @@
                     <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                       <div class="blog-item">
                         <div class="blog-img">
-                          <img src="images/resources/item6.jpg" alt="" />
+                          <img src="images/resources/item6.jpg" alt="" class="w-full" />
                         </div>
                         <!--blog-img end-->
-                        <div class="blog-info">
-                          <a href="#" title="" class="post-category">Travel</a>
-                          <h3 class="post-title">
+                        <div class="my-4">
+                          <a href="#" title="" class="text-xs space-x-6 text-gray-600 font-bold uppercase">Travel</a>
+                          <h3 class="text-xl font-extrabold my-3">
                             <a href="standard-post.html" title=""
                               >The Best On-the-Go Snacks to Get Before Holiday
                               Travel
                             </a>
                           </h3>
-                          <ul class="meta">
+                          <ul class="flex text-xs space-x-6 text-gray-600 uppercase">
                             <li>December 29, 2018</li>
                             <li><i class="la la-eye"></i>1157</li>
                             <li>
@@ -114,18 +111,18 @@
                     <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                       <div class="blog-item">
                         <div class="blog-img">
-                          <img src="images/resources/item7.jpg" alt="" />
+                          <img src="images/resources/item7.jpg" alt="" class="w-full" />
                         </div>
                         <!--blog-img end-->
-                        <div class="blog-info">
-                          <a href="#" title="" class="post-category">Beauty</a>
-                          <h3 class="post-title">
+                        <div class="my-4">
+                          <a href="#" title="" class="text-xs space-x-6 text-gray-600 font-bold uppercase">Beauty</a>
+                          <h3 class="text-xl font-extrabold my-3">
                             <a href="standard-post.html" title=""
                               >Diddy Offers Intimate Look at His Birthday Beauty
                               Routine
                             </a>
                           </h3>
-                          <ul class="meta">
+                          <ul class="flex text-xs space-x-6 text-gray-600 uppercase">
                             <li>December 27, 2018</li>
                             <li><i class="la la-eye"></i>964</li>
                             <li>
@@ -142,18 +139,18 @@
                     <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                       <div class="blog-item">
                         <div class="blog-img">
-                          <img src="images/resources/item8.jpg" alt="" />
+                          <img src="images/resources/item8.jpg" alt="" class="w-full" />
                         </div>
                         <!--blog-img end-->
-                        <div class="blog-info">
-                          <a href="#" title="" class="post-category">Fashion</a>
-                          <h3 class="post-title">
+                        <div class="my-4">
+                          <a href="#" title="" class="text-xs space-x-6 text-gray-600 font-bold uppercase">Fashion</a>
+                          <h3 class="text-xl font-extrabold my-3">
                             <a href="standard-post.html" title=""
                               >Julia Roberts' Infamous Armpit Hair Reveal Was a
                               Statement</a
                             >
                           </h3>
-                          <ul class="meta">
+                          <ul class="flex text-xs space-x-6 text-gray-600 uppercase">
                             <li>December 25, 2018</li>
                             <li><i class="la la-eye"></i>2478</li>
                             <li>
@@ -177,17 +174,17 @@
                 role="tabpanel"
                 aria-labelledby="mostview-tab"
               >
-                <div class="blog-items">
-                  <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="hidden">
+                  <div class="grid grid-flow-col grid-rows-2 grid-cols-2 gap-4">
+                    <div class="">
                       <div class="blog-item">
                         <div class="blog-img">
                           <img src="images/resources/item5.jpg" alt="" />
                         </div>
                         <!--blog-img end-->
                         <div class="blog-info">
-                          <a href="#" title="" class="post-category">Travel</a>
-                          <h3 class="post-title">
+                          <a href="#" title="" class="text-xs space-x-6 text-gray-600 my-4 uppercase">Travel</a>
+                          <h3 class="font-extrabold">
                             <a href="standard-post.html" title=""
                               >The Best On-the-Go Snacks to Get Before Holiday
                               Travel
@@ -214,8 +211,8 @@
                         </div>
                         <!--blog-img end-->
                         <div class="blog-info">
-                          <a href="#" title="" class="post-category">Beauty</a>
-                          <h3 class="post-title">
+                          <a href="#" title="" class="text-xs space-x-6 text-gray-600 my-4 uppercase">Beauty</a>
+                          <h3 class="font-extrabold">
                             <a href="standard-post.html" title=""
                               >Diddy Offers Intimate Look at His Birthday Beauty
                               Routine
@@ -242,8 +239,8 @@
                         </div>
                         <!--blog-img end-->
                         <div class="blog-info">
-                          <a href="#" title="" class="post-category">Fashion</a>
-                          <h3 class="post-title">
+                          <a href="#" title="" class="text-xs space-x-6 text-gray-600 my-4 uppercase">Fashion</a>
+                          <h3 class="font-extrabold">
                             <a href="standard-post.html" title=""
                               >Julia Roberts' Infamous Armpit Hair Reveal Was a
                               Statement
@@ -270,10 +267,10 @@
                         </div>
                         <!--blog-img end-->
                         <div class="blog-info">
-                          <a href="#" title="" class="post-category"
+                          <a href="#" title="" class="text-xs space-x-6 text-gray-600 my-4 uppercase"
                             >Photograph</a
                           >
-                          <h3 class="post-title">
+                          <h3 class="font-extrabold">
                             <a href="standard-post.html" title=""
                               >Roland Mouret New Book About Life Work Brings His
                               Past
@@ -303,9 +300,9 @@
                 role="tabpanel"
                 aria-labelledby="popular-tab"
               >
-                <div class="blog-items">
-                  <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="hidden">
+                  <div class="grid grid-flow-col grid-rows-2 grid-cols-2 gap-4">
+                    <div class="">
                       <div class="blog-item">
                         <div class="blog-img">
                           <img src="images/resources/item5.jpg" alt="" />
@@ -313,7 +310,7 @@
                         <!--blog-img end-->
                         <div class="blog-info">
                           <a href="#" title="" class="post-category">Travel</a>
-                          <h3 class="post-title">
+                          <h3 class="font-extrabold">
                             <a href="standard-post.html" title=""
                               >The Best On-the-Go Snacks to Get Before Holiday
                               Travel
@@ -341,7 +338,7 @@
                         <!--blog-img end-->
                         <div class="blog-info">
                           <a href="#" title="" class="post-category">Beauty</a>
-                          <h3 class="post-title">
+                          <h3 class="font-extrabold">
                             <a href="standard-post.html" title=""
                               >Diddy Offers Intimate Look at His Birthday Beauty
                               Routine
@@ -369,7 +366,7 @@
                         <!--blog-img end-->
                         <div class="blog-info">
                           <a href="#" title="" class="post-category">Fashion</a>
-                          <h3 class="post-title">
+                          <h3 class="font-extrabold">
                             <a href="standard-post.html" title=""
                               >Julia Roberts' Infamous Armpit Hair Reveal Was a
                               Statement
@@ -399,7 +396,7 @@
                           <a href="#" title="" class="post-category"
                             >Photograph</a
                           >
-                          <h3 class="post-title">
+                          <h3 class="font-extrabold">
                             <a href="standard-post.html" title=""
                               >Roland Mouret New Book About Life Work Brings His
                               Past
@@ -428,22 +425,22 @@
           </div>
           <!--blog-section end-->
           <div class="top-post-section">
-            <div class="sec-title">
+            <div class="uppercase font-extrabold">
               <h3>Top Posts</h3>
             </div>
             <!--sec-title end-->
-            <div class="blog-items">
-              <div class="row">
-                <div class="col-lg-9">
+            <div class="my-6">
+              <div class="grid grid-flow-col grid-rows-2 grid-cols-3 gap-10">
+                <div class="row-span-2 col-span-2">
                   <div class="blog-item lrg">
                     <div class="blog-img">
-                      <img src="images/resources/item9.jpg" alt="" />
+                      <img src="images/resources/item9.jpg" alt="" class="w-full" />
                     </div>
                     <!--blog-img end-->
-                    <div class="blog-info">
-                      <ul class="meta">
+                    <div class="my-4">
+                      <ul class="flex text-xs space-x-6 uppercase font-bold text-gray-500">
                         <li>
-                          <a href="#" title="" class="post-category"
+                          <a href="#" title="" class="text-gray-600"
                             >Photograph</a
                           >
                         </li>
@@ -455,13 +452,13 @@
                           >
                         </li>
                       </ul>
-                      <h3 class="post-title">
-                        <a href="standard-post.html" title=""
+                      <h3 class="text-xl font-extrabold my-4">
+                        <nuxt-link to="/blog/detail" title=""
                           >The Saint Louis Art Museum Welcome Kehin de Wiley to
-                          the Midwest</a
+                          the Midwest</nuxt-link
                         >
                       </h3>
-                      <p>
+                      <p class="text-gray-500 font-light">
                         Proin gravida nibh vel velit auctor aliquet. Aenean
                         sollicitudin, lorem quis bibum auctor nisi elit
                         consequat ipsum, nec sagittis sem nibh id elit...
@@ -471,19 +468,19 @@
                   </div>
                   <!--blog-item end-->
                 </div>
-                <div class="col-lg-3">
+                <div class="">
                   <div class="blog-item">
                     <div class="blog-img">
-                      <img src="images/resources/item10.jpg" alt="" />
+                      <img src="images/resources/item10.jpg" alt="" class="w-full" />
                     </div>
                     <!--blog-img end-->
                     <div class="blog-info">
-                      <h3 class="post-title">
+                      <h3 class="font-extrabold my-3">
                         <a href="standard-post.html" title=""
                           >The No Sugar Challenge That Almost Broke Me</a
                         >
                       </h3>
-                      <ul class="meta">
+                      <ul class="flex text-xs space-x-6 uppercase text-gray-500">
                         <li>Dec 24, 2018</li>
                         <li><i class="la la-eye"></i>417</li>
                         <li>
@@ -496,18 +493,18 @@
                     <!--blog-info end-->
                   </div>
                   <!--blog-item end-->
-                  <div class="blog-item">
+                  <div class="mt-4">
                     <div class="blog-img">
-                      <img src="images/resources/item11.jpg" alt="" />
+                      <img src="images/resources/item11.jpg" alt="" class="w-full" />
                     </div>
                     <!--blog-img end-->
                     <div class="blog-info">
-                      <h3 class="post-title">
+                      <h3 class="font-extrabold my-3">
                         <a href="standard-post.html" title=""
                           >The No Sugar Challenge That Almost Broke Me</a
                         >
                       </h3>
-                      <ul class="meta">
+                      <ul class="flex text-xs space-x-6 uppercase text-gray-500">
                         <li>Dec 21, 2018</li>
                         <li><i class="la la-eye"></i>247</li>
                         <li>
@@ -787,56 +784,68 @@
           </div>
           <!--heeney-pagination end-->
         </div>
-        <div class="col-lg-4">
-          <div class="sidebar">
-            <div class="widget widget-trending-posts">
-              <h3 class="widget-title">Trending</h3>
-              <div class="wd-posts">
-                <div class="wd-post">
+        <div class="flex justify-end w-1/3">
+          <div class="ml-12">
+            <div class="py-8 border-solid border-gray-400" style="border-width: 1px;">
+              <h3 class="px-8 uppercase text-sm font-semibold">Trending</h3>
+              <div class="">
+                <div class="md:flex px-8 py-2">
                   <img src="images/resources/post1.jpg" alt="" />
-                  <div class="wd-post-info">
-                    <h3 class="post-title">
+                  <div class="ml-4">
+                    <h3 class="text-sm font-bold">
                       <a href="standard-post.html" title=""
                         >Living Room Makeover Reveal</a
                       >
                     </h3>
-                    <span class="post-date">Dec 25, 2018</span>
+                    <span class="text-xs text-gray-500 font-bold uppercase">Dec 25, 2018</span>
                   </div>
                 </div>
                 <!--wd-post end-->
-                <div class="wd-post">
+                <div class="md:flex px-8 py-2">
                   <img src="images/resources/post2.jpg" alt="" />
-                  <div class="wd-post-info">
-                    <h3 class="post-title">
+                  <div class="ml-4">
+                    <h3 class="text-sm font-bold">
                       <a href="standard-post.html" title=""
                         >Candy Inspired Treat Recipes</a
                       >
                     </h3>
-                    <span class="post-date">Dec 23, 2018</span>
+                    <span class="text-xs text-gray-500 font-bold uppercase">Dec 23, 2018</span>
                   </div>
                 </div>
                 <!--wd-post end-->
-                <div class="wd-post">
+                <div class="md:flex px-8 py-2">
                   <img src="images/resources/post3.jpg" alt="" />
-                  <div class="wd-post-info">
-                    <h3 class="post-title">
+                  <div class="ml-4">
+                    <h3 class="text-sm font-bold">
                       <a href="standard-post.html" title=""
                         >Fun Spooky Halloween Treats</a
                       >
                     </h3>
-                    <span class="post-date">Dec 21, 2018</span>
+                    <span class="text-xs text-gray-500 font-bold uppercase">Dec 21, 2018</span>
                   </div>
                 </div>
                 <!--wd-post end-->
-                <div class="wd-post">
+                <div class="md:flex px-8 py-2">
                   <img src="images/resources/post4.jpg" alt="" />
-                  <div class="wd-post-info">
-                    <h3 class="post-title">
+                  <div class="ml-4">
+                    <h3 class="text-sm font-bold">
                       <a href="standard-post.html" title=""
                         >Soup Recipes Everyone Will Love</a
                       >
                     </h3>
-                    <span class="post-date">Dec 19, 2018</span>
+                    <span class="text-xs text-gray-500 font-bold uppercase">Dec 19, 2018</span>
+                  </div>
+                </div>
+                <!--wd-post end-->
+                <div class="md:flex px-8 py-2">
+                  <img src="images/resources/post4.jpg" alt="" />
+                  <div class="ml-4">
+                    <h3 class="text-sm font-bold">
+                      <a href="standard-post.html" title=""
+                        >Soup Recipes Everyone Will Love</a
+                      >
+                    </h3>
+                    <span class="text-xs text-gray-500 font-bold uppercase">Dec 19, 2018</span>
                   </div>
                 </div>
                 <!--wd-post end-->
@@ -844,48 +853,52 @@
               <!--wd-posts end-->
             </div>
             <!--widget-trending-posts end-->
-            <div class="widget widget-social-links">
-              <ul>
+            <div class="my-12">
+              <ul class="flex p-8 justify-around text-center border-solid border-gray-400" style="border-width: 1px;">
                 <li>
                   <a href="#" title="" class="facebook"
                     ><i class="fab fa-facebook-f"></i
                   ></a>
                   <h4>3,553</h4>
-                  <span>Followers</span>
+                  <span class="text-xs text-gray-500">Followers</span>
                 </li>
                 <li>
                   <a href="#" title="" class="twitter"
                     ><i class="fab fa-twitter"></i
                   ></a>
                   <h4>11,211</h4>
-                  <span>Followers</span>
+                  <span class="text-xs text-gray-500">Followers</span>
                 </li>
                 <li>
                   <a href="#" title="" class="pinterest"
                     ><i class="fab fa-pinterest-p"></i
                   ></a>
                   <h4>9,328</h4>
-                  <span>Followers</span>
+                  <span class="text-xs text-gray-500">Followers</span>
                 </li>
               </ul>
             </div>
             <!--widget-social-links end-->
-            <div class="widget subscribe-wd">
-              <h3 class="widget-title">Get Fresh News</h3>
-              <form>
+            <div class="border-2 border-solid border-black p-8">
+              <div class="flex">
+              <h3 class="font-extrabold">Get Fresh News</h3>
+              <img src="images/penc-img.png" alt="" class="w-8" />
+              </div>
+              <form class="mt-4">
                 <input
                   type="email"
                   name="email"
                   placeholder="Enter your email adress"
+                  class="outline-black w-2/3"
                 />
                 <button type="submit">
                   <i class="far fa-paper-plane"></i>
                 </button>
               </form>
-              <img src="images/penc-img.png" alt="" class="penc-img" />
+              
             </div>
             <!--subscribe-wd end-->
-            <div class="widget widget-recent-post">
+            <div class="my-12 p-8 border-solid border-gray-400" style="border-width: 1px;">
               <h3 class="widget-title">Recent Post</h3>
               <div class="recent-post-carousel">
                 <div class="post-slide">
@@ -986,7 +999,6 @@
           <!--sidebar end-->
         </div>
       </div>
-    </div>
   </section>
 </template>
 

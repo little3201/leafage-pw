@@ -3,6 +3,7 @@
     <Header2 />
     <Main />
     <Featured />
+    <Posts />
     <Recommend />
     <Footer />
   </div>

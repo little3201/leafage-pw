@@ -2,10 +2,10 @@
   <header>
     <div class="container mx-auto">
       <div
-        class="flex justify-around items-center border-black py-6 md:justify-start"
+        class="flex justify-between items-center border-black py-3 md:py-5 md:justify-start"
         style="border-bottom-width: 3px"
       >
-        <div class="-mr-2 -my-2 md:hidden">
+        <div class="-my-2 md:hidden">
           <button
             type="button"
             class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
@@ -42,7 +42,7 @@
             Contact
           </nuxt-link>
         </nav>
-        <div class="hidden md:flex items-center justify-end md:flex-1">
+        <div class="flex items-center justify-end md:flex-1">
           <a
             class="text-gray-600 uppercase text-xs font-bold tracking-wide"
             href="#"
