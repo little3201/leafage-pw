@@ -14,7 +14,7 @@
           </div>
           <!--blog-img end-->
           <div class="my-4">
-            <h3 class="font-extrabold">
+            <h3 class="font-extrabold transform hover:translate-x-2 transition duration-500">
               <nuxt-link to="/blog/detail" title=""
                 >Don’t Risk a Red-Eye Without These Things</nuxt-link
               >

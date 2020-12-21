@@ -25,8 +25,8 @@
           <!--blog-img end-->
           <div class="absolute bottom-0 text-white p-10">
             <h3
-              class="w-2/3 p-6 mb-6 text-xl font-black leading-8 text-left"
-              style="border: 1px solid #4a4a45"
+              class="w-2/3 p-6 mb-6 text-xl font-black leading-8 text-left border border-solid"
+              style="border-color: #4a4a45"
             >
               <a href="standard-post.html" title=""
                 >Claire Foy on Becoming Mother Trading Her Crown for a Dragon
