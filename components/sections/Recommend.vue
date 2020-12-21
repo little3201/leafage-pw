@@ -13,7 +13,7 @@
               </div>
               <!--blog-img end-->
               <div class="px-6 w-2/3">
-                <a href="#" title="" class="text-xs space-x-6 text-gray-600 my-4 uppercase">Fashion</a>
+                <a href="#" title="" class="text-xs space-x-6 text-gray-600 uppercase">Fashion</a>
                 <h3 class="my-3 font-extrabold">
                   <a href="standard-post.html" title=""
                     >The Best Street Style at Tbilisi Fashion Week Spring 2019
@@ -36,7 +36,7 @@
               </div>
               <!--blog-img end-->
               <div class="px-6 w-2/3">
-                <a href="#" title="" class="text-xs space-x-6 text-gray-600 my-4 uppercase">Lifestyle</a>
+                <a href="#" title="" class="text-xs space-x-6 text-gray-600 uppercase">Lifestyle</a>
                 <h3 class="my-3 font-extrabold">
                   <a href="standard-post.html" title=""
                     >Gabriela Hearst Just Opened the Most Beautiful Store
@@ -59,7 +59,7 @@
               </div>
               <!--blog-img end-->
               <div class="px-6 w-2/3">
-                <a href="#" title="" class="text-xs space-x-6 text-gray-600 my-4 uppercase">Travel</a>
+                <a href="#" title="" class="text-xs space-x-6 text-gray-600 uppercase">Travel</a>
                 <h3 class="my-3 font-extrabold">
                   <a href="standard-post.html" title=""
                     >Dover Street Market’s New Los Angeles Store Is a Game
@@ -85,7 +85,7 @@
               </div>
               <!--blog-img end-->
               <div class="px-6 w-2/3">
-                <a href="#" title="" class="text-xs space-x-6 text-gray-600 my-4 uppercase">Photograph</a>
+                <a href="#" title="" class="text-xs space-x-6 text-gray-600 uppercase">Photograph</a>
                 <h3 class="my-3 font-extrabold">
                   <a href="standard-post.html" title=""
                     >Elsa Hosk Unveils the Victoria’s Secret Fantasy Bra
