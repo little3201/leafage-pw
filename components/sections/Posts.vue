@@ -490,8 +490,8 @@
         </div>
         <!--blog-section end-->
         <div class="mb-12">
-          <div class="Topuppercase font-extrabold">
-            <h3>Top Posts<span class="w-full ml-4"></span></h3>
+          <div class="uppercase font-extrabold">
+            <h3>Top Posts</h3>
           </div>
           <!--sec-title end-->
           <div class="my-6">

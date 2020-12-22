@@ -2,7 +2,7 @@
   <div>
     <Header2 />
     <div class="container mx-auto border-t border-black">
-      <div class="flex mt-20">
+      <div class="flex my-20">
         <div class="w-2/3">
           <div class="">
             <div class="blog-item">
@@ -87,7 +87,11 @@
                 sagittis mi et eleifend. Nullam interdum leo tincidunt sem
                 pulvinar vestibulum. Phasellus cursus aliquam dui vitae maximus.
               </p>
-              <img src="/images/resources/std-img2.jpg" alt="" class="pst-img" />
+              <img
+                src="/images/resources/std-img2.jpg"
+                alt=""
+                class="pst-img"
+              />
               <p class="text-gray-700 my-4">
                 Cras lobortis vehicula augue, sagittis ornare sapien lacinia
                 non. Fusce semper lobortis massa in fringilla. Quisque vitae
@@ -112,64 +116,208 @@
                 rhoncus. Donec imperdiet orci in tellus sollicitudin eleifend.
                 Donec tincidunt ornare mollis. Morbi non dapibus quam.
               </p>
-              <div class="post-catgs-links">
-                <ul class="flex">
+              <div class="flex justify-between items-center">
+                <ul class="flex space-x-8 text-xs font-bold uppercase">
                   <li><a href="#" title="">#Photo</a></li>
                   <li><a href="#" title="">#Social</a></li>
                   <li><a href="#" title="">#Lifestyle</a></li>
                   <li><a href="#" title="">#Weekend</a></li>
                 </ul>
                 <!--post-catgs-list end-->
-                <ul class="social-links">
+                <ul class="flex space-x-6">
                   <li>
-                    <a href="#" title=""><i class="fab fa-facebook-f"></i></a>
-                  </li>
-                  <li>
-                    <a href="#" title=""><i class="fab fa-twitter"></i></a>
-                  </li>
-                  <li>
-                    <a href="#" title=""><i class="fab fa-linkedin-in"></i></a>
-                  </li>
-                  <li>
-                    <a href="#" title=""><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#" title=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-github"
+                      >
+                        <path
+                          d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                        ></path></svg
+                    ></a>
                   </li>
                   <li>
                     <a href="#" title=""
-                      ><i class="fab fa-facebook-messenger"></i
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-linkedin"
+                      >
+                        <path
+                          d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                        ></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle></svg
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#" title=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-twitter"
+                      >
+                        <path
+                          d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+                        ></path></svg
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#" title=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-facebook"
+                      >
+                        <path
+                          d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                        ></path></svg
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#" title=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-twitter"
+                      >
+                        <path
+                          d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+                        ></path></svg
                     ></a>
                   </li>
                 </ul>
-                <!--social-links end-->
-                <div class="clearfix"></div>
               </div>
               <!--post-catgs-links end-->
-              <div class="my-12 bg-gray-900">
-                <div class="author-img">
-                  <img src="/images/resources/auth-img.png" alt="" />
+              <div class="my-12 bg-gray-900 flex p-8">
+                <div class="w-64">
+                  <img src="/images/resources/auth-img.png" alt="" class="" />
                 </div>
                 <!--author-img end-->
                 <div class="author-info">
-                  <h3><a href="#" title="">Natali Larkins</a></h3>
-                  <p>
+                  <h3 class="text-white font-extrabold leading-8">
+                    <a href="#" title="">Natali Larkins</a>
+                  </h3>
+                  <p class="text-gray-500 text-sm leading-6">
                     Proin gravida nibh vel velit auctor aliquet. Aenean
                     sollicitudin, lorem quisma bibendum auctor nisi elit
                     consequat ipsum, nec sagittis sem amet nibh vulputate cursus
                     itaet mauris.
                   </p>
-                  <ul class="social-links">
-                    <li>
-                      <a href="#" title=""><i class="fab fa-twitter"></i></a>
-                    </li>
+                  <ul class="text-gray-500 mt-4 flex space-x-4">
                     <li>
                       <a href="#" title=""
-                        ><i class="fab fa-pinterest-p"></i
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-github"
+                        >
+                          <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                          ></path></svg
                       ></a>
                     </li>
                     <li>
-                      <a href="#" title=""><i class="fab fa-facebook-f"></i></a>
+                      <a href="#" title=""
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-linkedin"
+                        >
+                          <path
+                            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                          ></path>
+                          <rect x="2" y="9" width="4" height="12"></rect>
+                          <circle cx="4" cy="4" r="2"></circle></svg
+                      ></a>
                     </li>
                     <li>
-                      <a href="#" title=""><i class="fab fa-instagram"></i></a>
+                      <a href="#" title=""
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-twitter"
+                        >
+                          <path
+                            d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+                          ></path></svg
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#" title=""
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-facebook"
+                        >
+                          <path
+                            d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                          ></path></svg
+                      ></a>
                     </li>
                   </ul>
                   <!--social-links end-->
@@ -177,18 +325,42 @@
                 <!--author-info end-->
               </div>
               <!--post-author-info end-->
-              <div class="post-control">
-                <ul>
-                  <li class="prev-p">
-                    <a href="#" title="">
-                      <i class="fa fa-angle-left"></i>Make More Time in
-                      Motherhood & Your Career</a
+              <div class="bg-gray-200 p-8">
+                <ul class="grid grid-cols-2 text-xs font-bold">
+                  <li class="">
+                    <a href="#" title="" class="flex">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-chevron-left"
+                      >
+                        <polyline points="15 18 9 12 15 6"></polyline></svg
+                      >Make More Time in Motherhood & Your Career</a
                     >
                   </li>
-                  <li class="next-p">
-                    <a href="#" title=""
-                      ><i class="fa fa-angle-right"></i>5 Simple Steps To A
-                      Happier and Healthier You</a
+                  <li class="flex justify-end">
+                    <a href="#" title="" class="flex"
+                      >5 Simple Steps To A Happier and Healthier You<svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-chevron-right"
+                      >
+                        <polyline points="9 18 15 12 9 6"></polyline></svg
+                      ></a
                     >
                   </li>
                 </ul>
@@ -197,26 +369,26 @@
             </div>
           </div>
           <!--standard-post end-->
-          <div class="blog-section tp-pst">
-            <div class="sec-title">
+          <div class="my-12">
+            <div class="uppercase font-extrabold">
               <h3>Top Posts</h3>
             </div>
             <!--sec-title end-->
-            <div class="blog-items">
-              <div class="row">
+            <div class="my-6">
+              <div class="grid grid-flow-col grid-cols-3 gap-10">
                 <div class="col-lg-4 col-md-4 col-sm-6 col-12">
                   <div class="blog-item">
-                    <div class="blog-img">
-                      <img src="images/resources/item9.jpg" alt="" />
+                    <div class="w-full">
+                      <img src="/images/resources/item9.jpg" alt="" class="w-full" />
                     </div>
                     <!--blog-img end-->
                     <div class="blog-info">
-                      <h3 class="post-title">
+                      <h3 class="font-extrabold my-4">
                         <a href="standard-post.html" title=""
                           >Five Quotes For Some Extra Monday Motivation</a
                         >
                       </h3>
-                      <ul class="meta">
+                      <ul class="flex text-xs space-x-6 uppercase text-gray-500">
                         <li>Dec 25, 2018</li>
                         <li><i class="la la-eye"></i>2478</li>
                         <li>
@@ -232,17 +404,17 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6 col-12">
                   <div class="blog-item">
-                    <div class="blog-img">
-                      <img src="images/resources/item10.jpg" alt="" />
+                    <div class="w-full">
+                      <img src="/images/resources/item10.jpg" alt="" class="w-full" />
                     </div>
                     <!--blog-img end-->
                     <div class="blog-info">
-                      <h3 class="post-title">
+                      <h3 class="font-extrabold my-4">
                         <a href="standard-post.html" title=""
                           >The No Sugar Challenge That Almost Broke Me</a
                         >
                       </h3>
-                      <ul class="meta">
+                      <ul class="flex text-xs space-x-6 uppercase text-gray-500">
                         <li>Dec 24, 2018</li>
                         <li><i class="la la-eye"></i>417</li>
                         <li>
@@ -256,21 +428,21 @@
                   </div>
                   <!--blog-item end-->
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 col-12">
-                  <div class="blog-item">
-                    <div class="blog-img">
-                      <img src="images/resources/item11.jpg" alt="" />
+                <div class="">
+                  <div class="">
+                    <div class="w-full">
+                      <img src="/images/resources/item11.jpg" alt="" class="w-full" />
                     </div>
                     <!--blog-img end-->
                     <div class="blog-info">
-                      <h3 class="post-title">
+                      <h3 class="font-extrabold my-4">
                         <a href="standard-post.html" title=""
                           >The No Sugar Challenge That Almost Broke Me</a
                         >
                       </h3>
-                      <ul class="meta">
+                      <ul class="flex text-xs space-x-6 uppercase text-gray-500">
                         <li>Dec 21, 2018</li>
-                        <li><i class="la la-eye"></i>247</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>247</li>
                         <li>
                           <a href="#" title=""
                             ><i class="la la-comment-o"></i>2</a
@@ -287,9 +459,9 @@
             <!--blog-items end-->
           </div>
           <!--blog-section top-post end-->
-          <div class="comment-section">
-            <div class="comment-list-sec">
-              <div class="sec-title">
+          <div class="bg-gray-300 p-12">
+            <div class="mb-12">
+              <div class="uppercase font-extrabold">
                 <h3>Comments</h3>
               </div>
               <!--sec-title end-->
@@ -369,8 +541,8 @@
               <!--sec-title end-->
               <div class="cont-form-sec">
                 <form>
-                  <div class="row">
-                    <div class="col-lg-6">
+                  <div class="grid grid-flow-row grid-rows-4 grid-cols-2 gap-4">
+                    <div class="w-full">
                       <div class="form-field">
                         <input
                           type="text"
@@ -380,7 +552,7 @@
                         />
                       </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="">
                       <div class="form-field">
                         <input
                           type="email"
@@ -390,15 +562,15 @@
                         />
                       </div>
                     </div>
-                    <div class="col-lg-12">
-                      <div class="form-field">
+                    <div class="row-span-3">
+                      <div class="w-full">
                         <textarea
                           name="message"
                           placeholder="Your Message"
                         ></textarea>
                       </div>
                     </div>
-                    <div class="col-lg-12">
+                    <div class="">
                       <input type="submit" name="submit" value="Post Comment" />
                     </div>
                   </div>
@@ -413,6 +585,7 @@
       </div>
       <!--single-page-content end-->
     </div>
+    <Footer />
   </div>
 </template>
 

@@ -41,6 +41,16 @@ export default {
     '@nuxt/content',
   ],
 
+  markdownit: {
+    preset: 'default',
+    linkify: true,
+    breaks: true,
+    use: [
+      'markdown-it-div',
+      'markdown-it-attrs'
+    ]
+  },
+
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
     // https: true,
