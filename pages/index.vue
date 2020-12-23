@@ -48,7 +48,7 @@ export default defineComponent({
   },
 
   async asyncData({ app: { $axios } }) {
-    const datas = await $axios.$get(SERVER_URL.posts.concat('?page=0&size=3'));
+    const datas = await $axios.$get(SERVER_URL.posts.concat("?page=0&size=3"));
     return { datas };
   },
 });
