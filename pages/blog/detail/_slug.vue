@@ -87,11 +87,7 @@
                 sagittis mi et eleifend. Nullam interdum leo tincidunt sem
                 pulvinar vestibulum. Phasellus cursus aliquam dui vitae maximus.
               </p>
-              <img
-                src="/images/resources/std-img2.jpg"
-                alt=""
-                class="pst-img"
-              />
+              <img src="/images/resources/std-img2.jpg" alt="" class="w-full" />
               <p class="text-gray-700 my-4">
                 Cras lobortis vehicula augue, sagittis ornare sapien lacinia
                 non. Fusce semper lobortis massa in fringilla. Quisque vitae
@@ -227,7 +223,7 @@
               <!--post-catgs-links end-->
               <div class="my-12 bg-gray-900 flex p-8">
                 <div class="w-64">
-                  <img src="/images/resources/auth-img.png" alt="" class="" />
+                  <img src="/images/resources/auth-img.png" alt="" />
                 </div>
                 <!--author-img end-->
                 <div class="author-info">
@@ -360,8 +356,7 @@
                         class="feather feather-chevron-right"
                       >
                         <polyline points="9 18 15 12 9 6"></polyline></svg
-                      ></a
-                    >
+                    ></a>
                   </li>
                 </ul>
               </div>
@@ -379,7 +374,11 @@
                 <div class="col-lg-4 col-md-4 col-sm-6 col-12">
                   <div class="blog-item">
                     <div class="w-full">
-                      <img src="/images/resources/item9.jpg" alt="" class="w-full" />
+                      <img
+                        src="/images/resources/item9.jpg"
+                        alt=""
+                        class="w-full"
+                      />
                     </div>
                     <!--blog-img end-->
                     <div class="blog-info">
@@ -388,7 +387,9 @@
                           >Five Quotes For Some Extra Monday Motivation</a
                         >
                       </h3>
-                      <ul class="flex text-xs space-x-6 uppercase text-gray-500">
+                      <ul
+                        class="flex text-xs space-x-6 uppercase text-gray-500"
+                      >
                         <li>Dec 25, 2018</li>
                         <li><i class="la la-eye"></i>2478</li>
                         <li>
@@ -405,7 +406,11 @@
                 <div class="col-lg-4 col-md-4 col-sm-6 col-12">
                   <div class="blog-item">
                     <div class="w-full">
-                      <img src="/images/resources/item10.jpg" alt="" class="w-full" />
+                      <img
+                        src="/images/resources/item10.jpg"
+                        alt=""
+                        class="w-full"
+                      />
                     </div>
                     <!--blog-img end-->
                     <div class="blog-info">
@@ -414,7 +419,9 @@
                           >The No Sugar Challenge That Almost Broke Me</a
                         >
                       </h3>
-                      <ul class="flex text-xs space-x-6 uppercase text-gray-500">
+                      <ul
+                        class="flex text-xs space-x-6 uppercase text-gray-500"
+                      >
                         <li>Dec 24, 2018</li>
                         <li><i class="la la-eye"></i>417</li>
                         <li>
@@ -431,7 +438,11 @@
                 <div class="">
                   <div class="">
                     <div class="w-full">
-                      <img src="/images/resources/item11.jpg" alt="" class="w-full" />
+                      <img
+                        src="/images/resources/item11.jpg"
+                        alt=""
+                        class="w-full"
+                      />
                     </div>
                     <!--blog-img end-->
                     <div class="blog-info">
@@ -440,9 +451,29 @@
                           >The No Sugar Challenge That Almost Broke Me</a
                         >
                       </h3>
-                      <ul class="flex text-xs space-x-6 uppercase text-gray-500">
+                      <ul
+                        class="flex text-xs space-x-6 uppercase text-gray-500"
+                      >
                         <li>Dec 21, 2018</li>
-                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>247</li>
+                        <li class="flex items-center">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="feather feather-eye mr-1"
+                          >
+                            <path
+                              d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                            ></path>
+                            <circle cx="12" cy="12" r="3"></circle></svg
+                          >+247
+                        </li>
                         <li>
                           <a href="#" title=""
                             ><i class="la la-comment-o"></i>2</a
@@ -459,74 +490,77 @@
             <!--blog-items end-->
           </div>
           <!--blog-section top-post end-->
-          <div class="bg-gray-300 p-12">
+          <div class="bg-gray-200 p-12">
             <div class="mb-12">
               <div class="uppercase font-extrabold">
                 <h3>Comments</h3>
               </div>
               <!--sec-title end-->
-              <ul class="comment-list">
+              <ul class="my-4">
                 <li>
-                  <div class="comment">
-                    <div class="cm-img">
-                      <img src="images/resources/auth-img.png" alt="" />
+                  <div class="flex my-6">
+                    <div class="mr-4">
+                      <img src="/images/resources/auth-img.png" alt="" />
                     </div>
-                    <div class="cm-info">
-                      <div class="cm-hed">
+                    <div class="">
+                      <div class="flex justify-between font-bold">
                         <h3>Palmer Warren</h3>
-                        <span>December 31, 2018</span>
+                        <span class="text-xs font-bold uppercase text-gray-600"
+                          >December 31, 2018
+                          <a href="#" title="" class="ml-6">- Reply</a></span
+                        >
                       </div>
-                      <div class="clearfix"></div>
-                      <p>
+                      <p class="text-sm text-gray-700">
                         Proin gravida nibh vel velit auctor aliquet. Aenean
                         sollicitudin, lorem quisma bibendum auctor nisi elit
                         consequat ipsum, nec sagittis sem amet nibh.
                       </p>
-                      <a href="#" title="" class="reply">Reply</a>
                     </div>
                   </div>
                   <!--comment end-->
-                  <ul>
+                  <ul class="my-6 ml-8">
                     <li>
-                      <div class="comment">
-                        <div class="cm-img">
-                          <img src="images/resources/auth-img.png" alt="" />
+                      <div class="flex">
+                        <div class="mr-4">
+                          <img src="/images/resources/auth-img.png" alt="" />
                         </div>
-                        <div class="cm-info">
-                          <div class="cm-hed">
+                        <div class="">
+                          <div class="flex justify-between font-bold">
                             <h3>Natali Larkins</h3>
-                            <span>December 31, 2018</span>
+                            <span class="text-xs font-bold uppercase text-gray-600"
+                              >December 31, 2018
+                              <a href="#" title="" class="ml-4">- Reply</a></span
+                            >
                           </div>
-                          <div class="clearfix"></div>
-                          <p>
+                          <p class="text-sm text-gray-700">
                             Proin gravida nibh vel velit auctor aliquet. Aenean
                             sollicitudin, lorem quisma bibendum auctor nisi elit
                             consequat ipsum.
                           </p>
-                          <a href="#" title="" class="reply">Reply</a>
                         </div>
                       </div>
                       <!--comment end-->
                     </li>
                   </ul>
                 </li>
-                <li>
-                  <div class="comment">
-                    <div class="cm-img">
-                      <img src="images/resources/auth-img.png" alt="" />
+                <li class="my-6">
+                  <div class="flex">
+                    <div class="mr-4">
+                      <img src="/images/resources/auth-img.png" alt="" />
                     </div>
-                    <div class="cm-info">
-                      <div class="cm-hed">
+                    <div class="">
+                      <div class="flex justify-between font-bold">
                         <h3>Palmer Warren</h3>
-                        <span>December 31, 2018</span>
+                        <span class="text-xs font-bold uppercase text-gray-600"
+                          >December 31, 2018
+                          <a href="#" title="" class="ml-4">- Reply</a></span
+                        >
                       </div>
-                      <div class="clearfix"></div>
-                      <p>
+                      <p class="text-sm text-gray-700">
                         Proin gravida nibh vel velit auctor aliquet. Aenean
                         sollicitudin, lorem quisma bibendum auctor nisi elit
                         consequat ipsum, nec sagittis sem amet nibh.
                       </p>
-                      <a href="#" title="" class="reply">Reply</a>
                     </div>
                   </div>
                   <!--comment end-->
@@ -535,20 +569,21 @@
             </div>
             <!--comment-list end-->
             <div class="comment-form">
-              <div class="sec-title">
+              <div class="uppercase font-bold text-gray-600">
                 <h3>Leave A Reply</h3>
               </div>
               <!--sec-title end-->
-              <div class="cont-form-sec">
+              <div class="my-6">
                 <form>
-                  <div class="grid grid-flow-row grid-rows-4 grid-cols-2 gap-4">
-                    <div class="w-full">
+                  <div class="grid grid-flow-row grid-rows-5 grid-cols-2 gap-4">
+                    <div class="">
                       <div class="form-field">
                         <input
                           type="text"
                           name="name"
                           placeholder="Name"
-                          required=""
+                          required
+                          class="w-full p-2 outline-none"
                         />
                       </div>
                     </div>
@@ -558,20 +593,27 @@
                           type="email"
                           name="email"
                           placeholder="Email"
-                          required=""
+                          required
+                          class="w-full p-2 outline-none"
                         />
                       </div>
                     </div>
-                    <div class="row-span-3">
-                      <div class="w-full">
+                    <div class="row-span-3 col-span-2">
+                      <div class="h-full">
                         <textarea
                           name="message"
                           placeholder="Your Message"
+                          class="w-full h-full p-2 outline-none"
                         ></textarea>
                       </div>
                     </div>
                     <div class="">
-                      <input type="submit" name="submit" value="Post Comment" />
+                      <input
+                        type="submit"
+                        name="submit"
+                        value="Post Comment"
+                        class="w-1/2 py-3 outline-none bg-gray-500 text-white uppercase text-xs font-bold"
+                      />
                     </div>
                   </div>
                 </form>
