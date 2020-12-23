@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header2 />
+    <Header />
     <div class="container mx-auto border-t border-black">
       <div class="flex my-20">
         <div class="w-2/3">
@@ -19,98 +19,19 @@
                     <a href="#" title=""><i class="la la-comment-o"></i>3</a>
                   </li>
                 </ul>
-                <h3 class="my-3 text-3xl font-extrabold">
-                  Claire Foy on Becoming Mother Trading Her Crown for a Dragon
-                  Tattoo
+                <h3 class="my-3 text-3xl font-extrabold" v-text="data.title">
                 </h3>
               </div>
               <!--blog-info end-->
               <div class="w-full h-full my-8">
                 <img
-                  src="/images/resources/std-img.jpg"
-                  alt=""
+                  :src="data.cover"
+                  :alt="data.title"
                   class="w-full"
                 />
               </div>
               <!--blog-img end-->
-              <p class="text-gray-700 my-4">
-                Proin gravida nibh vel velit auctor aliquet. Aenean
-                sollicitudin, lorem quis bibum auctor nisi elit consequat ipsum,
-                nec sagittis sem nibh id elit. Vesti bulum tempus dolor id metus
-                finibus tincidunt. Sed dapibus egestas ante in egestas. Vesti
-                bulum velit turpis, vulputate eu nisl ut, egestas ullamcorper
-                libero. Mauris bibendum id libero sit amet lacinia. Sed eget
-                erat mollis, lacinia leo sit amet, posuere orci. Cras auctor
-                lobortis interdum. Vivamus vitae sem eu mauris posuere fringilla
-                elementum in est.
-              </p>
-              <p class="text-gray-700 my-4">
-                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-                posuere cubilia fficitur. Nulla suipit tellus quam, quis maximus
-                elit congue ac. Nam consequat nibh vitae justo imperdiet
-                convallis. Duis id elit tincidunt, pharetra velit elementum,
-                scelerisque tortor. Integer bibendum nisl at metus ullamcorper
-                scelerisque tincidunt eu est. Donec quis ncidunt turpis blandit
-                posuere.
-              </p>
-              <h4>Morbi finibus lorem sed arcu fermentumi tristique.</h4>
-              <p class="text-gray-700 my-4">
-                Sed lacinia dolor libero, eu euismod ante ultricies vel.
-                Praesent luctus dolor adapibus lacinia. Proin ullamcorper arcu
-                sem, eu dictum est dapibus dapibus. Mauris sollicitudi at ex in
-                interdum. Sed ac erat velit. Sed eu eros et risus luctus
-                finibus. Maecenas elementum lacus vel dui pulvinar eleifend.
-                Donec ac lacinia ex, at tristique dolor. Integer at orci
-                efficitur, vulputate nibh nec luctus justo. Nam rutrum mi at
-                tempus vulputate. Morbi et nisl sit amet quam eleifend dictum at
-                eget nulla.
-              </p>
-              <blockquote>
-                <p>
-                  Vivamus hendrerit lorem tessun at dapibus felis tristique eu.
-                  Curabitur ut suscipit neque. Pellenulus mus faucibus ornare
-                  ligula.
-                </p>
-                <span>Natali Larkins</span>
-              </blockquote>
-              <p class="text-gray-700 my-4">
-                Quisque et dui id erat efficitur rhoncu non id nibh. Suspendi id
-                tortor in dui ultrices accmsan. Praesent et nisi auctor, tempor
-                velit quis, faucibus mi. Curabitur ultrices vehicula consequat.
-                Vestibulum tempus dolor id metus finibus tincidunt. Sed dapibus
-                egestas ante in egestas. Vestibulum velit turpis, vulputate eu
-                nisegestas ullamcorper libero. Phasellus non elementum leo.
-              </p>
-              <p class="text-gray-700 my-4">
-                Integer eget sapien id odio blandit aliquet et in odio. Nam
-                dignissim libero nec egestas convallis. Phasellus mollis
-                sagittis mi et eleifend. Nullam interdum leo tincidunt sem
-                pulvinar vestibulum. Phasellus cursus aliquam dui vitae maximus.
-              </p>
-              <img src="/images/resources/std-img2.jpg" alt="" class="w-full" />
-              <p class="text-gray-700 my-4">
-                Cras lobortis vehicula augue, sagittis ornare sapien lacinia
-                non. Fusce semper lobortis massa in fringilla. Quisque vitae
-                sapien pellentesque, mollis ante sit amet, aliquet tortor.
-                Integer tincidunt molestie semper. Nam turpis nibh, accumsan et
-                maximus at consectetur eu velit. Nulla tempor eros bibendum
-                feugiat sollicitudin. Quisque nisl purus, molestie vitaem
-                sodales nunc.
-              </p>
-              <p class="text-gray-700 my-4">
-                Cras ullamcorper fringilla nibh eget euismod. Pellentesque
-                eleifend orci sit amet arcu viverra dignissim. Nam ornare orci
-                nunc in viverra felis finibus et. Nam facilisis dignissim
-                iaculis. Integer interdum nisi nec orci consectetur fermentum.
-                Phasellus non dolor interdum, venenatis libero eu, eleifend
-                nunc. Duis iaculis suscipit rhoncus. Vivamus urna ligula
-                ullamcorper sed.
-              </p>
-              <p class="text-gray-700 my-4">
-                Pellentesque habitant morbi tristique senectus et netus et
-                malesuada fames ac turpis egestas. Etiam auctor tristique
-                rhoncus. Donec imperdiet orci in tellus sollicitudin eleifend.
-                Donec tincidunt ornare mollis. Morbi non dapibus quam.
+              <p class="text-gray-700 my-4 leading-loose tracking-wide" v-html="data.content">
               </p>
               <div class="flex justify-between items-center">
                 <ul class="flex space-x-8 text-xs font-bold uppercase">
@@ -663,11 +584,11 @@ export default defineComponent({
     };
   },
 
-  // async asyncData({ app: { $axios }, route }) {
-  //   const data = await $axios.$get(
-  //     SERVER_URL.posts.concat("/").concat(route.params.slug)
-  //   );
-  //   return { data };
-  // },
+  async asyncData({ app: { $axios }, route }) {
+    const data = await $axios.$get(
+      SERVER_URL.posts.concat("/").concat(route.params.slug)
+    );
+    return { data };
+  },
 });
 </script>

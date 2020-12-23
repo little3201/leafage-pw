@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Header2 />
-    <Main />
+    <Header />
+    <Hero :datas="datas" />
     <Featured />
     <Posts />
     <Recommend />
@@ -47,9 +47,9 @@ export default defineComponent({
     };
   },
 
-  // async asyncData({ app: { $axios } }) {
-  //   const datas = await $axios.$get(SERVER_URL.posts);
-  //   return { datas };
-  // },
+  async asyncData({ app: { $axios } }) {
+    const datas = await $axios.$get(SERVER_URL.posts.concat('?page=0&size=3'));
+    return { datas };
+  },
 });
 </script>

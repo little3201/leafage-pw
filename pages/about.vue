@@ -1,17 +1,19 @@
 <template>
-  <section class="main-content lg-back">
-    <div class="container">
-      <div class="about-sec">
-        <div class="row">
-          <div class="col-lg-5">
+<div>
+  <Header />
+  <section class="bg-gray-100">
+    <div class="container mx-auto">
+      <div class="py-20">
+        <div class="flex">
+          <div class="w-2/5">
             <div class="about-img">
-              <img src="images/resources/about-img.png" alt="" />
+              <img src="/images/resources/about-img.png" alt="" />
             </div>
             <!--about-img end-->
           </div>
-          <div class="col-lg-7">
-            <div class="about-cont">
-              <h2>About Me</h2>
+          <div class="w-3/5">
+            <div class="leading-relaxed">
+              <h2 class="text-4xl font-extrabold my-4">About Me</h2>
               <p>
                 Cras lobortis vehicula augue, sagitts oe sapien lacinia non.
                 Fusce semper lo massa in fringilla. Quisque vitae sapien
@@ -25,8 +27,8 @@
                 sem non imperdiet. Integer vitae tortor justo. Fusce pretium
                 porta ex.
               </p>
-              <div class="more-abt">
-                <h3>Morbi finibus lorem sed tristique.</h3>
+              <div class="ml-24 my-20">
+                <h3 class="text-xl font-extrabold my-4">Morbi finibus lorem sed tristique.</h3>
                 <p>
                   Etiam feugiat varius quam, vel hendrerit arcu om pulvinar in.
                   Ut ultricies ultricies quam sed consequat. Etiam nir iturpis,
@@ -71,6 +73,8 @@
       <!--about-sec end-->
     </div>
   </section>
+  <Footer />
+</div>
 </template>
 
 <script lang="ts">

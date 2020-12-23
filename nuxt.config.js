@@ -47,16 +47,18 @@ export default {
     breaks: true,
     use: [
       'markdown-it-div',
-      'markdown-it-attrs'
+      'markdown-it-attrs',
+      'markdown-it-anchor',
+      'markdown-it-replace-link'
     ]
   },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
-    // https: true,
+    https: true,
     progress: true,
     credentials: true,
-    // baseURL: 'https://www.abeille.top/api'
+    baseURL: 'https://www.abeille.top/api'
   },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)

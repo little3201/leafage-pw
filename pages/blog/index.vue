@@ -1,10 +1,9 @@
 <template>
   <div>
     <Header />
-    <Blog />
-    <Featured />
     <Posts />
     <Recommend />
+    <Footer />
   </div>
 </template>
 

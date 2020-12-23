@@ -727,7 +727,7 @@
                 <img
                   src="images/resources/blog-main-img.jpg"
                   alt=""
-                  class="absolute w-full"
+                  class="absolute w-full h-full"
                 />
                 <div
                   class="absolute w-full h-full"

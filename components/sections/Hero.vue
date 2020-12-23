@@ -7,8 +7,8 @@
             class="w-full h-full transform hover:scale-110 transition duration-500"
           >
             <img
-              src="images/resources/blog-img1.jpg"
-              alt=""
+              :src="datas[0].cover"
+              :alt="datas[0].title"
               class="absolute w-full h-full"
             />
             <div
@@ -25,11 +25,10 @@
           <!--blog-img end-->
           <div class="absolute bottom-0 text-white p-10">
             <h3
-              class="w-2/3 p-6 mb-6 text-xl font-black leading-8 text-left border border-solid border-gray-800"
+              class="max-w-sm p-6 mb-6 text-xl font-black leading-8 text-left border border-solid border-gray-600"
             >
-              <a href="standard-post.html" title=""
-                >Claire Foy on Becoming Mother Trading Her Crown for a Dragon
-                Tattoo</a
+              <nuxt-link :to="'/blog/detail/' + datas[0].code" title=""
+                v-text="datas[0].title"></nuxt-link
               >
             </h3>
             <div class="w-full">
@@ -70,8 +69,8 @@
           class="w-full h-full transform hover:scale-110 transition duration-500"
         >
           <img
-            src="images/resources/blog-img2.jpg"
-            alt=""
+            :src="datas[1].cover"
+            :alt="datas[1].title"
             class="absolute w-full h-full"
           />
           <div
@@ -88,9 +87,9 @@
         <!--blog-img end-->
         <div class="absolute px-8 text-left font-black" style="bottom: 30px">
           <h3 class="post-title">
-            <a href="standard-post.html" title=""
-              >Let Emily Ratakowski Explain Single Payer Health
-            </a>
+            <nuxt-link :to="'/blog/detail/' + datas[1].code" title=""
+              v-text="datas[1].title">
+            </nuxt-link>
           </h3>
         </div>
       </div>
@@ -99,8 +98,8 @@
           class="w-full h-full transform hover:scale-110 transition duration-500"
         >
           <img
-            src="images/resources/blog-img3.jpg"
-            alt=""
+            :src="datas[2].cover"
+            :alt="datas[2].title"
             class="absolute w-full h-full"
           />
           <div
@@ -116,11 +115,23 @@
         >
         <!--blog-img end-->
         <div class="absolute px-8 text-left font-black" style="bottom: 30px">
-          <nuxt-link to="/blog/deatil" title=""
-            >Now You Know Zazie on Beetz Explains Net Neutrality</nuxt-link
+          <nuxt-link :to="'/blog/detail/' + datas[2].code" title=""
+            v-text="datas[2].title"></nuxt-link
           >
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<script lang="ts">
+import { defineComponent } from "@vue/composition-api";
+
+export default defineComponent({
+  name: "Posts",
+
+  props: {
+    datas: Array,
+  },
+});
+</script>
