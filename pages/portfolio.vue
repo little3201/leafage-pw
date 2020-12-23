@@ -19,7 +19,7 @@ import { defineComponent } from "@vue/composition-api";
 import { SERVER_URL } from "~/assets/request"
 
 export default defineComponent({
-  name: "Portfilio",
+  name: "Portfolio",
 
   head() {
     const title = "Portfilio - Abeille | 布吉岛";
@@ -47,7 +47,7 @@ export default defineComponent({
   },
 
   async asyncData({ app: { $axios } }) {
-    const datas = await $axios.$get(SERVER_URL.portfilio.concat('?page=0&size=3'));
+    const datas = await $axios.$get(SERVER_URL.portfolio.concat('?page=0&size=3'));
     return { datas };
   },
 });

@@ -81,22 +81,66 @@
       <div class="my-12 border border-solid border-gray-400">
         <ul class="grid grid-cols-3 text-center divide-x py-8">
           <li>
-            <a href="#" title="" class="facebook"
-              ><i class="fab fa-facebook-f"></i
+            <a href="#" title="" class="flex justify-center mb-3"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-facebook"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                ></path></svg
             ></a>
             <h4>3,553</h4>
             <span class="text-xs text-gray-500">Followers</span>
           </li>
           <li>
-            <a href="#" title="" class="twitter"
-              ><i class="fab fa-twitter"></i
+            <a href="#" title="" class="flex justify-center mb-3"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-twitter"
+              >
+                <path
+                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+                ></path></svg
             ></a>
             <h4>11,211</h4>
             <span class="text-xs text-gray-500">Followers</span>
           </li>
           <li>
-            <a href="#" title="" class="pinterest"
-              ><i class="fab fa-pinterest-p"></i
+            <a href="#" title="" class="flex justify-center mb-3"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-instagram"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                ></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg
             ></a>
             <h4>9,328</h4>
             <span class="text-xs text-gray-500">Followers</span>
@@ -109,21 +153,35 @@
           <h3 class="font-extrabold">Get Fresh News</h3>
           <img src="/images/penc-img.png" alt="" class="w-8" />
         </div>
-        <form class="mt-4">
+        <form class="mt-4 flex items-center">
           <input
-            class="w-2/3 text-sm text-black placeholder-gray-600 border border-gray-400 py-2 pl-4"
+            class="w-full text-sm text-black placeholder-gray-600 border border-gray-400 py-2 pl-4"
             type="email"
             placeholder="Enter your email adress"
           />
 
-          <button type="submit">
-            <i class="far fa-paper-plane"></i>
+          <button type="submit" class="bg-black text-white p-2 -ml-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-send"
+            >
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
           </button>
         </form>
       </div>
       <!--subscribe-wd end-->
       <div class="my-12 p-8 border border-solid border-gray-400">
-        <h3 class="uppercase font-extrabold">Recent Post</h3>
+        <h3 class="uppercase text-sm font-semibold">Recent Post</h3>
         <div class="recent-post-carousel">
           <div class="post-slide">
             <img src="/images/resources/rc-img.jpg" alt="" class="w-full" />

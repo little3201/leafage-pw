@@ -32,8 +32,8 @@
           <nuxt-link to="/" class="text-xs font-extrabold uppercase text-black">
             Home
           </nuxt-link>
-          <nuxt-link to="/blog" class="text-xs font-extrabold uppercase text-black">
-            Posts
+          <nuxt-link to="/Portfolio" class="text-xs font-extrabold uppercase text-black">
+            Portfolio
           </nuxt-link>
           <nuxt-link to="/about" class="text-xs font-extrabold uppercase text-black">
             About
@@ -44,7 +44,7 @@
         </nav>
         <div class="flex items-center justify-end md:flex-1">
           <a
-            class="text-gray-600 uppercase text-xs font-bold tracking-wide"
+            class="text-gray-600 flex items-center uppercase text-xs font-bold tracking-wide"
             href="#"
             title=""
           >
@@ -59,7 +59,7 @@
               stroke-width="1.5"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="feather feather-mail"
+              class="feather feather-mail mr-1"
             >
               <path
                 d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"

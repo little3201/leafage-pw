@@ -14,25 +14,60 @@
                     <a href="#" title="">Photograph</a>
                   </li>
                   <li>December 31, 2018</li>
-                  <li><i class="la la-eye"></i>3258</li>
+                  <li class="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="feather feather-eye mr-1"
+                    >
+                      <path
+                        d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                      ></path>
+                      <circle cx="12" cy="12" r="3"></circle></svg
+                    >3258
+                  </li>
                   <li>
-                    <a href="#" title=""><i class="la la-comment-o"></i>3</a>
+                    <nuxt-link to="/" title="" class="flex items-center"
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-message-square mr-1"
+                      >
+                        <path
+                          d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                        ></path></svg
+                      >3</nuxt-link
+                    >
                   </li>
                 </ul>
-                <h3 class="my-3 text-3xl font-extrabold" v-text="data.title">
-                </h3>
+                <h3
+                  class="my-3 text-3xl font-extrabold"
+                  v-text="data.title"
+                ></h3>
               </div>
               <!--blog-info end-->
               <div class="w-full h-full my-8">
-                <img
-                  :src="data.cover"
-                  :alt="data.title"
-                  class="w-full"
-                />
+                <img :src="data.cover" :alt="data.title" class="w-full" />
               </div>
               <!--blog-img end-->
-              <p class="text-gray-700 my-4 leading-loose tracking-wide" v-html="data.content">
-              </p>
+              <p
+                class="text-gray-700 my-4 leading-loose tracking-wide"
+                v-html="data.content"
+              ></p>
               <div class="flex justify-between items-center">
                 <ul class="flex space-x-8 text-xs font-bold uppercase">
                   <li><a href="#" title="">#Photo</a></li>
@@ -42,12 +77,12 @@
                 </ul>
                 <!--post-catgs-list end-->
                 <ul class="flex space-x-6">
-                  <li>
+                  <li class="p-2 rounded-full border border-black">
                     <a href="#" title=""
                       ><svg
                         xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
+                        width="14"
+                        height="14"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -61,12 +96,12 @@
                         ></path></svg
                     ></a>
                   </li>
-                  <li>
+                  <li class="p-2 rounded-full border border-black">
                     <a href="#" title=""
                       ><svg
                         xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
+                        width="14"
+                        height="14"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -82,12 +117,12 @@
                         <circle cx="4" cy="4" r="2"></circle></svg
                     ></a>
                   </li>
-                  <li>
+                  <li class="p-2 rounded-full border border-black">
                     <a href="#" title=""
                       ><svg
                         xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
+                        width="14"
+                        height="14"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -101,12 +136,12 @@
                         ></path></svg
                     ></a>
                   </li>
-                  <li>
+                  <li class="p-2 rounded-full border border-black">
                     <a href="#" title=""
                       ><svg
                         xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
+                        width="14"
+                        height="14"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -117,25 +152,6 @@
                       >
                         <path
                           d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
-                        ></path></svg
-                    ></a>
-                  </li>
-                  <li>
-                    <a href="#" title=""
-                      ><svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="feather feather-twitter"
-                      >
-                        <path
-                          d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
                         ></path></svg
                     ></a>
                   </li>
@@ -245,7 +261,7 @@
               <div class="bg-gray-200 p-8">
                 <ul class="grid grid-cols-2 text-xs font-bold">
                   <li class="">
-                    <a href="#" title="" class="flex">
+                    <a href="#" title="" class="flex items-center">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
@@ -262,7 +278,7 @@
                       >Make More Time in Motherhood & Your Career</a
                     >
                   </li>
-                  <li class="flex justify-end">
+                  <li class="flex items-center justify-end">
                     <a href="#" title="" class="flex"
                       >5 Simple Steps To A Happier and Healthier You<svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -448,9 +464,12 @@
                         <div class="">
                           <div class="flex justify-between font-bold">
                             <h3>Natali Larkins</h3>
-                            <span class="text-xs font-bold uppercase text-gray-600"
+                            <span
+                              class="text-xs font-bold uppercase text-gray-600"
                               >December 31, 2018
-                              <a href="#" title="" class="ml-4">- Reply</a></span
+                              <a href="#" title="" class="ml-4"
+                                >- Reply</a
+                              ></span
                             >
                           </div>
                           <p class="text-sm text-gray-700">

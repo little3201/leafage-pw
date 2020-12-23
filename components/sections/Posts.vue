@@ -4,46 +4,25 @@
       <div class="w-2/3">
         <div class="mb-12">
           <ul
-            class="flex justify-between items-center text-center uppercase leading-10 text-xs font-bold border-black"
+            class="flex justify-between items-center text-center border-black"
             style="border-width: 1px"
             id="myTab"
             role="tablist"
           >
             <li class="bg-black text-white w-1/3">
-              <a
-                class="nav-link active"
-                id="trending-tab"
-                data-toggle="tab"
-                href="#trending"
-                role="tab"
-                aria-controls="trending-tab"
-                aria-selected="true"
-                >Trending</a
-              >
+              <button class="w-full h-10 text-xs font-bold uppercase">
+                Trending
+              </button>
             </li>
             <li class="w-1/3">
-              <a
-                class="nav-link"
-                id="mostview-tab"
-                data-toggle="tab"
-                href="#most-view"
-                role="tab"
-                aria-controls="mostview-tab"
-                aria-selected="false"
-                >Most View</a
-              >
+              <button class="w-full h-10 text-xs font-bold uppercase">
+                Most View
+              </button>
             </li>
             <li class="w-1/3">
-              <a
-                class="nav-link"
-                id="popular-tab"
-                data-toggle="tab"
-                href="#popular"
-                role="tab"
-                aria-controls="popular-tab"
-                aria-selected="false"
-                >Popular</a
-              >
+              <button class="w-full h-10 text-xs font-bold uppercase">
+                Popular
+              </button>
             </li>
           </ul>
           <div class="tab-content" id="myTabContent">
@@ -82,10 +61,43 @@
                           class="flex text-xs space-x-6 text-gray-600 uppercase"
                         >
                           <li>December 31, 2018</li>
-                          <li><i class="la la-eye"></i>3258</li>
+                          <li class="flex items-center">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="12"
+                              height="12"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              class="feather feather-eye mr-1"
+                            >
+                              <path
+                                d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                              ></path>
+                              <circle cx="12" cy="12" r="3"></circle></svg
+                            >3258
+                          </li>
                           <li>
-                            <a href="#" title=""
-                              ><i class="la la-comment-o"></i>4</a
+                            <nuxt-link to="/" title="" class="flex items-center"
+                              ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="12"
+                                height="12"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="feather feather-message-square mr-1"
+                              >
+                                <path
+                                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                                ></path></svg
+                              >4</nuxt-link
                             >
                           </li>
                         </ul>
@@ -121,10 +133,43 @@
                           class="flex text-xs space-x-6 text-gray-600 uppercase"
                         >
                           <li>December 29, 2018</li>
-                          <li><i class="la la-eye"></i>1157</li>
+                          <li class="flex items-center">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="12"
+                              height="12"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              class="feather feather-eye mr-1"
+                            >
+                              <path
+                                d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                              ></path>
+                              <circle cx="12" cy="12" r="3"></circle></svg
+                            >1157
+                          </li>
                           <li>
-                            <a href="#" title=""
-                              ><i class="la la-comment-o"></i>2</a
+                            <nuxt-link to="/" title="" class="flex items-center"
+                              ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="12"
+                                height="12"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="feather feather-message-square mr-1"
+                              >
+                                <path
+                                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                                ></path></svg
+                              >2</nuxt-link
                             >
                           </li>
                         </ul>
@@ -160,10 +205,43 @@
                           class="flex text-xs space-x-6 text-gray-600 uppercase"
                         >
                           <li>December 27, 2018</li>
-                          <li><i class="la la-eye"></i>964</li>
+                          <li class="flex items-center">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="12"
+                              height="12"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              class="feather feather-eye mr-1"
+                            >
+                              <path
+                                d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                              ></path>
+                              <circle cx="12" cy="12" r="3"></circle></svg
+                            >964
+                          </li>
                           <li>
-                            <a href="#" title=""
-                              ><i class="la la-comment-o"></i>6</a
+                            <nuxt-link to="/" title="" class="flex items-center"
+                              ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="12"
+                                height="12"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="feather feather-message-square mr-1"
+                              >
+                                <path
+                                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                                ></path></svg
+                              >6</nuxt-link
                             >
                           </li>
                         </ul>
@@ -199,280 +277,43 @@
                           class="flex text-xs space-x-6 text-gray-600 uppercase"
                         >
                           <li>December 25, 2018</li>
-                          <li><i class="la la-eye"></i>2478</li>
-                          <li>
-                            <a href="#" title=""
-                              ><i class="la la-comment-o"></i>3</a
+                          <li class="flex items-center">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="12"
+                              height="12"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              class="feather feather-eye mr-1"
                             >
+                              <path
+                                d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                              ></path>
+                              <circle cx="12" cy="12" r="3"></circle></svg
+                            >2478
                           </li>
-                        </ul>
-                      </div>
-                      <!--blog-info end-->
-                    </div>
-                    <!--blog-item end-->
-                  </div>
-                </div>
-              </div>
-              <!--blog-items end-->
-            </div>
-            <div
-              class="tab-pane fade"
-              id="most-view"
-              role="tabpanel"
-              aria-labelledby="mostview-tab"
-            >
-              <div class="hidden">
-                <div class="grid grid-flow-col grid-rows-2 grid-cols-2 gap-8">
-                  <div class="">
-                    <div class="blog-item">
-                      <div class="blog-img">
-                        <img src="images/resources/item5.jpg" alt="" />
-                      </div>
-                      <!--blog-img end-->
-                      <div class="blog-info">
-                        <a
-                          href="#"
-                          title=""
-                          class="text-xs space-x-6 text-gray-600 my-4 uppercase"
-                          >Travel</a
-                        >
-                        <h3 class="font-extrabold">
-                          <a href="standard-post.html" title=""
-                            >The Best On-the-Go Snacks to Get Before Holiday
-                            Travel
-                          </a>
-                        </h3>
-                        <ul class="meta">
-                          <li>December 31, 2018</li>
-                          <li><i class="la la-eye"></i>3258</li>
                           <li>
-                            <a href="#" title=""
-                              ><i class="la la-comment-o"></i>4</a
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                      <!--blog-info end-->
-                    </div>
-                    <!--blog-item end-->
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                    <div class="blog-item">
-                      <div class="blog-img">
-                        <img src="images/resources/item6.jpg" alt="" />
-                      </div>
-                      <!--blog-img end-->
-                      <div class="blog-info">
-                        <a
-                          href="#"
-                          title=""
-                          class="text-xs space-x-6 text-gray-600 my-4 uppercase"
-                          >Beauty</a
-                        >
-                        <h3 class="font-extrabold">
-                          <a href="standard-post.html" title=""
-                            >Diddy Offers Intimate Look at His Birthday Beauty
-                            Routine
-                          </a>
-                        </h3>
-                        <ul class="meta">
-                          <li>December 29, 2018</li>
-                          <li><i class="la la-eye"></i>1157</li>
-                          <li>
-                            <a href="#" title=""
-                              ><i class="la la-comment-o"></i>2</a
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                      <!--blog-info end-->
-                    </div>
-                    <!--blog-item end-->
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                    <div class="blog-item">
-                      <div class="blog-img">
-                        <img src="images/resources/item7.jpg" alt="" />
-                      </div>
-                      <!--blog-img end-->
-                      <div class="blog-info">
-                        <a
-                          href="#"
-                          title=""
-                          class="text-xs space-x-6 text-gray-600 my-4 uppercase"
-                          >Fashion</a
-                        >
-                        <h3 class="font-extrabold">
-                          <a href="standard-post.html" title=""
-                            >Julia Roberts' Infamous Armpit Hair Reveal Was a
-                            Statement
-                          </a>
-                        </h3>
-                        <ul class="meta">
-                          <li>December 27, 2018</li>
-                          <li><i class="la la-eye"></i>964</li>
-                          <li>
-                            <a href="#" title=""
-                              ><i class="la la-comment-o"></i>6</a
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                      <!--blog-info end-->
-                    </div>
-                    <!--blog-item end-->
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                    <div class="blog-item">
-                      <div class="blog-img">
-                        <img src="images/resources/item8.jpg" alt="" />
-                      </div>
-                      <!--blog-img end-->
-                      <div class="blog-info">
-                        <a
-                          href="#"
-                          title=""
-                          class="text-xs space-x-6 text-gray-600 my-4 uppercase"
-                          >Photograph</a
-                        >
-                        <h3 class="font-extrabold">
-                          <a href="standard-post.html" title=""
-                            >Roland Mouret New Book About Life Work Brings His
-                            Past
-                          </a>
-                        </h3>
-                        <ul class="meta">
-                          <li>December 25, 2018</li>
-                          <li><i class="la la-eye"></i>2478</li>
-                          <li>
-                            <a href="#" title=""
-                              ><i class="la la-comment-o"></i>3</a
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                      <!--blog-info end-->
-                    </div>
-                    <!--blog-item end-->
-                  </div>
-                </div>
-              </div>
-              <!--blog-items end-->
-            </div>
-            <div
-              class="tab-pane fade"
-              id="popular"
-              role="tabpanel"
-              aria-labelledby="popular-tab"
-            >
-              <div class="hidden">
-                <div class="grid grid-flow-col grid-rows-2 grid-cols-2 gap-8">
-                  <div class="">
-                    <div class="blog-item">
-                      <div class="blog-img">
-                        <img src="images/resources/item5.jpg" alt="" />
-                      </div>
-                      <!--blog-img end-->
-                      <div class="blog-info">
-                        <a href="#" title="" class="post-category">Travel</a>
-                        <h3 class="font-extrabold">
-                          <a href="standard-post.html" title=""
-                            >The Best On-the-Go Snacks to Get Before Holiday
-                            Travel
-                          </a>
-                        </h3>
-                        <ul class="meta">
-                          <li>December 31, 2018</li>
-                          <li><i class="la la-eye"></i>3258</li>
-                          <li>
-                            <a href="#" title=""
-                              ><i class="la la-comment-o"></i>4</a
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                      <!--blog-info end-->
-                    </div>
-                    <!--blog-item end-->
-                  </div>
-                  <div class="">
-                    <div class="blog-item">
-                      <div class="blog-img">
-                        <img src="images/resources/item6.jpg" alt="" />
-                      </div>
-                      <!--blog-img end-->
-                      <div class="blog-info">
-                        <a href="#" title="" class="post-category">Beauty</a>
-                        <h3 class="font-extrabold">
-                          <a href="standard-post.html" title=""
-                            >Diddy Offers Intimate Look at His Birthday Beauty
-                            Routine
-                          </a>
-                        </h3>
-                        <ul class="meta">
-                          <li>December 29, 2018</li>
-                          <li><i class="la la-eye"></i>1157</li>
-                          <li>
-                            <a href="#" title=""
-                              ><i class="la la-comment-o"></i>2</a
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                      <!--blog-info end-->
-                    </div>
-                    <!--blog-item end-->
-                  </div>
-                  <div class="">
-                    <div class="blog-item">
-                      <div class="blog-img">
-                        <img src="images/resources/item7.jpg" alt="" />
-                      </div>
-                      <!--blog-img end-->
-                      <div class="blog-info">
-                        <a href="#" title="" class="post-category">Fashion</a>
-                        <h3 class="font-extrabold">
-                          <a href="standard-post.html" title=""
-                            >Julia Roberts' Infamous Armpit Hair Reveal Was a
-                            Statement
-                          </a>
-                        </h3>
-                        <ul class="meta">
-                          <li>December 27, 2018</li>
-                          <li><i class="la la-eye"></i>964</li>
-                          <li>
-                            <a href="#" title=""
-                              ><i class="la la-comment-o"></i>6</a
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                      <!--blog-info end-->
-                    </div>
-                    <!--blog-item end-->
-                  </div>
-                  <div class="">
-                    <div class="blog-item">
-                      <div class="blog-img">
-                        <img src="images/resources/item8.jpg" alt="" />
-                      </div>
-                      <!--blog-img end-->
-                      <div class="blog-info">
-                        <a href="#" title="" class="post-category"
-                          >Photograph</a
-                        >
-                        <h3 class="font-extrabold">
-                          <a href="standard-post.html" title=""
-                            >Roland Mouret New Book About Life Work Brings His
-                            Past
-                          </a>
-                        </h3>
-                        <ul class="meta">
-                          <li>December 25, 2018</li>
-                          <li><i class="la la-eye"></i>2478</li>
-                          <li>
-                            <a href="#" title=""
-                              ><i class="la la-comment-o"></i>3</a
+                            <nuxt-link to="/" title="" class="flex items-center"
+                              ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="12"
+                                height="12"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="feather feather-message-square mr-1"
+                              >
+                                <path
+                                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                                ></path></svg
+                              >3</nuxt-link
                             >
                           </li>
                         </ul>
@@ -509,9 +350,44 @@
                       <a href="#" title="" class="text-gray-600">Photograph</a>
                     </li>
                     <li>December 18, 2018</li>
-                    <li><i class="la la-eye"></i>4123</li>
+                    <li class="flex items-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-eye mr-1"
+                      >
+                        <path
+                          d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                        ></path>
+                        <circle cx="12" cy="12" r="3"></circle></svg
+                      >4123
+                    </li>
                     <li>
-                      <a href="#" title=""><i class="la la-comment-o"></i>7</a>
+                      <a href="#" title="" class="flex items-center"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-message-square mr-1"
+                        >
+                          <path
+                            d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                          ></path></svg
+                        >7</a
+                      >
                     </li>
                   </ul>
                   <h3 class="text-xl font-extrabold my-4">
@@ -546,9 +422,44 @@
                   </h3>
                   <ul class="flex text-xs space-x-6 uppercase text-gray-500">
                     <li>Dec 24, 2018</li>
-                    <li><i class="la la-eye"></i>417</li>
+                    <li class="flex items-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-eye mr-1"
+                      >
+                        <path
+                          d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                        ></path>
+                        <circle cx="12" cy="12" r="3"></circle></svg
+                      >417
+                    </li>
                     <li>
-                      <a href="#" title=""><i class="la la-comment-o"></i>1</a>
+                      <a href="#" title="" class="flex items-center"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-message-square mr-1"
+                        >
+                          <path
+                            d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                          ></path></svg
+                        >1</a
+                      >
                     </li>
                   </ul>
                 </div>
@@ -572,9 +483,44 @@
                   </h3>
                   <ul class="flex text-xs space-x-6 uppercase text-gray-500">
                     <li>Dec 21, 2018</li>
-                    <li><i class="la la-eye"></i>247</li>
+                    <li class="flex items-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-eye mr-1"
+                      >
+                        <path
+                          d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                        ></path>
+                        <circle cx="12" cy="12" r="3"></circle></svg
+                      >247
+                    </li>
                     <li>
-                      <a href="#" title=""><i class="la la-comment-o"></i>2</a>
+                      <a href="#" title="" class="flex items-center"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-message-square mr-1"
+                        >
+                          <path
+                            d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                          ></path></svg
+                        >2</a
+                      >
                     </li>
                   </ul>
                 </div>
@@ -600,7 +546,12 @@
                   </div>
                   <!--blog-img end-->
                   <div class="my-4">
-                    <a href="#" title="" class="text-xs space-x-6 text-gray-600 font-bold uppercase">Photograph</a>
+                    <a
+                      href="#"
+                      title=""
+                      class="text-xs space-x-6 text-gray-600 font-bold uppercase"
+                      >Photograph</a
+                    >
                     <h3 class="text-xl font-extrabold my-3">
                       <a href="standard-post.html" title=""
                         >Michelin Has Bestowed More Stars Upon New York City
@@ -608,10 +559,43 @@
                     </h3>
                     <ul class="flex text-xs space-x-6 text-gray-600 uppercase">
                       <li>December 23, 2018</li>
-                      <li><i class="la la-eye"></i>3258</li>
+                      <li class="flex items-center">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-eye mr-1"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          ></path>
+                          <circle cx="12" cy="12" r="3"></circle></svg
+                        >3258
+                      </li>
                       <li>
-                        <a href="#" title=""
-                          ><i class="la la-comment-o"></i>4</a
+                        <nuxt-link to="/" title="" class="flex items-center"
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="feather feather-message-square mr-1"
+                          >
+                            <path
+                              d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                            ></path></svg
+                          >4</nuxt-link
                         >
                       </li>
                     </ul>
@@ -631,7 +615,12 @@
                   </div>
                   <!--blog-img end-->
                   <div class="my-4">
-                    <a href="#" title="" class="text-xs space-x-6 text-gray-600 font-bold uppercase">Travel</a>
+                    <a
+                      href="#"
+                      title=""
+                      class="text-xs space-x-6 text-gray-600 font-bold uppercase"
+                      >Travel</a
+                    >
                     <h3 class="text-xl font-extrabold my-3">
                       <a href="standard-post.html" title=""
                         >Bedtime Habits To Wake Up Feeling Refreshed
@@ -639,10 +628,43 @@
                     </h3>
                     <ul class="flex text-xs space-x-6 text-gray-600 uppercase">
                       <li>December 22, 2018</li>
-                      <li><i class="la la-eye"></i>1157</li>
+                      <li class="flex items-center">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-eye mr-1"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          ></path>
+                          <circle cx="12" cy="12" r="3"></circle></svg
+                        >1157
+                      </li>
                       <li>
-                        <a href="#" title=""
-                          ><i class="la la-comment-o"></i>2</a
+                        <nuxt-link to="/" title="" class="flex items-center"
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="feather feather-message-square mr-1"
+                          >
+                            <path
+                              d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                            ></path></svg
+                          >2</nuxt-link
                         >
                       </li>
                     </ul>
@@ -662,7 +684,12 @@
                   </div>
                   <!--blog-img end-->
                   <div class="my-4">
-                    <a href="#" title="" class="text-xs space-x-6 text-gray-600 font-bold uppercase">Beauty</a>
+                    <a
+                      href="#"
+                      title=""
+                      class="text-xs space-x-6 text-gray-600 font-bold uppercase"
+                      >Beauty</a
+                    >
                     <h3 class="text-xl font-extrabold my-3">
                       <a href="standard-post.html" title=""
                         >The New Museum and Alexander McQueen Honor
@@ -670,10 +697,43 @@
                     </h3>
                     <ul class="flex text-xs space-x-6 text-gray-600 uppercase">
                       <li>December 20, 2018</li>
-                      <li><i class="la la-eye"></i>964</li>
+                      <li class="flex items-center">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-eye mr-1"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          ></path>
+                          <circle cx="12" cy="12" r="3"></circle></svg
+                        >964
+                      </li>
                       <li>
-                        <a href="#" title=""
-                          ><i class="la la-comment-o"></i>6</a
+                        <nuxt-link to="/" title="" class="flex items-center"
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="feather feather-message-square mr-1"
+                          >
+                            <path
+                              d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                            ></path></svg
+                          >6</nuxt-link
                         >
                       </li>
                     </ul>
@@ -693,7 +753,12 @@
                   </div>
                   <!--blog-img end-->
                   <div class="my-4">
-                    <a href="#" title="" class="text-xs space-x-6 text-gray-600 font-bold uppercase">Fashion</a>
+                    <a
+                      href="#"
+                      title=""
+                      class="text-xs space-x-6 text-gray-600 font-bold uppercase"
+                      >Fashion</a
+                    >
                     <h3 class="text-xl font-extrabold my-3">
                       <a href="standard-post.html" title=""
                         >The Artist Behind Nigeria’s Newest Dance Crazy Style
@@ -701,10 +766,43 @@
                     </h3>
                     <ul class="flex text-xs space-x-6 text-gray-600 uppercase">
                       <li>December 19, 2018</li>
-                      <li><i class="la la-eye"></i>2478</li>
+                      <li class="flex items-center">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-eye mr-1"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          ></path>
+                          <circle cx="12" cy="12" r="3"></circle></svg
+                        >2478
+                      </li>
                       <li>
-                        <a href="#" title=""
-                          ><i class="la la-comment-o"></i>3</a
+                        <nuxt-link to="/" title="" class="flex items-center"
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="feather feather-message-square mr-1"
+                          >
+                            <path
+                              d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                            ></path></svg
+                          >3</nuxt-link
                         >
                       </li>
                     </ul>
@@ -741,7 +839,7 @@
                 >Lifestyle</nuxt-link
               >
               <!--blog-img end-->
-              <div class="absolute bottom-0 text-white p-10">
+              <div class="absolute bottom-0 text-white p-10 w-full">
                 <h3
                   class="w-2/3 p-6 mb-6 text-xl font-black leading-8 text-left border border-solid border-gray-800"
                 >
@@ -750,34 +848,126 @@
                     Dragon Tattoo</a
                   >
                 </h3>
-                <div class="w-full">
+                <div class="flex justify-between items-center">
                   <ul class="flex text-xs space-x-6 text-gray-400">
                     <li class="uppercase">December 22, 2018</li>
-                    <li><i class="la la-eye"></i>3258</li>
+                    <li class="flex items-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-eye mr-1"
+                      >
+                        <path
+                          d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                        ></path>
+                        <circle cx="12" cy="12" r="3"></circle></svg
+                      >3258
+                    </li>
                     <li>
-                      <a href="#" title=""><i class="la la-comment-o"></i>4</a>
+                      <nuxt-link to="/" title="" class="flex items-center"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-message-square mr-1"
+                        >
+                          <path
+                            d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                          ></path></svg
+                        >4</nuxt-link
+                      >
                     </li>
                   </ul>
-                  <ul class="social-links">
-                    <li>
-                      <a href="#" title=""><i class="fab fa-facebook-f"></i></a>
-                    </li>
-                    <li>
-                      <a href="#" title=""><i class="fab fa-twitter"></i></a>
-                    </li>
-                    <li>
+                  <ul class="flex justify-end space-x-6">
+                    <li class="p-2 rounded-full border border-gray-600">
                       <a href="#" title=""
-                        ><i class="fab fa-linkedin-in"></i
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-github"
+                        >
+                          <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                          ></path></svg
                       ></a>
                     </li>
-                    <li>
+                    <li class="p-2 rounded-full border border-gray-600">
                       <a href="#" title=""
-                        ><i class="fab fa-pinterest-p"></i
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-linkedin"
+                        >
+                          <path
+                            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                          ></path>
+                          <rect x="2" y="9" width="4" height="12"></rect>
+                          <circle cx="4" cy="4" r="2"></circle></svg
                       ></a>
                     </li>
-                    <li>
+                    <li class="p-2 rounded-full border border-gray-600">
                       <a href="#" title=""
-                        ><i class="fab fa-facebook-messenger"></i
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-twitter"
+                        >
+                          <path
+                            d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+                          ></path></svg
+                      ></a>
+                    </li>
+                    <li class="p-2 rounded-full border border-gray-600">
+                      <a href="#" title=""
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-facebook"
+                        >
+                          <path
+                            d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                          ></path></svg
                       ></a>
                     </li>
                   </ul>
@@ -797,11 +987,20 @@
               <div class="">
                 <div class="blog-item">
                   <div class="blog-img">
-                    <img src="images/resources/item16.jpg" alt="" class="w-full" />
+                    <img
+                      src="images/resources/item16.jpg"
+                      alt=""
+                      class="w-full"
+                    />
                   </div>
                   <!--blog-img end-->
                   <div class="my-4">
-                    <a href="#" title="" class="text-xs space-x-6 text-gray-600 font-bold uppercase">Travel</a>
+                    <a
+                      href="#"
+                      title=""
+                      class="text-xs space-x-6 text-gray-600 font-bold uppercase"
+                      >Travel</a
+                    >
                     <h3 class="text-xl font-extrabold my-3">
                       <a href="standard-post.html" title=""
                         >Watch Ciara Break Down 5 Iconic Dance Moves Single
@@ -809,10 +1008,43 @@
                     </h3>
                     <ul class="flex text-xs space-x-6 text-gray-600 uppercase">
                       <li>December 17, 2018</li>
-                      <li><i class="la la-eye"></i>964</li>
+                      <li class="flex items-center">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-eye mr-1"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          ></path>
+                          <circle cx="12" cy="12" r="3"></circle></svg
+                        >964
+                      </li>
                       <li>
-                        <a href="#" title=""
-                          ><i class="la la-comment-o"></i>4</a
+                        <nuxt-link to="/" title="" class="flex items-center"
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="feather feather-message-square mr-1"
+                          >
+                            <path
+                              d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                            ></path></svg
+                          >4</nuxt-link
                         >
                       </li>
                     </ul>
@@ -824,11 +1056,20 @@
               <div class="">
                 <div class="blog-item">
                   <div class="blog-img">
-                    <img src="images/resources/item17.jpg" alt="" class="w-full" />
+                    <img
+                      src="images/resources/item17.jpg"
+                      alt=""
+                      class="w-full"
+                    />
                   </div>
                   <!--blog-img end-->
                   <div class="my-4">
-                    <a href="#" title="" class="text-xs space-x-6 text-gray-600 font-bold uppercase">Lifestyle</a>
+                    <a
+                      href="#"
+                      title=""
+                      class="text-xs space-x-6 text-gray-600 font-bold uppercase"
+                      >Lifestyle</a
+                    >
                     <h3 class="text-xl font-extrabold my-3">
                       <a href="standard-post.html" title=""
                         >Emily Blunt Takes Over for Anna Wintour and Talks
@@ -836,10 +1077,43 @@
                     </h3>
                     <ul class="flex text-xs space-x-6 text-gray-600 uppercase">
                       <li>December 15, 2018</li>
-                      <li><i class="la la-eye"></i>2478</li>
+                      <li class="flex items-center">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-eye mr-1"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          ></path>
+                          <circle cx="12" cy="12" r="3"></circle></svg
+                        >2478
+                      </li>
                       <li>
-                        <a href="#" title=""
-                          ><i class="la la-comment-o"></i>7</a
+                        <nuxt-link to="/" title="" class="flex items-center"
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="feather feather-message-square mr-1"
+                          >
+                            <path
+                              d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                            ></path></svg
+                          >7</nuxt-link
                         >
                       </li>
                     </ul>
@@ -853,26 +1127,60 @@
           <!--blog-items end-->
         </div>
         <!--blog-section end-->
-        <div class="heeney-pagination text-center">
-          <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-              <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1"
-                  ><i class="fas fa-arrow-left"></i
-                ></a>
-              </li>
-              <li class="page-item active">
-                <a class="page-link" href="#">1</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#"
-                  ><i class="fas fa-arrow-right"></i
-                ></a>
-              </li>
-            </ul>
-          </nav>
+        <div class="mb-12">
+          <ul class="flex justify-center items-center">
+            <li class="mx-4 disabled">
+              <a class="page-link" href="#" tabindex="-1"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-chevron-left"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline></svg
+              ></a>
+            </li>
+            <li class="mx-4">
+              <button
+                class="w-8 h-8 bg-black text-white rounded-full border border-black"
+              >
+                1
+              </button>
+            </li>
+            <li class="mx-4">
+              <button class="w-8 h-8 rounded-full border border-black">
+                2
+              </button>
+            </li>
+            <li class="mx-4">
+              <button class="w-8 h-8 rounded-full border border-black">
+                3
+              </button>
+            </li>
+            <li class="mx-4">
+              <a class="page-link" href="#"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-chevron-right"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline></svg
+              ></a>
+            </li>
+          </ul>
         </div>
         <!--heeney-pagination end-->
       </div>
