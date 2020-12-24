@@ -231,7 +231,7 @@
 import { defineComponent } from "@vue/composition-api";
 
 export default defineComponent({
-  name: "Posts",
+  name: "Hero",
 
   props: {
     datas: Array,

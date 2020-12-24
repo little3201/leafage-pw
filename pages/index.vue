@@ -1,10 +1,10 @@
 <template>
   <div>
     <Header />
-    <Hero :datas="datas" />
-    <Featured />
+    <Hero :datas="heroDatas" />
+    <Featured :datas="featuredDatas" />
     <Posts />
-    <Recommend />
+    <Recommend :datas="recommendDatas" />
     <Footer />
   </div>
 </template>
@@ -48,8 +48,13 @@ export default defineComponent({
   },
 
   async asyncData({ app: { $axios } }) {
-    const datas = await $axios.$get(SERVER_URL.posts.concat("?page=0&size=3"));
-    return { datas };
+    // 浏览
+    const heroDatas = await $axios.$get(SERVER_URL.posts.concat("?page=0&size=3&order=viewed"));
+    // 点赞
+    const featuredDatas = await $axios.$get(SERVER_URL.posts.concat("?page=0&size=4&order=likes"));
+    // 最新
+    const recommendDatas = await $axios.$get(SERVER_URL.posts.concat("?page=0&size=8"));
+    return { heroDatas, featuredDatas, recommendDatas };
   },
 });
 </script>

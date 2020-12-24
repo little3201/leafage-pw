@@ -1,13 +1,17 @@
 <template>
   <div>
     <Header />
-    <section class="container mx-auto">
-      <div class="grid grid-cols-3 gap-4">
-        <div>
-          <img :src="datas[0].url" :alt="datas[0].name" />
+    <section class="container mx-auto mb-12">
+      <div class="grid grid-flow-row grid-cols-3 gap-4">
+        <div class="">
+          <img v-for="index in times" :key="index"  :src="data.url" :alt="datas.title" class="w-full mb-4" />
         </div>
-        <div></div>
-        <div></div>
+        <div>
+          <img v-for="(data, index) in datas" :key="index"  :src="data.url" :alt="datas.title" class="w-full mb-4" />
+        </div>
+        <div>
+          <img v-for="(data, index) in datas" :key="index"  :src="data.url" :alt="datas.title" class="w-full mb-4" />
+        </div>
       </div>
     </section>
     <Footer />
@@ -15,14 +19,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api";
+import { defineComponent, ref } from "@vue/composition-api";
 import { SERVER_URL } from "~/assets/request"
 
 export default defineComponent({
   name: "Portfolio",
 
   head() {
-    const title = "Portfilio - Abeille | 布吉岛";
+    const title = "Portfolio - Abeille | 布吉岛";
     const description = "作品集分享";
     return {
       title,
@@ -47,7 +51,7 @@ export default defineComponent({
   },
 
   async asyncData({ app: { $axios } }) {
-    const datas = await $axios.$get(SERVER_URL.portfolio.concat('?page=0&size=3'));
+    const datas = await $axios.$get(SERVER_URL.portfolio.concat('?page=0&size=10'));
     return { datas };
   },
 });

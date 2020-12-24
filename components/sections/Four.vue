@@ -1,26 +1,25 @@
 <template>
-  <section class="container mx-auto">
-    <div class="uppercase font-extrabold mb-6">
-      <h3>Recommended</h3>
-    </div>
-    <div class="grid grid-flow-row grid-rows-4 grid-cols-2 gap-4">
-      <div class="flex" v-for="(data, index) in datas" :key="index">
-        <div class="w-64 overflow-hidden">
-          <div class="transform hover:scale-110 transition duration-500">
-            <img :src="data.cover" :alt="data.title" class="w-full" />
-          </div>
+  <div class="my-10">
+    <div class="grid grid-flow-col grid-rows-2 grid-cols-2 gap-8">
+      <div class="w-full overflow-hidden" v-for="index in 4" :key="index">
+        <div class="">
+          <img src="images/resources/item5.jpg" alt="" class="w-full" />
         </div>
         <!--blog-img end-->
-        <div class="px-6 w-full">
-          <a href="#" title="" class="text-xs space-x-6 text-gray-600 uppercase"
-            >Fashion</a
+        <div class="my-4">
+          <a
+            href="#"
+            title=""
+            class="text-xs space-x-6 text-gray-600 uppercase font-bold"
+            >Photograph</a
           >
-          <h3 class="my-3 font-extrabold">
-            <nuxt-link :to="'/blog/detail/' + data.code" v-text="data.title">
-            </nuxt-link>
+          <h3 class="text-xl font-extrabold my-3">
+            <a href="standard-post.html" title=""
+              >Roland Mouret New Book About Life Work Brings His Past
+            </a>
           </h3>
-          <ul class="flex text-xs space-x-6 text-gray-600">
-            <li>Dec 25, 2018</li>
+          <ul class="flex text-xs space-x-6 text-gray-600 uppercase">
+            <li>December 31, 2018</li>
             <li class="flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +35,7 @@
               >
                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                 <circle cx="12" cy="12" r="3"></circle></svg
-              >2478
+              >3258
             </li>
             <li>
               <nuxt-link to="/" title="" class="flex items-center"
@@ -55,40 +54,24 @@
                   <path
                     d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
                   ></path></svg
-                >3</nuxt-link
+                >4</nuxt-link
               >
             </li>
           </ul>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted } from "@vue/composition-api";
-import axios from "axios";
-import { SERVER_URL } from "~/assets/request";
+import { defineComponent } from "@vue/composition-api";
 
 export default defineComponent({
-  name: "Recommend",
+  name: "Four",
 
   props: {
     datas: Array,
-  },
-
-  setup() {
-    const datas = ref([]);
-
-    onMounted(() => {
-      async () => {
-        datas.value = await axios.get(
-          SERVER_URL.posts.concat("?page=0&size=8")
-        );
-      };
-    });
-
-    return { datas };
   },
 });
 </script>

@@ -11,7 +11,7 @@
               class="h-full object-cover"
             />
           </div>
-          <div class="bg-gray-100 p-10 w-1/2 leading-relaxed">
+          <div class="bg-gray-200 p-10 w-1/2 leading-relaxed">
             <h3 class="text-4xl font-extrabold my-4">Contact</h3>
             <p class="text-gray-600">
               Cras lobortis vehicula ugue, sagitts oe sapien lacinia non. Fusce
@@ -29,7 +29,7 @@
                   class="w-full p-2 outline-none"
                 />
               </div>
-              <div class="my-2">
+              <div class="my-3">
                 <input
                   type="email"
                   name="email"
@@ -38,7 +38,7 @@
                   class="w-full p-2 outline-none"
                 />
               </div>
-              <div class="my-2">
+              <div class="my-3">
                 <input
                   type="text"
                   name="subject"
@@ -46,7 +46,7 @@
                   class="w-full p-2 outline-none"
                 />
               </div>
-              <div class="my-2">
+              <div class="my-3">
                 <textarea
                   name="message"
                   placeholder="Your Message"
