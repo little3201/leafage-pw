@@ -73,5 +73,9 @@ export default defineComponent({
   props: {
     datas: Array,
   },
+
+  setup(){
+      
+  }
 });
 </script>
