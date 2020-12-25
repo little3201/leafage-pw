@@ -572,7 +572,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api";
+import { defineComponent, computed } from "@vue/composition-api";
 import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
@@ -581,9 +581,15 @@ export default defineComponent({
   head() {
     const title = "Blog - Abeille | 布吉岛";
     const description = "Blog of Abeille";
+    const image = "";
     return {
       title,
       meta: [
+        {
+          property: "article:tag",
+          content: "",
+        },
+        { property: "og:site_name", content: "abeille" },
         { hid: "description", name: "description", content: description },
         // Open Graph
         { hid: "og:title", property: "og:title", content: title },
@@ -592,6 +598,8 @@ export default defineComponent({
           property: "og:description",
           content: description,
         },
+        { property: "og:image:width", content: "740" },
+        { property: "og:image:height", content: "300" },
         // Twitter Card
         { hid: "twitter:title", name: "twitter:title", content: title },
         {
@@ -599,8 +607,29 @@ export default defineComponent({
           name: "twitter:description",
           content: description,
         },
+        {
+          hid: "twitter:image",
+          name: "twitter:image",
+          content: image,
+        },
+      ],
+      link: [
+        { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+        {
+          hid: "canonical",
+          rel: "canonical",
+          href: process.env.BASE_URL,
+        },
       ],
     };
+  },
+
+  computed: {
+    meta() {
+      const metaData = {
+        image: "",
+      };
+    },
   },
 
   async asyncData({ app: { $axios }, route }) {

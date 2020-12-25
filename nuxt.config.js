@@ -1,14 +1,41 @@
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'abeille-ui',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'og:site_name', property: 'og:site_name', content: 'Abeille' },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'twitter:site', name: 'twitter:site', content: '@abeille' },
+      {
+        hid: 'twitter:card',
+        name: 'twitter:card',
+        content: 'summary_large_image'
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://nuxtjs.org/nuxt-card.png'
+      },
+      {
+        hid: 'og:image:secure_url',
+        property: 'og:image:secure_url',
+        content: 'https://nuxtjs.org/nuxt-card.png'
+      },
+      {
+        hid: 'og:image:alt',
+        property: 'og:image:alt',
+        content: 'Abeille'
+      },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: 'https://nuxtjs.org/nuxt-card.png'
+      }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/static/favicon.ico' },
+      { rel: 'preconnect', href: 'https://www.google-analytics.com' },
     ]
   },
 
@@ -49,6 +76,10 @@ export default {
     baseURL: 'https://www.abeille.top/api'
   },
 
+  env: {
+    baseUrl: process.env.BASE_URL || 'https://www.abeille.top/api'
+  },
+
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {
     liveEdit: false
@@ -58,7 +89,7 @@ export default {
   loading: {
     color: 'black'
   },
-  
+
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     extractCSS: true

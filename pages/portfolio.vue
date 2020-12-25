@@ -3,14 +3,8 @@
     <Header />
     <section class="container mx-auto mb-12">
       <div class="grid grid-flow-row grid-cols-3 gap-4">
-        <div class="">
-          <img v-for="index in times" :key="index"  :src="data.url" :alt="datas.title" class="w-full mb-4" />
-        </div>
-        <div>
-          <img v-for="(data, index) in datas" :key="index"  :src="data.url" :alt="datas.title" class="w-full mb-4" />
-        </div>
-        <div>
-          <img v-for="(data, index) in datas" :key="index"  :src="data.url" :alt="datas.title" class="w-full mb-4" />
+        <div class="" v-for="(data, index) in datas" :key="index">
+          <img :src="data.url" :alt="data.title" />
         </div>
       </div>
     </section>
