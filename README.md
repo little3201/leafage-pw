@@ -34,8 +34,8 @@ Abeille，一个前（使用 Vue.js + Nuxt.js + Tailwindcss）、后端（spring
 
 ### 展示截图
 
-<img alt="hero" width="100%" src="static/img/abeille.png">
-<img alt="hero" width="100%" src="static/img/blog.png">
+<img alt="hero" width="100%" src="static/img/home.jpg">
+<img alt="hero" width="100%" src="static/img/detail.png">
 
 ### 项目地址
 
