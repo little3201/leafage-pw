@@ -23,7 +23,7 @@
       </div>
       <nuxt-link
         to="/"
-        class="inline-block px-6 py-3 mt-6 rounded-md border border-current hover:border-orange-500 hover:text-orange-500"
+        class="inline-block px-6 py-3 mt-6 rounded-md border border-current hover:border-blue-500 hover:text-blue-500"
       >
         Back to Home
       </nuxt-link>

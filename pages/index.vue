@@ -1,13 +1,17 @@
 <template>
-  <div>
-    <Hero />
-    <Article :datas="datas"/>
+  <div id="home">
+    <Header />
+    <Hero :datas="heroDatas" />
+    <Featured :datas="featuredDatas" />
+    <Posts :datas="featuredDatas" />
+    <Recommend :datas="recommendDatas" />
+    <Footer />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
-import { SERVER_URL } from '~/assets/request'  
+import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
   name: "Home",
@@ -22,8 +26,7 @@ export default defineComponent({
         {
           hid: "keywords",
           name: "keywords",
-          content:
-            "abeille, 布吉岛, 学习, 生活, 旅行",
+          content: "abeille, 布吉岛, 学习, 生活, 旅行",
         },
         { hid: "description", name: "description", content: description },
         // Open Graph
@@ -43,10 +46,15 @@ export default defineComponent({
       ],
     };
   },
-  
-  async asyncData ({ app: { $axios } }) {
-    const datas = await $axios.$get(SERVER_URL.article)
-    return { datas }
-  }
+
+  async asyncData({ app: { $axios } }) {
+    // 浏览
+    const heroDatas = await $axios.$get(SERVER_URL.posts.concat("?page=0&size=3&order=viewed"));
+    // 点赞
+    const featuredDatas = await $axios.$get(SERVER_URL.posts.concat("?page=0&size=4&order=likes"));
+    // 最新
+    const recommendDatas = await $axios.$get(SERVER_URL.posts.concat("?page=0&size=8"));
+    return { heroDatas, featuredDatas, recommendDatas };
+  },
 });
 </script>

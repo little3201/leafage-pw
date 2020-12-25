@@ -1,27 +1,240 @@
 <template>
-  <!-- hero -->
-  <section id="hero" class="my-16 py-16">
-      <!-- container -->
-      <div class="container px-4 sm:px-8 lg:px-16 xl:px-20 mx-auto">
-          <!-- hero wrapper -->
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-
-              <!-- hero text -->
-              <div class="col-span-6">
-                  <h1 class=" font-bold text-4xl md:text-5xl max-w-xl text-gray-900 leading-tight">
-                    Abeille ｜ 布吉岛
-                  </h1>
-                  <hr class=" w-12 h-1 bg-orange-500 rounded-full mt-8">
-                  <p class="text-gray-800 text-base leading-relaxed mt-8 font-semibold">
-                    在这个世界的某一个小角落，有一个人想分享自己的生活、学习中一些值得点点滴滴，因此这个网站诞生了...
-                  </p>
-              </div>
-
-              <!-- hero image -->
-              <div class="col-span-6">
-                  <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><title>#102_travelling_twocolour</title><path d="M81.77,83.39c-28.67,17.47-45.66,49.51-43,83C40.18,183.48,46.54,200,63.35,209c44.83,24,240.55,24.45,269.51-18s18.19-102.84-44.8-128C233.46,41.18,155.82,38.3,81.77,83.39Z" fill="#e6e6e6" opacity="0.3"/><path d="M283.69,206V180.64a4.65,4.65,0,0,1,4.64-4.65h18.49a4.65,4.65,0,0,1,4.64,4.65V206" fill="none" stroke="#ffd200" stroke-miterlimit="10" stroke-width="2"/><path d="M283.69,206V180.64a4.65,4.65,0,0,1,4.64-4.65h18.49a4.65,4.65,0,0,1,4.64,4.65V206" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2" opacity="0.08"/><path d="M159.26,145.74s-18.34,7.36-12.41,28.68,6.48,23.63,19.71,22.32,4.66-22.32,4.66-22.32Z" fill="#ffd200"/><path d="M152.37,79.92s-50.86,11.79-64.24,41.59l45.05,3.4,11.54-7Z" fill="#ed8936"/><path d="M152.37,79.92s-50.86,11.79-64.24,41.59l45.05,3.4,11.54-7Z" fill="#fff" opacity="0.46"/><ellipse cx="200.42" cy="272.36" rx="154.08" ry="11.83" fill="#e6e6e6" opacity="0.45"/><path d="M134.79,246.33s-4.45,3.22-8.54.91-7.67.77-4.87,4.13,14.8,5,14.8,5l4.51-7.28Z" fill="#ed8936"/><path d="M215.08,260.56s1.94,5.15,6.62,5.47,6,4.88,1.79,6.14-15.12-4-15.12-4l.26-8.57Z" fill="#ed8936"/><path d="M79.19,260.08s-10.59-2.9-12.89-12.75c0,0,16.41-3.32,16.87,13.62Z" fill="#ed8936" opacity="0.58"/><path d="M80.49,259s-7.4-11.7-.89-22.64c0,0,12.48,7.93,6.93,22.66Z" fill="#ed8936" opacity="0.73"/><path d="M82.4,259s3.9-12.35,15.72-14.69c0,0,2.21,8-7.65,14.73Z" fill="#ed8936"/><polygon points="74.72 258.75 76.86 273.44 90.38 273.5 92.37 258.83 74.72 258.75" fill="#24285b"/><path d="M156.2,53.77s1.74,6.3,4.27,10a3.28,3.28,0,0,0,4.58.82c1.83-1.3,3.93-3.59,3.41-7.08l-.15-6a5.88,5.88,0,0,0-4.6-5C159.34,45.28,155,50,156.2,53.77Z" fill="#f4a28c"/><polygon points="169.43 54.63 177.9 74.3 166.73 78.19 165.05 62.32 169.43 54.63" fill="#f4a28c"/><path d="M170.86,55.92h0a.62.62,0,0,1-.23.72,4.34,4.34,0,0,1-5.25-.1,5.45,5.45,0,0,1-2.08-5.6,25.94,25.94,0,0,1-5.48,2.52,6,6,0,0,1-2,.32l-3.28-4s-4.23-3.66-1.89-5.67,4.76.61,6.11-2.44,1.54-4.07,4.27-3.72.83,3.12,4.53,1.7,4.36.08,5,1.75a3.1,3.1,0,0,1-.12,1.82A20.1,20.1,0,0,0,170.86,55.92Z" fill="#24285b"/><path d="M164.66,56.6s-.83-2.37,1-2.85,3.06,3,.77,4.16Z" fill="#f4a28c"/><path d="M157.5,57.68l-.83,3A1,1,0,0,0,157.85,62l2.51-.43Z" fill="#f4a28c"/><rect x="289.35" y="173.73" width="16.36" height="5.3" fill="#24285b"/><path d="M165.31,64.43s1.44-.49,3.72-3.33c0,0,1.05,4.15-3.26,8Z" fill="#ce8172" opacity="0.31"/><path d="M162.12,76.62l6.43-1.16a90.83,90.83,0,0,0,8.92-2.08c11-3.14,43.37-10.53,52.58,8.2,11.16,22.69-7.47,96.3-7.47,96.3h-51s-10.41-30.66-25.29-49.62S121,88.21,162.12,76.62Z" fill="#ed8936"/><path d="M152.37,79.92s-2.56,16.32,19.86,4l-5.75-8A58,58,0,0,0,152.37,79.92Z" opacity="0.08"/><path d="M94.92,139.7c-10.16-3.16-11.68-17-2.47-22.37a25.2,25.2,0,0,1,10.9-3.2c17.08-1.26,46.18-2.85,46.18-2.85s17.52,5.7,14.77,14.24-15.08-5.06-15.08-5.06S116.66,146.46,94.92,139.7Z" fill="#f4a28c"/><rect x="144.58" y="110.56" width="6.04" height="12.3" transform="translate(-14.69 21.47) rotate(-7.93)" fill="#24285b"/><rect x="143.84" y="109.5" width="6.04" height="3.82" transform="matrix(0.99, -0.14, 0.14, 0.99, -13.96, 21.32)" fill="#ffd200"/><path d="M166.48,75.84s-7.76,7.14,1.21,8.67,9.78-11.13,9.78-11.13Z" fill="#f4a28c"/><path d="M171.63,177.88l-38.45,68.45,9.93,6.91s21.24-35.45,46.53-53.26a6.38,6.38,0,0,1,9.72,3.27c6.84,21.15,7.42,58,7.42,58H218.5l4.08-83.34Z" fill="#24285b"/><path d="M171.63,177.88s19.15-15,25.92-36.41a6.57,6.57,0,0,1,11.08-2.37l18.2,19.68,3.67-20.57L217.19,96.09,192,79.92l-5,19.51Z" opacity="0.08"/><path d="M163.36,158.94s11.81-11.72,14.11-50.86c1.91-32.56,6.58-38.92,16.33-41.2,15.06-3.54,18.65.94,23.39,7.63,0,0-24.08,1.49-23.24,16.56s-2.51,68.75-22.32,86.81C171.63,177.88,162.44,177.11,163.36,158.94Z" fill="#ffd200"/><path d="M163.36,158.94s11.81-11.72,14.11-50.86c1.91-32.56,6.58-38.92,16.33-41.2,15.06-3.54,18.65.94,23.39,7.63,0,0-24.08,1.49-23.24,16.56s-2.51,68.75-22.32,86.81C171.63,177.88,162.44,177.11,163.36,158.94Z" fill="#fff" opacity="0.46"/><path d="M196.37,93.76c-5-12,8.93-27.14,21-22.46,10.32,4,21.35,12.84,27.34,30.64C258.94,144.25,291,164.7,291,164.7s16.36,2.7,16.36,8.65-19.34,0-19.34,0-50.2-20.83-76.24-54.3C204,109,199.22,100.59,196.37,93.76Z" fill="#f4a28c"/><path d="M226.35,134.56s19.94-6.75,25-16.62c0,0-7.22-38.91-32.87-47.28-8.44-2.75-17.87.34-22.29,8C190.83,88,192,105.22,226.35,134.56Z" fill="#ed8936"/><path d="M226.35,134.56s19.94-6.75,25-16.62c0,0-7.22-38.91-32.87-47.28-8.44-2.75-17.87.34-22.29,8C190.83,88,192,105.22,226.35,134.56Z" fill="#fff" opacity="0.46"/><rect x="271.49" y="198.46" width="52.16" height="67.53" fill="#ffd200"/><rect x="278.47" y="265.99" width="6.37" height="6.37" fill="#24285b"/><rect x="309.43" y="265.99" width="6.37" height="6.37" fill="#24285b"/><rect x="280.14" y="211.01" width="7.25" height="40.35" opacity="0.08"/><rect x="293.95" y="211.01" width="7.25" height="40.35" opacity="0.08"/><rect x="306.92" y="211.01" width="7.25" height="40.35" opacity="0.08"/><circle cx="222.58" cy="34.77" r="21.04" fill="#24285b"/><polygon points="214.44 34.77 196.44 52.7 220.3 43.18 214.44 34.77" fill="#24285b"/><rect x="220.3" y="25.3" width="3.51" height="11.08" fill="#fff"/><rect x="220.3" y="39.43" width="3.51" height="3.51" fill="#fff"/></svg>
-              </div>
+  <section class="container mx-auto">
+    <div class="grid grid-flow-col grid-rows-2 grid-cols-3 gap-4">
+      <div class="row-span-2 col-span-2 flex justify-center items-center">
+        <div class="relative w-full h-full overflow-hidden">
+          <div
+            class="w-full h-full transform hover:scale-110 transition duration-500"
+          >
+            <img
+              :src="datas[0].cover"
+              :alt="datas[0].title"
+              class="absolute w-full h-full"
+            />
+            <div
+              class="absolute w-full h-full"
+              style="background-color: rgba(42, 42, 42, 0.3)"
+            ></div>
           </div>
+          <nuxt-link
+            to="/"
+            title=""
+            class="absolute top-0 text-white text-xs font-extrabold uppercase p-10"
+            >Lifestyle</nuxt-link
+          >
+          <!--blog-img end-->
+          <div class="absolute bottom-0 text-white p-10 w-full">
+            <h3
+              class="max-w-sm p-6 mb-6 text-xl font-black leading-8 text-left border border-solid border-gray-600"
+            >
+              <nuxt-link
+                :to="'/blog/detail/' + datas[0].code"
+                title=""
+                v-text="datas[0].title"
+              ></nuxt-link>
+            </h3>
+            <div class="flex justify-between items-center">
+              <ul class="flex text-xs space-x-6 text-gray-400">
+                <li class="uppercase">December 22, 2018</li>
+                <li class="flex items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-eye mr-1"
+                  >
+                    <path
+                      d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                    ></path>
+                    <circle cx="12" cy="12" r="3"></circle></svg
+                  >3258
+                </li>
+                <li>
+                  <a href="#" title="" class="flex items-center"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="feather feather-message-square mr-1"
+                    >
+                      <path
+                        d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                      ></path></svg
+                    >4</a
+                  >
+                </li>
+              </ul>
+              <ul class="flex justify-end space-x-6">
+                  <li class="p-2 rounded-full border border-gray-300 text-gray-300">
+                    <a href="#" title=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-github"
+                      >
+                        <path
+                          d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                        ></path></svg
+                    ></a>
+                  </li>
+                  <li class="p-2 rounded-full border border-gray-300 text-gray-300">
+                    <a href="#" title=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-linkedin"
+                      >
+                        <path
+                          d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                        ></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle></svg
+                    ></a>
+                  </li>
+                  <li class="p-2 rounded-full border border-gray-300 text-gray-300">
+                    <a href="#" title=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-twitter"
+                      >
+                        <path
+                          d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+                        ></path></svg
+                    ></a>
+                  </li>
+                  <li class="p-2 rounded-full border border-gray-300 text-gray-300">
+                    <a href="#" title=""
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-facebook"
+                      >
+                        <path
+                          d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                        ></path></svg
+                    ></a>
+                  </li>
+                </ul>
+            </div>
+            <!--met-soc end-->
+          </div>
+          <!--blog-info end-->
+        </div>
       </div>
+      <div class="relative text-white w-full h-64 overflow-hidden">
+        <div
+          class="w-full h-full transform hover:scale-110 transition duration-500"
+        >
+          <img
+            :src="datas[1].cover"
+            :alt="datas[1].title"
+            class="absolute w-full h-full"
+          />
+          <div
+            class="absolute w-full h-full"
+            style="background-color: rgba(42, 42, 42, 0.3)"
+          ></div>
+        </div>
+        <nuxt-link
+          to="/"
+          title=""
+          class="absolute top-0 text-white text-xs font-extrabold uppercase p-8"
+          >Lifestyle</nuxt-link
+        >
+        <!--blog-img end-->
+        <div class="absolute px-8 text-left font-black" style="bottom: 30px">
+          <h3 class="post-title">
+            <nuxt-link
+              :to="'/blog/detail/' + datas[1].code"
+              title=""
+              v-text="datas[1].title"
+            >
+            </nuxt-link>
+          </h3>
+        </div>
+      </div>
+      <div class="relative text-white w-full h-64 overflow-hidden">
+        <div
+          class="w-full h-full transform hover:scale-110 transition duration-500"
+        >
+          <img
+            :src="datas[2].cover"
+            :alt="datas[2].title"
+            class="absolute w-full h-full"
+          />
+          <div
+            class="absolute w-full h-full"
+            style="background-color: rgba(42, 42, 42, 0.3)"
+          ></div>
+        </div>
+        <nuxt-link
+          to="/"
+          title=""
+          class="absolute top-0 text-white text-xs font-extrabold uppercase p-8"
+          >Lifestyle</nuxt-link
+        >
+        <!--blog-img end-->
+        <div class="absolute px-8 text-left font-black" style="bottom: 30px">
+          <nuxt-link
+            :to="'/blog/detail/' + datas[2].code"
+            title=""
+            v-text="datas[2].title"
+          ></nuxt-link>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
+
+<script lang="ts">
+import { defineComponent } from "@vue/composition-api";
+
+export default defineComponent({
+  name: "Hero",
+
+  props: {
+    datas: Array,
+  },
+});
+</script>

@@ -1,9 +1,6 @@
 <template>
-  <div>
-    <Header />
-    <main>
-      <Nuxt />
-    </main>
-    <Footer />
-  </div>
+  <Nuxt />
 </template>
+
+<style>
+</style>
