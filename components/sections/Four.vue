@@ -1,9 +1,9 @@
 <template>
   <div class="my-10">
     <div class="grid grid-flow-col grid-rows-2 grid-cols-2 gap-8">
-      <div class="w-full overflow-hidden" v-for="index in 4" :key="index">
+      <div class="w-full overflow-hidden" v-for="(data,index) in datas" :key="index">
         <div class="">
-          <img src="images/resources/item5.jpg" alt="" class="w-full" />
+          <img :src="data.cover" alt="" class="w-full" />
         </div>
         <!--blog-img end-->
         <div class="my-4">
@@ -14,9 +14,9 @@
             >Photograph</a
           >
           <h3 class="text-xl font-extrabold my-3">
-            <a href="standard-post.html" title=""
-              >Roland Mouret New Book About Life Work Brings His Past
-            </a>
+            <nuxt-link :to="'/blog/detail/' + data.code" title="" v-text="data.title"
+              >
+            </nuxt-link>
           </h3>
           <ul class="flex text-xs space-x-6 text-gray-600 uppercase">
             <li>December 31, 2018</li>

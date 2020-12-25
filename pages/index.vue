@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div id="home">
     <Header />
     <Hero :datas="heroDatas" />
     <Featured :datas="featuredDatas" />
-    <Posts />
+    <Posts :datas="featuredDatas" />
     <Recommend :datas="recommendDatas" />
     <Footer />
   </div>

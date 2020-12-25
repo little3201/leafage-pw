@@ -26,7 +26,7 @@
             </li>
           </ul>
 
-          <Four />
+          <Four :datas="datas" />
           <!--tab-content end-->
         </div>
         <!--blog-section end-->
@@ -232,7 +232,7 @@
           <!--blog-items end-->
         </div>
         <!--blog-section end-->
-        <Four />
+        <Four :datas="datas" />
         <!--blog-section end-->
         <div class="mb-2">
           <div class="">

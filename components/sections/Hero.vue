@@ -77,7 +77,7 @@
                 </li>
               </ul>
               <ul class="flex justify-end space-x-6">
-                  <li class="p-2 rounded-full border border-gray-600">
+                  <li class="p-2 rounded-full border border-gray-300 text-gray-300">
                     <a href="#" title=""
                       ><svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +96,7 @@
                         ></path></svg
                     ></a>
                   </li>
-                  <li class="p-2 rounded-full border border-gray-600">
+                  <li class="p-2 rounded-full border border-gray-300 text-gray-300">
                     <a href="#" title=""
                       ><svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -117,7 +117,7 @@
                         <circle cx="4" cy="4" r="2"></circle></svg
                     ></a>
                   </li>
-                  <li class="p-2 rounded-full border border-gray-600">
+                  <li class="p-2 rounded-full border border-gray-300 text-gray-300">
                     <a href="#" title=""
                       ><svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -136,7 +136,7 @@
                         ></path></svg
                     ></a>
                   </li>
-                  <li class="p-2 rounded-full border border-gray-600">
+                  <li class="p-2 rounded-full border border-gray-300 text-gray-300">
                     <a href="#" title=""
                       ><svg
                         xmlns="http://www.w3.org/2000/svg"

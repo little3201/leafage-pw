@@ -75,20 +75,6 @@ export default defineComponent({
 
   props: {
     datas: Array,
-  },
-
-  setup() {
-    const datas = ref([]);
-
-    onMounted(() => {
-      async () => {
-        datas.value = await axios.get(
-          SERVER_URL.posts.concat("?page=0&size=8")
-        );
-      };
-    });
-
-    return { datas };
-  },
+  }
 });
 </script>
