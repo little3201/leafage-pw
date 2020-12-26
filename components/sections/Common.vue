@@ -1,9 +1,11 @@
 <template>
   <div class="my-10">
     <div class="grid grid-flow-col grid-rows-2 grid-cols-2 gap-8">
-      <div class="w-full overflow-hidden" v-for="(data,index) in datas" :key="index">
-        <div class="">
-          <img :src="data.cover" alt="" class="w-full" />
+      <div class="w-full" v-for="(data, index) in datas" :key="index">
+        <div class="overflow-hidden">
+          <div class="transform hover:scale-110 transition duration-500">
+            <img :src="data.cover" alt="" class="w-full" />
+          </div>
         </div>
         <!--blog-img end-->
         <div class="my-4">
@@ -13,9 +15,12 @@
             class="text-xs space-x-6 text-gray-600 uppercase font-bold"
             >Photograph</a
           >
-          <h3 class="text-xl font-extrabold my-3">
-            <nuxt-link :to="'/blog/detail/' + data.code" title="" v-text="data.title"
-              >
+          <h3 class="text-xl font-extrabold my-3 transform hover:translate-x-2 transition duration-500">
+            <nuxt-link
+              :to="'/blog/detail/' + data.code"
+              title=""
+              v-text="data.title"
+            >
             </nuxt-link>
           </h3>
           <ul class="flex text-xs space-x-6 text-gray-600 uppercase">
@@ -68,14 +73,12 @@
 import { defineComponent } from "@vue/composition-api";
 
 export default defineComponent({
-  name: "Four",
+  name: "Common",
 
   props: {
     datas: Array,
   },
 
-  setup(){
-      
-  }
+  setup() {},
 });
 </script>

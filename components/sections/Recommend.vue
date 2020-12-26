@@ -1,13 +1,13 @@
 <template>
   <section class="container mx-auto">
-    <div class="uppercase font-extrabold mb-6">
+    <div class="uppercase font-extrabold">
       <h3>Recommended</h3>
     </div>
-    <div class="grid grid-flow-row grid-rows-4 grid-cols-2 gap-4">
+    <div class="grid grid-flow-row grid-rows-6 grid-cols-1 md:grid-rows-3 md:grid-cols-2 gap-4 my-6">
       <div class="flex" v-for="(data, index) in datas" :key="index">
-        <div class="w-64 overflow-hidden">
+        <div class="overflow-hidden">
           <div class="transform hover:scale-110 transition duration-500">
-            <img :src="data.cover" :alt="data.title" class="w-full" />
+            <img :src="data.cover" :alt="data.title" class="w-64 h-32 object-cover" />
           </div>
         </div>
         <!--blog-img end-->
@@ -15,7 +15,7 @@
           <a href="#" title="" class="text-xs space-x-6 text-gray-600 uppercase"
             >Fashion</a
           >
-          <h3 class="my-3 font-extrabold">
+          <h3 class="my-3 font-extrabold transform hover:translate-x-2 transition duration-500">
             <nuxt-link :to="'/blog/detail/' + data.code" v-text="data.title">
             </nuxt-link>
           </h3>

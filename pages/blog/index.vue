@@ -1,15 +1,10 @@
 <template>
   <div>
-    <Header />
-    <Posts />
-    <Recommend />
-    <Footer />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
-import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
   name: "BLog",

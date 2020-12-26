@@ -1,15 +1,14 @@
 <template>
-  <div class="flex justify-end w-1/3">
-    <div class="ml-12">
-      <div class="py-8 border border-solid border-gray-400">
-        <h3 class="px-8 uppercase text-sm font-semibold">Trending</h3>
-        <div class="">
-          <div class="md:flex px-8 py-2">
-            <img src="/images/resources/post1.jpg" alt="" />
+  <div class="md:flex md:justify-end w-full md:w-1/3">
+    <div class="md:ml-12">
+      <div class="py-8 border border-solid border-gray-400 relative">
+        <h3 class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold">Trending</h3>
+          <div class="flex px-8 py-2" v-for="data in trendingDatas" :key="data.code">
+            <img class="w-32 h-20 object-cover" :src="data.cover" :alt="data.title" />
             <div class="ml-4">
               <h3 class="text-sm font-bold">
-                <a href="standard-post.html" title=""
-                  >Living Room Makeover Reveal</a
+                <nuxt-link :to="'/blog/detail/' + data.code" v-text="data.title"
+                  ></nuxt-link
                 >
               </h3>
               <span class="text-xs text-gray-500 font-bold uppercase"
@@ -17,64 +16,6 @@
               >
             </div>
           </div>
-          <!--wd-post end-->
-          <div class="md:flex px-8 py-2">
-            <img src="/images/resources/post2.jpg" alt="" />
-            <div class="ml-4">
-              <h3 class="text-sm font-bold">
-                <a href="standard-post.html" title=""
-                  >Candy Inspired Treat Recipes</a
-                >
-              </h3>
-              <span class="text-xs text-gray-500 font-bold uppercase"
-                >Dec 23, 2018</span
-              >
-            </div>
-          </div>
-          <!--wd-post end-->
-          <div class="md:flex px-8 py-2">
-            <img src="/images/resources/post3.jpg" alt="" />
-            <div class="ml-4">
-              <h3 class="text-sm font-bold">
-                <a href="standard-post.html" title=""
-                  >Fun Spooky Halloween Treats</a
-                >
-              </h3>
-              <span class="text-xs text-gray-500 font-bold uppercase"
-                >Dec 21, 2018</span
-              >
-            </div>
-          </div>
-          <!--wd-post end-->
-          <div class="md:flex px-8 py-2">
-            <img src="/images/resources/post4.jpg" alt="" />
-            <div class="ml-4">
-              <h3 class="text-sm font-bold">
-                <a href="standard-post.html" title=""
-                  >Soup Recipes Everyone Will Love</a
-                >
-              </h3>
-              <span class="text-xs text-gray-500 font-bold uppercase"
-                >Dec 19, 2018</span
-              >
-            </div>
-          </div>
-          <!--wd-post end-->
-          <div class="md:flex px-8 py-2">
-            <img src="/images/resources/post4.jpg" alt="" />
-            <div class="ml-4">
-              <h3 class="text-sm font-bold">
-                <a href="standard-post.html" title=""
-                  >Soup Recipes Everyone Will Love</a
-                >
-              </h3>
-              <span class="text-xs text-gray-500 font-bold uppercase"
-                >Dec 19, 2018</span
-              >
-            </div>
-          </div>
-          <!--wd-post end-->
-        </div>
         <!--wd-posts end-->
       </div>
       <!--widget-trending-posts end-->
@@ -151,7 +92,6 @@
       <div class="border-2 border-solid border-black p-8">
         <div class="flex">
           <h3 class="font-extrabold">Get Fresh News</h3>
-          <img src="/images/penc-img.png" alt="" class="w-8" />
         </div>
         <form class="mt-4 flex items-center">
           <input
@@ -180,21 +120,12 @@
         </form>
       </div>
       <!--subscribe-wd end-->
-      <div class="my-12 p-8 border border-solid border-gray-400">
-        <h3 class="uppercase text-sm font-semibold">Recent Post</h3>
-        <div class="recent-post-carousel">
+      <div class="my-12 border border-solid border-gray-400 relative">
+        <h3 class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold">Recent Post</h3>
+        <div class="recent-post-carousel p-8">
           <div class="post-slide">
             <img src="/images/resources/rc-img.jpg" alt="" class="w-full" />
           </div>
-          <!--post-slide end-->
-          <div class="hidden">
-            <img src="/images/resources/rc-img.jpg" alt="" />
-          </div>
-          <!--post-slide end-->
-          <div class="hidden">
-            <img src="/images/resources/rc-img.jpg" alt="" />
-          </div>
-          <!--post-slide end-->
         </div>
         <!--carousel end-->
       </div>
@@ -205,12 +136,13 @@
         /></a>
       </div>
       <!--widget-adver end-->
-      <div class="my-12 py-8 px-12 border border-solid border-gray-400">
-        <h3 class="uppercase font-extrabold">Categories</h3>
+      <div class="my-12 border border-solid border-gray-400 relative">
+        <h3 class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold">Categories</h3>
         <ul
-          class="grid grid-cols-1 divide-y divide-gray-400 text-xs text-gray-600 font-semibold uppercase list-disc"
+          class="grid grid-cols-1 divide-y divide-gray-400 p-8 text-xs text-gray-600 font-semibold uppercase list-disc"
           style="line-style: inside"
         >
+          <li class="py-3 mx-4"><a href="#" title="">Technology</a></li>
           <li class="py-3 mx-4"><a href="#" title="">Fashion</a></li>
           <li class="py-3 mx-4"><a href="#" title="">Lifestyle</a></li>
           <li class="py-3 mx-4"><a href="#" title="">Beauty</a></li>
@@ -286,3 +218,16 @@
     <!--sidebar end-->
   </div>
 </template>
+
+
+<script lang="ts">
+import { defineComponent } from "@vue/composition-api";
+
+export default defineComponent({
+  name: "Posts",
+
+  props: {
+    trendingDatas: Array
+  },
+});
+</script>
