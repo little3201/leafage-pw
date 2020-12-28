@@ -1,6 +1,7 @@
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
+    title: 'abeille-ui',
     htmlAttrs: {
       lang: 'en'
     },
@@ -83,6 +84,8 @@ export default {
   env: {
     baseUrl: process.env.BASE_URL || 'https://www.abeille.top/api'
   },
+
+  globalName: 'abeille',
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {

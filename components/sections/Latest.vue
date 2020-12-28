@@ -242,8 +242,8 @@
               <h3
                 class="text-xl font-extrabold my-3 transform hover:translate-x-2 transition duration-500"
               >
-                <nuxt-link :to="'/blog/detail/' + datas[2].code"
-                  >Emily Blunt Takes Over for Anna Wintour and Talks
+                <nuxt-link :to="'/blog/detail/' + datas[2].code" v-text="datas[2].title"
+                  >
                 </nuxt-link>
               </h3>
               <ul class="flex text-xs space-x-6 text-gray-600 uppercase">
@@ -299,14 +299,28 @@
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
+import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
   name: "Latest",
 
-  props: {
-    datas: Array,
+  data() {
+    return {
+      datas: [
+        {
+          code: '',
+          cover: '',
+          title: '',
+        }
+      ],
+    };
   },
 
-  setup() {},
+  async fetch() {
+    const { data } = await this.$axios.get(
+      SERVER_URL.posts.concat("?page=0&size=3")
+    );
+    this.datas = data;
+  },
 });
 </script>

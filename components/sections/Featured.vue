@@ -70,12 +70,28 @@
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
+import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
   name: "Featured",
 
-  props: {
-    datas: Array,
+  data() {
+    return {
+      datas: [
+        {
+          code: '',
+          cover: '',
+          title: '',
+        }
+      ],
+    };
+  },
+
+  async fetch() {
+    const { data } = await this.$axios.get(
+      SERVER_URL.posts.concat("?page=0&size=4&order=likes")
+    );
+    this.datas = data;
   },
 });
 </script>

@@ -26,15 +26,15 @@
             </li>
           </ul>
 
-          <Common :datas="datas" />
+          <Common />
           <!--tab-content end-->
         </div>
         <!--blog-section end-->
-        <Top :datas="topDatas" />
+        <Top />
         <!--blog-section end-->
-        <Common :datas="datas" />
+        <Common />
         <!--blog-section end-->
-        <Latest :datas="datas" />
+        <Latest />
         <!--blog-section end-->
         
         <!--blog-section end-->
@@ -101,7 +101,7 @@
         </div>
         <!--heeney-pagination end-->
       </div>
-      <SiderBar :trendingDatas="trendingDatas" />
+      <SiderBar />
     </div>
   </section>
 </template>
@@ -113,11 +113,5 @@ import Common from "./Common.vue";
 export default defineComponent({
   components: { Common },
   name: "Posts",
-
-  props: {
-    datas: Array,
-    topDatas: Array,
-    trendingDatas: Array,
-  },
 });
 </script>

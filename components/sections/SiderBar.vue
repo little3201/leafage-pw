@@ -3,7 +3,7 @@
     <div class="md:ml-12">
       <div class="py-8 border border-solid border-gray-400 relative">
         <h3 class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold">Trending</h3>
-          <div class="flex px-8 py-2" v-for="data in trendingDatas" :key="data.code">
+          <div class="flex px-8 py-2" v-for="data in datas" :key="data.code">
             <img class="w-32 h-20 object-cover" :src="data.cover" :alt="data.title" />
             <div class="ml-4">
               <h3 class="text-sm font-bold transform hover:translate-x-2 transition duration-500">
@@ -222,12 +222,28 @@
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
+import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
   name: "Posts",
 
-  props: {
-    trendingDatas: Array
+  data() {
+    return {
+      datas: [
+        {
+          code: '',
+          cover: '',
+          title: '',
+        }
+      ],
+    };
+  },
+
+  async fetch() {
+    const { data } = await this.$axios.get(
+      SERVER_URL.posts.concat("?page=0&size=5")
+    );
+    this.datas = data;
   },
 });
 </script>

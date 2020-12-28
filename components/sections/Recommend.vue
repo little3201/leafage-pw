@@ -67,14 +67,28 @@
 
 <script lang="ts">
 import { defineComponent, ref, onMounted } from "@vue/composition-api";
-import axios from "axios";
 import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
   name: "Recommend",
 
-  props: {
-    datas: Array,
-  }
+  data() {
+    return {
+      datas: [
+        {
+          code: '',
+          cover: '',
+          title: '',
+        }
+      ],
+    };
+  },
+
+  async fetch() {
+    const { data } = await this.$axios.get(
+      SERVER_URL.posts.concat("?page=0&size=6")
+    );
+    this.datas = data;
+  },
 });
 </script>
