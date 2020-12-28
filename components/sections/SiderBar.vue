@@ -124,7 +124,7 @@
         <h3 class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold">Recent Post</h3>
         <div class="recent-post-carousel p-8">
           <div class="post-slide">
-            <img src="/images/resources/rc-img.jpg" alt="" class="w-full" />
+            <img src="/images/resources/rc-img.jpg" alt="abeille" class="w-full" />
           </div>
         </div>
         <!--carousel end-->
@@ -132,7 +132,7 @@
       <!--widget-recent-post end-->
       <div class="flex justify-center">
         <a href="#" title=""
-          ><img src="/images/resources/ad-img.jpg" alt=""
+          ><img src="/images/resources/ad-img.jpg" alt="abeille"
         /></a>
       </div>
       <!--widget-adver end-->
@@ -154,7 +154,7 @@
       <!--widget-catgs end-->
       <div class="widget widget-fb">
         <div class="relative">
-          <img src="/images/resources/page-img.jpg" alt="" class="w-full" />
+          <img src="/images/resources/page-img.jpg" alt="abeille" class="w-full" />
           <div class="absolute top-0 uppercase font-bold p-6">
             <h3 class="text-white">Abeille</h3>
             <span class="text-xs text-gray-600">321K likes</span>
@@ -179,32 +179,32 @@
             <ul class="flex justify-between mt-2">
               <li>
                 <a href="#" title=""
-                  ><img src="/images/resources/fb-img1.jpg" alt=""
+                  ><img src="/images/resources/fb-img1.jpg" alt="abeille"
                 /></a>
               </li>
               <li>
                 <a href="#" title=""
-                  ><img src="/images/resources/fb-img2.jpg" alt=""
+                  ><img src="/images/resources/fb-img2.jpg" alt="abeille"
                 /></a>
               </li>
               <li>
                 <a href="#" title=""
-                  ><img src="/images/resources/fb-img3.jpg" alt=""
+                  ><img src="/images/resources/fb-img3.jpg" alt="abeille"
                 /></a>
               </li>
               <li>
                 <a href="#" title=""
-                  ><img src="/images/resources/fb-img4.jpg" alt=""
+                  ><img src="/images/resources/fb-img4.jpg" alt="abeille"
                 /></a>
               </li>
               <li>
                 <a href="#" title=""
-                  ><img src="/images/resources/fb-img5.jpg" alt=""
+                  ><img src="/images/resources/fb-img5.jpg" alt="abeille"
                 /></a>
               </li>
               <li>
                 <a href="#" title=""
-                  ><img src="/images/resources/fb-img6.jpg" alt=""
+                  ><img src="/images/resources/fb-img6.jpg" alt="abeille"
                 /></a>
               </li>
             </ul>

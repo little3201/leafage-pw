@@ -160,7 +160,7 @@
               <!--post-catgs-links end-->
               <div class="my-12 bg-gray-900 flex p-8">
                 <div class="w-64">
-                  <img src="/images/resources/auth-img.png" alt="" />
+                  <img src="/images/resources/auth-img.png" alt="abeille" />
                 </div>
                 <!--author-img end-->
                 <div class="author-info">
@@ -389,7 +389,7 @@
                 <li>
                   <div class="flex my-6">
                     <div class="mr-4">
-                      <img src="/images/resources/auth-img.png" alt="" />
+                      <img src="/images/resources/auth-img.png" alt="abeille" />
                     </div>
                     <div class="">
                       <div class="flex justify-between font-bold">
@@ -411,7 +411,7 @@
                     <li>
                       <div class="flex">
                         <div class="mr-4">
-                          <img src="/images/resources/auth-img.png" alt="" />
+                          <img src="/images/resources/auth-img.png" alt="abeille" />
                         </div>
                         <div class="">
                           <div class="flex justify-between font-bold">
@@ -438,7 +438,7 @@
                 <li class="my-6">
                   <div class="flex">
                     <div class="mr-4">
-                      <img src="/images/resources/auth-img.png" alt="" />
+                      <img src="/images/resources/auth-img.png" alt="abeille" />
                     </div>
                     <div class="">
                       <div class="flex justify-between font-bold">

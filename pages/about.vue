@@ -7,7 +7,7 @@
         <div class="flex">
           <div class="w-2/5">
             <div class="about-img">
-              <img src="/images/resources/about-img.png" alt="" />
+              <img src="/images/resources/about-img.png" alt="abeille about" />
             </div>
             <!--about-img end-->
           </div>

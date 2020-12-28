@@ -3,7 +3,7 @@
     <div class="container mx-auto">
       <div class="flex justify-between items-center text-white h-32">
         <div class="text-4xl tracking-widest font-black uppercase">
-          <h1><nuxt-link to="/" title="">Abeille</nuxt-link></h1>
+          <h2><nuxt-link to="/" title="">Abeille</nuxt-link></h2>
         </div>
         <div class="md:flex space-x-6 -ml-12">
           <a href="#" title="" class="border rounded-full border-black"

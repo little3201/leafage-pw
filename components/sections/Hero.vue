@@ -1,6 +1,8 @@
 <template>
   <section class="container mx-auto">
-    <div class="grid grid-flow-col grid-cols-1 md:grid-rows-2 md:grid-cols-3 md:gap-4">
+    <div
+      class="grid grid-flow-col grid-cols-1 md:grid-rows-2 md:grid-cols-3 md:gap-4"
+    >
       <div class="md:row-span-2 md:col-span-2 flex justify-center items-center">
         <div class="relative w-full h-full overflow-hidden">
           <div

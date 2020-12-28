@@ -7,7 +7,7 @@
           <div class="hidden md:block md:w-1/2">
             <img
               src="/images/resources/contact-bg.jpg"
-              alt=""
+              alt="abeille contact"
               class="h-full object-cover"
             />
           </div>
