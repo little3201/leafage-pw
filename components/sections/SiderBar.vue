@@ -6,7 +6,7 @@
           <div class="flex px-8 py-2" v-for="data in trendingDatas" :key="data.code">
             <img class="w-32 h-20 object-cover" :src="data.cover" :alt="data.title" />
             <div class="ml-4">
-              <h3 class="text-sm font-bold">
+              <h3 class="text-sm font-bold transform hover:translate-x-2 transition duration-500">
                 <nuxt-link :to="'/blog/detail/' + data.code" v-text="data.title"
                   ></nuxt-link
                 >

@@ -307,93 +307,53 @@
             </div>
             <!--sec-title end-->
             <div class="my-6">
-              <div class="grid grid-flow-col grid-cols-3 gap-10">
-                <div class="col-lg-4 col-md-4 col-sm-6 col-12">
-                  <div class="blog-item">
-                    <div class="w-full">
+              <div class="grid grid-flow-col grid-cols-3 gap-8">
+                <div v-for="(topData, index) in topDatas" :key="index">
+                  <div class="overflow-hidden">
+                    <div
+                      class="transform hover:scale-110 transition duration-500"
+                    >
                       <img
-                        src="/images/resources/item9.jpg"
-                        alt=""
+                        :src="topData.cover"
+                        :alt="topData.title"
                         class="w-full"
                       />
                     </div>
-                    <!--blog-img end-->
-                    <div class="blog-info">
-                      <h3 class="font-extrabold my-4">
-                        <a href="/" title=""
-                          >Five Quotes For Some Extra Monday Motivation</a
-                        >
-                      </h3>
-                      <ul
-                        class="flex text-xs space-x-6 uppercase text-gray-500"
-                      >
-                        <li>Dec 25, 2018</li>
-                        <li><i class="la la-eye"></i>2478</li>
-                        <li>
-                          <a href="#" title=""
-                            ><i class="la la-comment-o"></i>3</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                    <!--blog-info end-->
                   </div>
-                  <!--blog-item end-->
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 col-12">
-                  <div class="blog-item">
-                    <div class="w-full">
-                      <img
-                        src="/images/resources/item10.jpg"
-                        alt=""
-                        class="w-full"
-                      />
-                    </div>
-                    <!--blog-img end-->
-                    <div class="blog-info">
-                      <h3 class="font-extrabold my-4">
-                        <a href="/" title=""
-                          >The No Sugar Challenge That Almost Broke Me</a
-                        >
-                      </h3>
-                      <ul
-                        class="flex text-xs space-x-6 uppercase text-gray-500"
-                      >
-                        <li>Dec 24, 2018</li>
-                        <li><i class="la la-eye"></i>417</li>
-                        <li>
-                          <a href="#" title=""
-                            ><i class="la la-comment-o"></i>1</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                    <!--blog-info end-->
-                  </div>
-                  <!--blog-item end-->
-                </div>
-                <div class="">
+                  <!--blog-img end-->
                   <div class="">
-                    <div class="w-full">
-                      <img
-                        src="/images/resources/item11.jpg"
-                        alt=""
-                        class="w-full"
-                      />
-                    </div>
-                    <!--blog-img end-->
-                    <div class="blog-info">
-                      <h3 class="font-extrabold my-4">
-                        <a href="/" title=""
-                          >The No Sugar Challenge That Almost Broke Me</a
+                    <h3
+                      class="font-extrabold my-4 transform hover:translate-x-2 transition duration-500"
+                    >
+                      <nuxt-link
+                        :to="'/blog/detail/' + topData.code"
+                        v-text="topData.title"
+                      ></nuxt-link>
+                    </h3>
+                    <ul class="flex text-xs space-x-6 uppercase text-gray-500">
+                      <li>Dec 25, 2018</li>
+                      <li class="flex items-center">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-eye mr-1"
                         >
-                      </h3>
-                      <ul
-                        class="flex text-xs space-x-6 uppercase text-gray-500"
-                      >
-                        <li>Dec 21, 2018</li>
-                        <li class="flex items-center">
-                          <svg
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          ></path>
+                          <circle cx="12" cy="12" r="3"></circle></svg
+                        >2478
+                      </li>
+                      <li>
+                        <a href="#" class="flex items-center"
+                          ><svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="12"
                             height="12"
@@ -403,24 +363,16 @@
                             stroke-width="2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
-                            class="feather feather-eye mr-1"
+                            class="feather feather-message-square mr-1"
                           >
                             <path
-                              d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
-                            ></path>
-                            <circle cx="12" cy="12" r="3"></circle></svg
-                          >+247
-                        </li>
-                        <li>
-                          <a href="#" title=""
-                            ><i class="la la-comment-o"></i>2</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                    <!--blog-info end-->
+                              d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                            ></path></svg
+                          >3</a
+                        >
+                      </li>
+                    </ul>
                   </div>
-                  <!--blog-item end-->
                 </div>
               </div>
             </div>
@@ -563,7 +515,7 @@
           </div>
           <!--comment-section end-->
         </div>
-        <SiderBar />
+        <SiderBar :trendingDatas="trendingDatas" />
       </div>
       <!--single-page-content end-->
     </div>
@@ -636,7 +588,15 @@ export default defineComponent({
     const data = await $axios.$get(
       SERVER_URL.posts.concat("/").concat(route.params.slug)
     );
-    return { data };
+    // trending
+    const trendingDatas = await $axios.$get(
+      SERVER_URL.posts.concat("?page=0&size=5")
+    );
+    // top
+    const topDatas = await $axios.$get(
+      SERVER_URL.posts.concat("?page=0&size=3&order=viewed")
+    );
+    return { data, trendingDatas, topDatas };
   },
 });
 </script>

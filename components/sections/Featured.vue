@@ -6,7 +6,7 @@
     <!--sec-title end-->
     <div class="my-6">
       <div class="grid grid-flow-col grid-rows-4 grid-cols-1 md:grid-rows-1 md:grid-cols-4 md:gap-6">
-        <div class="w-full" v-for="(data, index) in datas" :key="index">
+        <div v-for="(data, index) in datas" :key="index">
           <div class="overflow-hidden">
             <div class="transform hover:scale-110 transition duration-500">
               <img :src="data.cover" :alt="data.title" class="w-full" />
