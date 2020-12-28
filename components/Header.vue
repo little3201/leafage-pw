@@ -32,7 +32,7 @@
           <nuxt-link to="/" class="text-xs font-extrabold uppercase text-black">
             Home
           </nuxt-link>
-          <nuxt-link to="/Portfolio" class="text-xs font-extrabold uppercase text-black">
+          <nuxt-link to="/portfolio" class="text-xs font-extrabold uppercase text-black">
             Portfolio
           </nuxt-link>
           <nuxt-link to="/about" class="text-xs font-extrabold uppercase text-black">

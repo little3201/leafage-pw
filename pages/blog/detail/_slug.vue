@@ -320,7 +320,7 @@
                     <!--blog-img end-->
                     <div class="blog-info">
                       <h3 class="font-extrabold my-4">
-                        <a href="standard-post.html" title=""
+                        <a href="/" title=""
                           >Five Quotes For Some Extra Monday Motivation</a
                         >
                       </h3>
@@ -352,7 +352,7 @@
                     <!--blog-img end-->
                     <div class="blog-info">
                       <h3 class="font-extrabold my-4">
-                        <a href="standard-post.html" title=""
+                        <a href="/" title=""
                           >The No Sugar Challenge That Almost Broke Me</a
                         >
                       </h3>
@@ -384,7 +384,7 @@
                     <!--blog-img end-->
                     <div class="blog-info">
                       <h3 class="font-extrabold my-4">
-                        <a href="standard-post.html" title=""
+                        <a href="/" title=""
                           >The No Sugar Challenge That Almost Broke Me</a
                         >
                       </h3>

@@ -242,7 +242,7 @@
               <h3
                 class="text-xl font-extrabold my-3 transform hover:translate-x-2 transition duration-500"
               >
-                <nuxt-link :to="'/blog/detail/' + datas[2].title"
+                <nuxt-link :to="'/blog/detail/' + datas[2].code"
                   >Emily Blunt Takes Over for Anna Wintour and Talks
                 </nuxt-link>
               </h3>
