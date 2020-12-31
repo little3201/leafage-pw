@@ -1,11 +1,9 @@
 <template>
   <div id="home">
-    <Header />
-    <Hero />
+    <Main />
     <Featured />
     <Posts />
     <Recommend />
-    <Footer />
   </div>
 </template>
 
@@ -48,7 +46,7 @@ export default defineComponent({
   },
 
   async asyncData({ app: { $axios } }) {
-    return { };
+    return {  };
   },
 });
 </script>

@@ -45,13 +45,14 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
+    '~/assets/main.css'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    '@/plugins/accessor',
-    '@/plugins/composition-api',
-    '@/plugins/ga.client'
+    '~/plugins/accessor',
+    '~/plugins/composition-api',
+    '~/plugins/ga.client'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -89,7 +90,12 @@ export default {
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {
-    liveEdit: false
+    liveEdit: false,
+    markdown: {
+      prism: {
+        theme: 'prism-themes/themes/prism-base16-ateliersulphurpool.light.css'
+      }
+    }
   },
 
   // nuxt loading configuration (https://zh.nuxtjs.org/api/configuration-loading)

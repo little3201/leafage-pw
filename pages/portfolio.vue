@@ -1,20 +1,40 @@
 <template>
-  <div>
-    <Header />
-    <section class="container mx-auto mb-12">
+  <div class="container mx-auto">
+    <section>
+      <ul class="flex justify-between text-xs border border-black">
+        <li class="bg-black text-white w-1/6">
+          <button class="w-full h-10 font-bold uppercase">All</button>
+        </li>
+        <li class="w-1/6 hover:bg-black hover:text-white">
+          <button class="w-full h-10 font-bold uppercase">Fashion</button>
+        </li>
+        <li class="w-1/6 hover:bg-black hover:text-white">
+          <button class="w-full h-10 font-bold uppercase">Lifestyle</button>
+        </li>
+        <li class="w-1/6 hover:bg-black hover:text-white">
+          <button class="w-full h-10 font-bold uppercase">Beauty</button>
+        </li>
+        <li class="w-1/6 hover:bg-black hover:text-white">
+          <button class="w-full h-10 font-bold uppercase">Travel</button>
+        </li>
+        <li class="w-1/6 hover:bg-black hover:text-white">
+          <button class="w-full h-10 font-bold uppercase">Photograph</button>
+        </li>
+      </ul>
+    </section>
+    <section class="my-12">
       <div class="grid grid-flow-row grid-cols-3 gap-4">
-        <div class="" v-for="(data, index) in datas" :key="index">
-          <img :src="data.url" :alt="data.title" />
+        <div v-for="(data, index) in datas" :key="index">
+          <img class="w-full" :src="data.url" :alt="data.title" />
         </div>
       </div>
     </section>
-    <Footer />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from "@vue/composition-api";
-import { SERVER_URL } from "~/assets/request"
+import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
   name: "Portfolio",
@@ -45,7 +65,9 @@ export default defineComponent({
   },
 
   async asyncData({ app: { $axios } }) {
-    const datas = await $axios.$get(SERVER_URL.portfolio.concat('?page=0&size=10'));
+    const datas = await $axios.$get(
+      SERVER_URL.portfolio.concat("?page=0&size=10")
+    );
     return { datas };
   },
 });

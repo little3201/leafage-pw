@@ -1,6 +1,4 @@
 <template>
-<div>
-  <Header />
   <section class="bg-gray-100">
     <div class="container mx-auto">
       <div class="py-20">
@@ -73,8 +71,6 @@
       <!--about-sec end-->
     </div>
   </section>
-  <Footer />
-</div>
 </template>
 
 <script lang="ts">

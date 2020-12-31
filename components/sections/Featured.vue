@@ -5,7 +5,9 @@
     </div>
     <!--sec-title end-->
     <div class="my-6">
-      <div class="grid grid-flow-col grid-rows-4 grid-cols-1 md:grid-rows-1 md:grid-cols-4 md:gap-6">
+      <div
+        class="grid grid-flow-col grid-rows-4 grid-cols-1 md:grid-rows-1 md:grid-cols-4 md:gap-6"
+      >
         <div v-for="(data, index) in datas" :key="index">
           <div class="overflow-hidden">
             <div class="transform hover:scale-110 transition duration-500">
@@ -17,9 +19,10 @@
             <h3
               class="font-extrabold transform hover:translate-x-2 transition duration-500"
             >
-              <nuxt-link :to="'/blog/detail/' + data.code"
-                v-text="data.title"></nuxt-link
-              >
+              <nuxt-link
+                :to="'/blog/detail/' + data.code"
+                v-text="data.title"
+              ></nuxt-link>
             </h3>
             <ul class="flex text-xs space-x-6 text-gray-600 my-4 uppercase">
               <li>Dec 11, 2018</li>
@@ -75,23 +78,16 @@ import { SERVER_URL } from "~/assets/request";
 export default defineComponent({
   name: "Featured",
 
-  data() {
-    return {
-      datas: [
-        {
-          code: '',
-          cover: '',
-          title: '',
-        }
-      ],
-    };
+  async fetch() {
+    this.datas = await this.$axios
+      .get(SERVER_URL.posts.concat("?page=0&size=4&order=likes"))
+      .then((res) => res.data);
   },
 
-  async fetch() {
-    const { data } = await this.$axios.get(
-      SERVER_URL.posts.concat("?page=0&size=4&order=likes")
-    );
-    this.datas = data;
+  data() {
+    return {
+      datas: [],
+    };
   },
 });
 </script>

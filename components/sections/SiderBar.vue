@@ -2,20 +2,31 @@
   <div class="md:flex md:justify-end w-full md:w-1/3">
     <div class="md:ml-12">
       <div class="py-8 border border-solid border-gray-400 relative">
-        <h3 class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold">Trending</h3>
-          <div class="flex px-8 py-2" v-for="data in datas" :key="data.code">
-            <img class="w-32 h-20 object-cover" :src="data.cover" :alt="data.title" />
-            <div class="ml-4">
-              <h3 class="text-sm font-bold transform hover:translate-x-2 transition duration-500">
-                <nuxt-link :to="'/blog/detail/' + data.code" v-text="data.title"
-                  ></nuxt-link
-                >
-              </h3>
-              <span class="text-xs text-gray-500 font-bold uppercase"
-                >Dec 25, 2018</span
-              >
-            </div>
+        <h3
+          class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold"
+        >
+          Trending
+        </h3>
+        <div class="flex px-8 py-2" v-for="data in datas" :key="data.code">
+          <img
+            class="w-32 h-20 object-cover"
+            :src="data.cover"
+            :alt="data.title"
+          />
+          <div class="ml-4">
+            <h3
+              class="text-sm font-bold transform hover:translate-x-2 transition duration-500"
+            >
+              <nuxt-link
+                :to="'/blog/detail/' + data.code"
+                v-text="data.title"
+              ></nuxt-link>
+            </h3>
+            <span class="text-xs text-gray-500 font-bold uppercase"
+              >Dec 25, 2018</span
+            >
           </div>
+        </div>
         <!--wd-posts end-->
       </div>
       <!--widget-trending-posts end-->
@@ -121,10 +132,18 @@
       </div>
       <!--subscribe-wd end-->
       <div class="my-12 border border-solid border-gray-400 relative">
-        <h3 class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold">Recent Post</h3>
+        <h3
+          class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold"
+        >
+          Recent Post
+        </h3>
         <div class="recent-post-carousel p-8">
           <div class="post-slide">
-            <img src="/images/resources/rc-img.jpg" alt="abeille" class="w-full" />
+            <img
+              src="/images/resources/rc-img.jpg"
+              alt="abeille"
+              class="w-full"
+            />
           </div>
         </div>
         <!--carousel end-->
@@ -137,7 +156,11 @@
       </div>
       <!--widget-adver end-->
       <div class="my-12 border border-solid border-gray-400 relative">
-        <h3 class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold">Categories</h3>
+        <h3
+          class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold"
+        >
+          Categories
+        </h3>
         <ul
           class="grid grid-cols-1 divide-y divide-gray-400 p-8 text-xs text-gray-600 font-semibold uppercase list-disc"
           style="line-style: inside"
@@ -154,7 +177,11 @@
       <!--widget-catgs end-->
       <div class="widget widget-fb">
         <div class="relative">
-          <img src="/images/resources/page-img.jpg" alt="abeille" class="w-full" />
+          <img
+            src="/images/resources/page-img.jpg"
+            alt="abeille"
+            class="w-full"
+          />
           <div class="absolute top-0 uppercase font-bold p-6">
             <h3 class="text-white">Abeille</h3>
             <span class="text-xs text-gray-600">321K likes</span>
@@ -227,23 +254,16 @@ import { SERVER_URL } from "~/assets/request";
 export default defineComponent({
   name: "Posts",
 
-  data() {
-    return {
-      datas: [
-        {
-          code: '',
-          cover: '',
-          title: '',
-        }
-      ],
-    };
+  async fetch() {
+    this.datas = await this.$axios
+      .get(SERVER_URL.posts.concat("?page=0&size=5"))
+      .then((res) => res.data);
   },
 
-  async fetch() {
-    const { data } = await this.$axios.get(
-      SERVER_URL.posts.concat("?page=0&size=5")
-    );
-    this.datas = data;
+  data() {
+    return {
+      datas: [],
+    };
   },
 });
 </script>

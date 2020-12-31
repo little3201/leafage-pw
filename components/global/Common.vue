@@ -1,6 +1,8 @@
 <template>
   <div class="my-10">
-    <div class="grid grid-flow-col grid-rows-2 grid-cols-2 gap-8">
+    <p v-if="$fetchState.pending">Fetching mountains...</p>
+    <p v-else-if="$fetchState.error">An error occurred :(</p>
+    <div v-else class="grid grid-flow-row grid-cols-2 gap-8">
       <div class="w-full" v-for="(data, index) in datas" :key="index">
         <div class="overflow-hidden">
           <div class="transform hover:scale-110 transition duration-500">
@@ -15,7 +17,9 @@
             class="text-xs space-x-6 text-gray-600 uppercase font-bold"
             >Photograph</a
           >
-          <h3 class="text-xl font-extrabold my-3 transform hover:translate-x-2 transition duration-500">
+          <h3
+            class="text-xl font-extrabold my-3 transform hover:translate-x-2 transition duration-500"
+          >
             <nuxt-link
               :to="'/blog/detail/' + data.code"
               title=""
@@ -76,23 +80,16 @@ import { SERVER_URL } from "~/assets/request";
 export default defineComponent({
   name: "Common",
 
-  data() {
-    return {
-      datas: [
-        {
-          code: '',
-          cover: '',
-          title: '',
-        }
-      ],
-    };
+  async fetch() {
+    this.datas = await this.$axios
+      .get(SERVER_URL.posts.concat("?page=0&size=4&order=likes"))
+      .then((res) => res.data);
   },
 
-  async fetch() {
-    const { data } = await this.$axios.get(
-      SERVER_URL.posts.concat("?page=0&size=4&order=likes")
-    );
-    this.datas = data;
+  data() {
+    return {
+      datas: [],
+    };
   },
 });
 </script>

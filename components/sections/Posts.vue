@@ -4,8 +4,7 @@
       <div class="w-full md:w-2/3">
         <div class="mb-12">
           <ul
-            class="flex justify-between items-center text-center border-black"
-            style="border-width: 1px"
+            class="flex justify-between items-center text-center border border-black"
             id="myTab"
             role="tablist"
           >
@@ -108,10 +107,8 @@
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
-import Common from "./Common.vue";
 
 export default defineComponent({
-  components: { Common },
   name: "Posts",
 });
 </script>
