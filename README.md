@@ -19,14 +19,15 @@ Abeille，一个前（使用 Vue.js + Nuxt.js + Tailwindcss）、后端（spring
 作为一个后端开发程序猿，无奈找了很久没有好看的博客系统，只能自己写了。加油吧！！！
 
 ### 目标功能
-- [x] 博客
-- [x] 文章详情展示 
-- [x] 作品集
+- [x] 帖子总览
+- [x] 详情展示 
+- [x] 作品集（图片）
 - [ ] 关于
-- [ ] 联系我
+- [X] 联系我
 - [x] 动画效果（图片：hover放大，标题：hover移动）
-- [ ] 点赞、留言、评论
-- [ ] 分类、标签、归档展示
+- [ ] 点赞、分享
+- [ ] 瀑布流
+- [x] 分类、标签、归档展示
 - [ ] 全文检索/站内搜索
 
 ### 项目展示
@@ -35,8 +36,8 @@ Abeille，一个前（使用 Vue.js + Nuxt.js + Tailwindcss）、后端（spring
 
 ### 展示截图
 
-<img alt="hero" width="100%" src="static/img/home.jpg">
-<img alt="hero" width="100%" src="static/img/detail.png">
+<img alt="home" width="100%" src="static/img/home.jpg">
+<img alt="detail" width="100%" src="static/img/detail.png">
 
 ### 项目地址
 
