@@ -3,7 +3,7 @@
     <div class="flex">
       <div class="hidden md:block md:w-1/2">
         <img
-          src="/images/resources/contact-bg.jpg"
+          src="https://images.unsplash.com/photo-1609342122563-a43ac8917a3a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
           alt="abeille contact"
           class="h-full object-cover"
         />
