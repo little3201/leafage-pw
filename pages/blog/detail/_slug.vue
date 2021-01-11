@@ -9,9 +9,15 @@
                 class="flex text-xs font-bold space-x-6 text-gray-600 uppercase mb-4"
               >
                 <li>
-                  <a href="#" title="" v-text="da">Photograph</a>
+                  <a href="#" title="" v-text="data.category"></a>
                 </li>
-                <li v-text="new Date(data.modifyTime).toLocaleDateString()"></li>
+                <li
+                  v-text="
+                    new Date(
+                      data.modifyTime.replace(/\s/, 'T')
+                    ).toLocaleDateString()
+                  "
+                ></li>
                 <li class="flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -29,27 +35,25 @@
                       d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
                     ></path>
                     <circle cx="12" cy="12" r="3"></circle></svg
-                  >3258
+                  >{{ data.viewed }}
                 </li>
-                <li>
-                  <nuxt-link to="/" title="" class="flex items-center"
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="feather feather-message-square mr-1"
-                    >
-                      <path
-                        d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
-                      ></path></svg
-                    >3</nuxt-link
+                <li class="flex items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-heart mr-1"
                   >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    ></path></svg
+                  >{{ data.likes }}
                 </li>
               </ul>
               <h3 class="my-3 text-3xl font-extrabold" v-text="data.title"></h3>
@@ -169,12 +173,12 @@
                       class="feather feather-chevron-left"
                     >
                       <polyline points="15 18 9 12 15 6"></polyline></svg
-                    >Make More Time in Motherhood & Your Career</a
+                    >Spring Security 5.x 使用及分析（一：基础应用）</a
                   >
                 </li>
                 <li class="flex items-center justify-end">
                   <a href="#" title="" class="flex"
-                    >5 Simple Steps To A Happier and Healthier You<svg
+                    >Spring Security 5.x 使用及分析（二：Form分析）<svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
                       height="16"
@@ -225,7 +229,13 @@
                     ></nuxt-link>
                   </h3>
                   <ul class="flex text-xs space-x-6 uppercase text-gray-500">
-                    <li>Dec 25, 2018</li>
+                    <li
+                      v-text="
+                        new Date(
+                          data.modifyTime.replace(/\s/, 'T')
+                        ).toLocaleDateString()
+                      "
+                    ></li>
                     <li class="flex items-center">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -243,27 +253,25 @@
                           d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
                         ></path>
                         <circle cx="12" cy="12" r="3"></circle></svg
-                      >2478
+                      >{{ data.viewed }}
                     </li>
-                    <li>
-                      <a href="#" class="flex items-center"
-                        ><svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="12"
-                          height="12"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          class="feather feather-message-square mr-1"
-                        >
-                          <path
-                            d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
-                          ></path></svg
-                        >3</a
+                    <li class="flex items-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-heart mr-1"
                       >
+                        <path
+                          d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                        ></path></svg
+                      >{{ data.likes }}
                     </li>
                   </ul>
                 </div>
