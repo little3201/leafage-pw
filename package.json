@@ -40,7 +40,8 @@
     "abeille",
     "vuejs",
     "nuxtjs",
-    "ts"
+    "typescript",
+	"tailwindcss"
   ],
   "author": "liwenqiang",
   "license": "MIT",

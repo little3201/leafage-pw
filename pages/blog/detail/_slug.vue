@@ -9,9 +9,9 @@
                 class="flex text-xs font-bold space-x-6 text-gray-600 uppercase mb-4"
               >
                 <li>
-                  <a href="#" title="">Photograph</a>
+                  <a href="#" title="" v-text="da">Photograph</a>
                 </li>
-                <li>December 31, 2018</li>
+                <li v-text="new Date(data.modifyTime).toLocaleDateString()"></li>
                 <li class="flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

@@ -23,7 +23,7 @@
               ></nuxt-link>
             </h3>
             <span class="text-xs text-gray-500 font-bold uppercase"
-              >Dec 25, 2018</span
+              v-text="new Date(data.modifyTime).toLocaleDateString()"></span
             >
           </div>
         </div>
@@ -140,7 +140,7 @@
         <div class="recent-post-carousel p-8">
           <div class="post-slide">
             <img
-              src="/images/resources/rc-img.jpg"
+              src="https://images.unsplash.com/photo-1609342122563-a43ac8917a3a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
               alt="abeille"
               class="w-full"
             />
@@ -184,7 +184,7 @@
           />
           <div class="absolute top-0 uppercase font-bold p-6">
             <h3 class="text-white">Abeille</h3>
-            <span class="text-xs text-gray-600">321K likes</span>
+            <span class="text-xs text-gray-500">321K likes</span>
           </div>
           <ul
             class="absolute bottom-0 p-6 flex justify-between w-full text-white"

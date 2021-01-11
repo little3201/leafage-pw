@@ -1,6 +1,6 @@
 <template>
-  <footer class="bg-gray-900">
-    <div class="container mx-auto">
+  <footer class="bg-black">
+    <section class="container mx-auto">
       <div class="flex justify-between items-center text-white h-32">
         <div class="text-4xl tracking-widest font-black uppercase">
           <h2><nuxt-link to="/" title="">Abeille</nuxt-link></h2>
@@ -83,8 +83,8 @@
           <!--ft-links end-->
         </div>
       </div>
-    </div>
-    <section class="bg-black py-2 text-xs text-center text-gray-500">
+    </section>
+    <section class="py-2 text-xs text-center text-gray-500 container mx-auto border-t border-gray-900">
       <p>
         &copy; {{ new Date().getFullYear() }} Abeille. All Rights
         <a href="http://www.bootstrapmb.com/" title="bootstrapmb">Reserved</a>.

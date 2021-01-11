@@ -16,11 +16,12 @@
                 嗨，感谢使用本网站，很少写自我介绍，每每提笔，却不知从何说起。
               </p>
               <p class="my-2">
-                一个93年出生的普普通通的陕西人，从小不爱说话，性格有些孤僻，所幸随着成长、学习，见识了社会的美好，性格有所改善。
-                15年从大学毕业，去了所学专业的相关公司，浑浑噩噩待了一年多，碌碌无为...
+                一个93年出生的普普通通的陕西人，兴趣众多，爱好广泛，一个Java后端程序员，也能搞搞前端页面，
+                学过一段时间的python和go，但是还没有实战的项目，慢慢会做一些工具出来分享...
               </p>
               <p>
-                似乎一切都是命运安排，毕业后的一些经历，可谓福兮祸兮，失去了对美好未来的憧憬，也坚定了努力改变的决心。
+                我呢，目前居住在西安，这个各种小吃美食的“人间天堂”，哈哈，这么说好像有点夸大了，
+                但是真的很多好吃的，还有很多可以玩的好地方。
               </p>
               <div class="ml-24 my-20">
                 <h3 class="text-xl font-extrabold my-4">About the website</h3>
@@ -29,11 +30,12 @@
                   布局合理的网站可是不容易，于是开始动手，网站先后改版、重构了四五次了，最终呈现现在这个结果，还算满意。
                 </p>
                 <p class="my-2">
-                  在这个漫长的折腾的过程中，用过element-ui、ant-design-vue、iview(viewui)、vuetify等组件库，试过整屏翻页，模仿过
-                  轻芒杂志，也试过vuetify的免费模版，但是这些组件库都很重，最终选择了tailwindcss，seo优化选择了nuxtjs来做。
+                  在这个漫长的折腾的过程中，用过element-ui、ant-design-vue、iview(viewui)、vuetify等组件库，试过整屏翻页，
+                  模仿过轻芒杂志，也试过vuetify的免费模版，但是这些组件库都很重，最终选择了tailwindcss，seo优化选择了nuxtjs来做。
                 </p>
                 <p>
-                  与此对应的还有<a class="text-gray-600" href="https://console.abeille.top" target="_blank">后台管理</a>开发，也全面改用tailwindcss来做，顺势而为选择了vue3进行重构，更多功能还在持续优化和完善中，敬请期待。
+                  与此对应的还有<a class="text-gray-600" href="https://console.abeille.top" target="_blank">后台管理</a>开发，
+                  也全面改用tailwindcss来做，顺势而为选择了vue3进行重构，更多功能还在持续优化和完善中，敬请期待。
                 </p>
                 <ul class="social-links">
                   <li>
