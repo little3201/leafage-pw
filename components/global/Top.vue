@@ -28,7 +28,7 @@
                   <a href="#" title="" class="text-gray-600">Photograph</a>
                 </li>
                 <li
-                  v-text="new Date(datas[0].modifyTime).toLocaleDateString()"
+                  v-text="new Date(datas[0].modifyTime.replace(/\s/, 'T')).toLocaleDateString()"
                 ></li>
                 <li class="flex items-center">
                   <svg
@@ -106,7 +106,7 @@
               </h3>
               <ul class="flex text-xs space-x-6 uppercase text-gray-500">
                 <li
-                  v-text="new Date(datas[1].modifyTime).toLocaleDateString()"
+                  v-text="new Date(datas[1].modifyTime.replace(/\s/, 'T')).toLocaleDateString()"
                 ></li>
                 <li class="flex items-center">
                   <svg
@@ -172,7 +172,7 @@
               </h3>
               <ul class="flex text-xs space-x-6 uppercase text-gray-500">
                 <li
-                  v-text="new Date(datas[2].modifyTime).toLocaleDateString()"
+                  v-text="new Date(datas[2].modifyTime.replace(/\s/, 'T')).toLocaleDateString()"
                 ></li>
                 <li class="flex items-center">
                   <svg

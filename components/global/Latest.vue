@@ -37,7 +37,7 @@
               <ul class="flex text-xs space-x-6 text-gray-400">
                 <li
                   class="uppercase"
-                  v-text="new Date(datas[0].modifyTime).toLocaleDateString()"
+                  v-text="new Date(datas[0].modifyTime.replace(/\s/, 'T')).toLocaleDateString()"
                 ></li>
                 <li class="flex items-center">
                   <svg
@@ -202,7 +202,7 @@
               </h3>
               <ul class="flex text-xs space-x-6 text-gray-600 uppercase">
                 <li
-                  v-text="new Date(datas[1].modifyTime).toLocaleDateString()"
+                  v-text="new Date(datas[1].modifyTime.replace(/\s/, 'T')).toLocaleDateString()"
                 ></li>
                 <li class="flex items-center">
                   <svg
@@ -274,7 +274,7 @@
               </h3>
               <ul class="flex text-xs space-x-6 text-gray-600 uppercase">
                 <li
-                  v-text="new Date(datas[2].modifyTime).toLocaleDateString()"
+                  v-text="new Date(datas[2].modifyTime.replace(/\s/, 'T')).toLocaleDateString()"
                 ></li>
                 <li class="flex items-center">
                   <svg
