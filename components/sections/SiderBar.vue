@@ -111,7 +111,7 @@
             placeholder="Enter your email adress"
           />
 
-          <button type="submit" class="bg-black text-white p-2 -ml-1">
+          <a href="mailto:little3201@163.com?subject=Abeille%20Website%20News" class="bg-black text-white p-2 -ml-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -127,7 +127,7 @@
               <line x1="22" y1="2" x2="11" y2="13"></line>
               <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
             </svg>
-          </button>
+          </a>
         </form>
       </div>
       <!--subscribe-wd end-->

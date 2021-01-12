@@ -24,11 +24,11 @@
               </button>
             </li>
           </ul>
-          <Common />
+          <ListItem />
         </div>
-        <Top />
-        <Common />
-        <Latest />
+        <TopThree />
+        <ListItem />
+        <LatestThree />
         <Pagation />
       </div>
       <SiderBar />

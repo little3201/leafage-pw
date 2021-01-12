@@ -20,7 +20,7 @@
         <button class="w-full h-10 font-bold uppercase">Technology</button>
       </li>
     </ul>
-    <Common />
+    <ListItem />
   </section>
 </template>
 
@@ -34,7 +34,7 @@ export default defineComponent({
     const title = "Blog - Abeille | 布吉岛";
     const description = "Blog of Abeille";
     return {
-      title,
+      title: "Blog - Abeille | 布吉岛",
       meta: [
         { hid: "description", name: "description", content: description },
         // Open Graph

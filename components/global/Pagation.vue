@@ -2,7 +2,7 @@
   <section class="mb-12">
     <ul class="flex justify-center items-center">
       <li class="mx-4">
-        <button class="disabled:opacity-25" disabled>
+        <button class="disabled:opacity-25">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -19,25 +19,11 @@
           </svg>
         </button>
       </li>
-      <li class="mx-4">
+      <li class="mx-4" v-for="page in pages" :key="page">
         <button
-          class="w-8 h-8 bg-black text-white rounded-full border border-black"
+          class="w-8 h-8 focus:bg-black focus:text-white rounded-full border border-black hover:bg-black hover:text-white"
         >
-          1
-        </button>
-      </li>
-      <li class="mx-4">
-        <button
-          class="w-8 h-8 rounded-full border border-black hover:bg-black hover:text-white"
-        >
-          2
-        </button>
-      </li>
-      <li class="mx-4">
-        <button
-          class="w-8 h-8 rounded-full border border-black hover:bg-black hover:text-white"
-        >
-          3
+          {{ page }}
         </button>
       </li>
       <li class="mx-4">

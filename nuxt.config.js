@@ -104,7 +104,9 @@ export default {
   loading: {
     color: 'black'
   },
-
+  generate: {
+    fallback: false,
+  },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     extractCSS: true
