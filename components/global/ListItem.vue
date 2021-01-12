@@ -27,7 +27,7 @@
             </nuxt-link>
           </h3>
           <ul class="flex text-xs space-x-6 text-gray-600 uppercase">
-            <li v-text="new Date(data.modifyTime.replace(/\s/, 'T')).toLocaleDateString()"></li>
+            <li v-text="new Date(data.modifyTime).toLocaleDateString()"></li>
             <li class="flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +75,7 @@ import { defineComponent } from "@vue/composition-api";
 import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
-  name: "Common",
+  name: "ListItem",
 
   async fetch() {
     this.datas = await this.$axios

@@ -9,13 +9,7 @@
             <li>
               <a href="#" title="" v-text="data.category"></a>
             </li>
-            <li
-              v-text="
-                new Date(
-                  data.modifyTime.replace(/\s/, 'T')
-                ).toLocaleDateString()
-              "
-            ></li>
+            <li v-text="new Date(data.modifyTime).toLocaleDateString()"></li>
             <li class="flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -56,11 +50,10 @@
           <div class="w-full h-full my-8">
             <img :src="data.cover" :alt="data.title" class="w-full" />
           </div>
-          <!-- <p
-              class="text-gray-700 my-4 leading-loose tracking-wide"
-              v-html="data.original"
-            ></p> -->
-          <nuxt-content :document="data" />
+          <p
+            class="text-gray-700 my-4 leading-loose tracking-wide"
+            v-html="data.content"
+          ></p>
           <div class="flex justify-between items-center">
             <ul class="flex space-x-8 text-xs font-bold uppercase">
               <li><a href="#" title="">#Photo</a></li>
@@ -219,11 +212,7 @@
                   </h3>
                   <ul class="flex text-xs space-x-6 uppercase text-gray-500">
                     <li
-                      v-text="
-                        new Date(
-                          data.modifyTime.replace(/\s/, 'T')
-                        ).toLocaleDateString()
-                      "
+                      v-text="new Date(data.modifyTime).toLocaleDateString()"
                     ></li>
                     <li class="flex items-center">
                       <svg
@@ -275,13 +264,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from "@vue/composition-api";
+import { defineComponent, ref, onMounted } from "@vue/composition-api";
 import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
   name: "Slug",
   scrollToTop: true,
-  async asyncData({ app: { $axios }, route }) {
+  async asyncData({ app: { $axios, $content }, route }) {
     // detail
     const data = await $axios.$get(
       SERVER_URL.posts.concat("/").concat(route.params.slug)
@@ -295,37 +284,6 @@ export default defineComponent({
       SERVER_URL.posts.concat("?page=0&size=3&order=viewed")
     );
     return { data, trendingDatas, topDatas };
-  },
-
-  head() {
-    return {
-      title: this.$data.title,
-      meta: [
-        {
-          hid: "description",
-          name: "description",
-          content: this.$data.subtitle,
-        },
-        // Open Graph
-        { hid: "og:title", property: "og:title", content: this.$data.title },
-        {
-          hid: "og:description",
-          property: "og:description",
-          content: this.$data.subtitle,
-        },
-        // Twitter Card
-        {
-          hid: "twitter:title",
-          name: "twitter:title",
-          content: this.$data.title,
-        },
-        {
-          hid: "twitter:description",
-          name: "twitter:description",
-          content: this.$data.subtitle,
-        },
-      ]
-    };
   },
 });
 </script>
