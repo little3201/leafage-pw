@@ -9,7 +9,13 @@
             <li>
               <a href="#" title="" v-text="data.category"></a>
             </li>
-            <li v-text="new Date(data.modifyTime).toLocaleDateString()"></li>
+            <li
+              v-text="
+                new Date(
+                  data.modifyTime.replace(/\s/, 'T')
+                ).toLocaleDateString()
+              "
+            ></li>
             <li class="flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -54,6 +60,7 @@
             class="text-gray-700 my-4 leading-loose tracking-wide"
             v-html="data.content"
           ></p>
+          <!-- <nuxt-content :document="data" /> -->
           <div class="flex justify-between items-center">
             <ul class="flex space-x-8 text-xs font-bold uppercase">
               <li><a href="#" title="">#Photo</a></li>
@@ -212,7 +219,11 @@
                   </h3>
                   <ul class="flex text-xs space-x-6 uppercase text-gray-500">
                     <li
-                      v-text="new Date(data.modifyTime).toLocaleDateString()"
+                      v-text="
+                        new Date(
+                          data.modifyTime.replace(/\s/, 'T')
+                        ).toLocaleDateString()
+                      "
                     ></li>
                     <li class="flex items-center">
                       <svg
@@ -264,17 +275,22 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted } from "@vue/composition-api";
+import { defineComponent } from "@vue/composition-api";
 import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
   name: "Slug",
   scrollToTop: true,
-  async asyncData({ app: { $axios, $content }, route }) {
+  async asyncData({ app: { $axios, store }, route }) {
     // detail
-    const data = await $axios.$get(
-      SERVER_URL.posts.concat("/").concat(route.params.slug)
-    );
+    const data = await $axios
+      .get(SERVER_URL.posts.concat("/").concat(route.params.slug))
+      .then((res) => {
+        store?.commit("CHANGE_TITLE", res.data.title);
+        store?.commit("CHANGE_DESCTIPTION", res.data.subtitle);
+        return res.data;
+      });
+
     // trending
     const trendingDatas = await $axios.$get(
       SERVER_URL.posts.concat("?page=0&size=5")
@@ -284,6 +300,41 @@ export default defineComponent({
       SERVER_URL.posts.concat("?page=0&size=3&order=viewed")
     );
     return { data, trendingDatas, topDatas };
+  },
+
+  head() {
+    return {
+      title: this.$store.getters["title"],
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.$store.getters["description"],
+        },
+        // Open Graph
+        {
+          hid: "og:title",
+          property: "og:title",
+          content: this.$store.getters["title"],
+        },
+        {
+          hid: "og:description",
+          property: "og:description",
+          content: this.$store.getters["description"],
+        },
+        // Twitter Card
+        {
+          hid: "twitter:title",
+          name: "twitter:title",
+          content: this.$store.getters["title"],
+        },
+        {
+          hid: "twitter:description",
+          name: "twitter:description",
+          content: this.$store.getters["description"],
+        },
+      ],
+    };
   },
 });
 </script>
