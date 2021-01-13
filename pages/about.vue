@@ -97,10 +97,5 @@ export default defineComponent({
       ],
     };
   },
-
-  async asyncData({ app: { $content } }) {
-    const data = await $content("about").fetch();
-    return { data };
-  },
 });
 </script>

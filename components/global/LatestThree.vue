@@ -19,7 +19,7 @@
             ></div>
           </div>
           <nuxt-link
-            :to="'/blog/' + datas[0].category"
+            to="/"
             class="text-xs space-x-6 text-gray-600 uppercase font-bold"
             v-text="datas[0].category"
           ></nuxt-link>
@@ -187,7 +187,7 @@
             <!--blog-img end-->
             <div class="my-4">
               <nuxt-link
-                :to="'/blog/' + datas[1].category"
+                to="/"
                 class="text-xs space-x-6 text-gray-600 uppercase font-bold"
                 v-text="datas[1].category"
               ></nuxt-link>
@@ -259,7 +259,7 @@
             <!--blog-img end-->
             <div class="my-4">
               <nuxt-link
-                :to="'/blog/' + datas[2].category"
+                to="/"
                 class="text-xs space-x-6 text-gray-600 uppercase font-bold"
                 v-text="datas[2].category"
               ></nuxt-link>

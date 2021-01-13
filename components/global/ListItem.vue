@@ -12,7 +12,7 @@
         <!--blog-img end-->
         <div class="my-4">
           <nuxt-link
-            :to="'/blog/' + data.category"
+            to="/"
             class="text-xs space-x-6 text-gray-600 uppercase font-bold"
             v-text="data.category"
           ></nuxt-link>
