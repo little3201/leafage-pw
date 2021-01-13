@@ -17,7 +17,8 @@
     "@nuxtjs/axios": "^5.12.4",
     "@nuxtjs/tailwindcss": "^3.4.2",
     "@vue/composition-api": "^1.0.0-beta.22",
-    "nuxt": "^2.14.12"
+    "nuxt": "^2.14.12",
+    "prism-themes": "^1.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -39,7 +40,8 @@
     "abeille",
     "vuejs",
     "nuxtjs",
-    "ts"
+    "typescript",
+	"tailwindcss"
   ],
   "author": "liwenqiang",
   "license": "MIT",

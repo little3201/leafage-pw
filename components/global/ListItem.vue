@@ -1,33 +1,32 @@
 <template>
-  <section class="container mx-auto">
-    <div class="uppercase font-extrabold">
-      <h3>Recommended</h3>
-    </div>
-    <div
-      class="grid grid-flow-row grid-rows-6 grid-cols-1 md:grid-rows-3 md:grid-cols-2 gap-4 my-6"
-    >
-      <div class="flex" v-for="(data, index) in datas" :key="index">
+  <div class="my-10">
+    <p v-if="$fetchState.pending">Fetching mountains...</p>
+    <p v-else-if="$fetchState.error">An error occurred :(</p>
+    <div v-else class="grid grid-flow-row grid-cols-2 gap-8">
+      <div class="w-full" v-for="(data, index) in datas" :key="index">
         <div class="overflow-hidden">
           <div class="transform hover:scale-110 transition duration-500">
-            <img
-              :src="data.cover"
-              :alt="data.title"
-              class="w-64 h-32 object-cover"
-            />
+            <img :src="data.cover" :alt="data.title" class="w-full" />
           </div>
         </div>
         <!--blog-img end-->
-        <div class="px-6 w-full">
-          <a href="#" title="" class="text-xs space-x-6 text-gray-600 uppercase"
-            >Fashion</a
-          >
+        <div class="my-4">
+          <nuxt-link
+            :to="'/blog/' + data.category"
+            class="text-xs space-x-6 text-gray-600 uppercase font-bold"
+            v-text="data.category"
+          ></nuxt-link>
           <h3
-            class="my-3 font-extrabold transform hover:translate-x-2 transition duration-500"
+            class="text-xl font-extrabold my-3 transform hover:translate-x-2 transition duration-500"
           >
-            <nuxt-link :to="'/blog/detail/' + data.code" v-text="data.title">
+            <nuxt-link
+              :to="'/blog/detail/' + data.code"
+              title=""
+              v-text="data.title"
+            >
             </nuxt-link>
           </h3>
-          <ul class="flex text-xs space-x-6 text-gray-600">
+          <ul class="flex text-xs space-x-6 text-gray-600 uppercase">
             <li v-text="new Date(data.modifyTime).toLocaleDateString()"></li>
             <li class="flex items-center">
               <svg
@@ -68,19 +67,19 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted } from "@vue/composition-api";
+import { defineComponent } from "@vue/composition-api";
 import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
-  name: "Recommend",
+  name: "ListItem",
 
   async fetch() {
     this.datas = await this.$axios
-      .get(SERVER_URL.posts.concat("?page=0&size=6"))
+      .get(SERVER_URL.posts.concat("?page=0&size=4&order=likes"))
       .then((res) => res.data);
   },
 

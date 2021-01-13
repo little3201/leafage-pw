@@ -1,11 +1,9 @@
 <template>
   <div id="home">
-    <Header />
-    <Hero :datas="heroDatas" />
-    <Featured :datas="featuredDatas" />
-    <Posts :datas="featuredDatas" />
-    <Recommend :datas="recommendDatas" />
-    <Footer />
+    <Popular />
+    <Featured />
+    <Content />
+    <Recommend />
   </div>
 </template>
 
@@ -19,7 +17,7 @@ export default defineComponent({
   head() {
     const title = "Abeille-布吉岛，一座永不沉没的网络小岛";
     const description =
-      "在这个世界的某一个小角落，有一个人想分享自己的生活、学习中一些值得点点滴滴，TA叫布吉岛";
+      "布吉岛，一座永不沉没的网络小岛";
     return {
       title,
       meta: [
@@ -48,13 +46,7 @@ export default defineComponent({
   },
 
   async asyncData({ app: { $axios } }) {
-    // 浏览
-    const heroDatas = await $axios.$get(SERVER_URL.posts.concat("?page=0&size=3&order=viewed"));
-    // 点赞
-    const featuredDatas = await $axios.$get(SERVER_URL.posts.concat("?page=0&size=4&order=likes"));
-    // 最新
-    const recommendDatas = await $axios.$get(SERVER_URL.posts.concat("?page=0&size=8"));
-    return { heroDatas, featuredDatas, recommendDatas };
+    return {  };
   },
 });
 </script>

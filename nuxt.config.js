@@ -1,6 +1,12 @@
 export default {
+  target: 'static',
+  ssr: true,
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
+    title: 'abeille-ui',
+    htmlAttrs: {
+      lang: 'en'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -34,19 +40,21 @@ export default {
       }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/static/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'preconnect', href: 'https://www.google-analytics.com' },
     ]
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
+    '~/assets/main.css'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    '@/plugins/accessor',
-    '@/plugins/composition-api'
+    '~/plugins/accessor',
+    '~/plugins/composition-api',
+    '~/plugins/ga.client'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -80,16 +88,25 @@ export default {
     baseUrl: process.env.BASE_URL || 'https://www.abeille.top/api'
   },
 
+  globalName: 'abeille',
+
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {
-    liveEdit: false
+    liveEdit: false,
+    markdown: {
+      prism: {
+        theme: 'prism-themes/themes/prism-base16-ateliersulphurpool.light.css'
+      }
+    }
   },
 
   // nuxt loading configuration (https://zh.nuxtjs.org/api/configuration-loading)
   loading: {
     color: 'black'
   },
-
+  generate: {
+    fallback: false,
+  },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     extractCSS: true
