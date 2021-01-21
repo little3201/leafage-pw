@@ -4,7 +4,7 @@
     <p v-else-if="$fetchState.error">An error occurred :(</p>
     <div
       v-else
-      class="grid grid-flow-col grid-cols-1 md:grid-rows-2 md:grid-cols-3 md:gap-4"
+      class="grid grid-flow-col grid-rows-3 grid-cols-1 md:grid-rows-2 md:grid-cols-3 gap-4"
     >
       <div class="md:row-span-2 md:col-span-2 flex justify-center items-center">
         <div class="relative w-full h-full overflow-hidden">
@@ -23,18 +23,16 @@
           </div>
           <nuxt-link
             to="/"
-            title=""
-            class="absolute top-0 text-white text-xs font-extrabold uppercase p-10"
+            class="hidden md:block absolute top-0 text-white text-xs font-extrabold uppercase p-10"
             >Technology</nuxt-link
           >
           <!--blog-img end-->
           <div class="absolute bottom-0 text-white p-10 w-full">
             <h3
-              class="max-w-xl p-6 mb-6 text-xl font-black leading-8 text-left border border-solid border-gray-300 transform hover:translate-x-2 transition duration-500"
+              class="max-w-xl p-6 mb-6 md:text-xl font-black leading-8 text-left border border-solid border-gray-300 transform hover:translate-x-2 transition duration-500"
             >
               <nuxt-link
                 :to="'/blog/detail/' + datas[0].code"
-                title=""
                 v-text="datas[0].title"
               ></nuxt-link>
             </h3>
@@ -82,7 +80,7 @@
                   >{{ datas[0].likes }}
                 </li>
               </ul>
-              <ul class="flex justify-end space-x-6">
+              <ul class="hidden md:flex justify-end space-x-6">
                 <li
                   class="p-2 rounded-full border border-gray-300 text-gray-300"
                 >
@@ -107,7 +105,7 @@
                 <li
                   class="p-2 rounded-full border border-gray-300 text-gray-300"
                 >
-                  <a href="#" title=""
+                  <a href="#"
                     ><svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="14"
@@ -151,7 +149,7 @@
                 <li
                   class="p-2 rounded-full border border-gray-300 text-gray-300"
                 >
-                  <a href="#" title=""
+                  <a href="#"
                     ><svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="14"
@@ -171,9 +169,7 @@
                 </li>
               </ul>
             </div>
-            <!--met-soc end-->
           </div>
-          <!--blog-info end-->
         </div>
       </div>
       <div class="relative text-white w-full h-64 overflow-hidden">

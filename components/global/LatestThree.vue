@@ -26,14 +26,14 @@
           <!--blog-img end-->
           <div class="absolute bottom-0 text-white p-10 w-full">
             <h3
-              class="w-2/3 p-6 mb-6 text-xl font-black leading-8 text-left border border-solid border-gray-800 transform hover:translate-x-2 transition duration-500"
+              class="p-6 mb-6 md:text-xl font-black leading-8 text-left border border-solid border-gray-300 transform hover:translate-x-2 transition duration-500"
             >
               <nuxt-link
                 :to="'/blog/detail/' + datas[0].code"
                 v-text="datas[0].title"
               ></nuxt-link>
             </h3>
-            <div class="flex justify-between items-center">
+            <div class="hidden md:flex justify-between items-center">
               <ul class="flex text-xs space-x-6 text-gray-400">
                 <li
                   class="uppercase"
@@ -102,7 +102,7 @@
                 <li
                   class="p-2 rounded-full border border-gray-300 text-gray-300"
                 >
-                  <a href="#" title=""
+                  <a href="#"
                     ><svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="14"
@@ -166,14 +166,11 @@
                 </li>
               </ul>
             </div>
-            <!--met-soc end-->
           </div>
-          <!--blog-info end-->
         </div>
-        <!--blog-items end-->
       </div>
       <div class="my-12">
-        <div class="grid grid-flow-col grid-cols-2 gap-8">
+        <div class="grid grid-flow-row grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
           <div>
             <div class="overflow-hidden">
               <div class="transform hover:scale-110 transition duration-500">
@@ -184,7 +181,6 @@
                 />
               </div>
             </div>
-            <!--blog-img end-->
             <div class="my-4">
               <nuxt-link
                 to="/"
@@ -192,7 +188,7 @@
                 v-text="datas[1].category"
               ></nuxt-link>
               <h3
-                class="text-xl font-extrabold my-3 transform hover:translate-x-2 transition duration-500"
+                class="md:text-xl font-extrabold my-3 transform hover:translate-x-2 transition duration-500"
               >
                 <nuxt-link
                   :to="'/blog/detail/' + datas[1].code"
@@ -242,9 +238,7 @@
                   >{{ datas[1].likes }}
                 </li>
               </ul>
-              <!--blog-info end-->
             </div>
-            <!--blog-item end-->
           </div>
           <div>
             <div class="overflow-hidden">
@@ -256,7 +250,6 @@
                 />
               </div>
             </div>
-            <!--blog-img end-->
             <div class="my-4">
               <nuxt-link
                 to="/"
@@ -264,7 +257,7 @@
                 v-text="datas[2].category"
               ></nuxt-link>
               <h3
-                class="text-xl font-extrabold my-3 transform hover:translate-x-2 transition duration-500"
+                class="md:text-xl font-extrabold my-3 transform hover:translate-x-2 transition duration-500"
               >
                 <nuxt-link
                   :to="'/blog/detail/' + datas[2].code"
@@ -314,9 +307,7 @@
                   >{{ datas[0].likes }}
                 </li>
               </ul>
-              <!--blog-info end-->
             </div>
-            <!--blog-item end-->
           </div>
         </div>
       </div>

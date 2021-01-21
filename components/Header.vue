@@ -68,7 +68,7 @@
             </svg>
             Subscribe
           </a>
-          <a class="ml-8" href="#" title="">
+          <a class="ml-8 mr-2 lg:mr-0" href="#" title="">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18"
@@ -87,7 +87,7 @@
           </a>
         </div>
       </div>
-      <div class="flex justify-center items-center h-40">
+      <div class="flex justify-center items-center h-32 md:h-40">
         <nuxt-link
           to="/"
           class="text-4xl tracking-widest font-black uppercase text-black"

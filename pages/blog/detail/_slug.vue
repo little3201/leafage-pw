@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto border-t border-black">
-    <div class="flex mt-16">
-      <div class="w-full md:w-2/3">
+    <div class="grid grid-flow-row grid-cols-1 lg:grid-cols-3 mt-6 md:mt-16">
+      <div class="lg:col-span-2">
         <article>
           <ul
             class="flex text-xs font-bold space-x-6 text-gray-600 uppercase mb-4"
@@ -52,24 +52,24 @@
               >{{ data.likes }}
             </li>
           </ul>
-          <h3 class="my-3 text-3xl font-extrabold" v-text="data.title"></h3>
+          <h3 class="my-3 text-lg md:text-3xl font-extrabold" v-text="data.title"></h3>
           <div class="w-full h-full my-8">
             <img :src="data.cover" :alt="data.title" class="w-full" />
           </div>
           <p
-            class="text-gray-700 my-4 leading-loose tracking-wide"
+            class="text-gray-700 text-sm md:text-base my-4 leading-loose tracking-wide overflow-hidden"
             v-html="data.content"
           ></p>
           <!-- <nuxt-content :document="data" /> -->
-          <div class="flex justify-between items-center">
-            <ul class="flex space-x-8 text-xs font-bold uppercase">
+          <div class="md:flex justify-between items-center">
+            <ul class="flex space-x-4 md:space-x-8 text-xs font-bold uppercase">
               <li><a href="#" title="">#Photo</a></li>
               <li><a href="#" title="">#Social</a></li>
               <li><a href="#" title="">#Lifestyle</a></li>
               <li><a href="#" title="">#Weekend</a></li>
             </ul>
             <!--post-catgs-list end-->
-            <ul class="flex space-x-6">
+            <ul class="flex space-x-6 mt-4 md:mt-0">
               <li class="p-2 rounded-full border border-black">
                 <a href="#" title=""
                   ><svg
@@ -151,7 +151,7 @@
             </ul>
           </div>
           <div class="bg-gray-200 my-12 p-8">
-            <ul class="grid grid-cols-2 text-xs font-bold">
+            <ul class="grid grid-flow-row grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2 gap-4 text-xs font-bold">
               <li class="">
                 <a href="#" title="" class="flex items-center">
                   <svg
@@ -195,7 +195,7 @@
             <h3>Top Posts</h3>
           </div>
           <div class="my-6">
-            <div class="grid grid-flow-col grid-cols-3 gap-8">
+            <div class="grid grid-flow-row grid-rows-3 grid-cols-1 md:grid-rows-1 md:grid-cols-3 gap-4 md:gap-8">
               <div v-for="(topData, index) in topDatas" :key="index">
                 <div class="overflow-hidden">
                   <div

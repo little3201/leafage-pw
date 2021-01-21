@@ -1,13 +1,13 @@
 <template>
-  <div class="md:flex md:justify-end w-full md:w-1/3">
-    <div class="md:ml-12">
+  <div class="lg:flex lg:justify-end w-full">
+    <div class="lg:ml-12">
       <div class="py-8 border border-solid border-gray-400 relative">
         <h3
           class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold"
         >
           Trending
         </h3>
-        <div class="flex px-8 py-2" v-for="data in datas" :key="data.code">
+        <div class="flex px-4 md:px-8 py-2" v-for="data in datas" :key="data.code">
           <img
             class="w-32 h-20 object-cover"
             :src="data.cover"

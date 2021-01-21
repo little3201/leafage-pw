@@ -41,7 +41,7 @@
     "vuejs",
     "nuxtjs",
     "typescript",
-	"tailwindcss"
+    "tailwindcss"
   ],
   "author": "liwenqiang",
   "license": "MIT",
