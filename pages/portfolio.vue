@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto">
     <section>
-      <ul class="flex justify-between text-xs border border-black">
+      <ul class="flex justify-between text-xs border border-black overflow-x-scroll">
         <li class="bg-black text-white w-1/6">
           <button class="w-full h-10 font-bold uppercase">All</button>
         </li>
@@ -23,7 +23,7 @@
       </ul>
     </section>
     <section class="my-12">
-      <div class="grid grid-flow-row grid-cols-3 gap-4">
+      <div class="grid grid-flow-row grid-cols-1 md:grid-cols-3 gap-4">
         <div v-for="(data, index) in datas" :key="index">
           <img class="w-full" :src="data.url" :alt="data.title" />
         </div>

@@ -8,6 +8,7 @@
         <div class="-my-2 md:hidden">
           <button
             type="button"
+            @click="isOpen = !isOpen"
             class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
           >
             <svg
@@ -27,7 +28,6 @@
             </svg>
           </button>
         </div>
-        <!--menu-btn end-->
         <nav class="hidden md:flex space-x-6 tracking-wide">
           <nuxt-link to="/" class="text-xs font-extrabold uppercase text-black">
             Home
@@ -95,6 +95,21 @@
           <h1>Abeille</h1>
         </nuxt-link>
       </div>
+      <SideMenu v-show="isOpen"/>
     </div>
   </header>
 </template>
+
+<script lang="ts">
+import { defineComponent, ref, onMounted } from "@vue/composition-api";
+
+export default defineComponent({
+  name: "Header",
+
+  data() {
+    return {
+      isOpen: false,
+    };
+  },
+});
+</script>

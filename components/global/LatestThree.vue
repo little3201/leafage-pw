@@ -24,7 +24,7 @@
             v-text="datas[0].category"
           ></nuxt-link>
           <!--blog-img end-->
-          <div class="absolute bottom-0 text-white p-10 w-full">
+          <div class="absolute bottom-0 text-white p-4 md:p-10 w-full">
             <h3
               class="p-6 mb-6 md:text-xl font-black leading-8 text-left border border-solid border-gray-300 transform hover:translate-x-2 transition duration-500"
             >

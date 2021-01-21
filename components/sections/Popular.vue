@@ -23,20 +23,19 @@
           </div>
           <nuxt-link
             to="/"
-            class="hidden md:block absolute top-0 text-white text-xs font-extrabold uppercase p-10"
+            class="absolute top-0 text-white text-xs font-extrabold uppercase p-10"
             >Technology</nuxt-link
           >
-          <!--blog-img end-->
-          <div class="absolute bottom-0 text-white p-10 w-full">
+          <div class="absolute bottom-0 text-white p-4 md:p-10 w-full">
             <h3
-              class="max-w-xl p-6 mb-6 md:text-xl font-black leading-8 text-left border border-solid border-gray-300 transform hover:translate-x-2 transition duration-500"
+              class="p-6 mb-6 md:text-xl font-black leading-8 text-left border border-solid border-gray-300 transform hover:translate-x-2 transition duration-500"
             >
               <nuxt-link
                 :to="'/blog/detail/' + datas[0].code"
                 v-text="datas[0].title"
               ></nuxt-link>
             </h3>
-            <div class="flex justify-between items-center">
+            <div class="hidden md:flex justify-between items-center">
               <ul class="flex text-xs space-x-6 text-gray-400">
                 <li
                   class="uppercase"

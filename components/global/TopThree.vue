@@ -75,7 +75,7 @@
                 ></nuxt-link>
               </h3>
               <p
-                class="text-gray-500 font-light"
+                class="hidden md:block text-gray-500 font-light"
                 v-text="datas[0].subtitle"
               ></p>
             </div>
