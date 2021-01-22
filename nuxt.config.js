@@ -1,5 +1,4 @@
 export default {
-  target: 'static',
   ssr: true,
   head: {
     title: 'abeille-ui',
