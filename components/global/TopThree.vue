@@ -70,7 +70,7 @@
                 class="md:text-xl font-extrabold my-4 transform hover:translate-x-2 transition duration-500"
               >
                 <nuxt-link
-                  :to="'/blog/detail/' + datas[0].code"
+                  :to="'/posts/detail/' + datas[0].code"
                   v-text="datas[0].title"
                 ></nuxt-link>
               </h3>
@@ -95,7 +95,7 @@
                 class="font-extrabold my-2 transform hover:translate-x-2 transition duration-500"
               >
                 <nuxt-link
-                  :to="'/blog/detail/' + datas[1].code"
+                  :to="'/posts/detail/' + datas[1].code"
                   v-text="datas[1].title"
                 ></nuxt-link>
               </h3>
@@ -158,7 +158,7 @@
                 class="font-extrabold my-2 transform hover:translate-x-2 transition duration-500"
               >
                 <nuxt-link
-                  :to="'/blog/detail/' + datas[2].code"
+                  :to="'/posts/detail/' + datas[2].code"
                   v-text="datas[2].title"
                 ></nuxt-link>
               </h3>

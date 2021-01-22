@@ -19,7 +19,7 @@
             class="md:text-xl font-extrabold my-3 transform hover:translate-x-2 transition duration-500"
           >
             <nuxt-link
-              :to="'/blog/detail/' + data.code"
+              :to="'/posts/detail/' + data.code"
               title=""
               v-text="data.title"
             >

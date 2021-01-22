@@ -52,7 +52,10 @@
               >{{ data.likes }}
             </li>
           </ul>
-          <h3 class="my-3 text-lg md:text-3xl font-extrabold" v-text="data.title"></h3>
+          <h3
+            class="my-3 text-lg md:text-3xl font-extrabold"
+            v-text="data.title"
+          ></h3>
           <div class="w-full h-full my-8">
             <img :src="data.cover" :alt="data.title" class="w-full" />
           </div>
@@ -151,7 +154,9 @@
             </ul>
           </div>
           <div class="bg-gray-200 my-12 p-8">
-            <ul class="grid grid-flow-row grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2 gap-4 text-xs font-bold">
+            <ul
+              class="grid grid-flow-row grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2 gap-4 text-xs font-bold"
+            >
               <li class="">
                 <a href="#" title="" class="flex items-center">
                   <svg
@@ -195,7 +200,9 @@
             <h3>Top Posts</h3>
           </div>
           <div class="my-6">
-            <div class="grid grid-flow-row grid-rows-3 grid-cols-1 md:grid-rows-1 md:grid-cols-3 gap-4 md:gap-8">
+            <div
+              class="grid grid-flow-row grid-rows-3 grid-cols-1 md:grid-rows-1 md:grid-cols-3 gap-4 md:gap-8"
+            >
               <div v-for="(topData, index) in topDatas" :key="index">
                 <div class="overflow-hidden">
                   <div
@@ -213,7 +220,7 @@
                     class="font-extrabold my-4 transform hover:translate-x-2 transition duration-500"
                   >
                     <nuxt-link
-                      :to="'/blog/detail/' + topData.code"
+                      :to="'/posts/detail/' + topData.code"
                       v-text="topData.title"
                     ></nuxt-link>
                   </h3>
@@ -280,27 +287,24 @@ import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
   name: "Slug",
-  
+
   scrollToTop: true,
 
-  async asyncData({ app: { $axios, store }, route }) {
-    // detail
-    const data = await $axios
-      .get(SERVER_URL.posts.concat("/").concat(route.params.slug))
-      .then((res) => {
-        store?.commit("CHANGE_TITLE", res.data.title);
-        store?.commit("CHANGE_DESCTIPTION", res.data.subtitle);
-        return res.data;
-      });
-
-    // trending
-    const trendingDatas = await $axios.$get(
-      SERVER_URL.posts.concat("?page=0&size=5")
-    );
-    // top
-    const topDatas = await $axios.$get(
-      SERVER_URL.posts.concat("?page=0&size=3&order=viewed")
-    );
+  async asyncData({ app: { $axios, store }, params }) {
+    let [data, trendingDatas, topDatas] = await Promise.all([
+      // detail
+      await $axios
+        .get(SERVER_URL.posts.concat("/").concat(params.slug))
+        .then((res) => {
+          store?.commit("CHANGE_TITLE", res.data.title);
+          store?.commit("CHANGE_DESCTIPTION", res.data.subtitle);
+          return res.data;
+        }),
+      // trending
+      await $axios.$get(SERVER_URL.posts.concat("?page=0&size=5")),
+      // topThree
+      await $axios.$get(SERVER_URL.posts.concat("?page=0&size=3&order=viewed")),
+    ]);
     return { data, trendingDatas, topDatas };
   },
 

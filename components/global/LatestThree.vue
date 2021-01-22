@@ -24,16 +24,18 @@
             v-text="datas[0].category"
           ></nuxt-link>
           <!--blog-img end-->
-          <div class="absolute bottom-0 text-white p-4 md:p-10 w-full">
+          <div class="absolute bottom-0 text-white p-4 md:p-10 w-auto">
             <h3
-              class="p-6 mb-6 md:text-xl font-black leading-8 text-left border border-solid border-gray-300 transform hover:translate-x-2 transition duration-500"
+              class="p-6 mb-12 md:text-xl font-black leading-8 text-left border border-solid border-gray-300 transform hover:translate-x-2 transition duration-500"
             >
               <nuxt-link
-                :to="'/blog/detail/' + datas[0].code"
+                :to="'/posts/detail/' + datas[0].code"
                 v-text="datas[0].title"
               ></nuxt-link>
             </h3>
-            <div class="hidden md:flex justify-between items-center">
+            </div>
+          <div class="absolute bottom-0 text-white p-4 md:p-10 w-full">
+            <div class="hidden md:flex ml-auto justify-between items-center">
               <ul class="flex text-xs space-x-6 text-gray-400">
                 <li
                   class="uppercase"
@@ -191,7 +193,7 @@
                 class="md:text-xl font-extrabold my-3 transform hover:translate-x-2 transition duration-500"
               >
                 <nuxt-link
-                  :to="'/blog/detail/' + datas[1].code"
+                  :to="'/posts/detail/' + datas[1].code"
                   v-text="datas[1].title"
                 >
                 </nuxt-link>
@@ -260,7 +262,7 @@
                 class="md:text-xl font-extrabold my-3 transform hover:translate-x-2 transition duration-500"
               >
                 <nuxt-link
-                  :to="'/blog/detail/' + datas[2].code"
+                  :to="'/posts/detail/' + datas[2].code"
                   v-text="datas[2].title"
                 >
                 </nuxt-link>

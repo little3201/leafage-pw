@@ -75,7 +75,7 @@ export default defineComponent({
 
   head() {
     const title = "Contact - Abeille | 布吉岛";
-    const description = "联系布吉岛";
+    const description = "联系布吉岛，如果对网站有疑问或意见的可以联系我进行优化修改";
     return {
       title,
       meta: [

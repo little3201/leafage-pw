@@ -16,7 +16,7 @@
                 嗨，感谢使用本网站，很少写自我介绍，每每提笔，却不知从何说起。
               </p>
               <p class="my-2">
-                一个93年出生的普普通通的陕西人，兴趣众多，爱好广泛，一个Java后端程序员，也能搞搞前端页面，
+                一个93年出生的普普通通的陕西人，兴趣众多，爱好广泛，一个Java程序员，也能搞搞前端页面，
                 学过一段时间的python和go，但是还没有实战的项目，慢慢会做一些工具出来分享...
               </p>
               <p>
@@ -73,7 +73,7 @@ export default defineComponent({
 
   head() {
     const title = "About - Abeille | 布吉岛";
-    const description = "关于布吉岛，关于我";
+    const description = "关于布吉岛，关于我，布吉岛是一个Java程序员，对网站有疑问或意见的可以联系我进行优化修改";
     return {
       title,
       meta: [
