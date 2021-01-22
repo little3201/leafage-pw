@@ -27,14 +27,14 @@
             >Technology</nuxt-link
           >
           <div class="absolute bottom-0 text-white p-4 md:p-10 w-full">
-            <h3
+            <h1
               class="p-6 mb-6 md:text-xl font-black leading-8 text-left border border-solid border-gray-300 transform hover:translate-x-2 transition duration-500"
             >
               <nuxt-link
                 :to="'/blog/detail/' + datas[0].code"
                 v-text="datas[0].title"
               ></nuxt-link>
-            </h3>
+            </h1>
             <div class="hidden md:flex justify-between items-center">
               <ul class="flex text-xs space-x-6 text-gray-400">
                 <li

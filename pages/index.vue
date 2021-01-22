@@ -9,11 +9,12 @@
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
-import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
   name: "Home",
 
+  scrollToTop: true,
+  
   head() {
     const title = "Abeille-布吉岛，一座永不沉没的网络小岛";
     const description =

@@ -280,7 +280,9 @@ import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
   name: "Slug",
+  
   scrollToTop: true,
+
   async asyncData({ app: { $axios, store }, route }) {
     // detail
     const data = await $axios

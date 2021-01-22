@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto">
     <section>
-      <ul class="flex justify-between text-xs border border-black overflow-x-scroll">
+      <ul class="flex justify-between text-xs border border-black">
         <li class="bg-black text-white w-1/6">
           <button class="w-full h-10 font-bold uppercase">All</button>
         </li>
@@ -39,6 +39,8 @@ import { SERVER_URL } from "~/assets/request";
 export default defineComponent({
   name: "Portfolio",
 
+  scrollToTop: true,
+  
   head() {
     const title = "Portfolio - Abeille | 布吉岛";
     const description = "作品集分享";
