@@ -38,10 +38,11 @@
   },
   "keywords": [
     "abeille",
+    "布吉岛",
     "vuejs",
     "nuxtjs",
     "typescript",
-	"tailwindcss"
+    "tailwindcss"
   ],
   "author": "liwenqiang",
   "license": "MIT",

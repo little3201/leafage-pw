@@ -1,12 +1,12 @@
 <template>
   <footer class="bg-black">
     <section class="container mx-auto">
-      <div class="flex justify-between items-center text-white h-32">
-        <div class="text-4xl tracking-widest font-black uppercase">
-          <h2><nuxt-link to="/" title="">Abeille</nuxt-link></h2>
+      <div class="md:flex md:justify-between items-center text-white md:h-32">
+        <div class="flex justify-center text-4xl tracking-widest font-black uppercase my-4">
+          <h2><nuxt-link to="/">Abeille</nuxt-link></h2>
         </div>
-        <div class="md:flex space-x-6 -ml-12">
-          <a href="#" title="" class="border rounded-full p-2"
+        <div class="flex justify-center space-x-6 my-4">
+          <a href="#" class="border rounded-full p-2"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               width="14"
@@ -77,7 +77,7 @@
               ></path></svg
           ></a>
         </div>
-        <div class="flex space-x-6 uppercase text-xs font-extrabold ">
+        <div class="flex justify-center space-x-6 uppercase text-xs font-extrabold my-4">
           <nuxt-link to="/about">About</nuxt-link>
           <nuxt-link to="/contact">Contact</nuxt-link>
           <!--ft-links end-->

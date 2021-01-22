@@ -1,7 +1,7 @@
 <template>
   <section class="container mx-auto">
-    <div class="md:flex">
-      <div class="w-full md:w-2/3">
+    <div class="grid grid-flow-row grid-cols-1 lg:grid-cols-3">
+      <div class="lg:col-span-2">
         <div class="mb-12">
           <ul
             class="flex justify-between items-center text-center border border-black"
