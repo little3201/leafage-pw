@@ -1,13 +1,13 @@
 <template>
-  <div class="md:flex md:justify-end w-full md:w-1/3">
-    <div class="md:ml-12">
+  <div class="lg:flex lg:justify-end w-full">
+    <div class="lg:ml-12">
       <div class="py-8 border border-solid border-gray-400 relative">
         <h3
           class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold"
         >
           Trending
         </h3>
-        <div class="flex px-8 py-2" v-for="data in datas" :key="data.code">
+        <div class="flex px-4 md:px-8 py-2" v-for="data in datas" :key="data.code">
           <img
             class="w-32 h-20 object-cover"
             :src="data.cover"
@@ -18,7 +18,7 @@
               class="text-sm font-bold transform hover:translate-x-2 transition duration-500"
             >
               <nuxt-link
-                :to="'/blog/detail/' + data.code"
+                :to="'/posts/detail/' + data.code"
                 v-text="data.title"
               ></nuxt-link>
             </h3>
@@ -140,7 +140,7 @@
         <div class="recent-post-carousel p-8">
           <div class="post-slide">
             <img
-              src="https://images.unsplash.com/photo-1609342122563-a43ac8917a3a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+              src="/images/resources/photo-1609.jpg"
               alt="abeille"
               class="w-full"
             />

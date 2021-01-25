@@ -1,17 +1,13 @@
 <template>
   <!-- BEGIN: Error Page -->
   <div
-    class="container mx-auto border-t border-black flex flex-col lg:flex-row items-center justify-center text-center lg:text-left"
-    style="height: calc(100vh - 401px)"
+    class="container mx-auto border-t border-black flex flex-row items-center justify-center text-center lg:text-left"
   >
-    <div class="-intro-x lg:mr-20">
-      <img
-        alt="error"
-        class="h-full"
-        style="width: 450px"
-        src="~/static/error-illustration.svg"
-      />
-    </div>
+    <img
+      alt="error"
+      class="w-1/2"
+      src="~/static/error-illustration.svg"
+    />
     <div v-if="error.statusCode === 404">
       <div class="intro-x text-6xl font-medium">
         {{ error.statusCode }}

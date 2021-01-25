@@ -1,14 +1,14 @@
 <template>
   <section>
-    <div class="flex">
-      <div class="hidden md:block md:w-1/2">
+    <div class="grid grid-flow-row grid-rows-1 grid-cols-1 md:grid-cols-2">
+      <div class="hidden md:block">
         <img
           src="https://images.unsplash.com/photo-1609342122563-a43ac8917a3a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
           alt="abeille contact"
           class="h-full object-cover"
         />
       </div>
-      <div class="bg-gray-200 p-10 w-1/2 leading-relaxed">
+      <div class="bg-gray-200 p-2 md:p-10 leading-relaxed">
         <h3 class="text-4xl font-extrabold my-4">Contact</h3>
         <p class="text-gray-600">
           网站所有内容均免费，长久可用，哦对，还有源代码，如果喜欢可以fork，或者star，有问题的或者有想法的可以联系我。
@@ -75,7 +75,7 @@ export default defineComponent({
 
   head() {
     const title = "Contact - Abeille | 布吉岛";
-    const description = "联系布吉岛";
+    const description = "联系布吉岛，如果对网站有疑问或意见的可以联系我进行优化修改";
     return {
       title,
       meta: [

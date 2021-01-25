@@ -6,10 +6,9 @@
       <div class="uppercase font-extrabold">
         <h3>Top Posts</h3>
       </div>
-      <!--sec-title end-->
       <div class="my-6">
-        <div class="grid grid-flow-col grid-rows-2 grid-cols-3 gap-10">
-          <div class="row-span-2 col-span-2">
+        <div class="grid grid-flow-col grid-rows-3 grid-cols-1 gap-4 md:grid-rows-2 md:grid-cols-3 md:gap-10">
+          <div class="md:row-span-2 md:col-span-2 h-auto">
             <div class="overflow-hidden">
               <div class="transform hover:scale-110 transition duration-500">
                 <img
@@ -19,13 +18,12 @@
                 />
               </div>
             </div>
-            <!--blog-img end-->
             <div class="mt-6">
               <ul
                 class="flex text-xs space-x-6 uppercase font-bold text-gray-500"
               >
                 <li>
-                  <a href="#" title="" class="text-gray-600">Photograph</a>
+                  <a href="#" class="text-gray-600">Photograph</a>
                 </li>
                 <li
                   v-text="new Date(datas[0].modifyTime).toLocaleDateString()"
@@ -69,20 +67,18 @@
                 </li>
               </ul>
               <h3
-                class="text-xl font-extrabold my-4 transform hover:translate-x-2 transition duration-500"
+                class="md:text-xl font-extrabold my-4 transform hover:translate-x-2 transition duration-500"
               >
                 <nuxt-link
-                  :to="'/blog/detail/' + datas[0].code"
+                  :to="'/posts/detail/' + datas[0].code"
                   v-text="datas[0].title"
                 ></nuxt-link>
               </h3>
               <p
-                class="text-gray-500 font-light"
+                class="hidden md:block text-gray-500 font-light"
                 v-text="datas[0].subtitle"
               ></p>
             </div>
-            <!--blog-info end-->
-            <!--blog-item end-->
           </div>
           <div>
             <div class="overflow-hidden">
@@ -94,13 +90,12 @@
                 />
               </div>
             </div>
-            <!--blog-img end-->
             <div>
               <h3
                 class="font-extrabold my-2 transform hover:translate-x-2 transition duration-500"
               >
                 <nuxt-link
-                  :to="'/blog/detail/' + datas[1].code"
+                  :to="'/posts/detail/' + datas[1].code"
                   v-text="datas[1].title"
                 ></nuxt-link>
               </h3>
@@ -147,9 +142,7 @@
                 </li>
               </ul>
             </div>
-            <!--blog-info end-->
           </div>
-          <!--blog-item end-->
           <div>
             <div class="overflow-hidden">
               <div class="transform hover:scale-110 transition duration-500">
@@ -160,13 +153,12 @@
                 />
               </div>
             </div>
-            <!--blog-img end-->
             <div>
               <h3
                 class="font-extrabold my-2 transform hover:translate-x-2 transition duration-500"
               >
                 <nuxt-link
-                  :to="'/blog/detail/' + datas[2].code"
+                  :to="'/posts/detail/' + datas[2].code"
                   v-text="datas[2].title"
                 ></nuxt-link>
               </h3>

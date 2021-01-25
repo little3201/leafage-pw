@@ -2,28 +2,28 @@
   <section class="bg-gray-100">
     <div class="container mx-auto">
       <div class="py-20">
-        <div class="flex">
-          <div class="w-2/5">
+        <div class="md:flex">
+          <div class="w-full md:w-2/5">
             <div class="about-img">
               <img src="/images/resources/about-img.png" alt="abeille about" />
             </div>
             <!--about-img end-->
           </div>
-          <div class="w-3/5">
+          <div class="w-full md:w-3/5">
             <div class="leading-relaxed">
               <h2 class="text-4xl font-extrabold my-4">About Me</h2>
               <p>
                 嗨，感谢使用本网站，很少写自我介绍，每每提笔，却不知从何说起。
               </p>
               <p class="my-2">
-                一个93年出生的普普通通的陕西人，兴趣众多，爱好广泛，一个Java后端程序员，也能搞搞前端页面，
+                一个93年出生的普普通通的陕西人，兴趣众多，爱好广泛，一个Java程序员，也能搞搞前端页面，
                 学过一段时间的python和go，但是还没有实战的项目，慢慢会做一些工具出来分享...
               </p>
               <p>
                 我呢，目前居住在西安，这个各种小吃美食的“人间天堂”，哈哈，这么说好像有点夸大了，
                 但是真的很多好吃的，还有很多可以玩的好地方。
               </p>
-              <div class="ml-24 my-20">
+              <div class="md:ml-24 my-20">
                 <h3 class="text-xl font-extrabold my-4">About the website</h3>
                 <p>
                   说起来是从18年开始有了这个想法———做一个自己的网站，风格清新，内容新颖，干货满满。我是一个后端开发，想要一个界面美观、
@@ -58,11 +58,9 @@
                 </ul>
               </div>
             </div>
-            <!--about-cont end-->
           </div>
         </div>
       </div>
-      <!--about-sec end-->
     </div>
   </section>
 </template>
@@ -75,7 +73,7 @@ export default defineComponent({
 
   head() {
     const title = "About - Abeille | 布吉岛";
-    const description = "关于布吉岛，关于我";
+    const description = "关于布吉岛，关于我，布吉岛是一个Java程序员，对网站有疑问或意见的可以联系我进行优化修改";
     return {
       title,
       meta: [

@@ -1,7 +1,5 @@
 export default {
-  target: 'static',
   ssr: true,
-  // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'abeille-ui',
     htmlAttrs: {
@@ -82,13 +80,13 @@ export default {
     progress: true,
     credentials: true,
     baseURL: 'https://www.abeille.top/api',
-    proxy: {
-      '/api': {
-        host: 'https://www.abeille.top',
-        changeOrigin: true, // 允许跨域
-        secure: true, // 支持https
-      }
-    },
+    // proxy: {
+    //   '/api': {
+    //     host: 'https://www.abeille.top',
+    //     changeOrigin: true, // 允许跨域
+    //     secure: true, // 支持https
+    //   }
+    // },
   },
 
   markdownit: {

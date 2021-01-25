@@ -1,15 +1,14 @@
 <template>
-  <div class="my-10">
+  <div class="my-4 md:my-10">
     <p v-if="$fetchState.pending">Fetching mountains...</p>
     <p v-else-if="$fetchState.error">An error occurred :(</p>
-    <div v-else class="grid grid-flow-row grid-cols-2 gap-8">
+    <div v-else class="grid grid-flow-row grid-cols-2 gap-4 md:gap-8">
       <div class="w-full" v-for="(data, index) in datas" :key="index">
         <div class="overflow-hidden">
           <div class="transform hover:scale-110 transition duration-500">
             <img :src="data.cover" :alt="data.title" class="w-full" />
           </div>
         </div>
-        <!--blog-img end-->
         <div class="my-4">
           <nuxt-link
             to="/"
@@ -17,16 +16,16 @@
             v-text="data.category"
           ></nuxt-link>
           <h3
-            class="text-xl font-extrabold my-3 transform hover:translate-x-2 transition duration-500"
+            class="md:text-xl font-extrabold my-3 transform hover:translate-x-2 transition duration-500"
           >
             <nuxt-link
-              :to="'/blog/detail/' + data.code"
+              :to="'/posts/detail/' + data.code"
               title=""
               v-text="data.title"
             >
             </nuxt-link>
           </h3>
-          <ul class="flex text-xs space-x-6 text-gray-600 uppercase">
+          <ul class="flex text-xs space-x-2 md:space-x-6 text-gray-600 uppercase">
             <li v-text="new Date(data.modifyTime).toLocaleDateString()"></li>
             <li class="flex items-center">
               <svg

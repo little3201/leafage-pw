@@ -23,9 +23,9 @@
       </ul>
     </section>
     <section class="my-12">
-      <div class="grid grid-flow-row grid-cols-3 gap-4">
+      <div class="grid grid-flow-row grid-cols-1 md:grid-cols-3 gap-4">
         <div v-for="(data, index) in datas" :key="index">
-          <img class="w-full" :src="data.url" :alt="data.title" />
+          <img class="w-full h-auto" :src="data.url" :alt="data.title" />
         </div>
       </div>
     </section>
@@ -33,15 +33,17 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "@vue/composition-api";
+import { defineComponent } from "@vue/composition-api";
 import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
   name: "Portfolio",
 
+  scrollToTop: true,
+  
   head() {
     const title = "Portfolio - Abeille | 布吉岛";
-    const description = "作品集分享";
+    const description = "布吉岛的作品集，包含旅行记录、生活分享等资源信息，提供原创、优质、完整内容";
     return {
       title,
       meta: [
@@ -65,7 +67,7 @@ export default defineComponent({
   },
 
   async asyncData({ app: { $axios } }) {
-    const datas = await $axios.$get(
+    let datas = await $axios.$get(
       SERVER_URL.portfolio.concat("?page=0&size=10")
     );
     return { datas };

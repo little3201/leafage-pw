@@ -24,7 +24,7 @@
           <h3
             class="my-3 font-extrabold transform hover:translate-x-2 transition duration-500"
           >
-            <nuxt-link :to="'/blog/detail/' + data.code" v-text="data.title">
+            <nuxt-link :to="'/posts/detail/' + data.code" v-text="data.title">
             </nuxt-link>
           </h3>
           <ul class="flex text-xs space-x-6 text-gray-600">
