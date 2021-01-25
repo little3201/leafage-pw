@@ -12,7 +12,6 @@
     "test": "jest"
   },
   "dependencies": {
-    "@nuxt/content": "^1.11.1",
     "@nuxt/typescript-runtime": "^2.0.0",
     "@nuxtjs/axios": "^5.12.4",
     "@nuxtjs/tailwindcss": "^3.4.2",
@@ -27,12 +26,17 @@
     "@nuxtjs/eslint-config": "^5.0.0",
     "@nuxtjs/eslint-config-typescript": "^5.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
+    "@nuxtjs/markdownit": "^2.0.0",
     "@vue/test-utils": "^1.1.2",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.6.3",
     "eslint": "^7.16.0",
     "eslint-plugin-nuxt": "^2.0.0",
     "jest": "^26.6.3",
+    "markdown-it-anchor": "^7.0.0",
+    "markdown-it-attrs": "^4.0.0",
+    "markdown-it-div": "^1.1.0",
+    "markdown-it-toc-done-right": "^4.2.0",
     "ts-jest": "^26.4.4",
     "vue-jest": "^3.0.7"
   },
@@ -41,7 +45,7 @@
     "vuejs",
     "nuxtjs",
     "typescript",
-	"tailwindcss"
+    "tailwindcss"
   ],
   "author": "liwenqiang",
   "license": "MIT",

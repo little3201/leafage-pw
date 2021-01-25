@@ -72,8 +72,8 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    // https://go.nuxtjs.dev/content
-    '@nuxt/content',
+    // https://github.com/nuxt-community/markdownit-module
+    '@nuxtjs/markdownit'
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -81,7 +81,34 @@ export default {
     https: true,
     progress: true,
     credentials: true,
-    baseURL: 'https://www.abeille.top/api'
+    baseURL: 'https://www.abeille.top/api',
+    proxy: {
+      '/api': {
+        host: 'https://www.abeille.top',
+        changeOrigin: true, // 允许跨域
+        secure: true, // 支持https
+      }
+    },
+  },
+
+  markdownit: {
+    preset: 'default',
+    linkify: true,
+    breaks: true,
+    use: [
+      [
+        'markdown-it-anchor',
+        {
+          level: 2,
+          permalink: true,
+          permalinkBefore: true
+        }
+      ],
+      'markdown-it-attrs',
+      'markdown-it-div',
+      'markdown-it-toc-done-right',
+    ],
+    runtime: true // Support `$md()`
   },
 
   env: {
@@ -89,16 +116,6 @@ export default {
   },
 
   globalName: 'abeille',
-
-  // Content module configuration (https://go.nuxtjs.dev/config-content)
-  content: {
-    liveEdit: false,
-    markdown: {
-      prism: {
-        theme: 'prism-themes/themes/prism-base16-ateliersulphurpool.light.css'
-      }
-    }
-  },
 
   // nuxt loading configuration (https://zh.nuxtjs.org/api/configuration-loading)
   loading: {
