@@ -12,13 +12,11 @@
     "test": "jest"
   },
   "dependencies": {
-    "@nuxt/markdown": "^0.0.21",
     "@nuxt/typescript-runtime": "^2.0.0",
     "@nuxtjs/axios": "^5.12.4",
     "@nuxtjs/tailwindcss": "^3.4.2",
     "@vue/composition-api": "^1.0.0-beta.22",
-    "nuxt": "^2.14.12",
-    "prism-themes": "^1.5.0"
+    "nuxt": "^2.14.12"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
