@@ -347,10 +347,7 @@ export default defineComponent({
 
 <style>
 pre {
-  font-size: 12px;
+  font-size: 0.75rem;
   overflow: auto;
-  background-color: #f7fafc;
-  padding: 1rem;
-  margin: 1rem 0;
 }
 </style>

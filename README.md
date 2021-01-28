@@ -1,22 +1,21 @@
-# Abeille
+# Leafage
 
 <p align="center">
   <a href="https://abeille.top" target="_blank">
-    <img alt="Abeille Logo" width="100" src="static/logo.svg">
+    <img alt="Leafage Logo" width="100" src="static/logo.svg">
   </a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/little3201/abeille-ui/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/little3201/abeille-ui.svg" alt="License">
+  <a href="https://github.com/little3201/leafage-pw/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/little3201/leafage-pw.svg" alt="License">
   </a>
 </p>
 
 ## 项目介绍
 
-Abeille，一个使用 Vue.js + Nuxt.js + Tailwindcss的个人网站，包含博客、作品集、生活分享，学习总结等。
-
-作为一个后端开发程序猿，无奈找了很久没有好看的博客系统，只能自己写了。加油吧！！！
+leafage-pw，一个使用 Vue.js、 Nuxt.js、 Tailwindcss 的个人网站，致力于促进软件开发及相关领域知识与创新的传播。
+包含原创博客、生活分享、资源推荐、技术总结、影视浏览等资源信息，提供原创、优质、完整内容的知识站点。
 
 ### 目标功能
 - [x] 总览
@@ -47,8 +46,8 @@ Abeille，一个使用 Vue.js + Nuxt.js + Tailwindcss的个人网站，包含博
 
 目前项目托管在Gitee和Github平台上中，欢迎大家star 和 fork 支持~
 
-- Gitee地址：https://gitee.com/little3201/abeille-ui
-- Github地址：https://github.com/little3201/abeille-ui
+- Gitee地址：https://gitee.com/little3201/leafage-pw
+- Github地址：https://github.com/little3201/leafage-pw
 
 ## FAQ文档
 

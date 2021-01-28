@@ -1,7 +1,7 @@
 import { GetterTree, ActionTree, MutationTree } from 'vuex'
 
 export const state = () => ({
-    title: 'abeille | 布吉岛',
+    title: 'Leafage | 布吉岛',
     description: '一个开源的、由布吉岛维护的个人站点，致力于促进软件开发及相关领域知识与创新的传播。包含原创博客、生活分享、资源推荐、技术总结、影视浏览等资源信息,提供原创、优质、完整内容的专业开发社区',
 })
 
