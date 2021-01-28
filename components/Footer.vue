@@ -3,7 +3,7 @@
     <section class="container mx-auto">
       <div class="md:flex md:justify-between items-center text-white md:h-32">
         <div class="flex justify-center text-4xl tracking-widest font-black uppercase my-4">
-          <h2><nuxt-link to="/">Abeille</nuxt-link></h2>
+          <h2><nuxt-link to="/">Leafage</nuxt-link></h2>
         </div>
         <div class="flex justify-center space-x-6 my-4">
           <a href="#" class="border rounded-full p-2"
@@ -86,7 +86,7 @@
     </section>
     <section class="py-2 text-xs text-center text-gray-500 container mx-auto border-t border-gray-900">
       <p>
-        &copy; {{ new Date().getFullYear() }} Abeille. All Rights
+        &copy; {{ new Date().getFullYear() }} Leafage. All Rights
         <a href="http://www.bootstrapmb.com/" title="bootstrapmb">Reserved</a>.
       </p>
       <p>陕ICP备19017836号-1</p>

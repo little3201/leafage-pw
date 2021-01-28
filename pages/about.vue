@@ -5,7 +5,7 @@
         <div class="md:flex">
           <div class="w-full md:w-2/5">
             <div class="about-img">
-              <img src="/images/resources/about-img.png" alt="abeille about" />
+              <img src="/images/resources/about-img.png" alt="leafage-pw about" />
             </div>
             <!--about-img end-->
           </div>
@@ -72,7 +72,7 @@ export default defineComponent({
   name: "About",
 
   head() {
-    const title = "About - Abeille | 布吉岛";
+    const title = "About - Leafage | 布吉岛";
     const description = "关于布吉岛，关于我，布吉岛是一个Java程序员，对网站有疑问或意见的可以联系我进行优化修改";
     return {
       title,

@@ -111,7 +111,7 @@
             placeholder="Enter your email adress"
           />
 
-          <a href="mailto:little3201@163.com?subject=Abeille%20Website%20News" class="bg-black text-white p-2 -ml-1">
+          <a href="mailto:little3201@163.com?subject=Leafage%20Website%20News" class="bg-black text-white p-2 -ml-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -141,7 +141,7 @@
           <div class="post-slide">
             <img
               src="/images/resources/photo-1609.jpg"
-              alt="abeille"
+              alt="leafage"
               class="w-full"
             />
           </div>
@@ -151,7 +151,7 @@
       <!--widget-recent-post end-->
       <div class="flex justify-center">
         <a href="#" title=""
-          ><img src="/images/resources/ad-img.jpg" alt="abeille"
+          ><img src="/images/resources/ad-img.jpg" alt="leafage"
         /></a>
       </div>
       <!--widget-adver end-->
@@ -179,11 +179,11 @@
         <div class="relative">
           <img
             src="/images/resources/page-img.jpg"
-            alt="abeille"
+            alt="leafage"
             class="w-full"
           />
           <div class="absolute top-0 uppercase font-bold p-6">
-            <h3 class="text-white">Abeille</h3>
+            <h3 class="text-white">Leafage</h3>
             <span class="text-xs text-gray-500">321K likes</span>
           </div>
           <ul
@@ -206,32 +206,32 @@
             <ul class="flex justify-between mt-2">
               <li>
                 <a href="#" title=""
-                  ><img src="/images/resources/fb-img1.jpg" alt="abeille"
+                  ><img src="/images/resources/fb-img1.jpg" alt="leafage-pw"
                 /></a>
               </li>
               <li>
                 <a href="#" title=""
-                  ><img src="/images/resources/fb-img2.jpg" alt="abeille"
+                  ><img src="/images/resources/fb-img2.jpg" alt="leafage-pw"
                 /></a>
               </li>
               <li>
                 <a href="#" title=""
-                  ><img src="/images/resources/fb-img3.jpg" alt="abeille"
+                  ><img src="/images/resources/fb-img3.jpg" alt="leafage-pw"
                 /></a>
               </li>
               <li>
                 <a href="#" title=""
-                  ><img src="/images/resources/fb-img4.jpg" alt="abeille"
+                  ><img src="/images/resources/fb-img4.jpg" alt="leafage-pw"
                 /></a>
               </li>
               <li>
                 <a href="#" title=""
-                  ><img src="/images/resources/fb-img5.jpg" alt="abeille"
+                  ><img src="/images/resources/fb-img5.jpg" alt="leafage-pw"
                 /></a>
               </li>
               <li>
                 <a href="#" title=""
-                  ><img src="/images/resources/fb-img6.jpg" alt="abeille"
+                  ><img src="/images/resources/fb-img6.jpg" alt="leafage-pw"
                 /></a>
               </li>
             </ul>

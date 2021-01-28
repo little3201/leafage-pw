@@ -4,7 +4,7 @@
       <div class="hidden md:block">
         <img
           src="https://images.unsplash.com/photo-1609342122563-a43ac8917a3a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-          alt="abeille contact"
+          alt="leafage-pw contact"
           class="h-full object-cover"
         />
       </div>
@@ -57,7 +57,7 @@
           </div>
           <button
             type="submit"
-            href="mailto:little3201@163.com?subject=Abeille%20Website%20Question"
+            href="mailto:little3201@163.com?subject=Leafage%20Website%20Question"
             class="text-white uppercase text-xs font-bold bg-gray-500 py-3 w-1/2 outline-none"
           >Send Message</button>
         </form>
@@ -74,7 +74,7 @@ export default defineComponent({
   name: "About",
 
   head() {
-    const title = "Contact - Abeille | 布吉岛";
+    const title = "Contact - Leafage | 布吉岛";
     const description = "联系布吉岛，如果对网站有疑问或意见的可以联系我进行优化修改";
     return {
       title,

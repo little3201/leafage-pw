@@ -60,8 +60,8 @@
             <img :src="data.cover" :alt="data.title" class="w-full" />
           </div>
           <p
-            class="text-gray-700 text-sm md:text-base my-4 leading-loose tracking-wide overflow-hidden"
-            v-html="data.content"
+            class="text-gray-700 my-4 leading-loose tracking-wide"
+            v-html="$md.render(data.original)"
           ></p>
           <!-- <nuxt-content :document="data" /> -->
           <div class="md:flex justify-between items-center">
@@ -344,3 +344,10 @@ export default defineComponent({
   },
 });
 </script>
+
+<style>
+pre {
+  font-size: 0.75rem;
+  overflow: auto;
+}
+</style>
