@@ -48,7 +48,11 @@
     "typescript",
     "tailwindcss"
   ],
-  "author": "liwenqiang",
+  "author": {
+    "name": "liwenqiang",
+    "email": "little3201@163.com",
+    "url": "https://www.abeille.top"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/little3201/leafage-pw/issues"
