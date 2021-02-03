@@ -13,12 +13,12 @@
                 Trending
               </button>
             </li>
-            <li class="w-1/3">
+            <li class="w-1/3 hover:bg-black hover:text-white">
               <button class="w-full h-10 text-xs font-bold uppercase">
                 Most View
               </button>
             </li>
-            <li class="w-1/3">
+            <li class="w-1/3 hover:bg-black hover:text-white">
               <button class="w-full h-10 text-xs font-bold uppercase">
                 Popular
               </button>

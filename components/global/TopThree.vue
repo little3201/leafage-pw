@@ -7,7 +7,7 @@
         <h3>Top Posts</h3>
       </div>
       <div class="my-6">
-        <div class="grid grid-flow-col grid-rows-3 grid-cols-1 gap-4 md:grid-rows-2 md:grid-cols-3 md:gap-10">
+        <div class="grid grid-flow-col grid-rows-3 grid-cols-1 md:grid-rows-2 md:grid-cols-3 gap-4 md:gap-10">
           <div class="md:row-span-2 md:col-span-2 h-auto">
             <div class="overflow-hidden">
               <div class="transform hover:scale-110 transition duration-500">

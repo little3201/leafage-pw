@@ -17,8 +17,7 @@
               class="absolute w-full h-full"
             />
             <div
-              class="absolute w-full h-full"
-              style="background-color: rgba(42, 42, 42, 0.3)"
+              class="absolute w-full h-full bg-gray-800 bg-opacity-25"
             ></div>
           </div>
           <nuxt-link
@@ -183,8 +182,7 @@
             class="absolute w-full h-full"
           />
           <div
-            class="absolute w-full h-full"
-            style="background-color: rgba(42, 42, 42, 0.3)"
+            class="absolute w-full h-full bg-gray-800 bg-opacity-25"
           ></div>
         </div>
         <nuxt-link
@@ -194,7 +192,7 @@
           >Technology</nuxt-link
         >
         <!--blog-img end-->
-        <div class="absolute px-8 text-left font-black" style="bottom: 30px">
+        <div class="absolute px-8 text-left font-black bott" style="bottom: 30px">
           <h3 class="transform hover:translate-x-2 transition duration-500">
             <nuxt-link
               :to="'/posts/detail/' + datas[1].code"
@@ -215,8 +213,7 @@
             class="absolute w-full h-full"
           />
           <div
-            class="absolute w-full h-full"
-            style="background-color: rgba(42, 42, 42, 0.3)"
+            class="absolute w-full h-full bg-gray-800 bg-opacity-25"
           ></div>
         </div>
         <nuxt-link
