@@ -1,7 +1,8 @@
 <template>
   <section class="container mx-auto">
-    <div class="uppercase font-extrabold">
-      <h3>Recommended</h3>
+    <div class="flex divide-y-2 divide-gray-400 divide-dotted">
+      <h3 class="uppercase font-extrabold -mt-2">Recommended</h3>
+      <span class="flex-1 w-full ml-4 mt-1"></span>
     </div>
     <div
       class="grid grid-flow-row grid-rows-6 grid-cols-1 md:grid-rows-3 md:grid-cols-2 gap-4 my-6"
@@ -72,7 +73,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted } from "@vue/composition-api";
+import { defineComponent } from "@vue/composition-api";
 import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({

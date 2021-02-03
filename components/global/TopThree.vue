@@ -3,11 +3,12 @@
     <p v-if="$fetchState.pending">Fetching mountains...</p>
     <p v-else-if="$fetchState.error">An error occurred :(</p>
     <div v-else class="mb-12">
-      <div class="uppercase font-extrabold">
-        <h3>Top Posts</h3>
+      <div class="flex divide-y-2 divide-gray-400 divide-dotted">
+        <h3 class="uppercase font-extrabold -mt-2">Top Posts</h3>
+        <span class="flex-1 w-full ml-4 mt-1"></span>
       </div>
       <div class="my-6">
-        <div class="grid grid-flow-col grid-rows-3 grid-cols-1 md:grid-rows-2 md:grid-cols-3 gap-4 md:gap-10">
+        <div class="grid grid-flow-col grid-rows-3 grid-cols-1 md:grid-rows-2 md:grid-cols-3 gap-4 md:col-gap-6">
           <div class="md:row-span-2 md:col-span-2 h-auto">
             <div class="overflow-hidden">
               <div class="transform hover:scale-110 transition duration-500">

@@ -1,7 +1,8 @@
 <template>
-  <section class="container mx-auto my-16">
-    <div class="uppercase font-extrabold">
-      <h3>Featured Stories</h3>
+  <section class="container mx-auto my-12">
+    <div class="flex divide-y-2 divide-gray-400 divide-dotted">
+      <h3 class="uppercase font-extrabold -mt-2">Featured Stories</h3>
+      <span class="flex-1 w-full ml-4 mt-1"></span>
     </div>
     <!--sec-title end-->
     <div class="my-6">

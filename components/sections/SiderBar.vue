@@ -7,7 +7,11 @@
         >
           Trending
         </h3>
-        <div class="flex px-4 md:px-8 py-2" v-for="data in datas" :key="data.code">
+        <div
+          class="flex px-4 md:px-8 py-2"
+          v-for="data in datas"
+          :key="data.code"
+        >
           <img
             class="w-32 h-20 object-cover"
             :src="data.cover"
@@ -22,9 +26,10 @@
                 v-text="data.title"
               ></nuxt-link>
             </h3>
-            <span class="text-xs text-gray-500 font-bold uppercase"
-              v-text="new Date(data.modifyTime).toLocaleDateString()"></span
-            >
+            <span
+              class="text-xs text-gray-500 font-bold uppercase"
+              v-text="new Date(data.modifyTime).toLocaleDateString()"
+            ></span>
           </div>
         </div>
         <!--wd-posts end-->
@@ -111,7 +116,10 @@
             placeholder="Enter your email adress"
           />
 
-          <a href="mailto:little3201@163.com?subject=Leafage%20Website%20News" class="bg-black text-white p-2 -ml-1">
+          <a
+            href="mailto:little3201@163.com?subject=Leafage%20Website%20News"
+            class="bg-black text-white p-2 -ml-1"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -145,12 +153,14 @@
           class="grid grid-cols-1 divide-y divide-gray-400 p-8 text-xs text-gray-600 font-semibold uppercase list-disc"
           style="line-style: inside"
         >
-          <li class="py-3 mx-4"><a href="#" title="">Technology</a></li>
-          <li class="py-3 mx-4"><a href="#" title="">Fashion</a></li>
-          <li class="py-3 mx-4"><a href="#" title="">Lifestyle</a></li>
-          <li class="py-3 mx-4"><a href="#" title="">Beauty</a></li>
-          <li class="py-3 mx-4"><a href="#" title="">Travel</a></li>
-          <li class="py-3 mx-4"><a href="#" title="">Photograph</a></li>
+          <li
+            class="py-3 mx-4"
+            v-for="category in categories"
+            :key="category.code"
+          >
+            <nuxt-link :to="'/posts/' + category.code" v-text="category.alias"></nuxt-link>
+            <span class="mr-2 float-right" v-text="category.count"></span>
+          </li>
         </ul>
       </div>
       <div>
@@ -167,12 +177,6 @@
           <ul
             class="absolute bottom-0 p-6 flex justify-between w-full text-white"
           >
-            <li>
-              <a href="#" title=""><i class="fab fa-facebook"></i> Like Page</a>
-            </li>
-            <li>
-              <a href="#" title="">Sign Up</a>
-            </li>
           </ul>
         </div>
         <div class="bg-gray-100 p-6">
@@ -225,17 +229,26 @@ import { defineComponent } from "@vue/composition-api";
 import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
-  name: "Posts",
+  name: "SiderBar",
 
   async fetch() {
-    this.datas = await this.$axios
-      .get(SERVER_URL.posts.concat("?page=0&size=5"))
-      .then((res) => res.data);
+    let [datas, categories] = await Promise.all([
+      await this.$axios
+        .get(SERVER_URL.posts.concat("?page=0&size=5&order=viewed"))
+        .then((res) => res.data),
+
+      await this.$axios
+        .get(SERVER_URL.category.concat("?page=0&size=5"))
+        .then((res) => res.data),
+    ]);
+    this.datas = datas;
+    this.categories = categories;
   },
 
   data() {
     return {
       datas: [],
+      categories: [],
     };
   },
 });

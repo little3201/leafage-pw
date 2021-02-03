@@ -242,7 +242,7 @@ import { defineComponent } from "@vue/composition-api";
 import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
-  name: "Hero",
+  name: "Popular",
 
   async fetch() {
     this.datas = await this.$axios

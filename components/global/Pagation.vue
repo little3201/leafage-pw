@@ -1,8 +1,8 @@
 <template>
   <section class="mb-12">
-    <ul v-show="pages.size > 0" class="flex justify-center items-center">
+    <ul class="flex justify-center items-center">
       <li class="mx-4">
-        <button class="disabled:opacity-25">
+        <button class="disabled:opacity-25 focus:outline-none">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -21,13 +21,13 @@
       </li>
       <li class="mx-4" v-for="page in pages" :key="page">
         <button
-          class="w-8 h-8 focus:bg-black focus:text-white rounded-full border border-black hover:bg-black hover:text-white"
+          class="w-8 h-8 focus:outline-none focus:bg-black focus:text-white rounded-full border border-black hover:bg-black hover:text-white"
         >
           {{ page }}
         </button>
       </li>
       <li class="mx-4">
-        <button class="disabled:opacity-25">
+        <button class="disabled:opacity-25 focus:outline-none">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -56,7 +56,7 @@ export default defineComponent({
 
   data() {
     return {
-      pages: [],
+      pages: [1, 2],
     };
   },
 });

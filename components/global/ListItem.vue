@@ -78,7 +78,7 @@ export default defineComponent({
 
   async fetch() {
     this.datas = await this.$axios
-      .get(SERVER_URL.posts.concat("?page=0&size=4&order=likes"))
+      .get(SERVER_URL.posts.concat("?page=0&size=10&order=likes"))
       .then((res) => res.data);
   },
 
