@@ -100,7 +100,7 @@
         </ul>
       </div>
       <!--widget-social-links end-->
-      <div class="border-2 border-solid border-black p-8">
+      <div class="border-2 border-solid border-black p-8 my-12">
         <div class="flex">
           <h3 class="font-extrabold">Get Fresh News</h3>
         </div>
@@ -130,31 +130,11 @@
           </a>
         </form>
       </div>
-      <!--subscribe-wd end-->
-      <div class="my-12 border border-solid border-gray-400 relative">
-        <h3
-          class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold"
-        >
-          Recent Post
-        </h3>
-        <div class="recent-post-carousel p-8">
-          <div class="post-slide">
-            <img
-              src="/images/resources/photo-1609.jpg"
-              alt="leafage"
-              class="w-full"
-            />
-          </div>
-        </div>
-        <!--carousel end-->
-      </div>
-      <!--widget-recent-post end-->
       <div class="flex justify-center">
         <a href="#" title=""
           ><img src="/images/resources/ad-img.jpg" alt="leafage"
         /></a>
       </div>
-      <!--widget-adver end-->
       <div class="my-12 border border-solid border-gray-400 relative">
         <h3
           class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold"
@@ -172,10 +152,8 @@
           <li class="py-3 mx-4"><a href="#" title="">Travel</a></li>
           <li class="py-3 mx-4"><a href="#" title="">Photograph</a></li>
         </ul>
-        <!--catgs-links end-->
       </div>
-      <!--widget-catgs end-->
-      <div class="widget widget-fb">
+      <div>
         <div class="relative">
           <img
             src="/images/resources/page-img.jpg"
@@ -197,7 +175,6 @@
             </li>
           </ul>
         </div>
-        <!--page-img end-->
         <div class="bg-gray-100 p-6">
           <div class="bg-white p-4 shadow-xl">
             <h5 class="text-xs text-gray-500">
@@ -235,14 +212,10 @@
                 /></a>
               </li>
             </ul>
-            <div class="clearfix"></div>
           </div>
-          <!--post-imgs end-->
         </div>
       </div>
-      <!--widget-fb end-->
     </div>
-    <!--sidebar end-->
   </div>
 </template>
 

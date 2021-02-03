@@ -61,7 +61,7 @@
           </div>
           <p
             class="text-gray-700 my-4 leading-loose tracking-wide"
-            v-html="$md.render(data.original)"
+            v-html="$md.render(data.content)"
           ></p>
           <!-- <nuxt-content :document="data" /> -->
           <div class="md:flex justify-between items-center">
@@ -347,7 +347,7 @@ export default defineComponent({
 
 <style>
 pre {
-  font-size: 0.75rem;
+  font-size: 13px;
   overflow: auto;
 }
 </style>
