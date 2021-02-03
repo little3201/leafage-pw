@@ -46,7 +46,7 @@ export default {
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
     '~/assets/main.css',
-    '~/node_modules/highlight.js/styles/github.css'
+    'highlight.js/styles/github.css'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
@@ -80,14 +80,7 @@ export default {
     https: true,
     progress: true,
     credentials: true,
-    baseURL: 'https://www.abeille.top/api',
-    proxy: {
-      '/api': {
-        host: 'https://www.abeille.top',
-        changeOrigin: true, // 允许跨域
-        secure: true, // 支持https
-      }
-    },
+    baseURL: 'https://www.abeille.top/api'
   },
 
   markdownit: {
