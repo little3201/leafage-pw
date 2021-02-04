@@ -158,7 +158,7 @@
             v-for="category in categories"
             :key="category.code"
           >
-            <nuxt-link :to="'/posts/' + category.code" v-text="category.alias"></nuxt-link>
+            <nuxt-link :to="{path: '/posts', params: {code: category.code}}" v-text="category.alias"></nuxt-link>
             <span class="mr-2 float-right" v-text="category.count"></span>
           </li>
         </ul>
@@ -229,7 +229,7 @@ import { defineComponent } from "@vue/composition-api";
 import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
-  name: "SiderBar",
+  name: "SideBar",
 
   async fetch() {
     let [datas, categories] = await Promise.all([

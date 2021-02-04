@@ -2,43 +2,31 @@
   <div>
     <p v-if="$fetchState.pending">Fetching mountains...</p>
     <p v-else-if="$fetchState.error">An error occurred :(</p>
-    <div v-else>
-      <div class="mb-2">
-        <div class="relative w-full overflow-hidden" style="height: 520px">
-          <div
-            class="w-full h-full transform hover:scale-110 transition duration-500"
-          >
-            <img
-              :src="datas[0].cover"
-              :alt="datas[0].title"
-              class="absolute w-full h-full"
-            />
-            <div
-              class="absolute w-full h-full"
-              style="background-color: rgba(42, 42, 42, 0.3)"
-            ></div>
-          </div>
-          <nuxt-link
-            to="/"
-            class="text-xs space-x-6 text-gray-600 uppercase font-bold"
-            v-text="datas[0].category"
-          ></nuxt-link>
-          <!--blog-img end-->
-          <div class="absolute bottom-0 text-white p-4 md:p-10 w-auto">
-            <h3
-              class="p-6 mb-12 md:text-xl font-black leading-8 text-left border border-solid border-gray-300 transform hover:translate-x-2 transition duration-500"
-            >
-              <nuxt-link
-                :to="'/posts/detail/' + datas[0].code"
-                v-text="datas[0].title"
-              ></nuxt-link>
-            </h3>
+    <div v-else class="mb-12">
+      <div class="flex divide-y-2 divide-gray-400 divide-dotted">
+        <h3 class="uppercase font-extrabold -mt-2">Top Posts</h3>
+        <span class="flex-1 w-full ml-4 mt-1"></span>
+      </div>
+      <div class="my-6">
+        <div class="grid grid-flow-col grid-rows-3 grid-cols-1 md:grid-rows-2 md:grid-cols-3 gap-4 md:col-gap-6">
+          <div class="md:row-span-2 md:col-span-2 h-auto">
+            <div class="overflow-hidden">
+              <div class="transform hover:scale-110 transition duration-500">
+                <img
+                  :src="datas[0].cover"
+                  :alt="datas[0].title"
+                  class="w-full"
+                />
+              </div>
             </div>
-          <div class="absolute bottom-0 text-white p-4 md:p-10 w-full">
-            <div class="hidden md:flex ml-auto justify-between items-center">
-              <ul class="flex text-xs space-x-6 text-gray-400">
+            <div class="mt-6">
+              <ul
+                class="flex text-xs space-x-6 uppercase font-bold text-gray-500"
+              >
+                <li>
+                  <a href="#" class="text-gray-600">Photograph</a>
+                </li>
                 <li
-                  class="uppercase"
                   v-text="new Date(datas[0].modifyTime).toLocaleDateString()"
                 ></li>
                 <li class="flex items-center">
@@ -79,100 +67,20 @@
                   >{{ datas[0].likes }}
                 </li>
               </ul>
-              <ul class="flex justify-end space-x-6">
-                <li
-                  class="p-2 rounded-full border border-gray-300 text-gray-300"
-                >
-                  <a href="#" title=""
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="feather feather-github"
-                    >
-                      <path
-                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                      ></path></svg
-                  ></a>
-                </li>
-                <li
-                  class="p-2 rounded-full border border-gray-300 text-gray-300"
-                >
-                  <a href="#"
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="feather feather-linkedin"
-                    >
-                      <path
-                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
-                      ></path>
-                      <rect x="2" y="9" width="4" height="12"></rect>
-                      <circle cx="4" cy="4" r="2"></circle></svg
-                  ></a>
-                </li>
-                <li
-                  class="p-2 rounded-full border border-gray-300 text-gray-300"
-                >
-                  <a href="#" title=""
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="feather feather-twitter"
-                    >
-                      <path
-                        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
-                      ></path></svg
-                  ></a>
-                </li>
-                <li
-                  class="p-2 rounded-full border border-gray-300 text-gray-300"
-                >
-                  <a href="#" title=""
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="feather feather-facebook"
-                    >
-                      <path
-                        d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
-                      ></path></svg
-                  ></a>
-                </li>
-              </ul>
+              <h3
+                class="md:text-xl font-extrabold my-4 transform hover:translate-x-2 transition duration-500"
+              >
+                <nuxt-link
+                  :to="'/posts/detail/' + datas[0].code"
+                  v-text="datas[0].title"
+                ></nuxt-link>
+              </h3>
+              <p
+                class="hidden md:block text-gray-500 font-light"
+                v-text="datas[0].subtitle"
+              ></p>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="my-12">
-        <div class="grid grid-flow-row grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
           <div>
             <div class="overflow-hidden">
               <div class="transform hover:scale-110 transition duration-500">
@@ -183,22 +91,16 @@
                 />
               </div>
             </div>
-            <div class="my-4">
-              <nuxt-link
-                to="/"
-                class="text-xs space-x-6 text-gray-600 uppercase font-bold"
-                v-text="datas[1].category"
-              ></nuxt-link>
+            <div>
               <h3
-                class="md:text-xl font-extrabold my-3 transform hover:translate-x-2 transition duration-500"
+                class="font-extrabold my-2 transform hover:translate-x-2 transition duration-500"
               >
                 <nuxt-link
                   :to="'/posts/detail/' + datas[1].code"
                   v-text="datas[1].title"
-                >
-                </nuxt-link>
+                ></nuxt-link>
               </h3>
-              <ul class="flex text-xs space-x-6 text-gray-600 uppercase">
+              <ul class="flex text-xs space-x-6 uppercase text-gray-500">
                 <li
                   v-text="new Date(datas[1].modifyTime).toLocaleDateString()"
                 ></li>
@@ -252,22 +154,16 @@
                 />
               </div>
             </div>
-            <div class="my-4">
-              <nuxt-link
-                to="/"
-                class="text-xs space-x-6 text-gray-600 uppercase font-bold"
-                v-text="datas[2].category"
-              ></nuxt-link>
+            <div>
               <h3
-                class="md:text-xl font-extrabold my-3 transform hover:translate-x-2 transition duration-500"
+                class="font-extrabold my-2 transform hover:translate-x-2 transition duration-500"
               >
                 <nuxt-link
                   :to="'/posts/detail/' + datas[2].code"
                   v-text="datas[2].title"
-                >
-                </nuxt-link>
+                ></nuxt-link>
               </h3>
-              <ul class="flex text-xs space-x-6 text-gray-600 uppercase">
+              <ul class="flex text-xs space-x-6 uppercase text-gray-500">
                 <li
                   v-text="new Date(datas[2].modifyTime).toLocaleDateString()"
                 ></li>
@@ -306,7 +202,7 @@
                     <path
                       d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
                     ></path></svg
-                  >{{ datas[0].likes }}
+                  >{{ datas[2].likes }}
                 </li>
               </ul>
             </div>
@@ -322,11 +218,11 @@ import { defineComponent } from "@vue/composition-api";
 import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
-  name: "LatestThree",
+  name: "TopPosts",
 
   async fetch() {
     this.datas = await this.$axios
-      .get(SERVER_URL.posts.concat("?page=0&size=3"))
+      .get(SERVER_URL.posts.concat("?page=0&size=3&order=viewed"))
       .then((res) => res.data);
   },
 

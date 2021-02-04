@@ -2,7 +2,7 @@
   <section class="container mx-auto">
     <div class="grid grid-flow-row grid-cols-1 lg:grid-cols-3">
       <div class="lg:col-span-2">
-        <TopThree />
+        <TopPosts />
         <div class="mb-12">
           <ul
             class="flex justify-between items-center text-center border border-black"
@@ -34,11 +34,13 @@
               </button>
             </li>
           </ul>
-          <ListItem />
+          <p v-if="$fetchState.pending">Fetching mountains...</p>
+          <p v-else-if="$fetchState.error">An error occurred :(</p>
+          <ListItem v-else :datas="datas" />
         </div>
         <Pagation />
       </div>
-      <SiderBar />
+      <SideBar />
     </div>
   </section>
 </template>
@@ -48,25 +50,25 @@ import { defineComponent } from "@vue/composition-api";
 import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
-  name: "Content",
+  name: "Main",
 
   async fetch() {
-    await this.retrieve("viewed");
+    this.datas = await this.$axios
+      .get(SERVER_URL.posts.concat("?page=0&size=10&order=", this.order))
+      .then((res) => res.data);
   },
 
   data() {
     return {
       datas: [],
+      order: 'likes'
     };
   },
 
   methods: {
     retrieve(order: string) {
-      this.$axios
-        .get(SERVER_URL.posts.concat("?page=0&size=5&order=", order))
-        .then((res) => {
-          this.datas = res.data;
-        });
+      this.order = order
+      this.$fetch()
     },
   },
 });

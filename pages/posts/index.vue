@@ -1,29 +1,54 @@
 <template>
   <section class="container mx-auto">
-    <ul class="flex justify-between text-xs border border-black">
-      <li class="bg-black text-white w-1/6">
+    <ul class="flex text-xs border border-black">
+      <li class="bg-black text-white w-32">
         <button class="w-full h-10 font-bold uppercase">All</button>
       </li>
       <li
-        class="w-1/6 hover:bg-black hover:text-white"
+        class="w-32 hover:bg-black hover:text-white"
         v-for="category in categories"
         :key="category.code"
       >
-        <button class="w-full h-10 font-bold uppercase focus:outline-none">
-          Food
-        </button>
+        <button
+          @click="retrieve"
+          class="w-full h-10 font-bold uppercase focus:outline-none"
+          v-text="category.alias"
+        ></button>
       </li>
     </ul>
-    <ListItem />
+    <PostsList :datas="datas" />
     <Pagation />
   </section>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
+import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
   name: "Posts",
+
+  async asyncData({ app: { $axios }, params }) {
+    let [datas, categories] = await Promise.all([
+      await $axios
+        .get(SERVER_URL.posts.concat("?page=0&size=12&category=", params.code))
+        .then((res) => res.data),
+
+      await $axios
+        .get(SERVER_URL.category.concat("?page=0&size=5"))
+        .then((res) => res.data),
+    ]);
+
+    return { datas, categories };
+  },
+
+  methods: {
+    retrieve() {
+      this.$axios
+        .get(SERVER_URL.posts.concat("?page=0&size=12&category=", this.$route.params.code))
+        .then((res) => (this.datas = res.data));
+    },
+  },
 
   head() {
     const title = "Posts - Leafage | 布吉岛";

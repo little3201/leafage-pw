@@ -1,6 +1,6 @@
 <template>
   <div class="my-4 md:my-10">
-    <div class="grid grid-flow-row grid-cols-2 gap-4 md:gap-8">
+    <div class="grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
       <div class="w-full" v-for="(data, index) in datas" :key="index">
         <div class="overflow-hidden">
           <div class="transform hover:scale-110 transition duration-500">
@@ -73,12 +73,11 @@
 import { defineComponent } from "@vue/composition-api";
 
 export default defineComponent({
-  name: "ListItem",
+  name: "PostsList",
 
   props: {
     datas: {
       type: Array,
-      default: [],
     },
   },
 });

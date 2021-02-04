@@ -9,7 +9,8 @@
             <li>
               <a href="#" title="" v-text="data.category"></a>
             </li>
-            <li class="tracking-wider"
+            <li
+              class="tracking-wider"
               v-text="
                 new Date(
                   data.modifyTime.replace(/\s/, 'T')
@@ -275,7 +276,7 @@
           </div>
         </div>
       </div>
-      <SiderBar />
+      <SideBar />
     </div>
   </div>
 </template>
@@ -293,7 +294,7 @@ export default defineComponent({
     let [data, topDatas] = await Promise.all([
       // detail
       await $axios
-        .get(SERVER_URL.posts.concat("/").concat(params.slug))
+        .get(SERVER_URL.posts.concat("/", params.slug))
         .then((res) => {
           store?.commit("CHANGE_TITLE", res.data.title);
           store?.commit("CHANGE_DESCTIPTION", res.data.subtitle);
