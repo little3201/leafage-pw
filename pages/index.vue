@@ -1,8 +1,8 @@
 <template>
   <div id="home">
-    <Popular />
+    <Hero />
     <Featured />
-    <Content />
+    <Main />
     <Recommend />
   </div>
 </template>

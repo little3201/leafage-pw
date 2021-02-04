@@ -45,8 +45,7 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    '~/assets/main.css',
-    'highlight.js/styles/github.css'
+    '~/node_modules/highlight.js/styles/github.css'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
@@ -96,9 +95,7 @@ export default {
           permalinkBefore: true
         }
       ],
-      'markdown-it-attrs',
       'markdown-it-div',
-      'markdown-it-toc-done-right',
       'markdown-it-highlightjs'
     ],
     runtime: true // Support `$md()`

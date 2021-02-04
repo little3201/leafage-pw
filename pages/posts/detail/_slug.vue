@@ -10,6 +10,7 @@
               <a href="#" title="" v-text="data.category"></a>
             </li>
             <li
+              class="tracking-wider"
               v-text="
                 new Date(
                   data.modifyTime.replace(/\s/, 'T')
@@ -63,7 +64,6 @@
             class="text-gray-700 my-4 leading-loose tracking-wide"
             v-html="$md.render(data.content)"
           ></p>
-          <!-- <nuxt-content :document="data" /> -->
           <div class="md:flex justify-between items-center">
             <ul class="flex space-x-4 md:space-x-8 text-xs font-bold uppercase">
               <li><a href="#" title="">#Photo</a></li>
@@ -276,7 +276,7 @@
           </div>
         </div>
       </div>
-      <SiderBar :trendingDatas="trendingDatas" />
+      <SideBar />
     </div>
   </div>
 </template>
@@ -291,21 +291,19 @@ export default defineComponent({
   scrollToTop: true,
 
   async asyncData({ app: { $axios, store }, params }) {
-    let [data, trendingDatas, topDatas] = await Promise.all([
+    let [data, topDatas] = await Promise.all([
       // detail
       await $axios
-        .get(SERVER_URL.posts.concat("/").concat(params.slug))
+        .get(SERVER_URL.posts.concat("/", params.slug))
         .then((res) => {
           store?.commit("CHANGE_TITLE", res.data.title);
           store?.commit("CHANGE_DESCTIPTION", res.data.subtitle);
           return res.data;
         }),
-      // trending
-      await $axios.$get(SERVER_URL.posts.concat("?page=0&size=5")),
       // topThree
       await $axios.$get(SERVER_URL.posts.concat("?page=0&size=3&order=viewed")),
     ]);
-    return { data, trendingDatas, topDatas };
+    return { data, topDatas };
   },
 
   head() {

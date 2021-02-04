@@ -7384,11 +7384,6 @@ markdown-it-anchor@^7.0.0:
   resolved "https://registry.npm.taobao.org/markdown-it-anchor/download/markdown-it-anchor-7.0.0.tgz?cache=0&sync_timestamp=1609771470478&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmarkdown-it-anchor%2Fdownload%2Fmarkdown-it-anchor-7.0.0.tgz#6c43e6a3d3a0b56d0f7e04af7a122834ebbcc311"
   integrity sha1-bEPmo9OgtW0PfgSvehIoNOu8wxE=
 
-markdown-it-attrs@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.npm.taobao.org/markdown-it-attrs/download/markdown-it-attrs-4.0.0.tgz#eadae3ea0c7d17c5e83b98a4ec95a47f4e4960f5"
-  integrity sha1-6trj6gx9F8XoO5ik7JWkf05JYPU=
-
 markdown-it-div@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npm.taobao.org/markdown-it-div/download/markdown-it-div-1.1.0.tgz#779c07a2313a36e59afd54c39907f9bc87c1ab20"
@@ -7401,11 +7396,6 @@ markdown-it-highlightjs@^3.4.0:
   dependencies:
     highlight.js "^10.2.0"
     lodash.flow "^3.5.0"
-
-markdown-it-toc-done-right@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.npm.taobao.org/markdown-it-toc-done-right/download/markdown-it-toc-done-right-4.2.0.tgz#3ccdce22d5022ffae7b991d07261b1b1de5459d0"
-  integrity sha1-PM3OItUCL/rnuZHQcmGxsd5UWdA=
 
 markdown-it@^8.3.1:
   version "8.4.2"

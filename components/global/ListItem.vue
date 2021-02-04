@@ -1,8 +1,6 @@
 <template>
   <div class="my-4 md:my-10">
-    <p v-if="$fetchState.pending">Fetching mountains...</p>
-    <p v-else-if="$fetchState.error">An error occurred :(</p>
-    <div v-else class="grid grid-flow-row grid-cols-2 gap-4 md:gap-8">
+    <div class="grid grid-flow-row grid-cols-2 gap-4 md:gap-8">
       <div class="w-full" v-for="(data, index) in datas" :key="index">
         <div class="overflow-hidden">
           <div class="transform hover:scale-110 transition duration-500">
@@ -25,7 +23,9 @@
             >
             </nuxt-link>
           </h3>
-          <ul class="flex text-xs space-x-2 md:space-x-6 text-gray-600 uppercase">
+          <ul
+            class="flex text-xs space-x-2 md:space-x-6 text-gray-600 uppercase"
+          >
             <li v-text="new Date(data.modifyTime).toLocaleDateString()"></li>
             <li class="flex items-center">
               <svg
@@ -71,21 +71,15 @@
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
-import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
   name: "ListItem",
 
-  async fetch() {
-    this.datas = await this.$axios
-      .get(SERVER_URL.posts.concat("?page=0&size=4&order=likes"))
-      .then((res) => res.data);
-  },
-
-  data() {
-    return {
-      datas: [],
-    };
+  props: {
+    datas: {
+      type: Array,
+      default: [],
+    },
   },
 });
 </script>
