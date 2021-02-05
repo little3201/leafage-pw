@@ -4,7 +4,7 @@
       <div class="w-full" v-for="(data, index) in datas" :key="index">
         <div class="overflow-hidden">
           <div class="transform hover:scale-110 transition duration-500">
-            <img :src="data.cover" :alt="data.title" class="w-full" />
+            <img :src="data.cover" :alt="data.title" class="w-full" style="max-height: 273px" />
           </div>
         </div>
         <div class="my-4">
@@ -18,7 +18,6 @@
           >
             <nuxt-link
               :to="'/posts/detail/' + data.code"
-              title=""
               v-text="data.title"
             >
             </nuxt-link>

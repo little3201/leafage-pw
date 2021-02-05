@@ -12,7 +12,7 @@
         <div v-for="(data, index) in datas" :key="index">
           <div class="overflow-hidden">
             <div class="transform hover:scale-110 transition duration-500">
-              <img :src="data.cover" :alt="data.title" class="w-full" />
+              <img :src="data.cover" :alt="data.title" class="w-full" style="max-height: 201px" />
             </div>
           </div>
           <!--blog-img end-->
@@ -79,7 +79,7 @@ export default defineComponent({
 
   async fetch() {
     this.datas = await this.$axios
-      .get(SERVER_URL.posts.concat("?page=0&size=4&order=likes"))
+      .get(SERVER_URL.posts.concat("?page=0&size=4"))
       .then((res) => res.data);
   },
 
