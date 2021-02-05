@@ -13,7 +13,7 @@
           :key="data.code"
         >
           <img
-            class="w-32 h-20 object-cover"
+            class="w-32"
             :src="data.cover"
             :alt="data.title"
           />

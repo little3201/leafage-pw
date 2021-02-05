@@ -17,10 +17,9 @@
             />
           </div>
         </div>
-        <!--blog-img end-->
         <div class="px-6 w-full">
           <a href="#" title="" class="text-xs space-x-6 text-gray-600 uppercase"
-            >Fashion</a
+            v-text="data.category"></a
           >
           <h3
             class="my-3 font-extrabold transform hover:translate-x-2 transition duration-500"

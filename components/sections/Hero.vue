@@ -21,9 +21,10 @@
             ></div>
           </div>
           <nuxt-link
-            to="/"
+            to="/posts"
             class="absolute top-0 text-white text-xs font-extrabold uppercase p-10"
-            >Technology</nuxt-link
+            v-text="datas[0].category"
+            ></nuxt-link
           >
           <div class="absolute bottom-0 text-white p-4 md:p-10 w-auto">
             <h2
@@ -186,17 +187,16 @@
           ></div>
         </div>
         <nuxt-link
-          to="/"
-          title=""
+          to="/posts"
           class="absolute top-0 text-white text-xs font-extrabold uppercase p-8"
-          >Technology</nuxt-link
+          v-text="datas[1].category"
+          ></nuxt-link
         >
         <!--blog-img end-->
         <div class="absolute px-8 text-left font-black bott" style="bottom: 30px">
           <h3 class="transform hover:translate-x-2 transition duration-500">
             <nuxt-link
               :to="'/posts/detail/' + datas[1].code"
-              title=""
               v-text="datas[1].title"
             >
             </nuxt-link>
@@ -218,16 +218,15 @@
         </div>
         <nuxt-link
           to="/"
-          title=""
           class="absolute top-0 text-white text-xs font-extrabold uppercase p-8"
-          >Technology</nuxt-link
+          v-text="datas[2].category"
+          ></nuxt-link
         >
         <!--blog-img end-->
         <div class="absolute px-8 text-left font-black" style="bottom: 30px">
           <h3 class="transform hover:translate-x-2 transition duration-500">
             <nuxt-link
               :to="'/posts/detail/' + datas[2].code"
-              title=""
               v-text="datas[2].title"
             ></nuxt-link>
           </h3>
