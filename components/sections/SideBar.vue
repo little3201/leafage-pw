@@ -12,11 +12,7 @@
           v-for="data in datas"
           :key="data.code"
         >
-          <img
-            class="w-32"
-            :src="data.cover"
-            :alt="data.title"
-          />
+          <img class="w-32" :src="data.cover" :alt="data.title" />
           <div class="ml-4">
             <h3
               class="text-sm font-bold transform hover:translate-x-2 transition duration-500"
@@ -32,79 +28,30 @@
             ></span>
           </div>
         </div>
-        <!--wd-posts end-->
       </div>
-      <!--widget-trending-posts end-->
-      <div class="my-12 border border-solid border-gray-400">
-        <ul class="grid grid-cols-3 text-center divide-x py-8">
-          <li>
-            <a href="#" title="" class="flex justify-center mb-3"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-facebook"
-              >
-                <path
-                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
-                ></path></svg
-            ></a>
-            <h4>3,553</h4>
-            <span class="text-xs text-gray-500">Followers</span>
-          </li>
-          <li>
-            <a href="#" title="" class="flex justify-center mb-3"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-twitter"
-              >
-                <path
-                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
-                ></path></svg
-            ></a>
-            <h4>11,211</h4>
-            <span class="text-xs text-gray-500">Followers</span>
-          </li>
-          <li>
-            <a href="#" title="" class="flex justify-center mb-3"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-instagram"
-              >
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path
-                  d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
-                ></path>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg
-            ></a>
-            <h4>9,328</h4>
-            <span class="text-xs text-gray-500">Followers</span>
+      <div class="my-12 border border-solid border-gray-400 relative">
+        <h3
+          class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold"
+        >
+          Categories
+        </h3>
+        <ul
+          class="grid grid-cols-1 divide-y divide-gray-400 p-8 text-xs text-gray-600 font-semibold uppercase list-disc"
+          style="line-style: inside"
+        >
+          <li
+            class="py-3 mx-4"
+            v-for="category in categories"
+            :key="category.code"
+          >
+            <nuxt-link
+              :to="{ path: '/posts', params: { code: category.code } }"
+              v-text="category.alias"
+            ></nuxt-link>
+            <span class="mr-2 float-right" v-text="category.count"></span>
           </li>
         </ul>
       </div>
-      <!--widget-social-links end-->
       <div class="border-2 border-solid border-black p-8 my-12">
         <div class="flex">
           <h3 class="font-extrabold">Get Fresh News</h3>
@@ -138,30 +85,37 @@
           </a>
         </form>
       </div>
-      <div class="flex justify-center">
-        <a href="#" title=""
-          ><img src="/images/resources/ad-img.jpg" alt="leafage"
-        /></a>
-      </div>
       <div class="my-12 border border-solid border-gray-400 relative">
         <h3
           class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold"
         >
-          Categories
+          Fridnd Chain
         </h3>
         <ul
-          class="grid grid-cols-1 divide-y divide-gray-400 p-8 text-xs text-gray-600 font-semibold uppercase list-disc"
+          class="grid grid-cols-1 divide-y divide-gray-400 p-8 text-xs text-gray-600 font-semibold list-decimal"
           style="line-style: inside"
         >
-          <li
-            class="py-3 mx-4"
-            v-for="category in categories"
-            :key="category.code"
-          >
-            <nuxt-link :to="{path: '/posts', params: {code: category.code}}" v-text="category.alias"></nuxt-link>
-            <span class="mr-2 float-right" v-text="category.count"></span>
+          <li class="py-3 mx-4">
+            <a href="https://howtodoinjava.com/">HowToDoInJava</a>
+          </li>
+          <li class="py-3 mx-4">
+            <a
+              href="https://www.digitalocean.com/community/tools/nginx?global.app.lang=zhCN"
+              >Nginx Config</a
+            >
+          </li>
+          <li class="py-3 mx-4">
+            <a
+              href="https://console.abeille.top"
+              >Leafage-MS</a
+            >
           </li>
         </ul>
+      </div>
+      <div class="flex justify-center my-12">
+        <a href="#" title=""
+          ><img src="/images/resources/ad-img.jpg" alt="leafage"
+        /></a>
       </div>
       <div>
         <div class="relative">
@@ -172,12 +126,11 @@
           />
           <div class="absolute top-0 uppercase font-bold p-6">
             <h3 class="text-white">Leafage</h3>
-            <span class="text-xs text-gray-500">321K likes</span>
+            <span class="text-xs text-gray-500">布吉岛</span>
           </div>
           <ul
             class="absolute bottom-0 p-6 flex justify-between w-full text-white"
-          >
-          </ul>
+          ></ul>
         </div>
         <div class="bg-gray-100 p-6">
           <div class="bg-white p-4 shadow-xl">

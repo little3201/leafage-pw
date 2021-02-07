@@ -74,8 +74,8 @@ export default defineComponent({
   name: "About",
 
   head() {
-    const title = "Contact - Leafage | 布吉岛";
-    const description = "联系布吉岛，如果对网站有疑问或意见的可以联系我进行优化修改";
+    const title = "Contact - Leafage";
+    const description = "联系Leafage，获取更多信息，详细内容请看详情";
     return {
       title,
       meta: [

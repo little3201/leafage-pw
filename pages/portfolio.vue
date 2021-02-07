@@ -42,8 +42,8 @@ export default defineComponent({
   scrollToTop: true,
   
   head() {
-    const title = "Portfolio - Leafage | 布吉岛";
-    const description = "布吉岛的作品集，包含旅行记录、生活分享等资源信息，提供原创、优质、完整内容";
+    const title = "Portfolio - Leafage";
+    const description = "Leafage的作品集，包含旅行记录、生活分享等资源信息，提供原创、优质、完整内容";
     return {
       title,
       meta: [

@@ -32,13 +32,22 @@
           <nuxt-link to="/" class="text-xs font-extrabold uppercase text-black">
             Home
           </nuxt-link>
-          <nuxt-link to="/portfolio" class="text-xs font-extrabold uppercase text-black">
+          <nuxt-link
+            to="/portfolio"
+            class="text-xs font-extrabold uppercase text-black"
+          >
             Portfolio
           </nuxt-link>
-          <nuxt-link to="/about" class="text-xs font-extrabold uppercase text-black">
+          <nuxt-link
+            to="/about"
+            class="text-xs font-extrabold uppercase text-black"
+          >
             About
           </nuxt-link>
-          <nuxt-link to="/contact" class="text-xs font-extrabold uppercase text-black">
+          <nuxt-link
+            to="/contact"
+            class="text-xs font-extrabold uppercase text-black"
+          >
             Contact
           </nuxt-link>
         </nav>
@@ -92,10 +101,11 @@
           to="/"
           class="text-4xl tracking-widest font-black uppercase text-black"
         >
+          <img src="/logo-only.png" class="w-16 mx-auto" />
           <h1>Leafage</h1>
         </nuxt-link>
       </div>
-      <SideMenu v-show="isOpen"/>
+      <SideMenu v-show="isOpen" />
     </div>
   </header>
 </template>
