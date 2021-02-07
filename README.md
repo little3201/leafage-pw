@@ -1,7 +1,7 @@
 # Leafage
 
 <p align="center">
-  <a href="https://abeille.top" target="_blank">
+  <a href="https://www.abeille.top" target="_blank">
     <img alt="Leafage Logo" width="100" src="static/logo.svg">
   </a>
 </p>
@@ -39,8 +39,8 @@ leafage-pw，一个使用 Vue.js、 Nuxt.js、 Tailwindcss 的个人网站，致
 
 ### 展示截图
 
-<img alt="home" width="100%" src="static/img/home.jpg">
-<img alt="detail" width="100%" src="static/img/detail.png">
+<img alt="home" width="100%" src="static/images/home.jpeg">
+<img alt="detail" width="100%" src="static/images/detail.jpeg">
 
 ### 项目地址
 
