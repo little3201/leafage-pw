@@ -72,8 +72,8 @@ export default defineComponent({
   name: "About",
 
   head() {
-    const title = "About - Leafage | 布吉岛";
-    const description = "关于布吉岛，关于我，布吉岛是一个Java程序员，对网站有疑问或意见的可以联系我进行优化修改";
+    const title = "About - Leafage";
+    const description = "Leafage 是一个开源的个人站点，致力于促进软件开发及相关领域知识与创新的传播。包含原创博客、生活分享、资源推荐、技术总结、影视浏览等资源信息，提供原创、优质、完整内容的专业开发社区";
     return {
       title,
       meta: [

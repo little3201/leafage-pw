@@ -1,7 +1,7 @@
 export default {
   ssr: true,
   head: {
-    title: 'leafage-pw',
+    title: 'Leafage',
     htmlAttrs: {
       lang: 'en'
     },
