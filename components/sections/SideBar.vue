@@ -96,19 +96,19 @@
           style="line-style: inside"
         >
           <li class="py-3 mx-4">
-            <a href="https://howtodoinjava.com/">HowToDoInJava</a>
+            <a href="https://howtodoinjava.com/" target="_blank"
+              >HowToDoInJava</a
+            >
           </li>
           <li class="py-3 mx-4">
             <a
               href="https://www.digitalocean.com/community/tools/nginx?global.app.lang=zhCN"
+              target="_blank"
               >Nginx Config</a
             >
           </li>
           <li class="py-3 mx-4">
-            <a
-              href="https://console.abeille.top"
-              >Leafage-MS</a
-            >
+            <a href="https://console.abeille.top" target="_blank">Leafage-MS</a>
           </li>
         </ul>
       </div>
