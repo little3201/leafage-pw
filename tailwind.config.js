@@ -7,14 +7,15 @@ module.exports = {
       'components/**/*.vue',
       'layouts/**/*.vue',
       'pages/**/*.vue',
-      'plugins/**/*.js',
-      'nuxt.config.js'
+      'plugins/**/*.ts',
+      'nuxt.config.ts'
     ],
     options: {
       whitelist: ['dark-mode', 'light-mode']
     }
   },
-  plugins: [],
+  plugins: [
+  ],
   variants: {
   }
 }

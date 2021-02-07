@@ -2,7 +2,7 @@
   <div class="container mx-auto border-t border-black">
     <div class="grid grid-flow-row grid-cols-1 lg:grid-cols-3 mt-6 md:mt-16">
       <div class="lg:col-span-2">
-        <article>
+        <article class="article">
           <ul
             class="flex text-xs font-bold space-x-6 text-gray-600 uppercase mb-4"
           >
@@ -343,9 +343,18 @@ export default defineComponent({
 });
 </script>
 
-<style>
-pre {
+<style scoped>
+.article >>> pre {
   font-size: 13px;
   overflow: auto;
+}
+.article >>> h1 {
+  @apply text-2xl
+}
+.article >>> h2 {
+  @apply text-xl
+}
+.article >>> h3 {
+  @apply text-lg
 }
 </style>
