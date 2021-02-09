@@ -2,12 +2,12 @@
   <div class="container mx-auto border-t border-black">
     <div class="grid grid-flow-row grid-cols-1 lg:grid-cols-3 mt-6 md:mt-16">
       <div class="lg:col-span-2">
-        <article class="article">
+        <article id="article">
           <ul
             class="flex text-xs font-bold space-x-6 text-gray-600 uppercase mb-4"
           >
             <li>
-              <a href="#" title="" v-text="data.category"></a>
+              <nuxt-link to="/posts" v-text="data.category"></nuxt-link>
             </li>
             <li
               class="tracking-wider"
@@ -53,15 +53,15 @@
               >{{ data.likes }}
             </li>
           </ul>
-          <h3
-            class="my-3 text-lg md:text-3xl font-extrabold"
+          <h1
+            class="my-3 md:text-3xl font-extrabold"
             v-text="data.title"
-          ></h3>
+          ></h1>
           <div class="w-full h-full my-8">
             <img :src="data.cover" :alt="data.title" class="w-full" />
           </div>
           <p
-            class="text-gray-700 my-4 leading-loose tracking-wide"
+            class="my-4 leading-relaxed"
             v-html="$md.render(data.content)"
           ></p>
           <div class="md:flex justify-between items-center">
@@ -343,18 +343,27 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
-.article >>> pre {
-  font-size: 13px;
-  overflow: auto;
+<style>
+#article pre {
+  font-size: .85rem;
 }
-.article >>> h1 {
+#article p {
+  @apply mt-4;
+}
+#article h1 {
   @apply text-2xl
 }
-.article >>> h2 {
+#article h2 {
   @apply text-xl
 }
-.article >>> h3 {
+#article h3 {
   @apply text-lg
+}
+#article h4, h5 {
+  @apply font-semibold
+}
+#article ol li {
+  @apply list-inside;
+  @apply list-disc
 }
 </style>
