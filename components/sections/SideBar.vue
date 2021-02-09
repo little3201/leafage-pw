@@ -12,7 +12,7 @@
           v-for="data in datas"
           :key="data.code"
         >
-          <img class="w-32" :src="data.cover" :alt="data.title" />
+          <img class="w-32" :src="data.cover" :alt="data.title" style="max-height: 6rem" />
           <div class="ml-4">
             <h3
               class="text-sm font-bold transform hover:translate-x-2 transition duration-500"
