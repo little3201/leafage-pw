@@ -2,7 +2,7 @@
   <div class="container mx-auto border-t border-black">
     <div class="grid grid-flow-row grid-cols-1 lg:grid-cols-3 mt-6 md:mt-16">
       <div class="lg:col-span-2">
-        <article class="article">
+        <article id="article">
           <ul
             class="flex text-xs font-bold space-x-6 text-gray-600 uppercase mb-4"
           >
@@ -61,7 +61,7 @@
             <img :src="data.cover" :alt="data.title" class="w-full" />
           </div>
           <p
-            class="text-gray-700 my-4 leading-loose tracking-wide"
+            class="my-4 leading-relaxed tracking-wide"
             v-html="$md.render(data.content)"
           ></p>
           <div class="md:flex justify-between items-center">
@@ -343,18 +343,11 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
-.article >>> pre {
+<style>
+#article pre {
   font-size: 13px;
-  overflow: auto;
 }
-.article >>> h1 {
-  @apply text-2xl
-}
-.article >>> h2 {
-  @apply text-xl
-}
-.article >>> h3 {
-  @apply text-lg
+#article p * {
+  @apply mt-3
 }
 </style>
