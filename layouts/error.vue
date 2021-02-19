@@ -1,12 +1,13 @@
 <template>
   <!-- BEGIN: Error Page -->
   <div
-    class="container mx-auto border-t border-black flex flex-row items-center justify-center text-center lg:text-left"
+    class="container mx-auto border-t border-black md:flex items-center justify-center text-center lg:text-left"
   >
     <img
       alt="error"
-      class="w-1/2"
+      class="md:w-1/2 mx-auto mt-4"
       src="~/static/error-illustration.svg"
+      style="height: calc(100vh - 418px)"
     />
     <div v-if="error.statusCode === 404">
       <div class="intro-x text-6xl font-medium">
@@ -33,7 +34,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "@vue/composition-api";
+import { defineComponent } from "@vue/composition-api";
 export default defineComponent({
   name: "Error",
   props: {
