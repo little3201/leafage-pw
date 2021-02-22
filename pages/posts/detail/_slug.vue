@@ -4,7 +4,7 @@
       <div class="lg:col-span-2">
         <article id="article">
           <ul
-            class="flex text-xs font-bold space-x-6 text-gray-600 uppercase mb-4"
+            class="flex text-xs font-bold space-x-6 text-gray-600 uppercase mb-4 -mt-3"
           >
             <li>
               <nuxt-link to="/posts" v-text="data.category"></nuxt-link>
@@ -53,17 +53,11 @@
               >{{ data.likes }}
             </li>
           </ul>
-          <h1
-            class="my-3 md:text-3xl font-extrabold"
-            v-text="data.title"
-          ></h1>
+          <h1 class="my-3 md:text-3xl font-extrabold" v-text="data.title"></h1>
           <div class="w-full h-full my-8">
             <img :src="data.cover" :alt="data.title" class="w-full" />
           </div>
-          <p
-            class="my-4 leading-relaxed"
-            v-html="$md.render(data.content)"
-          ></p>
+          <p class="my-4 leading-relaxed" v-html="$md.render(data.content)"></p>
           <div class="md:flex justify-between items-center">
             <ul class="flex space-x-4 md:space-x-8 text-xs font-bold uppercase">
               <li><a href="#" title="">#Photo</a></li>
@@ -342,28 +336,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style>
-#article pre {
-  font-size: .85rem;
-}
-#article p {
-  @apply mt-4;
-}
-#article h1 {
-  @apply text-2xl
-}
-#article h2 {
-  @apply text-xl
-}
-#article h3 {
-  @apply text-lg
-}
-#article h4, h5 {
-  @apply font-semibold
-}
-#article ol li {
-  @apply list-inside;
-  @apply list-disc
-}
-</style>
