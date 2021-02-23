@@ -10,6 +10,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'og:site_name', property: 'og:site_name', content: 'Leafage' },
       { hid: 'og:type', property: 'og:type', content: 'website' },
+      { name: 'google-site-verification', content: 'ph8yiMtTCaq7CbTlp0ut2JvjqhpAZE4QPCbNBgaDcwQ' },
       { hid: 'twitter:site', name: 'twitter:site', content: '@Leafage' },
       {
         hid: 'twitter:card',
@@ -45,6 +46,7 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
+    '~/assets/css/main.css',
     '~/node_modules/highlight.js/styles/github.css'
   ],
 
@@ -56,7 +58,10 @@ export default {
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
-  components: true,
+  components: [
+    '~/components/global',
+    '~/components/sections',
+  ],
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
@@ -87,14 +92,6 @@ export default {
     linkify: true,
     breaks: true,
     use: [
-      [
-        'markdown-it-anchor',
-        {
-          level: 2,
-          permalink: true,
-          permalinkBefore: true
-        }
-      ],
       'markdown-it-div',
       'markdown-it-highlightjs'
     ],
@@ -113,6 +110,7 @@ export default {
   },
   generate: {
     fallback: false,
+    routes: ['/', '404']
   },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {

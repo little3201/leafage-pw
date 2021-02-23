@@ -1,0 +1,22 @@
+#article pre {
+    font-size: .85rem;
+  }
+  #article p {
+    @apply mt-4;
+  }
+  #article h1 {
+    @apply text-2xl
+  }
+  #article h2 {
+    @apply text-xl
+  }
+  #article h3 {
+    @apply text-lg
+  }
+  #article h4, h5 {
+    @apply font-semibold
+  }
+  #article ol li {
+    @apply list-inside;
+    @apply list-disc
+  }
