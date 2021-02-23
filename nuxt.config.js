@@ -59,6 +59,7 @@ export default {
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: [
+    '~/components/templates',
     '~/components/global',
     '~/components/sections',
   ],
@@ -93,7 +94,9 @@ export default {
     breaks: true,
     use: [
       'markdown-it-div',
-      'markdown-it-highlightjs'
+      'markdown-it-highlightjs',
+      'markdown-it-mark',
+      'markdown-it-deflist'
     ],
     runtime: true // Support `$md()`
   },

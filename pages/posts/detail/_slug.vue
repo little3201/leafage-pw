@@ -2,7 +2,7 @@
   <div class="container mx-auto border-t border-black">
     <div class="grid grid-flow-row grid-cols-1 lg:grid-cols-3 mt-6 md:mt-16">
       <div class="lg:col-span-2">
-        <article id="article">
+        <article id="article" class="markdown-body">
           <ul
             class="flex text-xs font-bold space-x-6 text-gray-600 uppercase mb-4 -mt-3"
           >
@@ -176,8 +176,8 @@
               </li>
               <li class="flex items-center justify-end">
                 <nuxt-link :to="'/posts/detail/' + next.code" class="flex"
-                  >{{ next.title
-                  }}<svg
+                  >{{ next.title }}
+                  <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
@@ -291,7 +291,7 @@ export default defineComponent({
   scrollToTop: true,
 
   async asyncData({ app: { $axios, store }, params }) {
-    let [data, topDatas] = await Promise.all([
+    let [data, previous, next, topDatas] = await Promise.all([
       // detail
       await $axios
         .get(SERVER_URL.posts.concat("/", params.slug))
@@ -300,10 +300,14 @@ export default defineComponent({
           store?.commit("CHANGE_DESCTIPTION", res.data.subtitle);
           return res.data;
         }),
+      // previous
+      await $axios.$get(SERVER_URL.posts.concat("/", params.slug, "/previous")),
+      // next
+      await $axios.$get(SERVER_URL.posts.concat("/", params.slug, "/next")),
       // topThree
       await $axios.$get(SERVER_URL.posts.concat("?page=0&size=3&order=viewed")),
     ]);
-    return { data, topDatas };
+    return { data, previous, next, topDatas };
   },
 
   head() {
