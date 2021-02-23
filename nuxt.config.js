@@ -58,7 +58,10 @@ export default {
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
-  components: true,
+  components: [
+    '~/components/global',
+    '~/components/sections',
+  ],
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
@@ -89,14 +92,6 @@ export default {
     linkify: true,
     breaks: true,
     use: [
-      [
-        'markdown-it-anchor',
-        {
-          level: 2,
-          permalink: true,
-          permalinkBefore: true
-        }
-      ],
       'markdown-it-div',
       'markdown-it-highlightjs'
     ],
@@ -115,6 +110,7 @@ export default {
   },
   generate: {
     fallback: false,
+    routes: ['/', '404']
   },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {

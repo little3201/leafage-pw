@@ -57,15 +57,17 @@
           <div class="w-full h-full my-8">
             <img :src="data.cover" :alt="data.title" class="w-full" />
           </div>
-          <p class="my-4 leading-relaxed" v-html="$md.render(data.content)"></p>
-          <div class="md:flex justify-between items-center">
+          <p
+            class="my-4 leading-relaxed tracking-wide"
+            v-html="$md.render(data.content)"
+          ></p>
+          <!-- <div class="md:flex justify-between items-center">
             <ul class="flex space-x-4 md:space-x-8 text-xs font-bold uppercase">
               <li><a href="#" title="">#Photo</a></li>
               <li><a href="#" title="">#Social</a></li>
               <li><a href="#" title="">#Lifestyle</a></li>
               <li><a href="#" title="">#Weekend</a></li>
             </ul>
-            <!--post-catgs-list end-->
             <ul class="flex space-x-6 mt-4 md:mt-0">
               <li class="p-2 rounded-full border border-black">
                 <a href="#" title=""
@@ -146,13 +148,16 @@
                 ></a>
               </li>
             </ul>
-          </div>
+          </div> -->
           <div class="bg-gray-200 my-12 p-8">
             <ul
               class="grid grid-flow-row grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2 gap-4 text-xs font-bold"
             >
               <li class="">
-                <a href="#" title="" class="flex items-center">
+                <nuxt-link
+                  :to="'/posts/detail/' + previous.code"
+                  class="flex items-center"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -166,12 +171,13 @@
                     class="feather feather-chevron-left"
                   >
                     <polyline points="15 18 9 12 15 6"></polyline></svg
-                  >Spring Security 5.x 使用及分析（一：基础应用）</a
+                  >{{ previous.title }}</nuxt-link
                 >
               </li>
               <li class="flex items-center justify-end">
-                <a href="#" title="" class="flex"
-                  >Spring Security 5.x 使用及分析（二：Form分析）<svg
+                <nuxt-link :to="'/posts/detail/' + next.code" class="flex"
+                  >{{ next.title
+                  }}<svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
@@ -184,7 +190,7 @@
                     class="feather feather-chevron-right"
                   >
                     <polyline points="9 18 15 12 9 6"></polyline></svg
-                ></a>
+                ></nuxt-link>
               </li>
             </ul>
           </div>
@@ -336,3 +342,29 @@ export default defineComponent({
   },
 });
 </script>
+
+<style>
+#article pre {
+  font-size: 0.85rem;
+}
+#article p {
+  @apply mt-4;
+}
+#article h1 {
+  @apply text-2xl;
+}
+#article h2 {
+  @apply text-xl;
+}
+#article h3 {
+  @apply text-lg;
+}
+#article h4,
+h5 {
+  @apply font-semibold;
+}
+#article ol li {
+  @apply list-inside;
+  @apply list-disc;
+}
+</style>
