@@ -59,6 +59,7 @@ export default {
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: [
+    '~/components/templates',
     '~/components/global',
     '~/components/sections',
   ],
@@ -84,7 +85,8 @@ export default {
     https: true,
     progress: true,
     credentials: true,
-    baseURL: 'https://www.abeille.top/api'
+    baseURL: 'https://www.abeille.top/api',
+    // proxy: true
   },
 
   markdownit: {
@@ -93,7 +95,9 @@ export default {
     breaks: true,
     use: [
       'markdown-it-div',
-      'markdown-it-highlightjs'
+      'markdown-it-highlightjs',
+      'markdown-it-mark',
+      'markdown-it-deflist'
     ],
     runtime: true // Support `$md()`
   },
