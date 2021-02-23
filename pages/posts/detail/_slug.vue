@@ -2,7 +2,7 @@
   <div class="container mx-auto border-t border-black">
     <div class="grid grid-flow-row grid-cols-1 lg:grid-cols-3 mt-6 md:mt-16">
       <div class="lg:col-span-2">
-        <article id="article" class="markdown-body">
+        <article>
           <ul
             class="flex text-xs font-bold space-x-6 text-gray-600 uppercase mb-4 -mt-3"
           >
@@ -58,7 +58,7 @@
             <img :src="data.cover" :alt="data.title" class="w-full" />
           </div>
           <p
-            class="my-4 leading-relaxed tracking-wide"
+            class="my-4 leading-relaxed tracking-wide markdown-body"
             v-html="$md.render(data.content)"
           ></p>
           <!-- <div class="md:flex justify-between items-center">
@@ -153,12 +153,13 @@
             <ul
               class="grid grid-flow-row grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2 gap-4 text-xs font-bold"
             >
-              <li class="">
+              <li>
                 <nuxt-link
                   :to="'/posts/detail/' + previous.code"
-                  class="flex items-center"
+                  class="flex items-center transform hover:-translate-x-2 transition duration-500"
                 >
                   <svg
+                    v-show="previous"
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
@@ -175,9 +176,10 @@
                 >
               </li>
               <li class="flex items-center justify-end">
-                <nuxt-link :to="'/posts/detail/' + next.code" class="flex"
+                <nuxt-link :to="'/posts/detail/' + next.code" class="flex items-center transform hover:translate-x-2 transition duration-500"
                   >{{ next.title }}
                   <svg
+                    v-show="next"
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
