@@ -1,22 +1,23 @@
 <template>
   <div class="container mx-auto">
     <section>
-      <ul class="flex justify-between text-xs border border-black">
+      <ul class="flex text-xs border border-black">
         <li
-          class="w-24 hover:bg-black hover:text-white"
-          :class="{ 'bg-black text-white': category == '' }"
+          class="w-32 hover:bg-black hover:text-white"
+          :class="{ 'bg-black text-white': code == '' }"
         >
           <button class="w-full h-10 font-bold uppercase">All</button>
         </li>
         <li
-          v-for="(data, index) in categories"
+          v-for="(category, index) in categories"
           :key="index"
-          class="w-24 hover:bg-black hover:text-white"
-          :class="{ 'bg-black text-white': category == data.code }"
+          class="w-32 hover:bg-black hover:text-white"
+          :class="{ 'bg-black text-white': code == category.code }"
         >
           <button
-            class="w-full h-10 font-bold uppercase"
-            v-text="data.alias"
+            @click="retrieve(category.code)"
+            class="w-full h-10 font-bold uppercase focus:outline-none"
+            v-text="category.alias"
           ></button>
         </li>
       </ul>
@@ -41,12 +42,8 @@ export default defineComponent({
   scrollToTop: true,
 
   async asyncData({ app: { $axios } }) {
-    let params = "?page=0&size=10";
-    if (this.category && this.category.trim.length > 0) {
-      params.concat("&category=", this.category);
-    }
     let [datas, categories] = await Promise.all([
-      await $axios.$get(SERVER_URL.portfolio.concat(params)),
+      await $axios.$get(SERVER_URL.portfolio.concat("?page=0&size=10")),
       await $axios.$get(SERVER_URL.category.concat("?page=0&size=5")),
     ]);
     return { datas, categories };
@@ -54,8 +51,17 @@ export default defineComponent({
 
   data() {
     return {
-      category: "",
+      code: "",
+      datas: [],
     };
+  },
+
+  methods: {
+    retrieve(code: string) {
+      this.$axios
+        .get(SERVER_URL.portfolio.concat("?page=0&size=12&category=", code))
+        .then((res) => (this.datas = res.data));
+    },
   },
 
   head() {

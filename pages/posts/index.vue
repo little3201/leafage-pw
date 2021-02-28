@@ -1,16 +1,20 @@
 <template>
   <section class="container mx-auto">
     <ul class="flex text-xs border border-black">
-      <li class="bg-black text-white w-32">
+      <li
+        class="w-32 hover:bg-black hover:text-white"
+        :class="{ 'bg-black text-white': code == '' }"
+      >
         <button class="w-full h-10 font-bold uppercase">All</button>
       </li>
       <li
         class="w-32 hover:bg-black hover:text-white"
-        v-for="category in categories"
-        :key="category.code"
+        :class="{ 'bg-black text-white': code == category.code }"
+        v-for="(category, index) in categories"
+        :key="index"
       >
         <button
-          @click="retrieve"
+          @click="retrieve(category.code)"
           class="w-full h-10 font-bold uppercase focus:outline-none"
           v-text="category.alias"
         ></button>
@@ -42,10 +46,17 @@ export default defineComponent({
     return { datas, categories };
   },
 
+  data() {
+    return {
+      code: "",
+      datas: [],
+    };
+  },
+
   methods: {
-    retrieve() {
+    retrieve(code: string) {
       this.$axios
-        .get(SERVER_URL.posts.concat("?page=0&size=12&category=", this.$route.params.code))
+        .get(SERVER_URL.posts.concat("?page=0&size=12&category=", code))
         .then((res) => (this.datas = res.data));
     },
   },
