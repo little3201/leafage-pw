@@ -176,7 +176,9 @@
                 >
               </li>
               <li class="flex items-center justify-end">
-                <nuxt-link :to="'/posts/detail/' + next.code" class="flex items-center transform hover:translate-x-2 transition duration-500"
+                <nuxt-link
+                  :to="'/posts/detail/' + next.code"
+                  class="flex items-center transform hover:translate-x-2 transition duration-500"
                   >{{ next.title }}
                   <svg
                     v-show="next"
@@ -296,7 +298,7 @@ export default defineComponent({
     let [data, previous, next, topDatas] = await Promise.all([
       // detail
       await $axios
-        .get(SERVER_URL.posts.concat("/", params.slug))
+        .get(SERVER_URL.posts.concat("/", params.slug, "/details"))
         .then((res) => {
           store?.commit("CHANGE_TITLE", res.data.title);
           store?.commit("CHANGE_DESCTIPTION", res.data.subtitle);
@@ -349,28 +351,6 @@ export default defineComponent({
 });
 </script>
 
-<style>
-#article pre {
-  font-size: 0.85rem;
-}
-#article p {
-  @apply mt-4;
-}
-#article h1 {
-  @apply text-2xl;
-}
-#article h2 {
-  @apply text-xl;
-}
-#article h3 {
-  @apply text-lg;
-}
-#article h4,
-h5 {
-  @apply font-semibold;
-}
-#article ol li {
-  @apply list-inside;
-  @apply list-disc;
-}
+<style scoped>
+@import url('~/assets/css/main.css');
 </style>

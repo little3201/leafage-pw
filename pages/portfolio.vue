@@ -2,22 +2,40 @@
   <div class="container mx-auto">
     <section>
       <ul class="flex justify-between text-xs border border-black">
-        <li class="bg-black text-white w-1/6">
+        <li
+          class="w-1/6 hover:bg-black hover:text-white"
+          :class="{ 'bg-black text-white': category == '' }"
+        >
           <button class="w-full h-10 font-bold uppercase">All</button>
         </li>
-        <li class="w-1/6 hover:bg-black hover:text-white">
+        <li
+          class="w-1/6 hover:bg-black hover:text-white"
+          :class="{ 'bg-black text-white': category == 'Fashion' }"
+        >
           <button class="w-full h-10 font-bold uppercase">Fashion</button>
         </li>
-        <li class="w-1/6 hover:bg-black hover:text-white">
+        <li
+          class="w-1/6 hover:bg-black hover:text-white"
+          :class="{ 'bg-black text-white': category == 'Lifestyle' }"
+        >
           <button class="w-full h-10 font-bold uppercase">Lifestyle</button>
         </li>
-        <li class="w-1/6 hover:bg-black hover:text-white">
+        <li
+          class="w-1/6 hover:bg-black hover:text-white"
+          :class="{ 'bg-black text-white': category == 'Beauty' }"
+        >
           <button class="w-full h-10 font-bold uppercase">Beauty</button>
         </li>
-        <li class="w-1/6 hover:bg-black hover:text-white">
+        <li
+          class="w-1/6 hover:bg-black hover:text-white"
+          :class="{ 'bg-black text-white': category == 'Travel' }"
+        >
           <button class="w-full h-10 font-bold uppercase">Travel</button>
         </li>
-        <li class="w-1/6 hover:bg-black hover:text-white">
+        <li
+          class="w-1/6 hover:bg-black hover:text-white"
+          :class="{ 'bg-black text-white': category == 'Photograph' }"
+        >
           <button class="w-full h-10 font-bold uppercase">Photograph</button>
         </li>
       </ul>
@@ -40,10 +58,26 @@ export default defineComponent({
   name: "Portfolio",
 
   scrollToTop: true,
-  
+
+  async asyncData({ app: { $axios } }) {
+    let params = "?page=0&size=10";
+    if (this.category && this.category.trim.length > 0) {
+      params.concat("&category=", this.category);
+    }
+    let datas = await $axios.$get(SERVER_URL.portfolio.concat(params));
+    return { datas };
+  },
+
+  data() {
+    return {
+      category: "",
+    };
+  },
+
   head() {
     const title = "Portfolio - Leafage";
-    const description = "Leafage的作品集，包含旅行记录、生活分享等资源信息，提供原创、优质、完整内容";
+    const description =
+      "Leafage的作品集，包含旅行记录、生活分享等资源信息，提供原创、优质、完整内容";
     return {
       title,
       meta: [
@@ -64,13 +98,6 @@ export default defineComponent({
         },
       ],
     };
-  },
-
-  async asyncData({ app: { $axios } }) {
-    let datas = await $axios.$get(
-      SERVER_URL.portfolio.concat("?page=0&size=10")
-    );
-    return { datas };
   },
 });
 </script>
