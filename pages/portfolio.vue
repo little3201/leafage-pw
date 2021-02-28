@@ -3,40 +3,21 @@
     <section>
       <ul class="flex justify-between text-xs border border-black">
         <li
-          class="w-1/6 hover:bg-black hover:text-white"
+          class="w-24 hover:bg-black hover:text-white"
           :class="{ 'bg-black text-white': category == '' }"
         >
           <button class="w-full h-10 font-bold uppercase">All</button>
         </li>
         <li
-          class="w-1/6 hover:bg-black hover:text-white"
-          :class="{ 'bg-black text-white': category == 'Fashion' }"
+          v-for="(data, index) in categories"
+          :key="index"
+          class="w-24 hover:bg-black hover:text-white"
+          :class="{ 'bg-black text-white': category == data.code }"
         >
-          <button class="w-full h-10 font-bold uppercase">Fashion</button>
-        </li>
-        <li
-          class="w-1/6 hover:bg-black hover:text-white"
-          :class="{ 'bg-black text-white': category == 'Lifestyle' }"
-        >
-          <button class="w-full h-10 font-bold uppercase">Lifestyle</button>
-        </li>
-        <li
-          class="w-1/6 hover:bg-black hover:text-white"
-          :class="{ 'bg-black text-white': category == 'Beauty' }"
-        >
-          <button class="w-full h-10 font-bold uppercase">Beauty</button>
-        </li>
-        <li
-          class="w-1/6 hover:bg-black hover:text-white"
-          :class="{ 'bg-black text-white': category == 'Travel' }"
-        >
-          <button class="w-full h-10 font-bold uppercase">Travel</button>
-        </li>
-        <li
-          class="w-1/6 hover:bg-black hover:text-white"
-          :class="{ 'bg-black text-white': category == 'Photograph' }"
-        >
-          <button class="w-full h-10 font-bold uppercase">Photograph</button>
+          <button
+            class="w-full h-10 font-bold uppercase"
+            v-text="data.alias"
+          ></button>
         </li>
       </ul>
     </section>
@@ -64,8 +45,11 @@ export default defineComponent({
     if (this.category && this.category.trim.length > 0) {
       params.concat("&category=", this.category);
     }
-    let datas = await $axios.$get(SERVER_URL.portfolio.concat(params));
-    return { datas };
+    let [datas, categories] = await Promise.all([
+      await $axios.$get(SERVER_URL.portfolio.concat(params)),
+      await $axios.$get(SERVER_URL.category.concat("?page=0&size=5")),
+    ]);
+    return { datas, categories };
   },
 
   data() {
