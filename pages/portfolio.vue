@@ -1,24 +1,24 @@
 <template>
   <div class="container mx-auto">
     <section>
-      <ul class="flex justify-between text-xs border border-black">
-        <li class="bg-black text-white w-1/6">
+      <ul class="flex text-xs border border-black">
+        <li
+          class="w-32 hover:bg-black hover:text-white"
+          :class="{ 'bg-black text-white': code == '' }"
+        >
           <button class="w-full h-10 font-bold uppercase">All</button>
         </li>
-        <li class="w-1/6 hover:bg-black hover:text-white">
-          <button class="w-full h-10 font-bold uppercase">Fashion</button>
-        </li>
-        <li class="w-1/6 hover:bg-black hover:text-white">
-          <button class="w-full h-10 font-bold uppercase">Lifestyle</button>
-        </li>
-        <li class="w-1/6 hover:bg-black hover:text-white">
-          <button class="w-full h-10 font-bold uppercase">Beauty</button>
-        </li>
-        <li class="w-1/6 hover:bg-black hover:text-white">
-          <button class="w-full h-10 font-bold uppercase">Travel</button>
-        </li>
-        <li class="w-1/6 hover:bg-black hover:text-white">
-          <button class="w-full h-10 font-bold uppercase">Photograph</button>
+        <li
+          v-for="(category, index) in categories"
+          :key="index"
+          class="w-32 hover:bg-black hover:text-white"
+          :class="{ 'bg-black text-white': code == category.code }"
+        >
+          <button
+            @click="retrieve(category.code)"
+            class="w-full h-10 font-bold uppercase focus:outline-none"
+            v-text="category.alias"
+          ></button>
         </li>
       </ul>
     </section>
@@ -40,10 +40,35 @@ export default defineComponent({
   name: "Portfolio",
 
   scrollToTop: true,
-  
+
+  async asyncData({ app: { $axios } }) {
+    let [datas, categories] = await Promise.all([
+      await $axios.$get(SERVER_URL.portfolio.concat("?page=0&size=10")),
+      await $axios.$get(SERVER_URL.category.concat("?page=0&size=5")),
+    ]);
+    return { datas, categories };
+  },
+
+  data() {
+    return {
+      code: "",
+      datas: [],
+    };
+  },
+
+  methods: {
+    retrieve(code: string) {
+      this.code = code
+      this.$axios
+        .get(SERVER_URL.portfolio.concat("?page=0&size=12&category=", code))
+        .then((res) => (this.datas = res.data));
+    },
+  },
+
   head() {
     const title = "Portfolio - Leafage";
-    const description = "Leafage的作品集，包含旅行记录、生活分享等资源信息，提供原创、优质、完整内容";
+    const description =
+      "Leafage的作品集，包含旅行记录、生活分享等资源信息，提供原创、优质、完整内容";
     return {
       title,
       meta: [
@@ -64,13 +89,6 @@ export default defineComponent({
         },
       ],
     };
-  },
-
-  async asyncData({ app: { $axios } }) {
-    let datas = await $axios.$get(
-      SERVER_URL.portfolio.concat("?page=0&size=10")
-    );
-    return { datas };
   },
 });
 </script>

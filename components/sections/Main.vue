@@ -9,7 +9,10 @@
             id="myTab"
             role="tablist"
           >
-            <li class="bg-black text-white w-1/3">
+            <li
+              class="w-1/3 hover:bg-black hover:text-white"
+              :class="{ 'bg-black text-white': order == 'likes' }"
+            >
               <button
                 @click="retrieve('likes')"
                 class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
@@ -17,7 +20,10 @@
                 Trending
               </button>
             </li>
-            <li class="w-1/3 hover:bg-black hover:text-white">
+            <li
+              class="w-1/3 hover:bg-black hover:text-white"
+              :class="{ 'bg-black text-white': order == 'viewed' }"
+            >
               <button
                 @click="retrieve('viewed')"
                 class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
@@ -25,7 +31,10 @@
                 Most View
               </button>
             </li>
-            <li class="w-1/3 hover:bg-black hover:text-white">
+            <li
+              class="w-1/3 hover:bg-black hover:text-white"
+              :class="{ 'bg-black text-white': order == 'comment' }"
+            >
               <button
                 @click="retrieve('comment')"
                 class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
@@ -61,14 +70,14 @@ export default defineComponent({
   data() {
     return {
       datas: [],
-      order: 'likes'
+      order: "likes",
     };
   },
 
   methods: {
     retrieve(order: string) {
-      this.order = order
-      this.$fetch()
+      this.order = order;
+      this.$fetch();
     },
   },
 });

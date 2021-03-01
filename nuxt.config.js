@@ -46,7 +46,6 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    '~/assets/css/main.css',
     '~/node_modules/highlight.js/styles/github.css'
   ],
 

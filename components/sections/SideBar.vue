@@ -12,7 +12,12 @@
           v-for="data in datas"
           :key="data.code"
         >
-          <img class="w-32" :src="data.cover" :alt="data.title" style="max-height: 6rem" />
+          <img
+            class="w-32"
+            :src="data.cover"
+            :alt="data.title"
+            style="max-height: 6rem"
+          />
           <div class="ml-4">
             <h3
               class="text-sm font-bold transform hover:translate-x-2 transition duration-500"
@@ -52,10 +57,27 @@
           </li>
         </ul>
       </div>
-      <div class="border-2 border-solid border-black p-8 my-12">
-        <div class="flex">
-          <h3 class="font-extrabold">Get Fresh News</h3>
+      <div class="my-12 border border-solid border-gray-400 p-8">
+        <h3 class="font-extrabold">欢迎关注公众号（Leafage）</h3>
+        <div class="flex items-center mt-4">
+          <img
+            class="w-32 h-32 border"
+            src="/images/resources/leafage-wechat.jpg"
+            alt="leafage"
+          />
+          <div class="mx-4">
+            <p class="my-2">微信搜一搜</p>
+            <input
+              type="text"
+              class="placeholder-gray-600 border border-gray-400 py-2 pl-4 w-full text-sm"
+              disabled
+              placeholder="Leafage"
+            />
+          </div>
         </div>
+      </div>
+      <div class="border-2 border-solid border-black p-8 my-12">
+        <h3 class="font-extrabold">Get Fresh News</h3>
         <form class="mt-4 flex items-center">
           <input
             class="w-full text-sm text-black placeholder-gray-600 border border-gray-400 py-2 pl-4"
@@ -111,66 +133,6 @@
             <a href="https://console.abeille.top" target="_blank">Leafage-MS</a>
           </li>
         </ul>
-      </div>
-      <div class="flex justify-center my-12">
-        <a href="#" title=""
-          ><img src="/images/resources/ad-img.jpg" alt="leafage"
-        /></a>
-      </div>
-      <div>
-        <div class="relative">
-          <img
-            src="/images/resources/page-img.jpg"
-            alt="leafage"
-            class="w-full"
-          />
-          <div class="absolute top-0 uppercase font-bold p-6">
-            <h3 class="text-white">Leafage</h3>
-            <span class="text-xs text-gray-500">布吉岛</span>
-          </div>
-          <ul
-            class="absolute bottom-0 p-6 flex justify-between w-full text-white"
-          ></ul>
-        </div>
-        <div class="bg-gray-100 p-6">
-          <div class="bg-white p-4 shadow-xl">
-            <h5 class="text-xs text-gray-500">
-              You and 16 other friends like this
-            </h5>
-            <ul class="flex justify-between mt-2">
-              <li>
-                <a href="#" title=""
-                  ><img src="/images/resources/fb-img1.jpg" alt="leafage-pw"
-                /></a>
-              </li>
-              <li>
-                <a href="#" title=""
-                  ><img src="/images/resources/fb-img2.jpg" alt="leafage-pw"
-                /></a>
-              </li>
-              <li>
-                <a href="#" title=""
-                  ><img src="/images/resources/fb-img3.jpg" alt="leafage-pw"
-                /></a>
-              </li>
-              <li>
-                <a href="#" title=""
-                  ><img src="/images/resources/fb-img4.jpg" alt="leafage-pw"
-                /></a>
-              </li>
-              <li>
-                <a href="#" title=""
-                  ><img src="/images/resources/fb-img5.jpg" alt="leafage-pw"
-                /></a>
-              </li>
-              <li>
-                <a href="#" title=""
-                  ><img src="/images/resources/fb-img6.jpg" alt="leafage-pw"
-                /></a>
-              </li>
-            </ul>
-          </div>
-        </div>
       </div>
     </div>
   </div>

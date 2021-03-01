@@ -37,7 +37,10 @@ leafage-pw，一个使用 Vue.js、 Nuxt.js、 Tailwindcss 的个人网站，致
 
 ### 展示截图
 
+首页
 <img alt="home" width="100%" src="static/images/home.jpeg">
+
+详情页
 <img alt="detail" width="100%" src="static/images/detail.jpeg">
 
 ### 项目地址
