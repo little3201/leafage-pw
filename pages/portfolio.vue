@@ -23,9 +23,23 @@
       </ul>
     </section>
     <section class="my-12">
-      <div class="grid grid-flow-row grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="grid grid-flow-row grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4">
         <div v-for="(data, index) in datas" :key="index">
-          <img class="w-full h-auto" :src="data.url" :alt="data.title" />
+          <img
+            v-if="
+              data.type == 'jpg' || data.type == 'jpeg' || data.type == 'png'
+            "
+            class="w-full h-auto"
+            :src="data.url"
+            :alt="data.title"
+          />
+          <video
+            controls
+            class="w-full h-auto outline-none"
+            v-else-if="data.type == 'mp4' || data.type == 'flv'"
+          >
+            <source :src="data.url" :type="'video/' + data.type" />
+          </video>
         </div>
       </div>
     </section>
@@ -58,7 +72,7 @@ export default defineComponent({
 
   methods: {
     retrieve(code: string) {
-      this.code = code
+      this.code = code;
       this.$axios
         .get(SERVER_URL.portfolio.concat("?page=0&size=12&category=", code))
         .then((res) => (this.datas = res.data));
