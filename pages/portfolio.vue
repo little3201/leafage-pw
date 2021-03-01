@@ -58,6 +58,7 @@ export default defineComponent({
 
   methods: {
     retrieve(code: string) {
+      this.code = code
       this.$axios
         .get(SERVER_URL.portfolio.concat("?page=0&size=12&category=", code))
         .then((res) => (this.datas = res.data));
