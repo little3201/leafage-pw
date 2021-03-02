@@ -132,6 +132,12 @@
           <li class="py-3 mx-4">
             <a href="https://console.abeille.top" target="_blank">Leafage-MS</a>
           </li>
+          <li class="py-3 mx-4">
+            <a href="https://blog.csdn.net/zx110503?spm=1008.2028.3001.5343&type=blog" target="_blank">csdn</a>
+          </li>
+          <li class="py-3 mx-4">
+            <a href="https://my.oschina.net/u/4066932" target="_blank">oschina</a>
+          </li>
         </ul>
       </div>
     </div>
