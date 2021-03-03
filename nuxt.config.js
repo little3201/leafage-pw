@@ -11,6 +11,7 @@ export default {
       { hid: 'og:site_name', property: 'og:site_name', content: 'Leafage' },
       { hid: 'og:type', property: 'og:type', content: 'website' },
       { name: 'google-site-verification', content: 'ph8yiMtTCaq7CbTlp0ut2JvjqhpAZE4QPCbNBgaDcwQ' },
+      { name: 'baidu-site-verification', content: 'code-QztYd6VX56' },
       { hid: 'twitter:site', name: 'twitter:site', content: '@Leafage' },
       {
         hid: 'twitter:card',
