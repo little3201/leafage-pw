@@ -47,7 +47,7 @@
           <p v-else-if="$fetchState.error">An error occurred :(</p>
           <ListItem v-else :datas="datas" />
         </div>
-        <Pagation />
+        <Pagation @retrieve="retrieve" />
       </div>
       <SideBar />
     </div>

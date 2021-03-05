@@ -21,7 +21,7 @@
       </li>
     </ul>
     <PostsList :datas="datas" />
-    <Pagation />
+    <Pagation @retrieve="retrieve" />
   </section>
 </template>
 
