@@ -119,24 +119,27 @@
         >
           <li class="py-3 mx-4">
             <a href="https://howtodoinjava.com/" target="_blank"
-              >HowToDoInJava</a
+              >how to do in java</a
             >
           </li>
           <li class="py-3 mx-4">
             <a
               href="https://www.digitalocean.com/community/tools/nginx?global.app.lang=zhCN"
               target="_blank"
-              >Nginx Config</a
+              >nginx config</a
             >
           </li>
           <li class="py-3 mx-4">
-            <a href="https://console.abeille.top" target="_blank">Leafage-MS</a>
+            <a href="https://console.abeille.top" target="_blank">leafage-ms</a>
           </li>
           <li class="py-3 mx-4">
             <a href="https://blog.csdn.net/zx110503?spm=1008.2028.3001.5343&type=blog" target="_blank">csdn</a>
           </li>
           <li class="py-3 mx-4">
             <a href="https://my.oschina.net/u/4066932" target="_blank">oschina</a>
+          </li>
+          <li class="py-3 mx-4">
+            <a href="https://segmentfault.com/u/bujidao_5d0c24ce7055e/articles" target="_blank">segmentfault</a>
           </li>
         </ul>
       </div>
