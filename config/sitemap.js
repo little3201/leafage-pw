@@ -7,7 +7,7 @@ const sitemap = {
     generate: false, // 允许使用 nuxt generate 生成
     // 排除不要页面
     exclude: [
-        '/error' //  这里的路径相对 hostname
+        '/error', //  这里的路径相对 hostname
     ],
     // xml默认的配置
     defaults: {
@@ -48,7 +48,7 @@ const sitemap = {
         const { data } = await axios.get(getUrl)
         if (data && data.list) {
             let arr = data.list.map(item => ({
-                url: "/posts/" + item.code,
+                url: "/posts/detail/" + item.code,
                 lastmod: item.update_time,
                 changefreq: "daily"
             }))
