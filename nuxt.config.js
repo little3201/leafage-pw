@@ -89,7 +89,7 @@ export default {
     progress: true,
     credentials: true,
     baseURL: 'https://www.abeille.top/api',
-    proxy: true
+    // proxy: true
   },
 
   markdownit: {
