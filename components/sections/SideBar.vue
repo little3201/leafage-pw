@@ -1,7 +1,26 @@
 <template>
   <div class="lg:flex lg:justify-end w-full">
     <div class="lg:ml-12">
-      <div class="py-8 border border-solid border-gray-400 relative">
+      <div class="border border-solid border-gray-400 p-8">
+        <h3 class="font-extrabold">欢迎关注公众号（Leafage）</h3>
+        <div class="flex items-center mt-4">
+          <img
+            class="w-32 h-32 border"
+            src="/images/resources/leafage-wechat.jpg"
+            alt="leafage"
+          />
+          <div class="mx-4">
+            <p class="my-2">微信搜一搜</p>
+            <input
+              type="text"
+              class="placeholder-gray-600 border border-gray-400 p-2 w-full text-sm"
+              disabled
+              placeholder="Leafage"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="my-12 py-8 border border-solid border-gray-400 relative">
         <h3
           class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold"
         >
@@ -34,7 +53,7 @@
           </div>
         </div>
       </div>
-      <div class="my-12 border border-solid border-gray-400 relative">
+      <div class="border border-solid border-gray-400 relative">
         <h3
           class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold"
         >
@@ -57,27 +76,8 @@
           </li>
         </ul>
       </div>
-      <div class="my-12 border border-solid border-gray-400 p-8">
-        <h3 class="font-extrabold">欢迎关注公众号（Leafage）</h3>
-        <div class="flex items-center mt-4">
-          <img
-            class="w-32 h-32 border"
-            src="/images/resources/leafage-wechat.jpg"
-            alt="leafage"
-          />
-          <div class="mx-4">
-            <p class="my-2">微信搜一搜</p>
-            <input
-              type="text"
-              class="placeholder-gray-600 border border-gray-400 py-2 pl-4 w-full text-sm"
-              disabled
-              placeholder="Leafage"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="border-2 border-solid border-black p-8 my-12">
-        <h3 class="font-extrabold">Get Fresh News</h3>
+      <div class="my-12 border-2 border-solid border-black p-8">
+        <h3 class="font-extrabold">Send Email To Me</h3>
         <form class="mt-4 flex items-center">
           <input
             class="w-full text-sm text-black placeholder-gray-600 border border-gray-400 py-2 pl-4"
@@ -107,11 +107,11 @@
           </a>
         </form>
       </div>
-      <div class="my-12 border border-solid border-gray-400 relative">
+      <div class="border border-solid border-gray-400 relative">
         <h3
           class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold"
         >
-          Fridnd Chain
+          Friend Chain
         </h3>
         <ul
           class="grid grid-cols-1 divide-y divide-gray-400 p-8 text-xs text-gray-600 font-semibold list-decimal"
