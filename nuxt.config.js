@@ -124,7 +124,7 @@ export default {
   // sitemap: sitemap
   sitemap: {
     routes: async () => {
-      const { data } = await axios.get('https://www.abeille.top/api/assets/posts?page=0&size=10')
+      const { data } = await axios.get('https://www.abeille.top/api/assets/posts?page=0&size=100')
       return data.map((posts) => `/posts/detail/${posts.code}`)
     }
   }
