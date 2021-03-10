@@ -24,10 +24,13 @@
       </li>
       <li class="mx-4" v-for="index in pages" :key="index">
         <button
-          @click="give(page)"
-          class="w-8 h-8 focus:outline-none focus:bg-black focus:text-white rounded-full border border-black hover:bg-black hover:text-white"
+          @click="give(index - 1)"
+          class="w-8 h-8 rounded-full focus:outline-none border border-black hover:bg-black hover:text-white"
+          :class="{
+            'bg-black text-white ': page == (index - 1),
+          }"
         >
-          {{ page }}
+          {{ index }}
         </button>
       </li>
       <li class="mx-4">
@@ -65,7 +68,12 @@ export default defineComponent({
   async fetch() {
     this.pages = await this.$axios
       .get(SERVER_URL.posts.concat("/count?order=viewed"))
-      .then((res) => res.data);
+      .then((res) => {
+        if (res.data % 10 > 0) {
+          return ~~(res.data / 10) + 1;
+        }
+        return ~~(res.data / 10);
+      });
   },
 
   data() {
@@ -91,6 +99,7 @@ export default defineComponent({
       }
     },
     give(page: number) {
+      this.page = page
       this.$emit("retrieve", page);
     },
   },

@@ -63,20 +63,28 @@ export default defineComponent({
 
   async fetch() {
     this.datas = await this.$axios
-      .get(SERVER_URL.posts.concat("?page=0&size=10&order=", this.order))
+      .get(
+        SERVER_URL.posts.concat(
+          "?page=" + this.page,
+          "&size=10&order=",
+          this.order
+        )
+      )
       .then((res) => res.data);
   },
 
   data() {
     return {
       datas: [],
+      page: 0,
       order: "likes",
     };
   },
 
   methods: {
-    retrieve(order: string) {
-      this.order = order;
+    retrieve(page: number, order: string) {
+      this.page = page ? page : 0;
+      this.order = order ? order : 'likes';
       this.$fetch();
     },
   },

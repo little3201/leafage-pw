@@ -49,7 +49,7 @@
               >{{ data.likes }}
             </li>
           </ul>
-          <h1 class="my-3 md:text-3xl font-extrabold" v-text="data.title"></h1>
+          <h2 class="my-3 md:text-3xl font-extrabold" v-text="data.title"></h2>
           <div class="w-full h-full my-8">
             <img :src="data.cover" :alt="data.title" class="w-full" />
           </div>

@@ -49,15 +49,23 @@ export default defineComponent({
   data() {
     return {
       code: "",
+      page: 0,
       datas: [],
     };
   },
 
   methods: {
-    retrieve(code: string) {
-      this.code = code
+    retrieve(page: number, code: string) {
+      this.page = page ? page : 0;
+      this.code = code ? code : '';
       this.$axios
-        .get(SERVER_URL.posts.concat("?page=0&size=12&category=", code))
+        .get(
+          SERVER_URL.posts.concat(
+            "?page=" + this.page,
+            "&size=12&category=",
+            code
+          )
+        )
         .then((res) => (this.datas = res.data));
     },
   },
