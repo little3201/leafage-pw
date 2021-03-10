@@ -1,3 +1,4 @@
+import sitemap from './config/sitemap'
 export default {
   ssr: true,
   head: {
@@ -77,7 +78,9 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://github.com/nuxt-community/markdownit-module
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    // https://github.com/nuxt-community/sitemap-module
+    '@nuxtjs/sitemap'
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -119,5 +122,6 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     extractCSS: true,
-  }
+  },
+  sitemap: sitemap
 }

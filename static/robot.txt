@@ -1,0 +1,4 @@
+# robots.txt generated at http://www.newbii.cn/tool/robots 
+User-agent: *
+Disallow: 
+Sitemap: http://www.abeille.top/sitemap.xml
