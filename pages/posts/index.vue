@@ -14,7 +14,7 @@
         :key="index"
       >
         <button
-          @click="retrieve(category.code)"
+          @click="retrieve(0, category.code)"
           class="w-full h-10 font-bold uppercase focus:outline-none"
           v-text="category.alias"
         ></button>

@@ -14,7 +14,7 @@
               :class="{ 'bg-black text-white': order == 'likes' }"
             >
               <button
-                @click="retrieve('likes')"
+                @click="retrieve(0, 'likes')"
                 class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
               >
                 Trending
@@ -25,7 +25,7 @@
               :class="{ 'bg-black text-white': order == 'viewed' }"
             >
               <button
-                @click="retrieve('viewed')"
+                @click="retrieve(0, 'viewed')"
                 class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
               >
                 Most View
@@ -36,7 +36,7 @@
               :class="{ 'bg-black text-white': order == 'comment' }"
             >
               <button
-                @click="retrieve('comment')"
+                @click="retrieve(0, 'comment')"
                 class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
               >
                 Popular
