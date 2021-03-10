@@ -1,4 +1,4 @@
-import sitemap from './config/sitemap'
+const axios = require('axios')
 export default {
   ssr: true,
   head: {
@@ -89,7 +89,7 @@ export default {
     progress: true,
     credentials: true,
     baseURL: 'https://www.abeille.top/api',
-    // proxy: true
+    proxy: true
   },
 
   markdownit: {
@@ -115,13 +115,17 @@ export default {
   loading: {
     color: 'black'
   },
-  generate: {
-    fallback: false,
-    routes: ['/', '404']
-  },
+
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     extractCSS: true,
   },
-  sitemap: sitemap
+
+  // sitemap: sitemap
+  sitemap: {
+    routes: async () => {
+      const { data } = await axios.get('https://www.abeille.top/api/assets/posts?page=0&size=10')
+      return data.map((posts) => `/posts/detail/${posts.code}`)
+    }
+  }
 }
