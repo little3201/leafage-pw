@@ -86,10 +86,9 @@
     </section>
     <section class="py-2 text-xs text-center text-gray-500 container mx-auto border-t border-gray-900">
       <p>
-        &copy; {{ new Date().getFullYear() }} Leafage. All Rights
-        <a href="http://www.bootstrapmb.com/" title="bootstrapmb">Reserved</a>.
+        &copy; {{ new Date().getFullYear() }} leafage.top All Rights Reserved.
       </p>
-      <p>陕ICP备19017836号-1</p>
+      <p><a href="https://beian.miit.gov.cn" target="_blank">陕ICP备19017836号-1</a></p>
     </section>
   </footer>
 </template>
