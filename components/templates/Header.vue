@@ -105,7 +105,7 @@
           <h1>Leafage</h1>
         </nuxt-link>
       </div>
-      <SideMenu v-show="isOpen" />
+      <MobileMenu v-show="isOpen" />
     </div>
   </header>
 </template>
