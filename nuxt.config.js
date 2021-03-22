@@ -129,7 +129,7 @@ export default {
       lastmod: new Date()
     },
     routes: async () => {
-      const { data } = await axios.get('https://www.abeille.top/api/assets/posts?page=0&size=100')
+      const { data } = await axios.get('https://www.abeille.top/api/assets/posts')
       return data.map((posts) => `/posts/detail/${posts.code}`)
     }
   }
