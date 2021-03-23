@@ -11,8 +11,8 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'og:site_name', property: 'og:site_name', content: 'Leafage' },
       { hid: 'og:type', property: 'og:type', content: 'website' },
-      { name: 'google-site-verification', content: 'ph8yiMtTCaq7CbTlp0ut2JvjqhpAZE4QPCbNBgaDcwQ' },
-      { name: 'baidu-site-verification', content: 'code-QztYd6VX56' },
+      { name: 'google-site-verification', content: '_2Z6I2Wl5xuTKIGRrCD3meIZDgfn_XFVrTv1tKeJ6v8' },
+      { name: 'msvalidate.01', content: 'E02DDF417CA7C7D33A55805B3E9A81C7' },
       { hid: 'twitter:site', name: 'twitter:site', content: '@Leafage' },
       {
         hid: 'twitter:card',
@@ -89,7 +89,7 @@ export default {
     progress: true,
     credentials: true,
     baseURL: 'https://www.abeille.top/api',
-    // proxy: true
+    proxy: true
   },
 
   markdownit: {
@@ -130,7 +130,7 @@ export default {
     },
     routes: async () => {
       const { data } = await axios.get('https://www.abeille.top/api/assets/posts')
-      return data.map((posts) => `/posts/detail/${posts.code}`)
+      return data.map((posts: any) => `/posts/detail/${posts.code}`)
     }
   }
 }

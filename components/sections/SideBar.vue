@@ -1,7 +1,7 @@
 <template>
   <div class="lg:flex lg:justify-end w-full">
     <div class="lg:ml-12">
-      <!-- <div class="border border-solid border-gray-400 p-8">
+      <div class="border border-solid border-gray-400 p-8">
         <h3 class="font-extrabold">欢迎关注公众号（Leafage）</h3>
         <div class="flex items-center mt-4">
           <img
@@ -19,7 +19,7 @@
             />
           </div>
         </div>
-      </div> -->
+      </div>
       <div class="my-12 py-8 border border-solid border-gray-400 relative">
         <h3
           class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold"
@@ -130,7 +130,7 @@
             >
           </li>
           <li class="py-3 mx-4">
-            <a href="https://console.abeille.top" target="_blank">leafage-ms</a>
+            <a href="https://console.leafage.top" target="_blank">leafage mamagement system</a>
           </li>
           <li class="py-3 mx-4">
             <a href="https://blog.csdn.net/zx110503?spm=1008.2028.3001.5343&type=blog" target="_blank">csdn</a>
