@@ -14,7 +14,7 @@
               :class="{ 'bg-black text-white': order == 'likes' }"
             >
               <button
-                @click="retrieve('likes')"
+                @click="retrieve(0, 'likes')"
                 class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
               >
                 Trending
@@ -25,7 +25,7 @@
               :class="{ 'bg-black text-white': order == 'viewed' }"
             >
               <button
-                @click="retrieve('viewed')"
+                @click="retrieve(0, 'viewed')"
                 class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
               >
                 Most View
@@ -36,7 +36,7 @@
               :class="{ 'bg-black text-white': order == 'comment' }"
             >
               <button
-                @click="retrieve('comment')"
+                @click="retrieve(0, 'comment')"
                 class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
               >
                 Popular
@@ -47,7 +47,7 @@
           <p v-else-if="$fetchState.error">An error occurred :(</p>
           <ListItem v-else :datas="datas" />
         </div>
-        <Pagation />
+        <Pagation @retrieve="retrieve" />
       </div>
       <SideBar />
     </div>
@@ -63,20 +63,28 @@ export default defineComponent({
 
   async fetch() {
     this.datas = await this.$axios
-      .get(SERVER_URL.posts.concat("?page=0&size=10&order=", this.order))
+      .get(
+        SERVER_URL.posts.concat(
+          "?page=" + this.page,
+          "&size=10&order=",
+          this.order
+        )
+      )
       .then((res) => res.data);
   },
 
   data() {
     return {
       datas: [],
+      page: 0,
       order: "likes",
     };
   },
 
   methods: {
-    retrieve(order: string) {
-      this.order = order;
+    retrieve(page: number, order: string) {
+      this.page = page ? page : 0;
+      this.order = order ? order : 'likes';
       this.$fetch();
     },
   },

@@ -101,11 +101,11 @@
           to="/"
           class="text-4xl tracking-widest font-black uppercase text-black"
         >
-          <img src="/logo-only.png" class="w-16 mx-auto" />
+          <img src="/logo-only.png" alt="Leafage" class="w-16 mx-auto" />
           <h1>Leafage</h1>
         </nuxt-link>
       </div>
-      <SideMenu v-show="isOpen" />
+      <MobileMenu v-show="isOpen" />
     </div>
   </header>
 </template>

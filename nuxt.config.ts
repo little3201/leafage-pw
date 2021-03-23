@@ -1,3 +1,4 @@
+const axios = require('axios')
 export default {
   ssr: true,
   head: {
@@ -10,7 +11,9 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'og:site_name', property: 'og:site_name', content: 'Leafage' },
       { hid: 'og:type', property: 'og:type', content: 'website' },
-      { name: 'google-site-verification', content: 'ph8yiMtTCaq7CbTlp0ut2JvjqhpAZE4QPCbNBgaDcwQ' },
+      { name: 'google-site-verification', content: '_2Z6I2Wl5xuTKIGRrCD3meIZDgfn_XFVrTv1tKeJ6v8' },
+      { name: 'msvalidate.01', content: 'E02DDF417CA7C7D33A55805B3E9A81C7' },
+      { name: 'baidu-site-verification', content: 'code-7cRwEMlHAr' },
       { hid: 'twitter:site', name: 'twitter:site', content: '@Leafage' },
       {
         hid: 'twitter:card',
@@ -76,7 +79,9 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://github.com/nuxt-community/markdownit-module
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    // https://github.com/nuxt-community/sitemap-module
+    '@nuxtjs/sitemap'
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -85,7 +90,7 @@ export default {
     progress: true,
     credentials: true,
     baseURL: 'https://www.abeille.top/api',
-    // proxy: true
+    proxy: true
   },
 
   markdownit: {
@@ -111,12 +116,22 @@ export default {
   loading: {
     color: 'black'
   },
-  generate: {
-    fallback: false,
-    routes: ['/', '404']
-  },
+
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     extractCSS: true,
+  },
+
+  // sitemap: sitemap
+  sitemap: {
+    defaults: {
+      changefreq: 'daily',
+      priority: 1,
+      lastmod: new Date()
+    },
+    routes: async () => {
+      const { data } = await axios.get('https://www.abeille.top/api/assets/posts')
+      return data.map((posts: any) => `/posts/detail/${posts.code}`)
+    }
   }
 }
