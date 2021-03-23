@@ -13,6 +13,7 @@ export default {
       { hid: 'og:type', property: 'og:type', content: 'website' },
       { name: 'google-site-verification', content: '_2Z6I2Wl5xuTKIGRrCD3meIZDgfn_XFVrTv1tKeJ6v8' },
       { name: 'msvalidate.01', content: 'E02DDF417CA7C7D33A55805B3E9A81C7' },
+      { name: 'baidu-site-verification', content: 'code-7cRwEMlHAr' },
       { hid: 'twitter:site', name: 'twitter:site', content: '@Leafage' },
       {
         hid: 'twitter:card',
