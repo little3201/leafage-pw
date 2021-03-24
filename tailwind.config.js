@@ -11,7 +11,6 @@ module.exports = {
       'nuxt.config.ts'
     ],
     options: {
-      whitelist: ['dark-mode', 'light-mode']
     }
   },
   plugins: [
