@@ -238,7 +238,7 @@ export default defineComponent({
   methods: {
     like(code: string) {
       this.$axios
-        .post(SERVER_URL.posts.concat("/", code, "/like"))
+        .patch(SERVER_URL.posts.concat("/", code, "/like"))
         .then((res) => {
           this.datas.forEach((data: any) => {
             if (code === data.code) {

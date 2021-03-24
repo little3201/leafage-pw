@@ -90,7 +90,7 @@ export default {
     progress: true,
     credentials: true,
     baseURL: '/api',
-    proxy: true
+    // proxy: true
   },
 
   markdownit: {
