@@ -106,10 +106,6 @@ export default {
     runtime: true // Support `$md()`
   },
 
-  env: {
-    baseUrl: process.env.BASE_URL || 'https://www.abeille.top/api'
-  },
-
   globalName: 'leafage',
 
   // nuxt loading configuration (https://zh.nuxtjs.org/api/configuration-loading)
@@ -130,7 +126,7 @@ export default {
       lastmod: new Date()
     },
     routes: async () => {
-      const { data } = await axios.get('https://www.abeille.top/api/assets/posts')
+      const { data } = await axios.get('https://www.leafage.top/api/assets/posts')
       return data.map((posts: any) => `/posts/detail/${posts.code}`)
     }
   }
