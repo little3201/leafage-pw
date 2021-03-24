@@ -1,10 +1,16 @@
 <template>
   <div class="my-4 md:my-10">
-    <div class="grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
+    <div
+      class="grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8"
+    >
       <div class="w-full" v-for="(data, index) in datas" :key="index">
         <div class="overflow-hidden">
           <div class="transform hover:scale-110 transition duration-500">
-            <img :src="data.cover" :alt="data.title" class="w-full" />
+            <img
+              :src="data.cover"
+              :alt="data.title"
+              class="w-full h-64 object-cover"
+            />
           </div>
         </div>
         <div class="my-4">
@@ -44,7 +50,10 @@
                 <circle cx="12" cy="12" r="3"></circle></svg
               >{{ data.viewed }}
             </li>
-            <li class="flex items-center">
+            <li
+              class="flex items-centercursor-pointer"
+              @click="like(data.code)"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="12"
@@ -55,7 +64,7 @@
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="feather feather-heart mr-1"
+                class="feather feather-heart mr-1 transform hover:scale-125 transition duration-500"
               >
                 <path
                   d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
@@ -71,6 +80,7 @@
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
+import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
   name: "PostsList",
@@ -78,6 +88,21 @@ export default defineComponent({
   props: {
     datas: {
       type: Array,
+      default: [],
+    },
+  },
+
+  methods: {
+    like(code: string) {
+      this.$axios
+        .post(SERVER_URL.posts.concat("/", code, "/like"))
+        .then((res) => {
+          this.datas.forEach((data: any) => {
+            if (code === data.code) {
+              data.likes = res.data.likes;
+            }
+          });
+        });
     },
   },
 });

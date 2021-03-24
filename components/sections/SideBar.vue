@@ -1,7 +1,7 @@
 <template>
   <div class="lg:flex lg:justify-end w-full">
     <div class="lg:ml-12">
-      <!-- <div class="border border-solid border-gray-400 p-8">
+      <div class="border border-solid border-gray-400 p-8">
         <h3 class="font-extrabold">欢迎关注公众号（Leafage）</h3>
         <div class="flex items-center mt-4">
           <img
@@ -19,7 +19,7 @@
             />
           </div>
         </div>
-      </div> -->
+      </div>
       <div class="my-12 py-8 border border-solid border-gray-400 relative">
         <h3
           class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold"
@@ -32,10 +32,9 @@
           :key="data.code"
         >
           <img
-            class="w-32"
+            class="w-32 h-20 object-cover"
             :src="data.cover"
             :alt="data.title"
-            style="max-height: 6rem"
           />
           <div class="ml-4">
             <h3

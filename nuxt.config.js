@@ -88,8 +88,8 @@ export default {
     https: true,
     progress: true,
     credentials: true,
-    baseURL: 'https://www.abeille.top/api',
-    // proxy: true
+    baseURL: 'https://www.leafage.top/api',
+    proxy: true
   },
 
   markdownit: {

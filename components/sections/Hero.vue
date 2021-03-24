@@ -16,16 +16,13 @@
               :alt="datas[0].title"
               class="absolute w-full h-full"
             />
-            <div
-              class="absolute w-full h-full bg-gray-800 bg-opacity-25"
-            ></div>
+            <div class="absolute w-full h-full bg-gray-800 bg-opacity-25"></div>
           </div>
           <nuxt-link
             to="/posts"
             class="absolute top-0 text-white text-xs font-extrabold uppercase p-10"
             v-text="datas[0].category"
-            ></nuxt-link
-          >
+          ></nuxt-link>
           <div class="absolute bottom-0 text-white p-4 md:p-10 w-auto">
             <h2
               class="p-6 mb-12 md:text-xl font-black leading-8 text-left border border-solid border-gray-300 transform hover:translate-x-2 transition duration-500"
@@ -62,7 +59,10 @@
                     <circle cx="12" cy="12" r="3"></circle></svg
                   >{{ datas[0].viewed }}
                 </li>
-                <li class="flex items-center">
+                <li
+                  class="flex items-center cursor-pointer"
+                  @click="like(datas[0].code)"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="12"
@@ -73,7 +73,7 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="feather feather-heart mr-1"
+                    class="feather feather-heart mr-1 transform hover:scale-125 transition duration-500"
                   >
                     <path
                       d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
@@ -182,18 +182,18 @@
             :alt="datas[1].title"
             class="absolute w-full h-full"
           />
-          <div
-            class="absolute w-full h-full bg-gray-800 bg-opacity-25"
-          ></div>
+          <div class="absolute w-full h-full bg-gray-800 bg-opacity-25"></div>
         </div>
         <nuxt-link
           to="/posts"
           class="absolute top-0 text-white text-xs font-extrabold uppercase p-8"
           v-text="datas[1].category"
-          ></nuxt-link
-        >
+        ></nuxt-link>
         <!--blog-img end-->
-        <div class="absolute px-8 text-left font-black bott" style="bottom: 30px">
+        <div
+          class="absolute px-8 text-left font-black bott"
+          style="bottom: 30px"
+        >
           <h3 class="transform hover:translate-x-2 transition duration-500">
             <nuxt-link
               :to="'/posts/detail/' + datas[1].code"
@@ -212,16 +212,13 @@
             :alt="datas[2].title"
             class="absolute w-full h-full"
           />
-          <div
-            class="absolute w-full h-full bg-gray-800 bg-opacity-25"
-          ></div>
+          <div class="absolute w-full h-full bg-gray-800 bg-opacity-25"></div>
         </div>
         <nuxt-link
           to="/"
           class="absolute top-0 text-white text-xs font-extrabold uppercase p-8"
           v-text="datas[2].category"
-          ></nuxt-link
-        >
+        ></nuxt-link>
         <!--blog-img end-->
         <div class="absolute px-8 text-left font-black" style="bottom: 30px">
           <h3 class="transform hover:translate-x-2 transition duration-500">
@@ -245,7 +242,7 @@ export default defineComponent({
 
   async fetch() {
     this.datas = await this.$axios
-      .get(SERVER_URL.posts.concat("?page=0&size=3&order=viewed"))
+      .get(SERVER_URL.posts.concat("?page=0&size=3"))
       .then((res) => res.data);
   },
 
@@ -253,6 +250,20 @@ export default defineComponent({
     return {
       datas: [],
     };
+  },
+  
+  methods: {
+    like(code: string) {
+      this.$axios
+        .post(SERVER_URL.posts.concat("/", code, "/like"))
+        .then((res) => {
+          this.datas.forEach((data: any) => {
+            if (code === data.code) {
+              data.likes = res.data.likes;
+            }
+          });
+        });
+    },
   },
 });
 </script>
