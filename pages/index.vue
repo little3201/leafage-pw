@@ -14,7 +14,11 @@ export default defineComponent({
   name: "Home",
 
   scrollToTop: true,
-  
+
+  async fetch() {
+    await this.$axios.get("/check");
+  },
+
   head() {
     const title = "Leafage";
     const description =
@@ -25,7 +29,8 @@ export default defineComponent({
         {
           hid: "keywords",
           name: "keywords",
-          content: "leafage, 布吉岛, nuxtjs, vue, typescript, tailwindcss, 博客",
+          content:
+            "leafage, 布吉岛, nuxtjs, vue, typescript, tailwindcss, 博客",
         },
         { hid: "description", name: "description", content: description },
         // Open Graph
