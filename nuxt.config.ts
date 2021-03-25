@@ -89,8 +89,8 @@ export default {
     https: true,
     progress: true,
     credentials: true,
-    baseURL: 'https://www.abeille.top/api',
-    proxy: true
+    baseURL: '/api',
+    // proxy: true
   },
 
   markdownit: {
@@ -104,10 +104,6 @@ export default {
       'markdown-it-deflist'
     ],
     runtime: true // Support `$md()`
-  },
-
-  env: {
-    baseUrl: process.env.BASE_URL || 'https://www.abeille.top/api'
   },
 
   globalName: 'leafage',
@@ -130,7 +126,7 @@ export default {
       lastmod: new Date()
     },
     routes: async () => {
-      const { data } = await axios.get('https://www.abeille.top/api/assets/posts')
+      const { data } = await axios.get('https://www.leafage.top/api/assets/posts')
       return data.map((posts: any) => `/posts/detail/${posts.code}`)
     }
   }

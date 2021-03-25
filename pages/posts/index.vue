@@ -5,7 +5,9 @@
         class="w-32 hover:bg-black hover:text-white"
         :class="{ 'bg-black text-white': code == '' }"
       >
-        <button class="w-full h-10 font-bold uppercase">All</button>
+        <button class="w-full h-10 font-bold uppercase focus:outline-none">
+          All
+        </button>
       </li>
       <li
         class="w-32 hover:bg-black hover:text-white"
@@ -38,9 +40,7 @@ export default defineComponent({
         .get(SERVER_URL.posts.concat("?page=0&size=12&category=", params.code))
         .then((res) => res.data),
 
-      await $axios
-        .get(SERVER_URL.category.concat("?page=0&size=5"))
-        .then((res) => res.data),
+      await $axios.get(SERVER_URL.category).then((res) => res.data),
     ]);
 
     return { datas, categories };
@@ -57,7 +57,7 @@ export default defineComponent({
   methods: {
     retrieve(page: number, code: string) {
       this.page = page ? page : 0;
-      this.code = code ? code : '';
+      this.code = code ? code : "";
       this.$axios
         .get(
           SERVER_URL.posts.concat(

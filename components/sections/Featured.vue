@@ -12,7 +12,11 @@
         <div v-for="(data, index) in datas" :key="index">
           <div class="overflow-hidden">
             <div class="transform hover:scale-110 transition duration-500">
-              <img :src="data.cover" :alt="data.title" class="w-full" style="max-height: 201px" />
+              <img
+                :src="data.cover"
+                :alt="data.title"
+                class="w-full h-48 object-cover"
+              />
             </div>
           </div>
           <!--blog-img end-->
@@ -44,7 +48,10 @@
                   <circle cx="12" cy="12" r="3"></circle></svg
                 >{{ data.viewed }}
               </li>
-              <li class="flex items-center">
+              <li
+                class="flex items-center cursor-pointer"
+                @click="like(data.code)"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="12"
@@ -55,7 +62,7 @@
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="feather feather-heart mr-1"
+                  class="feather feather-heart mr-1 transform hover:scale-125 transition duration-500"
                 >
                   <path
                     d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
@@ -87,6 +94,20 @@ export default defineComponent({
     return {
       datas: [],
     };
+  },
+
+  methods: {
+    like(code: string) {
+      this.$axios
+        .patch(SERVER_URL.posts.concat("/", code, "/like"))
+        .then((res) => {
+          this.datas.forEach((data: any) => {
+            if (code === data.code) {
+              data.likes = res.data.likes;
+            }
+          });
+        });
+    },
   },
 });
 </script>

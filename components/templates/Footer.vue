@@ -2,10 +2,10 @@
   <footer class="bg-black">
     <section class="container mx-auto">
       <div class="md:flex md:justify-between items-center text-white md:h-32">
-        <div class="flex justify-center text-4xl tracking-widest font-black uppercase my-4">
+        <div class="flex justify-center text-4xl tracking-widest font-black uppercase py-4">
           <nuxt-link to="/">Leafage</nuxt-link>
         </div>
-        <div class="flex justify-center space-x-6 my-4">
+        <div class="flex justify-center space-x-6 mb-4">
           <a href="#" class="border rounded-full p-2"
             ><svg
               xmlns="http://www.w3.org/2000/svg"

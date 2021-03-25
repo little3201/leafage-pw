@@ -32,10 +32,9 @@
           :key="data.code"
         >
           <img
-            class="w-32"
+            class="w-32 h-20 object-cover"
             :src="data.cover"
             :alt="data.title"
-            style="max-height: 6rem"
           />
           <div class="ml-4">
             <h3
