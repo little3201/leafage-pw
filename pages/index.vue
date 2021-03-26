@@ -15,8 +15,8 @@ export default defineComponent({
 
   scrollToTop: true,
 
-  async fetch() {
-    await this.$axios.get("/check");
+  async asyncData({ app: { $axios } }) {
+    return await $axios.get("/check");
   },
 
   head() {
