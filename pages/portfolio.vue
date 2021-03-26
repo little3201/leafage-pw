@@ -30,7 +30,7 @@
               data.type == 'jpg' || data.type == 'jpeg' || data.type == 'png'
             "
             class="w-full h-auto"
-            :src="data.url"
+            :src="data.url[0]"
             :alt="data.title"
           />
           <video
@@ -38,7 +38,7 @@
             class="w-full h-auto outline-none"
             v-else-if="data.type == 'mp4' || data.type == 'flv'"
           >
-            <source :src="data.url" :type="'video/' + data.type" />
+            <source :src="data.url[0]" :type="'video/' + data.type" />
           </video>
         </div>
       </div>
@@ -57,7 +57,7 @@ export default defineComponent({
 
   async asyncData({ app: { $axios } }) {
     let [datas, categories] = await Promise.all([
-      await $axios.$get(SERVER_URL.portfolio.concat("?page=0&size=10")),
+      await $axios.$get(SERVER_URL.portfolio.concat("?page=0&size=12")),
       await $axios.$get(SERVER_URL.category.concat("?page=0&size=5")),
     ]);
     return { datas, categories };
