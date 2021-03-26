@@ -84,7 +84,7 @@ export default defineComponent({
   methods: {
     retrieve(page: number, order: string) {
       this.page = page ? page : 0;
-      this.order = order ? order : 'likes';
+      this.order = order ? order : "likes";
       this.$fetch();
     },
   },

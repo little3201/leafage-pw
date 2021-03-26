@@ -15,10 +15,6 @@ export default defineComponent({
 
   scrollToTop: true,
 
-  async asyncData({ app: { $axios } }) {
-    return await $axios.get("/check");
-  },
-
   head() {
     const title = "Leafage";
     const description =
