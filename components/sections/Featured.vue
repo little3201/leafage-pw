@@ -1,5 +1,5 @@
 <template>
-  <section class="container mx-auto my-12">
+  <section class="my-12">
     <div class="flex divide-y-2 divide-gray-400 divide-dotted">
       <h3 class="uppercase font-extrabold -mt-2">Featured Stories</h3>
       <span class="flex-1 w-full ml-4 mt-1"></span>
@@ -84,16 +84,11 @@ import { SERVER_URL } from "~/assets/request";
 export default defineComponent({
   name: "Featured",
 
-  async fetch() {
-    this.datas = await this.$axios
-      .get(SERVER_URL.posts.concat("?page=0&size=4"))
-      .then((res) => res.data);
-  },
-
-  data() {
-    return {
-      datas: [],
-    };
+  props: {
+    datas: {
+      type: Array,
+      default: []
+    },
   },
 
   methods: {

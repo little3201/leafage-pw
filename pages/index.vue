@@ -1,19 +1,31 @@
 <template>
   <div id="home">
-    <Hero />
-    <Featured />
-    <Main />
-    <Recommend />
+    <Hero :datas="heroDatas" />
+    <Featured :datas="featuredDatas" />
+    <Main :topDatas="topDatas" :listDatas="listDatas" />
+    <Recommend :recommendDatas="recommendDatas" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
+import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
   name: "Home",
 
   scrollToTop: true,
+
+  async asyncData({ app: { $axios } }) {
+    const [heroDatas, featuredDatas, topDatas, listDatas, recommendDatas] = await Promise.all([
+      await $axios.$get(SERVER_URL.posts.concat("?page=0&size=3")),
+      await $axios.$get(SERVER_URL.posts.concat("?page=1&size=4")),
+      await $axios.$get(SERVER_URL.posts.concat("?page=0&size=3&order=viewed")),
+      await $axios.$get(SERVER_URL.posts.concat("?page=0&size=10&order=likes")),
+      await $axios.$get(SERVER_URL.posts.concat("?page=0&size=6&order=viewed")),
+    ]);
+    return { heroDatas, featuredDatas, topDatas, listDatas, recommendDatas };
+  },
 
   head() {
     const title = "Leafage";

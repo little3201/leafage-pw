@@ -1,8 +1,8 @@
 <template>
-  <section class="container mx-auto">
+  <section>
     <div class="grid grid-flow-row grid-cols-1 lg:grid-cols-3">
       <div class="lg:col-span-2">
-        <TopPosts />
+        <TopPosts :datas="topDatas" />
         <div class="mb-12">
           <ul
             class="flex justify-between items-center text-center border border-black"
@@ -43,9 +43,7 @@
               </button>
             </li>
           </ul>
-          <p v-if="$fetchState.pending">Fetching mountains...</p>
-          <p v-else-if="$fetchState.error">An error occurred :(</p>
-          <ListItem v-else :datas="datas" />
+          <ListItem :datas="datas" />
         </div>
         <Pagation @retrieve="retrieve" />
       </div>
@@ -61,21 +59,20 @@ import { SERVER_URL } from "~/assets/request";
 export default defineComponent({
   name: "Main",
 
-  async fetch() {
-    this.datas = await this.$axios
-      .get(
-        SERVER_URL.posts.concat(
-          "?page=" + this.page,
-          "&size=10&order=",
-          this.order
-        )
-      )
-      .then((res) => res.data);
+  props:{
+    topDatas: {
+      type: Array,
+      default: []
+    },
+    listDatas: {
+      type: Array,
+      default: []
+    }
   },
 
   data() {
     return {
-      datas: [],
+      datas: this.listDatas,
       page: 0,
       order: "likes",
     };
@@ -85,7 +82,18 @@ export default defineComponent({
     retrieve(page: number, order: string) {
       this.page = page ? page : 0;
       this.order = order ? order : "likes";
-      this.$fetch();
+      this.listPosts();
+    },
+    listPosts() {
+      this.$axios
+        .get(
+          SERVER_URL.posts.concat(
+            "?page=" + this.page,
+            "&size=10&order=",
+            this.order
+          )
+        )
+        .then((res) => (this.datas = res.data));
     },
   },
 });
