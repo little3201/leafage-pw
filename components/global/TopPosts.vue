@@ -1,14 +1,14 @@
 <template>
   <div>
-    <p v-if="$fetchState.pending">Fetching mountains...</p>
-    <p v-else-if="$fetchState.error">An error occurred :(</p>
-    <div v-else class="mb-12">
+    <div class="mb-12">
       <div class="flex divide-y-2 divide-gray-400 divide-dotted">
         <h3 class="uppercase font-extrabold -mt-2">Top Posts</h3>
         <span class="flex-1 w-full ml-4 mt-1"></span>
       </div>
       <div class="my-6">
-        <div class="grid grid-flow-col grid-rows-3 grid-cols-1 md:grid-rows-2 md:grid-cols-3 gap-4 md:col-gap-6">
+        <div
+          class="grid grid-flow-col grid-rows-3 grid-cols-1 md:grid-rows-2 md:grid-cols-3 gap-4 md:col-gap-6"
+        >
           <div class="md:row-span-2 md:col-span-2 h-auto">
             <div class="overflow-hidden">
               <div class="transform hover:scale-110 transition duration-500">
@@ -24,7 +24,11 @@
                 class="flex text-xs space-x-6 uppercase font-bold text-gray-500"
               >
                 <li>
-                  <a href="#" class="text-gray-600" v-text="datas[0].category"></a>
+                  <a
+                    href="#"
+                    class="text-gray-600"
+                    v-text="datas[0].category"
+                  ></a>
                 </li>
                 <li
                   v-text="new Date(datas[0].modifyTime).toLocaleDateString()"
@@ -48,8 +52,10 @@
                     <circle cx="12" cy="12" r="3"></circle></svg
                   >{{ datas[0].viewed }}
                 </li>
-                <li class="flex items-center cursor-pointer"
-              @click="like(datas[0].code)">
+                <li
+                  class="flex items-center cursor-pointer"
+                  @click="like(datas[0].code)"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="12"
@@ -124,8 +130,10 @@
                     <circle cx="12" cy="12" r="3"></circle></svg
                   >{{ datas[1].viewed }}
                 </li>
-                <li class="flex items-center cursor-pointer"
-              @click="like(datas[1].code)">
+                <li
+                  class="flex items-center cursor-pointer"
+                  @click="like(datas[1].code)"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="12"
@@ -188,8 +196,10 @@
                     <circle cx="12" cy="12" r="3"></circle></svg
                   >{{ datas[2].viewed }}
                 </li>
-                <li class="flex items-center cursor-pointer"
-              @click="like(datas[2].code)">
+                <li
+                  class="flex items-center cursor-pointer"
+                  @click="like(datas[2].code)"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="12"
@@ -223,16 +233,11 @@ import { SERVER_URL } from "~/assets/request";
 export default defineComponent({
   name: "TopPosts",
 
-  async fetch() {
-    this.datas = await this.$axios
-      .get(SERVER_URL.posts.concat("?page=0&size=3&order=viewed"))
-      .then((res) => res.data);
-  },
-
-  data() {
-    return {
-      datas: [],
-    };
+  props: {
+    datas: {
+      type: Array,
+      default: [],
+    },
   },
 
   methods: {

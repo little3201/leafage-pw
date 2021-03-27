@@ -1,5 +1,5 @@
 <template>
-  <section class="container mx-auto my-12">
+  <section class="my-12">
     <div class="flex divide-y-2 divide-gray-400 divide-dotted">
       <h3 class="uppercase font-extrabold -mt-2">Recommended</h3>
       <span class="flex-1 w-full ml-4 mt-1"></span>
@@ -84,15 +84,16 @@ import { SERVER_URL } from "~/assets/request";
 export default defineComponent({
   name: "Recommend",
 
-  async fetch() {
-    this.datas = await this.$axios
-      .get(SERVER_URL.posts.concat("?page=0&size=6"))
-      .then((res) => res.data);
+  props:{
+    recommendDatas: {
+      type: Array,
+      default: []
+    }
   },
 
   data() {
     return {
-      datas: [],
+      datas: this.recommendDatas,
     };
   },
 

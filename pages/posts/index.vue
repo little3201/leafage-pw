@@ -36,11 +36,10 @@ export default defineComponent({
 
   async asyncData({ app: { $axios }, params }) {
     let [datas, categories] = await Promise.all([
-      await $axios
-        .get(SERVER_URL.posts.concat("?page=0&size=12&category=", params.code))
-        .then((res) => res.data),
-
-      await $axios.get(SERVER_URL.category).then((res) => res.data),
+      await $axios.$get(
+        SERVER_URL.posts.concat("?page=0&size=12&category=", params.code)
+      ),
+      await $axios.get(SERVER_URL.category),
     ]);
 
     return { datas, categories };

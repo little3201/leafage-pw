@@ -1,9 +1,6 @@
 <template>
-  <section class="container mx-auto">
-    <p v-if="$fetchState.pending">Fetching mountains...</p>
-    <p v-else-if="$fetchState.error">An error occurred :(</p>
+  <section>
     <div
-      v-else
       class="grid grid-flow-col grid-rows-3 grid-cols-1 md:grid-rows-2 md:grid-cols-3 gap-4"
     >
       <div class="md:row-span-2 md:col-span-2 flex justify-center items-center">
@@ -240,16 +237,11 @@ import { SERVER_URL } from "~/assets/request";
 export default defineComponent({
   name: "Hero",
 
-  async fetch() {
-    this.datas = await this.$axios
-      .get(SERVER_URL.posts.concat("?page=0&size=3"))
-      .then((res) => res.data);
-  },
-
-  data() {
-    return {
-      datas: [],
-    };
+  props: {
+    datas: {
+      type: Array,
+      default: []
+    },
   },
   
   methods: {
