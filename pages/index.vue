@@ -17,12 +17,19 @@ export default defineComponent({
   scrollToTop: true,
 
   async asyncData({ app: { $axios } }) {
-    const [heroDatas, featuredDatas, topDatas, listDatas, recommendDatas] = await Promise.all([
+    const [
+      heroDatas,
+      featuredDatas,
+      topDatas,
+      listDatas,
+      recommendDatas,
+    ] = await Promise.all([
       await $axios.$get(SERVER_URL.posts.concat("?page=0&size=3")),
       await $axios.$get(SERVER_URL.posts.concat("?page=1&size=4")),
       await $axios.$get(SERVER_URL.posts.concat("?page=0&size=3&order=viewed")),
       await $axios.$get(SERVER_URL.posts.concat("?page=0&size=10&order=likes")),
       await $axios.$get(SERVER_URL.posts.concat("?page=0&size=6&order=viewed")),
+      await $axios.$get("/check"),
     ]);
     return { heroDatas, featuredDatas, topDatas, listDatas, recommendDatas };
   },
