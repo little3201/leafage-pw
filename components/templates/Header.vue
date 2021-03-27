@@ -77,7 +77,7 @@
             </svg>
             Subscribe
           </a>
-          <a class="ml-8 mr-2 lg:mr-0" href="#" title="">
+          <a class="ml-8 mr-2 lg:mr-0" href="javascript:;" @click="isSearch = !isSearch">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18"
@@ -106,6 +106,7 @@
         </nuxt-link>
       </div>
       <MobileMenu v-show="isOpen" />
+      <Search v-show="isSearch" @searchOption="searchOption" />
     </div>
   </header>
 </template>
@@ -119,7 +120,14 @@ export default defineComponent({
   data() {
     return {
       isOpen: false,
+      isSearch: false
     };
   },
+
+  methods:{
+    searchOption(isSearch: boolean){
+      this.isSearch = isSearch
+    }
+  }
 });
 </script>
