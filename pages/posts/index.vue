@@ -48,8 +48,8 @@ export default defineComponent({
   props: {
     code: {
       type: String,
-      default: ''
-    }
+      default: "",
+    },
   },
 
   data() {

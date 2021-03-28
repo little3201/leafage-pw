@@ -65,16 +65,16 @@ export default defineComponent({
 
   data() {
     return {
-      code: "",
+      category: "",
       datas: [],
     };
   },
 
   methods: {
-    retrieve(code: string) {
-      this.code = code;
+    retrieve(category: string) {
+      this.category = category;
       this.$axios
-        .get(SERVER_URL.portfolio.concat("?page=0&size=12&category=", code))
+        .get(SERVER_URL.portfolio.concat("?page=0&size=12&category=", category))
         .then((res) => (this.datas = res.data));
     },
   },
