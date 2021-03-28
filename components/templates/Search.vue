@@ -1,7 +1,7 @@
 <template>
-  <div class="fixed bg-black opacity-50 top-0 right-0 w-full h-full z-10">
+  <div class="fixed bg-black opacity-75 top-0 right-0 w-full h-full z-10">
     <form class="conatiner mx-auto" @submit.prevent="onSubmit">
-      <div class="flex justify-center items-center mt-56 w-full">
+      <div class="flex justify-center items-center mt-48 w-full">
         <input
           type="text"
           v-model="search"
