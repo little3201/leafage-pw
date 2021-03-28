@@ -3,7 +3,7 @@
     <ul class="flex text-xs border border-black">
       <li
         class="w-32 hover:bg-black hover:text-white"
-        :class="{ 'bg-black text-white': code == '' }"
+        :class="{ 'bg-black text-white': category == '' }"
       >
         <button class="w-full h-10 font-bold uppercase focus:outline-none">
           All
@@ -11,14 +11,14 @@
       </li>
       <li
         class="w-32 hover:bg-black hover:text-white"
-        :class="{ 'bg-black text-white': code == category.code }"
-        v-for="(category, index) in categories"
+        :class="{ 'bg-black text-white': category == cg.code }"
+        v-for="(cg, index) in categories"
         :key="index"
       >
         <button
-          @click="retrieve(0, category.code)"
+          @click="retrieve(0, cg.code)"
           class="w-full h-10 font-bold uppercase focus:outline-none"
-          v-text="category.alias"
+          v-text="cg.alias"
         ></button>
       </li>
     </ul>
