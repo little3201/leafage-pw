@@ -39,30 +39,37 @@ export default defineComponent({
       await $axios.$get(
         SERVER_URL.posts.concat("?page=0&size=12&category=", params.code)
       ),
-      await $axios.get(SERVER_URL.category),
+      await $axios.$get(SERVER_URL.category),
     ]);
 
     return { datas, categories };
   },
 
+  props: {
+    code: {
+      type: String,
+      default: ''
+    }
+  },
+
   data() {
     return {
-      code: "",
+      category: this.code,
       page: 0,
       datas: [],
     };
   },
 
   methods: {
-    retrieve(page: number, code: string) {
+    retrieve(page: number, category: string) {
       this.page = page ? page : 0;
-      this.code = code ? code : "";
+      this.category = category ? category : "";
       this.$axios
         .get(
           SERVER_URL.posts.concat(
             "?page=" + this.page,
             "&size=12&category=",
-            code
+            category
           )
         )
         .then((res) => (this.datas = res.data));

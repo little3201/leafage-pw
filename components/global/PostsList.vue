@@ -51,7 +51,7 @@
               >{{ data.viewed }}
             </li>
             <li
-              class="flex items-centercursor-pointer"
+              class="flex items-center cursor-pointer"
               @click="like(data.code)"
             >
               <svg

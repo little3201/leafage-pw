@@ -89,8 +89,8 @@ export default {
     https: true,
     progress: true,
     credentials: true,
-    baseURL: '/api',
-    // proxy: true
+    baseURL: 'https://www.leafage.top/api',
+    proxy: true
   },
 
   markdownit: {
