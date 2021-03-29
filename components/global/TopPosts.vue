@@ -94,7 +94,7 @@
                 <img
                   :src="datas[1].cover"
                   :alt="datas[1].title"
-                  class="w-full h-48 lg:h-56"
+                  class="w-full h-48"
                 />
               </div>
             </div>
@@ -160,7 +160,7 @@
                 <img
                   :src="datas[2].cover"
                   :alt="datas[2].title"
-                  class="w-full h-48 lg:h-56"
+                  class="w-full h-48"
                 />
               </div>
             </div>
