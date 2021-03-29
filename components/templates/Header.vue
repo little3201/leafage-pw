@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div class="container mx-auto">
+    <div class="container mx-auto px-2 max-w-7xl">
       <div
         class="flex justify-between items-center border-black py-3 md:py-5 md:justify-start"
         style="border-bottom-width: 3px"

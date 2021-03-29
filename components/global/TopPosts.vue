@@ -7,7 +7,7 @@
       </div>
       <div class="my-6">
         <div
-          class="grid grid-flow-col grid-rows-3 grid-cols-1 md:grid-rows-2 md:grid-cols-3 gap-4 md:col-gap-6"
+          class="grid grid-flow-col grid-rows-3 grid-cols-1 md:grid-rows-2 md:grid-cols-3 gap-4 md:gap-x-6"
         >
           <div class="md:row-span-2 md:col-span-2 h-auto">
             <div class="overflow-hidden">
@@ -15,7 +15,7 @@
                 <img
                   :src="datas[0].cover"
                   :alt="datas[0].title"
-                  class="w-full h-full"
+                  class="w-full h-48 md:h-full"
                 />
               </div>
             </div>
@@ -94,7 +94,7 @@
                 <img
                   :src="datas[1].cover"
                   :alt="datas[1].title"
-                  class="w-full h-full"
+                  class="w-full h-48 lg:h-56"
                 />
               </div>
             </div>
@@ -160,7 +160,7 @@
                 <img
                   :src="datas[2].cover"
                   :alt="datas[2].title"
-                  class="w-full h-full"
+                  class="w-full h-48 lg:h-56"
                 />
               </div>
             </div>

@@ -1,7 +1,7 @@
 <template>
   <!-- BEGIN: Error Page -->
   <div
-    class="container mx-auto border-t border-black md:flex items-center justify-center text-center lg:text-left"
+    class="container mx-auto max-w-7xl border-t border-black md:flex items-center justify-center text-center lg:text-left"
   >
     <img
       alt="error"

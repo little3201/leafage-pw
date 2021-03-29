@@ -4,7 +4,7 @@
       <div class="w-full" v-for="(data, index) in datas" :key="index">
         <div class="overflow-hidden">
           <div class="transform hover:scale-110 transition duration-500">
-            <img :src="data.cover" :alt="data.title" class="w-full h-64" />
+            <img :src="data.cover" :alt="data.title" class="w-full h-28 md:h-64" />
           </div>
         </div>
         <div class="my-4">

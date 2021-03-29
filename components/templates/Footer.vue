@@ -1,6 +1,6 @@
 <template>
   <footer class="bg-black">
-    <section class="container mx-auto">
+    <section class="container mx-auto px-2 max-w-7xl">
       <div class="md:flex md:justify-between items-center text-white md:h-32">
         <div class="flex justify-center text-3xl tracking-widest font-black uppercase py-4">
           <nuxt-link to="/">Leafage</nuxt-link>

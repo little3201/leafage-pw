@@ -82,7 +82,7 @@
           </div>
         </div>
       </div>
-      <div class="relative text-white w-full h-64 overflow-hidden">
+      <div class="relative text-white w-full h-48 md:h-64 overflow-hidden">
         <div
           class="w-full h-full transform hover:scale-110 transition duration-500"
         >
@@ -112,7 +112,7 @@
           </h3>
         </div>
       </div>
-      <div class="relative text-white w-full h-64 overflow-hidden">
+      <div class="relative text-white w-full h-48 md:h-64 overflow-hidden">
         <div
           class="w-full h-full transform hover:scale-110 transition duration-500"
         >

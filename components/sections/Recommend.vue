@@ -13,7 +13,7 @@
             <img
               :src="data.cover"
               :alt="data.title"
-              class="sm:w-64 w-32 h-32 object-cover"
+              class="w-48 h-28 sm:w-64 sm:h-32 object-cover"
             />
           </div>
         </div>
