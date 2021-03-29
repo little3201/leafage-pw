@@ -6,8 +6,8 @@
           <nuxt-link to="/">Leafage</nuxt-link>
         </div>
         <div class="flex justify-center space-x-6 sm:my-4">
-          <a href="https://github.com/little3201" target="_blank">Github</a>
-          <a href="https://gitee.com/little3201" target="_blank">Gitee</a>
+          <a href="https://github.com/little3201" rel="noreferrer" target="_blank">Github</a>
+          <a href="https://gitee.com/little3201" rel="noreferrer" target="_blank">Gitee</a>
         </div>
         <div class="flex justify-center space-x-10 uppercase font-extrabold my-4">
           <nuxt-link to="/about">About</nuxt-link>
@@ -16,11 +16,11 @@
         </div>
       </div>
     </section>
-    <section class="py-2 text-xs text-center text-gray-500 container mx-auto border-t border-gray-900">
+    <section class="py-2 text-xs text-center text-gray-400 container mx-auto border-t border-gray-700">
       <p>
         &copy; {{ new Date().getFullYear() }} leafage.top All Rights Reserved.
       </p>
-      <p><a href="https://beian.miit.gov.cn" target="_blank">陕ICP备19017836号-1</a></p>
+      <p><a href="https://beian.miit.gov.cn" rel="noreferrer" target="_blank">陕ICP备19017836号-1</a></p>
     </section>
   </footer>
 </template>

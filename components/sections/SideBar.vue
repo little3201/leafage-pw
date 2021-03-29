@@ -31,11 +31,7 @@
           v-for="data in datas"
           :key="data.code"
         >
-          <img
-            class="w-28 h-20"
-            :src="data.cover"
-            :alt="data.title"
-          />
+          <img class="w-28 h-20" :src="data.cover" :alt="data.title" />
           <div class="m-2 md:ml-4">
             <h3
               class="text-sm font-bold transform hover:translate-x-2 transition duration-500"
@@ -45,7 +41,10 @@
                 v-text="data.title"
               ></nuxt-link>
             </h3>
-            <p class="text-xs mt-2 hidden sm:block lg:hidden" v-text="data.subtitle"></p>
+            <p
+              class="text-xs mt-2 hidden sm:block lg:hidden"
+              v-text="data.subtitle"
+            ></p>
             <span
               class="text-xs text-gray-500 font-bold uppercase"
               v-text="new Date(data.modifyTime).toLocaleDateString()"
@@ -118,37 +117,49 @@
           style="line-style: inside"
         >
           <li class="py-3 mx-4">
-            <a href="https://howtodoinjava.com/" target="_blank"
+            <a
+              href="https://howtodoinjava.com/"
+              target="_blank"
+              rel="noreferrer"
               >how to do in java</a
             >
           </li>
           <li class="py-3 mx-4">
             <a
               href="https://www.digitalocean.com/community/tools/nginx?global.app.lang=zhCN"
+              rel="noreferrer"
               target="_blank"
               >nginx config</a
             >
           </li>
           <li class="py-3 mx-4">
-            <a href="https://console.leafage.top" target="_blank"
+            <a
+              href="https://console.leafage.top"
+              target="_blank"
+              rel="noreferrer"
               >leafage mamagement system</a
             >
           </li>
           <li class="py-3 mx-4">
             <a
               href="https://blog.csdn.net/zx110503?spm=1008.2028.3001.5343&type=blog"
+              rel="noreferrer"
               target="_blank"
               >csdn</a
             >
           </li>
           <li class="py-3 mx-4">
-            <a href="https://my.oschina.net/u/4066932" target="_blank"
+            <a
+              href="https://my.oschina.net/u/4066932"
+              target="_blank"
+              rel="noreferrer"
               >oschina</a
             >
           </li>
           <li class="py-3 mx-4">
             <a
               href="https://segmentfault.com/u/bujidao_5d0c24ce7055e/articles"
+              rel="noreferrer"
               target="_blank"
               >segmentfault</a
             >

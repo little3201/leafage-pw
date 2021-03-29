@@ -3,48 +3,47 @@
     <div class="grid grid-flow-row grid-cols-1 lg:grid-cols-3">
       <div class="lg:col-span-2">
         <TopPosts :datas="topDatas" />
-        <div class="mb-12">
-          <ul
-            class="flex justify-between items-center text-center border border-black"
-            id="myTab"
-            role="tablist"
+        <ul
+          class="flex justify-between items-center text-center border border-black"
+        >
+          <li
+            class="w-1/3 hover:bg-black hover:text-white"
+            :class="{ 'bg-black text-white': order == 'likes' }"
           >
-            <li
-              class="w-1/3 hover:bg-black hover:text-white"
-              :class="{ 'bg-black text-white': order == 'likes' }"
+            <button
+              name="likes"
+              @click="retrieve(0, 'likes')"
+              class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
             >
-              <button
-                @click="retrieve(0, 'likes')"
-                class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
-              >
-                Trending
-              </button>
-            </li>
-            <li
-              class="w-1/3 hover:bg-black hover:text-white"
-              :class="{ 'bg-black text-white': order == 'viewed' }"
+              Trending
+            </button>
+          </li>
+          <li
+            class="w-1/3 hover:bg-black hover:text-white"
+            :class="{ 'bg-black text-white': order == 'viewed' }"
+          >
+            <button
+              name="viewed"
+              @click="retrieve(0, 'viewed')"
+              class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
             >
-              <button
-                @click="retrieve(0, 'viewed')"
-                class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
-              >
-                Most View
-              </button>
-            </li>
-            <li
-              class="w-1/3 hover:bg-black hover:text-white"
-              :class="{ 'bg-black text-white': order == 'comment' }"
+              Most View
+            </button>
+          </li>
+          <li
+            class="w-1/3 hover:bg-black hover:text-white"
+            :class="{ 'bg-black text-white': order == 'comment' }"
+          >
+            <button
+              name="comment"
+              @click="retrieve(0, 'comment')"
+              class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
             >
-              <button
-                @click="retrieve(0, 'comment')"
-                class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
-              >
-                Popular
-              </button>
-            </li>
-          </ul>
-          <ListItem :datas="datas" />
-        </div>
+              Popular
+            </button>
+          </li>
+        </ul>
+        <ListItem :datas="datas" />
         <Pagation @retrieve="retrieve" />
       </div>
       <SideBar />
@@ -59,15 +58,15 @@ import { SERVER_URL } from "~/assets/request";
 export default defineComponent({
   name: "Main",
 
-  props:{
+  props: {
     topDatas: {
       type: Array,
-      default: []
+      default: [],
     },
     listDatas: {
       type: Array,
-      default: []
-    }
+      default: [],
+    },
   },
 
   data() {
@@ -80,9 +79,11 @@ export default defineComponent({
 
   methods: {
     retrieve(page: number, order: string) {
+      this.$nuxt.$loading.start()
       this.page = page ? page : 0;
       this.order = order ? order : "likes";
       this.listPosts();
+      this.$nuxt.$loading.finish()
     },
     listPosts() {
       this.$axios

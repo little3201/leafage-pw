@@ -116,11 +116,6 @@ export default {
     color: 'black'
   },
 
-  // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {
-    extractCSS: true,
-  },
-
   // sitemap: sitemap
   sitemap: {
     defaults: {

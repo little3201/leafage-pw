@@ -8,7 +8,7 @@
           placeholder="Enter Your Keywords"
           class="py-2 px-4 w-1/3 focus:outline-none rounded-full"
         />
-        <button type="submit" class="-ml-10 focus:outline-none">
+        <button name="search" type="submit" class="-ml-10 focus:outline-none">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"

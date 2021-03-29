@@ -6,7 +6,7 @@
           class="w-32 hover:bg-black hover:text-white"
           :class="{ 'bg-black text-white': category == '' }"
         >
-          <button class="w-full h-10 font-bold uppercase">All</button>
+          <button name="portfolio_all" class="w-full h-10 font-bold uppercase">All</button>
         </li>
         <li
           v-for="(cg, index) in categories"
@@ -14,7 +14,7 @@
           class="w-32 hover:bg-black hover:text-white"
           :class="{ 'bg-black text-white': category == cg.code }"
         >
-          <button
+          <button :name="'portfolio_' + index"
             @click="retrieve(cg.code)"
             class="w-full h-10 font-bold uppercase focus:outline-none"
             v-text="cg.alias"

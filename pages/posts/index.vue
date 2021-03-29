@@ -5,7 +5,7 @@
         class="w-32 hover:bg-black hover:text-white"
         :class="{ 'bg-black text-white': category == '' }"
       >
-        <button class="w-full h-10 font-bold uppercase focus:outline-none">
+        <button name="index_all" class="w-full h-10 font-bold uppercase focus:outline-none">
           All
         </button>
       </li>
@@ -15,7 +15,7 @@
         v-for="(cg, index) in categories"
         :key="index"
       >
-        <button
+        <button :name="'index_' + index"
           @click="retrieve(0, cg.code)"
           class="w-full h-10 font-bold uppercase focus:outline-none"
           v-text="cg.alias"
