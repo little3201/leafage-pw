@@ -79,11 +79,9 @@ export default defineComponent({
 
   methods: {
     retrieve(page: number, order: string) {
-      this.$nuxt.$loading.start()
       this.page = page ? page : 0;
       this.order = order ? order : "likes";
       this.listPosts();
-      this.$nuxt.$loading.finish()
     },
     listPosts() {
       this.$axios
