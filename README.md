@@ -15,7 +15,7 @@
 leafage-pw，一个使用 Nuxt.js、 Tailwindcss 的个人网站，致力于促进软件开发及相关领域知识与创新的传播。
 包含原创博客、生活分享、资源推荐、技术总结、影视浏览等资源信息，提供原创、优质、完整内容的知识站点。
 
-本项目是个人博客站点的源代码，markdown 数据解析使用的是markdown-it，高亮插件使用highlight.js，gihub样式。与本项目配套的还有后台管理系统（[leafage-ms](ttps://gitee.com/little3201/leafage-ms)）和后台服务（[leafage-gateway](ttps://gitee.com/little3201/leafage-gateway), [leafage-basic](ttps://gitee.com/little3201/leafage-basic)）
+本项目是个人博客站点的源代码，markdown 数据解析使用的是markdown-it，高亮插件使用highlight.js，gihub样式。与本项目配套的还有后台管理系统（[leafage-ms](https://gitee.com/little3201/leafage-ms)）和后台服务（[leafage-gateway](https://gitee.com/little3201/leafage-gateway), [leafage-basic](https://gitee.com/little3201/leafage-basic)）
 
 **后台管理系统访问地址：** https://console.leafage.top
 
