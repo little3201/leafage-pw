@@ -29,9 +29,12 @@ export default defineComponent({
       await $axios.$get(SERVER_URL.posts.concat("?page=0&size=3&order=viewed")),
       await $axios.$get(SERVER_URL.posts.concat("?page=0&size=10&order=likes")),
       await $axios.$get(SERVER_URL.posts.concat("?page=0&size=6&order=viewed")),
-      await $axios.$get("/check"),
     ]);
     return { heroDatas, featuredDatas, topDatas, listDatas, recommendDatas };
+  },
+
+  mounted() {
+    this.$axios.get("/check");
   },
 
   head() {

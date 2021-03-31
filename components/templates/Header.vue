@@ -1,12 +1,12 @@
 <template>
   <header>
-    <div class="container mx-auto">
+    <div class="container mx-auto px-2 max-w-7xl">
       <div
         class="flex justify-between items-center border-black py-3 md:py-5 md:justify-start"
         style="border-bottom-width: 3px"
       >
         <div class="-my-2 md:hidden">
-          <button
+          <button name="menu"
             type="button"
             @click="isOpen = !isOpen"
             class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"

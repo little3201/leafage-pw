@@ -3,22 +3,22 @@
     <ul class="flex text-xs border border-black">
       <li
         class="w-32 hover:bg-black hover:text-white"
-        :class="{ 'bg-black text-white': code == '' }"
+        :class="{ 'bg-black text-white': category == '' }"
       >
-        <button class="w-full h-10 font-bold uppercase focus:outline-none">
+        <button name="index_all" class="w-full h-10 font-bold uppercase focus:outline-none">
           All
         </button>
       </li>
       <li
         class="w-32 hover:bg-black hover:text-white"
-        :class="{ 'bg-black text-white': code == category.code }"
-        v-for="(category, index) in categories"
+        :class="{ 'bg-black text-white': category == cg.code }"
+        v-for="(cg, index) in categories"
         :key="index"
       >
-        <button
-          @click="retrieve(0, category.code)"
+        <button :name="'index_' + index"
+          @click="retrieve(0, cg.code)"
           class="w-full h-10 font-bold uppercase focus:outline-none"
-          v-text="category.alias"
+          v-text="cg.alias"
         ></button>
       </li>
     </ul>
@@ -39,30 +39,37 @@ export default defineComponent({
       await $axios.$get(
         SERVER_URL.posts.concat("?page=0&size=12&category=", params.code)
       ),
-      await $axios.get(SERVER_URL.category),
+      await $axios.$get(SERVER_URL.category),
     ]);
 
     return { datas, categories };
   },
 
+  props: {
+    code: {
+      type: String,
+      default: "",
+    },
+  },
+
   data() {
     return {
-      code: "",
+      category: this.code,
       page: 0,
       datas: [],
     };
   },
 
   methods: {
-    retrieve(page: number, code: string) {
+    retrieve(page: number, category: string) {
       this.page = page ? page : 0;
-      this.code = code ? code : "";
+      this.category = category ? category : "";
       this.$axios
         .get(
           SERVER_URL.posts.concat(
             "?page=" + this.page,
             "&size=12&category=",
-            code
+            category
           )
         )
         .then((res) => (this.datas = res.data));

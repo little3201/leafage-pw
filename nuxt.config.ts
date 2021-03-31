@@ -89,8 +89,11 @@ export default {
     https: true,
     progress: true,
     credentials: true,
-    baseURL: '/api',
-    // proxy: true
+    baseURL: '/api'
+  },
+
+  tailwindcss: {
+    viewer: false
   },
 
   markdownit: {
@@ -111,11 +114,6 @@ export default {
   // nuxt loading configuration (https://zh.nuxtjs.org/api/configuration-loading)
   loading: {
     color: 'black'
-  },
-
-  // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {
-    extractCSS: true,
   },
 
   // sitemap: sitemap

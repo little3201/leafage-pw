@@ -4,20 +4,20 @@
       <ul class="flex text-xs border border-black">
         <li
           class="w-32 hover:bg-black hover:text-white"
-          :class="{ 'bg-black text-white': code == '' }"
+          :class="{ 'bg-black text-white': category == '' }"
         >
-          <button class="w-full h-10 font-bold uppercase">All</button>
+          <button name="portfolio_all" class="w-full h-10 font-bold uppercase">All</button>
         </li>
         <li
-          v-for="(category, index) in categories"
+          v-for="(cg, index) in categories"
           :key="index"
           class="w-32 hover:bg-black hover:text-white"
-          :class="{ 'bg-black text-white': code == category.code }"
+          :class="{ 'bg-black text-white': category == cg.code }"
         >
-          <button
-            @click="retrieve(category.code)"
+          <button :name="'portfolio_' + index"
+            @click="retrieve(cg.code)"
             class="w-full h-10 font-bold uppercase focus:outline-none"
-            v-text="category.alias"
+            v-text="cg.alias"
           ></button>
         </li>
       </ul>
@@ -65,16 +65,16 @@ export default defineComponent({
 
   data() {
     return {
-      code: "",
+      category: "",
       datas: [],
     };
   },
 
   methods: {
-    retrieve(code: string) {
-      this.code = code;
+    retrieve(category: string) {
+      this.category = category;
       this.$axios
-        .get(SERVER_URL.portfolio.concat("?page=0&size=12&category=", code))
+        .get(SERVER_URL.portfolio.concat("?page=0&size=12&category=", category))
         .then((res) => (this.datas = res.data));
     },
   },
