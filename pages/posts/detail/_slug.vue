@@ -1,5 +1,6 @@
 <template>
-  <div class="container mx-auto border-t border-black">
+  <div class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
+    <div class="border-t border-black"></div>
     <div class="grid grid-flow-row grid-cols-1 lg:grid-cols-3 mt-6 md:mt-16">
       <div class="lg:col-span-2">
         <article>
@@ -123,7 +124,7 @@
                     <img
                       :src="topData.cover"
                       :alt="topData.title"
-                      class="w-full"
+                      class="w-full h-48"
                     />
                   </div>
                 </div>

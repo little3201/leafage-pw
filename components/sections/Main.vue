@@ -1,5 +1,5 @@
 <template>
-  <section class="container mx-auto max-w-7xl">
+  <section class="container mx-auto md:px-12 lg:px-16 xl:px-20">
     <div class="grid grid-flow-row grid-cols-1 lg:grid-cols-3">
       <div class="lg:col-span-2">
         <TopPosts :datas="topDatas" />

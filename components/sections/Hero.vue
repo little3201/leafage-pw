@@ -1,5 +1,5 @@
 <template>
-  <section class="container mx-auto max-w-7xl">
+  <section class="container mx-auto md:px-12 lg:px-16 xl:px-20">
     <div
       class="grid grid-flow-col grid-rows-3 grid-cols-1 md:grid-rows-2 md:grid-cols-3 gap-4"
     >
