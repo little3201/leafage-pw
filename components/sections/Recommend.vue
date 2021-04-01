@@ -29,7 +29,7 @@
             <nuxt-link :to="'/posts/detail/' + data.code" v-text="data.title">
             </nuxt-link>
           </h3>
-          <p class="hidden lg:block text-xs mb-2 line-clamp-3" v-text="data.subtitle"></p>
+          <p class="hidden lg:block text-xs mb-2" v-text="data.subtitle"></p>
           <ul class="flex text-xs space-x-6 text-gray-600">
             <li v-text="new Date(data.modifyTime).toLocaleDateString()"></li>
             <li class="flex items-center">

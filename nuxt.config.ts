@@ -93,8 +93,7 @@ export default {
   },
 
   tailwindcss: {
-    viewer: false,
-    plugins: [require('@tailwindcss/line-clamp')]
+    viewer: false
   },
 
   markdownit: {
