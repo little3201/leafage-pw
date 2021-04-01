@@ -1,12 +1,14 @@
 <template>
-  <div class="container mx-auto">
+  <div class="container mx-auto max-w-7xl">
     <section>
       <ul class="flex text-xs border border-black">
         <li
           class="w-32 hover:bg-black hover:text-white"
           :class="{ 'bg-black text-white': category == '' }"
         >
-          <button name="portfolio_all" class="w-full h-10 font-bold uppercase">All</button>
+          <button type="button" class="w-full h-10 font-bold uppercase">
+            All
+          </button>
         </li>
         <li
           v-for="(cg, index) in categories"
@@ -14,7 +16,8 @@
           class="w-32 hover:bg-black hover:text-white"
           :class="{ 'bg-black text-white': category == cg.code }"
         >
-          <button :name="'portfolio_' + index"
+          <button
+            type="button"
             @click="retrieve(cg.code)"
             class="w-full h-10 font-bold uppercase focus:outline-none"
             v-text="cg.alias"
@@ -23,7 +26,9 @@
       </ul>
     </section>
     <section class="my-12">
-      <div class="grid grid-flow-row grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div
+        class="grid grid-flow-row grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4"
+      >
         <div v-for="(data, index) in datas" :key="index">
           <img
             v-if="

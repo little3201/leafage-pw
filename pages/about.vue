@@ -34,28 +34,9 @@
                   模仿过轻芒杂志，也试过vuetify的免费模版，但是这些组件库都很重，最终选择了tailwindcss，seo优化选择了nuxtjs来做。
                 </p>
                 <p>
-                  与此对应的还有<a class="text-gray-600" href="https://console.abeille.top" target="_blank">后台管理</a>开发，
+                  与此对应的还有<a class="text-blue-600" href="https://console.leafage.top" target="_blank">后台管理</a>开发，
                   也全面改用tailwindcss来做，顺势而为选择了vue3进行重构，更多功能还在持续优化和完善中，敬请期待。
                 </p>
-                <ul class="social-links">
-                  <li>
-                    <a href="#" title=""><i class="fab fa-facebook-f"></i></a>
-                  </li>
-                  <li>
-                    <a href="#" title=""><i class="fab fa-twitter"></i></a>
-                  </li>
-                  <li>
-                    <a href="#" title=""><i class="fab fa-linkedin-in"></i></a>
-                  </li>
-                  <li>
-                    <a href="#" title=""><i class="fab fa-pinterest-p"></i></a>
-                  </li>
-                  <li>
-                    <a href="#" title=""
-                      ><i class="fab fa-facebook-messenger"></i
-                    ></a>
-                  </li>
-                </ul>
               </div>
             </div>
           </div>

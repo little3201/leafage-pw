@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="container mx-auto max-w-7xl">
     <div class="grid grid-flow-row grid-cols-1 lg:grid-cols-3">
       <div class="lg:col-span-2">
         <TopPosts :datas="topDatas" />
@@ -11,7 +11,7 @@
             :class="{ 'bg-black text-white': order == 'likes' }"
           >
             <button
-              name="likes"
+              type="button"
               @click="retrieve(0, 'likes')"
               class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
             >
@@ -23,7 +23,7 @@
             :class="{ 'bg-black text-white': order == 'viewed' }"
           >
             <button
-              name="viewed"
+              type="button"
               @click="retrieve(0, 'viewed')"
               class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
             >
@@ -35,7 +35,7 @@
             :class="{ 'bg-black text-white': order == 'comment' }"
           >
             <button
-              name="comment"
+              type="button"
               @click="retrieve(0, 'comment')"
               class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
             >

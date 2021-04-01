@@ -24,11 +24,11 @@
                 class="flex text-xs space-x-6 uppercase font-bold text-gray-500"
               >
                 <li>
-                  <a
-                    href="#"
+                  <nuxt-link
+                    to="/posts"
                     class="text-gray-600"
                     v-text="datas[0].category"
-                  ></a>
+                  ></nuxt-link>
                 </li>
                 <li
                   v-text="new Date(datas[0].modifyTime).toLocaleDateString()"

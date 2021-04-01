@@ -89,11 +89,13 @@ export default {
     https: true,
     progress: true,
     credentials: true,
-    baseURL: '/api'
+    baseURL: 'https://www.leafage.top/api',
+    prosy: true
   },
 
   tailwindcss: {
-    viewer: false
+    viewer: false,
+    plugins: [require('@tailwindcss/line-clamp')]
   },
 
   markdownit: {

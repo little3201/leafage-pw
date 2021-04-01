@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="container mx-auto max-w-7xl">
     <div
       class="grid grid-flow-col grid-rows-3 grid-cols-1 md:grid-rows-2 md:grid-cols-3 gap-4"
     >
@@ -91,7 +91,6 @@
             :alt="datas[1].title"
             class="absolute w-full h-full"
           />
-          <div class="absolute w-full h-full bg-gray-800 bg-opacity-25"></div>
         </div>
         <nuxt-link
           to="/posts"
@@ -121,7 +120,6 @@
             :alt="datas[2].title"
             class="absolute w-full h-full"
           />
-          <div class="absolute w-full h-full bg-gray-800 bg-opacity-25"></div>
         </div>
         <nuxt-link
           to="/"
