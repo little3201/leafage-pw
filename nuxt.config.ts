@@ -9,37 +9,9 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'og:site_name', property: 'og:site_name', content: 'Leafage' },
-      { hid: 'og:type', property: 'og:type', content: 'website' },
       { name: 'google-site-verification', content: '_2Z6I2Wl5xuTKIGRrCD3meIZDgfn_XFVrTv1tKeJ6v8' },
       { name: 'msvalidate.01', content: 'E02DDF417CA7C7D33A55805B3E9A81C7' },
       { name: 'baidu-site-verification', content: 'code-7cRwEMlHAr' },
-      { hid: 'twitter:site', name: 'twitter:site', content: '@Leafage' },
-      {
-        hid: 'twitter:card',
-        name: 'twitter:card',
-        content: 'summary_large_image'
-      },
-      {
-        hid: 'og:image',
-        property: 'og:image',
-        content: 'https://nuxtjs.org/nuxt-card.png'
-      },
-      {
-        hid: 'og:image:secure_url',
-        property: 'og:image:secure_url',
-        content: 'https://nuxtjs.org/nuxt-card.png'
-      },
-      {
-        hid: 'og:image:alt',
-        property: 'og:image:alt',
-        content: 'Leafage'
-      },
-      {
-        hid: 'twitter:image',
-        name: 'twitter:image',
-        content: 'https://nuxtjs.org/nuxt-card.png'
-      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

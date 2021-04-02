@@ -205,6 +205,7 @@ export default defineComponent({
       await $axios
         .get(SERVER_URL.posts.concat("/", params.slug, "/details"))
         .then((res) => {
+          store?.commit("CHANGE_CODE", res.data.code);
           store?.commit("CHANGE_TITLE", res.data.title);
           store?.commit("CHANGE_DESCTIPTION", res.data.subtitle);
           return res.data;
@@ -228,29 +229,16 @@ export default defineComponent({
           name: "description",
           content: this.$store.getters["description"],
         },
-        // Open Graph
         {
-          hid: "og:title",
-          property: "og:title",
-          content: this.$store.getters["title"],
-        },
-        {
-          hid: "og:description",
-          property: "og:description",
-          content: this.$store.getters["description"],
-        },
-        // Twitter Card
-        {
-          hid: "twitter:title",
-          name: "twitter:title",
-          content: this.$store.getters["title"],
-        },
-        {
-          hid: "twitter:description",
-          name: "twitter:description",
-          content: this.$store.getters["description"],
+          hid: "keywords",
+          name: "keywords",
+          content:
+            "leafage, 博客, 技术, 技术笔记, 技术资料, 经验记录, 解决方案, nuxt.js, vue.js, typescript, tailwindcss, java, javascript",
         },
       ],
+      link: [
+      { rel: 'canonical', href: 'https://www.leafage.top/posts/detail/' + this.$store.getters["code"] },
+    ]
     };
   },
 });

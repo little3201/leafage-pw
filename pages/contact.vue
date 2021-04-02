@@ -80,19 +80,11 @@ export default defineComponent({
       title,
       meta: [
         { hid: "description", name: "description", content: description },
-        // Open Graph
-        { hid: "og:title", property: "og:title", content: title },
         {
-          hid: "og:description",
-          property: "og:description",
-          content: description,
-        },
-        // Twitter Card
-        { hid: "twitter:title", name: "twitter:title", content: title },
-        {
-          hid: "twitter:description",
-          name: "twitter:description",
-          content: description,
+          hid: "keywords",
+          name: "keywords",
+          content:
+            "leafage, 博客, 技术, 技术笔记, 技术资料, 经验记录, 解决方案, nuxt.js, vue.js, typescript, tailwindcss, java, javascript",
         },
       ],
     };

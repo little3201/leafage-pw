@@ -37,12 +37,19 @@
   },
   "keywords": [
     "leafage",
-    "布吉岛",
+    "技术",
+    "技术笔记",
+    "经验记录",
+    "解决方案",
     "博客",
+    "前端",
+    "后端",
     "vuejs",
     "nuxtjs",
     "typescript",
-    "tailwindcss"
+    "tailwindcss",
+    "java",
+    "javascript"
   ],
   "author": {
     "name": "liwenqiang",
