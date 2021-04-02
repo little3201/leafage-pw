@@ -122,7 +122,7 @@
                     class="transform hover:scale-110 transition duration-500"
                   >
                     <img
-                      :src="topData.cover"
+                      :src="topData.cover + '?imageMogr2/thumbnail/640x80/format/webp/blur/1x0/quality/75'"
                       :alt="topData.title"
                       class="w-full h-48"
                     />

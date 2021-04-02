@@ -87,7 +87,7 @@
           class="w-full h-full transform hover:scale-110 transition duration-500"
         >
           <img
-            :src="datas[1].cover"
+            :src="datas[1].cover + '?imageMogr2/thumbnail/640x256/format/webp/blur/1x0/quality/75'"
             :alt="datas[1].title"
             class="absolute w-full h-full"
           />
@@ -116,7 +116,7 @@
           class="w-full h-full transform hover:scale-110 transition duration-500"
         >
           <img
-            :src="datas[2].cover"
+            :src="datas[2].cover + '?imageMogr2/thumbnail/640x256/format/webp/blur/1x0/quality/75'"
             :alt="datas[2].title"
             class="absolute w-full h-full"
           />

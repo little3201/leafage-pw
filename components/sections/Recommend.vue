@@ -11,7 +11,7 @@
         <div class="overflow-hidden">
           <div class="transform hover:scale-110 transition duration-500">
             <img
-              :src="data.cover"
+              :src="data.cover + '?imageMogr2/thumbnail/640x112/format/webp/blur/1x0/quality/75'"
               :alt="data.title"
               class="w-48 h-28 sm:w-64 sm:h-32 object-cover"
             />

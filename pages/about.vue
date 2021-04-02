@@ -3,13 +3,12 @@
     <div class="container mx-auto">
       <div class="py-20">
         <div class="md:flex">
-          <div class="w-full md:w-2/5">
-            <div class="about-img">
-              <img
-                src="/images/resources/about-img.png"
-                alt="leafage-pw about"
-              />
-            </div>
+          <div class="w-full md:w-2/5 md:ml-20 md:mt-12">
+            <img
+              src="https://cdn.leafage.top/man-6122484.jpg"
+              alt="leafage about"
+              class="rounded-full"
+            />
             <!--about-img end-->
           </div>
           <div class="w-full md:w-3/5">
@@ -26,7 +25,7 @@
                 我呢，目前居住在西安，这个各种小吃美食的“人间天堂”，哈哈，这么说好像有点夸大了，
                 但是真的很多好吃的，还有很多可以玩的好地方。
               </p>
-              <div class="md:ml-24 my-20">
+              <div class="md:ml-20 my-20">
                 <h3 class="text-xl font-extrabold my-4">About the website</h3>
                 <p>
                   说起来是从18年开始有了这个想法———做一个自己的网站，风格清新，内容新颖，干货满满。我是一个后端开发，想要一个界面美观、

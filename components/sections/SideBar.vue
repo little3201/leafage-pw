@@ -31,7 +31,7 @@
           v-for="data in datas"
           :key="data.code"
         >
-          <img class="w-28 h-20" :src="data.cover" :alt="data.title" />
+          <img class="w-28 h-20" :src="data.cover + '?imageMogr2/thumbnail/640x80/format/webp/blur/1x0/quality/75'" :alt="data.title" />
           <div class="m-2 md:ml-4">
             <h3
               class="text-sm font-bold transform hover:translate-x-2 transition duration-500"
