@@ -122,7 +122,10 @@
                     class="transform hover:scale-110 transition duration-500"
                   >
                     <img
-                      :src="topData.cover + '?imageMogr2/thumbnail/640x80/format/webp/blur/1x0/quality/75'"
+                      :src="
+                        topData.cover +
+                        '?imageMogr2/thumbnail/640x192/format/webp/blur/1x0/quality/75'
+                      "
                       :alt="topData.title"
                       class="w-full h-48"
                     />
@@ -202,14 +205,7 @@ export default defineComponent({
   async asyncData({ app: { $axios, store }, params }) {
     let [data, previous, next, topDatas] = await Promise.all([
       // detail
-      await $axios
-        .get(SERVER_URL.posts.concat("/", params.slug, "/details"))
-        .then((res) => {
-          store?.commit("CHANGE_CODE", res.data.code);
-          store?.commit("CHANGE_TITLE", res.data.title);
-          store?.commit("CHANGE_DESCTIPTION", res.data.subtitle);
-          return res.data;
-        }),
+      await $axios.$get(SERVER_URL.posts.concat("/", params.slug, "/details")),
       // previous
       await $axios.$get(SERVER_URL.posts.concat("/", params.slug, "/previous")),
       // next
@@ -217,6 +213,11 @@ export default defineComponent({
       // topThree
       await $axios.$get(SERVER_URL.posts.concat("?page=0&size=3&order=viewed")),
     ]);
+
+    store?.commit("CHANGE_CODE", data.code);
+    store?.commit("CHANGE_TITLE", data.title);
+    store?.commit("CHANGE_DESCTIPTION", data.subtitle);
+
     return { data, previous, next, topDatas };
   },
 
@@ -237,8 +238,13 @@ export default defineComponent({
         },
       ],
       link: [
-      { rel: 'canonical', href: 'https://www.leafage.top/posts/detail/' + this.$store.getters["code"] },
-    ]
+        {
+          rel: "canonical",
+          href:
+            "https://www.leafage.top/posts/detail/" +
+            this.$store.getters["code"],
+        },
+      ],
     };
   },
 });
