@@ -3,7 +3,7 @@
     <div class="grid grid-flow-row grid-rows-1 grid-cols-1 md:grid-cols-2">
       <div class="hidden md:block">
         <img
-          src="https://images.unsplash.com/photo-1609342122563-a43ac8917a3a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+          src="https://cdn.leafage.top/photo-1609.jpg"
           alt="leafage-pw contact"
           class="h-full object-cover"
         />
@@ -55,7 +55,7 @@
               autocomplete="off"
             ></textarea>
           </div>
-          <button name="send_message"
+          <button
             type="submit"
             href="mailto:little3201@163.com?subject=Leafage%20Website%20Question"
             class="text-white uppercase text-xs font-bold bg-gray-500 py-3 w-1/2 outline-none"
@@ -80,19 +80,11 @@ export default defineComponent({
       title,
       meta: [
         { hid: "description", name: "description", content: description },
-        // Open Graph
-        { hid: "og:title", property: "og:title", content: title },
         {
-          hid: "og:description",
-          property: "og:description",
-          content: description,
-        },
-        // Twitter Card
-        { hid: "twitter:title", name: "twitter:title", content: title },
-        {
-          hid: "twitter:description",
-          name: "twitter:description",
-          content: description,
+          hid: "keywords",
+          name: "keywords",
+          content:
+            "leafage, 博客, 技术, 技术笔记, 技术资料, 经验记录, 解决方案, nuxt.js, vue.js, typescript, tailwindcss, java, javascript",
         },
       ],
     };

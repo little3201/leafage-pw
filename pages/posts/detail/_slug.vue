@@ -1,5 +1,6 @@
 <template>
-  <div class="container mx-auto border-t border-black">
+  <div class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
+    <div class="border-t border-black"></div>
     <div class="grid grid-flow-row grid-cols-1 lg:grid-cols-3 mt-6 md:mt-16">
       <div class="lg:col-span-2">
         <article>
@@ -121,9 +122,12 @@
                     class="transform hover:scale-110 transition duration-500"
                   >
                     <img
-                      :src="topData.cover"
+                      :src="
+                        topData.cover +
+                        '?imageMogr2/thumbnail/640x192/format/webp/blur/1x0/quality/75'
+                      "
                       :alt="topData.title"
-                      class="w-full"
+                      class="w-full h-48"
                     />
                   </div>
                 </div>
@@ -201,13 +205,7 @@ export default defineComponent({
   async asyncData({ app: { $axios, store }, params }) {
     let [data, previous, next, topDatas] = await Promise.all([
       // detail
-      await $axios
-        .get(SERVER_URL.posts.concat("/", params.slug, "/details"))
-        .then((res) => {
-          store?.commit("CHANGE_TITLE", res.data.title);
-          store?.commit("CHANGE_DESCTIPTION", res.data.subtitle);
-          return res.data;
-        }),
+      await $axios.$get(SERVER_URL.posts.concat("/", params.slug, "/details")),
       // previous
       await $axios.$get(SERVER_URL.posts.concat("/", params.slug, "/previous")),
       // next
@@ -215,6 +213,11 @@ export default defineComponent({
       // topThree
       await $axios.$get(SERVER_URL.posts.concat("?page=0&size=3&order=viewed")),
     ]);
+
+    store?.commit("CHANGE_CODE", data.code);
+    store?.commit("CHANGE_TITLE", data.title);
+    store?.commit("CHANGE_DESCTIPTION", data.subtitle);
+
     return { data, previous, next, topDatas };
   },
 
@@ -227,27 +230,19 @@ export default defineComponent({
           name: "description",
           content: this.$store.getters["description"],
         },
-        // Open Graph
         {
-          hid: "og:title",
-          property: "og:title",
-          content: this.$store.getters["title"],
+          hid: "keywords",
+          name: "keywords",
+          content:
+            "leafage, 博客, 技术, 技术笔记, 技术资料, 经验记录, 解决方案, nuxt.js, vue.js, typescript, tailwindcss, java, javascript",
         },
+      ],
+      link: [
         {
-          hid: "og:description",
-          property: "og:description",
-          content: this.$store.getters["description"],
-        },
-        // Twitter Card
-        {
-          hid: "twitter:title",
-          name: "twitter:title",
-          content: this.$store.getters["title"],
-        },
-        {
-          hid: "twitter:description",
-          name: "twitter:description",
-          content: this.$store.getters["description"],
+          rel: "canonical",
+          href:
+            "https://www.leafage.top/posts/detail/" +
+            this.$store.getters["code"],
         },
       ],
     };

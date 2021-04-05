@@ -1,5 +1,5 @@
 <template>
-  <section class="my-12">
+  <section class="container mx-auto md:px-12 lg:px-16 xl:px-20 my-12">
     <div class="flex divide-y-2 divide-gray-400 divide-dotted">
       <h3 class="uppercase font-extrabold -mt-2">Recommended</h3>
       <span class="flex-1 w-full ml-4 mt-1"></span>
@@ -11,7 +11,7 @@
         <div class="overflow-hidden">
           <div class="transform hover:scale-110 transition duration-500">
             <img
-              :src="data.cover"
+              :src="data.cover + '?imageMogr2/thumbnail/640x112/format/webp/blur/1x0/quality/75'"
               :alt="data.title"
               class="w-48 h-28 sm:w-64 sm:h-32 object-cover"
             />

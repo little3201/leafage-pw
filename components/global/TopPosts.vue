@@ -24,11 +24,11 @@
                 class="flex text-xs space-x-6 uppercase font-bold text-gray-500"
               >
                 <li>
-                  <a
-                    href="#"
+                  <nuxt-link
+                    to="/posts"
                     class="text-gray-600"
                     v-text="datas[0].category"
-                  ></a>
+                  ></nuxt-link>
                 </li>
                 <li
                   v-text="new Date(datas[0].modifyTime).toLocaleDateString()"
@@ -92,7 +92,7 @@
             <div class="overflow-hidden">
               <div class="transform hover:scale-110 transition duration-500">
                 <img
-                  :src="datas[1].cover"
+                  :src="datas[1].cover + '?imageMogr2/thumbnail/640x192/format/webp/blur/1x0/quality/75'"
                   :alt="datas[1].title"
                   class="w-full h-48"
                 />
@@ -158,7 +158,7 @@
             <div class="overflow-hidden">
               <div class="transform hover:scale-110 transition duration-500">
                 <img
-                  :src="datas[2].cover"
+                  :src="datas[2].cover + '?imageMogr2/thumbnail/640x192/format/webp/blur/1x0/quality/75'"
                   :alt="datas[2].title"
                   class="w-full h-48"
                 />

@@ -4,11 +4,11 @@
       <div class="flex justify-center items-center mt-48 w-full">
         <input
           type="text"
-          v-model="search"
+          v-model="keyword"
           placeholder="Enter Your Keywords"
           class="py-2 px-4 w-1/3 focus:outline-none rounded-full"
         />
-        <button name="search" type="submit" class="-ml-10 focus:outline-none">
+        <button type="submit" class="-ml-10 focus:outline-none">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -51,13 +51,15 @@
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
+import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
   name: "Header",
 
   data() {
     return {
-      search: "",
+      keyword: "",
+      datas: [],
     };
   },
 
@@ -65,7 +67,13 @@ export default defineComponent({
     closeSearch() {
       this.$emit("searchOption", false);
     },
-    onSubmit() {},
+    onSubmit() {
+      this.$axios
+        .$get(SERVER_URL.posts.concat("/search?keyword=", this.keyword))
+        .then((res) => {
+          this.datas = res.data;
+        });
+    },
   },
 });
 </script>

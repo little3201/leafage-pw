@@ -31,7 +31,7 @@
           v-for="data in datas"
           :key="data.code"
         >
-          <img class="w-28 h-20" :src="data.cover" :alt="data.title" />
+          <img class="w-28 h-20" :src="data.cover + '?imageMogr2/thumbnail/640x80/format/webp/blur/1x0/quality/75'" :alt="data.title" />
           <div class="m-2 md:ml-4">
             <h3
               class="text-sm font-bold transform hover:translate-x-2 transition duration-500"
@@ -121,7 +121,7 @@
               href="https://howtodoinjava.com/"
               target="_blank"
               rel="noreferrer"
-              >how to do in java</a
+              >howtodoinjava</a
             >
           </li>
           <li class="py-3 mx-4">
@@ -129,7 +129,7 @@
               href="https://www.digitalocean.com/community/tools/nginx?global.app.lang=zhCN"
               rel="noreferrer"
               target="_blank"
-              >nginx config</a
+              >nginx配置生成</a
             >
           </li>
           <li class="py-3 mx-4">
@@ -137,7 +137,7 @@
               href="https://console.leafage.top"
               target="_blank"
               rel="noreferrer"
-              >leafage mamagement system</a
+              >leafage后台管理系统</a
             >
           </li>
           <li class="py-3 mx-4">
@@ -153,7 +153,7 @@
               href="https://my.oschina.net/u/4066932"
               target="_blank"
               rel="noreferrer"
-              >oschina</a
+              >开源中国 oschina</a
             >
           </li>
           <li class="py-3 mx-4">
@@ -161,7 +161,7 @@
               href="https://segmentfault.com/u/bujidao_5d0c24ce7055e/articles"
               rel="noreferrer"
               target="_blank"
-              >segmentfault</a
+              >思否 segmentfault</a
             >
           </li>
         </ul>

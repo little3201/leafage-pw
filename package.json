@@ -36,21 +36,28 @@
   },
   "keywords": [
     "leafage",
-    "布吉岛",
+    "技术",
+    "技术笔记",
+    "经验记录",
+    "解决方案",
     "博客",
+    "前端",
+    "后端",
     "vuejs",
     "nuxtjs",
     "typescript",
-    "tailwindcss"
+    "tailwindcss",
+    "java",
+    "javascript"
   ],
   "author": {
     "name": "liwenqiang",
     "email": "little3201@163.com",
-    "url": "https://www.abeille.top"
+    "url": "https://www.leafage.top"
   },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/little3201/leafage-pw/issues"
   },
-  "homepage": "https://github.com/little3201/leafage-pw#readme"
+  "homepage": "https://www.leafage.top"
 }
