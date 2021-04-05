@@ -1,10 +1,15 @@
 <p align="center">
-  <a href="https://www.abeille.top" target="_blank">
+  <a href="https://www.leafage.top" target="_blank">
     <img alt="Leafage Logo" width="200" src="static/logo.svg">
   </a>
 </p>
 
 ## 更新记录
+
+2021-04-02: 
+- optimization: 
+  1. meta修改，去掉og:xx 和 twitter:xx的信息，补充详情页的keywords；
+  2. 优化详情页下topThree图片质量低的问题；
 
 2021-03-29: 
 - optimization: 
