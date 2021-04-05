@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://www.abeille.top" target="_blank">
+  <a href="https://www.leafage.top" target="_blank">
     <img alt="Leafage Logo" width="200" src="static/logo.svg">
   </a>
 </p>
@@ -17,6 +17,8 @@ leafage，一个使用 Nuxt.js、 Tailwindcss 的博客网站，致力于促进�
 
 本项目是博客站点的源代码，markdown 数据解析使用的是markdown-it，高亮插件使用highlight.js，gihub样式。与本项目配套的还有后台管理系统（[leafage-ms](https://github.com/little3201/leafage-ms)）和后台服务（[leafage-gateway](https://github.com/little3201/leafage-gateway), [leafage-basic](https://github.com/little3201/leafage-basic)）
 
+**网站地址：** https://www.leafage.top
+
 **后台管理系统访问地址：** https://console.leafage.top
 
 ### 更新
@@ -31,9 +33,9 @@ leafage，一个使用 Nuxt.js、 Tailwindcss 的博客网站，致力于促进�
 - [x] 作品集
 - [x] 关于
 - [X] 联系
-- [ ] 点赞、分享
+- [X] 点赞/喜欢
 - [x] 分类
-- [ ] 检索
+- [X] 检索
 - [ ] i18n
 
 ### 界面美化
@@ -43,14 +45,10 @@ leafage，一个使用 Nuxt.js、 Tailwindcss 的博客网站，致力于促进�
 
 ### 项目展示
 
-站点地址：https://www.abeille.top
-
-### 展示截图
-
-首页
+**首页:**
 <img alt="home" width="100%" src="static/images/home.jpeg">
 
-详情页
+**详情页:**
 <img alt="detail" width="100%" src="static/images/detail.jpeg">
 
 ### 项目地址
