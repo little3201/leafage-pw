@@ -1,4 +1,5 @@
 const axios = require('axios')
+
 export default {
   ssr: true,
   head: {
@@ -21,14 +22,14 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    '~/node_modules/highlight.js/styles/github.css'
+    'highlight.js/styles/github.css'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     '~/plugins/accessor',
     '~/plugins/composition-api',
-    '~/plugins/ga.client'
+    '~/plugins/ga.client',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -61,7 +62,8 @@ export default {
     https: true,
     progress: true,
     credentials: true,
-    baseURL: '/api'
+    baseURL: 'https://www.leafage.top/api',
+    proxy: true
   },
 
   tailwindcss: {

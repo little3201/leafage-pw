@@ -17,12 +17,12 @@
           </div>
           <nuxt-link
             to="/posts"
-            class="absolute top-0 text-white text-xs font-extrabold uppercase p-10"
+            class="absolute top-0 text-white text-xs font-extrabold uppercase p-4 md:p-10"
             v-text="datas[0].category"
           ></nuxt-link>
-          <div class="absolute top-12 sm:bottom-0 text-white p-4 md:p-10 w-auto">
+          <div class="absolute bottom-4 md:bottom-8 text-white p-4 md:p-10 w-auto">
             <h2
-              class="p-6 mb-12 md:text-xl font-black leading-8 text-left border border-solid border-gray-300 transform hover:translate-x-2 transition duration-500"
+              class="p-4 md:p-6 md:text-xl font-black leading-8 text-left border border-solid border-gray-300 transform hover:translate-x-2 transition duration-500"
             >
               <nuxt-link
                 :to="'/posts/detail/' + datas[0].code"
@@ -30,18 +30,6 @@
               ></nuxt-link>
             </h2>
           </div>
-          <!-- <div
-            class="absolute px-8 text-left"
-            style="bottom: 30px"
-          >
-            <h3 class="transform hover:translate-x-2 transition duration-500">
-              <nuxt-link
-                :to="'/posts/detail/' + datas[1].code"
-                v-text="datas[0].title"
-              >
-              </nuxt-link>
-            </h3>
-          </div> -->
           <div class="absolute bottom-0 text-white p-4 md:p-10 w-full">
             <div class="hidden md:flex justify-between items-center">
               <ul class="flex text-xs space-x-6 text-gray-400">
