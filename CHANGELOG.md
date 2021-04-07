@@ -6,13 +6,18 @@
 
 ## 更新记录
 
+2021-04-06: 
+- 优化: 
+  1. 小屏下hero.vue组件title显示位置；
+  2. 小屏下边距不统一的问题；
+
 2021-04-02: 
-- optimization: 
+- 优化: 
   1. meta修改，去掉og:xx 和 twitter:xx的信息，补充详情页的keywords；
   2. 优化详情页下topThree图片质量低的问题；
 
 2021-03-29: 
-- optimization: 
+- 优化: 
   1. 小屏样式优化，主要优化首页图片大小问题；
   2. 根据 lighthouse、google speed test 结果，进行部分页面的优化；
 - upgrade:
@@ -22,5 +27,5 @@
 - bugfix: 
   1. 类目点击后不匹配样式的问题；
   2. 分类查询接口请求结果问题；
-- optimization:
+- 优化:
   1. search输入框位置，背景透明度优化； 

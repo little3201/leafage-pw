@@ -1,5 +1,5 @@
 <template>
-  <section class="container mx-auto md:px-12 lg:px-16 xl:px-20">
+  <section class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
     <div
       class="grid grid-flow-col grid-rows-3 grid-cols-1 md:grid-rows-2 md:grid-cols-3 gap-4"
     >
@@ -17,12 +17,12 @@
           </div>
           <nuxt-link
             to="/posts"
-            class="absolute top-0 text-white text-xs font-extrabold uppercase p-10"
+            class="absolute top-0 text-white text-xs font-extrabold uppercase p-4 md:p-10"
             v-text="datas[0].category"
           ></nuxt-link>
-          <div class="absolute bottom-0 text-white p-4 md:p-10 w-auto">
+          <div class="absolute bottom-4 md:bottom-8 text-white p-4 md:p-10 w-auto">
             <h2
-              class="p-6 mb-12 md:text-xl font-black leading-8 text-left border border-solid border-gray-300 transform hover:translate-x-2 transition duration-500"
+              class="p-4 md:p-6 md:text-xl font-black leading-8 text-left border border-solid border-gray-300 transform hover:translate-x-2 transition duration-500"
             >
               <nuxt-link
                 :to="'/posts/detail/' + datas[0].code"
@@ -87,7 +87,10 @@
           class="w-full h-full transform hover:scale-110 transition duration-500"
         >
           <img
-            :src="datas[1].cover + '?imageMogr2/thumbnail/640x256/format/webp/blur/1x0/quality/75'"
+            :src="
+              datas[1].cover +
+              '?imageMogr2/thumbnail/640x256/format/webp/blur/1x0/quality/75'
+            "
             :alt="datas[1].title"
             class="absolute w-full h-full"
           />
@@ -99,8 +102,7 @@
         ></nuxt-link>
         <!--blog-img end-->
         <div
-          class="absolute px-8 text-left font-black bott"
-          style="bottom: 30px"
+          class="absolute px-8 text-left font-black bottom-8"
         >
           <h3 class="transform hover:translate-x-2 transition duration-500">
             <nuxt-link
@@ -116,7 +118,10 @@
           class="w-full h-full transform hover:scale-110 transition duration-500"
         >
           <img
-            :src="datas[2].cover + '?imageMogr2/thumbnail/640x256/format/webp/blur/1x0/quality/75'"
+            :src="
+              datas[2].cover +
+              '?imageMogr2/thumbnail/640x256/format/webp/blur/1x0/quality/75'
+            "
             :alt="datas[2].title"
             class="absolute w-full h-full"
           />
@@ -127,7 +132,7 @@
           v-text="datas[2].category"
         ></nuxt-link>
         <!--blog-img end-->
-        <div class="absolute px-8 text-left font-black" style="bottom: 30px">
+        <div class="absolute px-8 text-left font-black bottom-8">
           <h3 class="transform hover:translate-x-2 transition duration-500">
             <nuxt-link
               :to="'/posts/detail/' + datas[2].code"
@@ -150,10 +155,10 @@ export default defineComponent({
   props: {
     datas: {
       type: Array,
-      default: []
+      default: [],
     },
   },
-  
+
   methods: {
     like(code: string) {
       this.$axios

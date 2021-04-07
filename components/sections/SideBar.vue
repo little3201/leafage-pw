@@ -106,7 +106,7 @@
           </a>
         </form>
       </div>
-      <div class="border border-solid border-gray-400 relative">
+      <div class="border border-solid border-gray-400 relative my-12">
         <h3
           class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold"
         >
