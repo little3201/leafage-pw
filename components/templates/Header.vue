@@ -2,14 +2,28 @@
   <header>
     <div class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
       <div
-        class="flex justify-between items-center border-black py-3 md:py-5 md:justify-start"
-        style="border-bottom-width: 3px"
+        class="flex justify-between md:justify-start items-center border-black border-b-2 py-3 md:py-5"
       >
+        <nav
+          class="hidden md:flex space-x-6 tracking-wide text-xs text-black uppercase"
+        >
+          <nuxt-link to="/" class="font-extrabold"> Home </nuxt-link>
+          <nuxt-link to="/portfolio" class="font-extrabold">
+            Portfolio
+          </nuxt-link>
+          <nuxt-link to="/about" class="font-extrabold"> About </nuxt-link>
+          <nuxt-link
+            to="/contact"
+            class="text-xs font-extrabold uppercase text-black"
+          >
+            Contact
+          </nuxt-link>
+        </nav>
         <div class="-my-2 md:hidden">
           <button
             type="button"
             @click="isOpen = !isOpen"
-            class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+            class="m-2 items-center justify-center focus:outline-none"
           >
             <svg
               class="h-6 w-6"
@@ -28,29 +42,6 @@
             </svg>
           </button>
         </div>
-        <nav class="hidden md:flex space-x-6 tracking-wide">
-          <nuxt-link to="/" class="text-xs font-extrabold uppercase text-black">
-            Home
-          </nuxt-link>
-          <nuxt-link
-            to="/portfolio"
-            class="text-xs font-extrabold uppercase text-black"
-          >
-            Portfolio
-          </nuxt-link>
-          <nuxt-link
-            to="/about"
-            class="text-xs font-extrabold uppercase text-black"
-          >
-            About
-          </nuxt-link>
-          <nuxt-link
-            to="/contact"
-            class="text-xs font-extrabold uppercase text-black"
-          >
-            Contact
-          </nuxt-link>
-        </nav>
         <div class="flex items-center justify-end md:flex-1">
           <a
             class="text-gray-600 flex items-center uppercase text-xs font-bold tracking-wide"
@@ -77,14 +68,18 @@
             </svg>
             Subscribe
           </a>
-          <a class="ml-8 mr-2 lg:mr-0" href="javascript:;" @click="isSearch = !isSearch">
+          <a
+            class="ml-8 mr-2 lg:mr-0"
+            href="javascript:;"
+            @click="isSearch = !isSearch"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18"
               height="18"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="#6d6d6d"
+              stroke="currentColor"
               stroke-width="1.5"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -96,6 +91,7 @@
           </a>
         </div>
       </div>
+
       <div class="flex justify-center items-center h-32 md:h-40">
         <nuxt-link
           to="/"
@@ -105,7 +101,7 @@
           <h1>Leafage</h1>
         </nuxt-link>
       </div>
-      <MobileMenu v-show="isOpen" />
+      <MobileMenu v-show="isOpen" @menuAction="menuOption" />
       <Search v-show="isSearch" @searchOption="searchOption" />
     </div>
   </header>
@@ -120,14 +116,17 @@ export default defineComponent({
   data() {
     return {
       isOpen: false,
-      isSearch: false
+      isSearch: false,
     };
   },
 
-  methods:{
-    searchOption(isSearch: boolean){
-      this.isSearch = isSearch
-    }
-  }
+  methods: {
+    menuOption(isOpen: boolean) {
+      this.isOpen = isOpen;
+    },
+    searchOption(isSearch: boolean) {
+      this.isSearch = isSearch;
+    },
+  },
 });
 </script>
