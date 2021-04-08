@@ -12,7 +12,7 @@
             <!--about-img end-->
           </div>
           <div class="w-full md:w-3/5">
-            <div class="leading-relaxed">
+            <article class="leading-relaxed prose max-w-full">
               <h2 class="text-4xl font-extrabold my-4">About Me</h2>
               <p>
                 嗨，感谢使用本网站，很少写自我介绍，每每提笔，却不知从何说起。
@@ -45,7 +45,7 @@
                   也全面改用tailwindcss来做，顺势而为选择了vue3进行重构，更多功能还在持续优化和完善中，敬请期待。
                 </p>
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </div>

@@ -55,7 +55,7 @@
             <img :src="data.cover" :alt="data.title" class="w-full" />
           </div>
           <p
-            class="my-4 leading-relaxed tracking-wide markdown-body"
+            class="my-4 leading-relaxed tracking-wide prose max-w-full"
             v-html="$md.render(data.content)"
           ></p>
           <div class="bg-gray-200 my-12 p-8">
@@ -249,7 +249,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style>
-@import url("~/assets/css/main.css");
-</style>

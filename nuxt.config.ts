@@ -22,7 +22,7 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    'highlight.js/styles/github.css'
+    'highlight.js/styles/ir-black.css'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
@@ -66,7 +66,10 @@ export default {
   },
 
   tailwindcss: {
-    viewer: false
+    viewer: false,
+    config: {
+      plugins: [require('@tailwindcss/typography'),]
+    }
   },
 
   markdownit: {
