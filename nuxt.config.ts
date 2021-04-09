@@ -62,7 +62,8 @@ export default {
     https: true,
     progress: true,
     credentials: true,
-    baseURL: '/api',
+    baseURL: 'https://www.leafage.top/api',
+    proxy: true
   },
 
   tailwindcss: {
