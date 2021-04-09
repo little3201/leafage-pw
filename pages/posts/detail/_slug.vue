@@ -55,7 +55,7 @@
             <img :src="data.cover" :alt="data.title" class="w-full" />
           </div>
           <p
-            class="my-4 leading-relaxed tracking-wide prose max-w-full"
+            class="my-4 leading-relaxed tracking-wide prose-sm md:prose min-w-full"
             v-html="$md.render(data.content)"
           ></p>
           <div class="bg-gray-200 my-12 p-8">
