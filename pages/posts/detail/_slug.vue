@@ -56,7 +56,7 @@
           </div>
           <p
             class="my-4 leading-relaxed tracking-wide prose-sm md:prose min-w-full"
-            v-html="$md.render(data.content)"
+            v-html="rendered"
           ></p>
           <div class="bg-gray-200 my-12 p-8">
             <ul
@@ -195,7 +195,9 @@
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
+
 import { SERVER_URL } from "~/assets/request";
+import md from "~/plugins/markdown";
 
 export default defineComponent({
   name: "Slug",
@@ -218,7 +220,9 @@ export default defineComponent({
     store?.commit("CHANGE_TITLE", data.title);
     store?.commit("CHANGE_DESCTIPTION", data.subtitle);
 
-    return { data, previous, next, topDatas };
+    let rendered = md.render(data.content);
+
+    return { data, previous, next, topDatas, rendered };
   },
 
   head() {

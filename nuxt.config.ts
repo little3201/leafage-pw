@@ -22,7 +22,6 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    'highlight.js/styles/ir-black.css'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
@@ -51,8 +50,6 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    // https://github.com/nuxt-community/markdownit-module
-    '@nuxtjs/markdownit',
     // https://github.com/nuxt-community/sitemap-module
     '@nuxtjs/sitemap'
   ],
@@ -62,7 +59,7 @@ export default {
     https: true,
     progress: true,
     credentials: true,
-    baseURL: '/api',
+    baseURL: '/api'
   },
 
   tailwindcss: {
@@ -70,19 +67,6 @@ export default {
     config: {
       plugins: [require('@tailwindcss/typography'),]
     }
-  },
-
-  markdownit: {
-    preset: 'default',
-    linkify: true,
-    breaks: true,
-    use: [
-      'markdown-it-div',
-      'markdown-it-highlightjs',
-      'markdown-it-mark',
-      'markdown-it-deflist'
-    ],
-    runtime: true // Support `$md()`
   },
 
   globalName: 'leafage',
