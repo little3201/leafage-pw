@@ -2,8 +2,8 @@
   <div>
     <div class="mb-12">
       <div class="flex divide-y-2 divide-gray-400 divide-dotted">
-        <h3 class="uppercase font-extrabold -mt-2">Top Posts</h3>
-        <span class="flex-1 w-full ml-4 mt-1"></span>
+        <h3 class="uppercase font-extrabold -mt-3">Top Posts</h3>
+        <span class="flex-1 w-full ml-4"></span>
       </div>
       <div class="my-6">
         <div

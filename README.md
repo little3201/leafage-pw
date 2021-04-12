@@ -52,7 +52,7 @@ leafage-pw，一个使用 Nuxt.js、 Tailwindcss 的博客网站，项目创建�
 - [x] 响应式
 - [ ] 瀑布流
 
-### 项目展示
+## 项目展示
 
 **首页:**
 <img alt="home" width="100%" src="static/images/home.jpeg">

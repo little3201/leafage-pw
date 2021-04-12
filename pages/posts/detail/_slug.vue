@@ -51,14 +51,14 @@
             </li>
           </ul>
           <h2 class="my-3 md:text-3xl font-extrabold" v-text="data.title"></h2>
-          <div class="w-full h-full my-8">
+          <figure class="w-full h-full my-8">
             <img :src="data.cover" :alt="data.title" class="w-full" />
-          </div>
-          <p
-            class="my-4 leading-relaxed tracking-wide markdown-body"
-            v-html="$md.render(data.content)"
-          ></p>
-          <div class="bg-gray-200 my-12 p-8">
+          </figure>
+          <div
+            class="prose-sm md:prose min-w-full"
+            v-html="rendered"
+          ></div>
+          <div class="bg-gray-200 my-8 p-8">
             <ul
               class="grid grid-flow-row grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2 gap-4 text-xs font-bold"
             >
@@ -109,8 +109,9 @@
           </div>
         </article>
         <div class="my-12">
-          <div class="uppercase font-extrabold">
-            <h3>Top Posts</h3>
+          <div class="flex divide-y-2 divide-gray-400 divide-dotted">
+            <h3 class="uppercase font-extrabold">Top Posts</h3>
+            <span class="flex-1 w-full ml-4 mt-3"></span>
           </div>
           <div class="my-6">
             <div
@@ -195,7 +196,9 @@
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
+
 import { SERVER_URL } from "~/assets/request";
+import md from "~/plugins/markdown";
 
 export default defineComponent({
   name: "Slug",
@@ -218,7 +221,9 @@ export default defineComponent({
     store?.commit("CHANGE_TITLE", data.title);
     store?.commit("CHANGE_DESCTIPTION", data.subtitle);
 
-    return { data, previous, next, topDatas };
+    let rendered = md.render(data.content);
+
+    return { data, previous, next, topDatas, rendered };
   },
 
   head() {
@@ -249,7 +254,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style>
-@import url("~/assets/css/main.css");
-</style>
