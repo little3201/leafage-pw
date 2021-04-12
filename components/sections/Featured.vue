@@ -1,8 +1,8 @@
 <template>
   <section class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20 my-12">
     <div class="flex divide-y-2 divide-gray-400 divide-dotted">
-      <h3 class="uppercase font-extrabold -mt-2">Featured Stories</h3>
-      <span class="flex-1 w-full ml-4 mt-1"></span>
+      <h3 class="uppercase font-extrabold">Featured Posts</h3>
+      <span class="flex-1 w-full ml-4 mt-3"></span>
     </div>
     <!--sec-title end-->
     <div class="my-6">

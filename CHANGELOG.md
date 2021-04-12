@@ -6,6 +6,11 @@
 
 ## 更新记录
 
+2021-04-10: 
+  1. 高亮样式替换为ir-black；
+  2. typography修改为使用tailwindcss/typography, 移除github-markdown-css;
+  3. 删除@nuxt/markdown-it以及插件，自定义markdown-it和highlight.js进行代码高亮；
+
 2021-04-06: 
 - 优化: 
   1. 小屏下hero.vue组件title显示位置；
