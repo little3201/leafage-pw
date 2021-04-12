@@ -94,7 +94,7 @@
                 <img
                   :src="datas[1].cover + '?imageMogr2/thumbnail/640x192/format/webp/blur/1x0/quality/75'"
                   :alt="datas[1].title"
-                  class="w-full h-48"
+                  class="w-full h-40"
                 />
               </div>
             </div>
@@ -160,7 +160,7 @@
                 <img
                   :src="datas[2].cover + '?imageMogr2/thumbnail/640x192/format/webp/blur/1x0/quality/75'"
                   :alt="datas[2].title"
-                  class="w-full h-48"
+                  class="w-full h-40"
                 />
               </div>
             </div>

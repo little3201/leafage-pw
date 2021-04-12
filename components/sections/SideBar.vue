@@ -13,7 +13,7 @@
             <p class="my-2">微信搜一搜</p>
             <input
               type="text"
-              class="placeholder-gray-600 border border-gray-400 p-2 w-full text-sm"
+              class="placeholder-gray-600 border border-gray-400 p-2 w-full text-sm rounded"
               disabled
               placeholder="Leafage"
             />
