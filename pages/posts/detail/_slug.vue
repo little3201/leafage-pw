@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
     <div class="border-t border-black"></div>
-    <div class="grid grid-flow-row grid-cols-1 lg:grid-cols-3 mt-6 md:mt-16">
+    <div class="grid grid-flow-row grid-cols-1 lg:grid-cols-3 mt-12">
       <div class="lg:col-span-2">
         <article>
           <ul
@@ -55,7 +55,7 @@
             <img :src="data.cover" :alt="data.title" class="w-full" />
           </figure>
           <div
-            class="prose-sm md:prose min-w-full"
+            class="prose min-w-full"
             v-html="rendered"
           ></div>
           <div class="bg-gray-200 my-8 p-8">
@@ -128,7 +128,7 @@
                         '?imageMogr2/thumbnail/640x192/format/webp/blur/1x0/quality/75'
                       "
                       :alt="topData.title"
-                      class="w-full h-48"
+                      class="w-full h-44"
                     />
                   </div>
                 </div>

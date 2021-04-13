@@ -6,6 +6,11 @@
 
 ## 更新记录
 
+2021-04-12: 
+  1. 结局了详情页刷新，内容出现重复的问题，以及Failed to execute 'appendChild' on 'Node': This node type does not support this method...的错误：
+  2. 修改了robots.txt错写为robot.txt的问题；
+  3. 更新highlight.js高亮语言sql为sql_more；
+
 2021-04-10: 
   1. 高亮样式替换为ir-black；
   2. typography修改为使用tailwindcss/typography, 移除github-markdown-css;

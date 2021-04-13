@@ -15,7 +15,7 @@
               <img
                 :src="data.cover + '?imageMogr2/thumbnail/640x192/format/webp/blur/1x0/quality/75'"
                 :alt="data.title"
-                class="w-full h-48 object-cover"
+                class="w-full h-44 object-cover"
               />
             </div>
           </div>

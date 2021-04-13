@@ -6,7 +6,7 @@ import bash from 'highlight.js/lib/languages/bash'
 import javascript from 'highlight.js/lib/languages/javascript';
 import typescript from 'highlight.js/lib/languages/typescript';
 import java from 'highlight.js/lib/languages/java';
-import sql from 'highlight.js/lib/languages/sql';
+import sql from 'highlight.js/lib/languages/sql_more';
 import nginx from 'highlight.js/lib/languages/nginx';
 import json from 'highlight.js/lib/languages/json';
 import yaml from 'highlight.js/lib/languages/yaml';
