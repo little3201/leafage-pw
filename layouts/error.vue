@@ -1,5 +1,4 @@
 <template>
-  <!-- BEGIN: Error Page -->
   <div
     class="container mx-auto md:px-12 lg:px-16 xl:px-20 border-t border-black md:flex items-center justify-center text-center lg:text-left"
   >
@@ -30,7 +29,6 @@
       <div class="intro-x text-lg mt-3">Refreh your requested page.</div>
     </div>
   </div>
-  <!-- END: Error Page -->
 </template>
 
 <script lang="ts">

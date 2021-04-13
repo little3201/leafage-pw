@@ -60,7 +60,6 @@
         </h3>
         <ul
           class="grid grid-cols-1 divide-y divide-gray-400 p-8 text-xs text-gray-600 font-semibold uppercase list-disc"
-          style="line-style: inside"
         >
           <li
             class="py-3 mx-4"
@@ -114,7 +113,6 @@
         </h3>
         <ul
           class="grid grid-cols-1 divide-y divide-gray-400 p-8 text-xs text-gray-600 font-semibold list-decimal"
-          style="line-style: inside"
         >
           <li class="py-3 mx-4">
             <a
