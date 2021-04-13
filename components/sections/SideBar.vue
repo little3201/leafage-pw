@@ -118,14 +118,14 @@
             <a
               href="https://howtodoinjava.com/"
               target="_blank"
-              rel="noreferrer"
+              rel=noopener
               >howtodoinjava</a
             >
           </li>
           <li class="py-3 mx-4">
             <a
               href="https://www.digitalocean.com/community/tools/nginx?global.app.lang=zhCN"
-              rel="noreferrer"
+              rel=noopener
               target="_blank"
               >nginx配置生成</a
             >
@@ -134,14 +134,14 @@
             <a
               href="https://console.leafage.top"
               target="_blank"
-              rel="noreferrer"
+              rel=noopener
               >leafage后台管理系统</a
             >
           </li>
           <li class="py-3 mx-4">
             <a
               href="https://blog.csdn.net/zx110503?spm=1008.2028.3001.5343&type=blog"
-              rel="noreferrer"
+              rel=noopener
               target="_blank"
               >csdn</a
             >
@@ -150,14 +150,14 @@
             <a
               href="https://my.oschina.net/u/4066932"
               target="_blank"
-              rel="noreferrer"
+              rel=noopener
               >开源中国 oschina</a
             >
           </li>
           <li class="py-3 mx-4">
             <a
               href="https://segmentfault.com/u/bujidao_5d0c24ce7055e/articles"
-              rel="noreferrer"
+              rel=noopener
               target="_blank"
               >思否 segmentfault</a
             >

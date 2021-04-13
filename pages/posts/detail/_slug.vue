@@ -198,7 +198,7 @@
 import { defineComponent } from "@vue/composition-api";
 
 import { SERVER_URL } from "~/assets/request";
-import md from "~/plugins/markdown";
+import markdown from "~/plugins/markdown";
 
 export default defineComponent({
   name: "Slug",
@@ -221,7 +221,7 @@ export default defineComponent({
     store?.commit("CHANGE_TITLE", data.title);
     store?.commit("CHANGE_DESCTIPTION", data.subtitle);
 
-    let rendered = md.render(data.content);
+    let rendered = markdown.render(data.content);
 
     return { data, previous, next, topDatas, rendered };
   },

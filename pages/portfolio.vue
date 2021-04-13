@@ -39,7 +39,9 @@
             :alt="data.title"
           />
           <video
+            id="video"
             controls
+            preload="metadata"
             class="w-full h-auto outline-none"
             v-else-if="data.type == 'mp4' || data.type == 'flv'"
           >
