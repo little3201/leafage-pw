@@ -8,6 +8,7 @@
   <a href="https://github.com/little3201/leafage-pw/blob/master/LICENSE">
     <img src="https://img.shields.io/github/license/little3201/leafage-pw.svg" alt="License">
   </a>
+  <img src="https://sonarcloud.io/api/project_badges/measure?project=little3201_leafage-pw&metric=alert_status" alt="Quality Gate Status">
 </p>
 
 ## 项目介绍
