@@ -19,11 +19,3 @@ export const mutations: MutationTree<RootState> = {
     CHANGE_TITLE: (state, title: string) => (state.title = title),
     CHANGE_DESCTIPTION: (state, description: string) => (state.description = description),
 }
-
-export const actions: ActionTree<RootState, RootState> = {
-    //   async fetchThings({ commit }) {
-    //     const things = await this.$axios.$get('/things')
-    //     console.log(things)
-    //     commit('CHANGE_TITLE', 'New name')
-    //   },
-}

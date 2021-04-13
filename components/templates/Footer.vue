@@ -10,13 +10,13 @@
         <div class="flex justify-center space-x-6 sm:my-4">
           <a
             href="https://github.com/little3201"
-            rel="noreferrer"
+            rel=noopener
             target="_blank"
             >Github</a
           >
           <a
             href="https://gitee.com/little3201"
-            rel="noreferrer"
+            rel=noopener
             target="_blank"
             >Gitee</a
           >
@@ -36,7 +36,7 @@
         &copy; {{ new Date().getFullYear() }} leafage.top All Rights Reserved.
       </p>
       <p>
-        <a href="https://beian.miit.gov.cn" rel="noreferrer" target="_blank"
+        <a href="https://beian.miit.gov.cn" rel=noopener target="_blank"
           >陕ICP备19017836号-1</a
         >
       </p>
