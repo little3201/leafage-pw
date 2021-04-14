@@ -1,11 +1,11 @@
 <p align="center">
-  <a href="https://www.leafage.top" target="_blank">
+  <a href="https://www.leafage.top" title="logo" target="_blank">
     <img alt="Leafage Logo" width="200" src="static/logo.svg">
   </a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/little3201/leafage-pw/blob/master/LICENSE">
+  <a href="https://github.com/little3201/leafage-pw/blob/master/LICENSE" title="github license">
     <img src="https://img.shields.io/github/license/little3201/leafage-pw.svg" alt="License">
   </a>
   <img src="https://sonarcloud.io/api/project_badges/measure?project=little3201_leafage-pw&metric=alert_status" alt="Quality Gate Status">
@@ -100,6 +100,6 @@ $ yarn start
 $ yarn generate
 ```
 
-<a href="LICENSE">
+<a href="LICENSE" title="license">
   <h2>MIT</h2>
 </a>

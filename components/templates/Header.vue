@@ -7,12 +7,17 @@
         <nav
           class="hidden md:flex space-x-6 tracking-wide text-xs text-black uppercase"
         >
-          <nuxt-link to="/" class="font-extrabold"> Home </nuxt-link>
-          <nuxt-link to="/portfolio" class="font-extrabold">
+          <nuxt-link title="home" to="/" class="font-extrabold">
+            Home
+          </nuxt-link>
+          <nuxt-link title="portfolio" to="/portfolio" class="font-extrabold">
             Portfolio
           </nuxt-link>
-          <nuxt-link to="/about" class="font-extrabold"> About </nuxt-link>
+          <nuxt-link title="about" to="/about" class="font-extrabold">
+            About
+          </nuxt-link>
           <nuxt-link
+            title="contact"
             to="/contact"
             class="text-xs font-extrabold uppercase text-black"
           >
@@ -22,6 +27,7 @@
         <div class="-my-2 md:hidden">
           <button
             type="button"
+            aria-label="openMenu"
             @click="isOpen = !isOpen"
             class="m-2 items-center justify-center focus:outline-none"
           >
@@ -44,9 +50,11 @@
         </div>
         <div class="flex items-center justify-end md:flex-1">
           <a
+            title="subscribe"
             class="text-gray-600 flex items-center uppercase text-xs font-bold tracking-wide"
             href="#"
-            title=""
+            rel="noopener"
+            aria-label="subscribe"
           >
             <svg
               style="display: unset"
@@ -69,8 +77,10 @@
             Subscribe
           </a>
           <a
+            title="searchOpen"
             class="ml-8 mr-2 lg:mr-0"
             href="javascript:;"
+            aria-label="searchOpen"
             @click="isSearch = !isSearch"
           >
             <svg

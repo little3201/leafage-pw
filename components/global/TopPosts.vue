@@ -25,6 +25,7 @@
               >
                 <li>
                   <nuxt-link
+                    :title="datas[0].category"
                     to="/posts"
                     class="text-gray-600"
                     v-text="datas[0].category"
@@ -78,6 +79,7 @@
                 class="md:text-xl font-extrabold my-4 transform hover:translate-x-2 transition duration-500"
               >
                 <nuxt-link
+                  :title="datas[0].code"
                   :to="'/posts/detail/' + datas[0].code"
                   v-text="datas[0].title"
                 ></nuxt-link>
@@ -92,7 +94,10 @@
             <div class="overflow-hidden">
               <div class="transform hover:scale-110 transition duration-500">
                 <img
-                  :src="datas[1].cover + '?imageMogr2/thumbnail/640x192/format/webp/blur/1x0/quality/75'"
+                  :src="
+                    datas[1].cover +
+                    '?imageMogr2/thumbnail/640x192/format/webp/blur/1x0/quality/75'
+                  "
                   :alt="datas[1].title"
                   class="w-full h-44"
                 />
@@ -103,6 +108,7 @@
                 class="font-extrabold my-2 transform hover:translate-x-2 transition duration-500"
               >
                 <nuxt-link
+                  :title="datas[1].code"
                   :to="'/posts/detail/' + datas[1].code"
                   v-text="datas[1].title"
                 ></nuxt-link>
@@ -158,7 +164,10 @@
             <div class="overflow-hidden">
               <div class="transform hover:scale-110 transition duration-500">
                 <img
-                  :src="datas[2].cover + '?imageMogr2/thumbnail/640x192/format/webp/blur/1x0/quality/75'"
+                  :src="
+                    datas[2].cover +
+                    '?imageMogr2/thumbnail/640x192/format/webp/blur/1x0/quality/75'
+                  "
                   :alt="datas[2].title"
                   class="w-full h-44"
                 />
@@ -169,6 +178,7 @@
                 class="font-extrabold my-2 transform hover:translate-x-2 transition duration-500"
               >
                 <nuxt-link
+                  :title="datas[2].code"
                   :to="'/posts/detail/' + datas[2].code"
                   v-text="datas[2].title"
                 ></nuxt-link>

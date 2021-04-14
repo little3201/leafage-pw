@@ -26,6 +26,7 @@
         </div>
         <div class="col-span-2">
           <nuxt-link
+            :title="data.category"
             :to="'/posts'"
             class="text-xs space-x-6 text-gray-600 uppercase"
             v-text="data.category"
@@ -33,7 +34,11 @@
           <h3
             class="my-2 font-extrabold transform hover:translate-x-2 transition duration-500"
           >
-            <nuxt-link :to="'/posts/detail/' + data.code" v-text="data.title">
+            <nuxt-link
+              :title="data.code"
+              :to="'/posts/detail/' + data.code"
+              v-text="data.title"
+            >
             </nuxt-link>
           </h3>
           <p class="hidden lg:block text-xs mb-2" v-text="data.subtitle"></p>

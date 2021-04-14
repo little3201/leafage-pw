@@ -8,7 +8,7 @@
           placeholder="Enter The Keywords"
           class="py-2 px-4 w-2/3 focus:outline-none rounded-full"
         />
-        <button type="submit" class="-ml-10 focus:outline-none">
+        <button type="submit" aria-label="search" class="-ml-10 focus:outline-none">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -27,7 +27,7 @@
         </button>
       </div>
     </form>
-    <a
+    <a title="search"
       href="javascript:;"
       @click="closeSearch"
       class="absolute mt-2 mr-2 top-0 right-0"

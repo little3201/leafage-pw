@@ -8,7 +8,11 @@
             class="flex text-xs font-bold space-x-6 text-gray-600 uppercase mb-4 -mt-3"
           >
             <li>
-              <nuxt-link to="/posts" v-text="data.category"></nuxt-link>
+              <nuxt-link
+                :title="data.category"
+                to="/posts"
+                v-text="data.category"
+              ></nuxt-link>
             </li>
             <li
               class="tracking-wider"
@@ -51,19 +55,17 @@
             </li>
           </ul>
           <h2 class="my-3 md:text-3xl font-extrabold" v-text="data.title"></h2>
-          <figure class="w-full h-full my-8">
+          <figure v-show="data.cover" class="w-full h-full my-8">
             <img :src="data.cover" :alt="data.title" class="w-full" />
           </figure>
-          <div
-            class="prose min-w-full"
-            v-html="rendered"
-          ></div>
+          <div class="prose min-w-full" v-html="rendered"></div>
           <div class="bg-gray-200 my-8 p-8">
             <ul
               class="grid grid-flow-row grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2 gap-4 text-xs font-bold"
             >
               <li>
                 <nuxt-link
+                  :title="previous.code"
                   :to="'/posts/detail/' + previous.code"
                   class="flex items-center transform hover:-translate-x-2 transition duration-500"
                 >
@@ -86,6 +88,7 @@
               </li>
               <li class="flex items-center justify-end">
                 <nuxt-link
+                  :title="next.code"
                   :to="'/posts/detail/' + next.code"
                   class="flex items-center transform hover:translate-x-2 transition duration-500"
                   >{{ next.title }}
@@ -137,6 +140,7 @@
                     class="font-extrabold my-4 transform hover:translate-x-2 transition duration-500"
                   >
                     <nuxt-link
+                      :title="topData.code"
                       :to="'/posts/detail/' + topData.code"
                       v-text="topData.title"
                     ></nuxt-link>

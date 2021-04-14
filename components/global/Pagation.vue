@@ -2,7 +2,7 @@
   <section class="mb-12">
     <ul class="flex justify-center items-center">
       <li class="mx-4">
-        <button type="button"
+        <button type="button" aria-label="descrease"
           @click="decrease"
           class="disabled:opacity-25 focus:outline-none"
         >
@@ -23,7 +23,7 @@
         </button>
       </li>
       <li class="mx-4" v-for="index in pages" :key="index">
-        <button  type="button"
+        <button  type="button" aria-label="give"
           @click="give(index - 1)"
           class="w-8 h-8 rounded-full focus:outline-none border border-black hover:bg-black hover:text-white"
           :class="{
@@ -34,7 +34,7 @@
         </button>
       </li>
       <li class="mx-4">
-        <button  type="button"
+        <button  type="button" aria-label="increment"
           @click="increment"
           class="disabled:opacity-25 focus:outline-none"
         >

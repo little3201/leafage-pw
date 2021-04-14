@@ -6,7 +6,7 @@
           class="w-32 hover:bg-black hover:text-white"
           :class="{ 'bg-black text-white': category == '' }"
         >
-          <button type="button" class="w-full h-10 font-bold uppercase">
+          <button type="button" aria-label="portfolio_all" class="w-full h-10 font-bold uppercase">
             All
           </button>
         </li>
@@ -17,7 +17,7 @@
           :class="{ 'bg-black text-white': category == cg.code }"
         >
           <button
-            type="button"
+            type="button" :aria-label="'portfolio_' + cg.alias"
             @click="retrieve(cg.code)"
             class="w-full h-10 font-bold uppercase focus:outline-none"
             v-text="cg.alias"
