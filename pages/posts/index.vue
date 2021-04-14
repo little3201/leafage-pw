@@ -1,5 +1,5 @@
 <template>
-  <section class="container mx-auto md:px-12 lg:px-16 xl:px-20">
+  <section class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
     <ul class="flex text-xs border border-black">
       <li
         class="w-32 hover:bg-black hover:text-white"

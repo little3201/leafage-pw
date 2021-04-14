@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto md:px-12 lg:px-16 xl:px-20">
+  <div class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
     <section>
       <ul class="flex text-xs border border-black">
         <li
