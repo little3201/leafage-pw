@@ -7,7 +7,10 @@
         <div class="overflow-hidden">
           <div class="transform hover:scale-110 transition duration-500">
             <img
-              :src="data.cover + '?imageMogr2/thumbnail/640x256/format/webp/blur/1x0/quality/75'"
+              :src="
+                data.cover +
+                '?imageMogr2/thumbnail/640x256/format/webp/blur/1x0/quality/75'
+              "
               :alt="data.title"
               class="w-full h-64 object-cover"
             />
@@ -15,6 +18,7 @@
         </div>
         <div class="my-4">
           <nuxt-link
+            :title="data.category"
             to="/"
             class="text-xs space-x-6 text-gray-600 uppercase font-bold"
             v-text="data.category"
@@ -23,8 +27,8 @@
             class="md:text-xl font-extrabold my-3 transform hover:translate-x-2 transition duration-500"
           >
             <nuxt-link
+              :title="data.code"
               :to="'/posts/detail/' + data.code"
-              title=""
               v-text="data.title"
             >
             </nuxt-link>

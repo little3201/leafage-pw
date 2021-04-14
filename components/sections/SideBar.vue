@@ -36,7 +36,7 @@
             <h3
               class="text-sm font-bold transform hover:translate-x-2 transition duration-500"
             >
-              <nuxt-link
+              <nuxt-link :title="data.code"
                 :to="'/posts/detail/' + data.code"
                 v-text="data.title"
               ></nuxt-link>
@@ -66,7 +66,7 @@
             v-for="category in categories"
             :key="category.code"
           >
-            <nuxt-link
+            <nuxt-link :title="category.alias"
               :to="{ path: '/posts', params: { code: category.code } }"
               v-text="category.alias"
             ></nuxt-link>
@@ -82,7 +82,7 @@
             type="email"
             placeholder="Enter your email adress"
           />
-          <a aria-label="email"
+          <a aria-label="email" title="email"
             href="mailto:little3201@163.com?subject=Leafage%20Website%20News"
             class="bg-black text-white p-2 -ml-1"
           >
@@ -114,7 +114,7 @@
           class="grid grid-cols-1 divide-y divide-gray-400 p-8 text-xs text-gray-600 font-semibold list-decimal"
         >
           <li class="py-3 mx-4">
-            <a
+            <a title="howtodoinjava"
               href="https://howtodoinjava.com/"
               target="_blank"
               rel=noopener
@@ -122,7 +122,7 @@
             >
           </li>
           <li class="py-3 mx-4">
-            <a
+            <a title="nginx"
               href="https://www.digitalocean.com/community/tools/nginx?global.app.lang=zhCN"
               rel=noopener
               target="_blank"
@@ -130,7 +130,7 @@
             >
           </li>
           <li class="py-3 mx-4">
-            <a
+            <a title="leafage console"
               href="https://console.leafage.top"
               target="_blank"
               rel=noopener
@@ -138,7 +138,7 @@
             >
           </li>
           <li class="py-3 mx-4">
-            <a
+            <a title="csdn"
               href="https://blog.csdn.net/zx110503?spm=1008.2028.3001.5343&type=blog"
               rel=noopener
               target="_blank"
@@ -146,7 +146,7 @@
             >
           </li>
           <li class="py-3 mx-4">
-            <a
+            <a title="oschina"
               href="https://my.oschina.net/u/4066932"
               target="_blank"
               rel=noopener
@@ -154,7 +154,7 @@
             >
           </li>
           <li class="py-3 mx-4">
-            <a
+            <a title="segmentfault"
               href="https://segmentfault.com/u/bujidao_5d0c24ce7055e/articles"
               rel=noopener
               target="_blank"

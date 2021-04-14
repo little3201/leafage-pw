@@ -27,7 +27,7 @@
         </button>
       </div>
     </form>
-    <a
+    <a title="search"
       href="javascript:;"
       @click="closeSearch"
       class="absolute mt-2 mr-2 top-0 right-0"

@@ -16,15 +16,19 @@
             <div class="absolute w-full h-full bg-gray-800 bg-opacity-25"></div>
           </div>
           <nuxt-link
+            :title="datas[0].category"
             to="/posts"
             class="absolute top-0 text-white text-xs font-extrabold uppercase p-4 md:p-10"
             v-text="datas[0].category"
           ></nuxt-link>
-          <div class="absolute bottom-4 md:bottom-8 text-white p-4 md:p-10 w-auto">
+          <div
+            class="absolute bottom-4 md:bottom-8 text-white p-4 md:p-10 w-auto"
+          >
             <h2
               class="p-4 md:p-6 md:text-xl font-black leading-8 text-left border border-solid border-gray-300 transform hover:translate-x-2 transition duration-500"
             >
               <nuxt-link
+                :title="datas[0].code"
                 :to="'/posts/detail/' + datas[0].code"
                 v-text="datas[0].title"
               ></nuxt-link>
@@ -96,16 +100,16 @@
           />
         </div>
         <nuxt-link
+          :title="datas[1].category"
           to="/posts"
           class="absolute top-0 text-white text-xs font-extrabold uppercase p-8"
           v-text="datas[1].category"
         ></nuxt-link>
         <!--blog-img end-->
-        <div
-          class="absolute px-8 text-left font-black bottom-8"
-        >
+        <div class="absolute px-8 text-left font-black bottom-8">
           <h3 class="transform hover:translate-x-2 transition duration-500">
             <nuxt-link
+              :title="datas[1].code"
               :to="'/posts/detail/' + datas[1].code"
               v-text="datas[1].title"
             >
@@ -127,6 +131,7 @@
           />
         </div>
         <nuxt-link
+          :title="datas[2].category"
           to="/"
           class="absolute top-0 text-white text-xs font-extrabold uppercase p-8"
           v-text="datas[2].category"
@@ -135,6 +140,7 @@
         <div class="absolute px-8 text-left font-black bottom-8">
           <h3 class="transform hover:translate-x-2 transition duration-500">
             <nuxt-link
+              :title="datas[2].code"
               :to="'/posts/detail/' + datas[2].code"
               v-text="datas[2].title"
             ></nuxt-link>

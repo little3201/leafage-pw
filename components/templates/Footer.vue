@@ -5,18 +5,20 @@
         <div
           class="flex justify-center text-3xl tracking-widest font-black uppercase py-4"
         >
-          <nuxt-link to="/">Leafage</nuxt-link>
+          <nuxt-link title="leafage" to="/">Leafage</nuxt-link>
         </div>
         <div class="flex justify-center space-x-6 sm:my-4">
           <a
+            title="github"
             href="https://github.com/little3201"
-            rel=noopener
+            rel="noopener"
             target="_blank"
             >Github</a
           >
           <a
+            title="gitee"
             href="https://gitee.com/little3201"
-            rel=noopener
+            rel="noopener"
             target="_blank"
             >Gitee</a
           >
@@ -24,8 +26,8 @@
         <div
           class="flex justify-center space-x-10 uppercase font-extrabold my-4"
         >
-          <nuxt-link to="/about">About</nuxt-link>
-          <nuxt-link to="/contact">Contact</nuxt-link>
+          <nuxt-link title="about" to="/about">About</nuxt-link>
+          <nuxt-link title="contact" to="/contact">Contact</nuxt-link>
         </div>
       </div>
     </section>
@@ -36,7 +38,7 @@
         &copy; {{ new Date().getFullYear() }} leafage.top All Rights Reserved.
       </p>
       <p>
-        <a href="https://beian.miit.gov.cn" rel=noopener target="_blank"
+        <a href="https://beian.miit.gov.cn" rel="noopener" target="_blank"
           >陕ICP备19017836号-1</a
         >
       </p>
