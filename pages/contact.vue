@@ -55,7 +55,7 @@
               autocomplete="off"
             ></textarea>
           </div>
-          <button
+          <button aria-label="send_message"
             type="submit"
             href="mailto:little3201@163.com?subject=Leafage%20Website%20Question"
             class="text-white uppercase text-xs font-bold bg-gray-500 py-3 w-1/2 outline-none"

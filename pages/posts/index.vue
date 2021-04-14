@@ -5,7 +5,7 @@
         class="w-32 hover:bg-black hover:text-white"
         :class="{ 'bg-black text-white': category == '' }"
       >
-        <button
+        <button aria-label="posts_all"
           type="button"
           class="w-full h-10 font-bold uppercase focus:outline-none"
         >
@@ -18,7 +18,7 @@
         v-for="(cg, index) in categories"
         :key="index"
       >
-        <button
+        <button :aria-label="'posts_' + cg.alias"
           type="button"
           @click="retrieve(0, cg.code)"
           class="w-full h-10 font-bold uppercase focus:outline-none"

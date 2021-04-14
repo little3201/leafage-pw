@@ -11,6 +11,7 @@
             :class="{ 'bg-black text-white': order == 'likes' }"
           >
             <button
+              aria-label="trending"
               type="button"
               @click="retrieve(0, 'likes')"
               class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
@@ -23,6 +24,7 @@
             :class="{ 'bg-black text-white': order == 'viewed' }"
           >
             <button
+              aria-label="most_view"
               type="button"
               @click="retrieve(0, 'viewed')"
               class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
@@ -36,6 +38,7 @@
           >
             <button
               type="button"
+              aria-label="popular"
               @click="retrieve(0, 'comment')"
               class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
             >

@@ -21,7 +21,7 @@
         </nav>
         <div class="-my-2 md:hidden">
           <button
-            type="button"
+            type="button" aria-label="openMenu"
             @click="isOpen = !isOpen"
             class="m-2 items-center justify-center focus:outline-none"
           >
@@ -46,7 +46,8 @@
           <a
             class="text-gray-600 flex items-center uppercase text-xs font-bold tracking-wide"
             href="#"
-            title=""
+            rel=noopener 
+            aria-label="subscribe"
           >
             <svg
               style="display: unset"
@@ -71,6 +72,7 @@
           <a
             class="ml-8 mr-2 lg:mr-0"
             href="javascript:;"
+            aria-label="searchOpen"
             @click="isSearch = !isSearch"
           >
             <svg

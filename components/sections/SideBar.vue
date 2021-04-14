@@ -82,8 +82,7 @@
             type="email"
             placeholder="Enter your email adress"
           />
-
-          <a
+          <a aria-label="email"
             href="mailto:little3201@163.com?subject=Leafage%20Website%20News"
             class="bg-black text-white p-2 -ml-1"
           >
