@@ -5,8 +5,10 @@
         class="w-32 hover:bg-black hover:text-white"
         :class="{ 'bg-black text-white': category == '' }"
       >
-        <button aria-label="posts_all"
+        <button
+          aria-label="posts_all"
           type="button"
+          @click="category = '', $fetch"
           class="w-full h-10 font-bold uppercase focus:outline-none"
         >
           All
@@ -18,9 +20,10 @@
         v-for="(cg, index) in categories"
         :key="index"
       >
-        <button :aria-label="'posts_' + cg.alias"
+        <button
+          :aria-label="'posts_' + cg.alias"
           type="button"
-          @click="retrieve(0, cg.code)"
+          @click="category = cg.code, $fetch"
           class="w-full h-10 font-bold uppercase focus:outline-none"
           v-text="cg.alias"
         ></button>
@@ -64,20 +67,15 @@ export default defineComponent({
     };
   },
 
-  methods: {
-    retrieve(page: number, category: string) {
-      this.page = page ? page : 0;
-      this.category = category ? category : "";
-      this.$axios
-        .get(
-          SERVER_URL.posts.concat(
-            "?page=" + this.page,
-            "&size=12&category=",
-            category
-          )
-        )
-        .then((res) => (this.datas = res.data));
-    },
+  async fetch() {
+    let dataList = await this.$axios.$get(
+      SERVER_URL.posts.concat(
+        "?page=" + this.page,
+        "&size=12&category=",
+        this.category
+      )
+    );
+    this.datas = dataList;
   },
 
   head() {
