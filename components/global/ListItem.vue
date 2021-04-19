@@ -53,8 +53,7 @@
               >{{ data.viewed }}
             </li>
             <li
-              class="flex items-center cursor-pointer"
-              @click="like(data.code)"
+              class="flex items-center"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +81,6 @@
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
-import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
   name: "ListItem",
@@ -94,18 +92,5 @@ export default defineComponent({
     },
   },
 
-  methods: {
-    like(code: string) {
-      this.$axios
-        .patch(SERVER_URL.posts.concat("/", code, "/like"))
-        .then((res) => {
-          this.datas.forEach((data: any) => {
-            if (code === data.code) {
-              data.likes = res.data.likes;
-            }
-          });
-        });
-    },
-  },
 });
 </script>

@@ -9,7 +9,7 @@
     >
       <div
         class="grid grid-cols-3 gap-4"
-        v-for="(data, index) in datas"
+        v-for="(data, index) in recommendDatas"
         :key="index"
       >
         <div class="col-span-1">
@@ -62,8 +62,7 @@
               >{{ data.viewed }}
             </li>
             <li
-              class="flex items-center cursor-pointer"
-              @click="like(data.code)"
+              class="flex items-center"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +74,7 @@
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="feather feather-heart mr-1 transform hover:scale-125 transition duration-500"
+                class="feather feather-heart mr-1"
               >
                 <path
                   d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
@@ -91,7 +90,6 @@
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
-import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
   name: "Recommend",
@@ -103,24 +101,5 @@ export default defineComponent({
     },
   },
 
-  data() {
-    return {
-      datas: this.recommendDatas,
-    };
-  },
-
-  methods: {
-    like(code: string) {
-      this.$axios
-        .patch(SERVER_URL.posts.concat("/", code, "/like"))
-        .then((res) => {
-          this.datas.forEach((data: any) => {
-            if (code === data.code) {
-              data.likes = res.data.likes;
-            }
-          });
-        });
-    },
-  },
 });
 </script>

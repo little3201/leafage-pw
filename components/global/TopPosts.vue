@@ -54,8 +54,7 @@
                   >{{ datas[0].viewed }}
                 </li>
                 <li
-                  class="flex items-center cursor-pointer"
-                  @click="like(datas[0].code)"
+                  class="flex items-center"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -137,8 +136,7 @@
                   >{{ datas[1].viewed }}
                 </li>
                 <li
-                  class="flex items-center cursor-pointer"
-                  @click="like(datas[1].code)"
+                  class="flex items-center"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -207,8 +205,7 @@
                   >{{ datas[2].viewed }}
                 </li>
                 <li
-                  class="flex items-center cursor-pointer"
-                  @click="like(datas[2].code)"
+                  class="flex items-center"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -238,7 +235,6 @@
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
-import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
   name: "TopPosts",
@@ -247,20 +243,6 @@ export default defineComponent({
     datas: {
       type: Array,
       default: [],
-    },
-  },
-
-  methods: {
-    like(code: string) {
-      this.$axios
-        .patch(SERVER_URL.posts.concat("/", code, "/like"))
-        .then((res) => {
-          this.datas.forEach((data: any) => {
-            if (code === data.code) {
-              data.likes = res.data.likes;
-            }
-          });
-        });
     },
   },
 });

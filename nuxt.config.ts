@@ -65,8 +65,13 @@ export default {
   tailwindcss: {
     viewer: false,
     config: {
-      plugins: [require('@tailwindcss/typography'),]
-    }
+      plugins: [require('@tailwindcss/typography'),],
+      variants: {
+        extend: {
+         fill: ['hover'],
+        }
+      },
+    }    
   },
 
   globalName: 'leafage',
