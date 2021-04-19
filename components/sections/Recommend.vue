@@ -27,7 +27,7 @@
         <div class="col-span-2">
           <nuxt-link
             :title="data.category"
-            :to="'/posts'"
+            :to="{ path: '/posts', query: { category: data.category } }"
             class="text-xs space-x-6 text-gray-600 uppercase"
             v-text="data.category"
           ></nuxt-link>

@@ -7,10 +7,10 @@
           :class="{ 'bg-black text-white': category == '' }"
         >
           <button
-          @click="category = '', $fetch()"
+            @click="(category = ''), $fetch()"
             type="button"
             aria-label="portfolio_all"
-            class="w-full h-10 font-bold uppercase"
+            class="w-full h-10 font-bold uppercase focus:outline-none"
           >
             All
           </button>
@@ -19,12 +19,12 @@
           v-for="(cg, index) in categories"
           :key="index"
           class="w-32 hover:bg-black hover:text-white"
-          :class="{ 'bg-black text-white': category == cg.code }"
+          :class="{ 'bg-black text-white': category == cg.alias }"
         >
           <button
             type="button"
             :aria-label="'portfolio_' + cg.alias"
-            @click="category = cg.code, $fetch()"
+            @click="(category = cg.code), $fetch()"
             class="w-full h-10 font-bold uppercase focus:outline-none"
             v-text="cg.alias"
           ></button>

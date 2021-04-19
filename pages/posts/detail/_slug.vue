@@ -10,7 +10,7 @@
             <li>
               <nuxt-link
                 :title="data.category"
-                to="/posts"
+                :to="{ path: '/posts', query: { category: data.category } }"
                 v-text="data.category"
               ></nuxt-link>
             </li>
@@ -121,7 +121,7 @@
               class="grid grid-flow-row grid-rows-3 grid-cols-1 md:grid-rows-1 md:grid-cols-3 gap-4 md:gap-8"
             >
               <div v-for="(topData, index) in topDatas" :key="index">
-                <div class="overflow-hidden">
+                <div class="overflow-hidden relative">
                   <div
                     class="transform hover:scale-110 transition duration-500"
                   >
@@ -134,6 +134,15 @@
                       class="w-full h-44"
                     />
                   </div>
+                  <nuxt-link
+                    :title="topData.category"
+                    :to="{
+                      path: '/posts',
+                      query: { category: topData.category },
+                    }"
+                    class="absolute top-0 text-white text-xs font-extrabold uppercase p-4"
+                    v-text="topData.category"
+                  ></nuxt-link>
                 </div>
                 <div class="">
                   <h3
@@ -234,6 +243,10 @@ export default defineComponent({
     return {
       data: this.$data,
     };
+  },
+
+  mounted() {
+    this.$axios.get("/check");
   },
 
   methods: {

@@ -26,7 +26,7 @@
                 <li>
                   <nuxt-link
                     :title="datas[0].category"
-                    to="/posts"
+                    :to="{ path: '/posts', query: { category: datas[0].category } }"
                     class="text-gray-600"
                     v-text="datas[0].category"
                   ></nuxt-link>

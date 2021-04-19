@@ -3,12 +3,12 @@
     <ul class="flex text-xs border border-black">
       <li
         class="w-32 hover:bg-black hover:text-white"
-        :class="{ 'bg-black text-white': category == '' }"
+        :class="{ 'bg-black text-white': alias == '' }"
       >
         <button
           aria-label="posts_all"
           type="button"
-          @click="category = '', $fetch()"
+          @click="(category = ''), (alias = ''), $fetch()"
           class="w-full h-10 font-bold uppercase focus:outline-none"
         >
           All
@@ -16,14 +16,14 @@
       </li>
       <li
         class="w-32 hover:bg-black hover:text-white"
-        :class="{ 'bg-black text-white': category == cg.code }"
+        :class="{ 'bg-black text-white': alias == cg.alias }"
         v-for="(cg, index) in categories"
         :key="index"
       >
         <button
           :aria-label="'posts_' + cg.alias"
           type="button"
-          @click="category = cg.code, $fetch()"
+          @click="(category = cg.code), (alias = cg.alias), $fetch()"
           class="w-full h-10 font-bold uppercase focus:outline-none"
           v-text="cg.alias"
         ></button>
@@ -52,22 +52,24 @@ export default defineComponent({
     return { datas, categories };
   },
 
-  props: {
-    code: {
-      type: String,
-      default: "",
-    },
-  },
-
   data() {
     return {
-      category: this.code,
+      alias: this.$route.query.category.toString() || "",
+      category: "",
       page: 0,
       datas: [],
     };
   },
 
   async fetch() {
+    if (this.alias != "" && this.datas.length > 0) {
+      this.datas.forEach((item: any) => {
+        if (this.alias == item.alias) {
+          this.category = item.code;
+          return;
+        }
+      });
+    }
     let dataList = await this.$axios.$get(
       SERVER_URL.posts.concat(
         "?page=" + this.page,
@@ -79,9 +81,9 @@ export default defineComponent({
   },
 
   methods: {
-    retrieve(){
-      this.$fetch()
-    }
+    retrieve() {
+      this.$fetch();
+    },
   },
 
   head() {

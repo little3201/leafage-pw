@@ -17,7 +17,7 @@
           </div>
           <nuxt-link
             :title="datas[0].category"
-            to="/posts"
+            :to="{ path: '/posts', query: { category: datas[0].category } }"
             class="absolute top-0 text-white text-xs font-extrabold uppercase p-4 md:p-10"
             v-text="datas[0].category"
           ></nuxt-link>
@@ -60,9 +60,7 @@
                     <circle cx="12" cy="12" r="3"></circle></svg
                   >{{ datas[0].viewed }}
                 </li>
-                <li
-                  class="flex items-center"
-                >
+                <li class="flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="12"
@@ -161,6 +159,6 @@ export default defineComponent({
       type: Array,
       default: [],
     },
-  }
+  },
 });
 </script>

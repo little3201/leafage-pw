@@ -10,7 +10,7 @@
         class="grid grid-flow-col grid-rows-4 grid-cols-1 md:grid-rows-1 md:grid-cols-4 md:gap-6"
       >
         <div v-for="(data, index) in datas" :key="index">
-          <div class="overflow-hidden">
+          <div class="overflow-hidden relative">
             <div class="transform hover:scale-110 transition duration-500">
               <img
                 :src="
@@ -18,9 +18,15 @@
                   '?imageMogr2/thumbnail/640x192/format/webp/blur/1x0/quality/75'
                 "
                 :alt="data.title"
-                class="w-full h-44 object-cover"
+                class="w-full h-44 2xl:h-48 object-cover"
               />
             </div>
+            <nuxt-link
+              :title="data.category"
+              :to="{ path: '/posts', query: { category: data.category } }"
+              class="absolute top-0 text-white text-xs font-extrabold uppercase p-6"
+              v-text="data.category"
+            ></nuxt-link>
           </div>
           <!--blog-img end-->
           <div class="my-4">
@@ -52,9 +58,7 @@
                   <circle cx="12" cy="12" r="3"></circle></svg
                 >{{ data.viewed }}
               </li>
-              <li
-                class="flex items-center"
-              >
+              <li class="flex items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="12"

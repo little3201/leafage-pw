@@ -33,10 +33,6 @@ export default defineComponent({
     return { heroDatas, featuredDatas, topDatas, listDatas, recommendDatas };
   },
 
-  mounted() {
-    this.$axios.get("/check");
-  },
-
   head() {
     const title = "Leafage";
     const description =

@@ -67,7 +67,7 @@
             :key="category.code"
           >
             <nuxt-link :title="category.alias"
-              :to="{ path: '/posts', params: { code: category.code } }"
+              :to="{ path: '/posts', query: { category: category.alias } }"
               v-text="category.alias"
             ></nuxt-link>
             <span class="mr-2 float-right" v-text="category.count"></span>
