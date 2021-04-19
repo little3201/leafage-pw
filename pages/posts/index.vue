@@ -8,7 +8,7 @@
         <button
           aria-label="posts_all"
           type="button"
-          @click="category = '', $fetch"
+          @click="category = '', $fetch()"
           class="w-full h-10 font-bold uppercase focus:outline-none"
         >
           All
@@ -23,14 +23,14 @@
         <button
           :aria-label="'posts_' + cg.alias"
           type="button"
-          @click="category = cg.code, $fetch"
+          @click="category = cg.code, $fetch()"
           class="w-full h-10 font-bold uppercase focus:outline-none"
           v-text="cg.alias"
         ></button>
       </li>
     </ul>
     <PostsList :datas="datas" />
-    <Pagation @retrieve="retrieve" />
+    <Pagation @retrieve="$fetch()" />
   </section>
 </template>
 
@@ -76,6 +76,12 @@ export default defineComponent({
       )
     );
     this.datas = dataList;
+  },
+
+  methods: {
+    retrieve(){
+      this.$fetch()
+    }
   },
 
   head() {

@@ -7,7 +7,7 @@
           :class="{ 'bg-black text-white': category == '' }"
         >
           <button
-          @click="category = '', $fetch"
+          @click="category = '', $fetch()"
             type="button"
             aria-label="portfolio_all"
             class="w-full h-10 font-bold uppercase"
@@ -24,7 +24,7 @@
           <button
             type="button"
             :aria-label="'portfolio_' + cg.alias"
-            @click="category = cg.code, $fetch"
+            @click="category = cg.code, $fetch()"
             class="w-full h-10 font-bold uppercase focus:outline-none"
             v-text="cg.alias"
           ></button>
