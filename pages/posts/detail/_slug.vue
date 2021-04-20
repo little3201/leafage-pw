@@ -35,7 +35,7 @@
                 <circle cx="12" cy="12" r="3"></circle></svg
               >{{ data.viewed }}
             </li>
-            <li class="flex items-center" @click="like">
+            <li class="flex items-center" @click="like(data.code)">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="14"
@@ -241,7 +241,7 @@ export default defineComponent({
 
   data() {
     return {
-      data: this.$data,
+      data: {},
     };
   },
 
@@ -250,11 +250,11 @@ export default defineComponent({
   },
 
   methods: {
-    async like() {
+    async like(code: string) {
       this.$axios
-        .$patch(SERVER_URL.posts.concat("/", this.data.code, "/like"))
+        .$patch(SERVER_URL.posts.concat("/", code, "/like"))
         .then((res) => {
-          this.data.likes = res.data.likes;
+          this.data = res.data;
         });
     },
   },
