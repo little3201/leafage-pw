@@ -35,7 +35,7 @@
                 <circle cx="12" cy="12" r="3"></circle></svg
               >{{ data.viewed }}
             </li>
-            <li class="flex items-center" @click="like(data.code)">
+            <li class="flex items-center cursor-pointer" @click="like(data.code)">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="14"
@@ -46,7 +46,7 @@
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="feather feather-heart mr-1 transform hover:scale-150 hover:fill-current transition duration-500"
+                class="feather feather-heart mr-1 transform hover:scale-150 hover:fill-current transition duration-300"
               >
                 <path
                   d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
