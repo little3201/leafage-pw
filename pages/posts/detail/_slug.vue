@@ -251,10 +251,9 @@ export default defineComponent({
 
   methods: {
     like(code: string) {
-      let posts = this.$axios.$patch(
-        SERVER_URL.posts.concat("/", code, "/like")
-      );
-      this.data = posts;
+      this.$axios
+        .patch(SERVER_URL.posts.concat("/", code, "/like"))
+        .then((res) => (this.data = res.data));
     },
   },
 
