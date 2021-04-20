@@ -246,16 +246,15 @@ export default defineComponent({
   },
 
   mounted() {
-    this.$axios.get("/check");
+    this.$axios.$get("/check");
   },
 
   methods: {
-    async like(code: string) {
-      this.$axios
-        .$patch(SERVER_URL.posts.concat("/", code, "/like"))
-        .then((res) => {
-          this.data = res.data;
-        });
+    like(code: string) {
+      let posts = this.$axios.$patch(
+        SERVER_URL.posts.concat("/", code, "/like")
+      );
+      this.data = posts;
     },
   },
 
