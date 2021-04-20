@@ -3,10 +3,12 @@
     <ul class="flex text-xs border border-black">
       <li
         class="w-32 hover:bg-black hover:text-white"
-        :class="{ 'bg-black text-white': category == '' }"
+        :class="{ 'bg-black text-white': alias == '' }"
       >
-        <button aria-label="posts_all"
+        <button
+          aria-label="posts_all"
           type="button"
+          @click="(category = ''), (alias = ''), $fetch()"
           class="w-full h-10 font-bold uppercase focus:outline-none"
         >
           All
@@ -14,20 +16,21 @@
       </li>
       <li
         class="w-32 hover:bg-black hover:text-white"
-        :class="{ 'bg-black text-white': category == cg.code }"
+        :class="{ 'bg-black text-white': alias == cg.alias }"
         v-for="(cg, index) in categories"
         :key="index"
       >
-        <button :aria-label="'posts_' + cg.alias"
+        <button
+          :aria-label="'posts_' + cg.alias"
           type="button"
-          @click="retrieve(0, cg.code)"
+          @click="(category = cg.code), (alias = cg.alias), $fetch()"
           class="w-full h-10 font-bold uppercase focus:outline-none"
           v-text="cg.alias"
         ></button>
       </li>
     </ul>
     <PostsList :datas="datas" />
-    <Pagation @retrieve="retrieve" />
+    <Pagation @retrieve="$fetch()" />
   </section>
 </template>
 
@@ -49,34 +52,38 @@ export default defineComponent({
     return { datas, categories };
   },
 
-  props: {
-    code: {
-      type: String,
-      default: "",
-    },
-  },
-
   data() {
     return {
-      category: this.code,
+      alias: this.$route.query.category.toString() || "",
+      category: "",
       page: 0,
       datas: [],
+      categories: []
     };
   },
 
+  async fetch() {
+    if (this.alias != "" && this.category == '' && this.categories.length > 0) {
+      this.categories.forEach((item: any) => {
+        if (this.alias == item.alias) {
+          this.category = item.code;
+          return;
+        }
+      });
+    }
+    let dataList = await this.$axios.$get(
+      SERVER_URL.posts.concat(
+        "?page=" + this.page,
+        "&size=12&category=",
+        this.category
+      )
+    );
+    this.datas = dataList;
+  },
+
   methods: {
-    retrieve(page: number, category: string) {
-      this.page = page ? page : 0;
-      this.category = category ? category : "";
-      this.$axios
-        .get(
-          SERVER_URL.posts.concat(
-            "?page=" + this.page,
-            "&size=12&category=",
-            category
-          )
-        )
-        .then((res) => (this.datas = res.data));
+    retrieve() {
+      this.$fetch();
     },
   },
 

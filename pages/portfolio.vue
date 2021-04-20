@@ -6,7 +6,12 @@
           class="w-32 hover:bg-black hover:text-white"
           :class="{ 'bg-black text-white': category == '' }"
         >
-          <button type="button" aria-label="portfolio_all" class="w-full h-10 font-bold uppercase">
+          <button
+            @click="(category = ''), $fetch()"
+            type="button"
+            aria-label="portfolio_all"
+            class="w-full h-10 font-bold uppercase focus:outline-none"
+          >
             All
           </button>
         </li>
@@ -14,11 +19,12 @@
           v-for="(cg, index) in categories"
           :key="index"
           class="w-32 hover:bg-black hover:text-white"
-          :class="{ 'bg-black text-white': category == cg.code }"
+          :class="{ 'bg-black text-white': category == cg.alias }"
         >
           <button
-            type="button" :aria-label="'portfolio_' + cg.alias"
-            @click="retrieve(cg.code)"
+            type="button"
+            :aria-label="'portfolio_' + cg.alias"
+            @click="(category = cg.code), $fetch()"
             class="w-full h-10 font-bold uppercase focus:outline-none"
             v-text="cg.alias"
           ></button>
@@ -74,16 +80,19 @@ export default defineComponent({
     return {
       category: "",
       datas: [],
+      page: 0,
     };
   },
 
-  methods: {
-    retrieve(category: string) {
-      this.category = category;
-      this.$axios
-        .get(SERVER_URL.portfolio.concat("?page=0&size=12&category=", category))
-        .then((res) => (this.datas = res.data));
-    },
+  async fetch() {
+    let dataList = await this.$axios.$get(
+      SERVER_URL.portfolio.concat(
+        "?page=" + this.page,
+        "&size=12&category=",
+        this.category
+      )
+    );
+    this.datas = dataList;
   },
 
   head() {
