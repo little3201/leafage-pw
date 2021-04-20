@@ -58,12 +58,13 @@ export default defineComponent({
       category: "",
       page: 0,
       datas: [],
+      categories: []
     };
   },
 
   async fetch() {
-    if (this.alias != "" && this.datas.length > 0) {
-      this.datas.forEach((item: any) => {
+    if (this.alias != "" && this.category == '' && this.categories.length > 0) {
+      this.categories.forEach((item: any) => {
         if (this.alias == item.alias) {
           this.category = item.code;
           return;
