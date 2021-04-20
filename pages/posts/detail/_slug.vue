@@ -54,7 +54,7 @@
               >{{ data.likes }}
             </li>
           </ul>
-          <h2 class="my-3 md:text-3xl font-extrabold" v-text="data.title"></h2>
+          <h2 class="my-3 text-xl md:text-3xl font-extrabold" v-text="data.title"></h2>
           <figure v-show="data.cover" class="w-full h-full my-8">
             <img :src="data.cover" :alt="data.title" class="w-full" />
           </figure>
