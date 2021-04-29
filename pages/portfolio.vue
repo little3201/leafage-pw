@@ -31,9 +31,9 @@
         </li>
       </ul>
     </section>
-    <section class="my-12">
+    <section class="my-8">
       <div
-        class="grid grid-flow-row grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4"
+        class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4"
       >
         <div v-for="(data, index) in datas" :key="index">
           <img

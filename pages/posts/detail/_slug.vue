@@ -232,6 +232,7 @@ export default defineComponent({
 
     store?.commit("CHANGE_CODE", data.code);
     store?.commit("CHANGE_TITLE", data.title);
+    store?.commit("CHANGE_KEYWORDS", data.tags);
     store?.commit("CHANGE_DESCTIPTION", data.subtitle);
 
     let rendered = markdown.render(data.content);
@@ -269,8 +270,7 @@ export default defineComponent({
         {
           hid: "keywords",
           name: "keywords",
-          content:
-            "leafage, 博客, 技术, 技术笔记, 技术资料, 经验记录, 解决方案, nuxt.js, vue.js, typescript, tailwindcss, java, javascript",
+          content: this.$store.getters["keywords"],
         },
       ],
       link: [

@@ -4,11 +4,11 @@
       <div class="hidden md:block">
         <img
           src="https://cdn.leafage.top/photo-1609.jpg"
-          alt="leafage-pw contact"
+          alt="leafage contact"
           class="h-full object-cover"
         />
       </div>
-      <div class="bg-gray-200 p-2 md:p-10 leading-relaxed">
+      <div class="bg-gray-200 p-2 md:p-10 leading-relaxed px-2 md:px-12 lg:px-16 xl:px-20">
         <h3 class="text-4xl font-extrabold my-4">Contact</h3>
         <p class="text-gray-600">
           网站所有内容均免费，长久可用，哦对，还有源代码，如果喜欢可以fork，或者star，有问题的或者有想法的可以联系我。
@@ -21,7 +21,7 @@
               name="name"
               placeholder="Name"
               required
-              class="w-full p-2 outline-none"
+              class="w-full p-2 outline-none focus:ring-1"
               autocomplete="off"
             />
           </div>
@@ -32,7 +32,7 @@
               name="email"
               placeholder="Email"
               required
-              class="w-full p-2 outline-none"
+              class="w-full p-2 outline-none focus:ring-1"
               autocomplete="off"
             />
           </div>
@@ -42,7 +42,7 @@
               type="text"
               name="subject"
               placeholder="Subject"
-              class="w-full p-2 outline-none"
+              class="w-full p-2 outline-none focus:ring-1"
               autocomplete="off"
             />
           </div>
@@ -51,7 +51,7 @@
             <textarea
               name="message"
               placeholder="Your Message"
-              class="w-full p-2 h-40 outline-none"
+              class="w-full p-2 h-40 outline-none focus:ring-1"
               autocomplete="off"
             ></textarea>
           </div>

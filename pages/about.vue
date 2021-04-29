@@ -11,7 +11,7 @@
             />
             <!--about-img end-->
           </div>
-          <div class="w-full md:w-3/5">
+          <div class="w-full md:w-3/5 px-2 md:px-12 lg:px-16 xl:px-20">
             <article class="leading-relaxed prose-sm md:prose min-w-full">
               <h2>About Me</h2>
               <p>

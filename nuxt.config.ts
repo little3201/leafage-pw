@@ -59,7 +59,7 @@ export default {
     https: true,
     progress: true,
     credentials: true,
-    baseURL: '/api'
+    baseURL: '/api',
   },
 
   tailwindcss: {

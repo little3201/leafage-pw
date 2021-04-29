@@ -12,7 +12,7 @@
         v-for="(data, index) in recommendDatas"
         :key="index"
       >
-        <div class="col-span-1">
+        <div class="col-span-1 overflow-hidden">
           <div class="transform hover:scale-110 transition duration-500">
             <img
               :src="
