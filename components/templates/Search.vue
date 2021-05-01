@@ -58,7 +58,6 @@
       class="conatiner mx-auto px-8 md:px-20 lg:px-40 xl:px-56 divide-y divide-gray-300 mt-2"
     >
       <li
-        v-show="datas"
         v-for="data in datas"
         :key="data.code"
         class="flex items-center bg-white"
@@ -95,7 +94,7 @@ export default defineComponent({
     },
     onSubmit() {
       this.$axios
-        .$get(SERVER_URL.posts.concat("/search?keyword=", this.keyword))
+        .get(SERVER_URL.posts.concat("/search?keyword=", this.keyword))
         .then((res) => {
           this.datas = res.data;
         });
