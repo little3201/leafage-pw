@@ -59,19 +59,14 @@ export default {
     https: true,
     progress: true,
     credentials: true,
-    baseURL: '/api',
+    baseURL: '/api'
   },
 
   tailwindcss: {
     viewer: false,
     config: {
-      plugins: [require('@tailwindcss/typography'),],
-      variants: {
-        extend: {
-         fill: ['hover'],
-        }
-      },
-    }    
+      plugins: [require('@tailwindcss/typography'),]
+    }
   },
 
   globalName: 'leafage',
