@@ -55,14 +55,15 @@
         <line x1="6" y1="6" x2="18" y2="18"></line></svg
     ></a>
     <ul
-      class="conatiner mx-auto px-8 md:px-20 lg:px-40 xl:px-56 divide-y divide-gray-300 mt-2"
+      class="conatiner mx-auto px-8 md:px-20 lg:px-40 xl:px-56 divide-y divide-gray-300 mt-2 h-72 overflow-auto"
     >
       <li
         v-for="data in datas"
         :key="data.code"
-        class="flex items-center bg-white"
+        class="flex items-center bg-gray-50"
       >
         <nuxt-link
+          @click.prevent="closeSearch"
           :title="data.title"
           class="py-2 px-4"
           :to="'/posts/detail/' + data.code"
