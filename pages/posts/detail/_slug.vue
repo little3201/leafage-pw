@@ -254,7 +254,7 @@ export default defineComponent({
     like(code: string) {
       this.$axios
         .patch(SERVER_URL.posts.concat("/", code, "/like"))
-        .then((res) => (this.data = { ...this.data, likes: res.data.likes }));
+        .then((res) => (this.data = { ...this.data, likes: res.data }));
     },
   },
 

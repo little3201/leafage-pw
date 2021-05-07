@@ -1,14 +1,21 @@
 <template>
   <div class="fixed bg-black bg-opacity-80 top-0 right-0 w-full h-full z-10">
-    <form class="conatiner mx-auto" @submit.prevent="onSubmit">
+    <form
+      class="conatiner mx-auto px-8 md:px-20 lg:px-40 xl:px-56"
+      @submit.prevent="onSubmit"
+    >
       <div class="flex justify-center items-center mt-48 w-full">
         <input
           type="text"
           v-model="keyword"
           placeholder="Enter The Keywords"
-          class="py-2 px-4 w-2/3 focus:outline-none rounded-full"
+          class="py-2 px-4 w-full -ml-4 focus:outline-none rounded-full"
         />
-        <button type="submit" aria-label="search" class="-ml-10 focus:outline-none">
+        <button
+          type="submit"
+          aria-label="search"
+          class="-ml-10 focus:outline-none"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -27,7 +34,8 @@
         </button>
       </div>
     </form>
-    <a title="search"
+    <a
+      title="search"
       href="javascript:;"
       @click="closeSearch"
       class="absolute mt-2 mr-2 top-0 right-0"
@@ -46,6 +54,24 @@
         <line x1="18" y1="6" x2="6" y2="18"></line>
         <line x1="6" y1="6" x2="18" y2="18"></line></svg
     ></a>
+    <ul
+      class="conatiner mx-auto px-8 md:px-20 lg:px-40 xl:px-56 divide-y divide-gray-300 mt-2 h-72 overflow-auto"
+    >
+      <li
+        v-for="data in datas"
+        :key="data.code"
+        class="flex items-center bg-gray-50"
+      >
+        <nuxt-link
+          @click.prevent="closeSearch"
+          :title="data.title"
+          class="py-2 px-4"
+          :to="'/posts/detail/' + data.code"
+          v-text="data.title"
+        >
+        </nuxt-link>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -69,7 +95,7 @@ export default defineComponent({
     },
     onSubmit() {
       this.$axios
-        .$get(SERVER_URL.posts.concat("/search?keyword=", this.keyword))
+        .get(SERVER_URL.posts.concat("/search?keyword=", this.keyword))
         .then((res) => {
           this.datas = res.data;
         });
