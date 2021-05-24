@@ -28,7 +28,8 @@ export default {
   plugins: [
     '~/plugins/accessor',
     '~/plugins/composition-api',
-    '~/plugins/ga.client',
+    { src: '~/plugins/ga.client', ssr: false },
+    { src: '~/plugins/ga.baidu', ssr: false }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -68,10 +69,10 @@ export default {
       plugins: [require('@tailwindcss/typography'),],
       variants: {
         extend: {
-         fill: ['hover'],
+          fill: ['hover'],
         }
       },
-    }    
+    }
   },
 
   globalName: 'leafage',
