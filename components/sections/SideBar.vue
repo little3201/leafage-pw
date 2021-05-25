@@ -1,7 +1,7 @@
 <template>
   <aside class="lg:flex lg:justify-end w-full">
     <div class="lg:ml-12">
-      <div class="border border-solid border-gray-400 p-8">
+      <div class="border border-solid border-gray-200 p-8">
         <h3 class="font-extrabold">欢迎关注公众号（Leafage）</h3>
         <div class="flex items-center mt-4">
           <img
@@ -13,14 +13,14 @@
             <p class="my-2">微信搜一搜</p>
             <input
               type="text"
-              class="placeholder-gray-600 border border-gray-400 p-2 w-full text-sm rounded"
+              class="placeholder-gray-600 border border-gray-300 p-2 w-full text-sm rounded"
               disabled
               placeholder="Leafage"
             />
           </div>
         </div>
       </div>
-      <div class="my-12 py-8 border border-solid border-gray-400 relative">
+      <div class="my-12 py-8 border border-solid border-gray-200 relative">
         <h3
           class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold"
         >
@@ -52,14 +52,14 @@
           </div>
         </div>
       </div>
-      <div class="border border-solid border-gray-400 relative">
+      <div class="border border-solid border-gray-200 relative">
         <h3
           class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold"
         >
           Categories
         </h3>
         <ul
-          class="grid grid-cols-1 divide-y divide-gray-400 p-8 text-xs text-gray-600 font-semibold uppercase list-disc"
+          class="grid grid-cols-1 divide-y divide-gray-300 p-8 text-xs text-gray-600 font-semibold uppercase list-disc"
         >
           <li
             class="py-3 mx-4"
@@ -74,11 +74,11 @@
           </li>
         </ul>
       </div>
-      <div class="my-12 border-2 border-solid border-black p-8">
+      <div class="my-12 border-2 border-solid border-black border-opacity-70 p-8">
         <h3 class="font-extrabold">Send Email To Me</h3>
         <form class="mt-4 flex items-center">
           <input
-            class="w-full text-sm text-black placeholder-gray-600 border border-gray-400 py-2 pl-4"
+            class="w-full text-sm text-black placeholder-gray-600 border border-gray-300 py-2 pl-4"
             type="email"
             placeholder="Enter your email adress"
           />
@@ -104,14 +104,14 @@
           </a>
         </form>
       </div>
-      <div class="border border-solid border-gray-400 relative my-12">
+      <div class="border border-solid border-gray-200 relative my-12">
         <h3
           class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold"
         >
           Friend Chain
         </h3>
         <ul
-          class="grid grid-cols-1 divide-y divide-gray-400 p-8 text-xs text-gray-600 font-semibold list-decimal"
+          class="grid grid-cols-1 divide-y divide-gray-300 p-8 text-xs text-gray-600 font-semibold list-decimal"
         >
           <li class="py-3 mx-4">
             <a title="howtodoinjava"
