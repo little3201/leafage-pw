@@ -17,6 +17,9 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'preconnect', href: 'https://www.google-analytics.com' },
+    ],
+    script: [
+      {src: "https://hm.baidu.com/hm.js?afb964e86bcad4267c09806a48c3ccbd"}
     ]
   },
 
@@ -29,7 +32,6 @@ export default {
     '~/plugins/accessor',
     '~/plugins/composition-api',
     { src: '~/plugins/ga.client', ssr: false },
-    { src: '~/plugins/ga.baidu', ssr: false }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

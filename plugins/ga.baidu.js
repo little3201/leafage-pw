@@ -1,7 +1,7 @@
 /**
  * 百度统计插件
  */
- export default ({ app: { router }, store }) => {
+ export default ({ app: { router } }) => {
     if (
       process.client &&
       process.env.NODE_ENV === 'production'
