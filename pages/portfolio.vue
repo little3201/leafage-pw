@@ -1,28 +1,28 @@
 <template>
   <section class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20 my-8">
     <div class="border-t border-black my-8"></div>
-    <div class="grid grid-flow-row md:grid-cols-3 xl:grid-cols-4 gap-4">
+    <div class="flex flex-wrap ">
       <div
         v-for="(data, index) in datas"
         :key="index"
-        class="row-start-auto"
-        :class="{'row-span-2': index == 0}"
+        class="flex-auto my-2"
       >
         <img
           v-if="imgType.includes(data.type)"
           :src="data.url[0]"
-          class="w-full"
+          class="h-64 object-cover"
           :alt="data.title"
         />
         <video
           id="video"
           controls
           preload="metadata"
-          class="w-full outline-none"
+          class="h-64 outline-none"
           v-else-if="vedioType.includes(data.type)"
         >
           <source :src="data.url[0]" :type="'video/' + data.type" />
         </video>
+        <div class="last-box"></div>
       </div>
     </div>
   </section>
