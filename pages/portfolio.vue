@@ -1,16 +1,16 @@
 <template>
-  <section class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20 my-8">
-    <div class="border-t border-black my-8"></div>
-    <div class="flex flex-wrap ">
-      <div
+  <section class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
+    <div class="border-t border-black"></div>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-8">
+      <figure
         v-for="(data, index) in datas"
         :key="index"
-        class="flex-auto my-2"
+        class="w-full relative"
       >
         <img
           v-if="imgType.includes(data.type)"
           :src="data.url[0]"
-          class="h-64 object-cover"
+          class="w-full object-cover"
           :alt="data.title"
         />
         <video
@@ -22,8 +22,10 @@
         >
           <source :src="data.url[0]" :type="'video/' + data.type" />
         </video>
-        <div class="last-box"></div>
-      </div>
+        <div class="absolute top-4 left-4">
+          <h3 class="text-white" v-text="data.title"></h3>
+        </div>
+      </figure>
     </div>
   </section>
 </template>
@@ -51,6 +53,10 @@ export default defineComponent({
     };
   },
 
+  setup(){
+    
+  },
+
   head() {
     const title = "Portfolio - Leafage";
     const description =
@@ -62,8 +68,7 @@ export default defineComponent({
         {
           hid: "keywords",
           name: "keywords",
-          content:
-            "leafage, 生活分享, 资源推荐, 技术总结, 影视浏览",
+          content: "leafage, 生活分享, 资源推荐, 技术总结, 影视浏览",
         },
       ],
     };

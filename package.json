@@ -29,7 +29,8 @@
     "eslint": "^7.27.0",
     "eslint-plugin-nuxt": "^2.0.0",
     "highlight.js": "^10.7.2",
-    "markdown-it": "^12.0.6"
+    "markdown-it": "^12.0.6",
+    "vue-masonry-wall": "^0.3.2"
   },
   "keywords": [
     "leafage",
