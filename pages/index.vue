@@ -2,7 +2,7 @@
   <div id="home">
     <Hero :datas="heroDatas" />
     <Featured :datas="featuredDatas" />
-    <Main :topDatas="topDatas" :listDatas="listDatas" />
+    <Main :topDatas="topDatas" :listDatas="listDatas" :total="total" />
     <Recommend :recommendDatas="recommendDatas" />
   </div>
 </template>
@@ -23,14 +23,16 @@ export default defineComponent({
       topDatas,
       listDatas,
       recommendDatas,
+      total
     ] = await Promise.all([
       await $axios.$get(SERVER_URL.posts.concat("?page=0&size=3")),
       await $axios.$get(SERVER_URL.posts.concat("?page=1&size=4")),
       await $axios.$get(SERVER_URL.posts.concat("?page=0&size=3&order=viewed")),
       await $axios.$get(SERVER_URL.posts.concat("?page=0&size=10&order=likes")),
       await $axios.$get(SERVER_URL.posts.concat("?page=0&size=6&order=viewed")),
+      await $axios.$get(SERVER_URL.posts.concat("/count")),
     ]);
-    return { heroDatas, featuredDatas, topDatas, listDatas, recommendDatas };
+    return { heroDatas, featuredDatas, topDatas, listDatas, recommendDatas, total };
   },
 
   head() {
