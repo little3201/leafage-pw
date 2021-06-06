@@ -8,7 +8,7 @@
         <button
           aria-label="posts_all"
           type="button"
-          @click="(category = ''), (alias = ''), $fetch()"
+          @click="(category = ''), $fetch(), (page = 0)"
           class="w-full h-10 font-bold uppercase focus:outline-none"
         >
           All
@@ -23,14 +23,14 @@
         <button
           :aria-label="'posts_' + cg.alias"
           type="button"
-          @click="(category = cg.code), (alias = cg.alias), $fetch()"
+          @click="(category = cg.code), $fetch(), (page = 0)"
           class="w-full h-10 font-bold uppercase focus:outline-none"
           v-text="cg.alias"
         ></button>
       </li>
     </ul>
     <PostsList :datas="datas" />
-    <Pagation :total="total" @retrieve="$fetch()" />
+    <Pagation :total="total" @retrieve="retrieve" />
   </section>
 </template>
 
@@ -84,13 +84,20 @@ export default defineComponent({
     alias() {
       if (this.$route.query && this.$route.query.category) {
         return this.$route.query.category.toString();
+      } else if (this.category) {
+        this.categories.forEach((item: any) => {
+          if ((this.category = item.code)) {
+            return item.alias;
+          }
+        });
       }
       return "";
     },
   },
 
   methods: {
-    retrieve() {
+    retrieve(page: number) {
+      this.page = page;
       this.$fetch();
     },
   },
