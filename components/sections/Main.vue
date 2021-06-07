@@ -53,7 +53,7 @@
           </li>
         </ul>
         <ListItem :datas="datas" />
-        <Pagation :total="total" @retrieve="retrieve" />
+        <Pagation :page="page" :total="total" @retrieve="retrieve" />
       </div>
       <SideBar />
     </div>

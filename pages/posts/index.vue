@@ -8,7 +8,7 @@
         <button
           aria-label="posts_all"
           type="button"
-          @click="(category = ''), $fetch(), (page = 0)"
+          @click="(category.name = ''), $fetch(), (page = 0)"
           class="w-full h-10 font-bold uppercase focus:outline-none"
         >
           All
@@ -23,14 +23,19 @@
         <button
           :aria-label="'posts_' + cg.alias"
           type="button"
-          @click="(category = cg.code), $fetch(), (page = 0)"
+          @click="
+            (category.code = cg.code),
+              (category.name = cg.alias),
+              $fetch(),
+              (page = 0)
+          "
           class="w-full h-10 font-bold uppercase focus:outline-none"
           v-text="cg.alias"
         ></button>
       </li>
     </ul>
     <PostsList :datas="datas" />
-    <Pagation :total="total" @retrieve="retrieve" />
+    <Pagation :page="page" :total="total" @retrieve="retrieve" />
   </section>
 </template>
 
@@ -48,7 +53,10 @@ export default defineComponent({
 
   data() {
     return {
-      category: "",
+      category: {
+        name: "",
+        code: "",
+      },
       page: 0,
       total: 0,
       datas: [],
@@ -57,10 +65,14 @@ export default defineComponent({
   },
 
   async fetch() {
-    if (this.alias != "" && this.category == "" && this.categories.length > 0) {
+    if (
+      this.alias != "" &&
+      this.category.code == "" &&
+      this.categories.length > 0
+    ) {
       this.categories.forEach((item: any) => {
         if (this.alias == item.alias) {
-          this.category = item.code;
+          this.category.code = item.code;
           return;
         }
       });
@@ -70,7 +82,7 @@ export default defineComponent({
         SERVER_URL.posts.concat(
           "?page=" + this.page,
           "&size=12&category=",
-          this.category ? this.category : ""
+          this.category.code ? this.category.code : ""
         )
       ),
       this.$axios.$get(SERVER_URL.posts.concat("/count")),
@@ -81,15 +93,11 @@ export default defineComponent({
   },
 
   computed: {
-    alias() {
+    alias(): String {
       if (this.$route.query && this.$route.query.category) {
         return this.$route.query.category.toString();
-      } else if (this.category) {
-        this.categories.forEach((item: any) => {
-          if ((this.category = item.code)) {
-            return item.alias;
-          }
-        });
+      } else if (this.category.name) {
+        return this.category.name;
       }
       return "";
     },

@@ -29,17 +29,9 @@
           type="button"
           aria-label="give"
           @click="give(index - 1)"
-          class="
-            w-8
-            h-8
-            rounded-full
-            focus:outline-none
-            border border-black
-            hover:bg-black
-            hover:text-white
-          "
+          class="w-8 h-8 rounded-full focus:outline-none border border-black hover:bg-black hover:text-white"
           :class="{
-            'bg-black text-white ': page == index - 1,
+            'bg-black text-white ': curPage == index - 1,
           }"
         >
           {{ index }}
@@ -83,11 +75,15 @@ export default defineComponent({
       type: Number,
       default: 0,
     },
+    page: {
+      type: Number,
+      default: 0,
+    },
   },
 
   data() {
     return {
-      page: 0,
+      curPage: this.page,
     };
   },
 
@@ -101,19 +97,19 @@ export default defineComponent({
     // 递增
     increment() {
       if (this.page < this.pages - 1) {
-        this.page++;
+        this.curPage++;
         this.give(this.page);
       }
     },
     // 递减
     decrease() {
       if (this.page > 0) {
-        this.page--;
+        this.curPage--;
         this.give(this.page);
       }
     },
     give(page: number) {
-      this.page = page;
+      this.curPage = page;
       this.$emit("retrieve", page);
     },
     // 计算总页数
