@@ -31,12 +31,20 @@
           v-for="data in datas"
           :key="data.code"
         >
-          <img class="w-28 h-20" :src="data.cover + '?imageMogr2/thumbnail/640x80/format/webp/blur/1x0/quality/75'" :alt="data.title" />
+          <img
+            class="w-28 h-20"
+            :src="
+              data.cover +
+              '?imageMogr2/thumbnail/640x80/format/webp/blur/1x0/quality/75'
+            "
+            :alt="data.title"
+          />
           <div class="m-2 md:ml-4">
             <h3
               class="text-sm font-bold transform hover:translate-x-2 transition duration-500"
             >
-              <nuxt-link :title="data.code"
+              <nuxt-link
+                :title="data.code"
                 :to="'/posts/detail/' + data.code"
                 v-text="data.title"
               ></nuxt-link>
@@ -66,7 +74,8 @@
             v-for="category in categories"
             :key="category.code"
           >
-            <nuxt-link :title="category.alias"
+            <nuxt-link
+              :title="category.alias"
               :to="{ path: '/posts', query: { category: category.alias } }"
               v-text="category.alias"
             ></nuxt-link>
@@ -74,7 +83,9 @@
           </li>
         </ul>
       </div>
-      <div class="my-12 border-2 border-solid border-black border-opacity-70 p-8">
+      <div
+        class="my-12 border-2 border-solid border-black p-8"
+      >
         <h3 class="font-extrabold">Send Email To Me</h3>
         <form class="mt-4 flex items-center">
           <input
@@ -82,7 +93,9 @@
             type="email"
             placeholder="Enter your email adress"
           />
-          <a aria-label="email" title="email"
+          <a
+            aria-label="email"
+            title="email"
             href="mailto:little3201@163.com?subject=Leafage%20Website%20News"
             class="bg-black text-white p-2 -ml-1"
           >
@@ -114,51 +127,66 @@
           class="grid grid-cols-1 divide-y divide-gray-300 p-8 text-xs text-gray-600 font-semibold list-decimal"
         >
           <li class="py-3 mx-4">
-            <a title="howtodoinjava"
+            <a
+              title="howtodoinjava"
               href="https://howtodoinjava.com/"
               target="_blank"
-              rel=noopener
+              rel="noopener"
               >howtodoinjava</a
             >
           </li>
           <li class="py-3 mx-4">
-            <a title="nginx"
+            <a
+              title="nginx"
               href="https://www.digitalocean.com/community/tools/nginx?global.app.lang=zhCN"
-              rel=noopener
+              rel="noopener"
               target="_blank"
               >nginx配置生成</a
             >
           </li>
           <li class="py-3 mx-4">
-            <a title="leafage console"
+            <a
+              title="leafage console"
               href="https://console.leafage.top"
               target="_blank"
-              rel=noopener
+              rel="noopener"
               >leafage后台管理系统</a
             >
           </li>
           <li class="py-3 mx-4">
-            <a title="csdn"
+            <a
+              title="csdn"
               href="https://blog.csdn.net/zx110503?spm=1008.2028.3001.5343&type=blog"
-              rel=noopener
+              rel="noopener"
               target="_blank"
               >csdn</a
             >
           </li>
           <li class="py-3 mx-4">
-            <a title="oschina"
+            <a
+              title="oschina"
               href="https://my.oschina.net/u/4066932"
               target="_blank"
-              rel=noopener
+              rel="noopener"
               >开源中国 oschina</a
             >
           </li>
           <li class="py-3 mx-4">
-            <a title="segmentfault"
+            <a
+              title="segmentfault"
               href="https://segmentfault.com/u/bujidao_5d0c24ce7055e/articles"
-              rel=noopener
+              rel="noopener"
               target="_blank"
               >思否 segmentfault</a
+            >
+          </li>
+          <li class="py-3 mx-4">
+            <a
+              title="juejin"
+              href="https://juejin.cn/user/184373686838312/posts"
+              rel="noopener"
+              target="_blank"
+              >掘金</a
             >
           </li>
         </ul>

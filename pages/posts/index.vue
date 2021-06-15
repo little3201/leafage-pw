@@ -8,7 +8,7 @@
         <button
           aria-label="posts_all"
           type="button"
-          @click="(category = ''), (alias = ''), $fetch()"
+          @click="(category.name = ''), $fetch(), (page = 0)"
           class="w-full h-10 font-bold uppercase focus:outline-none"
         >
           All
@@ -23,14 +23,19 @@
         <button
           :aria-label="'posts_' + cg.alias"
           type="button"
-          @click="(category = cg.code), (alias = cg.alias), $fetch()"
+          @click="
+            (category.code = cg.code),
+              (category.name = cg.alias),
+              $fetch(),
+              (page = 0)
+          "
           class="w-full h-10 font-bold uppercase focus:outline-none"
           v-text="cg.alias"
         ></button>
       </li>
     </ul>
     <PostsList :datas="datas" />
-    <Pagation @retrieve="$fetch()" />
+    <Pagation :page="page" :total="total" @retrieve="retrieve" />
   </section>
 </template>
 
@@ -41,48 +46,66 @@ import { SERVER_URL } from "~/assets/request";
 export default defineComponent({
   name: "Posts",
 
-  async asyncData({ app: { $axios }, params }) {
-    let [datas, categories] = await Promise.all([
-      await $axios.$get(
-        SERVER_URL.posts.concat("?page=0&size=12&category=", params.code)
-      ),
-      await $axios.$get(SERVER_URL.category),
-    ]);
-
-    return { datas, categories };
+  async asyncData({ app: { $axios } }) {
+    const categories = await $axios.$get(SERVER_URL.category);
+    return { categories };
   },
 
   data() {
     return {
-      alias: this.$route.query.category.toString() || "",
-      category: "",
+      category: {
+        name: "",
+        code: "",
+      },
       page: 0,
+      total: 0,
       datas: [],
-      categories: []
+      categories: [],
     };
   },
 
   async fetch() {
-    if (this.alias != "" && this.category == '' && this.categories.length > 0) {
+    if (
+      this.alias != "" &&
+      this.category.code == "" &&
+      this.categories.length > 0
+    ) {
       this.categories.forEach((item: any) => {
         if (this.alias == item.alias) {
-          this.category = item.code;
+          this.category.code = item.code;
           return;
         }
       });
     }
-    let dataList = await this.$axios.$get(
-      SERVER_URL.posts.concat(
-        "?page=" + this.page,
-        "&size=12&category=",
-        this.category
-      )
-    );
+    const [dataList, rows] = await Promise.all([
+      this.$axios.$get(
+        SERVER_URL.posts.concat(
+          "?page=" + this.page,
+          "&size=12&category=",
+          this.category.code ? this.category.code : ""
+        )
+      ),
+      this.$axios.$get(SERVER_URL.posts.concat("/count")),
+    ]);
+
     this.datas = dataList;
+    this.total = rows;
+  },
+
+  computed: {
+    alias(): String {
+      if (this.$route.query && this.$route.query.category) {
+        return this.$route.query.category.toString();
+      } else if (this.category.name) {
+        return this.category.name;
+      }
+      return "";
+    },
   },
 
   methods: {
-    retrieve() {
+    retrieve(page: number) {
+      this.page = page;
       this.$fetch();
     },
   },

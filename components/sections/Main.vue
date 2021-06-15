@@ -4,7 +4,13 @@
       <div class="lg:col-span-2">
         <TopPosts :datas="topDatas" />
         <ul
-          class="flex justify-between items-center text-center border border-black"
+          class="
+            flex
+            justify-between
+            items-center
+            text-center
+            border border-black
+          "
         >
           <li
             class="w-1/3 hover:bg-black hover:text-white"
@@ -13,7 +19,7 @@
             <button
               aria-label="trending"
               type="button"
-              @click="retrieve(0, 'likes')"
+              @click="retrieve(), (order = 'likes')"
               class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
             >
               Trending
@@ -26,7 +32,7 @@
             <button
               aria-label="most_view"
               type="button"
-              @click="retrieve(0, 'viewed')"
+              @click="retrieve(), (order = 'viewed')"
               class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
             >
               Most View
@@ -39,7 +45,7 @@
             <button
               type="button"
               aria-label="popular"
-              @click="retrieve(0, 'comment')"
+              @click="retrieve(), (order = 'comment')"
               class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
             >
               Popular
@@ -47,7 +53,7 @@
           </li>
         </ul>
         <ListItem :datas="datas" />
-        <Pagation @retrieve="retrieve" />
+        <Pagation :page="page" :total="total" @retrieve="retrieve" />
       </div>
       <SideBar />
     </div>
@@ -70,6 +76,10 @@ export default defineComponent({
       type: Array,
       default: [],
     },
+    total: {
+      type: Number,
+      default: 0,
+    },
   },
 
   data() {
@@ -81,12 +91,8 @@ export default defineComponent({
   },
 
   methods: {
-    retrieve(page: number, order: string) {
+    retrieve(page: number) {
       this.page = page ? page : 0;
-      this.order = order ? order : "likes";
-      this.listPosts();
-    },
-    listPosts() {
       this.$axios
         .get(
           SERVER_URL.posts.concat(
@@ -95,7 +101,9 @@ export default defineComponent({
             this.order
           )
         )
-        .then((res) => (this.datas = res.data));
+        .then((res) => {
+          this.datas = res.data;
+        });
     },
   },
 });

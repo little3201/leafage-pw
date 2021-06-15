@@ -71,7 +71,7 @@ export default defineComponent({
           hid: "keywords",
           name: "keywords",
           content:
-            "leafage, 博客, 技术, 技术笔记, 技术资料, 经验记录, 解决方案, nuxt.js, vue.js, typescript, tailwindcss, java, javascript",
+            "leafage, 博客, 生活分享, 资源推荐, 技术总结, 影视浏览, nuxt.js, vue.js, typescript, tailwindcss, java, javascript",
         },
       ],
     };

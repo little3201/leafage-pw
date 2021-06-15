@@ -2,7 +2,9 @@
   <section class="mb-12">
     <ul class="flex justify-center items-center">
       <li class="mx-4">
-        <button type="button" aria-label="descrease"
+        <button
+          type="button"
+          aria-label="descrease"
           @click="decrease"
           class="disabled:opacity-25 focus:outline-none"
         >
@@ -23,18 +25,22 @@
         </button>
       </li>
       <li class="mx-4" v-for="index in pages" :key="index">
-        <button  type="button" aria-label="give"
+        <button
+          type="button"
+          aria-label="give"
           @click="give(index - 1)"
           class="w-8 h-8 rounded-full focus:outline-none border border-black hover:bg-black hover:text-white"
           :class="{
-            'bg-black text-white ': page == (index - 1),
+            'bg-black text-white ': curPage == index - 1,
           }"
         >
           {{ index }}
         </button>
       </li>
       <li class="mx-4">
-        <button  type="button" aria-label="increment"
+        <button
+          type="button"
+          aria-label="increment"
           @click="increment"
           class="disabled:opacity-25 focus:outline-none"
         >
@@ -60,47 +66,61 @@
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
-import { SERVER_URL } from "~/assets/request";
 
 export default defineComponent({
   name: "Pagation",
 
-  async fetch() {
-    this.pages = await this.$axios
-      .get(SERVER_URL.posts.concat("/count?order=viewed"))
-      .then((res) => {
-        if (res.data % 10 > 0) {
-          return ~~(res.data / 10) + 1;
-        }
-        return ~~(res.data / 10);
-      });
+  props: {
+    total: {
+      type: Number,
+      default: 0,
+    },
+    page: {
+      type: Number,
+      default: 0,
+    },
   },
 
   data() {
     return {
-      page: 0,
-      pages: 0,
+      curPage: this.page,
     };
+  },
+
+  computed: {
+    pages(): number {
+      return this.caluatePages();
+    },
   },
 
   methods: {
     // 递增
     increment() {
       if (this.page < this.pages - 1) {
-        this.page++;
+        this.curPage++;
         this.give(this.page);
       }
     },
     // 递减
     decrease() {
       if (this.page > 0) {
-        this.page--;
+        this.curPage--;
         this.give(this.page);
       }
     },
     give(page: number) {
-      this.page = page
+      this.curPage = page;
       this.$emit("retrieve", page);
+    },
+    // 计算总页数
+    caluatePages() {
+      if (this.total < 1) {
+        return 1;
+      } else if (this.total % 10 > 0) {
+        return ~~(this.total / 10) + 1;
+      } else {
+        return ~~(this.total / 10);
+      }
     },
   },
 });

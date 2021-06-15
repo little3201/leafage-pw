@@ -1,62 +1,33 @@
 <template>
-  <div class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
-    <section>
-      <ul class="flex text-xs border border-black">
-        <li
-          class="w-32 hover:bg-black hover:text-white"
-          :class="{ 'bg-black text-white': category == '' }"
-        >
-          <button
-            @click="(category = ''), $fetch()"
-            type="button"
-            aria-label="portfolio_all"
-            class="w-full h-10 font-bold uppercase focus:outline-none"
-          >
-            All
-          </button>
-        </li>
-        <li
-          v-for="(cg, index) in categories"
-          :key="index"
-          class="w-32 hover:bg-black hover:text-white"
-          :class="{ 'bg-black text-white': category == cg.alias }"
-        >
-          <button
-            type="button"
-            :aria-label="'portfolio_' + cg.alias"
-            @click="(category = cg.code), $fetch()"
-            class="w-full h-10 font-bold uppercase focus:outline-none"
-            v-text="cg.alias"
-          ></button>
-        </li>
-      </ul>
-    </section>
-    <section class="my-8">
-      <div
-        class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4"
+  <section class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
+    <div class="border-t border-black"></div>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-8">
+      <figure
+        v-for="(data, index) in datas"
+        :key="index"
+        class="w-full relative"
       >
-        <div v-for="(data, index) in datas" :key="index">
-          <img
-            v-if="
-              data.type == 'jpg' || data.type == 'jpeg' || data.type == 'png'
-            "
-            class="w-full h-auto"
-            :src="data.url[0]"
-            :alt="data.title"
-          />
-          <video
-            id="video"
-            controls
-            preload="metadata"
-            class="w-full h-auto outline-none"
-            v-else-if="data.type == 'mp4' || data.type == 'flv'"
-          >
-            <source :src="data.url[0]" :type="'video/' + data.type" />
-          </video>
+        <img
+          v-if="imgType.includes(data.type)"
+          :src="data.url[0]"
+          class="w-full object-cover"
+          :alt="data.title"
+        />
+        <video
+          id="video"
+          controls
+          preload="metadata"
+          class="h-64 outline-none"
+          v-else-if="vedioType.includes(data.type)"
+        >
+          <source :src="data.url[0]" :type="'video/' + data.type" />
+        </video>
+        <div class="absolute top-4 left-4">
+          <h3 class="text-white" v-text="data.title"></h3>
         </div>
-      </div>
-    </section>
-  </div>
+      </figure>
+    </div>
+  </section>
 </template>
 
 <script lang="ts">
@@ -69,36 +40,27 @@ export default defineComponent({
   scrollToTop: true,
 
   async asyncData({ app: { $axios } }) {
-    let [datas, categories] = await Promise.all([
-      await $axios.$get(SERVER_URL.portfolio.concat("?page=0&size=12")),
-      await $axios.$get(SERVER_URL.category.concat("?page=0&size=5")),
-    ]);
-    return { datas, categories };
+    let datas = await $axios.$get(
+      SERVER_URL.portfolio.concat("?page=0&size=12")
+    );
+    return { datas };
   },
 
   data() {
     return {
-      category: "",
-      datas: [],
-      page: 0,
+      imgType: ["png", "jpeg", "jpg", "svg", "webp"],
+      vedioType: ["mov", "avi", "flv", "m4v", "rm", "rmvb", "wmv", "mp4"],
     };
   },
 
-  async fetch() {
-    let dataList = await this.$axios.$get(
-      SERVER_URL.portfolio.concat(
-        "?page=" + this.page,
-        "&size=12&category=",
-        this.category
-      )
-    );
-    this.datas = dataList;
+  setup(){
+    
   },
 
   head() {
     const title = "Portfolio - Leafage";
     const description =
-      "Leafage的作品集，包含旅行记录、生活分享等资源信息，提供原创、优质、完整内容";
+      "Leafage的作品集，包含影视资源等信息，提供原创、优质、完整内容";
     return {
       title,
       meta: [
@@ -106,8 +68,7 @@ export default defineComponent({
         {
           hid: "keywords",
           name: "keywords",
-          content:
-            "leafage, 博客, 技术, 技术笔记, 技术资料, 经验记录, 解决方案, nuxt.js, vue.js, typescript, tailwindcss, java, javascript",
+          content: "leafage, 生活分享, 资源推荐, 技术总结, 影视浏览",
         },
       ],
     };
