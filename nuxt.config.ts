@@ -17,9 +17,6 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'preconnect', href: 'https://www.google-analytics.com' },
-    ],
-    script: [
-      { src: "https://hm.baidu.com/hm.js?afb964e86bcad4267c09806a48c3ccbd" }
     ]
   },
 
