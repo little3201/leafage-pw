@@ -1,4 +1,5 @@
 const axios = require('axios')
+const path = require('path')
 
 export default {
   ssr: true,
@@ -12,7 +13,6 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'google-site-verification', content: '_2Z6I2Wl5xuTKIGRrCD3meIZDgfn_XFVrTv1tKeJ6v8' },
       { name: 'msvalidate.01', content: 'E02DDF417CA7C7D33A55805B3E9A81C7' },
-      { name: 'baidu-site-verification', content: 'code-7cRwEMlHAr' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -24,13 +24,11 @@ export default {
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [
-  ],
+  css: ['~/assets/css/tailwind.css'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     '~/plugins/accessor',
-    '~/plugins/composition-api',
     { src: '~/plugins/ga.client', ssr: false },
   ],
 
@@ -45,8 +43,8 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
-    // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss',
+    // https://composition-api.nuxtjs.org
+    '@nuxtjs/composition-api/module'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -65,23 +63,19 @@ export default {
     baseURL: '/api',
   },
 
-  tailwindcss: {
-    viewer: false,
-    config: {
-      plugins: [require('@tailwindcss/typography'),],
-      variants: {
-        extend: {
-          fill: ['hover'],
-        }
-      },
-    }
-  },
-
   globalName: 'leafage',
 
   // nuxt loading configuration (https://zh.nuxtjs.org/api/configuration-loading)
   loading: {
     color: 'black'
+  },
+
+  build: {
+    postcss: {
+      plugins: {
+        tailwindcss: path.join(__dirname, './tailwind.config.js')
+      }
+    }
   },
 
   // sitemap: sitemap

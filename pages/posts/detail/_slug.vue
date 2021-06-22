@@ -210,7 +210,7 @@
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
 
-import { SERVER_URL } from "~/assets/request";
+import { SERVER_URL } from "~/api/request";
 import markdown from "~/plugins/markdown";
 
 export default defineComponent({

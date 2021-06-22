@@ -40,15 +40,57 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api";
-import { SERVER_URL } from "~/assets/request";
+import {
+  defineComponent,
+  useFetch,
+  useContext,
+  ref,
+  useMeta,
+} from "@nuxtjs/composition-api";
+import { SERVER_URL } from "~/api/request";
 
 export default defineComponent({
   name: "Posts",
+  setup() {
+    const categories = ref([]);
+    const datas = ref([]);
+    const total = ref([]);
 
-  async asyncData({ app: { $axios } }) {
-    const categories = await $axios.$get(SERVER_URL.category);
-    return { categories };
+    const { $axios } = useContext();
+
+    useFetch(async () => {
+      [categories.value, datas.value, total.value] = await Promise.all([
+        $axios.$get(SERVER_URL.category),
+        $axios.$get(
+          SERVER_URL.posts.concat("?page=" + 0, "&size=12&category=")
+        ),
+        $axios.$get(SERVER_URL.posts.concat("/count")),
+      ]);
+    });
+
+    useMeta(() => ({
+      title: "Posts - Leafage",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "一个开源的个人站点，致力于促进软件开发及相关领域知识与创新的传播。包含原创博客、生活分享、资源推荐、技术总结、影视浏览等资源信息，提供原创、优质、完整内容的专业开发社区",
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content:
+            "leafage, 博客, 技术, 技术笔记, 技术资料, 经验记录, 解决方案, nuxt.js, vue.js, typescript, tailwindcss, java, javascript",
+        },
+      ],
+    }));
+
+    return {
+      categories,
+      datas,
+      total,
+    };
   },
 
   data() {
