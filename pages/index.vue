@@ -3,7 +3,6 @@
     <button @click="$fetch">Refresh</button>
     <template v-if="$fetchState.pending">
       <div class="animate-pulse flex space-x-4">
-        <div class="rounded-full bg-blue-400 h-12 w-12"></div>
         <div class="flex-1 space-y-4 py-1">
           <div class="h-4 bg-blue-400 rounded w-3/4"></div>
           <div class="space-y-2">
@@ -14,12 +13,18 @@
       </div>
     </template>
     <template v-else-if="$fetchState.error">
-      <h1>Posts not found</h1>
+      <h3>Posts not found</h3>
     </template>
-    <Hero :datas="featuredDatas.slice(0, 2)" />
-    <Featured :datas="featuredDatas" />
-    <Main :topDatas="viewedDatas.slice(0, 2)" :listDatas="likesDatas" :total="total" />
-    <Recommend :recommendDatas="viewedDatas" />
+    <div v-else>
+      <Hero :datas="featuredDatas.slice(0, 2)" />
+      <Featured :datas="featuredDatas" />
+      <Main
+        :topDatas="viewedDatas.slice(0, 2)"
+        :listDatas="likesDatas"
+        :total="total"
+      />
+      <Recommend :recommendDatas="viewedDatas" />
+    </div>
   </div>
 </template>
 
@@ -36,6 +41,7 @@ import { SERVER_URL } from "~/api/request";
 export default defineComponent({
   name: "Home",
 
+  head: {},
   scrollToTop: true,
 
   setup() {

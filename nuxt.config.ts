@@ -1,5 +1,4 @@
 const axios = require('axios')
-const path = require('path')
 
 export default {
   ssr: true,
@@ -70,7 +69,8 @@ export default {
   build: {
     postcss: {
       plugins: {
-        tailwindcss: path.join(__dirname, './tailwind.config.js')
+        tailwindcss: {},
+        autoprefixer: {},
       }
     }
   },

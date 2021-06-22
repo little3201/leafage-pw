@@ -8,14 +8,11 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {
-      fill: ['hover'],
-    }
   },
   variants: {
     extend: {
-
+      fill: ['hover'],
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 }

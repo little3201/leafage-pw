@@ -29,9 +29,17 @@
           type="button"
           aria-label="give"
           @click="give(index - 1)"
-          class="w-8 h-8 rounded-full focus:outline-none border border-black hover:bg-black hover:text-white"
+          class="
+            w-8
+            h-8
+            rounded-full
+            focus:outline-none
+            border border-black
+            hover:bg-black
+            hover:text-white
+          "
           :class="{
-            'bg-black text-white ': curPage == index - 1,
+            'bg-black text-white ': page == index - 1,
           }"
         >
           {{ index }}
@@ -65,7 +73,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api";
+import { defineComponent, computed } from "@nuxtjs/composition-api";
 
 export default defineComponent({
   name: "Pagation",
@@ -81,47 +89,36 @@ export default defineComponent({
     },
   },
 
-  data() {
-    return {
-      curPage: this.page,
-    };
-  },
-
-  computed: {
-    pages(): number {
-      return this.caluatePages();
-    },
-  },
-
-  methods: {
-    // 递增
-    increment() {
-      if (this.page < this.pages - 1) {
-        this.curPage++;
-        this.give(this.page);
-      }
-    },
-    // 递减
-    decrease() {
-      if (this.page > 0) {
-        this.curPage--;
-        this.give(this.page);
-      }
-    },
-    give(page: number) {
-      this.curPage = page;
-      this.$emit("retrieve", page);
-    },
-    // 计算总页数
-    caluatePages() {
-      if (this.total < 1) {
+  setup(props, { emit }) {
+    const pages = computed(() => {
+      if (props.total < 1) {
         return 1;
-      } else if (this.total % 10 > 0) {
-        return ~~(this.total / 10) + 1;
+      } else if (props.total % 10 > 0) {
+        return ~~(props.total / 10) + 1;
       } else {
-        return ~~(this.total / 10);
+        return ~~(props.total / 10);
       }
-    },
+    });
+
+    const increment = () => {
+      if (props.page < pages.value - 1) {
+        give(props.page);
+      }
+    };
+    // 递减
+    const decrease = () => {
+      if (props.page > 0) {
+        give(props.page);
+      }
+    };
+    const give = (num: number) => {
+      emit("retrieve", num);
+    };
+
+    return {
+      increment, decrease
+    }
   },
+
 });
 </script>
