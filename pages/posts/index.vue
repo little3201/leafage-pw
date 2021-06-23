@@ -1,37 +1,45 @@
 <template>
-  <section class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
-    <ul class="flex text-xs border border-black">
-      <li
-        class="w-32 hover:bg-black hover:text-white"
-        :class="{ 'bg-black text-white': category == '' }"
-      >
-        <button
-          aria-label="posts_all"
-          type="button"
-          @click="(category = ''), $fetch(), (page = 0)"
-          class="w-full h-10 font-bold uppercase focus:outline-none"
+  <div class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
+    <template v-if="$fetchState.pending">
+      <Skeleton />
+    </template>
+    <template v-else-if="$fetchState.error">
+      <h3>Posts not found</h3>
+    </template>
+    <template v-else>
+      <ul class="flex text-xs border border-black">
+        <li
+          class="w-32 hover:bg-black hover:text-white"
+          :class="{ 'bg-black text-white': category == '' }"
         >
-          All
-        </button>
-      </li>
-      <li
-        class="w-32 hover:bg-black hover:text-white"
-        :class="{ 'bg-black text-white': category == cg.alias }"
-        v-for="(cg, index) in categories"
-        :key="index"
-      >
-        <button
-          :aria-label="'posts_' + cg.alias"
-          type="button"
-          @click="(category = cg.code), $fetch(), (page = 0)"
-          class="w-full h-10 font-bold uppercase focus:outline-none"
-          v-text="cg.alias"
-        ></button>
-      </li>
-    </ul>
-    <PostsList :datas="datas" />
-    <Pagation :page="page" :total="total" @retrieve="retrieve" />
-  </section>
+          <button
+            aria-label="posts_all"
+            type="button"
+            @click="(category = ''), $fetch(), (page = 0)"
+            class="w-full h-10 font-bold uppercase focus:outline-none"
+          >
+            All
+          </button>
+        </li>
+        <li
+          class="w-32 hover:bg-black hover:text-white"
+          :class="{ 'bg-black text-white': category == cg.alias }"
+          v-for="(cg, index) in categories"
+          :key="index"
+        >
+          <button
+            :aria-label="'posts_' + cg.alias"
+            type="button"
+            @click="(category = cg.code), $fetch(), (page = 0)"
+            class="w-full h-10 font-bold uppercase focus:outline-none"
+            v-text="cg.alias"
+          ></button>
+        </li>
+      </ul>
+      <PostsList :datas="datas" />
+      <Pagation :page="page" :total="total" @retrieve="retrieve" />
+    </template>
+  </div>
 </template>
 
 <script lang="ts">

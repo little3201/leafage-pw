@@ -89,7 +89,7 @@ export default defineComponent({
 
   setup(props) {
     const page = ref(0);
-    const order = ref("");
+    const order = ref("likes");
     const { $axios } = useContext();
 
     const datas = computed(() => props.listDatas);

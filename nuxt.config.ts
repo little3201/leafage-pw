@@ -40,7 +40,9 @@ export default {
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     // https://composition-api.nuxtjs.org
-    '@nuxtjs/composition-api/module'
+    '@nuxtjs/composition-api/module',
+    // https://tailwindcss.com/docs/guides/nuxtjs
+    '@nuxtjs/tailwindcss'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -64,15 +66,6 @@ export default {
   // nuxt loading configuration (https://zh.nuxtjs.org/api/configuration-loading)
   loading: {
     color: 'black'
-  },
-
-  build: {
-    postcss: {
-      plugins: {
-        tailwindcss: {},
-        autoprefixer: {},
-      }
-    }
   },
 
   // sitemap: sitemap

@@ -40,6 +40,7 @@
                     href="https://console.leafage.top"
                     target="_blank"
                     rel="noopener"
+                    class="text-blue-600"
                     >后台管理</a
                   >开发，
                   也全面改用tailwindcss来做，顺势而为选择了vue3进行重构，更多功能还在持续优化和完善中，敬请期待。

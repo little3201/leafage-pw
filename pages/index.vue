@@ -1,30 +1,17 @@
 <template>
   <div id="home">
-    <button @click="$fetch">Refresh</button>
     <template v-if="$fetchState.pending">
-      <div class="animate-pulse flex space-x-4">
-        <div class="flex-1 space-y-4 py-1">
-          <div class="h-4 bg-blue-400 rounded w-3/4"></div>
-          <div class="space-y-2">
-            <div class="h-4 bg-blue-400 rounded"></div>
-            <div class="h-4 bg-blue-400 rounded w-5/6"></div>
-          </div>
-        </div>
-      </div>
+      <Skeleton />
     </template>
     <template v-else-if="$fetchState.error">
       <h3>Posts not found</h3>
     </template>
-    <div v-else>
-      <Hero :datas="featuredDatas.slice(0, 2)" />
+    <template v-else>
+      <Hero :datas="featuredDatas" />
       <Featured :datas="featuredDatas" />
-      <Main
-        :topDatas="viewedDatas.slice(0, 2)"
-        :listDatas="likesDatas"
-        :total="total"
-      />
+      <Main :topDatas="viewedDatas" :listDatas="likesDatas" :total="total" />
       <Recommend :recommendDatas="viewedDatas" />
-    </div>
+    </template>
   </div>
 </template>
 
@@ -63,7 +50,7 @@ export default defineComponent({
     });
 
     useMeta(() => ({
-      title: "Posts - Leafage",
+      title: "Leafage",
       meta: [
         {
           hid: "description",

@@ -39,7 +39,7 @@
             hover:text-white
           "
           :class="{
-            'bg-black text-white ': page == index - 1,
+            'bg-black text-white ': curPage == index - 1,
           }"
         >
           {{ index }}
@@ -73,7 +73,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from "@nuxtjs/composition-api";
+import { defineComponent, computed, ref } from "@nuxtjs/composition-api";
 
 export default defineComponent({
   name: "Pagation",
@@ -90,6 +90,8 @@ export default defineComponent({
   },
 
   setup(props, { emit }) {
+    const curPage = ref(props.page);
+
     const pages = computed(() => {
       if (props.total < 1) {
         return 1;
@@ -101,24 +103,27 @@ export default defineComponent({
     });
 
     const increment = () => {
-      if (props.page < pages.value - 1) {
-        give(props.page);
+      if (curPage.value < pages.value - 1) {
+        give(curPage.value++);
       }
     };
     // 递减
     const decrease = () => {
-      if (props.page > 0) {
-        give(props.page);
+      if (curPage.value > 0) {
+        give(curPage.value--);
       }
     };
     const give = (num: number) => {
+      curPage.value = num;
       emit("retrieve", num);
     };
 
     return {
-      increment, decrease
-    }
+      curPage,
+      pages,
+      increment,
+      decrease,
+    };
   },
-
 });
 </script>
