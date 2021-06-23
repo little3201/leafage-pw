@@ -192,29 +192,11 @@
         >
           <li class="py-3 mx-4">
             <a
-              title="howtodoinjava"
-              href="https://howtodoinjava.com/"
-              target="_blank"
-              rel="noopener"
-              >howtodoinjava</a
-            >
-          </li>
-          <li class="py-3 mx-4">
-            <a
-              title="nginx"
-              href="https://www.digitalocean.com/community/tools/nginx?global.app.lang=zhCN"
-              rel="noopener"
-              target="_blank"
-              >nginx配置生成</a
-            >
-          </li>
-          <li class="py-3 mx-4">
-            <a
               title="leafage console"
               href="https://console.leafage.top"
               target="_blank"
               rel="noopener"
-              >leafage后台管理系统</a
+              >leafage 控制台</a
             >
           </li>
           <li class="py-3 mx-4">
@@ -279,8 +261,8 @@ export default defineComponent({
 
     useFetch(async () => {
       [datas.value, categories.value] = await Promise.all([
-        $axios.$get(SERVER_URL.posts.concat("?page=0&size=5&order=viewed")),
-        $axios.$get(SERVER_URL.category.concat("?page=0&size=5")),
+        $axios.$get(SERVER_URL.posts.concat("?page=0&size=5")),
+        $axios.$get(SERVER_URL.category.concat("?page=0&size=10")),
       ]);
     });
 

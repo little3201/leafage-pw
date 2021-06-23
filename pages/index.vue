@@ -1,17 +1,9 @@
 <template>
   <div id="home">
-    <template v-if="$fetchState.pending">
-      <Skeleton />
-    </template>
-    <template v-else-if="$fetchState.error">
-      <h3>Posts not found</h3>
-    </template>
-    <template v-else>
-      <Hero :datas="featuredDatas" />
-      <Featured :datas="featuredDatas" />
-      <Main :topDatas="viewedDatas" :listDatas="likesDatas" :total="total" />
-      <Recommend :recommendDatas="viewedDatas" />
-    </template>
+    <Hero :datas="featuredDatas" />
+    <Featured :datas="featuredDatas" />
+    <Main :topDatas="viewedDatas" :listDatas="likesDatas" :total="total" />
+    <Recommend :recommendDatas="viewedDatas" />
   </div>
 </template>
 

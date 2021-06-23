@@ -7,7 +7,12 @@
       </div>
       <div class="my-6">
         <div
-          class="grid grid-flow-col grid-rows-3 grid-cols-1 md:grid-rows-2 md:grid-cols-3 gap-4 md:gap-x-6"
+          class="
+            grid grid-flow-col grid-rows-3 grid-cols-1
+            md:grid-rows-2 md:grid-cols-3
+            gap-4
+            md:gap-x-6
+          "
         >
           <div class="md:row-span-2 md:col-span-2 h-auto">
             <div class="overflow-hidden">
@@ -15,7 +20,7 @@
                 <img
                   :src="datas[0].cover"
                   :alt="datas[0].title"
-                  class="w-full h-48 md:h-full"
+                  class="w-full h-full object-cover"
                 />
               </div>
             </div>
@@ -26,7 +31,10 @@
                 <li>
                   <nuxt-link
                     :title="datas[0].category"
-                    :to="{ path: '/posts', query: { category: datas[0].category } }"
+                    :to="{
+                      path: '/posts',
+                      query: { category: datas[0].category },
+                    }"
                     class="text-gray-600"
                     v-text="datas[0].category"
                   ></nuxt-link>
@@ -53,9 +61,7 @@
                     <circle cx="12" cy="12" r="3"></circle></svg
                   >{{ datas[0].viewed }}
                 </li>
-                <li
-                  class="flex items-center"
-                >
+                <li class="flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="12"
@@ -75,7 +81,15 @@
                 </li>
               </ul>
               <h3
-                class="md:text-xl font-extrabold my-4 transform hover:translate-x-2 transition duration-500"
+                class="
+                  md:text-xl
+                  font-extrabold
+                  my-4
+                  transform
+                  hover:translate-x-2
+                  transition
+                  duration-500
+                "
               >
                 <nuxt-link
                   :title="datas[0].code"
@@ -98,21 +112,12 @@
                     '?imageMogr2/thumbnail/640x192/format/webp/blur/1x0/quality/75'
                   "
                   :alt="datas[1].title"
-                  class="w-full h-44"
+                  class="w-full h-40"
                 />
               </div>
             </div>
             <div>
-              <h3
-                class="font-extrabold my-2 transform hover:translate-x-2 transition duration-500"
-              >
-                <nuxt-link
-                  :title="datas[1].code"
-                  :to="'/posts/detail/' + datas[1].code"
-                  v-text="datas[1].title"
-                ></nuxt-link>
-              </h3>
-              <ul class="flex text-xs space-x-6 uppercase text-gray-500">
+              <ul class="flex my-2 text-xs space-x-6 uppercase text-gray-500">
                 <li
                   v-text="new Date(datas[1].modifyTime).toLocaleDateString()"
                 ></li>
@@ -135,9 +140,7 @@
                     <circle cx="12" cy="12" r="3"></circle></svg
                   >{{ datas[1].viewed }}
                 </li>
-                <li
-                  class="flex items-center"
-                >
+                <li class="flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="12"
@@ -156,6 +159,21 @@
                   >{{ datas[1].likes }}
                 </li>
               </ul>
+              <h3
+                class="
+                  font-extrabold
+                  transform
+                  hover:translate-x-2
+                  transition
+                  duration-500
+                "
+              >
+                <nuxt-link
+                  :title="datas[1].code"
+                  :to="'/posts/detail/' + datas[1].code"
+                  v-text="datas[1].title"
+                ></nuxt-link>
+              </h3>
             </div>
           </div>
           <div>
@@ -167,21 +185,12 @@
                     '?imageMogr2/thumbnail/640x192/format/webp/blur/1x0/quality/75'
                   "
                   :alt="datas[2].title"
-                  class="w-full h-44"
+                  class="w-full h-40"
                 />
               </div>
             </div>
             <div>
-              <h3
-                class="font-extrabold my-2 transform hover:translate-x-2 transition duration-500"
-              >
-                <nuxt-link
-                  :title="datas[2].code"
-                  :to="'/posts/detail/' + datas[2].code"
-                  v-text="datas[2].title"
-                ></nuxt-link>
-              </h3>
-              <ul class="flex text-xs space-x-6 uppercase text-gray-500">
+              <ul class="flex my-2 text-xs space-x-6 uppercase text-gray-500">
                 <li
                   v-text="new Date(datas[2].modifyTime).toLocaleDateString()"
                 ></li>
@@ -204,9 +213,7 @@
                     <circle cx="12" cy="12" r="3"></circle></svg
                   >{{ datas[2].viewed }}
                 </li>
-                <li
-                  class="flex items-center"
-                >
+                <li class="flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="12"
@@ -225,6 +232,21 @@
                   >{{ datas[2].likes }}
                 </li>
               </ul>
+              <h3
+                class="
+                  font-extrabold
+                  transform
+                  hover:translate-x-2
+                  transition
+                  duration-500
+                "
+              >
+                <nuxt-link
+                  :title="datas[2].code"
+                  :to="'/posts/detail/' + datas[2].code"
+                  v-text="datas[2].title"
+                ></nuxt-link>
+              </h3>
             </div>
           </div>
         </div>

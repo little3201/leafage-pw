@@ -22,8 +22,8 @@
         "
       >
         <nuxt-link title="home" to="/" class="font-extrabold"> Home </nuxt-link>
-        <nuxt-link title="portfolio" to="/portfolio" class="font-extrabold">
-          Portfolio
+        <nuxt-link title="posts" to="/posts" class="font-extrabold">
+          Posts
         </nuxt-link>
         <nuxt-link title="about" to="/about" class="font-extrabold">
           About

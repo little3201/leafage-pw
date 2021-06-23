@@ -58,7 +58,8 @@ export default {
     https: true,
     progress: true,
     credentials: true,
-    baseURL: '/api',
+    baseURL: 'https://www.leafage.top/api',
+    proxy: true
   },
 
   globalName: 'leafage',
@@ -66,6 +67,10 @@ export default {
   // nuxt loading configuration (https://zh.nuxtjs.org/api/configuration-loading)
   loading: {
     color: 'black'
+  },
+
+  tailwindcss: {
+    viewer: false
   },
 
   // sitemap: sitemap

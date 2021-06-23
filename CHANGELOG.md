@@ -6,6 +6,9 @@
 
 ## 更新记录
 2021-06-23: 
+  1. SideBar、RecentPosts改为Lazy load；
+
+2021-06-23: 
   1. 替换到@vue/composition-api，使用@nuxt/composition-api以准备更新到nuxt3；
   2. 移除store的自定义配置，使用useMeta()更好的提供动态的详情页的ssr meta;
   3. 更新所有依赖到最新版版；

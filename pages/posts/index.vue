@@ -1,44 +1,36 @@
 <template>
   <div class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
-    <template v-if="$fetchState.pending">
-      <Skeleton />
-    </template>
-    <template v-else-if="$fetchState.error">
-      <h3>Posts not found</h3>
-    </template>
-    <template v-else>
-      <ul class="flex text-xs border border-black">
-        <li
-          class="w-32 hover:bg-black hover:text-white"
-          :class="{ 'bg-black text-white': category == '' }"
+    <ul class="flex text-xs border border-black">
+      <li
+        class="w-32 hover:bg-black hover:text-white"
+        :class="{ 'bg-black text-white': category == '' }"
+      >
+        <button
+          aria-label="posts_all"
+          type="button"
+          @click="(category = ''), $fetch(), (page = 0)"
+          class="w-full h-10 font-bold uppercase focus:outline-none"
         >
-          <button
-            aria-label="posts_all"
-            type="button"
-            @click="(category = ''), $fetch(), (page = 0)"
-            class="w-full h-10 font-bold uppercase focus:outline-none"
-          >
-            All
-          </button>
-        </li>
-        <li
-          class="w-32 hover:bg-black hover:text-white"
-          :class="{ 'bg-black text-white': category == cg.alias }"
-          v-for="(cg, index) in categories"
-          :key="index"
-        >
-          <button
-            :aria-label="'posts_' + cg.alias"
-            type="button"
-            @click="(category = cg.code), $fetch(), (page = 0)"
-            class="w-full h-10 font-bold uppercase focus:outline-none"
-            v-text="cg.alias"
-          ></button>
-        </li>
-      </ul>
-      <PostsList :datas="datas" />
-      <Pagation :page="page" :total="total" @retrieve="retrieve" />
-    </template>
+          All
+        </button>
+      </li>
+      <li
+        class="w-32 hover:bg-black hover:text-white"
+        :class="{ 'bg-black text-white': category == cg.alias }"
+        v-for="(cg, index) in categories"
+        :key="index"
+      >
+        <button
+          :aria-label="'posts_' + cg.alias"
+          type="button"
+          @click="(category = cg.alias), $fetch(), (page = 0)"
+          class="w-full h-10 font-bold uppercase focus:outline-none"
+          v-text="cg.alias"
+        ></button>
+      </li>
+    </ul>
+    <PostsList :datas="datas" />
+    <Pagation :page="page" :total="total" @retrieve="retrieve" />
   </div>
 </template>
 
@@ -82,7 +74,7 @@ export default defineComponent({
 
     const { $axios } = useContext();
 
-    useFetch(async () => {
+    const { fetch } = useFetch(async () => {
       [categories.value, datas.value, total.value] = await Promise.all([
         $axios.$get(SERVER_URL.category),
         $axios.$get(
@@ -115,6 +107,7 @@ export default defineComponent({
 
     const retrieve = (num: number) => {
       page.value = num;
+      fetch();
     };
 
     return {
