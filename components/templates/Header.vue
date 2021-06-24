@@ -22,8 +22,8 @@
         "
       >
         <nuxt-link title="home" to="/" class="font-extrabold"> Home </nuxt-link>
-        <nuxt-link title="portfolio" to="/portfolio" class="font-extrabold">
-          Portfolio
+        <nuxt-link title="posts" to="/posts" class="font-extrabold">
+          Posts
         </nuxt-link>
         <nuxt-link title="about" to="/about" class="font-extrabold">
           About
@@ -137,25 +137,29 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api";
+import { defineComponent, ref } from "@nuxtjs/composition-api";
 
 export default defineComponent({
   name: "Header",
 
-  data() {
-    return {
-      isOpen: false,
-      isSearch: false,
-    };
-  },
+  setup() {
+    const isOpen = ref(false);
+    const isSearch = ref(false);
 
-  methods: {
-    menuOption(isOpen: boolean) {
-      this.isOpen = isOpen;
-    },
-    searchOption(isSearch: boolean) {
-      this.isSearch = isSearch;
-    },
+    const menuOption = (operate: boolean) => {
+      isOpen.value = operate;
+    };
+    const searchOption = (operate: boolean) => {
+      isSearch.value = operate;
+    };
+
+    return {
+      isOpen,
+      isSearch,
+
+      menuOption,
+      searchOption,
+    };
   },
 });
 </script>

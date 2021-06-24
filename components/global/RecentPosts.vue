@@ -1,15 +1,19 @@
 <template>
-  <section class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20 my-12">
+  <div class="my-12">
     <div class="flex divide-y-2 divide-gray-400 divide-dotted">
-      <h3 class="uppercase font-extrabold">Featured Posts</h3>
+      <h3 class="uppercase font-extrabold">Recent Posts</h3>
       <span class="flex-1 w-full ml-4 mt-3"></span>
     </div>
-    <!--sec-title end-->
     <div class="my-6">
       <div
-        class="grid grid-flow-col grid-rows-4 grid-cols-1 md:grid-rows-1 md:grid-cols-4 md:gap-6"
+        class="
+          grid grid-flow-row grid-rows-3 grid-cols-1
+          md:grid-rows-1 md:grid-cols-3
+          gap-4
+          md:gap-8
+        "
       >
-        <div v-for="(data, index) in datas.slice(3)" :key="index">
+        <div v-for="data in datas" :key="data.code">
           <div class="overflow-hidden relative">
             <div class="transform hover:scale-110 transition duration-500">
               <img
@@ -18,20 +22,36 @@
                   '?imageMogr2/thumbnail/640x192/format/webp/blur/1x0/quality/75'
                 "
                 :alt="data.title"
-                class="w-full h-44 2xl:h-48 object-cover"
+                class="w-full h-44"
               />
             </div>
             <nuxt-link
               :title="data.category"
-              :to="{ path: '/posts', query: { category: data.category } }"
-              class="absolute top-0 text-white text-xs font-extrabold uppercase p-6"
+              :to="{
+                path: '/posts',
+                query: { category: data.category },
+              }"
+              class="
+                absolute
+                top-0
+                text-white text-xs
+                font-extrabold
+                uppercase
+                p-4
+              "
               v-text="data.category"
             ></nuxt-link>
           </div>
-          <!--blog-img end-->
-          <div class="my-4">
+          <div class="">
             <h3
-              class="font-extrabold transform hover:translate-x-2 transition duration-500"
+              class="
+                font-extrabold
+                my-4
+                transform
+                hover:translate-x-2
+                transition
+                duration-500
+              "
             >
               <nuxt-link
                 :title="data.code"
@@ -39,8 +59,10 @@
                 v-text="data.title"
               ></nuxt-link>
             </h3>
-            <ul class="flex text-xs space-x-6 text-gray-600 my-4 uppercase">
-              <li v-text="new Date(data.modifyTime).toLocaleDateString()"></li>
+            <ul class="flex text-xs space-x-6 uppercase text-gray-500">
+              <li
+                v-text="new Date(data.modifyTime).toLocaleDateString()"
+              ></li>
               <li class="flex items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -81,14 +103,14 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "@nuxtjs/composition-api";
 
 export default defineComponent({
-  name: "Featured",
+  name: "RecentPosts",
 
   props: {
     datas: {

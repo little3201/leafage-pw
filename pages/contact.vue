@@ -8,7 +8,18 @@
           class="h-full object-cover"
         />
       </div>
-      <div class="bg-gray-200 p-2 md:p-10 leading-relaxed px-2 md:px-12 lg:px-16 xl:px-20">
+      <div
+        class="
+          bg-gray-200
+          p-2
+          md:p-10
+          leading-relaxed
+          px-2
+          md:px-12
+          lg:px-16
+          xl:px-20
+        "
+      >
         <h3 class="text-4xl font-extrabold my-4">Contact</h3>
         <p class="text-gray-600">
           网站所有内容均免费，长久可用，哦对，还有源代码，如果喜欢可以fork，或者star，有问题的或者有想法的可以联系我。
@@ -55,11 +66,23 @@
               autocomplete="off"
             ></textarea>
           </div>
-          <button aria-label="send_message"
+          <button
+            aria-label="send_message"
             type="submit"
             href="mailto:little3201@163.com?subject=Leafage%20Website%20Question"
-            class="text-white uppercase text-xs font-bold bg-gray-500 py-3 w-1/2 outline-none"
-          >Send Message</button>
+            class="
+              text-white
+              uppercase
+              text-xs
+              font-bold
+              bg-gray-500
+              py-3
+              w-1/2
+              outline-none
+            "
+          >
+            Send Message
+          </button>
         </form>
       </div>
     </div>
@@ -68,26 +91,30 @@
 
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api";
+import { defineComponent, useMeta } from "@nuxtjs/composition-api";
 
 export default defineComponent({
   name: "About",
 
-  head() {
-    const title = "Contact - Leafage";
-    const description = "联系Leafage，获取更多信息，详细内容请看详情";
-    return {
-      title,
+  head: {},
+
+  setup() {
+    useMeta(() => ({
+      title: "Contact - Leafage",
       meta: [
-        { hid: "description", name: "description", content: description },
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "联系Leafage，获取更多信息，详细内容请看详情",
+        },
         {
           hid: "keywords",
           name: "keywords",
-          content:
-            "leafage, 生活分享, 资源推荐, 技术总结, 影视浏览, 布吉岛",
+          content: "leafage, 生活分享, 资源推荐, 技术总结, 影视浏览, 布吉岛",
         },
       ],
-    };
+    }));
   },
 });
 </script>

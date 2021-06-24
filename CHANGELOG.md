@@ -5,6 +5,15 @@
 </p>
 
 ## 更新记录
+2021-06-23: 
+  1. SideBar、RecentPosts、Recommond 改为Lazy loading；
+  2. Sonar 检测的bug修改；
+
+2021-06-23: 
+  1. 替换到@vue/composition-api，使用@nuxt/composition-api以准备更新到nuxt3；
+  2. 移除store的自定义配置，使用useMeta()更好的提供动态的详情页的ssr meta;
+  3. 更新所有依赖到最新版版；
+
 2021-06-17: 
   1. 代码块高亮样式修改，使用ir-black；
 

@@ -55,14 +55,19 @@
         <ListItem :datas="datas" />
         <Pagation :page="page" :total="total" @retrieve="retrieve" />
       </div>
-      <SideBar />
+      <LazySideBar />
     </div>
   </section>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api";
-import { SERVER_URL } from "~/assets/request";
+import {
+  defineComponent,
+  useContext,
+  ref,
+  computed,
+} from "@nuxtjs/composition-api";
+import { SERVER_URL } from "~/api/request";
 
 export default defineComponent({
   name: "Main",
@@ -82,29 +87,31 @@ export default defineComponent({
     },
   },
 
-  data() {
-    return {
-      datas: this.listDatas,
-      page: 0,
-      order: "likes",
-    };
-  },
+  setup(props) {
+    const page = ref(0);
+    const order = ref("likes");
+    const { $axios } = useContext();
 
-  methods: {
-    retrieve(page: number) {
-      this.page = page ? page : 0;
-      this.$axios
-        .get(
-          SERVER_URL.posts.concat(
-            "?page=" + this.page,
-            "&size=10&order=",
-            this.order
-          )
+    const datas = computed(() => props.listDatas);
+
+    const retrieve = async (num: number) => {
+      page.value = num ? num : 0;
+      props.listDatas = await $axios.$get(
+        SERVER_URL.posts.concat(
+          "?page=" + page.value,
+          "&size=10&order=",
+          order.value
         )
-        .then((res) => {
-          this.datas = res.data;
-        });
-    },
+      );
+    };
+
+    return {
+      datas,
+      page,
+      order,
+
+      retrieve,
+    };
   },
 });
 </script>

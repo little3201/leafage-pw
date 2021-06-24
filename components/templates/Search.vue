@@ -81,31 +81,33 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api";
-import { SERVER_URL } from "~/assets/request";
+import { defineComponent, useContext, ref } from "@nuxtjs/composition-api";
+import { SERVER_URL } from "~/api/request";
 
 export default defineComponent({
   name: "Header",
 
-  data() {
-    return {
-      keyword: "",
-      datas: [
-      ],
-    };
-  },
+  setup({ emit }) {
+    const keyword = ref();
+    const datas = ref([]);
 
-  methods: {
-    closeSearch() {
-      this.$emit("searchOption", false);
-    },
-    onSubmit() {
-      this.$axios
-        .get(SERVER_URL.posts.concat("/search?keyword=", this.keyword))
-        .then((res) => {
-          this.datas = res.data;
-        });
-    },
+    const { $axios } = useContext();
+
+    const closeSearch = () => {
+      emit("searchOption", false);
+    };
+
+    const onSubmit = async () => {
+      $axios.$get(SERVER_URL.posts.concat("/search?keyword=", keyword.value));
+    };
+
+    return {
+      keyword,
+      datas,
+
+      closeSearch,
+      onSubmit,
+    };
   },
 });
 </script>

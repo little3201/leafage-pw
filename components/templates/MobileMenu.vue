@@ -33,15 +33,17 @@
 
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api";
+import { defineComponent } from "@nuxtjs/composition-api";
 
 export default defineComponent({
   name: "MobileMenu",
 
-  methods: {
-    closeMenu() {
-      this.$emit("menuAction", false);
-    },
+  setup({ emit }) {
+    const closeMenu = () => {
+      emit("menuAction", false);
+    };
+
+    return { closeMenu };
   },
 });
 </script>

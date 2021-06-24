@@ -13,7 +13,14 @@
             <p class="my-2">微信搜一搜</p>
             <input
               type="text"
-              class="placeholder-gray-600 border border-gray-300 p-2 w-full text-sm rounded"
+              class="
+                placeholder-gray-600
+                border border-gray-300
+                p-2
+                w-full
+                text-sm
+                rounded
+              "
               disabled
               placeholder="Leafage"
             />
@@ -22,7 +29,17 @@
       </div>
       <div class="my-12 py-8 border border-solid border-gray-200 relative">
         <h3
-          class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold"
+          class="
+            absolute
+            top-0
+            -mt-3
+            px-2
+            ml-6
+            bg-white
+            uppercase
+            text-sm
+            font-semibold
+          "
         >
           Trending
         </h3>
@@ -41,7 +58,14 @@
           />
           <div class="m-2 md:ml-4">
             <h3
-              class="text-sm font-bold transform hover:translate-x-2 transition duration-500"
+              class="
+                text-sm
+                font-bold
+                transform
+                hover:translate-x-2
+                transition
+                duration-500
+              "
             >
               <nuxt-link
                 :title="data.code"
@@ -62,12 +86,30 @@
       </div>
       <div class="border border-solid border-gray-200 relative">
         <h3
-          class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold"
+          class="
+            absolute
+            top-0
+            -mt-3
+            px-2
+            ml-6
+            bg-white
+            uppercase
+            text-sm
+            font-semibold
+          "
         >
           Categories
         </h3>
         <ul
-          class="grid grid-cols-1 divide-y divide-gray-300 p-8 text-xs text-gray-600 font-semibold uppercase list-disc"
+          class="
+            grid grid-cols-1
+            divide-y divide-gray-300
+            p-8
+            text-xs text-gray-600
+            font-semibold
+            uppercase
+            list-disc
+          "
         >
           <li
             class="py-3 mx-4"
@@ -76,20 +118,25 @@
           >
             <nuxt-link
               :title="category.alias"
-              :to="{ path: '/posts', query: { category: category.alias } }"
+              :to="{ path: '/posts', query: { category: category.code } }"
               v-text="category.alias"
             ></nuxt-link>
             <span class="mr-2 float-right" v-text="category.count"></span>
           </li>
         </ul>
       </div>
-      <div
-        class="my-12 border-2 border-solid border-black p-8"
-      >
+      <div class="my-12 border-2 border-solid border-black p-8">
         <h3 class="font-extrabold">Send Email To Me</h3>
         <form class="mt-4 flex items-center">
           <input
-            class="w-full text-sm text-black placeholder-gray-600 border border-gray-300 py-2 pl-4"
+            class="
+              w-full
+              text-sm text-black
+              placeholder-gray-600
+              border border-gray-300
+              py-2
+              pl-4
+            "
             type="email"
             placeholder="Enter your email adress"
           />
@@ -119,38 +166,37 @@
       </div>
       <div class="border border-solid border-gray-200 relative my-12">
         <h3
-          class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold"
+          class="
+            absolute
+            top-0
+            -mt-3
+            px-2
+            ml-6
+            bg-white
+            uppercase
+            text-sm
+            font-semibold
+          "
         >
           Friend Chain
         </h3>
         <ul
-          class="grid grid-cols-1 divide-y divide-gray-300 p-8 text-xs text-gray-600 font-semibold list-decimal"
+          class="
+            grid grid-cols-1
+            divide-y divide-gray-300
+            p-8
+            text-xs text-gray-600
+            font-semibold
+            list-decimal
+          "
         >
-          <li class="py-3 mx-4">
-            <a
-              title="howtodoinjava"
-              href="https://howtodoinjava.com/"
-              target="_blank"
-              rel="noopener"
-              >howtodoinjava</a
-            >
-          </li>
-          <li class="py-3 mx-4">
-            <a
-              title="nginx"
-              href="https://www.digitalocean.com/community/tools/nginx?global.app.lang=zhCN"
-              rel="noopener"
-              target="_blank"
-              >nginx配置生成</a
-            >
-          </li>
           <li class="py-3 mx-4">
             <a
               title="leafage console"
               href="https://console.leafage.top"
               target="_blank"
               rel="noopener"
-              >leafage后台管理系统</a
+              >leafage 控制台</a
             >
           </li>
           <li class="py-3 mx-4">
@@ -197,30 +243,32 @@
 
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api";
-import { SERVER_URL } from "~/assets/request";
+import {
+  defineComponent,
+  useContext,
+  ref,
+  useFetch,
+} from "@nuxtjs/composition-api";
+import { SERVER_URL } from "~/api/request";
 
 export default defineComponent({
   name: "SideBar",
 
-  async fetch() {
-    let [datas, categories] = await Promise.all([
-      await this.$axios
-        .get(SERVER_URL.posts.concat("?page=0&size=5&order=viewed"))
-        .then((res) => res.data),
+  setup() {
+    const datas = ref([]);
+    const categories = ref([]);
+    const { $axios } = useContext();
 
-      await this.$axios
-        .get(SERVER_URL.category.concat("?page=0&size=5"))
-        .then((res) => res.data),
-    ]);
-    this.datas = datas;
-    this.categories = categories;
-  },
+    useFetch(async () => {
+      [datas.value, categories.value] = await Promise.all([
+        $axios.$get(SERVER_URL.posts.concat("?page=0&size=5")),
+        $axios.$get(SERVER_URL.category.concat("?page=0&size=10")),
+      ]);
+    });
 
-  data() {
     return {
-      datas: [],
-      categories: [],
+      datas,
+      categories,
     };
   },
 });
