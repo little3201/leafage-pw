@@ -3,7 +3,7 @@
     <div
       class="grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8"
     >
-      <div class="w-full" v-for="(data, index) in datas" :key="index">
+      <div class="w-full" v-for="data in datas" :key="data.code">
         <div class="overflow-hidden">
           <div class="transform hover:scale-110 transition duration-500">
             <img

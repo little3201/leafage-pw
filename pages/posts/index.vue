@@ -3,12 +3,12 @@
     <ul class="flex text-xs border border-black">
       <li
         class="w-32 hover:bg-black hover:text-white"
-        :class="{ 'bg-black text-white': category == '' }"
+        :class="{ 'bg-black text-white': '' == categoryCode }"
       >
         <button
           aria-label="posts_all"
           type="button"
-          @click="(category = ''), $fetch(), (page = 0)"
+          @click="retrieve(0, '')"
           class="w-full h-10 font-bold uppercase focus:outline-none"
         >
           All
@@ -16,14 +16,14 @@
       </li>
       <li
         class="w-32 hover:bg-black hover:text-white"
-        :class="{ 'bg-black text-white': category == cg.alias }"
-        v-for="(cg, index) in categories"
-        :key="index"
+        :class="{ 'bg-black text-white': cg.code == categoryCode }"
+        v-for="cg in categories"
+        :key="cg.code"
       >
         <button
           :aria-label="'posts_' + cg.alias"
           type="button"
-          @click="(category = cg.alias), $fetch(), (page = 0)"
+          @click="retrieve(0, cg.code)"
           class="w-full h-10 font-bold uppercase focus:outline-none"
           v-text="cg.alias"
         ></button>
@@ -53,15 +53,16 @@ export default defineComponent({
 
   setup() {
     const route = useRoute();
-    // 获取路由参数
-    const category = computed(() => route.value.query.category);
-    // 匹配类目code
-    const code = computed(() => {
-      let data: any = categories.value.filter(
-        (item: any) => category.value == item.alias
-      );
-      return data.code ? data.code : "";
-    });
+
+    // cotegory code
+    const categoryCode = ref(
+      computed(() => {
+        let data: any = categories.value.filter(
+          (item: any) => route.value.query.category == item.alias
+        );
+        return data.code ? data.code : "";
+      }).value
+    );
 
     const categories = ref([]);
     const datas = ref([]);
@@ -78,7 +79,7 @@ export default defineComponent({
         $axios.$get(
           SERVER_URL.posts.concat(
             "?page=" + page.value,
-            "&size=12&category=" + code.value
+            "&size=12&category=" + categoryCode.value
           )
         ),
         $axios.$get(SERVER_URL.posts.concat("/count")),
@@ -103,15 +104,18 @@ export default defineComponent({
       ],
     }));
 
-    const retrieve = (num: number) => {
+    const retrieve = (num: number, code: string) => {
       page.value = num;
+      if (code) {
+        categoryCode.value = code;
+      }
       fetch();
     };
 
     return {
-      category,
       categories,
       datas,
+      categoryCode,
 
       page,
       total,

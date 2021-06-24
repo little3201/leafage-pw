@@ -5,12 +5,17 @@
       <span class="flex-1 w-full ml-4 mt-3"></span>
     </div>
     <div
-      class="grid grid-flow-col grid-rows-6 grid-cols-1 md:grid-rows-3 md:grid-cols-2 gap-4 my-6"
+      class="
+        grid grid-flow-col grid-rows-6 grid-cols-1
+        md:grid-rows-3 md:grid-cols-2
+        gap-4
+        my-6
+      "
     >
       <div
         class="grid grid-cols-3 gap-4"
-        v-for="(data, index) in recommendDatas"
-        :key="index"
+        v-for="data in recommendDatas"
+        :key="data.code"
       >
         <div class="col-span-1 overflow-hidden">
           <div class="transform hover:scale-110 transition duration-500">
@@ -32,7 +37,14 @@
             v-text="data.category"
           ></nuxt-link>
           <h3
-            class="my-2 font-extrabold transform hover:translate-x-2 transition duration-500"
+            class="
+              my-2
+              font-extrabold
+              transform
+              hover:translate-x-2
+              transition
+              duration-500
+            "
           >
             <nuxt-link
               :title="data.code"
@@ -61,9 +73,7 @@
                 <circle cx="12" cy="12" r="3"></circle></svg
               >{{ data.viewed }}
             </li>
-            <li
-              class="flex items-center"
-            >
+            <li class="flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="12"
@@ -100,6 +110,5 @@ export default defineComponent({
       default: [],
     },
   },
-
 });
 </script>

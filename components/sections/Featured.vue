@@ -7,9 +7,13 @@
     <!--sec-title end-->
     <div class="my-6">
       <div
-        class="grid grid-flow-col grid-rows-4 grid-cols-1 md:grid-rows-1 md:grid-cols-4 md:gap-6"
+        class="
+          grid grid-flow-col grid-rows-4 grid-cols-1
+          md:grid-rows-1 md:grid-cols-4
+          md:gap-6
+        "
       >
-        <div v-for="(data, index) in datas.slice(3)" :key="index">
+        <div v-for="data in datas.slice(3)" :key="data.code">
           <div class="overflow-hidden relative">
             <div class="transform hover:scale-110 transition duration-500">
               <img
@@ -24,14 +28,27 @@
             <nuxt-link
               :title="data.category"
               :to="{ path: '/posts', query: { category: data.category } }"
-              class="absolute top-0 text-white text-xs font-extrabold uppercase p-6"
+              class="
+                absolute
+                top-0
+                text-white text-xs
+                font-extrabold
+                uppercase
+                p-6
+              "
               v-text="data.category"
             ></nuxt-link>
           </div>
           <!--blog-img end-->
           <div class="my-4">
             <h3
-              class="font-extrabold transform hover:translate-x-2 transition duration-500"
+              class="
+                font-extrabold
+                transform
+                hover:translate-x-2
+                transition
+                duration-500
+              "
             >
               <nuxt-link
                 :title="data.code"

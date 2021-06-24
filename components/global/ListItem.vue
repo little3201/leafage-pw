@@ -1,7 +1,7 @@
 <template>
   <div class="my-4 md:my-10">
     <div class="grid grid-flow-row grid-cols-2 gap-4 md:gap-8">
-      <div class="w-full" v-for="(data, index) in datas" :key="index">
+      <div class="w-full" v-for="data in datas" :key="data.code">
         <div class="overflow-hidden">
           <div class="transform hover:scale-110 transition duration-500">
             <img
@@ -22,7 +22,15 @@
             v-text="data.category"
           ></nuxt-link>
           <h3
-            class="md:text-xl font-extrabold my-3 transform hover:translate-x-2 transition duration-500"
+            class="
+              md:text-xl
+              font-extrabold
+              my-3
+              transform
+              hover:translate-x-2
+              transition
+              duration-500
+            "
           >
             <nuxt-link
               :title="data.code"
@@ -52,9 +60,7 @@
                 <circle cx="12" cy="12" r="3"></circle></svg
               >{{ data.viewed }}
             </li>
-            <li
-              class="flex items-center"
-            >
+            <li class="flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="12"
@@ -91,6 +97,5 @@ export default defineComponent({
       default: [],
     },
   },
-
 });
 </script>

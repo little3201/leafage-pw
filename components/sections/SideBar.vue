@@ -261,7 +261,7 @@ export default defineComponent({
 
     useFetch(async () => {
       [datas.value, categories.value] = await Promise.all([
-        $axios.$get(SERVER_URL.posts.concat("?page=0&size=5")),
+        $axios.$get(SERVER_URL.posts.concat("?page=0&size=5&order=likes")),
         $axios.$get(SERVER_URL.category.concat("?page=0&size=10")),
       ]);
     });
