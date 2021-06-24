@@ -54,9 +54,7 @@ export default defineComponent({
   setup() {
     const route = useRoute();
     // 获取路由参数
-    const category = computed(() => {
-      route.value.query.category;
-    });
+    const category = computed(() => route.value.query.category);
     // 匹配类目code
     const code = computed(() => {
       let data: any = categories.value.filter(
