@@ -6,7 +6,7 @@
         <div class="flex items-center mt-4">
           <img
             class="w-32 h-32 border"
-            src="/images/resources/leafage-wechat.jpg"
+            src="https://cdn.leafage.top/leafage-wechat.jpg?imageMogr2/thumbnail/x128/format/webp/blur/1x0/quality/75"
             alt="leafage"
           />
           <div class="mx-4">
