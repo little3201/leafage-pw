@@ -9,7 +9,7 @@
       <div
         class="grid grid-flow-col grid-rows-4 grid-cols-1 md:grid-rows-1 md:grid-cols-4 md:gap-6"
       >
-        <div v-for="(data, index) in datas" :key="index">
+        <div v-for="(data, index) in datas.slice(3)" :key="index">
           <div class="overflow-hidden relative">
             <div class="transform hover:scale-110 transition duration-500">
               <img

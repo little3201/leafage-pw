@@ -1,9 +1,9 @@
 <template>
   <div id="home">
-    <Hero :datas="featuredDatas" />
-    <Featured :datas="featuredDatas" />
+    <Hero :datas="recentDatas" />
+    <Featured :datas="recentDatas" />
     <Main :topDatas="viewedDatas" :listDatas="likesDatas" :total="total" />
-    <Recommend :recommendDatas="viewedDatas" />
+    <LazyRecommend :recommendDatas="viewedDatas" />
   </div>
 </template>
 
@@ -24,7 +24,7 @@ export default defineComponent({
   scrollToTop: true,
 
   setup() {
-    const featuredDatas = ref([]);
+    const recentDatas = ref([]);
     const likesDatas = ref([]);
     const viewedDatas = ref([]);
     const total = ref([]);
@@ -32,9 +32,9 @@ export default defineComponent({
     const { $axios } = useContext();
 
     useFetch(async () => {
-      [featuredDatas.value, likesDatas.value, viewedDatas.value, total.value] =
+      [recentDatas.value, likesDatas.value, viewedDatas.value, total.value] =
         await Promise.all([
-          $axios.$get(SERVER_URL.posts.concat("?page=1&size=4")),
+          $axios.$get(SERVER_URL.posts.concat("?page=0&size=7")),
           $axios.$get(SERVER_URL.posts.concat("?page=0&size=10&order=likes")),
           $axios.$get(SERVER_URL.posts.concat("?page=0&size=6&order=viewed")),
           $axios.$get(SERVER_URL.posts.concat("/count")),
@@ -60,7 +60,7 @@ export default defineComponent({
     }));
 
     return {
-      featuredDatas,
+      recentDatas,
       likesDatas,
       viewedDatas,
       total,
