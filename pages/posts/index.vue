@@ -30,7 +30,7 @@
       </li>
     </ul>
     <PostsList :datas="datas" />
-    <Pagation :page="page" :total="total" @retrieve="retrieve" />
+    <Pagation :page="page" :size="size" :total="total" @retrieve="retrieve" />
   </div>
 </template>
 
@@ -68,6 +68,7 @@ export default defineComponent({
 
     // 分页参数
     const page = ref(0);
+    const size = ref(12);
     const total = ref(0);
 
     const { $axios } = useContext();
@@ -78,7 +79,8 @@ export default defineComponent({
         $axios.$get(
           SERVER_URL.posts.concat(
             "?page=" + page.value,
-            "&size=12&category=" + code.value
+            "&size=" + size.value,
+            "&category=" + code.value
           )
         ),
         $axios.$get(SERVER_URL.posts.concat("/count")),
@@ -114,6 +116,7 @@ export default defineComponent({
       datas,
 
       page,
+      size,
       total,
 
       retrieve,
