@@ -2,15 +2,11 @@
   <section class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
     <div class="border-t border-black"></div>
     <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-8">
-      <figure
-        v-for="(data, index) in datas"
-        :key="index"
-        class="w-full relative"
-      >
+      <div v-for="(data, index) in datas" :key="index" class="w-full relative">
         <img
           v-if="imgType.includes(data.type)"
           :src="data.url[0]"
-          class="w-full object-cover"
+          class="w-full h-72 object-cover object-center"
           :alt="data.title"
         />
         <video
@@ -25,7 +21,7 @@
         <div class="absolute top-4 left-4">
           <h3 class="text-white" v-text="data.title"></h3>
         </div>
-      </figure>
+      </div>
     </div>
   </section>
 </template>
@@ -57,7 +53,7 @@ export default defineComponent({
       "wmv",
       "mp4",
     ]);
-    const datas = ref([]);
+    const datas = ref<Array<Number>>();
     const { $axios } = useContext();
 
     useFetch(async () => {
@@ -87,3 +83,25 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped>
+.column_div {
+  column-count: 5;
+  column-gap: 15px;
+}
+@media (max-width: 1200px) {
+  .column_div {
+    column-count: 4;
+  }
+}
+@media (max-width: 769px) {
+  .column_div {
+    column-count: 3;
+  }
+}
+@media (max-width: 376px) {
+  .column_div {
+    column-count: 2;
+  }
+}
+</style>

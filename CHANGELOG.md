@@ -5,6 +5,9 @@
 </p>
 
 ## 更新记录
+2021-06-27:
+  1. posts.vue分类样式匹配问题修复；
+
 2021-06-24: 
   1. SideBar、RecentPosts、Recommond 改为Lazy loading；
   2. Sonar 检测的bug修改；

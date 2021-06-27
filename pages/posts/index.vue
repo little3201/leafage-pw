@@ -1,21 +1,21 @@
 <template>
   <div class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
-    <ul class="flex text-xs border border-black">
+    <ul class="flex text-xs border border-black overflow-x-scroll">
       <li
-        class="w-32 hover:bg-black hover:text-white"
+        class=" hover:bg-black hover:text-white"
         :class="{ 'bg-black text-white': '' == categoryCode }"
       >
         <button
           aria-label="posts_all"
           type="button"
           @click="retrieve(0, '')"
-          class="w-full h-10 font-bold uppercase focus:outline-none"
+          class="w-32 h-10 font-bold uppercase focus:outline-none"
         >
           All
         </button>
       </li>
       <li
-        class="w-32 hover:bg-black hover:text-white"
+        class="hover:bg-black hover:text-white"
         :class="{ 'bg-black text-white': cg.code == categoryCode }"
         v-for="cg in categories"
         :key="cg.code"
@@ -24,13 +24,13 @@
           :aria-label="'posts_' + cg.alias"
           type="button"
           @click="retrieve(0, cg.code)"
-          class="w-full h-10 font-bold uppercase focus:outline-none"
+          class="w-32 h-10 font-bold uppercase focus:outline-none"
           v-text="cg.alias"
         ></button>
       </li>
     </ul>
     <PostsList :datas="datas" />
-    <Pagation :page="page" :total="total" @retrieve="retrieve" />
+    <Pagation :page="page" :size="size" :total="total" @retrieve="retrieve" />
   </div>
 </template>
 
@@ -53,33 +53,34 @@ export default defineComponent({
 
   setup() {
     const route = useRoute();
+    const category = computed(() => {
+      let data: any = categories.value.filter(
+        (item: any) => route.value.query.category == item.alias
+      );
+      return data.code ? data.code : "";
+    });
 
     // cotegory code
-    const categoryCode = ref(
-      computed(() => {
-        let data: any = categories.value.filter(
-          (item: any) => route.value.query.category == item.alias
-        );
-        return data.code ? data.code : "";
-      }).value
-    );
+    const categoryCode = ref("");
 
     const categories = ref([]);
     const datas = ref([]);
 
     // 分页参数
     const page = ref(0);
+    const size = ref(12);
     const total = ref(0);
 
     const { $axios } = useContext();
 
-    const { fetch } = useFetch(async () => {
+    useFetch(async () => {
       [categories.value, datas.value, total.value] = await Promise.all([
         $axios.$get(SERVER_URL.category),
         $axios.$get(
           SERVER_URL.posts.concat(
             "?page=" + page.value,
-            "&size=12&category=" + categoryCode.value
+            "&size=" + size.value,
+            "&category=" + category.value
           )
         ),
         $axios.$get(SERVER_URL.posts.concat("/count")),
@@ -109,7 +110,15 @@ export default defineComponent({
       if (code) {
         categoryCode.value = code;
       }
-      fetch();
+      $axios
+        .get(
+          SERVER_URL.posts.concat(
+            "?page=" + page.value,
+            "&size=" + size.value,
+            "&category=" + categoryCode.value
+          )
+        )
+        .then((res) => (datas.value = res.data));
     };
 
     return {
@@ -118,6 +127,7 @@ export default defineComponent({
       categoryCode,
 
       page,
+      size,
       total,
 
       retrieve,

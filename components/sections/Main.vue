@@ -53,7 +53,12 @@
           </li>
         </ul>
         <ListItem :datas="datas" />
-        <Pagation :page="page" :total="total" @retrieve="retrieve" />
+        <Pagation
+          :page="page"
+          :size="size"
+          :total="total"
+          @retrieve="retrieve"
+        />
       </div>
       <LazySideBar />
     </div>
@@ -89,6 +94,7 @@ export default defineComponent({
 
   setup(props) {
     const page = ref(0);
+    const size = ref(10);
     const order = ref("likes");
     const { $axios } = useContext();
 
@@ -99,7 +105,8 @@ export default defineComponent({
       props.listDatas = await $axios.$get(
         SERVER_URL.posts.concat(
           "?page=" + page.value,
-          "&size=10&order=",
+          "&size=" + size.value,
+          "&order=",
           order.value
         )
       );
@@ -108,6 +115,7 @@ export default defineComponent({
     return {
       datas,
       page,
+      size,
       order,
 
       retrieve,
