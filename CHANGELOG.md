@@ -7,6 +7,7 @@
 ## 更新记录
 2021-06-27:
   1. posts.vue分类样式匹配问题修复；
+  2. 重写about;
 
 2021-06-24: 
   1. SideBar、RecentPosts、Recommond 改为Lazy loading；
