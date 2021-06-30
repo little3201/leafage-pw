@@ -1,11 +1,14 @@
 <template>
   <section class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
     <div class="border-t border-black"></div>
-    <div class="py-8 grid grid-cols-4 gap-4 divide-x divide-gray-300 prose-sm">
+    <div class="grid grid-cols-4 gap-4 divide-x divide-gray-300 my-8">
       <div class="col-span-1 px-2 md:px-4 lg:px-8">
-        <ul class="divide-y divide-gray-300 text-center">
+        <ul class="divide-y divide-gray-300 text-center py-8">
           <li class="py-4"><a href="#me">关于本人</a></li>
           <li class="py-4"><a href="#website">关于本站</a></li>
+          <li class="py-4">
+            <a class="font-bold" href="#website">更新日志</a>
+          </li>
         </ul>
       </div>
       <div class="col-span-3">
@@ -45,6 +48,7 @@
             </p>
           </div>
         </article>
+        <ChangeLog />
       </div>
     </div>
   </section>

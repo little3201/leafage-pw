@@ -22,7 +22,7 @@
               @click="retrieve(), (order = 'likes')"
               class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
             >
-              Trending
+              Most Liked
             </button>
           </li>
           <li
@@ -35,7 +35,7 @@
               @click="retrieve(), (order = 'viewed')"
               class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
             >
-              Most View
+              Most Viewed
             </button>
           </li>
           <li
@@ -48,7 +48,7 @@
               @click="retrieve(), (order = 'comment')"
               class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
             >
-              Popular
+              Most Comments
             </button>
           </li>
         </ul>

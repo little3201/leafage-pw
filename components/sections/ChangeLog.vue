@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white">
-    <div class="max-w-xl mx-auto p-8">
+    <div class="max-w-2xl mx-auto px-2 md:px-4 lg:px-0 my-8">
       <div class="flow-root">
         <ul class="-mb-8">
           <li>
@@ -16,7 +16,7 @@
                       class="
                         h-8
                         w-8
-                        bg-blue-500
+                        bg-gray-500
                         rounded-full
                         ring-8 ring-white
                         flex
@@ -109,7 +109,7 @@
                       class="
                         h-8
                         w-8
-                        bg-blue-500
+                        bg-gray-500
                         rounded-full
                         ring-8 ring-white
                         flex
@@ -203,7 +203,7 @@
                       class="
                         h-8
                         w-8
-                        bg-blue-500
+                        bg-gray-500
                         rounded-full
                         ring-8 ring-white
                         flex
