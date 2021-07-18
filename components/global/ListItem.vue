@@ -1,6 +1,9 @@
 <template>
   <div class="my-4 md:my-10">
-    <div class="grid grid-flow-row grid-cols-2 gap-4 md:gap-8">
+    <div
+      v-if="datas && datas.length > 0"
+      class="grid grid-flow-row grid-cols-2 gap-4 md:gap-8"
+    >
       <div class="w-full" v-for="data in datas" :key="data.code">
         <div class="overflow-hidden">
           <div class="transform hover:scale-110 transition duration-500">
@@ -79,6 +82,22 @@
               >{{ data.likes }}
             </li>
           </ul>
+        </div>
+      </div>
+    </div>
+    <div
+      v-else
+      class="animate-pulse grid grid-flow-row grid-cols-2 gap-4 md:gap-8"
+    >
+      <div v-for="i in 10" :key="i">
+        <div class="w-full h-48 bg-gray-800 bg-opacity-25">
+          <span class="w-full"></span>
+        </div>
+        <div class="flex-1 space-y-2 py-2">
+          <div class="h-4 bg-gray-800 bg-opacity-25 rounded w-3/4"></div>
+          <div class="space-y-2">
+            <div class="h-4 bg-gray-800 bg-opacity-25 rounded w-1/3"></div>
+          </div>
         </div>
       </div>
     </div>

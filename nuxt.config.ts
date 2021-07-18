@@ -50,9 +50,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://github.com/nuxt-community/sitemap-module
-    '@nuxtjs/sitemap',
-    // https://image.nuxtjs.org
-    '@nuxt/image',
+    '@nuxtjs/sitemap'
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -60,8 +58,7 @@ export default {
     https: true,
     progress: true,
     credentials: true,
-    baseURL: 'https://console.leafage.top/api',
-    proxy: true
+    baseURL: '/api',
   },
 
   globalName: 'leafage',

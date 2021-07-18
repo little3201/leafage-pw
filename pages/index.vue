@@ -3,7 +3,6 @@
     <Hero :datas="recentDatas" />
     <Featured :datas="recentDatas" />
     <Main :topDatas="viewedDatas" :listDatas="likesDatas" :total="total" />
-    <LazyRecommend :recommendDatas="viewedDatas" />
   </div>
 </template>
 
@@ -27,16 +26,20 @@ export default defineComponent({
     const recentDatas = ref([]);
     const likesDatas = ref([]);
     const viewedDatas = ref([]);
-    const total = ref([]);
+    const total = ref(0);
 
     const { $axios } = useContext();
 
     useFetch(async () => {
       [recentDatas.value, likesDatas.value, viewedDatas.value, total.value] =
         await Promise.all([
-          $axios.$get(SERVER_URL.posts.concat("?page=0&size=7")),
-          $axios.$get(SERVER_URL.posts.concat("?page=0&size=10&order=likes")),
-          $axios.$get(SERVER_URL.posts.concat("?page=0&size=6&order=viewed")),
+          $axios.$get(SERVER_URL.posts, { params: { page: 0, size: 7 } }),
+          $axios.$get(SERVER_URL.posts, {
+            params: { page: 0, size: 10, order: "likes" },
+          }),
+          $axios.$get(SERVER_URL.posts, {
+            params: { page: 0, size: 10, order: "viewed" },
+          }),
           $axios.$get(SERVER_URL.posts.concat("/count")),
         ]);
     });

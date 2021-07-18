@@ -79,7 +79,7 @@
             v-text="data.title"
           ></h2>
           <figure v-show="data.cover" class="w-full h-full my-8">
-            <nuxt-img :src="data.cover" :alt="data.title" class="w-full" />
+            <img :src="data.cover" :alt="data.title" class="w-full" />
           </figure>
           <div class="prose min-w-full" v-html="rendered"></div>
           <div class="bg-gray-200 my-8 p-8">

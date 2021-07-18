@@ -1,6 +1,6 @@
 <template>
   <section class="mb-12">
-    <ul class="flex justify-center items-center">
+    <ul v-if="total" class="flex justify-center items-center">
       <li class="mx-4">
         <button
           type="button"

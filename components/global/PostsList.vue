@@ -1,7 +1,14 @@
 <template>
   <div class="my-4 md:my-10">
     <div
-      class="grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8"
+      v-if="datas && datas.length > 0"
+      class="
+        grid grid-flow-row grid-cols-1
+        md:grid-cols-2
+        lg:grid-cols-3
+        gap-4
+        lg:gap-8
+      "
     >
       <div class="w-full" v-for="data in datas" :key="data.code">
         <div class="overflow-hidden">
@@ -24,7 +31,15 @@
             v-text="data.category"
           ></nuxt-link>
           <h3
-            class="md:text-xl font-extrabold my-3 transform hover:translate-x-2 transition duration-500"
+            class="
+              md:text-xl
+              font-extrabold
+              my-3
+              transform
+              hover:translate-x-2
+              transition
+              duration-500
+            "
           >
             <nuxt-link
               :title="data.code"
@@ -54,9 +69,7 @@
                 <circle cx="12" cy="12" r="3"></circle></svg
               >{{ data.viewed }}
             </li>
-            <li
-              class="flex items-center"
-            >
+            <li class="flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="12"
@@ -75,6 +88,23 @@
               >{{ data.likes }}
             </li>
           </ul>
+        </div>
+      </div>
+    </div>
+    <div
+      v-else
+      class="
+        animate-pulse
+        grid grid-flow-row grid-cols-1
+        md:grid-cols-2
+        lg:grid-cols-3
+        gap-4
+        lg:gap-8
+      "
+    >
+      <div v-for="i in 10" :key="i">
+        <div class="w-full h-48 bg-gray-800 bg-opacity-25">
+          <span class="w-full"></span>
         </div>
       </div>
     </div>
