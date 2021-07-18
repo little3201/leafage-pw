@@ -30,10 +30,10 @@
         </nuxt-link>
         <nuxt-link
           title="contact"
-          to="/contact"
+          to="/resource"
           class="text-xs font-extrabold uppercase text-black"
         >
-          Contact
+          Resource
         </nuxt-link>
       </nav>
       <div class="-my-2 md:hidden">

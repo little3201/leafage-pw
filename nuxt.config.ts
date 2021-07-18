@@ -42,7 +42,7 @@ export default {
     // https://composition-api.nuxtjs.org
     '@nuxtjs/composition-api/module',
     // https://tailwindcss.com/docs/guides/nuxtjs
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -50,7 +50,9 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://github.com/nuxt-community/sitemap-module
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    // https://image.nuxtjs.org
+    '@nuxt/image',
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -58,7 +60,8 @@ export default {
     https: true,
     progress: true,
     credentials: true,
-    baseURL: '/api',
+    baseURL: 'https://console.leafage.top/api',
+    proxy: true
   },
 
   globalName: 'leafage',

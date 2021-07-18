@@ -1,5 +1,5 @@
 <template>
-  <aside class="lg:flex lg:justify-end w-full">
+  <aside class="hidden lg:flex lg:justify-end w-full">
     <div class="lg:ml-12">
       <div class="border border-solid border-gray-200 p-8">
         <h3 class="font-extrabold">欢迎关注公众号（Leafage）</h3>
@@ -19,7 +19,6 @@
                 p-2
                 w-full
                 text-sm
-                rounded
               "
               disabled
               placeholder="Leafage"
