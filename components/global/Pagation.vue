@@ -28,7 +28,7 @@
         <button
           type="button"
           aria-label="give"
-          @click="$emit('retrieve', index - 1)"
+          @click="(curPage = index - 1), $emit('retrieve', index - 1)"
           class="
             w-8
             h-8
@@ -108,7 +108,7 @@ export default defineComponent({
 
     return {
       curPage,
-      pages
+      pages,
     };
   },
 });
