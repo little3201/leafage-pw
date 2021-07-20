@@ -155,7 +155,6 @@
           </div>
         </article>
         <Comment />
-        <LazyRecentPosts :datas="recentDatas"/>
       </div>
       <LazySideBar />
     </div>
@@ -186,14 +185,13 @@ export default defineComponent({
     const data = ref();
     const previous = ref();
     const next = ref();
-    const recentDatas = ref([]);
 
     const rendered = computed(() => markdown.render(data.value.content));
 
     const { $axios, params } = useContext();
 
     useFetch(async () => {
-      [data.value, previous.value, next.value, recentDatas.value] =
+      [data.value, previous.value, next.value] =
         await Promise.all([
           // detail
           $axios.$get(
@@ -204,9 +202,7 @@ export default defineComponent({
             SERVER_URL.posts.concat("/", params.value.slug, "/previous")
           ),
           // next
-          $axios.$get(SERVER_URL.posts.concat("/", params.value.slug, "/next")),
-          // topThree
-          $axios.$get(SERVER_URL.posts.concat("?page=0&size=3")),
+          $axios.$get(SERVER_URL.posts.concat("/", params.value.slug, "/next"))
         ]);
     });
 
@@ -239,7 +235,7 @@ export default defineComponent({
       ],
     }));
 
-    return { data, previous, next, recentDatas, rendered, like };
+    return { data, previous, next, rendered, like };
   },
 });
 </script>
