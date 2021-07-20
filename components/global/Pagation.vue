@@ -5,7 +5,7 @@
         <button
           type="button"
           aria-label="descrease"
-          @click="decrease, $emit('retrieve', curPage > 0 ? curPage-- : 0)"
+          @click="$emit('retrieve', curPage > 0 ? curPage-- : 0)"
           class="disabled:opacity-25 focus:outline-none"
         >
           <svg
@@ -49,10 +49,7 @@
         <button
           type="button"
           aria-label="increment"
-          @click="
-            increment,
-              $emit('retrieve', curPage < pages - 1 ? curPage++ : pages)
-          "
+          @click="$emit('retrieve', curPage < pages - 1 ? curPage++ : pages)"
           class="disabled:opacity-25 focus:outline-none"
         >
           <svg
@@ -109,26 +106,9 @@ export default defineComponent({
       }
     });
 
-    const increment = () => {
-      if (curPage.value < pages.value - 1) {
-        give(curPage.value++);
-      }
-    };
-    // 递减
-    const decrease = () => {
-      if (curPage.value > 0) {
-        give(curPage.value--);
-      }
-    };
-    const give = (num: number) => {
-      curPage.value = num;
-    };
-
     return {
       curPage,
-      pages,
-      increment,
-      decrease,
+      pages
     };
   },
 });
