@@ -35,7 +35,7 @@
       <a
         title="search"
         href="javascript:;"
-        @click="closeSearch"
+        @click="$emit('searchOption', false)"
         class="absolute mt-2 mr-2 top-0 right-0"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
@@ -87,15 +87,11 @@ import { SERVER_URL } from "~/api/request";
 export default defineComponent({
   name: "Header",
 
-  setup({ emit }) {
+  setup() {
     const keyword = ref();
     const datas = ref([]);
 
     const { $axios } = useContext();
-
-    const closeSearch = () => {
-      emit("searchOption", false);
-    };
 
     const onSubmit = async () => {
       $axios.$get(SERVER_URL.posts.concat("/search?keyword=", keyword.value));
@@ -105,7 +101,6 @@ export default defineComponent({
       keyword,
       datas,
 
-      closeSearch,
       onSubmit,
     };
   },

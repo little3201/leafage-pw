@@ -19,8 +19,7 @@
         <img
           class="
             shadow-lg
-            h-64
-            md:h-96
+            h-96
             w-full
             filter
             grayscale
