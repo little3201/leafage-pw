@@ -154,7 +154,7 @@
             </ul>
           </div>
         </article>
-        <LazyRecentPosts :datas="recentDatas"/>
+        <Comment :datas="comments" />
       </div>
       <LazySideBar />
     </div>
@@ -185,30 +185,30 @@ export default defineComponent({
     const data = ref();
     const previous = ref();
     const next = ref();
-    const recentDatas = ref([]);
+    const comments = ref([])
 
     const rendered = computed(() => markdown.render(data.value.content));
 
     const { $axios, params } = useContext();
 
     useFetch(async () => {
-      [data.value, previous.value, next.value, recentDatas.value] =
-        await Promise.all([
-          // detail
-          $axios.$get(
-            SERVER_URL.posts.concat("/", params.value.slug, "/details")
-          ),
-          // previous
-          $axios.$get(
-            SERVER_URL.posts.concat("/", params.value.slug, "/previous")
-          ),
-          // next
-          $axios.$get(SERVER_URL.posts.concat("/", params.value.slug, "/next")),
-          // topThree
-          $axios.$get(SERVER_URL.posts.concat("?page=0&size=3")),
-        ]);
+      [data.value, previous.value, next.value, comments.value] = await Promise.all([
+        // detail
+        $axios.$get(
+          SERVER_URL.posts.concat("/", params.value.slug, "/details")
+        ),
+        // previous
+        $axios.$get(
+          SERVER_URL.posts.concat("/", params.value.slug, "/previous")
+        ),
+        // next
+        $axios.$get(SERVER_URL.posts.concat("/", params.value.slug, "/next")),
+        // comments
+        $axios.$get(SERVER_URL.comment.concat("/", params.value.slug)),
+      ]);
     });
 
+    //点赞
     const like = async (code: string) => {
       const likes = await $axios.$patch(
         SERVER_URL.posts.concat("/", code, "/like")
@@ -238,7 +238,7 @@ export default defineComponent({
       ],
     }));
 
-    return { data, previous, next, recentDatas, rendered, like };
+    return { data, previous, next, rendered, comments, like };
   },
 });
 </script>

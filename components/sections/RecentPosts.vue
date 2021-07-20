@@ -1,48 +1,66 @@
 <template>
-  <section class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20 my-12">
+  <div class="my-12">
     <div class="flex divide-y-2 divide-gray-400 divide-dotted">
-      <h3 class="uppercase font-extrabold">Recommended</h3>
+      <h3 class="uppercase font-extrabold">Recent Posts</h3>
       <span class="flex-1 w-full ml-4 mt-3"></span>
     </div>
     <div
-      class="grid grid-flow-col grid-rows-6 grid-cols-1 md:grid-rows-3 md:grid-cols-2 gap-4 my-6"
+      v-if="datas && datas.length > 0"
+      class="
+        grid grid-flow-row grid-rows-3 grid-cols-1
+        md:grid-rows-1 md:grid-cols-3
+        gap-4
+        md:gap-8
+        my-6
+      "
     >
-      <div
-        class="grid grid-cols-3 gap-4"
-        v-for="(data, index) in recommendDatas"
-        :key="index"
-      >
-        <div class="col-span-1 overflow-hidden">
+      <div v-for="data in datas" :key="data.code">
+        <div class="overflow-hidden relative">
           <div class="transform hover:scale-110 transition duration-500">
             <img
               :src="
                 data.cover +
-                '?imageMogr2/thumbnail/640x112/format/webp/blur/1x0/quality/75'
+                '?imageMogr2/thumbnail/640x192/format/webp/blur/1x0/quality/75'
               "
               :alt="data.title"
-              class="w-48 h-28 sm:w-64 sm:h-32 object-cover"
+              class="w-full h-44"
             />
           </div>
-        </div>
-        <div class="col-span-2">
           <nuxt-link
             :title="data.category"
-            :to="{ path: '/posts', query: { category: data.category } }"
-            class="text-xs space-x-6 text-gray-600 uppercase"
+            :to="{
+              path: '/posts',
+              query: { category: data.category },
+            }"
+            class="
+              absolute
+              top-0
+              text-white text-xs
+              font-extrabold
+              uppercase
+              p-4
+            "
             v-text="data.category"
           ></nuxt-link>
+        </div>
+        <div>
           <h3
-            class="my-2 font-extrabold transform hover:translate-x-2 transition duration-500"
+            class="
+              font-extrabold
+              my-4
+              transform
+              hover:translate-x-2
+              transition
+              duration-500
+            "
           >
             <nuxt-link
               :title="data.code"
               :to="'/posts/detail/' + data.code"
               v-text="data.title"
-            >
-            </nuxt-link>
+            ></nuxt-link>
           </h3>
-          <p class="hidden lg:block text-xs mb-2" v-text="data.subtitle"></p>
-          <ul class="flex text-xs space-x-6 text-gray-600">
+          <ul class="flex text-xs space-x-6 uppercase text-gray-500">
             <li v-text="new Date(data.modifyTime).toLocaleDateString()"></li>
             <li class="flex items-center">
               <svg
@@ -61,9 +79,7 @@
                 <circle cx="12" cy="12" r="3"></circle></svg
               >{{ data.viewed }}
             </li>
-            <li
-              class="flex items-center"
-            >
+            <li class="flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="12"
@@ -85,21 +101,44 @@
         </div>
       </div>
     </div>
-  </section>
+    <div
+      v-else
+      class="
+        animate-pulse
+        grid grid-flow-row grid-rows-3 grid-cols-1
+        md:grid-rows-1 md:grid-cols-3
+        gap-4
+        md:gap-8
+        my-6
+      "
+    >
+      <div v-for="i in 3" :key="i">
+        <div class="w-full h-44 bg-gray-800 bg-opacity-25">
+          <span class="w-full"></span>
+        </div>
+        <div class="flex-1 space-y-2 py-1">
+          <div class="h-4 bg-gray-800 bg-opacity-25 rounded w-3/4"></div>
+          <div class="space-y-2">
+            <div class="h-4 bg-gray-800 bg-opacity-25 rounded"></div>
+            <div class="h-4 bg-gray-800 bg-opacity-25 rounded w-5/6"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "@nuxtjs/composition-api";
 
 export default defineComponent({
-  name: "Recommend",
+  name: "RecentPosts",
 
   props: {
-    recommendDatas: {
+    datas: {
       type: Array,
       default: [],
     },
   },
-
 });
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <aside class="lg:flex lg:justify-end w-full">
+  <aside class="hidden lg:flex lg:justify-end w-full">
     <div class="lg:ml-12">
       <div class="border border-solid border-gray-200 p-8">
         <h3 class="font-extrabold">欢迎关注公众号（Leafage）</h3>
@@ -19,7 +19,6 @@
                 p-2
                 w-full
                 text-sm
-                rounded
               "
               disabled
               placeholder="Leafage"
@@ -43,47 +42,59 @@
         >
           Trending
         </h3>
-        <div
-          class="flex px-4 md:px-8 py-2"
-          v-for="data in datas"
-          :key="data.code"
-        >
-          <img
-            class="w-28 h-20"
-            :src="
-              data.cover +
-              '?imageMogr2/thumbnail/640x80/format/webp/blur/1x0/quality/75'
-            "
-            :alt="data.title"
-          />
-          <div class="m-2 md:ml-4">
-            <h3
-              class="
-                text-sm
-                font-bold
-                transform
-                hover:translate-x-2
-                transition
-                duration-500
+        <div v-if="datas && datas.length > 0">
+          <div
+            class="flex px-4 md:px-8 py-2"
+            v-for="data in datas"
+            :key="data.code"
+          >
+            <img
+              class="w-28 h-20"
+              :src="
+                data.cover +
+                '?imageMogr2/thumbnail/640x80/format/webp/blur/1x0/quality/75'
               "
-            >
-              <nuxt-link
-                :title="data.code"
-                :to="'/posts/detail/' + data.code"
-                v-text="data.title"
-              ></nuxt-link>
-            </h3>
-            <p
-              class="text-xs mt-2 hidden sm:block lg:hidden"
-              v-text="data.subtitle"
-            ></p>
-            <span
-              class="text-xs text-gray-500 font-bold uppercase"
-              v-text="new Date(data.modifyTime).toLocaleDateString()"
-            ></span>
+              :alt="data.title"
+            />
+            <div class="m-2 md:ml-4">
+              <h3
+                class="
+                  text-sm
+                  font-bold
+                  transform
+                  hover:translate-x-2
+                  transition
+                  duration-500
+                "
+              >
+                <nuxt-link
+                  :title="data.code"
+                  :to="'/posts/detail/' + data.code"
+                  v-text="data.title"
+                ></nuxt-link>
+              </h3>
+              <span
+                class="text-xs text-gray-500 font-bold uppercase"
+                v-text="new Date(data.modifyTime).toLocaleDateString()"
+              ></span>
+            </div>
+          </div>
+        </div>
+        <div v-else class="animate-pulse">
+          <div v-for="i in 6" :key="i" class="flex px-4 md:px-8 py-2">
+            <div class="w-28 h-20 bg-gray-800 bg-opacity-25">
+              <span class="w-full"></span>
+            </div>
+            <div class="m-2 md:ml-4 flex-1 space-y-2 py-1">
+              <div class="h-4 bg-gray-800 bg-opacity-25 rounded"></div>
+              <div class="space-y-2">
+                <div class="h-4 bg-gray-800 bg-opacity-25 rounded w-5/6"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
       <div class="border border-solid border-gray-200 relative">
         <h3
           class="
@@ -118,7 +129,7 @@
           >
             <nuxt-link
               :title="category.alias"
-              :to="{ path: '/posts', query: { category: category.code } }"
+              :to="{ path: '/posts', query: { category: category.alias } }"
               v-text="category.alias"
             ></nuxt-link>
             <span class="mr-2 float-right" v-text="category.count"></span>
@@ -261,7 +272,7 @@ export default defineComponent({
 
     useFetch(async () => {
       [datas.value, categories.value] = await Promise.all([
-        $axios.$get(SERVER_URL.posts.concat("?page=0&size=5")),
+        $axios.$get(SERVER_URL.posts.concat("?page=0&size=5&order=likes")),
         $axios.$get(SERVER_URL.category.concat("?page=0&size=10")),
       ]);
     });

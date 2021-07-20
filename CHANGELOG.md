@@ -5,6 +5,20 @@
 </p>
 
 ## 更新记录
+
+2021-07-20:
+  1. 配置resource页；
+  2. 移除详情页的recentDatas组件；
+
+2021-07-18:
+  1. 添加骨架屏；
+  2. 移除recommend组件；
+  3. 移除contact页面，添加resource页面，提供资料；
+
+2021-06-27:
+  1. posts.vue分类样式匹配问题修复；
+  2. 重写about;
+
 2021-06-24: 
   1. SideBar、RecentPosts、Recommond 改为Lazy loading；
   2. Sonar 检测的bug修改；

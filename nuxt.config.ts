@@ -42,7 +42,7 @@ export default {
     // https://composition-api.nuxtjs.org
     '@nuxtjs/composition-api/module',
     // https://tailwindcss.com/docs/guides/nuxtjs
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -58,7 +58,7 @@ export default {
     https: true,
     progress: true,
     credentials: true,
-    baseURL: '/api',
+    baseURL: '/api'
   },
 
   globalName: 'leafage',

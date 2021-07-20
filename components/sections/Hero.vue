@@ -1,12 +1,23 @@
 <template>
   <section class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
     <div
-      class="grid grid-flow-col grid-rows-3 grid-cols-1 md:grid-rows-2 md:grid-cols-3 gap-4"
+      class="
+        grid grid-flow-col grid-rows-3 grid-cols-1
+        md:grid-rows-2 md:grid-cols-3
+        gap-4
+      "
     >
       <div class="md:row-span-2 md:col-span-2 flex justify-center items-center">
-        <div class="relative w-full h-full overflow-hidden">
+        <div v-if="datas[0]" class="relative w-full h-full overflow-hidden">
           <div
-            class="w-full h-full transform hover:scale-110 transition duration-500"
+            class="
+              w-full
+              h-full
+              transform
+              hover:scale-110
+              transition
+              duration-500
+            "
           >
             <img
               :src="datas[0].cover"
@@ -18,14 +29,34 @@
           <nuxt-link
             :title="datas[0].category"
             :to="{ path: '/posts', query: { category: datas[0].category } }"
-            class="absolute top-0 text-white text-xs font-extrabold uppercase p-4 md:p-10"
+            class="
+              absolute
+              top-0
+              text-white text-xs
+              font-extrabold
+              uppercase
+              p-4
+              md:p-10
+            "
             v-text="datas[0].category"
           ></nuxt-link>
           <div
             class="absolute bottom-4 md:bottom-8 text-white p-4 md:p-10 w-auto"
           >
             <h2
-              class="p-4 md:p-6 md:text-xl font-black leading-8 text-left border border-solid border-gray-300 transform hover:translate-x-2 transition duration-500"
+              class="
+                p-4
+                md:p-6
+                md:text-xl
+                font-black
+                leading-8
+                text-left
+                border border-solid border-gray-300
+                transform
+                hover:translate-x-2
+                transition
+                duration-500
+              "
             >
               <nuxt-link
                 :title="datas[0].code"
@@ -82,10 +113,32 @@
             </div>
           </div>
         </div>
+        <div v-else class="animate-pulse w-full h-full overflow-hidden">
+          <div
+            class="
+              w-full
+              h-full
+            "
+          >
+            <div class="w-full h-full bg-gray-800 bg-opacity-25">
+              <span class="w-full"></span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="relative text-white w-full h-48 md:h-64 overflow-hidden">
+      <div
+        v-if="datas[1]"
+        class="relative text-white w-full h-48 md:h-64 overflow-hidden"
+      >
         <div
-          class="w-full h-full transform hover:scale-110 transition duration-500"
+          class="
+            w-full
+            h-full
+            transform
+            hover:scale-110
+            transition
+            duration-500
+          "
         >
           <img
             :src="
@@ -114,9 +167,31 @@
           </h3>
         </div>
       </div>
-      <div class="relative text-white w-full h-48 md:h-64 overflow-hidden">
+      <div v-else class="animate-pulse">
         <div
-          class="w-full h-full transform hover:scale-110 transition duration-500"
+            class="
+              w-full
+              h-64
+            "
+          >
+            <div class=" w-full h-full bg-gray-800 bg-opacity-25">
+              <span class="w-full"></span>
+            </div>
+        </div>
+      </div>
+      <div
+        v-if="datas[2]"
+        class="relative text-white w-full h-48 md:h-64 overflow-hidden"
+      >
+        <div
+          class="
+            w-full
+            h-full
+            transform
+            hover:scale-110
+            transition
+            duration-500
+          "
         >
           <img
             :src="
@@ -142,6 +217,18 @@
               v-text="datas[2].title"
             ></nuxt-link>
           </h3>
+        </div>
+      </div>
+      <div v-else class="animate-pulse">
+        <div
+            class="
+              w-full
+              h-64
+            "
+          >
+            <div class="w-full h-full bg-gray-800 bg-opacity-25">
+              <span class="w-full"></span>
+            </div>
         </div>
       </div>
     </div>

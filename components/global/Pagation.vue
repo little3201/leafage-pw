@@ -1,6 +1,6 @@
 <template>
   <section class="mb-12">
-    <ul class="flex justify-center items-center">
+    <ul v-if="total" class="flex justify-center items-center">
       <li class="mx-4">
         <button
           type="button"
@@ -87,6 +87,10 @@ export default defineComponent({
       type: Number,
       default: 0,
     },
+    size: {
+      type: Number,
+      default: 10,
+    },
   },
 
   setup(props, { emit }) {
@@ -95,10 +99,10 @@ export default defineComponent({
     const pages = computed(() => {
       if (props.total < 1) {
         return 1;
-      } else if (props.total % 10 > 0) {
-        return ~~(props.total / 10) + 1;
+      } else if (props.total % props.size > 0) {
+        return ~~(props.total / props.size) + 1;
       } else {
-        return ~~(props.total / 10);
+        return ~~(props.total / props.size);
       }
     });
 

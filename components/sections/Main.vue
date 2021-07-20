@@ -22,7 +22,7 @@
               @click="retrieve(), (order = 'likes')"
               class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
             >
-              Trending
+              Most Liked
             </button>
           </li>
           <li
@@ -35,7 +35,7 @@
               @click="retrieve(), (order = 'viewed')"
               class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
             >
-              Most View
+              Most Viewed
             </button>
           </li>
           <li
@@ -48,12 +48,17 @@
               @click="retrieve(), (order = 'comment')"
               class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
             >
-              Popular
+              Most Comments
             </button>
           </li>
         </ul>
         <ListItem :datas="datas" />
-        <Pagation :page="page" :total="total" @retrieve="retrieve" />
+        <Pagation
+          :page="page"
+          :size="size"
+          :total="total"
+          @retrieve="retrieve"
+        />
       </div>
       <LazySideBar />
     </div>
@@ -89,6 +94,7 @@ export default defineComponent({
 
   setup(props) {
     const page = ref(0);
+    const size = ref(10);
     const order = ref("likes");
     const { $axios } = useContext();
 
@@ -99,7 +105,8 @@ export default defineComponent({
       props.listDatas = await $axios.$get(
         SERVER_URL.posts.concat(
           "?page=" + page.value,
-          "&size=10&order=",
+          "&size=" + size.value,
+          "&order=",
           order.value
         )
       );
@@ -108,6 +115,7 @@ export default defineComponent({
     return {
       datas,
       page,
+      size,
       order,
 
       retrieve,

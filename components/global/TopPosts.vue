@@ -14,7 +14,7 @@
             md:gap-x-6
           "
         >
-          <div class="md:row-span-2 md:col-span-2 h-auto">
+          <div v-if="datas[0]" class="md:row-span-2 md:col-span-2 h-auto">
             <div class="overflow-hidden">
               <div class="transform hover:scale-110 transition duration-500">
                 <img
@@ -103,7 +103,14 @@
               ></p>
             </div>
           </div>
-          <div>
+          <div v-else class="animate-pulse md:row-span-2 md:col-span-2 h-auto">
+            <div class="w-full h-full">
+              <div class="w-full h-full bg-gray-800 bg-opacity-25">
+                <span class="w-full"></span>
+              </div>
+            </div>
+          </div>
+          <div v-if="datas[1]">
             <div class="overflow-hidden">
               <div class="transform hover:scale-110 transition duration-500">
                 <img
@@ -176,7 +183,14 @@
               </h3>
             </div>
           </div>
-          <div>
+          <div v-else class="animate-pulse">
+            <div class="w-full h-40">
+              <div class="w-full h-full bg-gray-800 bg-opacity-25">
+                <span class="w-full"></span>
+              </div>
+            </div>
+          </div>
+          <div v-if="datas[2]">
             <div class="overflow-hidden">
               <div class="transform hover:scale-110 transition duration-500">
                 <img
@@ -247,6 +261,13 @@
                   v-text="datas[2].title"
                 ></nuxt-link>
               </h3>
+            </div>
+          </div>
+          <div v-else class="animate-pulse">
+            <div class="w-full h-40">
+              <div class="w-full h-full bg-gray-800 bg-opacity-25">
+                <span class="w-full"></span>
+              </div>
             </div>
           </div>
         </div>
