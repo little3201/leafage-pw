@@ -62,10 +62,7 @@
       <li v-for="comment in comments" :key="comment.code" class="py-4">
         <div class="flex justify-between text-xs">
           <span class="font-bold" v-text="comment.nickname + '：'"></span>
-          <span
-            class="text-gray-400"
-            v-test="comment.modifyTime"
-          ></span>
+          <span class="text-gray-400" v-test="comment.modifyTime"></span>
         </div>
         <p class="ml-4" v-text="comment.content"></p>
       </li>
@@ -86,6 +83,10 @@ export default defineComponent({
       type: Array,
       default: [],
     },
+    code: {
+      type: String,
+      default: undefined,
+    },
   },
 
   setup(props) {
@@ -96,7 +97,8 @@ export default defineComponent({
 
     // 留言
     const onSubmit = async () => {
-      const latest = await $axios.$post(SERVER_URL.comment, formData.value);
+      let data = { ...formData.value, posts: props.code };
+      const latest = await $axios.$post(SERVER_URL.comment, data);
       comments.value.push(latest);
     };
 

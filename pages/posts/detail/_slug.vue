@@ -154,7 +154,7 @@
             </ul>
           </div>
         </article>
-        <Comment :datas="comments" />
+        <Comment :datas="comments" :code="data.code" />
       </div>
       <LazySideBar />
     </div>
