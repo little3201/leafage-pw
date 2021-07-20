@@ -3,7 +3,7 @@
     <div class="border-t border-black"></div>
     <div class="grid grid-flow-row grid-cols-1 lg:grid-cols-3 mt-12">
       <div class="lg:col-span-2">
-        <article>
+        <article v-if="data">
           <ul
             class="
               flex
@@ -169,6 +169,7 @@ import {
   ref,
   useMeta,
   computed,
+  onMounted,
 } from "@nuxtjs/composition-api";
 
 import { SERVER_URL } from "~/api/request";
@@ -185,27 +186,28 @@ export default defineComponent({
     const data = ref();
     const previous = ref();
     const next = ref();
-    const comments = ref([])
+    const comments = ref([]);
 
     const rendered = computed(() => markdown.render(data.value.content));
 
     const { $axios, params } = useContext();
 
     useFetch(async () => {
-      [data.value, previous.value, next.value, comments.value] = await Promise.all([
-        // detail
-        $axios.$get(
-          SERVER_URL.posts.concat("/", params.value.slug, "/details")
-        ),
-        // previous
-        $axios.$get(
-          SERVER_URL.posts.concat("/", params.value.slug, "/previous")
-        ),
-        // next
-        $axios.$get(SERVER_URL.posts.concat("/", params.value.slug, "/next")),
-        // comments
-        $axios.$get(SERVER_URL.comment.concat("/", params.value.slug)),
-      ]);
+      [data.value, previous.value, next.value, comments.value] =
+        await Promise.all([
+          // detail
+          $axios.$get(
+            SERVER_URL.posts.concat("/", params.value.slug, "/details")
+          ),
+          // previous
+          $axios.$get(
+            SERVER_URL.posts.concat("/", params.value.slug, "/previous")
+          ),
+          // next
+          $axios.$get(SERVER_URL.posts.concat("/", params.value.slug, "/next")),
+          // comments
+          $axios.$get(SERVER_URL.comment.concat("/", params.value.slug)),
+        ]);
     });
 
     //点赞
@@ -215,6 +217,8 @@ export default defineComponent({
       );
       data.value.likes = likes;
     };
+
+    onMounted(() => $axios.$get("/check"));
 
     useMeta(() => ({
       title: data.value ? data.value.title : "",
