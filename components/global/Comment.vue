@@ -4,7 +4,7 @@
       <h3 class="uppercase font-extrabold">Comments</h3>
       <span class="flex-1 w-full ml-4 mt-3"></span>
     </div>
-    <div class="grid grid-cols-2 gap-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
       <form @submit.prevent="onSubmit" class="bg-gray-200 p-4 my-6">
         <div class="col-span-2 md:col-span-1">
           <label class="text-gray-600">Name: </label>
@@ -56,6 +56,12 @@
           Send Message
         </button>
       </form>
+      <ul>
+        <li v-for="data in comments" :key="data.code">
+          <span v-text="data.nickname"></span>
+          <span v-text="data.content"></span>
+        </li>
+      </ul>
     </div>
   </section>
 </template>
@@ -68,7 +74,14 @@ import { SERVER_URL } from "~/api/request";
 export default defineComponent({
   name: "Comment",
 
-  setup({ props }) {
+  props: {
+    datas: {
+      type: Array,
+      default: []
+    }
+  },
+
+  setup( props ) {
     const { $axios } = useContext();
 
     const comments = ref(props.datas);
