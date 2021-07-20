@@ -4,7 +4,7 @@
       <h3 class="uppercase font-extrabold">Comments</h3>
       <span class="flex-1 w-full ml-4 mt-3"></span>
     </div>
-    <form @submit.prevent="onSubmit" class="w-full bg-gray-200 p-4 my-6">
+    <form class="w-full bg-gray-200 p-4 my-6">
       <div class="my-2">
         <label class="text-gray-600">Nickname: </label>
         <input
@@ -62,9 +62,9 @@
       <li v-for="comment in comments" :key="comment.code" class="py-4">
         <div class="flex justify-between text-xs">
           <span class="font-bold" v-text="comment.nickname + '：'"></span>
-          <span class="text-gray-400" v-test="comment.modifyTime"></span>
+          <span class="text-gray-400">{{ new Date(comment.modifyTime).toLocaleDateString() }}</span>
         </div>
-        <p class="ml-4" v-text="comment.content"></p>
+        <p class="ml-4 mt-1" v-text="comment.content"></p>
       </li>
     </ul>
   </section>
@@ -100,6 +100,7 @@ export default defineComponent({
       let data = { ...formData.value, posts: props.code };
       const latest = await $axios.$post(SERVER_URL.comment, data);
       comments.value.push(latest);
+      formData.value = {}
     };
 
     return { formData, comments, onSubmit };
