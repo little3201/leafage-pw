@@ -11,10 +11,21 @@
         my-8
       "
     >
-      <div v-for="data in datas" :key="data.code" class="overflow-hidden border">
+      <div
+        v-for="data in datas"
+        :key="data.code"
+        class="overflow-hidden border"
+      >
         <img
-          class="shadow-lg h-64 md:h-80 w-full filter grayscale hover:grayscale-0"
-          :src="data.cover"
+          class="
+            shadow-lg
+            h-96
+            w-full
+            filter
+            grayscale
+            hover:grayscale-0
+          "
+          :src="data.url[0]"
         />
       </div>
     </div>
@@ -22,48 +33,29 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, useMeta } from "@nuxtjs/composition-api";
+import {
+  defineComponent,
+  ref,
+  useContext,
+  useFetch,
+  useMeta,
+} from "@nuxtjs/composition-api";
+import { SERVER_URL } from "~/api/request";
 
 export default defineComponent({
   name: "Resource",
   head: {},
 
   setup() {
-    const datas = ref([
-      {
-        code: 1,
-        cover:
-          "https://tse3-mm.cn.bing.net/th/id/OIP-C.KP2P7ASHdEpX2CS2YmKbnwHaJP?pid=ImgDet&rs=1",
-      },
-      {
-        code: 2,
-        cover:
-          "https://tse1-mm.cn.bing.net/th/id/R-C.7920e29a890bd5090386623ecbe3d9d3?rik=xbqAQXtkWBSmKQ&riu=http%3a%2f%2fwww.java1234.com%2fuploads%2fallimg%2f180524%2f1-1P524191343c6.jpg&ehk=V%2f5RPj%2bF%2fCzvrUvIP7pbOj5ZZJ4kL9Q5j7RH4D9Lp5g%3d&risl=&pid=ImgRaw",
-      },
-      {
-        code: 3,
-        cover:
-          "https://cdn.ptpress.cn/pubcloud/bookImg/A20172150/201907036857407C.jpg",
-      },
-      {
-        code: 4,
-        cover:
-          "https://tse2-mm.cn.bing.net/th/id/OIP-C.1_JFX4R2pJE7jGcTxpKJigHaJp?pid=ImgDet&rs=1",
-      },
-      {
-        code: 5,
-        cover:
-          "https://tse3-mm.cn.bing.net/th/id/OIP-C.EEuAlelhy7QPuxJBWmLzuwHaJp?pid=ImgDet&rs=1",
-      },
-      {
-        code: 6,
-        cover: "https://tse1-mm.cn.bing.net/th/id/OIP-C.cRV7JFOmr4XxSDnk_On2xAAAAA?pid=ImgDet&rs=1"
-      },
-      {
-        code: 7,
-        cover: "https://static001.infoq.cn/resource/image/47/f6/472a477c1fdcdf7ce050f93b0f4641f6.jpg"
-      }
-    ]);
+    const datas = ref([]);
+
+    const { $axios } = useContext();
+
+    useFetch(async () => {
+      datas.value = await $axios.$get(SERVER_URL.portfolio, {
+        params: { page: 0, size: 12 },
+      });
+    });
 
     useMeta(() => ({
       title: "Resource - Leafage",

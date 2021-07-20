@@ -4,65 +4,69 @@
       <h3 class="uppercase font-extrabold">Comments</h3>
       <span class="flex-1 w-full ml-4 mt-3"></span>
     </div>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-      <form @submit.prevent="onSubmit" class="bg-gray-200 p-4 my-6">
-        <div class="col-span-2 md:col-span-1">
-          <label class="text-gray-600">Name: </label>
-          <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            required
-            class="w-full p-2 mt-1 outline-none focus:ring-1"
-            autocomplete="off"
-          />
-        </div>
-        <div class="col-span-2 md:col-span-1">
-          <label class="text-gray-600">Email: </label>
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            required
-            class="w-full p-2 mt-1 outline-none focus:ring-1"
-            autocomplete="off"
-          />
-        </div>
-        <div class="col-span-2">
-          <label class="text-gray-600">Your Message: </label>
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            class="w-full p-2 mt-1 outline-none focus:ring-1"
-            autocomplete="off"
-          ></textarea>
-        </div>
-        <button
+    <form class="w-full bg-gray-200 p-4 my-6">
+      <div class="my-2">
+        <label class="text-gray-600">Nickname: </label>
+        <input
+          type="text"
+          name="nickname"
+          v-model="formData.nickname"
+          placeholder="Nickname"
+          required
+          class="w-full p-2 mt-1 outline-none focus:ring-1"
+          autocomplete="off"
+        />
+      </div>
+      <div class="my-2">
+        <label class="text-gray-600">Email: </label>
+        <input
+          type="email"
+          name="email"
+          v-model="formData.email"
+          placeholder="Email"
+          required
+          class="w-full p-2 mt-1 outline-none focus:ring-1"
+          autocomplete="off"
+        />
+      </div>
+      <div class="my-2">
+        <label class="text-gray-600">Your Message: </label>
+        <textarea
+          name="content"
+          v-model="formData.content"
+          placeholder="Your Message"
+          class="w-full p-2 mt-1 outline-none focus:ring-1"
+          autocomplete="off"
+        ></textarea>
+      </div>
+      <button
         @click="onSubmit"
-          aria-label="send_message"
-          type="submit"
-          class="
-            text-white
-            uppercase
-            text-xs
-            font-bold
-            bg-gray-500
-            py-3
-            w-full
-            md:w-1/2
-            outline-none
-          "
-        >
-          Send Message
-        </button>
-      </form>
-      <ul>
-        <li v-for="data in comments" :key="data.code">
-          <span v-text="data.nickname"></span>
-          <span v-text="data.content"></span>
-        </li>
-      </ul>
-    </div>
+        aria-label="send_comment"
+        type="submit"
+        class="
+          text-white
+          uppercase
+          text-xs
+          font-bold
+          bg-gray-500
+          py-3
+          w-full
+          md:w-1/2
+          outline-none
+        "
+      >
+        Submit Comment
+      </button>
+    </form>
+    <ul class="w-full bg-gray-200 p-4 my-6 divide-y divide-gray-300">
+      <li v-for="comment in comments" :key="comment.code" class="py-4">
+        <div class="flex justify-between text-xs">
+          <span class="font-bold" v-text="comment.nickname + '：'"></span>
+          <span class="text-gray-400">{{ new Date(comment.modifyTime).toLocaleDateString() }}</span>
+        </div>
+        <p class="ml-4 mt-1" v-text="comment.content"></p>
+      </li>
+    </ul>
   </section>
 </template>
 
@@ -77,23 +81,29 @@ export default defineComponent({
   props: {
     datas: {
       type: Array,
-      default: []
-    }
+      default: [],
+    },
+    code: {
+      type: String,
+      default: undefined,
+    },
   },
 
-  setup( props ) {
+  setup(props) {
     const { $axios } = useContext();
 
     const comments = ref(props.datas);
-    const comment = ref({});
+    const formData = ref({});
 
     // 留言
     const onSubmit = async () => {
-      const latest = await $axios.$post(SERVER_URL.comment, comment.value);
+      let data = { ...formData.value, posts: props.code };
+      const latest = await $axios.$post(SERVER_URL.comment, data);
       comments.value.push(latest);
+      formData.value = {}
     };
 
-    return { comment, comments, onSubmit };
+    return { formData, comments, onSubmit };
   },
 });
 </script>

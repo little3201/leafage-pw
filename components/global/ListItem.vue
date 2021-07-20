@@ -13,7 +13,7 @@
                 '?imageMogr2/thumbnail/640x256/format/webp/blur/1x0/quality/75'
               "
               :alt="data.title"
-              class="w-full h-28 md:h-64"
+              class="w-full h-28 md:h-48 lg:h-64"
             />
           </div>
         </div>
