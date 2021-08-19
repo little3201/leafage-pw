@@ -4,7 +4,7 @@
       <h3 class="uppercase font-extrabold">Comments</h3>
       <span class="flex-1 w-full ml-4 mt-3"></span>
     </div>
-    <form class="w-full bg-gray-200 p-4 my-6">
+    <form class="grid grid-rows-3 md:grid-rows-2 md:grid-cols-2 bg-gray-200 p-4 my-6">
       <div class="my-2">
         <label class="text-gray-600">Nickname: </label>
         <input
@@ -58,7 +58,7 @@
         Submit Comment
       </button>
     </form>
-    <ul class="w-full bg-gray-200 p-4 my-6 divide-y divide-gray-300">
+    <ul v-if="comments && comments.length > 0" class="w-full bg-gray-200 p-4 my-6 divide-y divide-gray-300">
       <li v-for="comment in comments" :key="comment.code" class="py-4">
         <div class="flex justify-between text-xs">
           <span class="font-bold" v-text="comment.nickname + '：'"></span>
