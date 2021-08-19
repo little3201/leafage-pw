@@ -1,40 +1,17 @@
 <template>
   <header class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
     <div
-      class="
-        flex
-        justify-between
-        md:justify-start
-        items-center
-        border-black border-b-2
-        py-3
-        md:py-5
-      "
+      class="flex justify-between md:justify-start items-center border-black border-b-2 py-3 md:py-5"
     >
-      <nav
-        class="
-          hidden
-          md:flex
-          space-x-6
-          tracking-wide
-          text-xs text-black
-          uppercase
-        "
-      >
-        <nuxt-link title="home" to="/" class="font-extrabold"> Home </nuxt-link>
-        <nuxt-link title="posts" to="/posts" class="font-extrabold">
-          Posts
-        </nuxt-link>
-        <nuxt-link title="about" to="/about" class="font-extrabold">
-          About
-        </nuxt-link>
+      <nav class="hidden md:flex space-x-6 tracking-wide text-xs text-black uppercase">
+        <nuxt-link title="home" to="/" class="font-extrabold">Home</nuxt-link>
+        <nuxt-link title="posts" to="/posts" class="font-extrabold">Posts</nuxt-link>
+        <nuxt-link title="about" to="/about" class="font-extrabold">About</nuxt-link>
         <nuxt-link
           title="contact"
           to="/resource"
           class="text-xs font-extrabold uppercase text-black"
-        >
-          Resource
-        </nuxt-link>
+        >Resource</nuxt-link>
       </nav>
       <div class="-my-2 md:hidden">
         <button
@@ -63,15 +40,7 @@
       <div class="flex items-center justify-end md:flex-1">
         <a
           title="subscribe"
-          class="
-            text-gray-600
-            flex
-            items-center
-            uppercase
-            text-xs
-            font-bold
-            tracking-wide
-          "
+          class="text-gray-600 flex items-center uppercase text-xs font-bold tracking-wide"
           href="#"
           rel="noopener"
           aria-label="subscribe"
@@ -89,10 +58,8 @@
             stroke-linejoin="round"
             class="feather feather-mail mr-1"
           >
-            <path
-              d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-            ></path>
-            <polyline points="22,6 12,13 2,6"></polyline>
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
           </svg>
           Subscribe
         </a>
@@ -115,19 +82,18 @@
             stroke-linejoin="round"
             class="feather feather-search"
           >
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
           </svg>
         </a>
       </div>
     </div>
 
     <div class="flex justify-center items-center h-32 md:h-40">
-      <nuxt-link
-        to="/"
-        class="text-4xl tracking-widest font-black uppercase text-black"
-      >
-        <img src="/logo-only.png" alt="Leafage" class="w-16 h-16 mx-auto" />
+      <nuxt-link to="/" class="text-4xl tracking-widest font-black uppercase text-black text-center">
+        <figure class="inline-flex justify-center">
+          <nuxt-picture src="/logo-only.png" alt="Leafage" width="64" height="64"/>
+        </figure>
         <h1>Leafage</h1>
       </nuxt-link>
     </div>

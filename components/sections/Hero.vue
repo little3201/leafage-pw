@@ -13,7 +13,7 @@
           <nuxt-link
             :title="datas[0].category"
             :to="{ path: '/posts', query: { category: datas[0].category } }"
-            class="absolute top-0 text-white text-xs font-extrabold uppercase p-4 md:p-10 hover:underline hover:text-black"
+            class="absolute top-0 text-white text-xs font-extrabold uppercase p-4 md:p-10 hover:underline hover:text-sm"
             v-text="datas[0].category"
           ></nuxt-link>
           <div class="absolute bottom-4 md:bottom-8 text-white p-4 md:p-10 w-auto">
@@ -96,7 +96,7 @@
         <nuxt-link
           :title="datas[1].category"
           to="/posts"
-          class="absolute top-0 text-white text-xs font-extrabold uppercase p-8 hover:underline hover:text-black"
+          class="absolute top-0 text-white text-xs font-extrabold uppercase p-8 hover:underline hover:text-sm"
           v-text="datas[1].category"
         ></nuxt-link>
         <!--blog-img end-->
@@ -133,7 +133,7 @@
         <nuxt-link
           :title="datas[2].category"
           to="/"
-          class="absolute top-0 text-white text-xs font-extrabold uppercase p-8 hover:underline hover:text-black"
+          class="absolute top-0 text-white text-xs font-extrabold uppercase p-8 hover:underline hover:text-sm"
           v-text="datas[2].category"
         ></nuxt-link>
         <!--blog-img end-->
