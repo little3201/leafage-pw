@@ -4,30 +4,15 @@
     <div class="grid grid-flow-row grid-cols-1 lg:grid-cols-3 mt-12">
       <div class="lg:col-span-2">
         <article v-if="data">
-          <ul
-            class="
-              flex
-              text-sm
-              font-bold
-              space-x-6
-              text-gray-600
-              uppercase
-              mb-4
-              -mt-3
-            "
-          >
-            <li>
-              <nuxt-link
-                :title="data.category"
-                :to="{ path: '/posts', query: { category: data.category } }"
-                v-text="data.category"
-              ></nuxt-link>
-            </li>
-            <li
-              class="tracking-wider"
-              v-text="new Date(data.modifyTime).toLocaleDateString()"
-            ></li>
-            <li class="flex items-center">
+          <div class="flex text-sm font-bold space-x-6 text-gray-600 uppercase mb-4 -mt-3">
+            <nuxt-link
+              :title="data.category"
+              :to="{ path: '/posts', query: { category: data.category } }"
+              v-text="data.category"
+              class="hover:underline hover:text-black"
+            ></nuxt-link>
+            <span class="tracking-wider" v-text="new Date(data.modifyTime).toLocaleDateString()"></span>
+            <div class="flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="14"
@@ -40,14 +25,12 @@
                 stroke-linejoin="round"
                 class="feather feather-eye mr-1"
               >
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                <circle cx="12" cy="12" r="3"></circle></svg
-              >{{ data.viewed }}
-            </li>
-            <li
-              class="flex items-center cursor-pointer"
-              @click="like(data.code)"
-            >
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+              {{ data.viewed }}
+            </div>
+            <div class="flex items-center cursor-pointer" @click="like(data.code)">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="14"
@@ -58,52 +41,29 @@
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="
-                  feather feather-heart
-                  mr-1
-                  transform
-                  hover:scale-150
-                  hover:fill-current
-                  transition
-                  duration-300
-                "
+                class="feather feather-heart mr-1 transform hover:scale-150 hover:fill-current transition duration-300"
               >
                 <path
                   d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-                ></path></svg
-              >{{ data.likes }}
-            </li>
-          </ul>
-          <h2
-            class="my-3 text-xl md:text-3xl font-extrabold"
-            v-text="data.title"
-          ></h2>
+                />
+              </svg>
+              {{ data.likes }}
+            </div>
+          </div>
+          <h2 class="my-3 text-xl md:text-3xl font-extrabold" v-text="data.title"></h2>
           <figure v-show="data.cover" class="w-full h-full my-8">
-            <img :src="data.cover" :alt="data.title" class="w-full" />
+            <nuxt-picture :src="data.cover" :alt="data.title" width="920" height="612" />
           </figure>
           <div class="prose min-w-full" v-html="rendered"></div>
           <div class="bg-gray-200 my-8 p-8">
             <ul
-              class="
-                grid grid-flow-row grid-rows-2 grid-cols-1
-                md:grid-rows-1 md:grid-cols-2
-                gap-4
-                text-xs
-                font-bold
-              "
+              class="grid grid-flow-row grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2 gap-4 text-xs font-bold"
             >
               <li>
                 <nuxt-link
                   :title="previous.code"
                   :to="'/posts/detail/' + previous.code"
-                  class="
-                    flex
-                    items-center
-                    transform
-                    hover:-translate-x-2
-                    transition
-                    duration-500
-                  "
+                  class="flex items-center transform hover:-translate-x-2 transition duration-500"
                 >
                   <svg
                     v-show="previous"
@@ -118,23 +78,18 @@
                     stroke-linejoin="round"
                     class="feather feather-chevron-left"
                   >
-                    <polyline points="15 18 9 12 15 6"></polyline></svg
-                  >{{ previous.title }}</nuxt-link
-                >
+                    <polyline points="15 18 9 12 15 6" />
+                  </svg>
+                  {{ previous.title }}
+                </nuxt-link>
               </li>
               <li class="flex items-center justify-end">
                 <nuxt-link
                   :title="next.code"
                   :to="'/posts/detail/' + next.code"
-                  class="
-                    flex
-                    items-center
-                    transform
-                    hover:translate-x-2
-                    transition
-                    duration-500
-                  "
-                  >{{ next.title }}
+                  class="flex items-center transform hover:translate-x-2 transition duration-500"
+                >
+                  {{ next.title }}
                   <svg
                     v-show="next"
                     xmlns="http://www.w3.org/2000/svg"
@@ -148,8 +103,9 @@
                     stroke-linejoin="round"
                     class="feather feather-chevron-right"
                   >
-                    <polyline points="9 18 15 12 9 6"></polyline></svg
-                ></nuxt-link>
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                </nuxt-link>
               </li>
             </ul>
           </div>
@@ -218,7 +174,7 @@ export default defineComponent({
       data.value.likes = likes;
     };
 
-    onMounted(() => $axios.$get("/check"));
+    // onMounted(() => $axios.$get("/check"));
 
     useMeta(() => ({
       title: data.value ? data.value.title : "",

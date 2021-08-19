@@ -5,56 +5,33 @@
       <span class="flex-1 w-full ml-4 mt-3"></span>
     </div>
     <div
-      v-if="datas && datas.length > 0"
-      class="
-        grid grid-flow-col grid-rows-4 grid-cols-1
-        md:grid-rows-1 md:grid-cols-4
-        md:gap-6
-        my-6
-      "
+      v-if="datas"
+      class="grid grid-flow-col grid-rows-4 grid-cols-1 md:grid-rows-1 md:grid-cols-4 md:gap-6 my-6"
     >
       <div v-for="data in datas.slice(3)" :key="data.code">
         <div class="overflow-hidden relative">
-          <div class="transform hover:scale-110 transition duration-500">
-            <img
+          <figure class="transform hover:scale-110 transition duration-500 h-48 overflow-hidden">
+            <nuxt-picture
               :src="
                 data.cover +
                 '?imageMogr2/thumbnail/640x192/format/webp/blur/1x0/quality/75'
               "
               :alt="data.title"
-              class="w-full h-44 2xl:h-48 object-cover"
+              width="437"
+              height="192"
             />
-          </div>
+          </figure>
           <nuxt-link
             :title="data.category"
             :to="{ path: '/posts', query: { category: data.category } }"
-            class="
-              absolute
-              top-0
-              text-white text-xs
-              font-extrabold
-              uppercase
-              p-6
-            "
+            class="absolute top-0 text-white text-xs font-extrabold uppercase p-6 hover:underline hover:text-black"
             v-text="data.category"
           ></nuxt-link>
         </div>
         <!--blog-img end-->
         <div class="my-4">
-          <h3
-            class="
-              font-extrabold
-              transform
-              hover:translate-x-2
-              transition
-              duration-500
-            "
-          >
-            <nuxt-link
-              :title="data.code"
-              :to="'/posts/detail/' + data.code"
-              v-text="data.title"
-            ></nuxt-link>
+          <h3 class="font-extrabold transform hover:translate-x-2 transition duration-500">
+            <nuxt-link :title="data.code" :to="'/posts/detail/' + data.code" v-text="data.title"></nuxt-link>
           </h3>
           <ul class="flex text-xs space-x-6 text-gray-600 my-4 uppercase">
             <li v-text="new Date(data.modifyTime).toLocaleDateString()"></li>
@@ -71,9 +48,10 @@
                 stroke-linejoin="round"
                 class="feather feather-eye mr-1"
               >
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                <circle cx="12" cy="12" r="3"></circle></svg
-              >{{ data.viewed }}
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+              {{ data.viewed }}
             </li>
             <li class="flex items-center">
               <svg
@@ -90,8 +68,9 @@
               >
                 <path
                   d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-                ></path></svg
-              >{{ data.likes }}
+                />
+              </svg>
+              {{ data.likes }}
             </li>
           </ul>
         </div>
@@ -99,13 +78,7 @@
     </div>
     <div
       v-else
-      class="
-        animate-pulse
-        grid grid-rows-4 grid-cols-1
-        md:grid-rows-1 md:grid-cols-4
-        md:gap-6
-        my-6
-      "
+      class="animate-pulse grid grid-rows-4 grid-cols-1 md:grid-rows-1 md:grid-cols-4 md:gap-6 my-6"
     >
       <div v-for="i in 4" :key="i">
         <div class="w-full h-48 bg-gray-800 bg-opacity-25">
