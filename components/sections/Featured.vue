@@ -24,7 +24,7 @@
           <nuxt-link
             :title="data.category"
             :to="{ path: '/posts', query: { category: data.category } }"
-            class="absolute top-0 text-white text-xs font-extrabold uppercase p-6 hover:underline hover:text-sm"
+            class="absolute top-0 text-white text-xs font-extrabold uppercase p-6 hover:underline"
             v-text="data.category"
           ></nuxt-link>
         </div>
