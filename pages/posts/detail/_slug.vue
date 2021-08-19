@@ -174,7 +174,7 @@ export default defineComponent({
       data.value.likes = likes;
     };
 
-    // onMounted(() => $axios.$get("/check"));
+    onMounted(() => $axios.$get("/check"));
 
     useMeta(() => ({
       title: data.value ? data.value.title : "",
