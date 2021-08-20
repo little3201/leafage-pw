@@ -24,7 +24,7 @@
           >
         </div>
         <div
-          class="flex justify-center space-x-10 uppercase font-extrabold my-4"
+          class="flex justify-center space-x-10 uppercase font-bold my-4"
         >
           <nuxt-link title="about" to="/about">About</nuxt-link>
           <nuxt-link title="contact" to="/contact">Contact</nuxt-link>

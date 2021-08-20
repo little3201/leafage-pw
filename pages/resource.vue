@@ -1,33 +1,14 @@
 <template>
   <section class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
     <div class="border-t border-black"></div>
-    <div
-      class="
-        grid grid-cols-1
-        sm:grid-cols-2
-        md:grid-cols-3
-        xl:grid-cols-4
-        gap-4
-        my-8
-      "
-    >
-      <div
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 my-8">
+      <figure
         v-for="data in datas"
         :key="data.code"
-        class="overflow-hidden border"
+        class="aspect-w-3 aspect-h-4 overflow-hidden border shadow-lg filter grayscale hover:grayscale-0"
       >
-        <img
-          class="
-            shadow-lg
-            h-96
-            w-full
-            filter
-            grayscale
-            hover:grayscale-0
-          "
-          :src="data.url[0]"
-        />
-      </div>
+        <nuxt-picture :src="data.url[0]" width="288" height="384" />
+      </figure>
     </div>
   </section>
 </template>

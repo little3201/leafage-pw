@@ -4,7 +4,7 @@
     <div class="grid grid-flow-row grid-cols-1 lg:grid-cols-3 mt-12">
       <div class="lg:col-span-2">
         <article v-if="data">
-          <div class="flex text-sm font-bold space-x-6 text-gray-600 uppercase mb-4 -mt-3">
+          <div class="flex text-sm font-bold space-x-6 text-gray-600 uppercase mb-4 -mt-2.5">
             <nuxt-link
               :title="data.category"
               :to="{ path: '/posts', query: { category: data.category } }"
@@ -50,9 +50,14 @@
               {{ data.likes }}
             </div>
           </div>
-          <h2 class="my-3 text-xl md:text-3xl font-extrabold" v-text="data.title"></h2>
+          <h2 class="my-3 text-xl md:text-3xl font-bold" v-text="data.title"></h2>
           <figure v-show="data.cover" class="w-full h-full my-8">
-            <nuxt-picture :src="data.cover" :alt="data.title" width="920" height="612" />
+            <nuxt-picture
+              :src="data.cover"
+              :alt="data.title"
+              width="920"
+              height="612"
+            />
           </figure>
           <div class="prose min-w-full" v-html="rendered"></div>
           <div class="bg-gray-200 my-8 p-8">
@@ -124,8 +129,7 @@ import {
   useContext,
   ref,
   useMeta,
-  computed,
-  onMounted,
+  computed
 } from "@nuxtjs/composition-api";
 
 import { SERVER_URL } from "~/api/request";
@@ -168,13 +172,13 @@ export default defineComponent({
 
     //点赞
     const like = async (code: string) => {
-      const likes = await $axios.$patch(
-        SERVER_URL.posts.concat("/", code, "/like")
-      );
-      data.value.likes = likes;
+      await $axios.$get("/check").then(() => {
+        const likes = $axios.$patch(
+          SERVER_URL.posts.concat("/", code, "/like")
+        );
+        data.value.likes = likes;
+      })
     };
-
-    onMounted(() => $axios.$get("/check"));
 
     useMeta(() => ({
       title: data.value ? data.value.title : "",
