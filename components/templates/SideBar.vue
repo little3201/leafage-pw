@@ -2,7 +2,7 @@
   <aside class="hidden lg:flex lg:justify-end w-full">
     <div class="lg:ml-12">
       <div class="border border-solid border-gray-200 p-8">
-        <h3 class="font-extrabold">欢迎关注公众号（Leafage）</h3>
+        <h3 class="font-bold">欢迎关注公众号（Leafage）</h3>
         <div class="flex items-center mt-4">
           <figure class="border">
             <nuxt-picture
@@ -23,56 +23,10 @@
           </div>
         </div>
       </div>
-      <div class="my-12 py-8 border border-solid border-gray-200 relative">
-        <h3 class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold">Trending</h3>
-        <div v-if="datas">
-          <div class="flex px-4 md:px-8 py-2" v-for="data in datas" :key="data.code">
-            <figure class="w-28 h-16 overflow-hidden">
-              <nuxt-picture
-                :src="
-                  data.cover +
-                  '?imageMogr2/thumbnail/640x80/format/webp/blur/1x0/quality/75'
-                "
-                :alt="data.title"
-                width="104"
-                height="70"
-              />
-            </figure>
-            <div class="m-1">
-              <h4
-                class="text-xs font-semibold transform hover:translate-x-2 transition duration-500"
-              >
-                <nuxt-link
-                  :title="data.code"
-                  :to="'/posts/detail/' + data.code"
-                  v-text="data.title"
-                ></nuxt-link>
-              </h4>
-              <span
-                class="text-xs text-gray-500 font-bold uppercase"
-                v-text="new Date(data.modifyTime).toLocaleDateString()"
-              ></span>
-            </div>
-          </div>
-        </div>
-        <div v-else class="animate-pulse">
-          <div v-for="i in 6" :key="i" class="flex px-4 md:px-8 py-2">
-            <div class="w-28 h-20 bg-gray-800 bg-opacity-25">
-              <span class="w-full"></span>
-            </div>
-            <div class="m-2 md:ml-4 flex-1 space-y-2 py-1">
-              <div class="h-4 bg-gray-800 bg-opacity-25 rounded"></div>
-              <div class="space-y-2">
-                <div class="h-4 bg-gray-800 bg-opacity-25 rounded w-5/6"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="border border-solid border-gray-200 relative">
+      <div class="border border-solid border-gray-200 my-10 relative">
         <h3
-          class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold"
+          class="absolute top-0 -mt-2.5 px-2 ml-6 bg-white uppercase text-sm font-semibold"
         >Categories</h3>
         <ul
           class="grid grid-cols-1 divide-y divide-gray-300 p-8 text-xs text-gray-600 font-semibold uppercase list-disc"
@@ -88,8 +42,8 @@
           </li>
         </ul>
       </div>
-      <div class="my-12 border-2 border-solid border-black p-8">
-        <h3 class="font-extrabold">Send Email To Me</h3>
+      <div class="my-10 border-2 border-solid border-black p-8">
+        <h3 class="font-bold">Send Email To Me</h3>
         <form class="mt-4 flex items-center">
           <input
             class="w-full text-sm text-black placeholder-gray-600 border border-gray-300 py-2 pl-4"
@@ -120,9 +74,9 @@
           </a>
         </form>
       </div>
-      <div class="border border-solid border-gray-200 relative my-12">
+      <div class="border border-solid border-gray-200 relative my-10">
         <h3
-          class="absolute top-0 -mt-3 px-2 ml-6 bg-white uppercase text-sm font-semibold"
+          class="absolute top-0 -mt-2.5 px-2 ml-6 bg-white uppercase text-sm font-semibold"
         >Friend Chain</h3>
         <ul
           class="grid grid-cols-1 divide-y divide-gray-300 p-8 text-xs text-gray-600 font-semibold list-decimal"
@@ -197,10 +151,7 @@ export default defineComponent({
     const { $axios } = useContext();
 
     useFetch(async () => {
-      [datas.value, categories.value] = await Promise.all([
-        $axios.$get(SERVER_URL.posts.concat("?page=0&size=5&order=likes")),
-        $axios.$get(SERVER_URL.category.concat("?page=0&size=10")),
-      ]);
+      categories.value = await $axios.$get(SERVER_URL.category.concat("?page=0&size=10"))
     });
 
     return {

@@ -4,13 +4,13 @@
       class="flex justify-between md:justify-start items-center border-black border-b-2 py-3 md:py-5"
     >
       <nav class="hidden md:flex space-x-6 tracking-wide text-xs text-black uppercase">
-        <nuxt-link title="home" to="/" class="font-extrabold">Home</nuxt-link>
-        <nuxt-link title="posts" to="/posts" class="font-extrabold">Posts</nuxt-link>
-        <nuxt-link title="about" to="/about" class="font-extrabold">About</nuxt-link>
+        <nuxt-link title="home" to="/" class="font-bold">Home</nuxt-link>
+        <nuxt-link title="posts" to="/posts" class="font-bold">Posts</nuxt-link>
+        <nuxt-link title="about" to="/about" class="font-bold">About</nuxt-link>
         <nuxt-link
           title="contact"
           to="/resource"
-          class="text-xs font-extrabold uppercase text-black"
+          class="text-xs font-bold uppercase text-black"
         >Resource</nuxt-link>
       </nav>
       <div class="-my-2 md:hidden">

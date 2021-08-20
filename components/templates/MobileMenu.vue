@@ -1,6 +1,6 @@
 <template>
   <div class="px-2 mb-8">
-    <ul class="divide-y divide-black font-extrabold uppercase text-center">
+    <ul class="divide-y divide-black font-bold uppercase text-center">
       <li class="my-2">
         <nuxt-link title="home_mobile" @click.native="$emit('menuAction', false)" to="/"
           >Home</nuxt-link
