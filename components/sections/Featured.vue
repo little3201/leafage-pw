@@ -1,7 +1,7 @@
 <template>
-  <section class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20 my-12">
+  <section class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20 my-10">
     <div class="flex divide-y-2 divide-gray-400 divide-dotted">
-      <h3 class="uppercase font-extrabold">Featured Posts</h3>
+      <h3 class="uppercase font-bold">Featured Posts</h3>
       <span class="flex-1 w-full ml-4 mt-3"></span>
     </div>
     <div
@@ -10,28 +10,28 @@
     >
       <div v-for="data in datas.slice(3)" :key="data.code">
         <div class="overflow-hidden relative">
-          <figure class="transform hover:scale-110 transition duration-500 h-48 overflow-hidden">
+          <figure class="aspect-w-16 aspect-h-9 transform hover:scale-110 transition duration-500">
             <nuxt-picture
               :src="
                 data.cover +
-                '?imageMogr2/thumbnail/640x192/format/webp/blur/1x0/quality/75'
+                '?imageMogr2/thumbnail/640x256/format/webp/blur/1x0/quality/75'
               "
               :alt="data.title"
               width="437"
-              height="192"
+              height="256"
             />
           </figure>
           <nuxt-link
             :title="data.category"
             :to="{ path: '/posts', query: { category: data.category } }"
-            class="absolute top-0 text-white text-xs font-extrabold uppercase p-6 hover:underline"
+            class="absolute top-0 text-white text-xs font-bold uppercase p-6 hover:underline"
             v-text="data.category"
           ></nuxt-link>
         </div>
         <!--blog-img end-->
         <div class="my-4">
-          <h3 class="font-extrabold transform hover:translate-x-2 transition duration-500">
-            <nuxt-link :title="data.code" :to="'/posts/detail/' + data.code" v-text="data.title"></nuxt-link>
+          <h3 class="font-bold transform hover:translate-x-2 transition duration-500">
+            <nuxt-link class="break-words text-sm lg:text-base" :title="data.code" :to="'/posts/detail/' + data.code" v-text="data.title"></nuxt-link>
           </h3>
           <ul class="flex text-xs space-x-6 text-gray-600 my-4 uppercase">
             <li v-text="new Date(data.modifyTime).toLocaleDateString()"></li>

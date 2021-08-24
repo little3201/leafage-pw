@@ -25,6 +25,7 @@
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/tailwindcss": "^4.2.1",
+    "@tailwindcss/aspect-ratio": "^0.2.1",
     "@tailwindcss/typography": "^0.4.1",
     "autoprefixer": "^10.3.1",
     "babel-eslint": "^10.1.0",

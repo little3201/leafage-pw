@@ -1,12 +1,12 @@
 <template>
-  <section class="my-12">
+  <section class="my-10">
     <div class="flex divide-y-2 divide-gray-400 divide-dotted">
-      <h3 class="uppercase font-extrabold">Comments</h3>
+      <h3 class="uppercase font-bold">Comments</h3>
       <span class="flex-1 w-full ml-4 mt-3"></span>
     </div>
-    <form class="grid grid-rows-3 md:grid-rows-2 md:grid-cols-2 bg-gray-200 p-4 my-6">
-      <div class="my-2">
-        <label class="text-gray-600">Nickname: </label>
+    <form class="grid grid-cols-1 lg:grid-cols-2 gap-4 bg-gray-200 p-4 my-6">
+      <div>
+        <label class="text-gray-600">Nickname:</label>
         <input
           type="text"
           name="nickname"
@@ -17,8 +17,8 @@
           autocomplete="off"
         />
       </div>
-      <div class="my-2">
-        <label class="text-gray-600">Email: </label>
+      <div>
+        <label class="text-gray-600">Email:</label>
         <input
           type="email"
           name="email"
@@ -29,8 +29,8 @@
           autocomplete="off"
         />
       </div>
-      <div class="my-2">
-        <label class="text-gray-600">Your Message: </label>
+      <div class="lg:col-span-2">
+        <label class="text-gray-600">Your Message:</label>
         <textarea
           name="content"
           v-model="formData.content"
@@ -43,22 +43,13 @@
         @click="onSubmit"
         aria-label="send_comment"
         type="submit"
-        class="
-          text-white
-          uppercase
-          text-xs
-          font-bold
-          bg-gray-500
-          py-3
-          w-full
-          md:w-1/2
-          outline-none
-        "
-      >
-        Submit Comment
-      </button>
+        class="text-white uppercase text-xs font-bold bg-gray-500 py-3 w-full outline-none"
+      >Submit Comment</button>
     </form>
-    <ul v-if="comments && comments.length > 0" class="w-full bg-gray-200 p-4 my-6 divide-y divide-gray-300">
+    <ul
+      v-if="comments && comments.length > 0"
+      class="w-full bg-gray-200 p-4 my-6 divide-y divide-gray-300"
+    >
       <li v-for="comment in comments" :key="comment.code" class="py-4">
         <div class="flex justify-between text-xs">
           <span class="font-bold" v-text="comment.nickname + '：'"></span>

@@ -1,31 +1,31 @@
 <template>
-  <div class="my-4 md:my-10">
+  <div class="my-6">
     <div
       v-if="datas"
       class="grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8"
     >
       <div class="w-full" v-for="data in datas" :key="data.code">
         <div class="overflow-hidden">
-          <figure class="transform hover:scale-110 transition duration-500 h-64 overflow-hidden">
+          <figure class="aspect-w-16 aspect-h-9 transform hover:scale-110 transition duration-500n">
             <nuxt-picture
               :src="
                 data.cover +
                 '?imageMogr2/thumbnail/640x256/format/webp/blur/1x0/quality/75'
               "
-              width="437"
+              width="640"
               height="256"
             />
           </figure>
         </div>
-        <div class="my-4">
+        <div class="my-2">
           <nuxt-link
             :title="data.category"
             :to="{ path: '/posts', query: { category: data.category } }"
-            class="text-xs space-x-6 text-gray-600 uppercase font-bold hover:underline hover:text-black"
+            class="break-words text-xs space-x-6 text-gray-600 uppercase font-bold hover:underline hover:text-black"
             v-text="data.category"
           ></nuxt-link>
           <h3
-            class="md:text-xl font-extrabold my-3 transform hover:translate-x-2 transition duration-500"
+            class="font-bold my-2 transform hover:translate-x-2 transition duration-500"
           >
             <nuxt-link :title="data.code" :to="'/posts/detail/' + data.code" v-text="data.title"></nuxt-link>
           </h3>

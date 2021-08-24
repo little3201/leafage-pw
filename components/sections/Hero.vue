@@ -1,19 +1,20 @@
 <template>
   <section class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
-    <div class="grid grid-flow-col grid-rows-3 grid-cols-1 md:grid-rows-2 md:grid-cols-3 gap-4">
-      <div class="md:row-span-2 md:col-span-2 flex justify-center items-center">
+    <div
+      class="grid md:grid-cols-2 lg:grid-rows-2 lg:grid-cols-3 gap-4"
+    >
+      <div class="md:col-span-2 lg:row-span-2 lg:col-span-2">
         <div v-if="datas[0]" class="relative overflow-hidden">
           <figure
-            class="transform hover:scale-110 transition duration-500"
-            style="max-height: 528px; overflow: hidden;"
+            class="aspect-w-16 aspect-h-9 md:aspect-none transform hover:scale-110 transition duration-500"
           >
-            <nuxt-picture :src="datas[0].cover" :alt="datas[0].title" width="920" height="528" />
+            <nuxt-picture :src="datas[0].cover" :alt="datas[0].title" width="2048" height="1080" />
             <div class="absolute w-full h-full bg-gray-800 bg-opacity-25"></div>
           </figure>
           <nuxt-link
             :title="datas[0].category"
             :to="{ path: '/posts', query: { category: datas[0].category } }"
-            class="absolute top-0 text-white text-xs font-extrabold uppercase p-4 md:p-10 hover:underline"
+            class="absolute top-0 text-white text-xs font-bold uppercase p-4 md:p-10 hover:underline"
             v-text="datas[0].category"
           ></nuxt-link>
           <div class="absolute bottom-4 md:bottom-8 text-white p-4 md:p-10 w-auto">
@@ -72,7 +73,7 @@
             </div>
           </div>
         </div>
-        <div v-else class="animate-pulse w-full h-full overflow-hidden">
+        <div v-else class="animate-pulse w-full h-full">
           <div class="w-full h-full">
             <div class="w-full h-full bg-gray-800 bg-opacity-25">
               <span class="w-full"></span>
@@ -80,8 +81,8 @@
           </div>
         </div>
       </div>
-      <div v-if="datas[1]" class="relative text-white w-full h-48 md:h-64 overflow-hidden">
-        <figure class="transform hover:scale-110 transition duration-500">
+      <div v-if="datas[1]" class="relative text-white overflow-hidden">
+        <figure class="aspect-w-16 aspect-h-9 transform hover:scale-110 transition duration-500">
           <nuxt-picture
             :src="
               datas[1].cover +
@@ -95,11 +96,10 @@
         </figure>
         <nuxt-link
           :title="datas[1].category"
-          to="/posts"
-          class="absolute top-0 text-white text-xs font-extrabold uppercase p-8 hover:underline"
+          :to="{ path: '/posts', query: { category: datas[1].category } }"
+          class="absolute top-0 text-white text-xs font-bold uppercase p-8 hover:underline"
           v-text="datas[1].category"
         ></nuxt-link>
-        <!--blog-img end-->
         <div class="absolute px-8 text-left font-black bottom-8">
           <h3 class="transform hover:translate-x-2 transition duration-500">
             <nuxt-link
@@ -117,8 +117,8 @@
           </div>
         </div>
       </div>
-      <div v-if="datas[2]" class="relative text-white w-full h-48 md:h-64 overflow-hidden">
-        <figure class="transform hover:scale-110 transition duration-500">
+      <div v-if="datas[2]" class="relative text-white overflow-hidden">
+        <figure class="aspect-w-16 aspect-h-9 transform hover:scale-110 transition duration-500">
           <nuxt-picture
             :src="
               datas[2].cover +
@@ -132,8 +132,8 @@
         </figure>
         <nuxt-link
           :title="datas[2].category"
-          to="/"
-          class="absolute top-0 text-white text-xs font-extrabold uppercase p-8 hover:underline"
+          :to="{ path: '/posts', query: { category: datas[2].category } }"
+          class="absolute top-0 text-white text-xs font-bold uppercase p-8 hover:underline"
           v-text="datas[2].category"
         ></nuxt-link>
         <!--blog-img end-->

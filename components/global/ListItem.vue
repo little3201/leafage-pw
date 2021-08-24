@@ -3,9 +3,7 @@
     <div v-if="datas" class="grid grid-flow-row grid-cols-2 gap-4 md:gap-8">
       <div class="w-full" v-for="data in datas" :key="data.code">
         <div class="overflow-hidden">
-          <figure
-            class="transform hover:scale-110 transition duration-500 h-64 overflow-hidden"
-          >
+          <figure class="aspect-w-16 aspect-h-9 transform hover:scale-110 transition duration-500">
             <nuxt-picture
               :src="
                 data.cover +
@@ -20,11 +18,11 @@
           <nuxt-link
             :title="data.category"
             :to="{ path: '/posts', query: { category: data.category } }"
-            class="text-xs space-x-6 text-gray-600 uppercase font-bold hover:underline hover:text-black"
+            class="break-words text-xs space-x-6 text-gray-600 uppercase font-bold hover:underline hover:text-black"
             v-text="data.category"
           ></nuxt-link>
           <h3
-            class="md:text-xl font-extrabold my-3 transform hover:translate-x-2 transition duration-500"
+            class="md:text-xl font-bold my-3 transform hover:translate-x-2 transition duration-500"
           >
             <nuxt-link :title="data.code" :to="'/posts/detail/' + data.code" v-text="data.title"></nuxt-link>
           </h3>
