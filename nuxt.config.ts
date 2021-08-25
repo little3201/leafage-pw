@@ -60,7 +60,8 @@ export default {
     https: true,
     progress: true,
     credentials: true,
-    baseURL: '/api'
+    baseURL: 'https://console.leafage.top/api',
+    proxy: true
   },
 
   globalName: 'leafage',
