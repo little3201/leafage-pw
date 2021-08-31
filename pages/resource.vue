@@ -1,13 +1,25 @@
 <template>
   <section class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
     <div class="border-t border-black"></div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 my-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 my-8 relative">
       <figure
         v-for="data in datas"
         :key="data.code"
-        class="aspect-w-3 aspect-h-4 overflow-hidden border shadow-lg filter grayscale hover:grayscale-0"
+        class="overflow-hidden border shadow-lg filter grayscale hover:grayscale-0"
       >
-        <nuxt-picture :src="data.url[0]" width="288" height="384" />
+        <nuxt-picture :src="data.url[0]" width="474" height="617" />
+        <div
+          class="hover:bg-black hover:opacity-75 opacity-0 absolute top-0 w-full h-full transition duration-500 ease-in-out flex items-center justify-center"
+        >
+          <div class="text-gray-300">
+            <p class="p-2 my-4">
+              <a href="#" class="hover:underline hover:text-white">在线阅读</a>
+            </p>
+            <p class="p-2 my-4">
+              <a href="#" class="hover:underline hover:text-white">立即下载</a>
+            </p>
+          </div>
+        </div>
       </figure>
     </div>
   </section>
