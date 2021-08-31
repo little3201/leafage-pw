@@ -13,73 +13,25 @@
 
 ## 项目介绍
 
-leafage-pw，一个使用 Nuxt.js、 Tailwindcss 的博客网站，项目创建之初是为了做一个个人博客，现已上线。
-
-从一开始就决定将项目开源，因为看过wordpress，gihub pages等一些开源的博客网站的创建很不好用，而且不灵活，大家都是一套模版走天下。
+leafage-pw，一个使用 Nuxt.js、 Tailwindcss 的博客网站，项目创建之初是为了做一个个人博客，因为看过 wordpress，gihub pages 等一些开源的博客网站的创建很不好用，而且不灵活，大家都是一套模版走天下。
 
 项目中的接口可以直接替换为自己的服务接口，后端服务[leafage-basic](https://github.com/little3201/leafage-basic) ，希望大家使用本项目的同时也能一起学习，分享。
 
-### 功能模块介绍：
 
-<img src="static/images/introduce.png" alt="introduce">
+**访问地址：**<a href="https://www.leafage.top">博客站点</a>&nbsp;&nbsp;<a href="https://console.leafage.top">后台管理系统</a>
 
-本项目是博客站点的源代码，markdown 数据解析使用的是markdown-it，高亮插件使用highlight.js，gihub样式。与本项目配套的还有后台管理系统（[leafage-ms](https://github.com/little3201/leafage-ms)）和后台服务（[leafage-gateway](https://github.com/little3201/leafage-gateway), [leafage-basic](https://github.com/little3201/leafage-basic)）
+项目创建与 2019-05-23 历经好几次改版（查看[关于](https://www.leafage.top/about)了解更多），虽然过程很折腾，但是也明白和体会了很多，对于一些技术点理接更深了，近期更新请查看[更新日志](CHANGELOG.md) 。
 
-**网站地址：** https://www.leafage.top
+### 功能依赖
 
-**后台管理系统访问地址：** https://console.leafage.top
+- [x] @nuxt/sitemap —— 自生成sitemap
+- [x] @nuxt/image —— 图片加载优化
+- [x] @tailwindcss/typography —— 排版优化
+- [x] @tailwindcss/aspect-ratio —— 图片排版优化
+- [x] markdown-it/hightlight.js —— markdown解析，代码高亮
 
-### 更新
-
-项目创建与 2019-05-23 历经好几次改版（查看[关于](https://www.leafage.top/about)了解更多），虽然过程很折腾，但是也明白和体会了很多，对于一些技术点理接更深了，近期更新请查看更新日志。
-
-[更新日志](CHANGELOG.md) 
-
-### 目标功能
-- [x] 总览
-- [x] 详情
-- [x] 作品集
-- [x] 关于
-- [X] 资源
-- [X] 点赞/喜欢
-- [x] 评论
-- [x] 分类
-- [X] 检索
-- [ ] i18n
-
-### 界面美化
-- [x] 动画效果
-- [x] 响应式
-
-## 项目展示
-
-**首页:**
-<img alt="home" width="100%" src="static/images/home.jpeg">
-
-**详情页:**
-<img alt="detail" width="100%" src="static/images/detail.jpeg">
-
-### 项目地址
-
-目前项目托管在Gitee和Github平台上中，欢迎大家star 和 fork 支持~
-
-- Gitee地址：https://gitee.com/little3201/leafage-pw
-- Github地址：https://github.com/little3201/leafage-pw
-
-## FAQ文档
-
-[FAQ文档](FAQ.md) 
 
 如果你遇到了 [FAQ文档](FAQ.md) 中没有出现的问题，并且已经解决了，欢迎联系我进行修改。
-
-### 前端技术
-
-|         技术          |           说明            |                             链接                            |
-|:---------------------:|:------------------------:|:-----------------------------------------------------------:|
-|        Vue.js         |         开发框架          |         [https://vuejs.org](https://vuejs.org)              |
-|        Nuxt.js        |         SEO优化           |        [https://zh.nuxtjs.org](https://zh.nuxtjs.org)       |
-|      Tailwindcss      |          CSS库            |       [https://tailwindcss.com](https://tailwindcss.com)    |
-|         Axios         |       前端HTTP框架        |     [https://github.com/axios](https://github.com/axios)    |
 
 ## Build Setup
 
