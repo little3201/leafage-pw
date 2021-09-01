@@ -52,12 +52,7 @@
           </div>
           <h2 class="my-3 text-xl md:text-3xl font-bold" v-text="data.title"></h2>
           <figure v-show="data.cover" class="w-full h-full my-8">
-            <nuxt-picture
-              :src="data.cover"
-              :alt="data.title"
-              width="920"
-              height="612"
-            />
+            <nuxt-picture :src="data.cover" :alt="data.title" width="920" height="612" />
           </figure>
           <div class="prose min-w-full" v-html="rendered"></div>
           <div class="bg-gray-200 my-8 p-8">
@@ -173,10 +168,8 @@ export default defineComponent({
     //点赞
     const like = async (code: string) => {
       await $axios.get("/check").then(() => {
-        const likes = $axios.$patch(
-          SERVER_URL.posts.concat("/", code, "/like")
-        );
-        data.value.likes = likes;
+        const likes = $axios.patch(SERVER_URL.posts.concat("/", code, "/like"));
+        data.value = { ...data.value, likes: likes }
       })
     };
 
