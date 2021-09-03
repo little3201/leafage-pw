@@ -60,7 +60,7 @@ export default {
     https: true,
     progress: true,
     credentials: true,
-    baseURL: '/api'
+    prefix: '/api'
   },
 
   globalName: 'leafage',

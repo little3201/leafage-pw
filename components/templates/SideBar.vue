@@ -151,7 +151,7 @@ export default defineComponent({
     const { $axios } = useContext();
 
     useFetch(async () => {
-      categories.value = await $axios.$get(SERVER_URL.category.concat("?page=0&size=10"))
+      categories.value = await $axios.$get(SERVER_URL.category)
     });
 
     return {

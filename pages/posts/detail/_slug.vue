@@ -166,8 +166,8 @@ export default defineComponent({
     });
 
     //点赞
-    const like = (code: string) => {
-      $axios.get("/check").then(() => {
+    const like = async (code: string) => {
+      await $axios.get("/check").then(() => {
         $axios.patch(SERVER_URL.posts.concat("/", code, "/like")).then(res => {
           data.value = { ...data.value, likes: res.data }
         });
