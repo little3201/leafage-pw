@@ -1,13 +1,13 @@
 <template>
-  <div class="fixed bg-black bg-opacity-80 top-0 right-0 w-full h-full z-10">
-    <div class="conatiner mx-auto px-8 md:px-20 lg:px-40 xl:px-56">
+  <div class="fixed bg-black bg-opacity-80 inset-0 w-full h-full z-10">
+    <div class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
       <form @submit.prevent="onSubmit">
         <div class="flex justify-center items-center mt-48 w-full">
           <input
             type="text"
             v-model="keyword"
             placeholder="Enter The Keywords"
-            class="p-2 px-4 w-full -ml-4 focus:outline-none rounded-md"
+            class="py-3 px-4 w-full -ml-4 focus:outline-none rounded-md"
           />
           <button
             type="submit"
@@ -53,7 +53,7 @@
           <line x1="6" y1="6" x2="18" y2="18"></line></svg
       ></a>
       <ul
-        v-if="datas && datas.length > 0"
+        v-if="datas"
         class="divide-y divide-gray-300 mt-2 h-72 overflow-auto"
       >
         <li

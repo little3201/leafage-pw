@@ -1,6 +1,6 @@
 <template>
   <div class="my-4 md:my-10">
-    <div v-if="datas" class="grid grid-flow-row grid-cols-2 gap-4 md:gap-8">
+    <div v-if="datas && datas.size > 0" class="grid grid-flow-row grid-cols-2 gap-4 md:gap-8">
       <div class="w-full" v-for="data in datas" :key="data.code">
         <div class="overflow-hidden">
           <figure class="aspect-w-16 aspect-h-9 transform hover:scale-110 transition duration-500">
@@ -70,7 +70,7 @@
       </div>
     </div>
     <div v-else class="animate-pulse grid grid-flow-row grid-cols-2 gap-4 md:gap-8">
-      <div v-for="i in 3" :key="i">
+      <div v-for="i in 6" :key="i">
         <div class="w-full h-48 bg-gray-800 bg-opacity-25">
           <span class="w-full"></span>
         </div>
