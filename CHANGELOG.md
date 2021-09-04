@@ -61,7 +61,7 @@
 2021-04-19: 
   1. 去掉除_slug.vue其他页面的like操作；
   2. 详情页日期，浏览量字体改为sm，图标大小调整；
-  3. 完善posts和portfolio页的分类查询问题；
+  3. 完善posts和resource页的分类查询问题；
 
 2021-04-12: 
   1. 结局了详情页刷新，内容出现重复的问题，以及Failed to execute 'appendChild' on 'Node': This node type does not support this method...的错误：
