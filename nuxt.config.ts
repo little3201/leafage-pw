@@ -60,8 +60,7 @@ export default {
     https: true,
     progress: true,
     credentials: true,
-    baseURL: 'https://www.leafage.top/api',
-    proxy: true
+    baseURL: '/api'
   },
 
   globalName: 'leafage',
@@ -80,7 +79,7 @@ export default {
     defaults: {
       changefreq: 'daily',
       priority: 1,
-      lastmod: new Date()
+      lastmod: new Date().toLocaleDateString()
     },
     routes: async () => {
       const { data } = await axios.get('https://www.leafage.top/api/assets/posts')
