@@ -45,7 +45,7 @@ export default defineComponent({
     const { $axios } = useContext();
 
     useFetch(async () => {
-      datas.value = await $axios.$get(SERVER_URL.portfolio, {
+      datas.value = await $axios.$get(SERVER_URL.resource, {
         params: { page: 0, size: 12 },
       });
     });
