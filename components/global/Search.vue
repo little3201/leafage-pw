@@ -7,7 +7,7 @@
             type="text"
             v-model="keyword"
             placeholder="Enter The Keywords"
-            class="py-3 px-4 w-full -ml-4 focus:outline-none rounded-md"
+            class="py-2 md:py-3 px-4 w-full -ml-4 focus:outline-none rounded-md"
           />
           <button
             type="submit"
