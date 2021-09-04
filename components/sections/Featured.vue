@@ -5,7 +5,7 @@
       <span class="flex-1 w-full ml-4 mt-3"></span>
     </div>
     <div
-      v-if="datas && datas.size > 0"
+      v-if="datas && datas.length > 0"
       class="grid grid-flow-col grid-rows-4 grid-cols-1 md:grid-rows-1 md:grid-cols-4 md:gap-6 my-6"
     >
       <div v-for="data in datas.slice(3)" :key="data.code">

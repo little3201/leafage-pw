@@ -89,12 +89,12 @@ export default defineComponent({
 
   setup() {
     const keyword = ref();
-    const datas = ref([]);
+    const datas = ref<any>([]);
 
     const { $axios } = useContext();
 
     const onSubmit = async () => {
-      $axios.$get(SERVER_URL.posts.concat("/search?keyword=", keyword.value));
+      datas.value = $axios.$get(SERVER_URL.posts.concat("/search?keyword=", keyword.value));
     };
 
     return {
