@@ -85,14 +85,15 @@ export default {
     cacheTime: 1000 * 60 * 60 * 24,
     defaults: {
       changefreq: 'always',
-      priority: 0.8
+      priority: 0.8,
+      lastmod: new Date()
     },
     routes: async () => {
       const { datas } = await axios.get('https://www.leafage.top/api/assets/posts')
 
       return datas.map((posts: any) => ({
         url: `/posts/detail/${posts.code}`,
-        lastmod: posts.modifyTime
+        lastmod: new Date(posts.modifyTime)
       }))
     }
   }
