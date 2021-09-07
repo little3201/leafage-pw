@@ -6,7 +6,7 @@
     </div>
     <div
       v-if="datas && datas.length > 0"
-      class="grid grid-flow-col grid-rows-4 grid-cols-1 md:grid-rows-1 md:grid-cols-4 md:gap-6 my-6"
+      class="grid grid-flow-col grid-rows-4 grid-cols-1  md:grid-rows-2 md:grid-cols-2 gap-4 lg:grid-rows-1 lg:grid-cols-4 lg:gap-6 my-6"
     >
       <div v-for="data in datas.slice(3)" :key="data.code">
         <div class="overflow-hidden relative">

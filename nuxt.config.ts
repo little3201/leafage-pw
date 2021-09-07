@@ -77,24 +77,53 @@ export default {
   // sitemap: sitemap
   sitemap: {
     hostname: 'https://www.leafage.top/',
-    gzip: true,
+    cacheTime: 1000 * 60 * 60 * 24,
     generate: false,
     exclude: [
       '/error'
     ],
-    cacheTime: 1000 * 60 * 60 * 24,
     defaults: {
-      changefreq: 'always',
-      priority: 0.8,
-      lastmod: new Date()
+      changefreq: 'daily',
+      priority: 1,
+      lastmod: "2021-09-07"
     },
     routes: async () => {
+      const routes = [
+        {
+          url: "/",  //  这里的路径相对 hostname
+          changefreq: "always",
+          lastmod: new Date()
+        },
+        {
+          url: "/about",
+          changefreq: "yearly",
+          lastmod: "2021-06-27"
+        },
+        {
+          url: "/resource",
+          changefreq: "always",
+          lastmod: "2021-07-18"
+        },
+        {
+          url: "/posts",
+          changefreq: "always",
+          lastmod: new Date
+        }
+      ]
+
       const { datas } = await axios.get('https://www.leafage.top/api/assets/posts')
 
-      return datas.map((posts: any) => ({
-        url: `/posts/detail/${posts.code}`,
-        lastmod: new Date(posts.modifyTime)
-      }))
+      if (datas) {
+        let posts = datas.map((posts: any) => ({
+          url: "/posts/detail/" + posts.code,
+          changefreq: "monthly",
+          lastmod: new Date(posts.modifyTime)
+        }))
+        // let posts = datas.map((posts: any) => `/posts/detail/${posts.code}`);
+        routes.concat(posts)
+      }
+      
+      return routes;
     }
   }
 }
