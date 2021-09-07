@@ -1,19 +1,16 @@
 <template>
-  <div class="fixed bg-black bg-opacity-80 top-0 right-0 w-full h-full z-10">
-    <div class="conatiner mx-auto px-8 md:px-20 lg:px-40 xl:px-56">
+  <div class="fixed bg-black bg-opacity-80 inset-0 w-full h-full z-10">
+    <div class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
       <form @submit.prevent="onSubmit">
         <div class="flex justify-center items-center mt-48 w-full">
           <input
             type="text"
             v-model="keyword"
             placeholder="Enter The Keywords"
-            class="p-2 px-4 w-full -ml-4 focus:outline-none rounded-md"
+            class="py-2 md:py-3 px-4 w-full -ml-4 focus:outline-none rounded-md"
+            autofocus
           />
-          <button
-            type="submit"
-            aria-label="search"
-            class="-ml-10 focus:outline-none"
-          >
+          <button type="submit" aria-label="search" class="-ml-10 focus:outline-none">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -26,8 +23,8 @@
               stroke-linejoin="round"
               class="feather feather-search"
             >
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg>
           </button>
         </div>
@@ -37,7 +34,8 @@
         href="javascript:;"
         @click="$emit('searchOption', false)"
         class="absolute mt-2 mr-2 top-0 right-0"
-        ><svg
+      >
+        <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
@@ -49,13 +47,11 @@
           stroke-linejoin="round"
           class="feather feather-x"
         >
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line></svg
-      ></a>
-      <ul
-        v-if="datas && datas.length > 0"
-        class="divide-y divide-gray-300 mt-2 h-72 overflow-auto"
-      >
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </a>
+      <ul v-if="datas && datas.length > 0" class="divide-y divide-gray-300 mt-2 h-72 overflow-auto">
         <li
           v-for="data in datas"
           :key="data.code"
@@ -67,8 +63,7 @@
             class="py-2 px-4"
             :to="'/posts/detail/' + data.code"
             v-text="data.title"
-          >
-          </nuxt-link>
+          ></nuxt-link>
         </li>
       </ul>
       <ul v-else class="mt-2">
@@ -89,12 +84,14 @@ export default defineComponent({
 
   setup() {
     const keyword = ref();
-    const datas = ref([]);
+    const datas = ref<Array<Object>>([]);
 
     const { $axios } = useContext();
 
     const onSubmit = async () => {
-      $axios.$get(SERVER_URL.posts.concat("/search?keyword=", keyword.value));
+      datas.value = []
+      let result = $axios.$get(SERVER_URL.posts.concat("/search?keyword=", keyword.value));
+      datas.value.push(result)
     };
 
     return {

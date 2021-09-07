@@ -76,6 +76,10 @@ export default {
 
   // sitemap: sitemap
   sitemap: {
+    hostname: 'https://www.leafage.top/',
+    exclude: [
+      '/error'
+    ],
     defaults: {
       changefreq: 'daily',
       priority: 1,
