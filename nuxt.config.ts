@@ -76,14 +76,24 @@ export default {
 
   // sitemap: sitemap
   sitemap: {
+    hostname: 'https://www.leafage.top/',
+    gzip: true,
+    generate: false,
+    exclude: [
+      '/error'
+    ],
+    cacheTime: 1000 * 60 * 60 * 24,
     defaults: {
-      changefreq: 'daily',
-      priority: 1,
-      lastmod: new Date().toLocaleDateString()
+      changefreq: 'always',
+      priority: 0.8
     },
     routes: async () => {
-      const { data } = await axios.get('https://www.leafage.top/api/assets/posts')
-      return data.map((posts: any) => `/posts/detail/${posts.code}`)
+      const { datas } = await axios.get('https://www.leafage.top/api/assets/posts')
+
+      return datas.map((posts: any) => ({
+        url: `/posts/detail/${posts.code}`,
+        lastmod: posts.modifyTime
+      }))
     }
   }
 }
