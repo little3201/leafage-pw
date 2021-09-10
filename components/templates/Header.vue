@@ -89,6 +89,7 @@
       </div>
     </div>
 
+    <MobileMenu v-show="isOpen" @menuAction="menuOption" />
     <div class="flex justify-center items-center h-32 md:h-40">
       <nuxt-link to="/" class="text-4xl tracking-widest font-black uppercase text-black text-center">
         <figure class="inline-flex justify-center">
@@ -97,7 +98,6 @@
         <h1>Leafage</h1>
       </nuxt-link>
     </div>
-    <MobileMenu v-show="isOpen" @menuAction="menuOption" />
     <Search v-show="isSearch" @searchOption="searchOption" />
   </header>
 </template>
