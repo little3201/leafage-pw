@@ -60,8 +60,7 @@ export default {
     https: true,
     progress: true,
     credentials: true,
-    baseURL: 'https://console.leafage.top/api',
-    proxy: true
+    baseURL: '/api'
   },
 
   globalName: 'leafage',
@@ -77,6 +76,10 @@ export default {
 
   // sitemap: sitemap
   sitemap: {
+    hostname: 'https://www.leafage.top/',
+    exclude: [
+      '/error'
+    ],
     defaults: {
       changefreq: 'daily',
       priority: 1,
@@ -85,6 +88,12 @@ export default {
     routes: async () => {
       const { data } = await axios.get('https://www.leafage.top/api/assets/posts')
       return data.map((posts: any) => `/posts/detail/${posts.code}`)
+    }
+  },
+
+  build: {
+    extractCSS: {
+      ignoreOrder: true
     }
   }
 }
