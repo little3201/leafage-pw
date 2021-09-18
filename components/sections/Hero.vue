@@ -1,8 +1,6 @@
 <template>
   <section class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
-    <div
-      class="grid md:grid-cols-2 lg:grid-rows-2 lg:grid-cols-3 gap-4"
-    >
+    <div class="grid md:grid-cols-2 lg:grid-rows-2 lg:grid-cols-3 gap-4">
       <div class="md:col-span-2 lg:row-span-2 lg:col-span-2">
         <div v-if="datas[0]" class="relative overflow-hidden">
           <figure
@@ -31,8 +29,8 @@
           <div class="absolute bottom-0 text-white p-4 md:p-10 w-full">
             <div class="hidden md:flex justify-between items-center">
               <ul class="flex text-xs space-x-6 text-gray-400">
-                <li class="uppercase" v-text="new Date(datas[0].modifyTime).toDateString()"></li>
-                <li class="flex items-center">
+                <li class="uppercase" v-text="new Date(datas[0].modifyTime).toLocaleDateString()"></li>
+                <li class="inline-flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="12"
@@ -50,7 +48,7 @@
                   </svg>
                   {{ datas[0].viewed }}
                 </li>
-                <li class="flex items-center">
+                <li class="inline-flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="12"
@@ -68,6 +66,23 @@
                     />
                   </svg>
                   {{ datas[0].likes }}
+                </li>
+                <li class="inline-flex items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-message-square mr-1"
+                  >
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                  </svg>
+                  {{ datas[0].comment }}
                 </li>
               </ul>
             </div>

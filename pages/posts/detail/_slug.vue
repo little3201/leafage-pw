@@ -11,8 +11,8 @@
               v-text="data.category"
               class="hover:underline hover:text-black"
             ></nuxt-link>
-            <span class="tracking-wider" v-text="new Date(data.modifyTime).toDateString()"></span>
-            <div class="flex items-center">
+            <span class="tracking-wider" v-text="new Date(data.modifyTime).toLocaleDateString()"></span>
+            <div class="inline-flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="14"
@@ -30,7 +30,24 @@
               </svg>
               {{ data.viewed }}
             </div>
-            <div class="flex items-center cursor-pointer" @click="like(data.code)">
+            <div class="inline-flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-message-square mr-1"
+              >
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
+              {{ data.comment }}
+            </div>
+            <div class="inline-flex items-center cursor-pointer" @click="like(data.code)">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="14"
@@ -51,6 +68,33 @@
             </div>
           </div>
           <h2 class="my-3 text-xl md:text-3xl font-bold" v-text="data.title"></h2>
+          <div class="inline-flex items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-tag mr-2"
+            >
+              <path
+                d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"
+              />
+              <line x1="7" y1="7" x2="7.01" y2="7" />
+            </svg>
+            <span
+              v-for="(tag, index) in data.tags"
+              :key="index"
+              class="text-sm whitespace-nowrap"
+            >
+              {{ tag }}
+              <span class="mr-2" v-if="index < data.tags.length - 1">,</span>
+            </span>
+          </div>
           <figure v-show="data.cover" class="w-full h-full my-8">
             <nuxt-picture :src="data.cover" :alt="data.title" width="920" height="612" />
           </figure>

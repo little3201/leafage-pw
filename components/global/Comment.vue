@@ -53,7 +53,7 @@
       <li v-for="comment in comments" :key="comment.code" class="py-4">
         <div class="flex justify-between text-xs">
           <span class="font-bold" v-text="comment.nickname + '：'"></span>
-          <span class="text-gray-400">{{ new Date(comment.modifyTime).toDateString() }}</span>
+          <span class="text-gray-400">{{ new Date(comment.modifyTime).toLocaleDateString() }}</span>
         </div>
         <p class="ml-4 mt-1" v-text="comment.content"></p>
       </li>
