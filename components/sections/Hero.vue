@@ -31,7 +31,7 @@
           <div class="absolute bottom-0 text-white p-4 md:p-10 w-full">
             <div class="hidden md:flex justify-between items-center">
               <ul class="flex text-xs space-x-6 text-gray-400">
-                <li class="uppercase" v-text="new Date(datas[0].modifyTime).toLocaleDateString()"></li>
+                <li class="uppercase" v-text="new Date(datas[0].modifyTime).toDateString()"></li>
                 <li class="flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

@@ -24,7 +24,7 @@
                 v-text="datas[0].category"
               ></nuxt-link>
             </li>
-            <li v-text="new Date(datas[0].modifyTime).toLocaleDateString()"></li>
+            <li v-text="new Date(datas[0].modifyTime).toDateString()"></li>
             <li class="flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +98,7 @@
         </div>
         <div>
           <ul class="flex my-2 text-xs space-x-6 uppercase text-gray-500">
-            <li v-text="new Date(datas[1].modifyTime).toLocaleDateString()"></li>
+            <li v-text="new Date(datas[1].modifyTime).toDateString()"></li>
             <li class="flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -170,7 +170,7 @@
         </div>
         <div>
           <ul class="flex my-2 text-xs space-x-6 uppercase text-gray-500">
-            <li v-text="new Date(datas[2].modifyTime).toLocaleDateString()"></li>
+            <li v-text="new Date(datas[2].modifyTime).toDateString()"></li>
             <li class="flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

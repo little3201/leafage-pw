@@ -11,7 +11,7 @@
               v-text="data.category"
               class="hover:underline hover:text-black"
             ></nuxt-link>
-            <span class="tracking-wider" v-text="new Date(data.modifyTime).toLocaleDateString()"></span>
+            <span class="tracking-wider" v-text="new Date(data.modifyTime).toDateString()"></span>
             <div class="flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

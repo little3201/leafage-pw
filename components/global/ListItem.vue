@@ -27,7 +27,7 @@
             <nuxt-link :title="data.code" :to="'/posts/detail/' + data.code" v-text="data.title"></nuxt-link>
           </h3>
           <ul class="flex text-xs space-x-2 md:space-x-6 text-gray-600 uppercase">
-            <li v-text="new Date(data.modifyTime).toLocaleDateString()"></li>
+            <li v-text="new Date(data.modifyTime).toDateString()"></li>
             <li class="flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
