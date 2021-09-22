@@ -7,7 +7,9 @@
     <div class="grid md:grid-cols-2 lg:grid-rows-2 lg:grid-cols-3 gap-4 my-6 overflow-hidden">
       <div v-if="datas[0]" class="md:col-span-2 lg:row-span-2 lg:col-span-2">
         <div class="overflow-hidden">
-          <figure class="aspect-w-16 aspect-h-9 md:aspect-none transform hover:scale-110 transition duration-500">
+          <figure
+            class="aspect-w-16 aspect-h-9 md:aspect-none transform hover:scale-110 transition duration-500"
+          >
             <nuxt-picture :src="datas[0].cover" :alt="datas[0].title" width="2048" height="1080" />
           </figure>
         </div>
@@ -25,7 +27,7 @@
               ></nuxt-link>
             </li>
             <li v-text="new Date(datas[0].modifyTime).toLocaleDateString()"></li>
-            <li class="flex items-center">
+            <li class="inline-flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="12"
@@ -43,7 +45,7 @@
               </svg>
               {{ datas[0].viewed }}
             </li>
-            <li class="flex items-center">
+            <li class="inline-flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="12"
@@ -61,6 +63,23 @@
                 />
               </svg>
               {{ datas[0].likes }}
+            </li>
+            <li class="inline-flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-message-square mr-1"
+              >
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
+              {{ datas[0].comment }}
             </li>
           </ul>
           <h3
@@ -84,7 +103,9 @@
       </div>
       <div v-if="datas[1]">
         <div class="overflow-hidden">
-          <figure class="aspect-w-16 aspect-h-9 md:aspect-none transform hover:scale-110 transition duration-500">
+          <figure
+            class="aspect-w-16 aspect-h-9 md:aspect-none transform hover:scale-110 transition duration-500"
+          >
             <nuxt-picture
               :src="
                 datas[1].cover +
@@ -99,7 +120,7 @@
         <div>
           <ul class="flex my-2 text-xs space-x-6 uppercase text-gray-500">
             <li v-text="new Date(datas[1].modifyTime).toLocaleDateString()"></li>
-            <li class="flex items-center">
+            <li class="inline-flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="12"
@@ -117,7 +138,7 @@
               </svg>
               {{ datas[1].viewed }}
             </li>
-            <li class="flex items-center">
+            <li class="inline-flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="12"
@@ -135,6 +156,23 @@
                 />
               </svg>
               {{ datas[1].likes }}
+            </li>
+            <li class="inline-flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-message-square mr-1"
+              >
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
+              {{ datas[1].comment }}
             </li>
           </ul>
           <h3 class="font-bold transform hover:translate-x-2 transition duration-500">
@@ -156,7 +194,9 @@
       </div>
       <div v-if="datas[2]">
         <div class="overflow-hidden">
-          <figure class="aspect-w-16 aspect-h-9 md:aspect-none transform hover:scale-110 transition duration-500">
+          <figure
+            class="aspect-w-16 aspect-h-9 md:aspect-none transform hover:scale-110 transition duration-500"
+          >
             <nuxt-picture
               :src="
                 datas[2].cover +
@@ -171,7 +211,7 @@
         <div>
           <ul class="flex my-2 text-xs space-x-6 uppercase text-gray-500">
             <li v-text="new Date(datas[2].modifyTime).toLocaleDateString()"></li>
-            <li class="flex items-center">
+            <li class="inline-flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="12"
@@ -189,7 +229,7 @@
               </svg>
               {{ datas[2].viewed }}
             </li>
-            <li class="flex items-center">
+            <li class="inline-flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="12"
@@ -207,6 +247,23 @@
                 />
               </svg>
               {{ datas[2].likes }}
+            </li>
+            <li class="inline-flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-message-square mr-1"
+              >
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
+              {{ datas[2].comment }}
             </li>
           </ul>
           <h3 class="font-bold transform hover:translate-x-2 transition duration-500">

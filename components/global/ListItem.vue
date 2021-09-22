@@ -28,7 +28,7 @@
           </h3>
           <ul class="flex text-xs space-x-2 md:space-x-6 text-gray-600 uppercase">
             <li v-text="new Date(data.modifyTime).toLocaleDateString()"></li>
-            <li class="flex items-center">
+            <li class="inline-flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="12"
@@ -46,7 +46,7 @@
               </svg>
               {{ data.viewed }}
             </li>
-            <li class="flex items-center">
+            <li class="inline-flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="12"
@@ -64,6 +64,23 @@
                 />
               </svg>
               {{ data.likes }}
+            </li>
+            <li class="inline-flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-message-square mr-1"
+              >
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
+              {{ data.comment }}
             </li>
           </ul>
         </div>

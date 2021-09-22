@@ -35,7 +35,7 @@
       class="py-3 text-xs text-center text-gray-400 container mx-auto px-2 md:px-12 lg:px-16 xl:px-20"
     >
       <p class="border-t border-gray-700 py-3">
-        &copy; {{ new Date().getFullYear() }} leafage.top All Rights Reserved.
+        Copyright &copy; {{ new Date().getFullYear() }} leafage.top All Rights Reserved.
       </p>
       <p>
         <a href="https://beian.miit.gov.cn" rel="noopener" target="_blank"
