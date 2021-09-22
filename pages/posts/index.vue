@@ -3,7 +3,7 @@
     <ul class="flex text-xs border border-black overflow-x-scroll">
       <li
         class=" hover:bg-black hover:text-white"
-        :class="{ 'bg-black text-white': '' == categoryCode }"
+        :class="{ 'bg-black text-white': '' == category }"
       >
         <button
           aria-label="posts_all"
@@ -16,7 +16,7 @@
       </li>
       <li
         class="hover:bg-black hover:text-white"
-        :class="{ 'bg-black text-white': cg.code == categoryCode }"
+        :class="{ 'bg-black text-white': cg.code == category }"
         v-for="cg in categories"
         :key="cg.code"
       >
@@ -40,9 +40,7 @@ import {
   useFetch,
   useContext,
   ref,
-  useMeta,
-  useRoute,
-  computed,
+  useMeta
 } from "@nuxtjs/composition-api";
 import { SERVER_URL } from "~/api/request";
 
@@ -52,16 +50,10 @@ export default defineComponent({
   head: {},
 
   setup() {
-    const route = useRoute();
-    const category = computed(() => {
-      let data: any = categories.value.filter(
-        (item: any) => route.value.query.category == item.alias
-      );
-      return data.code ? data.code : "";
-    });
+    const { $axios, params } = useContext();
 
     // cotegory code
-    const categoryCode = ref("");
+    const category = ref(params.value.category);
 
     const categories = ref([]);
     const datas = ref([]);
@@ -70,8 +62,6 @@ export default defineComponent({
     const page = ref(0);
     const size = ref(12);
     const total = ref(0);
-
-    const { $axios } = useContext();
 
     useFetch(async () => {
       [categories.value, datas.value, total.value] = await Promise.all([
@@ -108,14 +98,14 @@ export default defineComponent({
     const retrieve = (num: number, code: string) => {
       page.value = num;
       if (code) {
-        categoryCode.value = code;
+        category.value = code;
       }
       $axios
         .get(
           SERVER_URL.posts.concat(
             "?page=" + page.value,
             "&size=" + size.value,
-            "&category=" + categoryCode.value
+            "&category=" + category.value
           )
         )
         .then((res) => (datas.value = res.data));
@@ -124,7 +114,7 @@ export default defineComponent({
     return {
       categories,
       datas,
-      categoryCode,
+      category,
 
       page,
       size,
