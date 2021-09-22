@@ -89,5 +89,11 @@ export default {
       const { data } = await axios.get('https://www.leafage.top/api/assets/posts')
       return data.map((posts: any) => `/posts/detail/${posts.code}`)
     }
+  },
+
+  build: {
+    extractCSS: {
+      ignoreOrder: true
+    }
   }
 }

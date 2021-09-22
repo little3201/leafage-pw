@@ -1,18 +1,18 @@
 <template>
   <section class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
     <div class="border-t border-black"></div>
-    <div class="grid grid-cols-4 gap-4 divide-x divide-gray-300 my-8">
-      <div class="col-span-1 px-2 md:px-4 lg:px-8">
-        <ul class="divide-y divide-gray-300 text-center py-8">
-          <li class="py-4"><nuxt-link to="me">关于本人</nuxt-link></li>
-          <li class="py-4"><nuxt-link to="website">关于本站</nuxt-link></li>
-          <li class="py-4">
-            <nuxt-link class="font-bold" to="changelog">更新日志</nuxt-link>
-          </li>
-        </ul>
+    <div
+      class="grid grid-cols-1 md:grid-cols-4 md:gap-4 md:divide-x md:divide-gray-300 my-4 md:my-8"
+    >
+      <div
+        class="flex justify-around md:block md:col-span-1 md:divide-y md:divide-gray-300 text-center my-4 md:py-8 border border-black md:border-none"
+      >
+        <nuxt-link class="w-full block p-3 hover:bg-black hover:text-white" to="/about">关于本站</nuxt-link>
+        <nuxt-link class="w-full block p-3 hover:bg-black hover:text-white" to="/about/profile">关于本人</nuxt-link>
+        <nuxt-link class="w-full block p-3 hover:bg-black hover:text-white" to="/about/record">更新日志</nuxt-link>
       </div>
       <div class="col-span-3">
-        <article class="prose-sm md:prose mx-auto px-2 md:px-4 lg:px-0">
+        <article class="prose-sm md:prose mx-auto md:px-6">
           <nuxt-child />
         </article>
       </div>
@@ -48,3 +48,9 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped>
+.nuxt-link-exact-active {
+  @apply text-white bg-black;
+}
+</style>
