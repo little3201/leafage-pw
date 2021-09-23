@@ -89,8 +89,13 @@ export default defineComponent({
     // 留言
     const onSubmit = async () => {
       let data = { ...formData.value, posts: props.code };
-      const latest = await $axios.$post(SERVER_URL.comment, data);
-      comments.value.push(latest);
+
+      await $axios.get("/check").then(() => {
+        $axios.post(SERVER_URL.comment, data).then(res => {
+          comments.value.push(res.data)
+        });
+      })
+
       formData.value = {}
     };
 
