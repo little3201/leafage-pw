@@ -12,7 +12,7 @@
         <nuxt-link class="w-full block p-3 hover:bg-black hover:text-white" to="/about/record">更新日志</nuxt-link>
       </div>
       <div class="col-span-3">
-        <article class="prose-sm sm:prose lg:prose-lg mx-auto">
+        <article class="prose lg:prose-lg mx-auto">
           <nuxt-child />
         </article>
       </div>
