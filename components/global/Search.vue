@@ -90,7 +90,7 @@ export default defineComponent({
 
     const onSubmit = async () => {
       datas.value = []
-      let result = $axios.$get(SERVER_URL.posts.concat("/search?keyword=", keyword.value));
+      let result = $axios.$get(SERVER_URL.posts.concat("/search"), { params: { keyword: keyword.value } });
       datas.value.push(result)
     };
 

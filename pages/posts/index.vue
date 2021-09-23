@@ -2,7 +2,7 @@
   <div class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
     <ul class="flex text-xs border border-black overflow-x-scroll">
       <li
-        class=" hover:bg-black hover:text-white"
+        class="hover:bg-black hover:text-white"
         :class="{ 'bg-black text-white': '' == category }"
       >
         <button
@@ -10,9 +10,7 @@
           type="button"
           @click="retrieve(0, '')"
           class="w-32 h-10 font-bold uppercase focus:outline-none"
-        >
-          All
-        </button>
+        >All</button>
       </li>
       <li
         class="hover:bg-black hover:text-white"
@@ -40,7 +38,8 @@ import {
   useFetch,
   useContext,
   ref,
-  useMeta
+  useMeta,
+  useRoute
 } from "@nuxtjs/composition-api";
 import { SERVER_URL } from "~/api/request";
 
@@ -50,10 +49,11 @@ export default defineComponent({
   head: {},
 
   setup() {
-    const { $axios, params } = useContext();
+    const { $axios } = useContext();
+    const route = useRoute();
 
     // cotegory code
-    const category = ref(params.value.category);
+    const category = ref(route.value.params.category || '');
 
     const categories = ref([]);
     const datas = ref([]);
@@ -67,12 +67,7 @@ export default defineComponent({
       [categories.value, datas.value, total.value] = await Promise.all([
         $axios.$get(SERVER_URL.category),
         $axios.$get(
-          SERVER_URL.posts.concat(
-            "?page=" + page.value,
-            "&size=" + size.value,
-            "&category=" + category.value
-          )
-        ),
+          SERVER_URL.posts, { params: { page: page.value, size: size.value, category: category.value } }),
         $axios.$get(SERVER_URL.posts.concat("/count")),
       ]);
     });
@@ -95,20 +90,14 @@ export default defineComponent({
       ],
     }));
 
-    const retrieve = (num: number, code: string) => {
+    const retrieve = async (num: number, code: string) => {
       page.value = num;
       if (code) {
         category.value = code;
       }
-      $axios
-        .get(
-          SERVER_URL.posts.concat(
-            "?page=" + page.value,
-            "&size=" + size.value,
-            "&category=" + category.value
-          )
-        )
-        .then((res) => (datas.value = res.data));
+      [datas.value, total.value] = await Promise.all([$axios
+        .$get(SERVER_URL.posts, { params: { page: page.value, size: size.value, category: category.value } }),
+      $axios.$get(SERVER_URL.posts.concat("/count"))])
     };
 
     return {

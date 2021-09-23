@@ -42,7 +42,7 @@
       <button
         @click="onSubmit"
         aria-label="send_comment"
-        type="submit"
+        type="button"
         class="text-white uppercase text-xs font-bold bg-gray-500 py-3 w-full outline-none"
       >Submit Comment</button>
     </form>
