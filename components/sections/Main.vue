@@ -3,15 +3,7 @@
     <div class="grid grid-flow-row grid-cols-1 lg:grid-cols-3">
       <div class="lg:col-span-2">
         <TopPosts :datas="topDatas" />
-        <ul
-          class="
-            flex
-            justify-between
-            items-center
-            text-center
-            border border-black
-          "
-        >
+        <ul class="flex justify-between items-center text-center border border-black">
           <li
             class="w-1/3 hover:bg-black hover:text-white"
             :class="{ 'bg-black text-white': order == 'likes' }"
@@ -21,9 +13,7 @@
               type="button"
               @click="retrieve(), (order = 'likes')"
               class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
-            >
-              Most Liked
-            </button>
+            >Most Liked</button>
           </li>
           <li
             class="w-1/3 hover:bg-black hover:text-white"
@@ -34,9 +24,7 @@
               type="button"
               @click="retrieve(), (order = 'viewed')"
               class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
-            >
-              Most Viewed
-            </button>
+            >Most Viewed</button>
           </li>
           <li
             class="w-1/3 hover:bg-black hover:text-white"
@@ -47,18 +35,11 @@
               aria-label="popular"
               @click="retrieve(), (order = 'comment')"
               class="w-full h-10 text-xs font-bold uppercase focus:outline-none"
-            >
-              Most Comments
-            </button>
+            >Most Comments</button>
           </li>
         </ul>
         <ListItem :datas="datas" />
-        <Pagation
-          :page="page"
-          :size="size"
-          :total="total"
-          @retrieve="retrieve"
-        />
+        <Pagation :page="page" :size="size" :total="total" @retrieve="retrieve" />
       </div>
       <LazySideBar />
     </div>
@@ -103,12 +84,7 @@ export default defineComponent({
     const retrieve = async (num: number) => {
       page.value = num ? num : 0;
       props.listDatas = await $axios.$get(
-        SERVER_URL.posts.concat(
-          "?page=" + page.value,
-          "&size=" + size.value,
-          "&order=",
-          order.value
-        )
+        SERVER_URL.posts, { params: { page: page.value, size: size.value, order: order.value } }
       );
     };
 

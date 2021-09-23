@@ -67,12 +67,7 @@ export default defineComponent({
       [categories.value, datas.value, total.value] = await Promise.all([
         $axios.$get(SERVER_URL.category),
         $axios.$get(
-          SERVER_URL.posts.concat(
-            "?page=" + page.value,
-            "&size=" + size.value,
-            "&category=" + category.value
-          )
-        ),
+          SERVER_URL.posts, { params: { page: page.value, size: size.value, category: category.value } }),
         $axios.$get(SERVER_URL.posts.concat("/count")),
       ]);
     });
@@ -101,14 +96,7 @@ export default defineComponent({
         category.value = code;
       }
       [datas.value, total.value] = await Promise.all([$axios
-        .$get(
-          SERVER_URL.posts.concat(
-            "?page=" + page.value,
-            "&size=" + size.value,
-            "&category=" + category.value
-          )
-        )
-        .then((res) => (datas.value = res.data)),
+        .$get(SERVER_URL.posts, { params: { page: page.value, size: size.value, category: category.value } }),
       $axios.$get(SERVER_URL.posts.concat("/count"))])
     };
 
