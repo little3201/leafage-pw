@@ -98,7 +98,7 @@
           <figure v-show="data.cover" class="w-full h-full my-8">
             <nuxt-picture :src="data.cover" :alt="data.title" width="920" height="612" />
           </figure>
-          <div class="prose min-w-full" v-html="rendered"></div>
+          <div class="prose lg:prose-lg max-w-none" v-html="rendered"></div>
           <div class="bg-gray-200 my-8 p-8">
             <ul
               class="grid grid-flow-row grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2 gap-4 text-xs font-bold"

@@ -34,7 +34,7 @@
           <li class="py-3 mx-4" v-for="category in categories" :key="category.code">
             <nuxt-link
               :title="category.alias"
-              :to="{ path: '/posts', query: { category: category.alias } }"
+              :to="{ path: '/posts', params: { category: category.code } }"
               v-text="category.alias"
               class="hover:underline hover:text-black"
             ></nuxt-link>
@@ -146,7 +146,6 @@ export default defineComponent({
   name: "SideBar",
 
   setup() {
-    const datas = ref([]);
     const categories = ref([]);
     const { $axios } = useContext();
 
@@ -155,7 +154,6 @@ export default defineComponent({
     });
 
     return {
-      datas,
       categories,
     };
   },
