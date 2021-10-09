@@ -92,12 +92,10 @@ export default defineComponent({
 
     const retrieve = async (num: number, code: string) => {
       page.value = num;
-      if (code) {
-        category.value = code;
-      }
-      [datas.value, total.value] = await Promise.all([$axios
-        .$get(SERVER_URL.posts, { params: { page: page.value, size: size.value, category: category.value } }),
-      $axios.$get(SERVER_URL.posts.concat("/count"))])
+      category.value = code;
+      [datas.value, total.value] = await Promise.all([
+        $axios.$get(SERVER_URL.posts, { params: { page: page.value, size: size.value, category: category.value } }),
+        $axios.$get(SERVER_URL.posts.concat("/count"))])
     };
 
     return {
