@@ -12,6 +12,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'google-site-verification', content: '_2Z6I2Wl5xuTKIGRrCD3meIZDgfn_XFVrTv1tKeJ6v8' },
       { name: 'msvalidate.01', content: 'E02DDF417CA7C7D33A55805B3E9A81C7' },
+      { name: 'bytedance-verification-code', content: 'QAK19uJv32RHmoMsQ+hi' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
