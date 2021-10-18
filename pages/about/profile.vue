@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <CommonAbout>
         <p>一个 Java 程序员，爱折腾，但不闹腾，</p>
         <p>想法很多，并非全是空想，</p>
         <p>在很多方面，无知，</p>
@@ -12,5 +12,11 @@
         <p>也还向往着诗和远方，</p>
         <p>也还憧憬着大山大河，</p>
         <p>也还相信着很多很多。</p>
-    </div>
+    </CommonAbout>
 </template>
+
+<script lang="ts">
+export default {
+  layout: "default",
+};
+</script>
