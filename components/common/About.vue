@@ -41,7 +41,7 @@
 </template>
 
 <style scoped>
-.nuxt-link-exact-active {
+.NuxtLink-exact-active {
     @apply text-white bg-black;
 }
 </style>

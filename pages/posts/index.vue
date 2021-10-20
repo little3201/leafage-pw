@@ -1,7 +1,7 @@
 <template>
     <div>
         Posts
-        <nuxt-link :to="'/posts/detail/' + '21310DI09'">21310DI09</nuxt-link>
+        <NuxtLink :to="'/posts/detail/' + '21310DI09'">21310DI09</NuxtLink>
     </div>
 </template>
 

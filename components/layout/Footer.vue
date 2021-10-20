@@ -5,7 +5,7 @@
         <div
           class="flex justify-center text-3xl tracking-widest font-black uppercase py-4"
         >
-          <nuxt-link title="leafage" to="/">Leafage</nuxt-link>
+          <NuxtLink title="leafage" to="/">Leafage</NuxtLink>
         </div>
         <div class="flex justify-center space-x-6 sm:my-4">
           <a
@@ -26,8 +26,8 @@
         <div
           class="flex justify-center space-x-10 uppercase font-bold my-4"
         >
-          <nuxt-link title="about" to="/about">About</nuxt-link>
-          <nuxt-link title="posts" to="/posts">Posts</nuxt-link>
+          <a title="sitemap" href="/sitemap.html">Sitemap</a>
+          <a title="doc" href="/doc">Doc</a>
         </div>
       </div>
     </section>
@@ -39,7 +39,7 @@
       </p>
       <p>
         <a href="https://beian.miit.gov.cn" rel="noopener" target="_blank"
-          >陕ICP备19017836号-1</a
+          >陕ICP备19017836号</a
         >
       </p>
     </section>

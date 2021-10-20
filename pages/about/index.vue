@@ -23,7 +23,7 @@
         </ol>
         <p class="font-semibold">
             近期更新请查看
-            <nuxt-link to="/about/record">更新日志</nuxt-link>。
+            <NuxtLink to="/about/record">更新日志</NuxtLink>。
         </p>
         <p>后面也会继续更新和完善，另外可能也会做一些其他的东西出来，比如小程序呀，或者app，一点点做吧。Fighing！！！</p>
     </CommonAbout>
