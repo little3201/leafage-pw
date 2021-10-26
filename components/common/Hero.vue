@@ -1,190 +1,40 @@
 <template>
-    <section class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
-        <div class="grid md:grid-cols-2 lg:grid-rows-2 lg:grid-cols-3 gap-4">
-            <div class="md:col-span-2 lg:row-span-2 lg:col-span-2">
-                <div v-if="datas[0]" class="relative overflow-hidden">
-                    <figure
-                        class="aspect-w-16 aspect-h-9 md:aspect-none transform hover:scale-110 transition duration-500"
-                    >
-                        <nuxt-picture
-                            :src="datas[0].cover"
-                            :alt="datas[0].title"
-                            width="2048"
-                            height="1080"
-                        />
-                        <div class="absolute w-full h-full bg-gray-800 bg-opacity-25"></div>
-                    </figure>
-                    <NuxtLink
-                        :title="datas[0].category"
-                        :to="{ path: '/posts', query: { category: datas[0].category } }"
-                        class="absolute top-0 text-white text-xs font-bold uppercase p-4 md:p-10 hover:underline"
-                        v-text="datas[0].category"
-                    ></NuxtLink>
-                    <div class="absolute bottom-4 md:bottom-8 text-white p-4 md:p-10 w-auto">
-                        <h2
-                            class="p-4 md:p-6 md:text-xl font-black leading-8 text-left border border-solid border-gray-300 transform hover:translate-x-2 transition duration-500"
-                        >
-                            <NuxtLink
-                                :title="datas[0].code"
-                                :to="'/posts/detail/' + datas[0].code"
-                                v-text="datas[0].title"
-                            ></NuxtLink>
-                        </h2>
-                    </div>
-                    <div class="absolute bottom-0 text-white p-4 md:p-10 w-full">
-                        <div class="hidden md:flex justify-between items-center">
-                            <ul class="flex text-xs space-x-6 text-gray-400">
-                                <li
-                                    class="uppercase"
-                                    v-text="new Date(datas[0].modifyTime).toLocaleDateString()"
-                                ></li>
-                                <li class="inline-flex items-center">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="12"
-                                        height="12"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="feather feather-eye mr-1"
-                                    >
-                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                                        <circle cx="12" cy="12" r="3" />
-                                    </svg>
-                                    {{ datas[0].viewed }}
-                                </li>
-                                <li class="inline-flex items-center">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="12"
-                                        height="12"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="feather feather-heart mr-1"
-                                    >
-                                        <path
-                                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-                                        />
-                                    </svg>
-                                    {{ datas[0].likes }}
-                                </li>
-                                <li class="inline-flex items-center">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="12"
-                                        height="12"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="feather feather-message-square mr-1"
-                                    >
-                                        <path
-                                            d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
-                                        />
-                                    </svg>
-                                    {{ datas[0].comment }}
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div v-else class="animate-pulse w-full h-full">
-                    <div class="w-full h-full">
-                        <div class="w-full h-full bg-gray-800 bg-opacity-25">
-                            <span class="w-full"></span>
-                        </div>
-                    </div>
-                </div>
+    <div
+        class="mt-6 max-w-2xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-3 lg:gap-x-8"
+    >
+        <div class="hidden aspect-w-3 aspect-h-4 rounded-lg overflow-hidden lg:block">
+            <img
+                src="https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg"
+                alt="Two each of gray, white, and black shirts laying flat."
+                class="w-full h-full object-center object-cover"
+            />
+        </div>
+        <div class="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
+            <div class="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
+                <img
+                    src="https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg"
+                    alt="Model wearing plain black basic tee."
+                    class="w-full h-full object-center object-cover"
+                />
             </div>
-            <div v-if="datas[1]" class="relative text-white overflow-hidden">
-                <figure
-                    class="aspect-w-16 aspect-h-9 transform hover:scale-110 transition duration-500"
-                >
-                    <nuxt-picture
-                        :src="
-                            datas[1].cover +
-                            '?imageMogr2/thumbnail/640x256/format/webp/blur/1x0/quality/75'
-                        "
-                        :alt="datas[1].title"
-                        width="640"
-                        height="256"
-                        sizes="sm:192px"
-                    />
-                </figure>
-                <NuxtLink
-                    :title="datas[1].category"
-                    :to="{ path: '/posts', query: { category: datas[1].category } }"
-                    class="absolute top-0 text-white text-xs font-bold uppercase p-8 hover:underline"
-                    v-text="datas[1].category"
-                ></NuxtLink>
-                <div class="absolute px-8 text-left font-black bottom-8">
-                    <h3 class="transform hover:translate-x-2 transition duration-500">
-                        <NuxtLink
-                            :title="datas[1].code"
-                            :to="'/posts/detail/' + datas[1].code"
-                            v-text="datas[1].title"
-                        ></NuxtLink>
-                    </h3>
-                </div>
-            </div>
-            <div v-else class="animate-pulse">
-                <div class="w-full h-64">
-                    <div class="w-full h-full bg-gray-800 bg-opacity-25">
-                        <span class="w-full"></span>
-                    </div>
-                </div>
-            </div>
-            <div v-if="datas[2]" class="relative text-white overflow-hidden">
-                <figure
-                    class="aspect-w-16 aspect-h-9 transform hover:scale-110 transition duration-500"
-                >
-                    <nuxt-picture
-                        :src="
-                            datas[2].cover +
-                            '?imageMogr2/thumbnail/640x256/format/webp/blur/1x0/quality/75'
-                        "
-                        :alt="datas[2].title"
-                        width="640"
-                        height="256"
-                        sizes="sm:192px"
-                    />
-                </figure>
-                <NuxtLink
-                    :title="datas[2].category"
-                    :to="{ path: '/posts', query: { category: datas[2].category } }"
-                    class="absolute top-0 text-white text-xs font-bold uppercase p-8 hover:underline"
-                    v-text="datas[2].category"
-                ></NuxtLink>
-                <!--blog-img end-->
-                <div class="absolute px-8 text-left font-black bottom-8">
-                    <h3 class="transform hover:translate-x-2 transition duration-500">
-                        <NuxtLink
-                            :title="datas[2].code"
-                            :to="'/posts/detail/' + datas[2].code"
-                            v-text="datas[2].title"
-                        ></NuxtLink>
-                    </h3>
-                </div>
-            </div>
-            <div v-else class="animate-pulse">
-                <div class="w-full h-64">
-                    <div class="w-full h-full bg-gray-800 bg-opacity-25">
-                        <span class="w-full"></span>
-                    </div>
-                </div>
+            <div class="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
+                <img
+                    src="https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg"
+                    alt="Model wearing plain gray basic tee."
+                    class="w-full h-full object-center object-cover"
+                />
             </div>
         </div>
-    </section>
+        <div
+            class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4"
+        >
+            <img
+                src="https://tailwindui.com/img/ecommerce-images/product-page-02-featured-product-shot.jpg"
+                alt="Model wearing plain white basic tee."
+                class="w-full h-full object-center object-cover"
+            />
+        </div>
+    </div>
 </template>
 
 <script lang="ts" setup>

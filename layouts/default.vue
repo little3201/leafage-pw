@@ -8,7 +8,7 @@
                 content="leafage, 博客, 经验记录, 学习总结, nuxt, vue, ts, tailwindcss, java, js"
             />
         </Head>
-        <LayoutHeader />
+        <LayoutHeader class="hidden sm:block" />
         <main>
             <slot />
         </main>

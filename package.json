@@ -9,8 +9,8 @@
     "@tailwindcss/aspect-ratio": "^0.3.0",
     "@tailwindcss/typography": "^0.4.1",
     "autoprefixer": "^10.3.7",
-    "nuxt3": "latest",
-    "postcss": "^8.3.9",
+    "nuxt3": "^3.0.0-27252999.d2cc9e4",
+    "postcss": "^8.3.11",
     "tailwindcss": "^2.2.17"
   }
 }

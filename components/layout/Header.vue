@@ -1,9 +1,9 @@
 <template>
-    <header class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
+    <header class="max-w-2xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
         <div
             class="flex justify-between md:justify-start items-center border-black border-b-2 py-3 md:py-5"
         >
-            <nav class="hidden md:flex space-x-6 tracking-wide text-xs text-black uppercase">
+            <nav class="flex space-x-6 tracking-wide text-xs text-black uppercase">
                 <NuxtLink title="home" to="/" class="font-bold">Home</NuxtLink>
                 <NuxtLink title="posts" to="/posts" class="font-bold">Posts</NuxtLink>
                 <NuxtLink title="about" to="/about/" class="font-bold">About</NuxtLink>

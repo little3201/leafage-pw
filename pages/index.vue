@@ -1,8 +1,8 @@
 <template>
     <div id="home">
         <!-- <Hero :datas="recentDatas" />
-        <Featured :datas="recentDatas" />
-        <Main :topDatas="viewedDatas" :listDatas="likesDatas" :total="total" />-->
+        <Featured :datas="recentDatas" />-->
+        <CommonMain />
     </div>
 </template>
 

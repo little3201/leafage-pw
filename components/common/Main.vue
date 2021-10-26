@@ -1,6 +1,7 @@
 <template>
-    <section class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
-        <div class="grid grid-flow-row grid-cols-1 lg:grid-cols-3">
+    <section class="max-w-2xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
+        <CommonHero />
+        <div class="grid lg:grid-cols-3">
             <div class="lg:col-span-2">
                 <ul class="flex justify-between items-center text-center border border-black">
                     <li
@@ -37,8 +38,8 @@
                         >Most Comments</button>
                     </li>
                 </ul>
-                <List :datas="datas" />
-                <Pagation :page="page" :size="size" :total="total" @retrieve="retrieve" />
+                <CommonList :datas="datas" />
+                <CommonPagation :page="page" :size="size" :total="total" @retrieve="retrieve" />
             </div>
             <LayoutAside />
         </div>
@@ -72,5 +73,6 @@ const retrieve = async (num: number) => {
     // props.listDatas = await $axios.$get(
     //     SERVER_URL.posts, { params: { page: page.value, size: size.value, order: order.value } }
     // );
+    const { data } = await useFetch('/api/posts')
 };
 </script>
