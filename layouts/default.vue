@@ -8,8 +8,11 @@
                 content="leafage, 博客, 经验记录, 学习总结, nuxt, vue, ts, tailwindcss, java, js"
             />
         </Head>
-        <LayoutHeader class="hidden sm:block" />
-        <main>
+        <header class="max-w-2xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
+            <LayoutHeader class="hidden sm:flex border-black border-b-2" />
+            <LayoutLogo />
+        </header>
+        <main class="max-w-2xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
             <slot />
         </main>
         <LayoutFooter />

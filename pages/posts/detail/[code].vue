@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1 class="text-5xl font-bold">{{ $route.params.code }}</h1>
+        <h2 class="text-5xl font-bold">{{ $route.params.code }}</h2>
     </div>
 </template>
 

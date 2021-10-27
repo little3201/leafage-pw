@@ -1,8 +1,10 @@
 <template>
-    <div id="home">
-        <!-- <Hero :datas="recentDatas" />
-        <Featured :datas="recentDatas" />-->
-        <CommonMain />
+    <div>
+        <CommonHero />
+        <div class="flex justify-between">
+            <CommonMain />
+            <LayoutAside />
+        </div>
     </div>
 </template>
 

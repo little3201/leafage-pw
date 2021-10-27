@@ -1,65 +1,63 @@
 <template>
-    <section class="mb-12">
-        <ul v-if="total" class="flex justify-center items-center">
-            <li class="mx-4">
-                <button
-                    type="button"
-                    aria-label="descrease"
-                    @click="$emit('retrieve', curPage > 0 ? curPage-- : 0)"
-                    class="disabled:opacity-25 focus:outline-none"
+    <ul class="flex space-x-6 justify-center items-center">
+        <li>
+            <button
+                type="button"
+                aria-label="descrease"
+                @click="$emit('retrieve', curPage > 0 ? curPage-- : 0)"
+                class="disabled:opacity-25 focus:outline-none"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-chevron-left"
                 >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="3"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="feather feather-chevron-left"
-                    >
-                        <polyline points="15 18 9 12 15 6" />
-                    </svg>
-                </button>
-            </li>
-            <li class="mx-4" v-for="index in pages" :key="index">
-                <button
-                    type="button"
-                    aria-label="give"
-                    @click="(curPage = index - 1), $emit('retrieve', index - 1)"
-                    class="w-8 h-8 rounded-full focus:outline-none border border-black hover:bg-black hover:text-white"
-                    :class="{
-                        'bg-black text-white ': curPage == index - 1,
-                    }"
-                >{{ index }}</button>
-            </li>
-            <li class="mx-4">
-                <button
-                    type="button"
-                    aria-label="increment"
-                    @click="$emit('retrieve', curPage < pages - 1 ? curPage++ : pages)"
-                    class="disabled:opacity-25 focus:outline-none"
+                    <polyline points="15 18 9 12 15 6" />
+                </svg>
+            </button>
+        </li>
+        <li v-for="index in pages" :key="index">
+            <button
+                type="button"
+                aria-label="give"
+                @click="(curPage = index - 1), $emit('retrieve', index - 1)"
+                class="w-8 h-8 rounded-full focus:outline-none border border-black hover:bg-black hover:text-white"
+                :class="{
+                    'bg-black text-white ': curPage == index - 1,
+                }"
+            >{{ index }}</button>
+        </li>
+        <li>
+            <button
+                type="button"
+                aria-label="increment"
+                @click="$emit('retrieve', curPage < pages - 1 ? curPage++ : pages)"
+                class="disabled:opacity-25 focus:outline-none"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-chevron-right"
                 >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="3"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="feather feather-chevron-right"
-                    >
-                        <polyline points="9 18 15 12 9 6" />
-                    </svg>
-                </button>
-            </li>
-        </ul>
-    </section>
+                    <polyline points="9 18 15 12 9 6" />
+                </svg>
+            </button>
+        </li>
+    </ul>
 </template>
 
 <script lang="ts" setup>

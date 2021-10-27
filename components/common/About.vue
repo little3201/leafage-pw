@@ -9,13 +9,10 @@
             />
         </Head>
 
-        <section class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
-            <div class="border-t border-black"></div>
-            <div
-                class="grid grid-cols-1 md:grid-cols-4 md:gap-4 md:divide-x md:divide-gray-300 my-4 md:my-8"
-            >
+        <section class="border-t border-black">
+            <div class="flex">
                 <div
-                    class="flex justify-around md:block md:col-span-1 md:divide-y md:divide-gray-300 text-center my-4 md:py-8 border border-black md:border-none"
+                    class="block divide-y divide-gray-300 text-center mr-4 md:py-8 w-full max-w-xs"
                 >
                     <NuxtLink
                         class="w-full block p-3 hover:bg-black hover:text-white"
@@ -30,7 +27,7 @@
                         to="/about/record"
                     >更新日志</NuxtLink>
                 </div>
-                <div class="col-span-3">
+                <div class="my-4 p-4 mx-auto">
                     <article class="prose lg:prose-lg mx-auto">
                         <slot />
                     </article>
@@ -41,7 +38,7 @@
 </template>
 
 <style scoped>
-.NuxtLink-exact-active {
+.router-link-exact-active {
     @apply text-white bg-black;
 }
 </style>

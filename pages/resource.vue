@@ -1,5 +1,7 @@
 <template>
-    <div>Resource</div>
+    <section class="border-t border-black">
+        <CommonList />
+    </section>
 </template>
 
 <script lang="ts">
