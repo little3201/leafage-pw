@@ -7,12 +7,12 @@
             <NuxtLink title="resource" to="/resource" class="font-bold">Resource</NuxtLink>
         </nav>
         <div class="inline-flex items-center">
-            <button
-                title="subscribe"
+            <a
+                title="contact me"
                 class="text-gray-600 flex items-center uppercase text-xs font-bold tracking-wide"
-                type="button"
+                href="mailto:little3201@163.com"
                 rel="noopener"
-                aria-label="subscribe"
+                aria-label="contact me"
             >
                 <svg
                     style="display: unset"
@@ -32,12 +32,12 @@
                     />
                     <polyline points="22,6 12,13 2,6" />
                 </svg>
-                Subscribe
-            </button>
+                Contact Me
+            </a>
             <button
                 type="button"
                 title="search"
-                class="ml-6 mr-0"
+                class="ml-6 mr-0 focus:outline-none"
                 aria-label="searchOpen"
                 @click="isSearch = !isSearch"
             >

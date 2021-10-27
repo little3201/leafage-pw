@@ -2,6 +2,7 @@
     <ul class="flex space-x-6 justify-center items-center">
         <li>
             <button
+                title="descrease"
                 type="button"
                 aria-label="descrease"
                 @click="$emit('retrieve', curPage > 0 ? curPage-- : 0)"
@@ -36,6 +37,7 @@
         </li>
         <li>
             <button
+                title="increment"
                 type="button"
                 aria-label="increment"
                 @click="$emit('retrieve', curPage < pages - 1 ? curPage++ : pages)"
