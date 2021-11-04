@@ -1,8 +1,8 @@
 <template>
-    <div class="flex space-x-8">
-        <div>
+    <div class="flex space-x-8 border-t border-black">
+        <div class="my-6">
             <article v-if="data">
-                <div class="flex text-sm font-bold space-x-6 text-gray-600 uppercase mb-4 -mt-2.5">
+                <div class="flex text-sm font-bold space-x-6 text-gray-600 uppercase">
                     <NuxtLink
                         :title="data.category"
                         :to="{ path: '/posts', query: { category: data.category } }"
@@ -11,7 +11,7 @@
                     ></NuxtLink>
                     <span
                         class="tracking-wider"
-                        v-text="new Date(data.modifyTime).toLocaleDateString()"
+                        v-text="new Date(data.modifyTime || '2021-11-11').toDateString()"
                     ></span>
                     <div class="inline-flex items-center">
                         <svg
@@ -70,7 +70,10 @@
                         {{ data.likes }}
                     </div>
                 </div>
-                <h2 class="my-3 text-xl md:text-3xl font-bold" v-text="data.title"></h2>
+                <h2
+                    class="my-3 text-xl md:text-2xl lg:text-3xl font-bold"
+                    v-text="data.title || 'SecurityRandom的getInstanceStrong() 阻塞问题'"
+                ></h2>
                 <div class="inline-flex items-center">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -89,17 +92,19 @@
                         />
                         <line x1="7" y1="7" x2="7.01" y2="7" />
                     </svg>
-                    <span
-                        v-for="(tag, index) in data.tags"
-                        :key="index"
-                        class="text-sm whitespace-nowrap"
-                    >
+                    <span v-for="(tag, index) in data.tags" :key="index" class="text-sm">
                         {{ tag }}
                         <span class="mr-2" v-if="index < data.tags.length - 1">,</span>
                     </span>
                 </div>
-                <figure v-show="data.cover" class="w-full h-full my-8">
-                    <img :src="data.cover" :alt="data.title" width="920" height="612" />
+                <figure v-show="data.cover">
+                    <img
+                        :src="data.cover"
+                        :alt="data.title"
+                        class="w-full h-full my-8"
+                        width="100%"
+                        height="100%"
+                    />
                 </figure>
                 <div class="prose lg:prose-lg max-w-none" v-html="rendered"></div>
                 <div class="bg-gray-100 my-8 p-8">
@@ -107,7 +112,7 @@
                         class="grid grid-flow-row grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2 gap-4 text-xs font-bold"
                     >
                         <li>
-                            <nuxt-link
+                            <NuxtLink
                                 :title="previous.code"
                                 :to="'/posts/detail/' + previous.code"
                                 class="flex items-center transform hover:-translate-x-2 transition duration-500"
@@ -128,10 +133,10 @@
                                     <polyline points="15 18 9 12 15 6" />
                                 </svg>
                                 {{ previous.title }}
-                            </nuxt-link>
+                            </NuxtLink>
                         </li>
                         <li class="flex items-center justify-end">
-                            <nuxt-link
+                            <NuxtLink
                                 :title="next.code"
                                 :to="'/posts/detail/' + next.code"
                                 class="flex items-center transform hover:translate-x-2 transition duration-500"
@@ -152,14 +157,14 @@
                                 >
                                     <polyline points="9 18 15 12 9 6" />
                                 </svg>
-                            </nuxt-link>
+                            </NuxtLink>
                         </li>
                     </ul>
                 </div>
             </article>
             <CommonComment />
         </div>
-        <LayoutAside />
+        <LayoutAside class="hidden lg:block my-8" />
     </div>
 </template>
 

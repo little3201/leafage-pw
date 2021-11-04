@@ -12,7 +12,7 @@
             <LayoutHeader class="hidden sm:flex border-black border-b-2" />
             <LayoutLogo />
         </header>
-        <main class="max-w-2xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
+        <main class="max-w-2xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
             <slot />
         </main>
         <LayoutFooter />

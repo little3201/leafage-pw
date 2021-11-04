@@ -9,27 +9,27 @@
             />
         </Head>
 
-        <div class="border-t border-black">
-            <div class="flex">
-                <div class="divide-y divide-gray-300 text-center mr-4 md:py-8 w-64 ">
-                    <NuxtLink
-                        class="w-full block py-3 hover:bg-black hover:text-white"
-                        to="/about"
-                    >关于网站</NuxtLink>
-                    <NuxtLink
-                        class="w-full block py-3 hover:bg-black hover:text-white"
-                        to="/about/profile"
-                    >关于作者</NuxtLink>
-                    <NuxtLink
-                        class="w-full block py-3 hover:bg-black hover:text-white"
-                        to="/about/record"
-                    >更新日志</NuxtLink>
-                </div>
-                <div class="my-4 p-4 mx-auto w-full border-l">
-                    <article class="prose lg:prose-lg mx-auto">
-                        <slot />
-                    </article>
-                </div>
+        <div class="lg:border-t border-black lg:flex">
+            <div
+                class="lg:divide-y lg:divide-gray-300 text-center lg:mr-4 lg:w-60 lg:py-8 flex border border-black lg:border-none lg:block flex-none overflow-x-auto"
+            >
+                <NuxtLink
+                    class="w-full whitespace-nowrap lg:block p-3 hover:bg-black hover:text-white"
+                    to="/about"
+                >关于网站</NuxtLink>
+                <NuxtLink
+                    class="w-full whitespace-nowrap lg:block p-3 hover:bg-black hover:text-white"
+                    to="/about/profile"
+                >关于作者</NuxtLink>
+                <NuxtLink
+                    class="w-full whitespace-nowrap lg:block p-3 hover:bg-black hover:text-white"
+                    to="/about/record"
+                >更新日志</NuxtLink>
+            </div>
+            <div class="my-4 p-4 mx-auto w-full lg:border-l">
+                <article class="prose lg:prose-lg mx-auto">
+                    <slot />
+                </article>
             </div>
         </div>
     </div>

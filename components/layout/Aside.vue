@@ -1,5 +1,5 @@
 <template>
-    <aside class="max-w-xs">
+    <aside class="max-w-xs flex-none">
         <div class="border border-solid border-gray-200 p-8">
             <h3 class="font-bold">欢迎关注公众号（Leafage）</h3>
             <div class="flex items-center mt-4">
@@ -7,8 +7,8 @@
                     <img
                         src="https://cdn.leafage.top/leafage-wechat.jpg?imageMogr2/thumbnail/x128/format/webp/blur/1x0/quality/75"
                         alt="leafage"
-                        width="168"
-                        height="168"
+                        width="100%"
+                        height="100%"
                     />
                 </figure>
                 <div class="ml-4">
@@ -31,12 +31,12 @@
                 class="grid grid-cols-1 divide-y divide-gray-300 p-8 text-xs text-gray-600 font-semibold uppercase list-disc"
             >
                 <li class="py-3 mx-4" v-for="category in categories" :key="category.code">
-                    <nuxt-link
+                    <NuxtLink
                         :title="category.alias"
                         :to="{ path: '/posts', params: { category: category.code } }"
                         v-text="category.alias"
                         class="hover:underline hover:text-black"
-                    ></nuxt-link>
+                    ></NuxtLink>
                     <span class="mr-2 float-right" v-text="category.count"></span>
                 </li>
             </ul>
@@ -47,7 +47,7 @@
                 <input
                     class="w-full text-sm text-black placeholder-gray-600 border border-gray-300 py-2 pl-4"
                     type="email"
-                    placeholder="Enter your email adress"
+                    placeholder="Email adress"
                 />
                 <a
                     aria-label="email"

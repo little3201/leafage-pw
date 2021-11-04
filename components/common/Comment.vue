@@ -1,7 +1,6 @@
 <template>
     <div>
         <h3 class="mb-4 text-lg font-semibold text-gray-900">Comments</h3>
-
         <div class="space-y-4 my-8">
             <div class="flex">
                 <div class="flex-shrink-0 mr-3">
@@ -103,3 +102,12 @@
         </div>
     </div>
 </template>
+
+<script lang="ts" setup>
+defineProps({
+    datas: {
+        type: Array,
+        default: [],
+    },
+})
+</script>

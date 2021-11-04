@@ -3,7 +3,7 @@
         <div class="relative">
             <div
                 class="border-r border-dotted border-gray-500 absolute h-full top-3"
-                style="left: 0.3725rem"
+                style="left: 0.32rem"
             ></div>
             <div class="mb-2">
                 <div class="flex items-center mb-1">

@@ -1,12 +1,12 @@
 <template>
     <div>
-        <div class="flex justify-between items-center border border-black">
+        <div class="flex justify-between items-center border border-black overflow-x-auto">
             <button
                 title="Most Liked"
                 aria-label="Most Liked"
                 type="button"
                 @click="retrieve(0), (order = 'likes')"
-                class="w-1/3 py-3 text-xs font-bold uppercase rounded-none focus:outline-none hover:bg-black hover:text-white"
+                class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-black hover:text-white"
                 :class="{ 'bg-black text-white': order == 'likes' }"
             >Most Liked</button>
             <button
@@ -14,7 +14,7 @@
                 aria-label="Most Viewed"
                 type="button"
                 @click="retrieve(0), (order = 'viewed')"
-                class="w-1/3 py-3 text-xs font-bold uppercase rounded-none focus:outline-none hover:bg-black hover:text-white"
+                class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-black hover:text-white"
                 :class="{ 'bg-black text-white': order == 'viewed' }"
             >Most Viewed</button>
             <button
@@ -22,7 +22,7 @@
                 title="Most Comments"
                 aria-label="Most Comments"
                 @click="retrieve(0), (order = 'comment')"
-                class="w-1/3 py-3 text-xs font-bold uppercase rounded-none focus:outline-none hover:bg-black hover:text-white"
+                class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-black hover:text-white"
                 :class="{ 'bg-black text-white': order == 'comment' }"
             >Most Comments</button>
         </div>

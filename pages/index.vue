@@ -3,13 +3,13 @@
         <CommonHero />
         <div class="flex justify-between space-x-8">
             <div class="w-full">
-                <div class="flex justify-between items-center border border-black">
+                <div class="flex justify-between items-center border border-black overflow-x-auto">
                     <button
                         title="Most Liked"
                         aria-label="Most Liked"
                         type="button"
                         @click="retrieve(0), (order = 'likes')"
-                        class="w-1/3 py-3 text-xs font-bold uppercase rounded-none focus:outline-none hover:bg-black hover:text-white"
+                        class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-black hover:text-white"
                         :class="{ 'bg-black text-white': order == 'likes' }"
                     >Most Liked</button>
                     <button
@@ -17,7 +17,7 @@
                         aria-label="Most Viewed"
                         type="button"
                         @click="retrieve(0), (order = 'viewed')"
-                        class="w-1/3 py-3 text-xs font-bold uppercase rounded-none focus:outline-none hover:bg-black hover:text-white"
+                        class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-black hover:text-white"
                         :class="{ 'bg-black text-white': order == 'viewed' }"
                     >Most Viewed</button>
                     <button
@@ -25,14 +25,14 @@
                         title="Most Comments"
                         aria-label="Most Comments"
                         @click="retrieve(0), (order = 'comment')"
-                        class="w-1/3 py-3 text-xs font-bold uppercase rounded-none focus:outline-none hover:bg-black hover:text-white"
+                        class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-black hover:text-white"
                         :class="{ 'bg-black text-white': order == 'comment' }"
                     >Most Comments</button>
                 </div>
                 <div
                     class="grid grid-cols-1 gap-y-8 sm:grid-cols-2 gap-x-6 xl:grid-cols-3 my-8"
                 >
-                    <CommonItem v-for="data in 6" :data="data" />
+                    <CommonItem v-for="data in 15" :data="data" />
                 </div>
                 <CommonPagation :page="page" :size="size" :total="total" @retrieve="retrieve" />
             </div>
