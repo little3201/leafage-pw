@@ -4,12 +4,12 @@
       <div class="md:flex md:justify-between md:items-center text-white">
         <div class="flex justify-center">
           <NuxtLink
-            class="text-3xl tracking-widest font-black uppercase my-4"
+            class="text-3xl tracking-widest font-black uppercase my-6"
             title="leafage"
             to="/"
           >Leafage</NuxtLink>
         </div>
-        <div class="flex justify-center space-x-6">
+        <div class="flex text-xl justify-between space-x-6 uppercase font-bold">
           <a
             title="github"
             href="https://github.com/little3201"
@@ -18,12 +18,8 @@
           >Github</a>
           <a title="gitee" href="https://gitee.com/little3201" rel="noopener" target="_blank">Gitee</a>
         </div>
-        <div class="flex justify-center md:justify-between space-x-10 uppercase font-bold my-4">
-          <a title="sitemap" href="/sitemap.html">Sitemap</a>
-          <a title="doc" href="/doc">Doc</a>
-        </div>
       </div>
-      <div class="py-3 text-xs text-center text-gray-400">
+      <div class="pb-3 text-xs text-center text-gray-400">
         <p
           class="border-t border-gray-700 py-3"
         >Copyright &copy; {{ new Date().getFullYear() }} leafage.top All Rights Reserved.</p>

@@ -14,14 +14,17 @@
                 class="lg:divide-y lg:divide-gray-300 text-center lg:mr-4 lg:w-60 lg:py-8 flex border border-black lg:border-none lg:block flex-none overflow-x-auto"
             >
                 <NuxtLink
+                    title="关于网站"
                     class="w-full whitespace-nowrap lg:block p-3 hover:bg-black hover:text-white"
                     to="/about"
                 >关于网站</NuxtLink>
                 <NuxtLink
+                    title="关于作者"
                     class="w-full whitespace-nowrap lg:block p-3 hover:bg-black hover:text-white"
                     to="/about/profile"
                 >关于作者</NuxtLink>
                 <NuxtLink
+                    title="更新日志"
                     class="w-full whitespace-nowrap lg:block p-3 hover:bg-black hover:text-white"
                     to="/about/record"
                 >更新日志</NuxtLink>

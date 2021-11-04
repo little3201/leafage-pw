@@ -1,6 +1,6 @@
 <template>
     <aside class="max-w-xs flex-none">
-        <div class="border border-solid border-gray-200 p-8">
+        <div class="border border-solid border-gray-200 p-6">
             <h3 class="font-bold">欢迎关注公众号（Leafage）</h3>
             <div class="flex items-center mt-4">
                 <figure class="border">
@@ -23,12 +23,12 @@
             </div>
         </div>
 
-        <div class="border border-solid border-gray-200 my-10 relative">
+        <div class="border border-solid border-gray-200 my-8 relative">
             <h3
                 class="absolute top-0 -mt-2.5 px-2 ml-6 bg-white uppercase text-sm font-semibold"
-            >Categories</h3>
+            >帖子分类</h3>
             <ul
-                class="grid grid-cols-1 divide-y divide-gray-300 p-8 text-xs text-gray-600 font-semibold uppercase list-disc"
+                class="grid grid-cols-1 divide-y divide-gray-300 p-6 text-xs text-gray-600 font-semibold uppercase list-disc"
             >
                 <li class="py-3 mx-4" v-for="category in categories" :key="category.code">
                     <NuxtLink
@@ -41,7 +41,7 @@
                 </li>
             </ul>
         </div>
-        <div class="my-10 border-2 border-solid border-black p-8">
+        <div class="my-10 border-2 border-solid border-black p-6">
             <h3 class="font-bold">Send Email To Me</h3>
             <form class="mt-4 flex items-center">
                 <input
@@ -73,12 +73,12 @@
                 </a>
             </form>
         </div>
-        <div class="border border-solid border-gray-200 relative my-10">
+        <div class="border border-solid border-gray-200 relative my-8">
             <h3
                 class="absolute top-0 -mt-2.5 px-2 ml-6 bg-white uppercase text-sm font-semibold"
-            >Friend Chain</h3>
+            >友情链接</h3>
             <ul
-                class="grid grid-cols-1 divide-y divide-gray-300 p-8 text-xs text-gray-600 font-semibold list-decimal"
+                class="grid grid-cols-1 divide-y divide-gray-300 p-6 text-xs text-gray-600 font-semibold list-decimal"
             >
                 <li class="py-3 mx-4">
                     <a
@@ -87,7 +87,7 @@
                         target="_blank"
                         rel="noopener"
                         class="hover:underline hover:text-black"
-                    >leafage 控制台</a>
+                    >管理端（console.leafage.top）</a>
                 </li>
                 <li class="py-3 mx-4">
                     <a
@@ -96,7 +96,7 @@
                         rel="noopener"
                         target="_blank"
                         class="hover:underline hover:text-black"
-                    >csdn</a>
+                    >csdn（csdn.net）</a>
                 </li>
                 <li class="py-3 mx-4">
                     <a
@@ -105,7 +105,7 @@
                         target="_blank"
                         rel="noopener"
                         class="hover:underline hover:text-black"
-                    >开源中国 oschina</a>
+                    >开源中国（oschina.net）</a>
                 </li>
                 <li class="py-3 mx-4">
                     <a
@@ -114,7 +114,7 @@
                         rel="noopener"
                         target="_blank"
                         class="hover:underline hover:text-black"
-                    >思否 segmentfault</a>
+                    >思否（segmentfault.com）</a>
                 </li>
                 <li class="py-3 mx-4">
                     <a
@@ -123,7 +123,7 @@
                         rel="noopener"
                         target="_blank"
                         class="hover:underline hover:text-black"
-                    >掘金</a>
+                    >掘金（juejin.cn）</a>
                 </li>
             </ul>
         </div>
