@@ -1,5 +1,5 @@
 <template>
-    <ul class="flex space-x-6 justify-center items-center">
+    <ul class="flex space-x-6 justify-center items-center my-8">
         <li>
             <button
                 title="descrease"
@@ -63,6 +63,8 @@
 </template>
 
 <script lang="ts" setup>
+import { ref, computed } from "vue";
+
 const props = defineProps({
     total: {
         type: Number,

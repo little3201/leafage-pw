@@ -1,7 +1,7 @@
 <template>
-    <section class="border-t border-black">
-        <CommonList />
-    </section>
+    <div class="border-t border-black">
+        <CommonList class="my-8" />
+    </div>
 </template>
 
 <script lang="ts">

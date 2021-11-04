@@ -9,31 +9,29 @@
             />
         </Head>
 
-        <section class="border-t border-black">
+        <div class="border-t border-black">
             <div class="flex">
-                <div
-                    class="block divide-y divide-gray-300 text-center mr-4 md:py-8 w-full max-w-xs"
-                >
+                <div class="divide-y divide-gray-300 text-center mr-4 md:py-8 w-64 ">
                     <NuxtLink
-                        class="w-full block p-3 hover:bg-black hover:text-white"
+                        class="w-full block py-3 hover:bg-black hover:text-white"
                         to="/about"
-                    >关于本站</NuxtLink>
+                    >关于网站</NuxtLink>
                     <NuxtLink
-                        class="w-full block p-3 hover:bg-black hover:text-white"
+                        class="w-full block py-3 hover:bg-black hover:text-white"
                         to="/about/profile"
-                    >关于本人</NuxtLink>
+                    >关于作者</NuxtLink>
                     <NuxtLink
-                        class="w-full block p-3 hover:bg-black hover:text-white"
+                        class="w-full block py-3 hover:bg-black hover:text-white"
                         to="/about/record"
                     >更新日志</NuxtLink>
                 </div>
-                <div class="my-4 p-4 mx-auto">
+                <div class="my-4 p-4 mx-auto w-full border-l">
                     <article class="prose lg:prose-lg mx-auto">
                         <slot />
                     </article>
                 </div>
             </div>
-        </section>
+        </div>
     </div>
 </template>
 

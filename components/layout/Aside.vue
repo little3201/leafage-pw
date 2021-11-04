@@ -7,11 +7,11 @@
                     <img
                         src="https://cdn.leafage.top/leafage-wechat.jpg?imageMogr2/thumbnail/x128/format/webp/blur/1x0/quality/75"
                         alt="leafage"
-                        width="128"
-                        height="128"
+                        width="168"
+                        height="168"
                     />
                 </figure>
-                <div class="mx-4">
+                <div class="ml-4">
                     <p class="my-2">微信搜一搜</p>
                     <input
                         type="text"

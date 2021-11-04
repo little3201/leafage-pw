@@ -3,8 +3,8 @@
         <nav class="inline-flex items-center space-x-6 tracking-wide text-xs text-black uppercase">
             <NuxtLink title="home" to="/" class="font-bold">Home</NuxtLink>
             <NuxtLink title="posts" to="/posts" class="font-bold">Posts</NuxtLink>
-            <NuxtLink title="about" to="/about/" class="font-bold">About</NuxtLink>
             <NuxtLink title="resource" to="/resource" class="font-bold">Resource</NuxtLink>
+            <NuxtLink title="about" to="/about/" class="font-bold">About</NuxtLink>
         </nav>
         <div class="inline-flex items-center">
             <a
@@ -62,5 +62,7 @@
 </template>
 
 <script lang="ts" setup>
+import { ref } from "vue";
+
 const isSearch = ref(false)
 </script>

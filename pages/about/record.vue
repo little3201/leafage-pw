@@ -1,14 +1,14 @@
 <template>
-    <CommonAbout>
+    <LayoutAbout>
         <div class="relative">
             <div
-                class="border-r-2 border-dashed border-gray-500 absolute h-full top-2"
-                style="left: 0.45rem"
+                class="border-r border-dotted border-gray-500 absolute h-full top-3"
+                style="left: 0.3725rem"
             ></div>
             <div class="mb-2">
                 <div class="flex items-center mb-1">
-                    <div class="bg-gray-500 rounded-full h-4 w-4"></div>
-                    <div class="flex-1 ml-4 font-medium">2021-09-18</div>
+                    <span class="bg-gray-500 rounded-full h-3 w-3"></span>
+                    <span class="flex-1 ml-4 font-medium">2021-09-18</span>
                 </div>
                 <ol class="ml-12">
                     <li>resource 样式问题修改；</li>
@@ -18,8 +18,8 @@
             </div>
             <div class="mb-2">
                 <div class="flex items-center mb-1">
-                    <div class="bg-gray-500 rounded-full h-4 w-4"></div>
-                    <div class="flex-1 ml-4 font-medium">2021-09-11</div>
+                    <span class="bg-gray-500 rounded-full h-3 w-3"></span>
+                    <span class="flex-1 ml-4 font-medium">2021-09-11</span>
                 </div>
                 <ol class="ml-12">
                     <li>更新 mobile-menu 为抽屉；</li>
@@ -27,8 +27,8 @@
             </div>
             <div class="mb-2">
                 <div class="flex items-center mb-1">
-                    <div class="bg-gray-500 rounded-full h-4 w-4"></div>
-                    <div class="flex-1 ml-4 font-medium">2021-08-21</div>
+                    <span class="bg-gray-500 rounded-full h-3 w-3"></span>
+                    <span class="flex-1 ml-4 font-medium">2021-08-21</span>
                 </div>
                 <ol class="ml-12">
                     <li>添加@tailwindcss/aspect-ratio插件；</li>
@@ -37,8 +37,8 @@
             </div>
             <div class="mb-2">
                 <div class="flex items-center mb-1">
-                    <div class="bg-gray-500 rounded-full h-4 w-4"></div>
-                    <div class="flex-1 ml-4 font-medium">2021-08-19</div>
+                    <span class="bg-gray-500 rounded-full h-3 w-3"></span>
+                    <span class="flex-1 ml-4 font-medium">2021-08-19</span>
                 </div>
                 <ol class="ml-12">
                     <li>更新依赖；</li>
@@ -47,8 +47,8 @@
             </div>
             <div class="mb-2">
                 <div class="flex items-center mb-1">
-                    <div class="bg-gray-500 rounded-full h-4 w-4"></div>
-                    <div class="flex-1 ml-4 font-medium">2021-07-20</div>
+                    <span class="bg-gray-500 rounded-full h-3 w-3"></span>
+                    <span class="flex-1 ml-4 font-medium">2021-07-20</span>
                 </div>
                 <ol class="ml-12">
                     <li>配置resource页；</li>
@@ -57,7 +57,7 @@
                 </ol>
             </div>
         </div>
-    </CommonAbout>
+    </LayoutAbout>
 </template>
 
 <script lang="ts">
