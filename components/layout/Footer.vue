@@ -9,7 +9,7 @@
             to="/"
           >Leafage</NuxtLink>
         </div>
-        <div class="flex text-xl justify-between space-x-6 uppercase font-bold">
+        <div class="flex text-xl justify-center md:justify-between space-x-6 mb-4 md:mb-0 uppercase font-bold">
           <a
             title="github"
             href="https://github.com/little3201"

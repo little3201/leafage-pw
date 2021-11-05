@@ -1,5 +1,5 @@
 <template>
-    <aside class="max-w-xs flex-none">
+    <aside class="max-w-xs flex-none dark:text-gray-100">
         <div class="border border-solid border-gray-200 p-6">
             <h3 class="font-bold">欢迎关注公众号（Leafage）</h3>
             <div class="flex items-center mt-4">
@@ -25,7 +25,7 @@
 
         <div class="border border-solid border-gray-200 my-8 relative">
             <h3
-                class="absolute top-0 -mt-2.5 px-2 ml-6 bg-white uppercase text-sm font-semibold"
+                class="absolute top-0 -mt-2.5 px-2 ml-6 bg-white dark:bg-black uppercase text-sm font-semibold"
             >帖子分类</h3>
             <ul
                 class="grid grid-cols-1 divide-y divide-gray-300 p-6 text-xs text-gray-600 font-semibold uppercase list-disc"
@@ -41,11 +41,11 @@
                 </li>
             </ul>
         </div>
-        <div class="my-10 border-2 border-solid border-black p-6">
+        <div class="my-10 border-2 border-solid border-black dark:border-gray-100 p-6">
             <h3 class="font-bold">Send Email To Me</h3>
             <form class="mt-4 flex items-center">
                 <input
-                    class="w-full text-sm text-black placeholder-gray-600 border border-gray-300 py-2 pl-4"
+                    class="w-full text-sm placeholder-gray-600 border-2 border-gray-100 py-2 pl-4"
                     type="email"
                     placeholder="Email adress"
                 />
@@ -53,7 +53,7 @@
                     aria-label="email"
                     title="email"
                     href="mailto:little3201@163.com?subject=Leafage%20Website%20News"
-                    class="bg-black text-white p-2 -ml-1"
+                    class="bg-black text-gray-100 dark:bg-gray-100 dark:text-black p-2 -ml-1"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -75,10 +75,10 @@
         </div>
         <div class="border border-solid border-gray-200 relative my-8">
             <h3
-                class="absolute top-0 -mt-2.5 px-2 ml-6 bg-white uppercase text-sm font-semibold"
+                class="absolute top-0 -mt-2.5 px-2 ml-6 bg-white dark:bg-black uppercase text-sm font-semibold"
             >友情链接</h3>
             <ul
-                class="grid grid-cols-1 divide-y divide-gray-300 p-6 text-xs text-gray-600 font-semibold list-decimal"
+                class="grid grid-cols-1 divide-y divide-gray-300 p-6 text-xs text-gray-800 dark:text-gray-100 font-semibold list-decimal"
             >
                 <li class="py-3 mx-4">
                     <a

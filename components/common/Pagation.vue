@@ -1,11 +1,11 @@
 <template>
-    <div class="flex space-x-6 justify-center items-center my-8">
+    <div class="flex space-x-6 justify-center items-center my-8 dark:text-gray-100">
         <button
             title="descrease"
             type="button"
             aria-label="descrease"
             @click="$emit('retrieve', curPage > 0 ? curPage-- : 0)"
-            class="disabled:opacity-25 focus:outline-none w-8 h-8 rounded-full hover:border border-black inline-flex items-center justify-center"
+            class="disabled:opacity-25 focus:outline-none w-8 h-8 rounded-full hover:border border-black dark:border-gray-100 inline-flex items-center justify-center"
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +27,7 @@
             type="button"
             aria-label="give"
             @click="(curPage = index - 1), $emit('retrieve', index - 1)"
-            class="w-8 h-8 rounded-full focus:outline-none border border-black hover:bg-black hover:text-white"
+            class="w-8 h-8 rounded-full focus:outline-none border border-black dark:border-gray-100 hover:bg-black hover:text-white"
             :class="{
                 'bg-black text-white ': curPage == index - 1,
             }"
@@ -37,7 +37,7 @@
             type="button"
             aria-label="increment"
             @click="$emit('retrieve', curPage < pages - 1 ? curPage++ : pages)"
-            class="disabled:opacity-25 focus:outline-none w-8 h-8 rounded-full hover:border border-black inline-flex items-center justify-center"
+            class="disabled:opacity-25 focus:outline-none w-8 h-8 rounded-full hover:border border-black dark:border-gray-100 inline-flex items-center justify-center"
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"

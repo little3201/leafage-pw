@@ -1,29 +1,29 @@
 <template>
     <div>
-        <div class="flex justify-between items-center border border-black overflow-x-auto">
+        <div class="flex justify-between items-center border border-black dark:border-gray-100 dark:text-gray-100 overflow-x-auto">
             <button
                 title="Most Liked"
                 aria-label="Most Liked"
                 type="button"
                 @click="retrieve(0), (order = 'likes')"
-                class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-black hover:text-white"
-                :class="{ 'bg-black text-white': order == 'likes' }"
+                class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-black hover:text-white dark:hover:bg-gray-100 dark:hover:text-black"
+                :class="{ 'bg-black text-white dark:bg-gray-100 dark:text-black': order == 'likes' }"
             >Most Liked</button>
             <button
                 title="Most Viewed"
                 aria-label="Most Viewed"
                 type="button"
                 @click="retrieve(0), (order = 'viewed')"
-                class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-black hover:text-white"
-                :class="{ 'bg-black text-white': order == 'viewed' }"
+                class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-black hover:text-white dark:hover:bg-gray-100 dark:hover:text-black"
+                :class="{ 'bg-black text-white dark:bg-gray-100 dark:text-black': order == 'viewed' }"
             >Most Viewed</button>
             <button
                 type="button"
                 title="Most Comments"
                 aria-label="Most Comments"
                 @click="retrieve(0), (order = 'comment')"
-                class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-black hover:text-white"
-                :class="{ 'bg-black text-white': order == 'comment' }"
+                class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-black hover:text-white dark:hover:bg-gray-100 dark:hover:text-black"
+                :class="{ 'bg-black text-white dark:bg-gray-100 dark:text-black': order == 'comment' }"
             >Most Comments</button>
         </div>
         <div

@@ -1,13 +1,15 @@
 <template>
-    <div class="flex space-x-8 border-t border-black">
+    <div class="flex space-x-8 border-t border-black dark:border-gray-100">
         <div class="my-6">
             <article v-if="data">
-                <div class="flex text-sm font-bold space-x-6 text-gray-600 uppercase">
+                <div
+                    class="md:flex text-sm font-bold space-x-6 text-gray-800 dark:text-gray-300 uppercase"
+                >
                     <NuxtLink
                         :title="data.category"
                         :to="{ path: '/posts', query: { category: data.category } }"
-                        v-text="data.category"
-                        class="hover:underline hover:text-black"
+                        v-text="data.category || 'Technology'"
+                        class="hover:underline hover:text-black dark:hover:text-gray-300"
                     ></NuxtLink>
                     <span
                         class="tracking-wider"
@@ -71,7 +73,7 @@
                     </div>
                 </div>
                 <h2
-                    class="my-3 text-xl md:text-2xl lg:text-3xl font-bold"
+                    class="my-3 text-xl md:text-2xl lg:text-3xl font-bold dark:text-gray-100"
                     v-text="data.title || 'SecurityRandom的getInstanceStrong() 阻塞问题'"
                 ></h2>
                 <div class="inline-flex items-center">
@@ -106,8 +108,11 @@
                         height="100%"
                     />
                 </figure>
-                <div class="prose lg:prose-lg max-w-none" v-html="rendered"></div>
-                <div class="bg-gray-100 my-8 p-8">
+                <div
+                    class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl dark:text-gray-100 prose-blue max-w-none"
+                    v-html="rendered || '这里是内容'"
+                ></div>
+                <div class="bg-gray-100 dark:bg-gray-600 my-8 p-8">
                     <ul
                         class="grid grid-flow-row grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2 gap-4 text-xs font-bold"
                     >

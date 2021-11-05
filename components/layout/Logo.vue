@@ -1,6 +1,6 @@
 <template>
     <div class="flex justify-center items-center my-8">
-        <NuxtLink to="/" title="leafage" class="text-black text-center">
+        <NuxtLink to="/" title="leafage" class="text-black dark:text-gray-100 text-center">
             <figure class="inline-flex justify-center">
                 <img
                     src="https://cdn.leafage.top/logo-only.png"

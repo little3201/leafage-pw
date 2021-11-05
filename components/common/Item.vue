@@ -9,9 +9,11 @@
                 width="100%"
             />
         </div>
-        <h3 class="mt-4 text-sm text-gray-700">Earthen Bottle</h3>
-        <p class="my-3 text-lg font-medium text-gray-600 group-hover:text-black">SecurityRandom的getInstanceStrong() 阻塞问题</p>
-        <div class="flex justify-between text-xs">
+        <h3 class="mt-4 text-sm text-gray-700 dark:text-gray-400">Earthen Bottle</h3>
+        <p
+            class="my-3 text-lg font-medium text-gray-800 dark:text-gray-300 group-hover:text-black group-hover:underline dark:group-hover:text-gray-100"
+        >SecurityRandom的getInstanceStrong() 阻塞问题</p>
+        <div class="flex justify-between text-xs text-gray-700 dark:text-gray-400">
             <span>{{ new Date().toDateString() }}</span>
             <div>
                 <div class="inline-flex items-center">
