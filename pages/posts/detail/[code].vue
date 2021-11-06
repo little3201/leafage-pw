@@ -1,15 +1,19 @@
 <template>
-    <div class="flex space-x-8 border-t border-black dark:border-gray-100">
+    <div class="flex space-x-8 border-t border-gray-900 dark:border-gray-300">
         <div class="my-6">
-            <article v-if="data">
+            <article>
+                <h2
+                    class="text-xl md:text-2xl lg:text-3xl font-bold dark:text-gray-300"
+                    v-text="data.title"
+                ></h2>
                 <div
-                    class="md:flex text-sm font-bold space-x-6 text-gray-800 dark:text-gray-300 uppercase"
+                    class="md:flex text-sm font-bold space-x-6 text-gray-800 dark:text-gray-300 uppercase my-4"
                 >
                     <NuxtLink
                         :title="data.category"
                         :to="{ path: '/posts', query: { category: data.category } }"
-                        v-text="data.category || 'Technology'"
-                        class="hover:underline hover:text-black dark:hover:text-gray-300"
+                        v-text="data.category"
+                        class="hover:underline hover:text-gray-900 dark:hover:text-gray-300"
                     ></NuxtLink>
                     <span
                         class="tracking-wider"
@@ -18,8 +22,8 @@
                     <div class="inline-flex items-center">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            width="14"
-                            height="14"
+                            width="16"
+                            height="16"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
@@ -36,8 +40,8 @@
                     <div class="inline-flex items-center">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            width="14"
-                            height="14"
+                            width="16"
+                            height="16"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
@@ -52,18 +56,18 @@
                         </svg>
                         {{ data.comment }}
                     </div>
-                    <div class="inline-flex items-center cursor-pointer" @click="like(data.code)">
+                    <div class="inline-flex items-center">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            width="14"
-                            height="14"
+                            width="16"
+                            height="16"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
                             stroke-width="2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
-                            class="feather feather-heart mr-1 transform hover:scale-150 hover:fill-current transition duration-300"
+                            class="feather feather-heart mr-1"
                         >
                             <path
                                 d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
@@ -72,11 +76,7 @@
                         {{ data.likes }}
                     </div>
                 </div>
-                <h2
-                    class="my-3 text-xl md:text-2xl lg:text-3xl font-bold dark:text-gray-100"
-                    v-text="data.title || 'SecurityRandom的getInstanceStrong() 阻塞问题'"
-                ></h2>
-                <div class="inline-flex items-center">
+                <div class="inline-flex items-center dark:text-gray-300">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
@@ -109,10 +109,10 @@
                     />
                 </figure>
                 <div
-                    class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl dark:text-gray-100 prose-blue max-w-none"
-                    v-html="rendered || '这里是内容'"
+                    class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl dark:text-gray-300 dark:prose-blue max-w-none"
+                    v-html="rendered"
                 ></div>
-                <div class="bg-gray-100 dark:bg-gray-600 my-8 p-8">
+                <div class="bg-gray-100 dark:bg-gray-800 dark:text-gray-300 my-8 p-8 rounded">
                     <ul
                         class="grid grid-flow-row grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2 gap-4 text-xs font-bold"
                     >
@@ -167,24 +167,32 @@
                     </ul>
                 </div>
             </article>
-            <CommonComment />
+            <div>
+                <CommonComment v-for="data in comments" :data="data" />
+            </div>
         </div>
         <LayoutAside class="hidden lg:block my-8" />
     </div>
 </template>
 
 <script lang="ts" setup>
-import { ref, computed } from "vue";
+import { computed } from "vue";
 
-const data = ref({});
-const previous = ref({});
-const next = ref({});
-const comments = ref([]);
+const { params } = useRoute();
+
 const rendered = computed(() => "");
 
 //点赞
 const like = async (code: string) => {
 
 };
+
+const [{ data: previous }, { data: next }, { data: comments }] = await Promise.all([
+    useFetch('/api/posts/previous'),
+    useFetch('/api/posts/next'),
+    useFetch('/api/comment')
+])
+
+const { data } = await useAsyncData('fetch', () => $fetch(`/api/posts/${params.code}`))
 
 </script>
