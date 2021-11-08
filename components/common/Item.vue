@@ -2,7 +2,7 @@
     <NuxtLink :to="'/posts/detail/' + data.code" class="w-full group">
         <div class="w-full aspect-w-3 aspect-h-2 bg-gray-300 overflow-hidden">
             <img
-                :src="data.cover"
+                :src="data.cover + '?imageMogr2/thumbnail/272x182/format/webp/interlace/1/blur/1x0/quality/100'"
                 :alt="data.title"
                 class="w-full h-full object-center object-cover group-hover:opacity-75"
                 height="100%"
@@ -14,7 +14,7 @@
             <span>{{ new Date(data.modifyTime).toDateString() }}</span>
         </div>
         <p
-            class="my-3 text-lg font-medium text-gray-800 dark:text-gray-300 group-hover:underline"
+            class="my-3 md:text-md font-bold text-gray-800 dark:text-gray-300 group-hover:underline"
         >{{ data.title }}</p>
         <div class="flex justify-between text-sm text-gray-600 dark:text-gray-400">
             <div>

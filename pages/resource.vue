@@ -30,9 +30,9 @@
             <NuxtLink v-for="data in datas" :to="'/posts/detail/' + data.code" class="w-full group">
                 <div class="w-full aspect-w-4 aspect-h-5 bg-gray-300 overflow-hidden border">
                     <img
-                        src="https://cdn.leafage.top/spring-action.jfif"
+                        :src="data.cover"
                         alt="images"
-                        class="w-full h-full object-center object-cover group-hover:opacity-75"
+                        class="w-full h-full object-center filter grayscale group-hover:opacity-75"
                         height="100%"
                         width="100%"
                     />
