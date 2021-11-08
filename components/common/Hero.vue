@@ -1,6 +1,6 @@
 <template>
     <div class="my-8 grid gap-y-6 lg:grid-cols-3 lg:gap-x-8">
-        <div class="aspect-w-3 aspect-h-2 lg:aspect-h-4 overflow-hidden">
+        <div class="aspect-w-3 aspect-h-2 lg:aspect-h-4 bg-gray-300 overflow-hidden">
             <NuxtLink to="/posts/detail/123">
                 <img
                     src="https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg"
@@ -12,7 +12,7 @@
             </NuxtLink>
         </div>
         <div class="lg:grid lg:grid-cols-1 lg:gap-y-8">
-            <div class="aspect-w-3 aspect-h-2 overflow-hidden">
+            <div class="aspect-w-3 aspect-h-2 bg-gray-300 overflow-hidden">
                 <NuxtLink to="/posts/detail/123">
                     <img
                         src="https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg"
@@ -23,7 +23,7 @@
                     />
                 </NuxtLink>
             </div>
-            <div class="aspect-w-3 aspect-h-2 mt-6 lg:my-0 overflow-hidden">
+            <div class="aspect-w-3 aspect-h-2 mt-6 lg:my-0 bg-gray-300 overflow-hidden">
                 <NuxtLink to="/posts/detail/123">
                     <img
                         src="https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg"
@@ -35,7 +35,7 @@
                 </NuxtLink>
             </div>
         </div>
-        <div class="aspect-w-3 aspect-h-2 overflow-hidden lg:aspect-h-4">
+        <div class="aspect-w-3 aspect-h-2 overflow-hidden bg-gray-300 lg:aspect-h-4">
             <NuxtLink to="/posts/detail/123">
                 <img
                     src="https://tailwindui.com/img/ecommerce-images/product-page-02-featured-product-shot.jpg"
