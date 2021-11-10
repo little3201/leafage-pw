@@ -36,22 +36,6 @@
     "postcss": "^8.3.6",
     "tailwindcss": "^2.2.7"
   },
-  "keywords": [
-    "leafage",
-    "技术",
-    "技术笔记",
-    "经验记录",
-    "解决方案",
-    "博客",
-    "前端",
-    "后端",
-    "vuejs",
-    "nuxtjs",
-    "typescript",
-    "tailwindcss",
-    "java",
-    "javascript"
-  ],
   "author": {
     "name": "liwenqiang",
     "email": "little3201@163.com",
