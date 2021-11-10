@@ -1,23 +1,30 @@
 <template>
-  <section class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
-    <div class="border-t border-black"></div>
+  <div class="lg:flex lg:border-t border-black dark:text-white">
     <div
-      class="grid grid-cols-1 md:grid-cols-4 md:gap-4 md:divide-x md:divide-gray-300 my-4 md:my-8"
+      class="lg:divide-y lg:divide-gray-300 text-center lg:mr-4 lg:w-60 lg:py-8 flex border border-black lg:border-none lg:block flex-none overflow-x-auto"
     >
-      <div
-        class="flex justify-around md:block md:col-span-1 md:divide-y md:divide-gray-300 text-center my-4 md:py-8 border border-black md:border-none"
-      >
-        <nuxt-link class="w-full block p-3 hover:bg-black hover:text-white" to="/about">关于本站</nuxt-link>
-        <nuxt-link class="w-full block p-3 hover:bg-black hover:text-white" to="/about/profile">关于本人</nuxt-link>
-        <nuxt-link class="w-full block p-3 hover:bg-black hover:text-white" to="/about/record">更新日志</nuxt-link>
-      </div>
-      <div class="col-span-3">
-        <article class="prose lg:prose-lg mx-auto">
-          <nuxt-child />
-        </article>
-      </div>
+      <NuxtLink
+        title="关于网站"
+        class="w-full whitespace-nowrap lg:block p-3 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
+        to="/about"
+      >关于网站</NuxtLink>
+      <NuxtLink
+        title="关于作者"
+        class="w-full whitespace-nowrap lg:block p-3 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
+        to="/about/profile"
+      >关于作者</NuxtLink>
+      <NuxtLink
+        title="更新日志"
+        class="w-full whitespace-nowrap lg:block p-3 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
+        to="/about/record"
+      >更新日志</NuxtLink>
     </div>
-  </section>
+    <div class="my-4 lg:p-4 mx-auto w-full lg:border-l">
+      <article class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto dark:text-gray-300 dark:prose-blue">
+        <NuxtChild />
+      </article>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -29,19 +36,19 @@ export default defineComponent({
 
   setup() {
     useMeta(() => ({
-      title: "About - Leafage",
+      title: "Leafage - About",
       meta: [
         {
           hid: "description",
           name: "description",
           content:
-            "Leafage 是一个开源的个人站点，致力于促进软件开发及相关领域知识与创新的传播。包含原创博客、生活分享、资源推荐、技术总结、影视浏览等资源信息，提供原创、优质、完整内容的专业开发社区",
+            "Leafage 是一个开源的博客网站，记录自己平时学习总结、工作中遇到的问题的解决方法的一个经验记录。",
         },
         {
           hid: "keywords",
           name: "keywords",
           content:
-            "leafage, 博客, 生活分享, 资源推荐, 技术总结, 影视浏览, nuxt.js, vue.js, typescript, tailwindcss, java, javascript",
+            "leafage, 博客, 经验记录, 学习总结, nuxt, vue, ts, tailwindcss, java, js, markdown, highlight",
         },
       ],
     }));
@@ -51,6 +58,6 @@ export default defineComponent({
 
 <style scoped>
 .nuxt-link-exact-active {
-  @apply text-white bg-black;
+  @apply text-white bg-black dark:bg-white dark:text-black;
 }
 </style>

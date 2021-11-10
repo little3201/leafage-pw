@@ -1,33 +1,26 @@
 <template>
-  <div class="container mx-auto px-2 md:px-12 lg:px-16 xl:px-20">
-    <ul class="flex text-xs border border-black overflow-x-scroll">
-      <li
-        class="hover:bg-black hover:text-white"
-        :class="{ 'bg-black text-white': '' == category }"
-      >
-        <button
-          aria-label="posts_all"
-          type="button"
-          @click="retrieve(0, '')"
-          class="w-32 h-10 font-bold uppercase focus:outline-none"
-        >All</button>
-      </li>
-      <li
-        class="hover:bg-black hover:text-white"
-        :class="{ 'bg-black text-white': cg.code == category }"
+  <div>
+    <div class="flex justify-between items-center border border-black dark:border-white dark:text-white overflow-x-auto">
+      <button
+        aria-label="posts_all"
+        type="button"
+        @click="retrieve(0, '')"
+        class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
+        :class="{ 'bg-black text-white dark:bg-white dark:text-black': category == '' }"
+      >All</button>
+      <button
         v-for="cg in categories"
         :key="cg.code"
-      >
-        <button
-          :aria-label="'posts_' + cg.alias"
-          type="button"
-          @click="retrieve(0, cg.code)"
-          class="w-32 h-10 font-bold uppercase focus:outline-none"
-          v-text="cg.alias"
-        ></button>
-      </li>
-    </ul>
-    <PostsList :datas="datas" />
+        :aria-label="'posts_' + cg.alias"
+        type="button"
+        @click="retrieve(0, cg.code)"
+        class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
+        :class="{ 'bg-black text-white dark:bg-white dark:text-black': category == cg.code }"
+      >{{ cg.alias }}</button>
+    </div>
+    <div class="grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 my-8">
+      <Item v-for="data in datas" :key="data.code" :data="data" />
+    </div>
     <Pagation :page="page" :size="size" :total="total" @retrieve="retrieve" />
   </div>
 </template>

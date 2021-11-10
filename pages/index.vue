@@ -1,8 +1,43 @@
 <template>
   <div id="home">
     <Hero :datas="recentDatas" />
-    <Featured :datas="recentDatas" />
-    <Main :topDatas="viewedDatas" :listDatas="likesDatas" :total="total" />
+    <div class="flex justify-between space-x-8 my-8">
+      <div class="w-full">
+        <div
+          class="flex justify-between items-center text-center border border-black dark:border-white dark:text-white overflow-x-auto"
+        >
+          <button
+            title="Most Liked"
+            aria-label="Most Liked"
+            type="button"
+            @click="chageParams(0, 'likes')"
+            class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
+            :class="{ 'bg-black text-white dark:bg-white dark:text-black': order == 'likes' }"
+          >Most Liked</button>
+          <button
+            title="Most Viewed"
+            aria-label="Most Viewed"
+            type="button"
+            @click="chageParams(0, 'viewed')"
+            class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
+            :class="{ 'bg-black text-white dark:bg-white dark:text-black': order == 'viewed' }"
+          >Most Viewed</button>
+          <button
+            type="button"
+            title="Most Comments"
+            aria-label="Most Comments"
+            @click="chageParams(0, 'comment')"
+            class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-black hover:text-white dark:hover:border-white dark:hover:text-black"
+            :class="{ 'bg-black text-white dark:bg-white dark:text-black': order == 'comment' }"
+          >Most Comments</button>
+        </div>
+        <div class="grid grid-cols-2 gap-4 md:gap-8 my-8">
+          <Item v-for="data in datas" :key="data.code" :data="data" />
+        </div>
+        <Pagation :page="page" :size="size" :total="total" @retrieve="chageParams" />
+      </div>
+      <LazyAside class="hidden lg:block" />
+    </div>
   </div>
 </template>
 
@@ -24,21 +59,30 @@ export default defineComponent({
 
   setup() {
     const recentDatas = ref([]);
-    const likesDatas = ref([]);
-    const viewedDatas = ref([]);
+    const datas = ref([]);
+
+    const page = ref(0);
+    const size = ref(10);
     const total = ref(0);
+
+    const order = ref("likes");
 
     const { $axios } = useContext();
 
+    const chageParams = async (num: number, category: string) => {
+      page.value = num ? num : 0;
+      order.value = category
+      datas.value = await $axios.$get(
+        SERVER_URL.posts, { params: { page: page.value, size: size.value, order: category } }
+      );
+    };
+
     useFetch(async () => {
-      [recentDatas.value, likesDatas.value, viewedDatas.value, total.value] =
+      [recentDatas.value, datas.value, total.value] =
         await Promise.all([
-          $axios.$get(SERVER_URL.posts, { params: { page: 0, size: 7 } }),
+          $axios.$get(SERVER_URL.posts, { params: { page: 0, size: 3 } }),
           $axios.$get(SERVER_URL.posts, {
             params: { page: 0, size: 10, order: "likes" },
-          }),
-          $axios.$get(SERVER_URL.posts, {
-            params: { page: 0, size: 10, order: "viewed" },
           }),
           $axios.$get(SERVER_URL.posts.concat("/count")),
         ]);
@@ -51,22 +95,25 @@ export default defineComponent({
           hid: "description",
           name: "description",
           content:
-            "一个开源的个人站点，致力于促进软件开发及相关领域知识与创新的传播。包含原创博客、生活分享、资源推荐、技术总结、影视浏览等资源信息，提供原创、优质、完整内容的专业开发社区",
+            "Leafage 是一个开源的博客网站，记录自己平时学习总结、工作中遇到的问题的解决方法的一个经验记录。",
         },
         {
           hid: "keywords",
           name: "keywords",
           content:
-            "leafage, 博客, 技术, 技术笔记, 技术资料, 经验记录, 解决方案, nuxt.js, vue.js, typescript, tailwindcss, java, javascript",
+            "leafage, 博客, 经验记录, 学习总结, nuxt, vue, ts, tailwindcss, java, js, markdown, highlight",
         },
       ],
     }));
 
     return {
       recentDatas,
-      likesDatas,
-      viewedDatas,
+      datas,
+      order,
+      page,
+      size,
       total,
+      chageParams,
     };
   },
 });

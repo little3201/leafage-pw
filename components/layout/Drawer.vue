@@ -1,14 +1,14 @@
 <template>
   <nav class="fixed inset-y-0 right-0 flex z-10">
     <div class="w-64">
-      <div class="h-full flex flex-col px-4 py-3 bg-gray-300 shadow-2xl overflow-y-scroll">
+      <div class="h-full flex flex-col px-4 py-3 bg-gray-400 shadow-2xl overflow-y-scroll">
         <div class="flex justify-center items-center h-32 md:h-40">
-          <nuxt-link
+          <NuxtLink
             to="/"
             class="text-4xl tracking-widest font-black uppercase text-black text-center"
           >
             <figure class="inline-flex justify-center">
-              <nuxt-picture
+              <NuxtPicture
                 src="https://cdn.leafage.top/logo-only.png"
                 alt="Leafage"
                 width="48"
@@ -16,32 +16,32 @@
               />
             </figure>
             <h1>Leafage</h1>
-          </nuxt-link>
+          </NuxtLink>
         </div>
         <ul class="divide-y divide-gray-500 font-bold uppercase text-center my-8">
           <li class="my-4">
-            <nuxt-link title="home_mobile" @click.native="$emit('menuAction', false)" to="/">Home</nuxt-link>
+            <NuxtLink title="home_mobile" @click.native="$emit('menuAction', false)" to="/">Home</NuxtLink>
           </li>
           <li class="my-4 pt-4">
-            <nuxt-link
+            <NuxtLink
               title="posts_mobile"
               @click.native="$emit('menuAction', false)"
               to="/posts"
-            >Posts</nuxt-link>
+            >Posts</NuxtLink>
           </li>
           <li class="my-4 pt-4">
-            <nuxt-link
+            <NuxtLink
               title="about_mobile"
               @click.native="$emit('menuAction', false)"
               to="/about"
-            >About</nuxt-link>
+            >About</NuxtLink>
           </li>
           <li class="my-4 pt-4">
-            <nuxt-link
+            <NuxtLink
               title="resource_mobile"
               @click.native="$emit('menuAction', false)"
               to="/resource"
-            >Resource</nuxt-link>
+            >Resource</NuxtLink>
           </li>
         </ul>
       </div>
@@ -54,9 +54,6 @@
 import { defineComponent } from "@nuxtjs/composition-api";
 
 export default defineComponent({
-  name: "MobileMenu",
-
-  setup() {
-  },
+  name: "Drawer",
 });
 </script>
