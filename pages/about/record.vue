@@ -4,6 +4,16 @@
         <div>
             <div class="flex items-center">
                 <span class="bg-gray-500 rounded-full h-2 w-2"></span>
+                <span class="ml-4 font-medium text-base">2021-11-10</span>
+            </div>
+            <ol class="ml-12 text-sm">
+                <li>精简组件，删除冗余的部分代码，优化组件复用；</li>
+                <li>更新整体布局，添加黑色模式；</li>
+            </ol>
+        </div>
+        <div>
+            <div class="flex items-center">
+                <span class="bg-gray-500 rounded-full h-2 w-2"></span>
                 <span class="ml-4 font-medium text-base">2021-09-18</span>
             </div>
             <ol class="ml-12 text-sm">
