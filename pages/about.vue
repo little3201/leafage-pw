@@ -33,7 +33,7 @@
                 <article
                     class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl dark:text-gray-300 dark:prose-blue mx-auto"
                 >
-                    <slot />
+                    <NuxtChild />
                 </article>
             </div>
         </div>

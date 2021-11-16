@@ -1,5 +1,5 @@
 <template>
-    <LayoutAbout>
+    <div>
         <div class="relative">
             <div class="border-r border-dotted border-gray-500 absolute h-full top-4 left-1"></div>
             <div>
@@ -78,7 +78,7 @@
                 </ol>
             </div>
         </div>
-    </LayoutAbout>
+    </div>
 </template>
 
 <script lang="ts">
