@@ -4,7 +4,7 @@
             <NuxtLink title="home" to="/" class="font-semibold">Home</NuxtLink>
             <NuxtLink title="posts" to="/posts" class="font-semibold">Posts</NuxtLink>
             <NuxtLink title="resource" to="/resource" class="font-semibold">Resource</NuxtLink>
-            <NuxtLink title="about" to="/about/" class="font-semibold">About</NuxtLink>
+            <NuxtLink title="about" to="/about" class="font-semibold">About</NuxtLink>
         </nav>
         <div class="inline-flex items-center">
             <button
@@ -12,10 +12,6 @@
                 @click="theme"
                 class="relative focus:outline-none transition-colors duration-500 ease-in border-transparent"
             >
-                <!-- <div
-                    id="toggle"
-                    class="rounded-full w-4 h-4 bg-gray-600 dark:bg-gray-300 relative ml-0 dark:ml-4 pointer-events-none transition-all duration-300 ease-out"
-                ></div>-->
                 <svg
                     v-if="isDark"
                     xmlns="http://www.w3.org/2000/svg"

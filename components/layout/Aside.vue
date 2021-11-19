@@ -25,7 +25,7 @@
 
         <div class="border border-solid border-gray-300 dark:border-gray-400 my-8 relative">
             <h3
-                class="absolute top-0 -mt-2.5 px-2 ml-6 bg-white dark:bg-gray-900 uppercase text-sm font-semibold"
+                class="absolute top-0 -mt-2.5 px-2 ml-6 bg-white dark:bg-gray-900 text-sm font-semibold"
             >帖子分类</h3>
             <ul
                 class="grid grid-cols-1 divide-y divide-gray-300 p-6 text-xs font-semibold list-disc"
@@ -33,8 +33,8 @@
                 <li class="py-3 mx-4" v-for="category in categories">
                     <NuxtLink
                         :title="category.alias"
-                        :to="{ name: 'posts', params: { category: category.code } }"
-                        class="hover:underline hover:text-gray-900 text-gray-800 dark:text-gray-400 dark:hover:text-gray-300 uppercase"
+                        :to="{ name: 'posts', params: { category: category.alias } }"
+                        class="hover:underline hover:text-gray-900 text-gray-800 dark:text-gray-400 dark:hover:text-gray-300"
                     >{{ category.alias }}</NuxtLink>
                     <span class="mr-2 float-right text-gray-400">{{ category.count }}</span>
                 </li>

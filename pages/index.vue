@@ -11,24 +11,24 @@
                         aria-label="Most Liked"
                         type="button"
                         @click="chageParams(0, 'likes'), refresh()"
-                        class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-gray-900 hover:text-gray-300 dark:hover:bg-gray-300 dark:hover:text-gray-900"
-                        :class="{ 'bg-gray-900 text-gray-300 dark:bg-gray-300 dark:text-gray-900': order == 'likes' }"
+                        class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-gray-900 hover:text-gray-200 dark:hover:bg-gray-200 dark:hover:text-gray-900"
+                        :class="{ 'bg-gray-900 text-gray-200 dark:bg-gray-200 dark:text-gray-900': order == 'likes' }"
                     >Most Liked</button>
                     <button
                         title="Most Viewed"
                         aria-label="Most Viewed"
                         type="button"
                         @click="chageParams(0, 'viewed'), refresh()"
-                        class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-gray-900 hover:text-gray-300 dark:hover:bg-gray-300 dark:hover:text-gray-900"
-                        :class="{ 'bg-gray-900 text-gray-300 dark:bg-gray-300 dark:text-gray-900': order == 'viewed' }"
+                        class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-gray-900 hover:text-gray-200 dark:hover:bg-gray-200 dark:hover:text-gray-900"
+                        :class="{ 'bg-gray-900 text-gray-200 dark:bg-gray-200 dark:text-gray-900': order == 'viewed' }"
                     >Most Viewed</button>
                     <button
                         type="button"
                         title="Most Comments"
                         aria-label="Most Comments"
                         @click="chageParams(0, 'comment'), refresh()"
-                        class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-gray-900 hover:text-gray-300 dark:hover:bg-gray-300 dark:hover:text-gray-900"
-                        :class="{ 'bg-gray-900 text-gray-300 dark:bg-gray-300 dark:text-gray-900': order == 'comment' }"
+                        class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-gray-900 hover:text-gray-200 dark:hover:bg-gray-200 dark:hover:text-gray-900"
+                        :class="{ 'bg-gray-900 text-gray-200 dark:bg-gray-200 dark:text-gray-900': order == 'comment' }"
                     >Most Comments</button>
                 </div>
                 <div class="grid grid-cols-1 gap-y-8 sm:grid-cols-2 gap-x-6 xl:grid-cols-3 my-8">
@@ -48,8 +48,6 @@ export default {
 </script>
 
 <script lang="ts" setup>
-import { ref } from "vue";
-
 const page = ref(0);
 const size = ref(10);
 const total = ref(0);

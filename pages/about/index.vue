@@ -1,5 +1,5 @@
 <template>
-    <LayoutAbout>
+    <div>
         <p>
             项目中的接口可以直接替换为自己的服务接口，后端服务：
             <a
@@ -26,7 +26,7 @@
             <NuxtLink title="更新日志" to="/about/record">更新日志</NuxtLink>。
         </p>
         <p>后面也会继续更新和完善，另外可能也会做一些其他的东西出来，比如小程序呀，或者app，一点点做吧。Fighing！！！</p>
-    </LayoutAbout>
+    </div>
 </template>
 
 <script lang="ts">

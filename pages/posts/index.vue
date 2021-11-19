@@ -1,8 +1,10 @@
 <template>
     <div>
-        <Head :lang="'en'">
-            <Title>Leafage - Posts</Title>
-        </Head>
+        <Html :lang="'en'">
+            <Head>
+                <Title>Leafage - Posts</Title>
+            </Head>
+        </Html>
         <div
             class="flex justify-between items-center border border-gray-900 dark:border-gray-300 dark:text-gray-300 overflow-x-auto"
         >
@@ -46,15 +48,17 @@ export default {
 </script>
 
 <script lang="ts" setup>
+const route = useRoute();
+
 const page = ref(0);
 const size = ref(10);
 const total = ref(0);
 
-const category = ref("");
+const category = ref(route.params.category || '');
 
-const chageParams = async (num: number, code: string) => {
+const chageParams = async (num: number, alias: string) => {
     page.value = num ? num : 0;
-    category.value = code;
+    category.value = alias;
 };
 
 const { data: categories } = await useAsyncData('post-retrieve', () => $fetch('/api/category'))
