@@ -7,7 +7,7 @@
         :key="data.code"
         class="overflow-hidden border shadow-lg filter grayscale hover:grayscale-0 relative"
       >
-        <nuxt-picture :src="data.url[0]" width="474" height="617" />
+        <nuxt-picture :src="data.cover" width="474" height="617" />
         <div
           class="hover:bg-black hover:opacity-75 opacity-0 absolute inset-0 transition duration-500 ease-in-out flex items-center justify-center"
         >
