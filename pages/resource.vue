@@ -86,13 +86,7 @@
                 </div>
             </NuxtLink>
         </div>
-        <CommonPagation
-            class="my-8"
-            :page="page"
-            :size="size"
-            :total="total"
-            @retrieve="chageParams"
-        />
+        <Pagation class="my-8" :page="page" :size="size" :total="total" @retrieve="chageParams" />
     </div>
 </template>
 

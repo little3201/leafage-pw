@@ -29,15 +29,9 @@
         <div
             class="grid grid-cols-1 gap-y-8 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 my-8"
         >
-            <CommonItem v-for="data in datas" :data="data" />
+            <Item v-for="data in datas" :data="data" />
         </div>
-        <CommonPagation
-            class="my-8"
-            :page="page"
-            :size="size"
-            :total="total"
-            @retrieve="chageParams"
-        />
+        <Pagation class="my-8" :page="page" :size="size" :total="total" @retrieve="chageParams" />
     </div>
 </template>
 

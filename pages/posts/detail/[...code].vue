@@ -173,7 +173,7 @@
                     </div>
                 </article>
                 <div>
-                    <CommonComment v-for="data in comments" :data="data" />
+                    <Comment v-for="data in comments" :data="data" />
                 </div>
             </div>
             <LayoutAside class="hidden lg:block my-8" />
