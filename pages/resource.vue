@@ -1,8 +1,10 @@
 <template>
     <div>
-        <Head :lang="'en'">
-            <Title>Leafage - Resource</Title>
-        </Head>
+        <Html :lang="'en'">
+            <Head>
+                <Title>Leafage - Resource</Title>
+            </Head>
+        </Html>
         <div
             class="flex justify-between items-center border border-gray-900 dark:border-gray-300 dark:text-gray-300 overflow-x-auto"
         >
@@ -84,13 +86,7 @@
                 </div>
             </NuxtLink>
         </div>
-        <CommonPagation
-            class="my-8"
-            :page="page"
-            :size="size"
-            :total="total"
-            @retrieve="chageParams"
-        />
+        <Pagation class="my-8" :page="page" :size="size" :total="total" @retrieve="chageParams" />
     </div>
 </template>
 

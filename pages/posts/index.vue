@@ -1,8 +1,10 @@
 <template>
     <div>
-        <Head :lang="'en'">
-            <Title>Leafage - Posts</Title>
-        </Head>
+        <Html :lang="'en'">
+            <Head>
+                <Title>Leafage - Posts</Title>
+            </Head>
+        </Html>
         <div
             class="flex justify-between items-center border border-gray-900 dark:border-gray-300 dark:text-gray-300 overflow-x-auto"
         >
@@ -27,15 +29,9 @@
         <div
             class="grid grid-cols-1 gap-y-8 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 my-8"
         >
-            <CommonItem v-for="data in datas" :data="data" />
+            <Item v-for="data in datas" :data="data" />
         </div>
-        <CommonPagation
-            class="my-8"
-            :page="page"
-            :size="size"
-            :total="total"
-            @retrieve="chageParams"
-        />
+        <Pagation class="my-8" :page="page" :size="size" :total="total" @retrieve="chageParams" />
     </div>
 </template>
 
@@ -46,15 +42,17 @@ export default {
 </script>
 
 <script lang="ts" setup>
+const route = useRoute();
+
 const page = ref(0);
 const size = ref(10);
 const total = ref(0);
 
-const category = ref("");
+const category = ref(route.params.category || '');
 
-const chageParams = async (num: number, code: string) => {
+const chageParams = async (num: number, alias: string) => {
     page.value = num ? num : 0;
-    category.value = code;
+    category.value = alias;
 };
 
 const { data: categories } = await useAsyncData('post-retrieve', () => $fetch('/api/category'))

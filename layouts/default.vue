@@ -1,6 +1,6 @@
 <template>
     <div class="dark:bg-gray-900">
-        <Html lang="en">
+        <Html :lang="'en'">
             <Head>
                 <Title>Leafage - Home</Title>
                 <Meta

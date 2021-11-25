@@ -1,17 +1,14 @@
 <template>
     <div>
-        <Head :lang="'en'">
-            <Title>Leafage - About</Title>
-            <Meta name="description" content="Leafage 是一个开源的博客网站，记录自己平时学习总结、工作中遇到的问题的解决方法的一个经验记录。" />
-            <Meta
-                name="keywords"
-                content="leafage, 博客, 经验记录, 学习总结, nuxt, vue, ts, tailwindcss, java, js, markdown, highlight"
-            />
-        </Head>
+        <Html :lang="'en'">
+            <Head>
+                <Title>Leafage - About</Title>
+            </Head>
+        </Html>
 
         <div class="lg:flex lg:border-t border-gray-900 dark:border-gray-300">
             <div
-                class="lg:divide-y lg:divide-gray-300 lg:dark:divide-gray-900 text-center lg:mr-4 lg:w-60 lg:py-8 flex border border-gray-900 lg:border-none lg:block flex-none overflow-x-auto dark:text-gray-300"
+                class="lg:divide-y lg:divide-gray-300 lg:dark:divide-gray-900 text-center lg:mr-4 lg:w-60 lg:py-8 flex border border-gray-900 dark:border-gray-300 lg:border-none lg:block flex-none overflow-x-auto dark:text-gray-300"
             >
                 <NuxtLink
                     title="关于网站"

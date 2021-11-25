@@ -5,8 +5,8 @@
                 :src="data.cover + '?imageMogr2/thumbnail/272x182/format/webp/interlace/1/blur/1x0/quality/100'"
                 :alt="data.title"
                 class="w-full h-full object-center object-cover group-hover:opacity-75"
-                height="100%"
-                width="100%"
+                height="272"
+                width="182"
             />
         </div>
         <div class="flex justify-between mt-4 text-sm uppercase text-gray-600 dark:text-gray-400">
