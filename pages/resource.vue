@@ -5,27 +5,7 @@
                 <Title>Leafage - Resource</Title>
             </Head>
         </Html>
-        <div
-            class="flex justify-between items-center border border-gray-900 dark:border-gray-300 dark:text-gray-300 overflow-x-auto"
-        >
-            <button
-                title="all"
-                aria-label="all"
-                type="button"
-                @click="chageParams(0, ''), refresh()"
-                class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-gray-900 hover:text-gray-300 dark:hover:bg-gray-300 dark:hover:text-gray-900"
-                :class="{ 'bg-gray-900 text-gray-300 dark:bg-gray-300 dark:text-gray-900': category == '' }"
-            >All</button>
-            <button
-                v-for="cate in categories"
-                :title="cate.alias"
-                :aria-label="cate.alias"
-                type="button"
-                @click="chageParams(0, cate.alias), refresh()"
-                class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-gray-900 hover:text-gray-300 dark:hover:bg-gray-300 dark:hover:text-gray-900"
-                :class="{ 'bg-gray-900 text-gray-300 dark:bg-gray-300 dark:text-gray-900': category == cate.alias }"
-            >{{ cate.alias }}</button>
-        </div>
+        <Tab @chageParams="chageParams" :datas="categories" />
         <div
             class="grid grid-cols-1 gap-y-8 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 my-8"
         >
@@ -40,10 +20,10 @@
                     />
                 </div>
                 <p
-                    class="my-3 text-lg font-medium text-gray-800 dark:text-gray-300 group-hover:underline"
+                    class="my-3 text-lg font-bold text-gray-800 dark:text-gray-300 group-hover:underline"
                 >{{ data.title }}</p>
                 <div class="flex justify-between text-sm text-gray-600 dark:text-gray-400">
-                    <span>{{ new Date(data.modifyTime).toDateString() }}</span>
+                    <span>{{ new Date(data.modifyTime).toLocaleDateString() }}</span>
                     <div>
                         <div class="inline-flex items-center">
                             <svg
@@ -106,6 +86,7 @@ const category = ref("");
 const chageParams = async (num: number, code: string) => {
     page.value = num ? num : 0;
     category.value = code;
+    refresh()
 };
 
 const { data: categories } = await useAsyncData('resource-retrieve', () => $fetch('/api/category'))

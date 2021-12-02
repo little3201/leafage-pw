@@ -1,5 +1,5 @@
 <template>
-    <NuxtLink :to="'/posts/detail/' + data.code" class="w-full group">
+    <NuxtLink :to="'/posts/detail/' + data.code" class="group">
         <div class="w-full aspect-w-3 aspect-h-2 bg-gray-300 overflow-hidden">
             <img
                 :src="data.cover + '?imageMogr2/thumbnail/272x182/format/webp/interlace/1/blur/1x0/quality/100'"

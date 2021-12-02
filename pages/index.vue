@@ -1,84 +1,29 @@
 <template>
     <div>
-        <div class="flex justify-between space-x-8 dark:text-gray-300">
-            <div>
-                <div class="aspect-w-3 aspect-h-2 lg:aspect-h-4 bg-gray-300 overflow-hidden">
-                    <NuxtLink to="/posts/detail/123">
-                        <img
-                            src="https://cdn.leafage.top/dna-gc901094a3.jpg"
-                            alt="Two each of gray, white, and black shirts laying flat."
-                            class="w-full h-full object-center object-cover hover:opacity-75"
-                            width="100%"
-                            height="100%"
-                        />
-                    </NuxtLink>
-                </div>
-                <div class="lg:grid lg:grid-cols-1 lg:gap-y-8">
-                    <div class="aspect-w-3 aspect-h-2 bg-gray-300 overflow-hidden">
-                        <NuxtLink to="/posts/detail/123">
-                            <img
-                                src="https://cdn.leafage.top/field-6558125.jpg"
-                                alt="Model wearing plain black basic tee."
-                                class="w-full h-full object-center object-cover hover:opacity-75"
-                                width="100%"
-                                height="100%"
-                            />
-                        </NuxtLink>
-                    </div>
-                    <div class="aspect-w-3 aspect-h-2 mt-6 lg:my-0 bg-gray-300 overflow-hidden">
-                        <NuxtLink to="/posts/detail/123">
-                            <img
-                                src="https://cdn.leafage.top/building-g78a154db4.jpg"
-                                alt="Model wearing plain gray basic tee."
-                                class="w-full h-full object-center object-cover hover:opacity-75"
-                                width="100%"
-                                height="100%"
-                            />
-                        </NuxtLink>
-                    </div>
-                </div>
-                <div class="aspect-w-3 aspect-h-2 overflow-hidden bg-gray-300 lg:aspect-h-4">
-                    <NuxtLink to="/posts/detail/123">
-                        <img
-                            src="https://cdn.leafage.top/background-g43c1a8308.jpg"
-                            alt="Model wearing plain white basic tee."
-                            class="w-full h-full object-center object-cover hover:opacity-75"
-                            width="100%"
-                            height="100%"
-                        />
-                    </NuxtLink>
-                </div>
-            </div>
+        <Html :lang="'en'">
+            <Head>
+                <Title>Leafage - Home</Title>
+                <Meta
+                    name="description"
+                    content="Leafage 是一个开源的博客网站，记录自己平时学习总结、工作中遇到的问题的解决方法的一个经验记录。"
+                />
+                <Meta
+                    name="keywords"
+                    content="leafage, 博客, 经验记录, 学习总结, nuxt, vue, ts, tailwindcss, java, js"
+                />
+            </Head>
+        </Html>
+        <div class="grid lg:grid-rows-2 lg:grid-cols-4 lg:gap-6 mb-8">
+            <Card
+                v-for="(data, index) in datas.splice(0, 6)"
+                :data="data"
+                :aspect="(index < 4 && index > 1) ? true : false"
+            />
+        </div>
 
+        <div class="flex justify-between space-x-8 dark:text-gray-300">
             <div class="w-full">
-                <div
-                    class="flex justify-between items-center border border-gray-900 dark:border-gray-300 overflow-x-auto"
-                >
-                    <button
-                        title="Most Liked"
-                        aria-label="Most Liked"
-                        type="button"
-                        @click="chageParams(0, 'likes'), refresh()"
-                        class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-gray-900 hover:text-gray-200 dark:hover:bg-gray-200 dark:hover:text-gray-900"
-                        :class="{ 'bg-gray-900 text-gray-200 dark:bg-gray-200 dark:text-gray-900': order == 'likes' }"
-                    >Most Liked</button>
-                    <button
-                        title="Most Viewed"
-                        aria-label="Most Viewed"
-                        type="button"
-                        @click="chageParams(0, 'viewed'), refresh()"
-                        class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-gray-900 hover:text-gray-200 dark:hover:bg-gray-200 dark:hover:text-gray-900"
-                        :class="{ 'bg-gray-900 text-gray-200 dark:bg-gray-200 dark:text-gray-900': order == 'viewed' }"
-                    >Most Viewed</button>
-                    <button
-                        type="button"
-                        title="Most Comments"
-                        aria-label="Most Comments"
-                        @click="chageParams(0, 'comment'), refresh()"
-                        class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-gray-900 hover:text-gray-200 dark:hover:bg-gray-200 dark:hover:text-gray-900"
-                        :class="{ 'bg-gray-900 text-gray-200 dark:bg-gray-200 dark:text-gray-900': order == 'comment' }"
-                    >Most Comments</button>
-                </div>
+                <Tab @chageParams="chageParams" :datas="tabs" />
                 <div class="grid grid-cols-1 gap-y-8 sm:grid-cols-2 gap-x-6 xl:grid-cols-3 my-8">
                     <Item v-for="data in datas" :data="data" />
                 </div>
@@ -96,15 +41,33 @@ export default {
 </script>
 
 <script lang="ts" setup>
+import Card from '../components/Card.vue';
+import Tab from '../components/Tab.vue';
+
 const page = ref(0);
 const size = ref(10);
 const total = ref(0);
 
-const order = ref("likes");
+const order = ref("");
+const tabs = ref([
+    {
+        code: "likes",
+        alias: "Most Likes"
+    },
+    {
+        code: "viewed",
+        alias: "Most Viewed"
+    },
+    {
+        code: "comment",
+        alias: "Most Comments"
+    }
+])
 
 const chageParams = async (num: number, category: string) => {
     page.value = num ? num : 0;
     order.value = category;
+    refresh()
 };
 
 const { data: datas, refresh } = await useAsyncData('index-retrieve', () => $fetch('/api/posts'))
