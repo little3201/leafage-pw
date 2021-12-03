@@ -1,7 +1,4 @@
-import { Plugin } from '@nuxt/types'
-import { AxiosRequestConfig, AxiosError } from 'axios'
-
-const statusCode: any = {
+const statusCode = {
   400: '请求参数错误',
   401: '权限不足, 请重新登录',
   403: '服务器拒绝本次访问',
@@ -11,14 +8,14 @@ const statusCode: any = {
   504: '网关超时'
 }
 
-export const accessor: Plugin = ({ error, app: { $axios }, redirect }) => {
+export const accessor = ({ error, app: { $axios }, redirect }) => {
 
-  $axios.onRequest((config: AxiosRequestConfig) => {
+  $axios.onRequest((config) => {
     return config
   })
 
-  $axios.onError((err: AxiosError<any>) => {
-    const status: any = err.response?.status
+  $axios.onError((err) => {
+    const status = err.response?.status
     if (status === 404) {
       redirect('/error')
     } else {

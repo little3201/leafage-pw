@@ -31,17 +31,13 @@ export default {
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: [
+    '~/components',
     '~/components/layout',
-    '~/components/common',
   ],
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
-    // https://go.nuxtjs.dev/typescript
-    '@nuxt/typescript-build',
-    // https://composition-api.nuxtjs.org
-    '@nuxtjs/composition-api/module',
-    // https://tailwindcss.com/docs/guides/nuxtjs
+    // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
   ],
 
@@ -49,6 +45,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/proxy',
     // https://github.com/nuxt-community/sitemap-module
     '@nuxtjs/sitemap',
     // https://image.nuxtjs.org/getting-started/installation
@@ -60,12 +57,13 @@ export default {
     https: true,
     progress: true,
     credentials: true,
-    baseURL: '/api'
+    baseURL: "https://www.leafage.top/api",
+    proxy: true
   },
 
   globalName: 'leafage',
 
-  // nuxt loading configuration (https://zh.nuxtjs.org/api/configuration-loading)
+  // nuxt loading configuration (https://nuxtjs.org/docs/configuration-glossary/configuration-loading/)
   loading: {
     color: 'black'
   },
@@ -87,7 +85,7 @@ export default {
     },
     routes: async () => {
       const { data } = await axios.get('https://www.leafage.top/api/assets/posts')
-      return data.map((posts: any) => `/posts/detail/${posts.code}`)
+      return data.map((posts) => `/posts/detail/${posts.code}`)
     }
   },
 

@@ -33,31 +33,25 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, useContext, ref } from "@nuxtjs/composition-api";
+<script>
 import { SERVER_URL } from "~/api/request";
 
-export default defineComponent({
+export default {
   name: "Search",
 
-  setup() {
-    const keyword = ref();
-    const datas = ref<Array<Object>>([]);
-
-    const { $axios } = useContext();
-
-    const onSubmit = async () => {
-      datas.value = []
-      let result = $axios.$get(SERVER_URL.posts.concat("/search"), { params: { keyword: keyword.value } });
-      datas.value.push(result)
-    };
-
+  data() {
     return {
       keyword,
-      datas,
-
-      onSubmit,
-    };
+      datas
+    }
   },
-});
+
+  methods: {
+    onSubmit: async () => {
+      datas = []
+      let result = $axios.$get(SERVER_URL.posts.concat("/search"), { params: { keyword: keyword.value } });
+      datas.value.push(result)
+    }
+  }
+}
 </script>

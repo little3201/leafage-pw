@@ -28,10 +28,16 @@
         <div class="pb-3 text-xs text-center text-gray-400">
             <p
                 class="border-t border-gray-600 py-3"
-            >Copyright &copy; {{ new Date().getFullYear() }} leafage.top All Rights Reserved.</p>
+            >&copy; {{ new Date().getFullYear() }} leafage.top All Rights Reserved.</p>
             <p>
                 <a href="https://beian.miit.gov.cn" rel="noopener" target="_blank">陕ICP备19017836号</a>
             </p>
         </div>
     </section>
 </template>
+
+<script>
+export default {
+  name: "Footer",
+}
+</script>

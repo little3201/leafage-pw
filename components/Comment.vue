@@ -46,10 +46,8 @@
 </template>
 
 
-<script lang="ts">
-import { defineComponent, ref } from "@nuxtjs/composition-api";
-
-export default defineComponent({
+<script>
+export default {
   name: "Comment",
 
   props: {
@@ -59,10 +57,8 @@ export default defineComponent({
     }
   },
 
-  setup() {
-    const isShow = ref(false)
-
-    return { isShow };
-  },
-});
+  data() {
+    return { isShow: false }
+  }
+}
 </script>

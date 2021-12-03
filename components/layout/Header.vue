@@ -35,7 +35,7 @@
         <div class="flex items-center justify-end md:flex-1">
             <button
                 title="Toggle Theme"
-                @click="theme"
+                @click="theme()"
                 class="relative focus:outline-none transition-colors duration-500 ease-in border-transparent"
             >
                 <svg
@@ -125,24 +125,20 @@
     </div>
 </template>
 
-
-
-<script lang="ts">
-import {
-    defineComponent,
-    ref,
-    onBeforeMount,
-} from "@nuxtjs/composition-api";
-
-export default defineComponent({
+<script>
+export default {
     name: "Header",
 
-    setup() {
-        const isDark = ref(false)
+    data() {
+        return {
+            isDark: false
+        };
+    },
 
-        const theme = () => {
-            isDark.value = !isDark.value
-            if (isDark.value) {
+    methods: {
+        theme() {
+            this.isDark = !this.isDark
+            if (this.isDark) {
                 localStorage.setItem('theme', 'dark')
                 document.documentElement.classList.add('dark')
             } else {
@@ -150,19 +146,16 @@ export default defineComponent({
                 document.documentElement.classList.remove('dark')
             }
         }
-
-        onBeforeMount(() => {
-            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                isDark.value = true
-                document.documentElement.classList.add('dark')
-            } else {
-                document.documentElement.classList.remove('dark')
-            }
-        })
-
-        return {
-            isDark, theme
-        };
     },
-});
+
+    created() {
+        // if (localStorage.theme === 'dark' || (!('theme' in localStorage) &&
+        //     window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        //     this.isDark = true
+        //     document.documentElement.classList.add('dark')
+        // } else {
+        //     document.documentElement.classList.remove('dark')
+        // }
+    }
+}
 </script>

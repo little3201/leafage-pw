@@ -20,22 +20,21 @@
       >更新日志</NuxtLink>
     </div>
     <div class="my-4 lg:p-4 mx-auto w-full lg:border-l">
-      <article class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto dark:text-gray-300 dark:prose-blue">
+      <article
+        class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto dark:text-gray-300 dark:prose-blue"
+      >
         <NuxtChild />
       </article>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, useMeta } from "@nuxtjs/composition-api";
-
-export default defineComponent({
+<script>
+export default {
   name: "About",
-  head: {},
-
-  setup() {
-    useMeta(() => ({
+  
+  head() {
+    return {
       title: "Leafage - About",
       meta: [
         {
@@ -51,9 +50,9 @@ export default defineComponent({
             "leafage, 博客, 经验记录, 学习总结, nuxt, vue, ts, tailwindcss, java, js, markdown, highlight",
         },
       ],
-    }));
-  },
-});
+    }
+  }
+}
 </script>
 
 <style scoped>

@@ -53,7 +53,7 @@
           aria-label="email"
           title="email"
           href="mailto:little3201@163.com?subject=Leafage%20Website%20News"
-          class="bg-black text-white dark:border dark:border-white p-2 -ml-1"
+          class="bg-black text-white dark:text-black dark:bg-white dark:border border-black p-2 -ml-1"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -128,30 +128,21 @@
   </aside>
 </template>
 
-
-<script lang="ts">
-import {
-  defineComponent,
-  useContext,
-  ref,
-  useFetch,
-} from "@nuxtjs/composition-api";
+<script>
 import { SERVER_URL } from "~/api/request";
 
-export default defineComponent({
+export default {
   name: "SideBar",
 
-  setup() {
-    const categories = ref([]);
-    const { $axios } = useContext();
-
-    useFetch(async () => {
-      categories.value = await $axios.$get(SERVER_URL.category)
-    });
-
+  data() {
     return {
-      categories,
-    };
+      categories: []
+    }
   },
-});
+
+  async fetch() {
+    this.categories = await this.$axios.$get(SERVER_URL.category)
+  }
+
+}
 </script>

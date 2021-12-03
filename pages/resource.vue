@@ -1,8 +1,5 @@
 <template>
   <div>
-    <Head :lang="'en'">
-      <Title>Leafage - Resource</Title>
-    </Head>
     <div
       class="flex justify-between items-center border border-black dark:border-white dark:text-white overflow-x-auto"
     >
@@ -93,49 +90,13 @@
   </div>
 </template>
 
-<script lang="ts">
-import {
-  defineComponent,
-  ref,
-  useContext,
-  useFetch,
-  useMeta,
-  useRoute
-} from "@nuxtjs/composition-api";
+<script>
 import { SERVER_URL } from "~/api/request";
 
-export default defineComponent({
+export default {
   name: "Resource",
-  head: {},
-
-  setup() {
-    const datas = ref([]);
-
-    const categories = ref([]);
-
-    const route = useRoute();
-    const category = ref(route.value.params.category || '');
-
-    const page = ref(0);
-    const size = ref(10);
-    const total = ref(0);
-
-    const { $axios } = useContext();
-
-    const chageParams = async (num: number, code: string) => {
-      page.value = num ? num : 0;
-      category.value = code;
-    }
-
-    useFetch(async () => {
-      [categories.value, datas.value, total.value] = await Promise.all([
-        $axios.$get(SERVER_URL.category),
-        await $axios.$get(SERVER_URL.resource, { params: { page: 0, size: 12 }, }),
-        $axios.$get(SERVER_URL.posts.concat("/count")),
-      ]);
-    });
-
-    useMeta(() => ({
+  head() {
+    return {
       title: "Resource - Leafage",
       meta: [
         {
@@ -150,10 +111,24 @@ export default defineComponent({
           content:
             "leafage, 博客, 经验记录, 学习总结, nuxt, vue, ts, tailwindcss, java, js, markdown, highlight",
         },
-      ],
-    }));
-
-    return { datas, categories, category, page, size, total, chageParams };
+      ]
+    }
   },
-});
+
+  asyncData({ $axios }) {
+    let datas = $axios.$get(SERVER_URL.resource, { params: { page: 0, size: 12 }, })
+    return { datas }
+  },
+
+  data() {
+    return { categories: [], category: {}, page: 0, size: 0, total: 0 }
+  },
+
+  methods: {
+    chageParams(num, code) {
+      this.page = num ? num : 0;
+      this.category = code;
+    }
+  },
+}
 </script>

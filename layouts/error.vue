@@ -16,9 +16,8 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "@nuxtjs/composition-api";
-export default defineComponent({
+<script>
+export default {
   name: "Error",
 
   props: {
@@ -27,5 +26,5 @@ export default defineComponent({
       required: true,
     },
   },
-});
+}
 </script>

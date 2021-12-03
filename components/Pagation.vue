@@ -56,10 +56,8 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, computed, ref } from "@nuxtjs/composition-api";
-
-export default defineComponent({
+<script>
+export default {
   name: "Pagation",
 
   props: {
@@ -77,23 +75,24 @@ export default defineComponent({
     },
   },
 
-  setup(props) {
-    const curPage = ref(props.page);
-
-    const pages = computed(() => {
-      if (props.total < 1) {
-        return 1;
-      } else if (props.total % props.size > 0) {
-        return ~~(props.total / props.size) + 1;
-      } else {
-        return ~~(props.total / props.size);
-      }
-    });
-
+  data() {
     return {
-      curPage,
-      pages,
-    };
+      curPage: 0
+    }
   },
-});
+
+  computed: {
+    pages: () => {
+      // if (this.props.total < 1) {
+      //   return 1;
+      // } else if (this.props.total % this.props.size > 0) {
+      //   return ~~(this.props.total / this.props.size) + 1;
+      // } else {
+      //   return ~~(this.props.total / this.props.size);
+      // }
+      1
+    }
+  }
+
+}
 </script>
