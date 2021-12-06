@@ -106,7 +106,7 @@ export default {
 
     async retrieve(code) {
       await Promise.all([
-        this.$axios.$get(SERVER_URL.resource, { params: { page: this.page, size: this.size, order: code } }),
+        this.$axios.$get(SERVER_URL.resource, { params: { page: this.page, size: this.size, category: code } }),
         this.$axios.$get(SERVER_URL.resource.concat("/count"))])
     }
   }
