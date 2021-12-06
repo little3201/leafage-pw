@@ -84,7 +84,9 @@ export default {
   data() {
     return {
       page: 0,
-      size: 12
+      size: 12,
+      total: 0,
+      datas: []
     }
   },
 
@@ -106,10 +108,10 @@ export default {
 
     async retrieve(code) {
       await Promise.all([
-        this.$axios.$get(SERVER_URL.resource, {
+        this.$axios.get(SERVER_URL.resource, {
           params: { page: this.page, size: this.size, category: code }
         }).then(res => this.datas = res.data),
-        this.$axios.$get(SERVER_URL.resource.concat("/count").then(res => this.total = res.data))])
+        this.$axios.get(SERVER_URL.resource.concat("/count").then(res => this.total = res.data))])
     }
   }
 }
