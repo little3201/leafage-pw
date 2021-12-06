@@ -32,6 +32,7 @@
                     href="https://github.com/little3201"
                     class="hover:underline"
                     target="_blank"
+                    rel="noopener"
                 >little3201</a>
             </p>
             <p>
