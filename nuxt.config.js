@@ -25,24 +25,18 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    '~/plugins/accessor',
     { src: '~/plugins/ga.client', ssr: false },
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: [
-    '~/components/templates',
-    '~/components/global',
-    '~/components/sections',
+    '~/components',
+    '~/components/layout',
   ],
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
-    // https://go.nuxtjs.dev/typescript
-    '@nuxt/typescript-build',
-    // https://composition-api.nuxtjs.org
-    '@nuxtjs/composition-api/module',
-    // https://tailwindcss.com/docs/guides/nuxtjs
+    // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
   ],
 
@@ -51,9 +45,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://github.com/nuxt-community/sitemap-module
-    '@nuxtjs/sitemap',
-    // https://image.nuxtjs.org/getting-started/installation
-    '@nuxt/image',
+    '@nuxtjs/sitemap'
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -61,12 +53,12 @@ export default {
     https: true,
     progress: true,
     credentials: true,
-    baseURL: '/api'
+    baseURL: "/api"
   },
 
   globalName: 'leafage',
 
-  // nuxt loading configuration (https://zh.nuxtjs.org/api/configuration-loading)
+  // nuxt loading configuration (https://nuxtjs.org/docs/configuration-glossary/configuration-loading/)
   loading: {
     color: 'black'
   },
@@ -88,7 +80,7 @@ export default {
     },
     routes: async () => {
       const { data } = await axios.get('https://www.leafage.top/api/assets/posts')
-      return data.map((posts: any) => `/posts/detail/${posts.code}`)
+      return data.map((posts) => `/posts/detail/${posts.code}`)
     }
   },
 

@@ -1,0 +1,54 @@
+<template>
+    <section class="max-w-2xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
+        <div class="md:flex md:justify-between md:items-center text-white">
+            <div class="flex justify-center">
+                <NuxtLink
+                    class="text-3xl tracking-widest font-gray-900 uppercase my-6"
+                    title="leafage"
+                    to="/"
+                >Leafage</NuxtLink>
+            </div>
+            <div
+                class="flex text-xl justify-center md:justify-between space-x-6 mb-4 md:mb-0 uppercase font-bold"
+            >
+                <a
+                    title="github"
+                    href="https://github.com/little3201"
+                    rel="noopener"
+                    target="_blank"
+                >Github</a>
+                <a
+                    title="gitee"
+                    href="https://gitee.com/little3201"
+                    rel="noopener"
+                    target="_blank"
+                >Gitee</a>
+            </div>
+        </div>
+        <div class="pb-3 text-xs text-center text-gray-400">
+            <p class="border-t border-gray-600 py-3">
+                &copy; {{ new Date().getFullYear() }} All Rights Reserved. Created by
+                <a
+                    href="https://github.com/little3201"
+                    class="hover:underline"
+                    target="_blank"
+                    rel="noopener"
+                >little3201</a>
+            </p>
+            <p>
+                <a
+                    href="https://beian.miit.gov.cn"
+                    rel="noopener"
+                    target="_blank"
+                    class="hover:underline"
+                >陕ICP备19017836号</a>
+            </p>
+        </div>
+    </section>
+</template>
+
+<script>
+export default {
+    name: "Footer",
+}
+</script>

@@ -7,13 +7,11 @@ module.exports = {
     './plugins/**/*.{js,ts}',
     './nuxt.config.{js,ts}',
   ],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
   },
   variants: {
-    extend: {
-      fill: ['hover'],
-    },
+    typograpty: []
   },
   plugins: [
     require('@tailwindcss/typography'),
