@@ -8,6 +8,7 @@
             </div>
             <ol class="ml-12">
                 <li>代码重构，移除 ts 代码（之前写的 ts 并不规范，且 nuxt.js 2.x 支持不好），改为 js 编写；</li>
+                <li>精简依赖，删除几乎不会用到的 dependencies ；</li>
             </ol>
         </div>
         <div>
