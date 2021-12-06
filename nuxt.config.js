@@ -25,7 +25,6 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    '~/plugins/accessor',
     { src: '~/plugins/ga.client', ssr: false },
   ],
 
@@ -45,11 +44,8 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    '@nuxtjs/proxy',
     // https://github.com/nuxt-community/sitemap-module
-    '@nuxtjs/sitemap',
-    // https://image.nuxtjs.org/getting-started/installation
-    '@nuxt/image',
+    '@nuxtjs/sitemap'
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -57,8 +53,7 @@ export default {
     https: true,
     progress: true,
     credentials: true,
-    baseURL: "https://www.leafage.top/api",
-    proxy: true
+    baseURL: "/api"
   },
 
   globalName: 'leafage',

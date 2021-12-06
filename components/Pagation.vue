@@ -3,7 +3,7 @@
     <button
       type="button"
       aria-label="descrease"
-      @click="$emit('retrieve', curPage > 0 ? curPage-- : 0)"
+      @click="$emit('changeParams', current > 0 ? current-- : 0)"
       class="disabled:opacity-25 focus:outline-none w-8 h-8 rounded-full hover:border border-gray-900 inline-flex items-center justify-center"
     >
       <svg
@@ -26,16 +26,16 @@
       :key="index"
       type="button"
       aria-label="give"
-      @click="(curPage = index - 1), $emit('retrieve', index - 1)"
+      @click="(current = index - 1), $emit('changeParams', index - 1)"
       class="w-8 h-8 rounded-full focus:outline-none border border-black hover:bg-black hover:text-white"
       :class="{
-        'bg-black text-white ': curPage == index - 1,
+        'bg-black text-white ': current == index - 1,
       }"
     >{{ index }}</button>
     <button
       type="button"
       aria-label="increment"
-      @click="$emit('retrieve', curPage < pages - 1 ? curPage++ : pages)"
+      @click="$emit('changeParams', current < pages - 1 ? current++ : pages)"
       class="disabled:opacity-25 focus:outline-none w-8 h-8 rounded-full hover:border border-gray-900 inline-flex items-center justify-center"
     >
       <svg
@@ -71,26 +71,25 @@ export default {
     },
     size: {
       type: Number,
-      default: 10,
+      default: 12,
     },
   },
 
   data() {
     return {
-      curPage: 0
+      current: 0
     }
   },
 
   computed: {
-    pages: () => {
-      // if (this.props.total < 1) {
-      //   return 1;
-      // } else if (this.props.total % this.props.size > 0) {
-      //   return ~~(this.props.total / this.props.size) + 1;
-      // } else {
-      //   return ~~(this.props.total / this.props.size);
-      // }
-      1
+    pages () {
+      if (this.total <= 1) {
+        return 1;
+      } else if (this.total % this.size > 0) {
+        return ~~(this.total / this.size) + 1;
+      } else {
+        return ~~(this.total / this.size);
+      }
     }
   }
 

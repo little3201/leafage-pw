@@ -26,11 +26,21 @@
             </div>
         </div>
         <div class="pb-3 text-xs text-center text-gray-400">
-            <p
-                class="border-t border-gray-600 py-3"
-            >&copy; {{ new Date().getFullYear() }} leafage.top All Rights Reserved.</p>
+            <p class="border-t border-gray-600 py-3">
+                &copy; {{ new Date().getFullYear() }} All Rights Reserved. Created by
+                <a
+                    href="https://github.com/little3201"
+                    class="hover:underline"
+                    target="_blank"
+                >little3201</a>
+            </p>
             <p>
-                <a href="https://beian.miit.gov.cn" rel="noopener" target="_blank">陕ICP备19017836号</a>
+                <a
+                    href="https://beian.miit.gov.cn"
+                    rel="noopener"
+                    target="_blank"
+                    class="hover:underline"
+                >陕ICP备19017836号</a>
             </p>
         </div>
     </section>
@@ -38,6 +48,6 @@
 
 <script>
 export default {
-  name: "Footer",
+    name: "Footer",
 }
 </script>

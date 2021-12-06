@@ -1,26 +1,6 @@
 <template>
   <div>
-    <div
-      class="flex justify-between items-center border border-black dark:border-white dark:text-white overflow-x-auto"
-    >
-      <button
-        title="all"
-        aria-label="all"
-        type="button"
-        @click="chageParams(0, '')"
-        class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
-        :class="{ 'bg-black text-white dark:bg-white dark:text-black': category == '' }"
-      >All</button>
-      <button
-        v-for="cate in categories"
-        :title="cate.alias"
-        :aria-label="cate.alias"
-        type="button"
-        @click="chageParams(0, cate.alias)"
-        class="w-full p-3 text-xs font-bold uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
-        :class="{ 'bg-black text-white dark:bg-white dark:text-black': category == cate.alias }"
-      >{{ cate.alias }}</button>
-    </div>
+    <Tab @chageParams="chageParams" :datas="categories" />
     <div
       class="grid grid-cols-1 gap-y-8 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 my-8"
     >
@@ -28,11 +8,11 @@
         v-for="data in datas"
         :key="data.code"
         :to="'/posts/detail/' + data.code"
-        class="w-full group"
+        class="group"
       >
         <div class="w-full aspect-w-4 aspect-h-5 bg-gray-300 overflow-hidden border">
           <img
-            :src="data.url[0]"
+            :src="data.cover"
             alt="images"
             class="w-full h-full object-center filter grayscale group-hover:opacity-75"
             height="100%"
@@ -41,7 +21,7 @@
         </div>
         <p
           class="my-3 text-lg font-bold text-gray-800 dark:text-gray-300 group-hover:underline"
-        >{{ data.title }}</p>
+        >《{{ data.title }}》</p>
         <div class="flex justify-between text-sm text-gray-600 dark:text-gray-400">
           <span>{{ new Date(data.modifyTime).toLocaleDateString() }}</span>
           <div>
@@ -86,7 +66,7 @@
         </div>
       </NuxtLink>
     </div>
-    <Pagation class="my-8" :page="page" :size="size" :total="total" @retrieve="chageParams" />
+    <Pagation :page="page" :size="size" :total="total" @retrieve="chageParams" />
   </div>
 </template>
 
@@ -98,37 +78,37 @@ export default {
   head() {
     return {
       title: "Resource - Leafage",
-      meta: [
-        {
-          hid: "description",
-          name: "description",
-          content:
-            "Leafage 是一个开源的博客网站，记录自己平时学习总结、工作中遇到的问题的解决方法的一个经验记录。",
-        },
-        {
-          hid: "keywords",
-          name: "keywords",
-          content:
-            "leafage, 博客, 经验记录, 学习总结, nuxt, vue, ts, tailwindcss, java, js, markdown, highlight",
-        },
-      ]
     }
   },
 
-  asyncData({ $axios }) {
-    let datas = $axios.$get(SERVER_URL.resource, { params: { page: 0, size: 12 }, })
-    return { datas }
+  data() {
+    return {
+      page: 0,
+      size: 12
+    }
   },
 
-  data() {
-    return { categories: [], category: {}, page: 0, size: 0, total: 0 }
+  async asyncData({ $axios }) {
+    let [datas, total, categories] = await Promise.all([
+      $axios.$get(SERVER_URL.resource, { params: { page: 0, size: 12 } }),
+      $axios.$get(SERVER_URL.resource.concat("/count")),
+      $axios.$get(SERVER_URL.category)]
+    )
+
+    return { datas, total, categories }
   },
 
   methods: {
     chageParams(num, code) {
       this.page = num ? num : 0;
-      this.category = code;
+      this.retrieve(code);
+    },
+
+    async retrieve(code) {
+      await Promise.all([
+        this.$axios.$get(SERVER_URL.resource, { params: { page: this.page, size: this.size, order: code } }),
+        this.$axios.$get(SERVER_URL.resource.concat("/count"))])
     }
-  },
+  }
 }
 </script>

@@ -1,12 +1,12 @@
 <template>
-  <aside class="max-w-xs flex-none dark:text-white">
+  <aside class="hidden lg:block max-w-xs flex-none dark:text-white">
     <div class="border border-solid border-gray-200 p-6">
       <h3 class="font-bold">欢迎关注公众号（Leafage）</h3>
       <div class="flex items-center mt-4">
         <figure class="border">
-          <NuxtPicture
+          <img
             src="https://cdn.leafage.top/leafage-wechat.jpg?imageMogr2/thumbnail/x128/format/webp/blur/1x0/quality/75"
-            alt="leafage"
+            alt="leafage_wechat"
             width="128"
             height="128"
           />
@@ -28,7 +28,7 @@
         class="absolute top-0 -mt-2.5 px-2 ml-6 bg-white dark:bg-black uppercase text-sm font-semibold"
       >Categories</h3>
       <ul
-        class="grid grid-cols-1 divide-y divide-gray-300 p-6 text-xs font-semibold uppercase list-disc"
+        class="grid grid-cols-1 divide-y divide-gray-300 p-6 text-xs font-semibold list-disc"
       >
         <li class="py-3 mx-4" v-for="category in categories" :key="category.code">
           <NuxtLink

@@ -11,6 +11,7 @@ module.exports = {
   theme: {
   },
   variants: {
+    typograpty: []
   },
   plugins: [
     require('@tailwindcss/typography'),

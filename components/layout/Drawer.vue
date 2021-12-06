@@ -8,7 +8,7 @@
             class="text-4xl tracking-widest font-black uppercase text-black text-center"
           >
             <figure class="inline-flex justify-center">
-              <NuxtPicture
+              <img
                 src="https://cdn.leafage.top/logo-only.png"
                 alt="Leafage"
                 width="48"
