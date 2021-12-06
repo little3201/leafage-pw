@@ -53,7 +53,7 @@ export default {
         this.$axios.get(SERVER_URL.posts, {
           params: { page: this.page, size: this.size, category: code },
         }).then(res => this.datas = res.data),
-        this.$axios.get(SERVER_URL.posts.concat("/count").then(res => this.total = res.data))])
+        this.$axios.get(SERVER_URL.posts.concat("/count")).then(res => this.total = res.data)])
     }
   }
 }

@@ -35,7 +35,7 @@ export default {
   
   head() {
     return {
-      title: "Leafage - About",
+      title: "About - Leafage",
     }
   }
 }
