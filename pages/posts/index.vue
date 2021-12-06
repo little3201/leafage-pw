@@ -36,7 +36,9 @@ export default {
   data() {
     return {
       page: 0,
-      size: 16
+      size: 16,
+      total: 0,
+      datas: []
     }
   },
 

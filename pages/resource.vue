@@ -84,7 +84,9 @@ export default {
   data() {
     return {
       page: 0,
-      size: 12
+      size: 12,
+      total: 0,
+      datas: []
     }
   },
 

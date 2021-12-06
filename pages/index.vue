@@ -47,7 +47,7 @@ export default {
                 }
             ],
             page: 0,
-            size: 10,
+            size: 12,
             total: 0
         }
     },
@@ -57,7 +57,7 @@ export default {
             this.page = num ? num : 0;
             await Promise.all([
                 this.$axios.get(SERVER_URL.posts, {
-                    params: { page: 0, size: 10, order: code },
+                    params: { page: this.page, size: this.size, order: code },
                 }).then(res => this.datas = res.data),
                 this.$axios.get(SERVER_URL.posts.concat("/count"))]).then(res => this.total = res.data);
         }
