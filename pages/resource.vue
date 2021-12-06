@@ -111,7 +111,7 @@ export default {
         this.$axios.get(SERVER_URL.resource, {
           params: { page: this.page, size: this.size, category: code }
         }).then(res => this.datas = res.data),
-        this.$axios.get(SERVER_URL.resource.concat("/count").then(res => this.total = res.data))])
+        this.$axios.get(SERVER_URL.resource.concat("/count")).then(res => this.total = res.data)])
     }
   }
 }
