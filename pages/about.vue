@@ -21,7 +21,7 @@
     </div>
     <div class="my-4 lg:p-4 mx-auto w-full lg:border-l">
       <article
-        class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto dark:text-gray-300 dark:prose-blue"
+        class="prose prose-sm sm:prose lg:prose-lg mx-auto dark:text-gray-300 dark:prose-blue"
       >
         <NuxtChild />
       </article>
