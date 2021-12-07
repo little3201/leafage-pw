@@ -2,8 +2,8 @@
   <div
     class="flex justify-between space-x-8 border-t border-black dark:border-white dark:text-white"
   >
-    <div class="my-6 w-full">
-      <h2 class="text-xl md:text-2xl lg:text-3xl font-bold" v-text="data.title"></h2>
+    <div class="my-6">
+      <h2 class="text-xl md:text-2xl lg:text-3xl font-bold">{{ data.title }}</h2>
       <div class="md:flex text-sm my-4">
         <span :title="data.category">{{ data.category }}</span>
         <span class="tracking-wider mx-6">{{ new Date(data.modifyTime).toLocaleDateString() }}</span>
@@ -95,7 +95,8 @@
         />
       </figure>
       <article
-        class="prose prose-sm sm:prose lg:prose-lg max-w-none dark:text-gray-300 dark:prose-blue"
+        class="prose prose-sm sm:prose lg:prose-lg dark:text-gray-300 dark:prose-blue"
+        style="max-width: 860px;"
         v-html="rendered"
       ></article>
       <div class="bg-gray-100 dark:bg-gray-600 my-8 p-6">

@@ -148,14 +148,14 @@ export default {
         }
     },
 
-    created() {
-        // if (localStorage.theme === 'dark' || (!('theme' in localStorage) &&
-        //     window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        //     this.isDark = true
-        //     document.documentElement.classList.add('dark')
-        // } else {
-        //     document.documentElement.classList.remove('dark')
-        // }
+    mounted() {
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            this.isDark = true
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
     }
 }
 </script>
