@@ -14,7 +14,7 @@
             </Head>
         </Html>
         <div class="grid lg:grid-rows-2 lg:grid-cols-4 lg:gap-6 mb-8">
-            <Card
+            <Gallery
                 v-for="(data, index) in datas.splice(0, 6)"
                 :data="data"
                 :aspect="(index < 4 && index > 1) ? true : false"
@@ -41,8 +41,8 @@ export default {
 </script>
 
 <script lang="ts" setup>
-import Card from '../components/Card.vue';
 import Tab from '../components/Tab.vue';
+import Gallery from '../components/Gallery.vue';
 
 const page = ref(0);
 const size = ref(10);

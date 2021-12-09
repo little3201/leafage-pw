@@ -81,7 +81,7 @@
                             {{ data.likes }}
                         </div>
                     </div>
-                    <div class="inline-flex items-center dark:text-gray-300">
+                    <div class="inline-flex items-center space-x-2 dark:text-gray-300">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"
@@ -99,9 +99,8 @@
                             />
                             <line x1="7" y1="7" x2="7.01" y2="7" />
                         </svg>
-                        <span v-for="(tag, index) in data.tags" :key="index">
+                        <span v-for="(tag, index) in data.tags" :key="index" class="text-gray-900 bg-gray-100">
                             {{ tag }}
-                            <span class="mr-2" v-if="index < data.tags.length - 1">,</span>
                         </span>
                     </div>
                     <figure v-show="data.cover">
