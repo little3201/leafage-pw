@@ -1,15 +1,13 @@
 <template>
     <section class="max-w-2xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
         <div class="md:flex md:justify-between md:items-center text-white">
-            <div class="flex justify-center">
-                <NuxtLink
-                    class="text-3xl tracking-widest font-gray-900 uppercase my-6"
-                    title="leafage"
-                    to="/"
-                >Leafage</NuxtLink>
-            </div>
+            <NuxtLink
+                class="text-2xl tracking-widest font-gray-900 uppercase my-6"
+                title="leafage"
+                to="/"
+            >Leafage</NuxtLink>
             <div
-                class="flex text-xl justify-center md:justify-between space-x-6 mb-4 md:mb-0 uppercase font-bold"
+                class="flex text-xl justify-center md:justify-between space-x-6 mb-4 md:mb-0 uppercase"
             >
                 <a
                     title="github"

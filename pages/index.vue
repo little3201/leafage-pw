@@ -1,7 +1,7 @@
 <template>
     <div id="home">
-        <div class="grid lg:grid-rows-2 lg:grid-cols-4 lg:gap-6">
-            <Card
+        <div class="grid lg:grid-rows-2 lg:grid-cols-4 gap-4 lg:gap-6">
+            <Gallery
                 v-for="(data, index) in recentDatas"
                 :key="index"
                 :data="data"
@@ -26,32 +26,29 @@ import { SERVER_URL } from "~/api/request";
 
 export default {
     name: "Home",
-
     scrollToTop: true,
-
     data() {
         return {
             datas: [],
             tabs: [
                 {
                     code: "likes",
-                    alias: "Most Likes"
+                    alias: "Trending"
                 },
                 {
                     code: "viewed",
-                    alias: "Most Viewed"
+                    alias: "Most View"
                 },
                 {
                     code: "comment",
-                    alias: "Most Comments"
+                    alias: "Popular"
                 }
             ],
             page: 0,
             size: 12,
             total: 0
-        }
+        };
     },
-
     methods: {
         async chageParams(num, code) {
             this.page = num ? num : 0;
@@ -59,19 +56,19 @@ export default {
                 this.$axios.get(SERVER_URL.posts, {
                     params: { page: this.page, size: this.size, order: code },
                 }).then(res => this.datas = res.data),
-                this.$axios.get(SERVER_URL.posts.concat("/count"))]).then(res => this.total = res.data);
+                this.$axios.get(SERVER_URL.posts.concat("/count"))
+            ]).then(res => this.total = res.data);
         }
     },
-
     async asyncData({ $axios }) {
         let [recentDatas, datas, total] = await Promise.all([
             $axios.$get(SERVER_URL.posts, { params: { page: 0, size: 6 } }),
             $axios.$get(SERVER_URL.posts, {
                 params: { page: 0, size: 12, order: "likes" },
             }),
-            $axios.$get(SERVER_URL.posts.concat("/count"))]);
-
-        return { recentDatas, datas, total }
+            $axios.$get(SERVER_URL.posts.concat("/count"))
+        ]);
+        return { recentDatas, datas, total };
     }
 }
 </script>

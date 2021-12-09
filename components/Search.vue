@@ -2,7 +2,7 @@
   <div class="min-h-screen bg-gray-100 flex justify-center items-center">
     <div class="container mx-auto bg-gray-500 rounded-lg p-14">
       <form>
-        <h1 class="text-center font-bold text-white text-4xl">Find the perfect domain name</h1>
+        <h3 class="text-center font-bold text-white text-4xl">Find the perfect domain name</h3>
         <p class="mx-auto font-normal text-sm my-6 max-w-lg">
           Enter your select domain name and choose any
           extension name in the next step (choose between .com, .online, .tech, .site, .net, and more)
@@ -41,8 +41,8 @@ export default {
 
   data() {
     return {
-      keyword,
-      datas
+      keyword: '',
+      datas: []
     }
   },
 

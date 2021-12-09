@@ -15,7 +15,7 @@
                 height="48"
               />
             </figure>
-            <h1>Leafage</h1>
+            <h2>Leafage</h2>
           </NuxtLink>
         </div>
         <ul class="divide-y divide-gray-500 font-bold uppercase text-center my-8">
