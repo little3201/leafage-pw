@@ -21,7 +21,7 @@
                         >{{ data.category }}</NuxtLink>
                         <span
                             class="tracking-wider"
-                        >{{ new Date(data.modifyTime || '2021-11-11').toLocaleDateString() }}</span>
+                        >{{ new Date(data.modifyTime).toLocaleDateString() }}</span>
                         <div class="inline-flex items-center">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -158,47 +158,45 @@
                     </div>
                 </article>
                 <div>
-                    <div class="my-6">
+                    <form class="my-6">
                         <div class="items-center -mx-2 md:flex">
                             <div class="w-full mx-2">
                                 <label
-                                    class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
+                                    class="text-sm font-medium text-gray-600 dark:text-gray-200"
                                 >Name</label>
-
                                 <input
-                                    class="block w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:outline-none focus:ring-1 focus:ring-gray-900"
+                                    class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:outline-none focus:ring-1 focus:ring-gray-400"
                                     type="text"
                                 />
                             </div>
 
                             <div class="w-full mx-2 mt-4 md:mt-0">
                                 <label
-                                    class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
+                                    class="text-sm font-medium text-gray-600 dark:text-gray-200"
                                 >E-mail</label>
-
                                 <input
-                                    class="block w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:outline-none focus:ring-1 focus:ring-gray-900"
+                                    class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:outline-none focus:ring-1 focus:ring-gray-400"
                                     type="email"
                                 />
                             </div>
                         </div>
 
-                        <div class="w-full mt-4">
+                        <div class="w-full my-4">
                             <label
-                                class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
+                                class="text-sm font-medium text-gray-600 dark:text-gray-200"
                             >Message</label>
-
                             <textarea
-                                class="block w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:outline-none focus:ring-1 focus:ring-gray-900"
+                                class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:outline-none focus:ring-1 focus:ring-gray-400"
                             ></textarea>
                         </div>
 
-                        <div class="flex justify-end mt-6">
+                        <div class="flex justify-end">
                             <button
-                                class="px-4 py-2 text-white transition-colors duration-200 transform border-gray-300 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
+                                @click="onsubmit"
+                                class="px-4 py-2 transition-colors duration-200 transform border border-gray-300 dark:bg-gray-600 dark:text-gray-300 bg-gray-100 rounded-md hover:bg-gray-300 focus:outline-none"
                             >Send Message</button>
                         </div>
-                    </div>
+                    </form>
                     <Comment v-for="data in comments" :data="data" />
                 </div>
             </div>
