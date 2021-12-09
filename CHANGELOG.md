@@ -6,6 +6,11 @@
 
 ## 更新记录
 
+2021-12-09:
+  1. 重命名card.vue 为 gallery，并优化在小屏下间距的问题;
+  2. 更正详情页 meta description 取值问题;
+  3. Gallery.vue 中 img 标签设置宽度和高度；
+
 2021-12-06:
   1. 代码重构，移除 ts 代码（之前写的 ts 并不规范，且 nuxt.js 2.x 支持不好），改为 js 编写；
   2. 精简依赖，删除几乎不会用到的 dependencies；
