@@ -64,27 +64,7 @@
           </div>
         </div>
       </div>
-      <div class="inline-flex items-center">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="feather feather-tag mr-2"
-        >
-          <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
-          <line x1="7" y1="7" x2="7.01" y2="7" />
-        </svg>
-        <span v-for="(tag, index) in data.tags" :key="index" class="text-sm">
-          {{ tag }}
-          <span class="mr-2" v-if="index < data.tags.length - 1">,</span>
-        </span>
-      </div>
+
       <figure v-show="data.cover" class="my-4">
         <img
           :src="data.cover"
@@ -99,6 +79,12 @@
         style="max-width: 860px;"
         v-html="rendered"
       ></article>
+
+      <div class="inline-flex items-center space-x-2 mt-4">
+        <span v-for="(tag, index) in data.tags" :key="index" class="text-xs bg-gray-200 rounded-md px-2 py-1">
+          {{ "#" + tag }}
+        </span>
+      </div>
       <div class="bg-gray-100 dark:bg-gray-600 my-8 p-6">
         <ul
           class="grid grid-flow-row grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2 gap-4 text-sm font-bold"
@@ -175,7 +161,7 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: this.data.subtitle,
+          content: this.data.title,
         },
         {
           hid: "keywords",
