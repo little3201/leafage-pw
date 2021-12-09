@@ -52,15 +52,15 @@ const order = ref("");
 const tabs = ref([
     {
         code: "likes",
-        alias: "Most Likes"
+        alias: "Trending"
     },
     {
         code: "viewed",
-        alias: "Most Viewed"
+        alias: "Most View"
     },
     {
         code: "comment",
-        alias: "Most Comments"
+        alias: "Popular"
     }
 ])
 

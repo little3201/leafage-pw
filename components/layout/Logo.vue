@@ -10,7 +10,7 @@
                     class="filter dark:invert dark:opacity-90"
                 />
             </figure>
-            <h1 class="text-4xl tracking-widest font-gray-900 uppercase">Leafage</h1>
+            <h1 class="text-4xl tracking-widest font-gray-900 uppercase font-semibold">Leafage</h1>
         </NuxtLink>
     </div>
 </template>

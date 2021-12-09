@@ -451,11 +451,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/kit@npm:@nuxt/kit-edge@3.0.0-27307420.6a25d3e":
-  version: 3.0.0-27307420.6a25d3e
-  resolution: "@nuxt/kit-edge@npm:3.0.0-27307420.6a25d3e"
+"@nuxt/kit@npm:@nuxt/kit-edge@3.0.0-27313139.1c88580":
+  version: 3.0.0-27313139.1c88580
+  resolution: "@nuxt/kit-edge@npm:3.0.0-27313139.1c88580"
   dependencies:
-    "@nuxt/schema": "npm:@nuxt/schema-edge@3.0.0-27307420.6a25d3e"
+    "@nuxt/schema": "npm:@nuxt/schema-edge@3.0.0-27313139.1c88580"
     consola: ^2.15.3
     defu: ^5.0.0
     dotenv: ^10.0.0
@@ -471,19 +471,19 @@ __metadata:
     semver: ^7.3.5
     unctx: ^1.0.2
     untyped: ^0.3.0
-  checksum: af06bb8271cd0befcef61de2527f5c4140c208c7378448a024966d1671f2bb3f8cb053165f612d6b72936a7647e4d47711745fbedb7e4e4f150fbceb7d85177c
+  checksum: 6cd339965b46998357bc50b0dacdbc894645d926d692fc66966ac0cb095670108c8e7719fa0fe1d48f303e83f1f28d9e8ee68a4e8a587c5a60ad6d6f7aae7999
   languageName: node
   linkType: hard
 
-"@nuxt/nitro@npm:@nuxt/nitro-edge@3.0.0-27307420.6a25d3e":
-  version: 3.0.0-27307420.6a25d3e
-  resolution: "@nuxt/nitro-edge@npm:3.0.0-27307420.6a25d3e"
+"@nuxt/nitro@npm:@nuxt/nitro-edge@3.0.0-27313139.1c88580":
+  version: 3.0.0-27313139.1c88580
+  resolution: "@nuxt/nitro-edge@npm:3.0.0-27313139.1c88580"
   dependencies:
     "@cloudflare/kv-asset-handler": ^0.2.0
     "@netlify/functions": ^0.10.0
     "@nuxt/design": 0.1.5
     "@nuxt/devalue": ^2.0.0
-    "@nuxt/kit": "npm:@nuxt/kit-edge@3.0.0-27307420.6a25d3e"
+    "@nuxt/kit": "npm:@nuxt/kit-edge@3.0.0-27313139.1c88580"
     "@rollup/plugin-alias": ^3.1.8
     "@rollup/plugin-commonjs": ^21.0.1
     "@rollup/plugin-inject": ^4.0.3
@@ -536,13 +536,13 @@ __metadata:
     unstorage: ^0.3.3
     vue-bundle-renderer: ^0.3.4
     vue-server-renderer: ^2.6.14
-  checksum: adc30c201330804f65286598ef9d31f86646c7e61fc6a18a4d6927a63dba7c2dd5b3f02050c1bbdf865fb3934d99432a475151fbbe61c969c75df34dfa68ce84
+  checksum: b9981f7501d0224c1493ac9d277f6c11345126a1495399e6b5867f4d93d1ae65040cd44fbbb013efecc146e67d23ec0d234fef3769bab7ae7650a1992d147608
   languageName: node
   linkType: hard
 
-"@nuxt/schema@npm:@nuxt/schema-edge@3.0.0-27307420.6a25d3e":
-  version: 3.0.0-27307420.6a25d3e
-  resolution: "@nuxt/schema-edge@npm:3.0.0-27307420.6a25d3e"
+"@nuxt/schema@npm:@nuxt/schema-edge@3.0.0-27313139.1c88580":
+  version: 3.0.0-27313139.1c88580
+  resolution: "@nuxt/schema-edge@npm:3.0.0-27313139.1c88580"
   dependencies:
     create-require: ^1.1.1
     defu: ^5.0.0
@@ -551,15 +551,15 @@ __metadata:
     scule: ^0.2.1
     std-env: ^3.0.1
     ufo: ^0.7.9
-  checksum: 73875696c2b211b170e5a95bb6330364a479d150c34a0254f5b0ba119fcde3fd955db38fc108b41247df4b5671148578fb5ddd164f414c469220c8ba4bb1e5bf
+  checksum: c7d5af2fd6c9a65edcf1cf1540a74d4a9caebe6ab272212db28ba1f70f7e6e70da6569dc3bc9403d1f4c7fe9f5cb91158cde81e919a2ba30c99a817975454a3b
   languageName: node
   linkType: hard
 
-"@nuxt/vite-builder@npm:@nuxt/vite-builder-edge@3.0.0-27307420.6a25d3e":
-  version: 3.0.0-27307420.6a25d3e
-  resolution: "@nuxt/vite-builder-edge@npm:3.0.0-27307420.6a25d3e"
+"@nuxt/vite-builder@npm:@nuxt/vite-builder-edge@3.0.0-27313139.1c88580":
+  version: 3.0.0-27313139.1c88580
+  resolution: "@nuxt/vite-builder-edge@npm:3.0.0-27313139.1c88580"
   dependencies:
-    "@nuxt/kit": "npm:@nuxt/kit-edge@3.0.0-27307420.6a25d3e"
+    "@nuxt/kit": "npm:@nuxt/kit-edge@3.0.0-27313139.1c88580"
     "@vitejs/plugin-vue": ^1.10.1
     "@vitejs/plugin-vue-jsx": ^1.3.0
     autoprefixer: ^10.4.0
@@ -581,17 +581,17 @@ __metadata:
     vite: ^2.6.14
   peerDependencies:
     vue: 3.2.23
-  checksum: ca188a0c793bbf0152e0f4aff1ea247a762841d02c7ecbfa5a196912f923f854f545c2e60125600abdfdd70a89502a2716365beca95ffd7c4a858f605bc39583
+  checksum: 48f784514e88acc7730479f283dac99652535effb3ec10dfc48afaaefc12f83c42a9926cec5e1f5c33be844fe9aee7bb2ca5c25eb8debfefc888d7c76341dcd5
   languageName: node
   linkType: hard
 
-"@nuxt/webpack-builder@npm:@nuxt/webpack-builder-edge@3.0.0-27307420.6a25d3e":
-  version: 3.0.0-27307420.6a25d3e
-  resolution: "@nuxt/webpack-builder-edge@npm:3.0.0-27307420.6a25d3e"
+"@nuxt/webpack-builder@npm:@nuxt/webpack-builder-edge@3.0.0-27313139.1c88580":
+  version: 3.0.0-27313139.1c88580
+  resolution: "@nuxt/webpack-builder-edge@npm:3.0.0-27313139.1c88580"
   dependencies:
     "@babel/core": ^7.16.0
     "@nuxt/friendly-errors-webpack-plugin": ^2.5.2
-    "@nuxt/kit": "npm:@nuxt/kit-edge@3.0.0-27307420.6a25d3e"
+    "@nuxt/kit": "npm:@nuxt/kit-edge@3.0.0-27313139.1c88580"
     "@vue/babel-preset-jsx": ^1.2.4
     autoprefixer: ^10.4.0
     babel-loader: ^8.2.3
@@ -629,7 +629,7 @@ __metadata:
     webpackbar: ^5.0.2
   peerDependencies:
     vue: 3.2.23
-  checksum: a795c1fc41b5330b54236c0119af123a7e427bccdc07e39e9d953afde4ac507725ab4f3f420bcc4da0e739dce8ad787391e859855be56fe890e3af26780e491e
+  checksum: 043b56c5c6b369b9b2a9bf87a28992c763b3b1bfdb62c2291fe2e22c70753896b6ebc93f46583ab53995ffe597295f890d1f0d6dd05edbc627cdd7ba36264312
   languageName: node
   linkType: hard
 
@@ -5588,9 +5588,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nuxi@npm:nuxi-edge@3.0.0-27307420.6a25d3e":
-  version: 3.0.0-27307420.6a25d3e
-  resolution: "nuxi-edge@npm:3.0.0-27307420.6a25d3e"
+"nuxi@npm:nuxi-edge@3.0.0-27313139.1c88580":
+  version: 3.0.0-27313139.1c88580
+  resolution: "nuxi-edge@npm:3.0.0-27313139.1c88580"
   dependencies:
     fsevents: ~2.3.2
   dependenciesMeta:
@@ -5598,20 +5598,20 @@ __metadata:
       optional: true
   bin:
     nuxi-edge: ./bin/nuxi.mjs
-  checksum: c0806bd7e38dbf567011fdc13bae08d97e123fb1f501445283dc6c79a1daec35851943f4b021e91df70b6966c2eba77424fa754f09988ed4876342881c9f5cb7
+  checksum: 0ccc89cfc5de2cfa38c73329ce9845e87ba151dc1588697939e97b618381645b539bd2e331b4f2683d672500c3c9ea0c8ab1bea17402d9b9c08f822163218c8a
   languageName: node
   linkType: hard
 
-"nuxt3@npm:^3.0.0-27307420.6a25d3e":
-  version: 3.0.0-27307420.6a25d3e
-  resolution: "nuxt3@npm:3.0.0-27307420.6a25d3e"
+"nuxt3@npm:^3.0.0-27313139.1c88580":
+  version: 3.0.0-27313139.1c88580
+  resolution: "nuxt3@npm:3.0.0-27313139.1c88580"
   dependencies:
     "@nuxt/design": ^0.1.5
-    "@nuxt/kit": "npm:@nuxt/kit-edge@3.0.0-27307420.6a25d3e"
-    "@nuxt/nitro": "npm:@nuxt/nitro-edge@3.0.0-27307420.6a25d3e"
-    "@nuxt/schema": "npm:@nuxt/schema-edge@3.0.0-27307420.6a25d3e"
-    "@nuxt/vite-builder": "npm:@nuxt/vite-builder-edge@3.0.0-27307420.6a25d3e"
-    "@nuxt/webpack-builder": "npm:@nuxt/webpack-builder-edge@3.0.0-27307420.6a25d3e"
+    "@nuxt/kit": "npm:@nuxt/kit-edge@3.0.0-27313139.1c88580"
+    "@nuxt/nitro": "npm:@nuxt/nitro-edge@3.0.0-27313139.1c88580"
+    "@nuxt/schema": "npm:@nuxt/schema-edge@3.0.0-27313139.1c88580"
+    "@nuxt/vite-builder": "npm:@nuxt/vite-builder-edge@3.0.0-27313139.1c88580"
+    "@nuxt/webpack-builder": "npm:@nuxt/webpack-builder-edge@3.0.0-27313139.1c88580"
     "@vue/reactivity": ^3.2.23
     "@vue/shared": ^3.2.23
     "@vueuse/head": ^0.7.2
@@ -5627,7 +5627,7 @@ __metadata:
     ignore: ^5.1.9
     mlly: ^0.3.15
     murmurhash-es: ^0.1.1
-    nuxi: "npm:nuxi-edge@3.0.0-27307420.6a25d3e"
+    nuxi: "npm:nuxi-edge@3.0.0-27313139.1c88580"
     ohmyfetch: ^0.4.8
     pathe: ^0.2.0
     scule: ^0.2.1
@@ -5638,7 +5638,7 @@ __metadata:
   bin:
     nuxi: ./bin/nuxt.mjs
     nuxt: ./bin/nuxt.mjs
-  checksum: c29005e0a9e49b59738831d428b20023b1af890822c0cd669dcb4c4094fd8e3e27ea8a0c7bc1c59f31fa40c62767b1057c5f305ff1657ebc13c002e5ed154676
+  checksum: 03159573ccbbaa7f6293eeca962859702428c356872c1104782fe5a0f4dd1abe7355d3feafe371e31c505d3dea5690c7b139acf7e58c3c22fc10cce16cb22ccf
   languageName: node
   linkType: hard
 
@@ -6882,7 +6882,7 @@ __metadata:
     "@tailwindcss/aspect-ratio": ^0.3.0
     "@tailwindcss/typography": ^0.4.1
     autoprefixer: ^10.4.0
-    nuxt3: ^3.0.0-27307420.6a25d3e
+    nuxt3: ^3.0.0-27313139.1c88580
     postcss: ^8.4.4
     tailwindcss: ^2.2.19
   languageName: unknown

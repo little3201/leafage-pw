@@ -4,18 +4,16 @@
             <Head>
                 <Title>Leafage - {{ data.title }}</Title>
                 <Meta name="description" :content="data.title" />
-                <Meta name="keywords" :content="data.tags" />
+                <Meta name="keywords" :content="data.tags.toString()" />
             </Head>
         </Html>
         <div class="flex space-x-8 border-t border-gray-900 dark:border-gray-300">
-            <div class="my-6">
+            <div class="my-6 w-full">
                 <article>
                     <h2
                         class="text-xl md:text-2xl lg:text-3xl font-bold dark:text-gray-300"
                     >{{ data.title }}</h2>
-                    <div
-                        class="md:flex text-sm font-bold space-x-6 text-gray-800 dark:text-gray-300 my-4"
-                    >
+                    <div class="md:flex text-sm space-x-6 text-gray-800 dark:text-gray-300 my-4">
                         <NuxtLink
                             :title="data.category"
                             :to="{ name: 'posts', params: { category: data.category } }"
@@ -32,7 +30,7 @@
                                 viewBox="0 0 24 24"
                                 fill="none"
                                 stroke="currentColor"
-                                stroke-width="2"
+                                stroke-width="1.5"
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
                                 class="feather feather-eye mr-1"
@@ -50,7 +48,7 @@
                                 viewBox="0 0 24 24"
                                 fill="none"
                                 stroke="currentColor"
-                                stroke-width="2"
+                                stroke-width="1.5"
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
                                 class="feather feather-message-square mr-1"
@@ -69,7 +67,7 @@
                                 viewBox="0 0 24 24"
                                 fill="none"
                                 stroke="currentColor"
-                                stroke-width="2"
+                                stroke-width="1.5"
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
                                 class="feather feather-heart mr-1"
@@ -81,28 +79,7 @@
                             {{ data.likes }}
                         </div>
                     </div>
-                    <div class="inline-flex items-center space-x-2 dark:text-gray-300">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            class="feather feather-tag mr-2"
-                        >
-                            <path
-                                d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"
-                            />
-                            <line x1="7" y1="7" x2="7.01" y2="7" />
-                        </svg>
-                        <span v-for="(tag, index) in data.tags" :key="index" class="text-gray-900 bg-gray-100">
-                            {{ tag }}
-                        </span>
-                    </div>
+
                     <figure v-show="data.cover">
                         <img
                             :src="data.cover"
@@ -113,9 +90,18 @@
                         />
                     </figure>
                     <div
-                        class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl dark:text-gray-300 dark:prose-blue max-w-none"
+                        class="prose prose-sm sm:prose lg:prose-lg dark:text-gray-300 dark:prose-blue max-w-none"
                         v-html="rendered"
                     ></div>
+
+                    <div class="inline-flex items-center space-x-2 mt-4 dark:text-gray-300">
+                        <span
+                            v-for="(tag, index) in data.tags"
+                            :key="index"
+                            class="text-xs text-gray-900 bg-gray-200 rounded-md px-2 py-1"
+                        >{{ "#" + tag }}</span>
+                    </div>
+
                     <div class="bg-gray-100 dark:bg-gray-800 dark:text-gray-300 my-8 p-8 rounded">
                         <ul
                             class="grid grid-flow-row grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2 gap-4 text-xs font-bold"
@@ -172,6 +158,47 @@
                     </div>
                 </article>
                 <div>
+                    <div class="my-6">
+                        <div class="items-center -mx-2 md:flex">
+                            <div class="w-full mx-2">
+                                <label
+                                    class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
+                                >Name</label>
+
+                                <input
+                                    class="block w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:outline-none focus:ring-1 focus:ring-gray-900"
+                                    type="text"
+                                />
+                            </div>
+
+                            <div class="w-full mx-2 mt-4 md:mt-0">
+                                <label
+                                    class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
+                                >E-mail</label>
+
+                                <input
+                                    class="block w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:outline-none focus:ring-1 focus:ring-gray-900"
+                                    type="email"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="w-full mt-4">
+                            <label
+                                class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
+                            >Message</label>
+
+                            <textarea
+                                class="block w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:outline-none focus:ring-1 focus:ring-gray-900"
+                            ></textarea>
+                        </div>
+
+                        <div class="flex justify-end mt-6">
+                            <button
+                                class="px-4 py-2 text-white transition-colors duration-200 transform border-gray-300 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
+                            >Send Message</button>
+                        </div>
+                    </div>
                     <Comment v-for="data in comments" :data="data" />
                 </div>
             </div>
