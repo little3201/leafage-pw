@@ -1,8 +1,8 @@
 <template>
   <div
-    class="lg:flex justify-between lg:space-x-8 border-t border-black dark:border-white dark:text-white"
+    class="flex justify-between space-x-8 border-t border-black dark:border-white dark:text-white"
   >
-    <div class="my-6">
+    <div class="my-6 w-full">
       <h2 class="text-xl md:text-2xl lg:text-3xl font-bold">{{ data.title }}</h2>
       <div class="md:flex text-sm my-4">
         <span :title="data.category">{{ data.category }}</span>
@@ -75,7 +75,7 @@
         />
       </figure>
       <article
-        class="prose lg:prose-lg dark:text-gray-300 max-w-none dark:prose-blue"
+        class="prose lg:prose-lg xl:prose-xl dark:text-gray-300 dark:prose-blue"
         v-html="rendered"
       ></article>
 
