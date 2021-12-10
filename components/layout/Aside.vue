@@ -24,9 +24,9 @@
     </div>
 
     <div class="border border-solid border-gray-200 my-8 relative">
-      <h3
+      <legend
         class="absolute top-0 -mt-2.5 px-2 ml-6 bg-white dark:bg-black uppercase text-sm font-semibold"
-      >Categories</h3>
+      >Categories</legend>
       <ul
         class="grid grid-cols-1 divide-y divide-gray-300 p-6 text-xs font-semibold list-disc"
       >
@@ -74,9 +74,9 @@
       </form>
     </div>
     <div class="border border-solid border-gray-200 relative my-8">
-      <h3
+      <legend
         class="absolute top-0 -mt-2.5 px-2 ml-6 bg-white dark:bg-black uppercase text-sm font-semibold"
-      >Friend Chain</h3>
+      >Friend Chain</legend>
       <ul class="grid grid-cols-1 divide-y divide-gray-300 p-6 text-xs font-semibold list-decimal">
         <li class="py-3 mx-4">
           <a

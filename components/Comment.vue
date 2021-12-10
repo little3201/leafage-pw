@@ -39,7 +39,7 @@
         class="my-5 uppercase tracking-wide text-gray-400 font-bold text-xs"
       >Replies</h4>
       <div v-show="isShow" class="space-y-4">
-        <CommonComment v-for="reply in data.replies" :key="reply.code" :data="reply" />
+        <Comment v-for="reply in data.replies" :key="reply.code" :data="reply" />
       </div>
     </div>
   </div>
