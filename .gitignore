@@ -87,3 +87,5 @@ sw.*
 
 # Vim swap files
 *.swp
+
+.yarn
