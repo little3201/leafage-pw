@@ -4,12 +4,14 @@
       <div class="md:flex md:justify-between md:items-center text-gray-300">
         <div class="flex justify-center">
           <NuxtLink
-            class="text-3xl tracking-widest font-gray-900 uppercase my-6"
+            class="text-2xl tracking-widest font-gray-900 uppercase my-6"
             title="leafage"
             to="/"
           >Leafage</NuxtLink>
         </div>
-        <div class="flex text-xl justify-center md:justify-between space-x-6 mb-4 md:mb-0 uppercase font-medium">
+        <div
+          class="flex text-xl justify-center md:justify-between space-x-6 mb-4 md:mb-0 uppercase"
+        >
           <a
             title="github"
             href="https://github.com/little3201"
@@ -20,11 +22,22 @@
         </div>
       </div>
       <div class="pb-3 text-xs text-center text-gray-400">
-        <p
-          class="border-t border-gray-600 py-3"
-        >Copyright &copy; {{ new Date().getFullYear() }} leafage.top All Rights Reserved.</p>
+        <p class="border-t border-gray-600 py-3">
+          &copy; 2019 - {{ new Date().getFullYear() }} All Rights Reserved. Created by
+          <a
+            href="https://github.com/little3201"
+            rel="noopener"
+            target="_blank"
+            class="hover:underline"
+          >little3201</a>
+        </p>
         <p>
-          <a href="https://beian.miit.gov.cn" rel="noopener" target="_blank">陕ICP备19017836号</a>
+          <a
+            href="https://beian.miit.gov.cn"
+            rel="noopener"
+            target="_blank"
+            class="hover:underline"
+          >陕ICP备19017836号</a>
         </p>
       </div>
     </section>
