@@ -1,5 +1,5 @@
 <template>
-  <div class="md:flex items-center justify-center text-center lg:text-left border-t border-black">
+  <div class="md:flex items-center justify-center text-center lg:text-left border-t border-black dark:text-gray-300">
     <img alt="error" class="w-full mx-auto my-4" src="~/static/error.svg" />
     <div v-if="error.statusCode === 404">
       <div class="intro-x text-6xl font-medium">{{ error.statusCode }}</div>
