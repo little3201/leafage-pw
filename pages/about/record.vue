@@ -1,6 +1,42 @@
 <template>
     <div class="relative text-base">
         <div class="border-r border-dotted border-gray-500 absolute h-full top-4 left-1"></div>
+
+        <div>
+            <div class="flex items-center">
+                <span class="bg-gray-500 rounded-full h-2 w-2"></span>
+                <span class="ml-4 font-medium">2021-12-14</span>
+            </div>
+            <ol class="ml-12">
+                <li>修正分页无法触发查询的问题；</li>
+                <li>优化部分页面在 dark 模式下，显示样式的问题；</li>
+                <li>处理评论重载页面的问题；</li>
+            </ol>
+        </div>
+
+        <div>
+            <div class="flex items-center">
+                <span class="bg-gray-500 rounded-full h-2 w-2"></span>
+                <span class="ml-4 font-medium">2021-12-10</span>
+            </div>
+            <ol class="ml-12">
+                <li>升级 tailwindcss 3.0及插件到最新版；</li>
+                <li>更正详情页的排版样式；</li>
+                <li>添加评论、点赞；</li>
+            </ol>
+        </div>
+
+        <div>
+            <div class="flex items-center">
+                <span class="bg-gray-500 rounded-full h-2 w-2"></span>
+                <span class="ml-4 font-medium">2021-12-09</span>
+            </div>
+            <ol class="ml-12">
+                <li>重命名card.vue 为 gallery，并优化在小屏下间距的问题；</li>
+                <li>更正详情页 meta description 取值问题；</li>
+                <li>Gallery.vue 中 img 标签设置宽度和高度；</li>
+            </ol>
+        </div>
         <div>
             <div class="flex items-center">
                 <span class="bg-gray-500 rounded-full h-2 w-2"></span>
@@ -8,7 +44,7 @@
             </div>
             <ol class="ml-12">
                 <li>代码重构，移除 ts 代码（之前写的 ts 并不规范，且 nuxt.js 2.x 支持不好），改为 js 编写；</li>
-                <li>精简依赖，删除几乎不会用到的 dependencies ；</li>
+                <li>精简依赖，删除几乎不会用到的 dependencies；</li>
             </ol>
         </div>
         <div>

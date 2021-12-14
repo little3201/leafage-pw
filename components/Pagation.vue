@@ -3,7 +3,7 @@
     <button
       type="button"
       aria-label="descrease"
-      @click="$emit('changeParams', current > 0 ? current-- : 0)"
+      @click="setPage(current > 1 ? current-- : 1)"
       class="disabled:opacity-25 focus:outline-none w-8 h-8 rounded-full hover:border dark:border-gray-300 border-gray-900 inline-flex items-center justify-center"
     >
       <svg
@@ -26,16 +26,16 @@
       :key="index"
       type="button"
       aria-label="give"
-      @click="(current = index - 1), $emit('changeParams', index - 1)"
+      @click="setPage(index)"
       class="w-8 h-8 rounded-full focus:outline-none border dark:border-gray-400 border-black hover:bg-black hover:text-gray-300"
       :class="{
-        'bg-black text-white ': current == index - 1,
+        'bg-black text-white ': current == index,
       }"
     >{{ index }}</button>
     <button
       type="button"
-      aria-label="increment"
-      @click="$emit('changeParams', current < pages - 1 ? current++ : pages)"
+      aria-label="increase"
+      @click="setPage(current < pages ? current++ : pages)"
       class="disabled:opacity-25 focus:outline-none w-8 h-8 rounded-full hover:border dark:border-gray-300 border-gray-900 inline-flex items-center justify-center"
     >
       <svg
@@ -77,7 +77,7 @@ export default {
 
   data() {
     return {
-      current: 0
+      current: 1
     }
   },
 
@@ -90,6 +90,13 @@ export default {
       } else {
         return ~~(this.total / this.size);
       }
+    }
+  },
+
+  methods: {
+    setPage(p) {
+      this.current = p;
+      this.$emit('chagePage', this.current)
     }
   }
 

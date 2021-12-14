@@ -14,7 +14,7 @@
                 <div class="grid grid-cols-1 gap-y-8 sm:grid-cols-2 gap-x-6 xl:grid-cols-3 my-8">
                     <Item v-for="data in datas" :key="data.code" :data="data" />
                 </div>
-                <Pagation :page="page" :size="size" :total="total" @chageParams="chageParams" />
+                <Pagation :page="page" :size="size" :total="total" @chagePage="chageParams" />
             </div>
             <LazyAside />
         </div>
@@ -27,6 +27,18 @@ import { SERVER_URL } from "~/api/request";
 export default {
     name: "Home",
     scrollToTop: true,
+
+    async asyncData({ $axios }) {
+        let [recentDatas, datas, total] = await Promise.all([
+            $axios.$get(SERVER_URL.posts, { params: { page: 0, size: 6 } }),
+            $axios.$get(SERVER_URL.posts, {
+                params: { page: 0, size: 12, order: "likes" },
+            }),
+            $axios.$get(SERVER_URL.posts.concat("/count"))
+        ]);
+        return { recentDatas, datas, total };
+    },
+
     data() {
         return {
             datas: [],
@@ -46,29 +58,28 @@ export default {
             ],
             page: 0,
             size: 12,
-            total: 0
+            total: 0,
+            sort: "likes"
         };
     },
+
     methods: {
-        async chageParams(num, code) {
+        chageParams(num, code) {
             this.page = num ? num : 0;
+            if (code) {
+                this.sort = code
+            }
+            this.retrieve()
+        },
+        async retrieve() {
             await Promise.all([
                 this.$axios.get(SERVER_URL.posts, {
-                    params: { page: this.page, size: this.size, order: code },
+                    params: { page: this.page, size: this.size, sort: this.sort },
                 }).then(res => this.datas = res.data),
-                this.$axios.get(SERVER_URL.posts.concat("/count"))
-            ]).then(res => this.total = res.data);
+                this.$axios.get(SERVER_URL.posts.concat("/count")).then(res => this.total = res.data)
+            ]);
         }
-    },
-    async asyncData({ $axios }) {
-        let [recentDatas, datas, total] = await Promise.all([
-            $axios.$get(SERVER_URL.posts, { params: { page: 0, size: 6 } }),
-            $axios.$get(SERVER_URL.posts, {
-                params: { page: 0, size: 12, order: "likes" },
-            }),
-            $axios.$get(SERVER_URL.posts.concat("/count"))
-        ]);
-        return { recentDatas, datas, total };
     }
+
 }
 </script>

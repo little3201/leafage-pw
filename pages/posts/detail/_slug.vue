@@ -215,7 +215,7 @@
         <div class="sr-only"></div>
         <fieldset>
           <legend class="text-2xl font-medium pr-4">Comment</legend>
-          <form @submit.prevent="onSubmit" class="my-4">
+          <form @submit.prevent="onSubmit(data.code)" class="my-4">
             <div class="grid grid-rows-2 md:grid-cols-2 md:grid-rows-1 gap-4">
               <div class="w-full">
                 <label
@@ -337,7 +337,9 @@ export default {
      */
     onSubmit(code) {
       this.formData.posts = code
-      this.$axios.post(SERVER_URL.comment, this.formData)
+      this.$axios.get("/check").then(() => {
+        this.$axios.post(SERVER_URL.comment, this.formData)
+      })
     },
 
     /**
