@@ -4,7 +4,7 @@
       <figure class="h-full" :class="{ 'aspect-w-16 aspect-h-9': aspect }">
         <img
           :src="data.cover"
-          class="w-full h-full group-hover:opacity-75"
+          class="w-full h-full object-cover group-hover:opacity-75"
           :alt="data.title"
           :width="aspect ? 596 : 286"
           height="335"

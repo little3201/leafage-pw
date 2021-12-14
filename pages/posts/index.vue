@@ -6,7 +6,7 @@
     >
       <Item v-for="data in datas" :key="data.code" :data="data" />
     </div>
-    <Pagation :page="page" :size="size" :total="total" @retrieve="chageParams" />
+    <Pagation :page="page" :size="size" :total="total" @chagePage="chageParams" />
   </div>
 </template>
 
@@ -35,23 +35,27 @@ export default {
 
   data() {
     return {
+      datas: [],
       page: 0,
       size: 16,
       total: 0,
-      datas: []
+      category: undefined
     }
   },
 
   methods: {
     chageParams(num, code) {
       this.page = num ? num : 0;
-      this.retrieve(code);
+      if (code) {
+        this.category = code
+      }
+      this.retrieve();
     },
 
-    async retrieve(code) {
+    async retrieve() {
       await Promise.all([
         this.$axios.get(SERVER_URL.posts, {
-          params: { page: this.page, size: this.size, category: code },
+          params: { page: this.page, size: this.size, category: this.category },
         }).then(res => this.datas = res.data),
         this.$axios.get(SERVER_URL.posts.concat("/count")).then(res => this.total = res.data)])
     }
