@@ -3,7 +3,7 @@
     <button
       type="button"
       aria-label="descrease"
-      @click="setPage(current > 1 ? current-- : 1)"
+      @click="setPage(current > 0 ? current-- : 0)"
       class="disabled:opacity-25 focus:outline-none w-8 h-8 rounded-full hover:border dark:border-gray-300 border-gray-900 inline-flex items-center justify-center"
     >
       <svg
@@ -26,16 +26,16 @@
       :key="index"
       type="button"
       aria-label="give"
-      @click="setPage(index)"
+      @click="setPage(index - 1)"
       class="w-8 h-8 rounded-full focus:outline-none border dark:border-gray-400 border-black hover:bg-black hover:text-gray-300"
       :class="{
-        'bg-black text-white ': current == index,
+        'bg-black text-white ': current == index - 1,
       }"
     >{{ index }}</button>
     <button
       type="button"
       aria-label="increase"
-      @click="setPage(current < pages ? current++ : pages)"
+      @click="setPage(current < pages - 1 ? current++ : pages)"
       class="disabled:opacity-25 focus:outline-none w-8 h-8 rounded-full hover:border dark:border-gray-300 border-gray-900 inline-flex items-center justify-center"
     >
       <svg
@@ -77,7 +77,7 @@ export default {
 
   data() {
     return {
-      current: 1
+      current: 0
     }
   },
 
