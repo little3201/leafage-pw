@@ -211,63 +211,57 @@
           </li>
         </ul>
       </div>
-      <div class="divide-y divide-dashed">
-        <div class="sr-only"></div>
-        <fieldset>
-          <legend class="text-2xl font-medium pr-4">Comment</legend>
-          <form @submit.prevent="onSubmit(data.code)" class="my-4">
-            <div class="grid grid-rows-2 md:grid-cols-2 md:grid-rows-1 gap-4">
-              <div class="w-full">
-                <label
-                  for="nickname"
-                  class="text-sm font-medium text-gray-600 dark:text-gray-200"
-                >Name</label>
-                <input
-                  id="nickname"
-                  name="nickname"
-                  v-model="formData.nickname"
-                  class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:outline-none focus:ring-1 focus:ring-gray-400"
-                  type="text"
-                  required
-                />
-              </div>
-
-              <div class="w-full">
-                <label
-                  for="email"
-                  class="text-sm font-medium text-gray-600 dark:text-gray-200"
-                >E-mail</label>
-                <input
-                  id="email"
-                  name="email"
-                  v-model="formData.email"
-                  class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:outline-none focus:ring-1 focus:ring-gray-400"
-                  type="email"
-                />
-              </div>
-            </div>
-
-            <div class="w-full mt-4">
+      <div>
+        <legend class="text-2xl font-medium pr-4">Comment</legend>
+        <form @submit.prevent="onSubmit(data.code)" class="my-4">
+          <div class="grid grid-rows-2 md:grid-cols-2 md:grid-rows-1 gap-4">
+            <div class="w-full">
               <label
-                for="content"
+                for="nickname"
                 class="text-sm font-medium text-gray-600 dark:text-gray-200"
-              >Message</label>
-              <textarea
-                id="content"
-                name="content"
-                v-model="formData.content"
+              >Name</label>
+              <input
+                id="nickname"
+                name="nickname"
+                v-model="formData.nickname"
                 class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:outline-none focus:ring-1 focus:ring-gray-400"
-              ></textarea>
+                type="text"
+                required
+              />
             </div>
 
-            <div class="flex justify-end mt-6">
-              <button
-                type="submit"
-                class="px-4 py-2 transition-colors duration-200 transform border border-gray-300 dark:bg-gray-800 bg-gray-100 rounded-md hover:bg-gray-300 focus:outline-none"
-              >Send Message</button>
+            <div class="w-full">
+              <label for="email" class="text-sm font-medium text-gray-600 dark:text-gray-200">E-mail</label>
+              <input
+                id="email"
+                name="email"
+                v-model="formData.email"
+                class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:outline-none focus:ring-1 focus:ring-gray-400"
+                type="email"
+              />
             </div>
-          </form>
-        </fieldset>
+          </div>
+
+          <div class="w-full mt-4">
+            <label
+              for="content"
+              class="text-sm font-medium text-gray-600 dark:text-gray-200"
+            >Message</label>
+            <textarea
+              id="content"
+              name="content"
+              v-model="formData.content"
+              class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:outline-none focus:ring-1 focus:ring-gray-400"
+            ></textarea>
+          </div>
+
+          <div class="flex justify-end mt-6">
+            <button
+              type="submit"
+              class="px-4 py-2 transition-colors duration-200 transform border border-gray-300 dark:bg-gray-800 bg-gray-100 rounded-md hover:bg-gray-300 focus:outline-none"
+            >Send Message</button>
+          </div>
+        </form>
         <Comment v-for="comment in comments" :key="comment.code" :data="comment" />
       </div>
     </div>
@@ -327,7 +321,8 @@ export default {
 
   data() {
     return {
-      formData: {}
+      formData: {},
+      comments: []
     }
   },
 
@@ -338,7 +333,9 @@ export default {
     onSubmit(code) {
       this.formData.posts = code
       this.$axios.get("/check").then(() => {
-        this.$axios.post(SERVER_URL.comment, this.formData)
+        this.$axios.post(SERVER_URL.comment, this.formData).then(() => {
+          this.$axios.get(SERVER_URL.comment.concat("/", code)).then(res => this.comments = res.data)
+        })
       })
     },
 
