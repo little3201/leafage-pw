@@ -214,8 +214,8 @@
       <div class="divide-y divide-dashed">
         <div class="sr-only"></div>
         <fieldset>
-          <legend class="text-2xl font-medium text-gray-900 pr-4">Comment</legend>
-          <form class="my-4">
+          <legend class="text-2xl font-medium pr-4">Comment</legend>
+          <form @submit.prevent="onSubmit" class="my-4">
             <div class="grid grid-rows-2 md:grid-cols-2 md:grid-rows-1 gap-4">
               <div class="w-full">
                 <label
@@ -228,6 +228,7 @@
                   v-model="formData.nickname"
                   class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:outline-none focus:ring-1 focus:ring-gray-400"
                   type="text"
+                  required
                 />
               </div>
 
@@ -261,8 +262,8 @@
 
             <div class="flex justify-end mt-6">
               <button
-                @click="onsubmit"
-                class="px-4 py-2 transition-colors duration-200 transform border border-gray-300 dark:bg-gray-600 bg-gray-100 rounded-md hover:bg-gray-300 focus:outline-none"
+                type="submit"
+                class="px-4 py-2 transition-colors duration-200 transform border border-gray-300 dark:bg-gray-800 bg-gray-100 rounded-md hover:bg-gray-300 focus:outline-none"
               >Send Message</button>
             </div>
           </form>
@@ -334,7 +335,8 @@ export default {
     /**
      * 评论提交
      */
-    onsubmit() {
+    onSubmit(code) {
+      this.formData.posts = code
       this.$axios.post(SERVER_URL.comment, this.formData)
     },
 

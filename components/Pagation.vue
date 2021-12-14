@@ -1,10 +1,10 @@
 <template>
-  <div class="flex justify-center items-center space-x-6 mb-4">
+  <div class="flex justify-center items-center space-x-6 mb-4 dark:text-gray-300">
     <button
       type="button"
       aria-label="descrease"
       @click="$emit('changeParams', current > 0 ? current-- : 0)"
-      class="disabled:opacity-25 focus:outline-none w-8 h-8 rounded-full hover:border border-gray-900 inline-flex items-center justify-center"
+      class="disabled:opacity-25 focus:outline-none w-8 h-8 rounded-full hover:border dark:border-gray-300 border-gray-900 inline-flex items-center justify-center"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +27,7 @@
       type="button"
       aria-label="give"
       @click="(current = index - 1), $emit('changeParams', index - 1)"
-      class="w-8 h-8 rounded-full focus:outline-none border border-black hover:bg-black hover:text-white"
+      class="w-8 h-8 rounded-full focus:outline-none border dark:border-gray-400 border-black hover:bg-black hover:text-gray-300"
       :class="{
         'bg-black text-white ': current == index - 1,
       }"
@@ -36,7 +36,7 @@
       type="button"
       aria-label="increment"
       @click="$emit('changeParams', current < pages - 1 ? current++ : pages)"
-      class="disabled:opacity-25 focus:outline-none w-8 h-8 rounded-full hover:border border-gray-900 inline-flex items-center justify-center"
+      class="disabled:opacity-25 focus:outline-none w-8 h-8 rounded-full hover:border dark:border-gray-300 border-gray-900 inline-flex items-center justify-center"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +82,7 @@ export default {
   },
 
   computed: {
-    pages () {
+    pages() {
       if (this.total <= 1) {
         return 1;
       } else if (this.total % this.size > 0) {
