@@ -6,7 +6,7 @@
       <article>
         <h2 class="text-xl md:text-2xl lg:text-3xl font-bold">{{ data.title }}</h2>
         <div class="md:flex text-sm my-4">
-          <span :title="data.category">{{ data.category }}</span>
+          <strong>{{ data.category }}</strong>
           <span class="tracking-wider mx-6">{{ new Date(data.modifyTime).toLocaleDateString() }}</span>
           <div class="my-4 md:my-0 md:flex space-x-6">
             <div class="inline-flex items-center">
@@ -76,10 +76,9 @@
           />
         </figure>
         <div
-          class="prose prose-sm sm:prose-base lg:prose-lg xl:prose-xl mx-auto dark:text-gray-300 dark:prose-blue"
+          class="prose prose-sm sm:prose-base lg:prose-lg xl:prose-xl mx-auto dark:text-gray-300 dark:prose-invert"
           v-html="rendered"
         ></div>
-
         <div class="md:inline-flex items-center mt-8">
           <span
             v-for="(tag, index) in data.tags"
@@ -88,7 +87,8 @@
           >{{ "#" + tag }}</span>
         </div>
       </article>
-      <div class="flex items-center justify-center space-x-8 my-6">
+
+      <section class="flex items-center justify-center space-x-8 my-6">
         <button
           type="button"
           class="rounded-full p-2 border text-gray-400 hover:text-gray-600 hover:border-gray-600"
@@ -156,12 +156,13 @@
             <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
           </svg>
         </button>
-      </div>
-      <div class="bg-gray-100 dark:bg-gray-600 dark:text-gray-300 my-8 p-6">
-        <ul
+      </section>
+
+      <section class="bg-gray-100 dark:bg-gray-600 dark:text-gray-300 my-8 p-6">
+        <div
           class="grid grid-flow-row grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2 gap-4 text-sm font-bold"
         >
-          <li>
+          <div>
             <NuxtLink
               :title="previous.code"
               :to="'/posts/detail/' + previous.code"
@@ -184,8 +185,8 @@
               </svg>
               {{ previous.title }}
             </NuxtLink>
-          </li>
-          <li class="flex items-center justify-end">
+          </div>
+          <div class="flex items-center justify-end">
             <NuxtLink
               :title="next.code"
               :to="'/posts/detail/' + next.code"
@@ -208,9 +209,9 @@
                 <polyline points="9 18 15 12 9 6" />
               </svg>
             </NuxtLink>
-          </li>
-        </ul>
-      </div>
+          </div>
+        </div>
+      </section>
       <div>
         <legend class="text-2xl font-medium pr-4">Comment</legend>
         <form @submit.prevent="onSubmit(data.code)" class="my-4">
