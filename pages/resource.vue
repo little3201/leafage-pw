@@ -13,7 +13,7 @@
         <div class="w-full aspect-w-4 aspect-h-5 bg-gray-300 overflow-hidden border">
           <img
             :src="data.cover"
-            alt="images"
+            :alt="data.title"
             class="w-full h-full object-center filter grayscale group-hover:opacity-75"
             height="100%"
             width="100%"
