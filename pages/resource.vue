@@ -4,19 +4,14 @@
     <div
       class="grid grid-cols-1 gap-y-8 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 my-8"
     >
-      <NuxtLink
-        v-for="data in datas"
-        :key="data.code"
-        :to="'/posts/detail/' + data.code"
-        class="group"
-      >
+      <NuxtLink v-for="data in datas" :key="data.code" to="/resource" class="group">
         <div class="w-full aspect-w-4 aspect-h-5 bg-gray-300 overflow-hidden border">
           <img
             :src="data.cover"
             :alt="data.title"
             class="w-full h-full object-center filter grayscale group-hover:opacity-75"
-            height="100%"
-            width="100%"
+            height="350"
+            width="278"
           />
         </div>
         <p
