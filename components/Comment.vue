@@ -1,6 +1,6 @@
 <template>
   <div class="flex my-4">
-    <div class="flex-shrink-0 mr-3">
+    <div class="shrink-0 mr-3">
       <img
         class="mt-2 rounded-full w-8 h-8 sm:w-10 sm:h-10"
         :src="data.avatar"

@@ -6,12 +6,12 @@
     "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
-    "@tailwindcss/aspect-ratio": "^0.3.0",
-    "@tailwindcss/typography": "^0.4.1",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
+    "@tailwindcss/typography": "^0.5.0",
     "autoprefixer": "^10.4.0",
-    "nuxt3": "^3.0.0-27313139.1c88580",
-    "postcss": "^8.4.4",
-    "tailwindcss": "^2.2.19"
+    "nuxt3": "^3.0.0-27335375.b41a1d2",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.7"
   },
   "packageManager": "yarn@3.1.1"
 }
