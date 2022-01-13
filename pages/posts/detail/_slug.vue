@@ -5,7 +5,7 @@
     <div class="my-6 w-full">
       <article>
         <h2 class="text-xl md:text-2xl lg:text-3xl font-bold">{{ data.title }}</h2>
-        <div class="md:flex text-sm my-4">
+        <div class="md:flex items-center text-sm my-4">
           <strong>{{ data.category }}</strong>
           <span class="tracking-wider mx-6">{{ new Date(data.modifyTime).toLocaleDateString() }}</span>
           <div class="my-4 md:my-0 md:flex space-x-6">
