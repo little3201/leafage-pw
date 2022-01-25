@@ -9,7 +9,7 @@
           <img
             :src="data.cover"
             :alt="data.title"
-            class="w-full h-full object-center filter grayscale group-hover:opacity-75"
+            class="w-full h-full object-center grayscale group-hover:opacity-75"
             height="350"
             width="278"
           />
