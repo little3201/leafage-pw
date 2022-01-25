@@ -286,7 +286,7 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: this.data.content.substr(0, 150).replaceAll("#", ""),
+          content: this.data.title + "," + this.data.tags,
         },
         {
           hid: "keywords",
