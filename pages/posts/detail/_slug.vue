@@ -313,6 +313,7 @@ export default {
       $axios.$get(SERVER_URL.posts.concat("/", params.slug, "/next")),
       // comments
       $axios.$get(SERVER_URL.comment.concat("/", params.slug)),
+      $axios.get("/check")
     ])
 
     let rendered = markdown.render(data.content);
