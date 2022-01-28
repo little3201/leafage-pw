@@ -1,6 +1,17 @@
 <template>
     <div class="relative text-base">
         <div class="border-r border-dotted border-gray-500 absolute h-full top-4 left-1"></div>
+        
+        <section>
+            <div class="flex items-center">
+                <span class="bg-gray-500 rounded-full h-2 w-2"></span>
+                <span class="ml-4 font-medium">2022-01-28</span>
+            </div>
+            <ol class="ml-12">
+                <li>替换 markdown-it 为 marked；</li>
+                <li>修改 markdown 中连接的解析，更新为新窗口打开；</li>
+            </ol>
+        </section>
 
         <section>
             <div class="flex items-center">
@@ -9,7 +20,7 @@
             </div>
             <ol class="ml-12">
                 <li>修正 meta description 取数据的逻辑；</li>
-                <li>升级依赖到最新版本；；</li>
+                <li>升级依赖到最新版本；</li>
             </ol>
         </section>
 
