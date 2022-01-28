@@ -1,3 +1,3 @@
 User-agent: *
 Disallow: 
-Sitemap: http://www.leafage.top/sitemap.xml
+Sitemap: https://www.leafage.top/sitemap.xml
