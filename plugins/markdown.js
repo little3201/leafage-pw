@@ -39,7 +39,7 @@ rendererMD.link = function (href, title, text) {
 marked.setOptions({
   renderer: rendererMD,
   highlight: function(code, lang) {
-    const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+    const language = hljs.getLanguage(lang) ? lang : 'sh';
     return hljs.highlight(code, { language }).value;
   },
   pedantic: false,
