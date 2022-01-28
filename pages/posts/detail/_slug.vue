@@ -272,7 +272,7 @@
 
 <script>
 import { SERVER_URL } from "~/api/request";
-import markdown from "~/plugins/markdown";
+import marked from "~/plugins/markdown";
 
 export default {
   name: "Slug",
@@ -315,7 +315,7 @@ export default {
       $axios.$get(SERVER_URL.comment.concat("/", params.slug))
     ])
 
-    let rendered = markdown.render(data.content);
+    let rendered = marked.parse(data.content);
 
     return { data, previous, next, comments, rendered }
   },
