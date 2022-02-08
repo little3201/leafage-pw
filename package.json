@@ -1,17 +1,25 @@
 {
+  "name": "leafage-next",
   "private": true,
   "scripts": {
-    "dev": "nuxt dev",
-    "build": "nuxt build",
-    "start": "node .output/server/index.mjs"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "12.0.10",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "@tailwindcss/aspect-ratio": "^0.4.0",
-    "@tailwindcss/typography": "^0.5.0",
-    "autoprefixer": "^10.4.0",
-    "nuxt3": "^3.0.0-27335375.b41a1d2",
-    "postcss": "^8.4.5",
-    "tailwindcss": "^3.0.7"
-  },
-  "packageManager": "yarn@3.1.1"
+    "@types/node": "17.0.16",
+    "@types/react": "17.0.39",
+    "autoprefixer": "^10.4.2",
+    "eslint": "8.8.0",
+    "eslint-config-next": "12.0.10",
+    "postcss": "^8.4.6",
+    "tailwindcss": "^3.0.19",
+    "typescript": "4.5.5"
+  }
 }

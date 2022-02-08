@@ -1,66 +1,34 @@
-<p align="center">
-  <a href="https://www.leafage.top" title="logo" target="_blank">
-    <img alt="Leafage Logo" width="200" src="public/logo.svg">
-  </a>
-</p>
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-<p align="center">
-  <a href="https://github.com/little3201/leafage-pw/blob/master/LICENSE" title="github license">
-    <img src="https://img.shields.io/github/license/little3201/leafage-pw.svg" alt="License">
-  </a>
-  <img src="https://sonarcloud.io/api/project_badges/measure?project=little3201_leafage-pw&metric=alert_status" alt="Quality Gate Status">
-</p>
+## Getting Started
 
-## 项目介绍
-
-leafage-pw，一个使用 Nuxt.js、 Tailwindcss 的博客网站，不太喜欢 wordpress，gihub pages 等一些开源工具，所以自己动手做一个博客。
-
-项目中的接口可以直接替换为自己的服务接口，后端服务[leafage-basic](https://github.com/little3201/leafage-basic) ，希望大家使用本项目的同时也能一起学习，分享。
-
-项目开发秉持整洁、高质量、规范的代码，尽可能的减少代码来实现功能；
-
-
-**访问地址：**<a href="https://www.leafage.top">博客站点</a>&nbsp;&nbsp;<a href="https://console.leafage.top">后台管理系统</a>
-
-项目创建与 2019-05-23 历经好几次改版（查看[关于](https://www.leafage.top/about)了解更多），虽然过程很折腾，但是也明白和体会了很多，对于一些技术点理接更深了，近期更新请查看[更新日志](CHANGELOG.md) 。
-
-### 工具、依赖：
-
-- [x] nuxt —— 开发框架；
-- [x] axios —— 接口数据请求；
-- [x] tailwindcss —— 页面样式；
-- [x] @tailwindcss/typography —— 排版优化；
-- [x] @tailwindcss/aspect-ratio —— 图片比例；
-- [x] markdown-it —— markdown解析；
-- [x] hightlight.js —— 代码高亮，使用 ir-black；
-
-
-# Nuxt 3 Minimal Starter
-
-We recommend to look at the [documentation](https://v3.nuxtjs.org).
-
-## Setup
-
-Make sure to install the dependencies
+First, run the development server:
 
 ```bash
-yarn install
-```
-
-## Development
-
-Start the development server on http://localhost:3000
-
-```bash
+npm run dev
+# or
 yarn dev
 ```
 
-## Production
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Build the application for production:
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-```bash
-yarn build
-```
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment).
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
