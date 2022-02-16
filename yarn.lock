@@ -7665,6 +7665,7 @@ __metadata:
     nuxt3: ^3.0.0-27415326.3c563fa
     postcss: ^8.4.6
     tailwindcss: ^3.0.22
+    vue-gtag-next: ^1.14.0
   languageName: unknown
   linkType: soft
 
@@ -8762,6 +8763,15 @@ __metadata:
   dependencies:
     bundle-runner: ^0.0.1
   checksum: 7c6814890b25d480994476b751776af852f87ae320b175b76a1913ba510caf09ff0d938c5468bccebc31a9288fb55d66bf31d044454a098a8c638a73c3580c7a
+  languageName: node
+  linkType: hard
+
+"vue-gtag-next@npm:^1.14.0":
+  version: 1.14.0
+  resolution: "vue-gtag-next@npm:1.14.0"
+  peerDependencies:
+    vue: ^3.0.0-rc.11
+  checksum: ddf7db65c9942c528f1ab2351f0b54e442250bb75b4878ca37285bda89331992a9312ee2681c444cb30057216eb06bc57611ca990b3b43e8205f301f17dc500e
   languageName: node
   linkType: hard
 

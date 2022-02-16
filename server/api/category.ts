@@ -1,7 +1,8 @@
+
 // url prefix
 const URL_PREFIX = "/assets/category"
 
-export default () => {
+export default async () => {
     return [
         {
             "code": "20C3ID6W",
