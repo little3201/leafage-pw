@@ -34,12 +34,6 @@
     </div>
 </template>
 
-<script lang="ts">
-export default {
-    layout: "default"
-};
-</script>
-
 <script lang="ts" setup>
 import Tab from '../components/Tab.vue';
 import Gallery from '../components/Gallery.vue';
