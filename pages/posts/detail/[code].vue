@@ -80,15 +80,6 @@
                         </div>
                     </div>
 
-                    <figure v-show="data.cover">
-                        <img
-                            :src="data.cover"
-                            :alt="data.title"
-                            class="w-full h-full my-8"
-                            width="100%"
-                            height="100%"
-                        />
-                    </figure>
                     <div
                         class="prose prose-sm sm:prose lg:prose-lg dark:text-gray-300 dark:prose-blue max-w-none"
                         v-html="rendered"
@@ -197,10 +188,10 @@
                             >Send Message</button>
                         </div>
                     </form>
-                    <Comment v-for="data in comments" :data="data" />
+                    <LazyComment v-for="data in comments" :data="data" />
                 </div>
             </div>
-            <LayoutAside class="hidden lg:block my-8" />
+            <LazyLayoutAside class="hidden lg:block my-8" />
         </div>
     </div>
 </template>
@@ -232,5 +223,4 @@ const [{ data: previous }, { data: next }, { data: comments }] = await Promise.a
     useFetch('/api/posts/next'),
     useFetch('/api/comment')
 ])
-// const { data } = await useAsyncData('fetch', () => $fetch(`/api/posts/${params.code}`))
 </script>

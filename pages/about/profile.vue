@@ -14,9 +14,3 @@
         <p>也还相信着很多很多。</p>
     </div>
 </template>
-
-<script lang="ts">
-export default {
-  layout: "default",
-};
-</script>

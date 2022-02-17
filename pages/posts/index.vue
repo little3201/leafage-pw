@@ -12,15 +12,9 @@
         >
             <Item v-for="data in datas" :data="data" />
         </div>
-        <Pagation class="my-8" :page="page" :size="size" :total="total" @retrieve="chageParams" />
+        <LazyPagation class="my-8" :page="page" :size="size" :total="total" @retrieve="chageParams" />
     </div>
 </template>
-
-<script lang="ts">
-export default {
-    layout: "default"
-};
-</script>
 
 <script lang="ts" setup>
 const route = useRoute();

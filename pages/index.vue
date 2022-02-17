@@ -27,9 +27,9 @@
                 <div class="grid grid-cols-1 gap-y-8 sm:grid-cols-2 gap-x-6 xl:grid-cols-3 my-8">
                     <Item v-for="data in datas" :data="data" />
                 </div>
-                <Pagation :page="page" :size="size" :total="total" @retrieve="chageParams" />
+                <LazyPagation :page="page" :size="size" :total="total" @retrieve="chageParams" />
             </div>
-            <LayoutAside class="hidden lg:block" />
+            <LazyLayoutAside class="hidden lg:block" />
         </div>
     </div>
 </template>

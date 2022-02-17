@@ -16,22 +16,43 @@
       <span class="text-xs text-gray-400">{{ new Date(data.modifyTime).toLocaleTimeString() }}</span>
       <p class="text-sm">{{ data.content }}</p>
 
-      <div v-if="data.replies.length > 0" class="mt-4 flex items-center">
-        <div class="flex -space-x-2 mr-2">
-          <img
-            v-for="reply in data.replies"
-            class="rounded-full w-6 h-6 border border-gray-300"
-            :src="reply.avatar"
-            :alt="reply.nickname"
-          />
-        </div>
+      <div class="flex items-center justify-between mt-2">
         <div class="text-sm text-gray-500 font-semibold">
-          {{ data.replies.length }} Replies
-          <button
-            type="button"
-            class="ml-4 focus:outline-none"
-            @click="isShow = !isShow"
-          >{{ isShow ? '收起评论' : '查看评论' }}</button>
+          <button type="button" class="inline-flex items-center focus:outline-none">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-message-square mr-1"
+            >
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+            <span>回复</span>
+          </button>
+        </div>
+        <div v-if="data.replies.length > 0" class="inline-flex items-center">
+          <div class="flex -space-x-2 mr-2">
+            <img
+              v-for="reply in data.replies"
+              class="rounded-full w-6 h-6 border border-gray-300"
+              :src="reply.avatar"
+              :alt="reply.nickname"
+            />
+          </div>
+          <div class="text-sm text-gray-500 font-semibold">
+            {{ data.replies.length }} Replies
+            <button
+              type="button"
+              class="ml-4 focus:outline-none"
+              @click="isShow = !isShow"
+            >{{ isShow ? '收起评论' : '查看评论' }}</button>
+          </div>
         </div>
       </div>
       <h4

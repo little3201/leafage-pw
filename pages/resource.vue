@@ -66,15 +66,9 @@
                 </div>
             </NuxtLink>
         </div>
-        <Pagation class="my-8" :page="page" :size="size" :total="total" @retrieve="chageParams" />
+        <LazyPagation class="my-8" :page="page" :size="size" :total="total" @retrieve="chageParams" />
     </div>
 </template>
-
-<script lang="ts">
-export default {
-    layout: "default"
-};
-</script>
 
 <script lang="ts" setup>
 const page = ref(0);

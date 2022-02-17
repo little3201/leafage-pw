@@ -1,8 +1,8 @@
-
+import type { IncomingMessage, ServerResponse } from 'http'
 // url prefix
 const URL_PREFIX = "/assets/category"
 
-export default async () => {
+export default async (req: IncomingMessage, res: ServerResponse) => {
     return [
         {
             "code": "20C3ID6W",
