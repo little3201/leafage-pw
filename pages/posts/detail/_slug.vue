@@ -268,7 +268,7 @@
     </div>
 
     <LazyPreview :isShow="view.isShow" @closeAction="previewOperation">
-      <img :src="view.url" class="rounded-md w-full h-full" width="640" height="427" />
+      <img :src="view.url" class="w-full h-full" width="640" height="427" />
     </LazyPreview>
   </div>
 </template>
