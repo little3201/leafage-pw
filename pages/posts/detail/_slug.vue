@@ -340,9 +340,10 @@ export default {
       this.$axios.get("/check").then(() => {
         this.$axios.post(SERVER_URL.comment, this.formData).then(() => {
           this.$axios.get(SERVER_URL.comment.concat("/", code)).then(res => this.comments = res.data);
+
+          this.formData = {};
         });
       });
-      this.formData = {};
     },
     /**
      * 点赞

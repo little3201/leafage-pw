@@ -13,7 +13,9 @@
       class="flex-1 border rounded px-4 py-2 sm:px-6 sm:py-4 leading-relaxed dark:text-gray-400 dark:border-gray-400"
     >
       <strong class="mr-4">{{ data.nickname }}</strong>
-      <span class="text-xs text-gray-400">{{ new Date(data.modifyTime).toLocaleTimeString() }}</span>
+      <span
+        class="text-xs text-gray-400"
+      >{{ new Date(data.modifyTime).toLocaleString('zh', { hour12: false }) }}</span>
       <p class="text-sm">{{ data.content }}</p>
 
       <div v-if="data.replies" class="mt-4 flex items-center">
