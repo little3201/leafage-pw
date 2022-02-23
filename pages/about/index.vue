@@ -13,12 +13,11 @@
         </p>
         <ol>
             <span class="font-semibold text-lg">本站使用到的一些技术、工具主要有：</span>
-            <li>nuxt3 —— 开发框架；</li>
+            <li>nuxt —— 服务端渲染（nuxt.js、nuxt3）；</li>
             <li>axios —— 接口数据请求；</li>
-            <li>tailwindcss —— 页面样式；</li>
-            <li>@tailwindcss/typography —— 排版优化；</li>
-            <li>@tailwindcss/aspect-ratio —— 图片比例；</li>
-            <li>markdown-it —— markdown解析；</li>
+            <li>feather icon —— svg 图标；</li>
+            <li>tailwindcss(plugins: typography、aspect-ratio) —— css样式（插件：排版、图片比例）；</li>
+            <li>marked.js —— markdown解析；</li>
             <li>hightlight.js —— 代码高亮，使用 ir-black；</li>
         </ol>
         <p class="font-semibold">

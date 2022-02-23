@@ -14,7 +14,7 @@
                 <div class="grid grid-cols-1 gap-y-8 sm:grid-cols-2 gap-x-6 xl:grid-cols-3 my-8">
                     <Item v-for="data in datas" :key="data.code" :data="data" />
                 </div>
-                <Pagation :page="page" :size="size" :total="total" @chagePage="chageParams" />
+                <LazyPagation :page="page" :size="size" :total="total" @chagePage="chageParams" />
             </div>
             <LazyAside />
         </div>
