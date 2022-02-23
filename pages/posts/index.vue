@@ -6,7 +6,7 @@
     >
       <Item v-for="data in datas" :key="data.code" :data="data" />
     </div>
-    <Pagation :page="page" :size="size" :total="total" @chagePage="chageParams" />
+    <LazyPagation :page="page" :size="size" :total="total" @chagePage="chageParams" />
   </div>
 </template>
 

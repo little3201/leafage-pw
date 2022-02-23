@@ -5,6 +5,7 @@
         :src="data.cover + '?imageMogr2/thumbnail/272x182/format/webp/interlace/1/blur/1x0/quality/100'"
         :alt="data.title"
         class="w-full h-full object-center object-cover group-hover:opacity-75"
+        loading="lazy"
         height="272"
         width="182"
       />

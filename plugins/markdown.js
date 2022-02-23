@@ -31,15 +31,8 @@ hljs.registerLanguage('sql', sql);
 hljs.registerLanguage('sh', shell)
 hljs.registerLanguage('xml', xml);
 
-let rendererMD = new marked.Renderer()
-
-//重写a标签，在新标签打开
-rendererMD.link = function (href, title, text) {
-  return '<a href="' + href + '" title="' + title + '" target="_blank">' + text + '</a>';
-}
-
 marked.setOptions({
-  renderer: rendererMD,
+  renderer: new marked.Renderer(),
   highlight: function(code, lang) {
     const language = hljs.getLanguage(lang) ? lang : 'plaintext';
     return hljs.highlight(code, { language }).value;
