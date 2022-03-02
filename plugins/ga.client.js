@@ -1,13 +1,12 @@
-export default ({ app }, inject) => {
+/*
+ ** 只在生产模式的客户端中使用
+ */
+if (process.client && process.env.NODE_ENV === 'production') {
     /*
-     ** Only run on client-side and only in production mode
+     ** Google 统计分析脚本
      */
-    if (process.env.NODE_ENV !== 'production')
-        return; /*
-       ** Include Google Analytics Script
-       */
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r
+    ; (function (i, s, o, g, r, a, m) {
+        i.GoogleAnalyticsObject = r
             ; (i[r] =
                 i[r] ||
                 function () {
@@ -26,16 +25,18 @@ export default ({ app }, inject) => {
         'ga'
     )
     /*
-     ** Set the current page
+     ** 当前页的访问统计
      */
     ga('create', 'UA-174206461-1', 'auto')
-    inject('ga', ga)
+}
+
+export default ({ app: { router }, store }) => {
     /*
-     ** Every time the route changes (fired on initialization too)
+     ** 每次路由变更时进行pv统计
      */
-    app.router.afterEach((to, from) => {
+    router.afterEach((to, from) => {
         /*
-         ** We tell Google Analytic to add a page view
+         ** 告诉 GA 增加一个 PV
          */
         ga('set', 'page', to.fullPath)
         ga('send', 'pageview')
