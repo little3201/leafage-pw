@@ -80,6 +80,16 @@
                         </div>
                     </div>
 
+                    <figure v-show="data.cover">
+                        <img
+                            :src="data.cover"
+                            :alt="data.title"
+                            class="w-full h-full my-8"
+                            width="100%"
+                            height="100%"
+                        />
+                    </figure>
+
                     <div
                         class="prose prose-sm sm:prose lg:prose-lg dark:text-gray-300 dark:prose-blue max-w-none"
                         v-html="rendered"
