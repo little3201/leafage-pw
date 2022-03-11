@@ -3,7 +3,7 @@
     <button
       type="button"
       aria-label="descrease"
-      @click="setPage(current > 0 ? current-- : 0)"
+      @click="setPage(current > 0 ? current - 1 : 0)"
       class="disabled:opacity-25 focus:outline-none w-8 h-8 rounded-full hover:border dark:border-gray-300 border-gray-900 inline-flex items-center justify-center"
     >
       <svg
@@ -35,7 +35,7 @@
     <button
       type="button"
       aria-label="increase"
-      @click="setPage(current < pages - 1 ? current++ : pages - 1)"
+      @click="setPage(current < pages - 1 ? current + 1 : pages - 1)"
       class="disabled:opacity-25 focus:outline-none w-8 h-8 rounded-full hover:border dark:border-gray-300 border-gray-900 inline-flex items-center justify-center"
     >
       <svg
@@ -94,8 +94,8 @@ export default {
   },
 
   methods: {
-    setPage(page) {
-      this.current = page
+    setPage(cur) {
+      this.current = cur
       this.$emit('chagePage', this.current)
     }
   }
