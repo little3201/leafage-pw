@@ -27,7 +27,12 @@
                 <div class="grid grid-cols-1 gap-y-8 sm:grid-cols-2 gap-x-6 xl:grid-cols-3 my-8">
                     <Item v-for="data in datas" :data="data" />
                 </div>
-                <LazyPagation :page="page" :size="size" :total="total" @retrieve="chageParams" />
+                <LazyPagation
+                    :page="pagation.page"
+                    :size="pagation.size"
+                    :total="pagation.total"
+                    @retrieve="chageParams"
+                />
             </div>
             <LazyLayoutAside class="hidden lg:block" />
         </div>
@@ -35,12 +40,13 @@
 </template>
 
 <script lang="ts" setup>
-import Tab from '../components/Tab.vue';
-import Gallery from '../components/Gallery.vue';
-
-const page = ref(0);
-const size = ref(10);
-const total = ref(0);
+const pagation = reactive(
+    {
+        page: 0,
+        size: 0,
+        total: 0
+    }
+)
 
 const order = ref("");
 const tabs = ref([
@@ -59,10 +65,10 @@ const tabs = ref([
 ])
 
 const chageParams = async (num: number, category: string) => {
-    page.value = num ? num : 0;
+    pagation.page = num ? num : 0;
     order.value = category;
     refresh()
 };
 
-const { data: datas, refresh } = await useAsyncData('index-retrieve', () => $fetch('/api/posts'))
+const { data: datas, refresh } = await useAsyncData('home', () => $fetch(`https://www.leafage.top/api/posts?page=${pagation.page}&size=${pagation.size}`))
 </script>

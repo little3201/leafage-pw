@@ -5,20 +5,24 @@
         class="mt-2 rounded-full w-8 h-8 sm:w-10 sm:h-10"
         :src="data.avatar"
         :alt="data.nickname"
-        height="2rem"
-        width="2rem"
+        height="32"
+        width="32"
       />
     </div>
     <div
       class="flex-1 border rounded px-4 py-2 sm:px-6 sm:py-4 leading-relaxed dark:text-gray-400 dark:border-gray-400"
     >
       <strong class="mr-4">{{ data.nickname }}</strong>
-      <span class="text-xs text-gray-400">{{ new Date(data.modifyTime).toLocaleTimeString() }}</span>
+      <span class="text-xs text-gray-400">{{ new Date(data.modifyTime).toLocaleString() }}</span>
       <p class="text-sm">{{ data.content }}</p>
 
       <div class="flex items-center justify-between mt-2">
         <div class="text-sm text-gray-500 font-semibold">
-          <button type="button" class="inline-flex items-center focus:outline-none">
+          <button
+            type="button"
+            @click="reply(data.code)"
+            class="inline-flex items-center focus:outline-none"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -36,7 +40,7 @@
             <span>回复</span>
           </button>
         </div>
-        <div v-if="data.replies.length > 0" class="inline-flex items-center">
+        <div v-if="data.count > 0" class="inline-flex items-center">
           <div class="flex -space-x-2 mr-2">
             <img
               v-for="reply in data.replies"
@@ -50,17 +54,16 @@
             <button
               type="button"
               class="ml-4 focus:outline-none"
-              @click="isShow = !isShow"
+              @click="operation(isShow = !isShow, data.code)"
             >{{ isShow ? '收起评论' : '查看评论' }}</button>
           </div>
         </div>
       </div>
-      <h4
-        v-show="isShow"
-        class="my-5 uppercase tracking-wide text-gray-400 font-bold text-xs"
-      >Replies</h4>
-      <div v-show="isShow" class="space-y-4">
-        <Comment v-for="reply in data.replies" :data="reply" />
+      <div v-show="isShow">
+        <span class="my-5 uppercase tracking-wide text-gray-400 font-bold text-xs">Replies</span>
+        <div v-if="data.count > 0" class="space-y-4">
+          <Comment v-for="reply in data.replies" :data="reply" />
+        </div>
       </div>
     </div>
   </div>
@@ -75,4 +78,15 @@ defineProps({
 })
 
 const isShow = ref(false)
+
+const operation = (show: boolean, code: string) => {
+  isShow.value = show
+  if (show) {
+    // 查询关联回复
+  }
+}
+
+const reply = (code: string) => {
+
+}
 </script>

@@ -4,7 +4,7 @@
             title="descrease"
             type="button"
             aria-label="descrease"
-            @click="$emit('retrieve', curPage > 0 ? curPage-- : 0)"
+            @click="$emit('retrieve', curPage > 0 ? curPage - 1 : 0)"
             class="disabled:opacity-25 focus:outline-none w-8 h-8 rounded-full hover:border border-gray-900 dark:border-gray-300 inline-flex items-center justify-center"
         >
             <svg
@@ -36,7 +36,7 @@
             title="increment"
             type="button"
             aria-label="increment"
-            @click="$emit('retrieve', curPage < pages - 1 ? curPage++ : pages)"
+            @click="$emit('retrieve', curPage < pages - 1 ? curPage + 1 : pages - 1)"
             class="disabled:opacity-25 focus:outline-none w-8 h-8 rounded-full hover:border border-gray-900 dark:border-gray-300 inline-flex items-center justify-center"
         >
             <svg

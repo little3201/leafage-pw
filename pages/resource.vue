@@ -66,24 +66,34 @@
                 </div>
             </NuxtLink>
         </div>
-        <LazyPagation class="my-8" :page="page" :size="size" :total="total" @retrieve="chageParams" />
+        <LazyPagation
+            class="my-8"
+            :page="pagation.page"
+            :size="pagation.size"
+            :total="pagation.total"
+            @retrieve="chageParams"
+        />
     </div>
 </template>
 
 <script lang="ts" setup>
-const page = ref(0);
-const size = ref(10);
-const total = ref(0);
+const pagation = reactive(
+    {
+        page: 0,
+        size: 0,
+        total: 0
+    }
+)
 
 const category = ref("");
 
 const chageParams = async (num: number, code: string) => {
-    page.value = num ? num : 0;
+    pagation.page = num ? num : 0;
     category.value = code;
     refresh()
 };
 
-const { data: categories } = await useAsyncData('resource-retrieve', () => $fetch('/api/category'))
+const { data: categories } = await useAsyncData('resources', () => $fetch(`https://www.leafage.top/api/category`))
 
-const { data: datas, refresh } = await useFetch('/api/resource')
+const { data: datas, refresh } = await useFetch(`https://www.leafage.top/api/resource?page=${pagation.page}&size=${pagation.size}`)
 </script>

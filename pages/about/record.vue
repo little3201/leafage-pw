@@ -5,7 +5,7 @@
             <div>
                 <div class="flex items-center">
                     <span class="bg-gray-500 rounded-full h-2 w-2"></span>
-                    <span class="ml-4 font-medium text-base">2021-09-18</span>
+                    <span class="ml-4 font-semibold text-base">2021-09-18</span>
                 </div>
                 <ol class="ml-12 text-sm">
                     <li>resource 样式问题修改；</li>
@@ -16,7 +16,7 @@
             <div>
                 <div class="flex items-center">
                     <span class="bg-gray-500 rounded-full h-2 w-2"></span>
-                    <span class="ml-4 font-medium text-base">2021-08-21</span>
+                    <span class="ml-4 font-semibold text-base">2021-08-21</span>
                 </div>
                 <ol class="ml-12 text-sm">
                     <li>添加 @tailwindcss/aspect-ratio 插件；</li>
@@ -26,7 +26,7 @@
             <div>
                 <div class="flex items-center">
                     <span class="bg-gray-500 rounded-full h-2 w-2"></span>
-                    <span class="ml-4 font-medium text-base">2021-08-19</span>
+                    <span class="ml-4 font-semibold text-base">2021-08-19</span>
                 </div>
                 <ol class="ml-12 text-sm">
                     <li>更新依赖，修复一些细节小问题；</li>
@@ -36,7 +36,7 @@
             <div>
                 <div class="flex items-center">
                     <span class="bg-gray-500 rounded-full h-2 w-2"></span>
-                    <span class="ml-4 font-medium text-base">2021-07-20</span>
+                    <span class="ml-4 font-semibold text-base">2021-07-20</span>
                 </div>
                 <ol class="ml-12 text-sm">
                     <li>配置 resource 页；</li>
@@ -47,7 +47,7 @@
             <div>
                 <div class="flex items-center">
                     <span class="bg-gray-500 rounded-full h-2 w-2"></span>
-                    <span class="ml-4 font-medium text-base">2021-07-18</span>
+                    <span class="ml-4 font-semibold text-base">2021-07-18</span>
                 </div>
                 <ol class="ml-12 text-sm">
                     <li>添加骨架屏；</li>
@@ -58,7 +58,7 @@
             <div>
                 <div class="flex items-center">
                     <span class="bg-gray-500 rounded-full h-2 w-2"></span>
-                    <span class="ml-4 font-medium text-base">2021-06-24</span>
+                    <span class="ml-4 font-semibold text-base">2021-06-24</span>
                 </div>
                 <ol class="ml-12 text-sm">
                     <li>SideBar、RecentPosts、Recommond 改为 Lazy loading；</li>
@@ -69,7 +69,7 @@
              <div>
                 <div class="flex items-center">
                     <span class="bg-gray-500 rounded-full h-2 w-2"></span>
-                    <span class="ml-4 font-medium text-base">2021-04-10</span>
+                    <span class="ml-4 font-semibold text-base">2021-04-10</span>
                 </div>
                 <ol class="ml-12 text-sm">
                     <li>高亮样式替换为 ir-black；</li>
