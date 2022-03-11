@@ -309,6 +309,14 @@ export default {
       });
     },
     /**
+     * 查询回复
+     */
+    repliers(code){
+this.$axios.patch(SERVER_URL.comment.concat("/", code, "/repliers")).then(res => {
+          this.data.likes = res.data;
+        });
+    },
+    /**
      * 给img添加双击事件
      */
     addImgClickEvent() {
