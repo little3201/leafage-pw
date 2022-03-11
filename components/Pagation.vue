@@ -94,9 +94,8 @@ export default {
   },
 
   methods: {
-    setPage(p) {
-      this.current = p;
-      this.$emit('chagePage', this.current)
+    setPage(page) {
+      this.$emit('chagePage', page)
     }
   }
 
