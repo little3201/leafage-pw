@@ -19,7 +19,7 @@
       <p class="text-sm">{{ data.content }}</p>
 
       <div class="flex items-center justify-between mt-2">
-        <!-- <div class="text-sm text-gray-500 font-semibold">
+        <div class="text-sm text-gray-500 font-semibold">
           <button type="button" class="inline-flex items-center focus:outline-none">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@
             </svg>
             <span>回复</span>
           </button>
-        </div> -->
+        </div>
         <div v-if="data.replies" class="mt-4 flex items-center">
           <div class="flex -space-x-2 mr-2">
             <img
