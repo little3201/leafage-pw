@@ -29,7 +29,7 @@
           rel="noopener"
           target="_blank"
           class="hover:underline"
-        >陕ICP备19017836号</a>
+        >陕ICP备19017836-2号</a>
       </p>
     </div>
   </section>
