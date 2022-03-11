@@ -5,6 +5,18 @@
         <section>
             <div class="flex items-center">
                 <span class="bg-gray-500 rounded-full h-2 w-2"></span>
+                <span class="ml-4 font-medium">2022-03-10</span>
+            </div>
+            <ol class="ml-12">
+                <li>更新了帖子页排版，去掉了多余的操作和侧边栏；</li>
+                <li>更新依赖到最新版；</li>
+                <li>更正了页码样式错误的问题；</li>
+            </ol>
+        </section>
+
+        <section>
+            <div class="flex items-center">
+                <span class="bg-gray-500 rounded-full h-2 w-2"></span>
                 <span class="ml-4 font-medium">2022-01-28</span>
             </div>
             <ol class="ml-12">
