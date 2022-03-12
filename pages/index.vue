@@ -13,7 +13,7 @@
                 />
             </Head>
         </Html>
-        <div class="grid lg:grid-rows-2 lg:grid-cols-4 lg:gap-6 mb-8">
+        <div class="grid lg:grid-rows-2 lg:grid-cols-4 gap-6 mb-8">
             <Gallery
                 v-for="(data, index) in datas.splice(0, 6)"
                 :data="data"
@@ -24,7 +24,7 @@
         <div class="flex justify-between space-x-8 dark:text-gray-300">
             <div class="w-full">
                 <Tab @chageParams="chageParams" :datas="tabs" />
-                <div class="grid grid-cols-1 gap-y-8 sm:grid-cols-2 gap-x-6 xl:grid-cols-3 my-8">
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 my-8">
                     <Item v-for="data in datas" :data="data" />
                 </div>
                 <LazyPagation
@@ -70,5 +70,5 @@ const chageParams = async (num: number, category: string) => {
     refresh()
 };
 
-const { data: datas, refresh } = await useAsyncData('home', () => $fetch(`https://www.leafage.top/api/posts?page=${pagation.page}&size=${pagation.size}`))
+const { data: datas, refresh } = await useAsyncData('home', () => $fetch(`/api/posts?page=${pagation.page}&size=${pagation.size}`))
 </script>

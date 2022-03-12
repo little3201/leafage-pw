@@ -10,14 +10,14 @@
       />
     </div>
     <div
-      class="flex-1 border rounded px-4 py-2 sm:px-6 sm:py-4 leading-relaxed dark:text-gray-400 dark:border-gray-400"
+      class="flex-1 border rounded px-4 py-2 sm:px-6 sm:py-4 leading-relaxed dark:text-gray-300 dark:border-gray-400"
     >
       <strong class="mr-4">{{ data.nickname }}</strong>
       <span class="text-xs text-gray-400">{{ new Date(data.modifyTime).toLocaleString() }}</span>
       <p class="text-sm">{{ data.content }}</p>
 
       <div class="flex items-center justify-between mt-2">
-        <div class="text-sm text-gray-500 font-semibold">
+        <div class="text-sm text-gray-400 font-semibold">
           <button
             type="button"
             @click="reply(data.code)"
@@ -49,7 +49,7 @@
               :alt="reply.nickname"
             />
           </div>
-          <div class="text-sm text-gray-500 font-semibold">
+          <div class="text-sm text-gray-400 font-semibold">
             {{ data.replies.length }} Replies
             <button
               type="button"

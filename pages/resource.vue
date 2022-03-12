@@ -13,14 +13,14 @@
                 <div class="w-full aspect-w-4 aspect-h-5 bg-gray-300 overflow-hidden border">
                     <img
                         :src="data.cover"
-                        alt="images"
+                        :alt="data.title"
                         class="w-full h-full object-center filter grayscale group-hover:opacity-75"
                         height="100%"
                         width="100%"
                     />
                 </div>
                 <p
-                    class="my-3 text-lg font-bold text-gray-800 dark:text-gray-300 group-hover:underline"
+                    class="my-2 text-base font-medium text-gray-800 dark:text-gray-300 group-hover:underline"
                 >{{ data.title }}</p>
                 <div class="flex justify-between text-sm text-gray-600 dark:text-gray-400">
                     <span>{{ new Date(data.modifyTime).toLocaleDateString() }}</span>
@@ -93,7 +93,7 @@ const chageParams = async (num: number, code: string) => {
     refresh()
 };
 
-const { data: categories } = await useAsyncData('resources', () => $fetch(`https://www.leafage.top/api/category`))
+const { data: categories } = await useAsyncData('resources', () => $fetch(`/api/category`))
 
-const { data: datas, refresh } = await useFetch(`https://www.leafage.top/api/resource?page=${pagation.page}&size=${pagation.size}`)
+const { data: datas, refresh } = await useFetch(`/api/resource?page=${pagation.page}&size=${pagation.size}`)
 </script>

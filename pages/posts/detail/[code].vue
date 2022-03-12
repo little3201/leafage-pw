@@ -10,18 +10,21 @@
         <div class="flex space-x-8 border-t border-gray-900 dark:border-gray-300">
             <div class="my-6 w-full">
                 <article>
-                    <h2
-                        class="text-xl md:text-2xl lg:text-3xl font-bold dark:text-gray-300"
-                    >{{ data.title }}</h2>
-                    <div class="md:flex text-sm space-x-6 text-gray-800 dark:text-gray-300 my-4">
-                        <NuxtLink
-                            :title="data.category"
-                            :to="{ name: 'posts', params: { category: data.category } }"
-                            class="hover:underline hover:text-gray-900 dark:hover:text-gray-300"
-                        >{{ data.category }}</NuxtLink>
-                        <span
-                            class="tracking-wider"
-                        >{{ new Date(data.modifyTime).toLocaleDateString() }}</span>
+                    <h2 class="text-3xl text-center dark:text-gray-300">{{ data.title }}</h2>
+
+                    <div
+                        ref="renderedHtmlRef"
+                        class="my-6 prose prose-base dark:text-gray-300 prose-blue max-w-none"
+                        v-html="renderedHtml(data.content)"
+                    ></div>
+                </article>
+
+                <div class="text-sm text-gray-600 dark:text-gray-400 my-2 md:flex">
+                    <div class="flex space-x-4 text-sm uppercase">
+                        <span>{{ data.category }}</span>
+                        <span>{{ new Date(data.modifyTime).toLocaleString() }}</span>
+                    </div>
+                    <div class="flex space-x-4 my-2 md:my-0 md:mx-4">
                         <div class="inline-flex items-center">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -79,105 +82,100 @@
                             {{ data.likes }}
                         </div>
                     </div>
+                </div>
 
-                    <div class="inline-flex items-center space-x-2 mb-8 dark:text-gray-300">
-                        <span
-                            v-for="(tag, index) in data.tags"
-                            :key="index"
-                            class="text-xs text-gray-900 bg-gray-200 rounded-md px-2 py-1"
-                        >{{ "#" + tag }}</span>
-                    </div>
+                <div class="inline-flex items-center space-x-2 text-gray-600 dark:text-gray-300">
+                    <span
+                        v-for="(tag, index) in data.tags"
+                        :key="index"
+                        class="text-sm bg-gray-200 dark:bg-gray-600 rounded-md px-2 py-px"
+                    >{{ tag }}</span>
+                </div>
 
-                    <div
-                        ref="renderedHtmlRef"
-                        class="prose prose-sm lg:prose-lg xl:prose-xl dark:text-gray-300 dark:prose-blue max-w-none"
-                        v-html="renderedHtml(data.content)"
-                    ></div>
-
-                    <section class="flex items-center justify-center my-8">
-                        <span class="text-xl text-gray-400">如果觉得文章有帮助，就点个赞鼓励一下吧！</span>
-                        <button
-                            type="button"
-                            @click="likes(data.code)"
-                            class="rounded-full p-2 border text-gray-400 hover:text-gray-600 hover:border-gray-600"
+                <section class="flex items-center justify-center my-6">
+                    <span class="text-gray-400">如果有帮助，就点个赞鼓励一下吧！</span>
+                    <button
+                        type="button"
+                        @click="likes(data.code)"
+                        class="rounded-full p-2 border dark:border-gray-400 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 hover:border-gray-600 dark:hover:border-gray-200"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="feather feather-thumbs-up cursor-pointer"
                         >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="feather feather-thumbs-up cursor-pointer"
+                            <path
+                                d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"
+                            />
+                        </svg>
+                    </button>
+                </section>
+
+                <div class="bg-gray-100 dark:bg-gray-800 dark:text-gray-300 my-4 p-6 rounded">
+                    <ul
+                        class="grid grid-flow-row grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2 gap-4 text-sm font-bold"
+                    >
+                        <li v-if="previous[0]">
+                            <NuxtLink
+                                :title="previous[0].title"
+                                :to="'/posts/detail/' + previous[0].code"
+                                class="flex items-center transform hover:-translate-x-2 transition duration-500"
                             >
-                                <path
-                                    d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"
-                                />
-                            </svg>
-                        </button>
-                    </section>
+                                <svg
+                                    v-show="previous[0]"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="3"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-chevron-left"
+                                >
+                                    <polyline points="15 18 9 12 15 6" />
+                                </svg>
+                                {{ previous[0].title }}
+                            </NuxtLink>
+                        </li>
+                        <li class="flex items-center justify-end" v-if="next[1]">
+                            <NuxtLink
+                                :title="next[1].title"
+                                :to="'/posts/detail/' + next[1].code"
+                                class="flex items-center transform hover:translate-x-2 transition duration-500"
+                            >
+                                {{ next[1].title }}
+                                <svg
+                                    v-show="next[1]"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="3"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-chevron-right"
+                                >
+                                    <polyline points="9 18 15 12 9 6" />
+                                </svg>
+                            </NuxtLink>
+                        </li>
+                    </ul>
+                </div>
 
-                    <div class="bg-gray-100 dark:bg-gray-800 dark:text-gray-300 my-8 p-8 rounded">
-                        <ul
-                            class="grid grid-flow-row grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2 gap-4 text-xs font-bold"
-                        >
-                            <li v-if="previous[0]">
-                                <NuxtLink
-                                    :title="previous[0].title"
-                                    :to="'/posts/detail/' + previous[0].code"
-                                    class="flex items-center transform hover:-translate-x-2 transition duration-500"
-                                >
-                                    <svg
-                                        v-show="previous[0]"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="16"
-                                        height="16"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="3"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="feather feather-chevron-left"
-                                    >
-                                        <polyline points="15 18 9 12 15 6" />
-                                    </svg>
-                                    {{ previous[0].title }}
-                                </NuxtLink>
-                            </li>
-                            <li class="flex items-center justify-end" v-if="next[1]">
-                                <NuxtLink
-                                    :title="next[1].title"
-                                    :to="'/posts/detail/' + next[1].code"
-                                    class="flex items-center transform hover:translate-x-2 transition duration-500"
-                                >
-                                    {{ next[1].title }}
-                                    <svg
-                                        v-show="next[1]"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="16"
-                                        height="16"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="3"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="feather feather-chevron-right"
-                                    >
-                                        <polyline points="9 18 15 12 9 6" />
-                                    </svg>
-                                </NuxtLink>
-                            </li>
-                        </ul>
-                    </div>
-                </article>
                 <form class="my-6">
-                    <div class="items-center -mx-2 md:flex">
-                        <div class="w-full mx-2">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="w-full">
                             <label class="text-sm font-medium text-gray-600 dark:text-gray-200">Name</label>
                             <input
                                 class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:outline-none focus:ring-1 focus:ring-gray-400"
@@ -185,7 +183,7 @@
                             />
                         </div>
 
-                        <div class="w-full mx-2 mt-4 md:mt-0">
+                        <div class="w-full">
                             <label
                                 class="text-sm font-medium text-gray-600 dark:text-gray-200"
                             >E-mail</label>
@@ -196,7 +194,7 @@
                         </div>
                     </div>
 
-                    <div class="w-full my-4">
+                    <div class="grid my-4">
                         <label class="text-sm font-medium text-gray-600 dark:text-gray-200">Message</label>
                         <textarea
                             class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:outline-none focus:ring-1 focus:ring-gray-400"
@@ -206,8 +204,8 @@
                     <div class="flex justify-end">
                         <button
                             @click="onsubmit"
-                            class="px-4 py-2 transition-colors duration-200 transform border border-gray-300 dark:bg-gray-600 dark:text-gray-300 bg-gray-100 rounded-md hover:bg-gray-300 focus:outline-none"
-                        >Send Message</button>
+                            class="px-2 py-1 transition-colors duration-200 transform border border-gray-300 dark:bg-gray-600 dark:text-gray-300 bg-gray-200 rounded-md focus:outline-none"
+                        >Commit Comment</button>
                     </div>
                 </form>
                 <LazyComment v-for="data in comments" :data="data" />
@@ -231,12 +229,23 @@ let view = reactive({
     url: ''
 })
 
-const { data } = await useAsyncData('detail', () => $fetch(`https://www.leafage.top/api/posts/details/${params.code}`))
+const data = ref({
+    title: 'Mac 键盘快捷键',
+    content: '要使用键盘快捷键，请按住一个或多个修饰键，然后按快捷键的最后一个键。[企业管理系统](https://console.leafage.top) 例如，要使用 Command-C（拷贝），请按住 Command 键并按 C 键，然后同时松开这两个键。Mac 菜单和键盘通常使用符号来表示某些按键，其中包括以下修饰键：',
+    tags: ['mac', '键盘', '快捷键'],
+    viewed: 3920,
+    comment: 245,
+    likes: 2832,
+    modifyTime: new Date(),
+    category: 'Technology'
+})
+
+// const { data } = await useAsyncData('detail', () => $fetch(`/api/posts/details/${params.code}`))
 
 const [{ data: previous }, { data: next }, { data: comments }] = await Promise.all([
-    useFetch(`https://www.leafage.top/api/posts/${params.code}/previous`),
-    useFetch(`https://www.leafage.top/api/posts/${params.code}/next`),
-    useFetch(`https://www.leafage.top/api/comment/${params.code}`)
+    useFetch(`/api/posts/${params.code}/previous`),
+    useFetch(`/api/posts/${params.code}/next`),
+    useFetch(`/api/comment/${params.code}`)
 ])
 
 onMounted(() => {

@@ -1,16 +1,46 @@
 <template>
-    <div class="flex justify-between items-center py-3 md:py-5 text-gray-900 dark:text-gray-300">
-        <nav class="inline-flex items-center space-x-6 tracking-wide text-xs uppercase">
-            <NuxtLink title="home" to="/" class="font-semibold">Home</NuxtLink>
-            <NuxtLink title="posts" to="/posts" class="font-semibold">Posts</NuxtLink>
-            <NuxtLink title="resource" to="/resource" class="font-semibold">Resource</NuxtLink>
-            <NuxtLink title="about" to="/about" class="font-semibold">About</NuxtLink>
+    <div
+        class="flex justify-between items-center mx-4 md:mx-0 py-3 md:py-5 text-gray-900 dark:text-gray-300"
+    >
+        <button
+            @click="isShow = !isShow"
+            type="button"
+            aria-label="openMenu"
+            class="focus:outline-none md:hidden"
+        >
+            <svg
+                width="24"
+                height="24"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                />
+            </svg>
+        </button>
+        <Drawer :isShow="isShow" @closeAction="drawerOperation" />
+
+        <nav
+            class="hidden md:inline-flex items-center space-x-6 tracking-wide font-semibold text-xs uppercase"
+        >
+            <NuxtLink title="home" to="/">Home</NuxtLink>
+            <NuxtLink title="posts" to="/posts">Posts</NuxtLink>
+            <NuxtLink title="resource" to="/resource">Resource</NuxtLink>
+            <NuxtLink title="about" to="/about">About</NuxtLink>
         </nav>
         <div class="inline-flex items-center">
             <button
                 title="Toggle Theme"
                 @click="theme"
-                class="relative focus:outline-none transition-colors duration-500 ease-in border-transparent"
+                class="hidden md:block relative focus:outline-none transition-colors duration-500 ease-in border-transparent"
             >
                 <svg
                     v-if="isDark"
@@ -54,7 +84,7 @@
 
             <a
                 title="contact me"
-                class="flex items-center uppercase text-xs font-bold tracking-wide mx-6"
+                class="hidden md:flex items-center uppercase text-xs font-bold tracking-wide mx-6"
                 href="mailto:little3201@163.com"
                 rel="noopener"
                 aria-label="contact me"
@@ -109,8 +139,11 @@
 <script lang="ts" setup>
 import { ref, onBeforeMount } from "vue";
 
+import Drawer from './Drawer.vue'
+
 const isSearch = ref(false)
 const isDark = ref(false)
+const isShow = ref(false)
 
 const theme = () => {
     isDark.value = !isDark.value
@@ -131,4 +164,10 @@ onBeforeMount(() => {
         document.documentElement.classList.remove('dark')
     }
 })
+/**
+ * 操作
+ */
+const drawerOperation = (show: boolean) => {
+    isShow.value = show
+}
 </script>

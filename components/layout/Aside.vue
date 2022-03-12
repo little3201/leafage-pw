@@ -1,6 +1,6 @@
 <template>
-    <aside class="max-w-xs flex-none dark:text-gray-400">
-        <div class="border border-solid border-gray-300 dark:border-gray-400 p-6">
+    <aside class="w-64 flex-none dark:text-gray-400">
+        <div class="border border-solid border-gray-300 dark:border-gray-400 p-4">
             <h3 class="font-bold">欢迎关注公众号（Leafage）</h3>
             <div class="flex items-center mt-4">
                 <figure class="border">
@@ -25,10 +25,10 @@
 
         <div class="border border-solid border-gray-300 dark:border-gray-400 my-8 relative">
             <h3
-                class="absolute top-0 -mt-2.5 px-2 ml-6 bg-white dark:bg-gray-900 text-sm font-semibold"
+                class="absolute top-0 -mt-2.5 px-2 ml-4 bg-white dark:bg-gray-900 text-sm font-semibold"
             >帖子分类</h3>
             <ul
-                class="grid grid-cols-1 divide-y divide-gray-300 p-6 text-xs font-semibold list-disc"
+                class="grid grid-cols-1 divide-y divide-gray-300 p-4 text-xs font-semibold list-disc"
             >
                 <li class="py-3 mx-4" v-for="category in categories">
                     <NuxtLink
@@ -40,11 +40,11 @@
                 </li>
             </ul>
         </div>
-        <div class="my-10 border-2 border-solid border-gray-900 dark:border-gray-400 p-6">
-            <h3 class="font-bold">Send Email To Me</h3>
-            <form class="mt-4 flex items-center">
+        <div class="my-8 border-2 border-solid border-gray-900 dark:border-gray-400 p-4">
+            <h3>Send Email To Me</h3>
+            <div class="mt-2 flex items-center">
                 <input
-                    class="w-full text-sm placeholder-gray-300 border-2 border-gray-300 py-2 pl-4"
+                    class="w-full text-sm placeholder-gray-300 border border-gray-300 focus:outline-none py-1 pl-2"
                     type="email"
                     placeholder="Email adress"
                 />
@@ -56,8 +56,8 @@
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
+                        width="14"
+                        height="14"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -70,14 +70,14 @@
                         <polygon points="22 2 15 22 11 13 2 9 22 2" />
                     </svg>
                 </a>
-            </form>
+            </div>
         </div>
         <div class="border border-solid border-gray-300 dark:border-gray-400 relative my-8">
             <h3
-                class="absolute top-0 -mt-2.5 px-2 ml-6 bg-white dark:bg-gray-900 uppercase text-sm font-semibold"
+                class="absolute top-0 -mt-2.5 px-2 ml-4 bg-white dark:bg-gray-900 uppercase text-sm font-semibold"
             >友情链接</h3>
             <ul
-                class="grid grid-cols-1 divide-y divide-gray-300 p-6 text-xs text-gray-800 dark:text-gray-400 font-semibold list-decimal"
+                class="grid grid-cols-1 divide-y divide-gray-300 p-4 text-xs text-gray-800 dark:text-gray-400 font-semibold list-decimal"
             >
                 <li class="py-3 mx-4">
                     <a
