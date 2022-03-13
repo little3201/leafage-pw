@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-center items-center my-8">
+    <div class="flex justify-center items-center my-6">
         <NuxtLink to="/" title="leafage" class="text-gray-900 dark:text-gray-300 text-center">
             <figure class="inline-flex justify-center">
                 <img

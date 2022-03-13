@@ -93,7 +93,7 @@
                 </div>
 
                 <section class="flex items-center justify-center my-6">
-                    <span class="text-gray-400">如果有帮助，就点个赞鼓励一下吧！</span>
+                    <span class="text-gray-400">如有帮助，点赞鼓励一下吧！</span>
                     <button
                         type="button"
                         @click="likes(data.code)"
@@ -118,7 +118,7 @@
                     </button>
                 </section>
 
-                <div class="bg-gray-100 dark:bg-gray-800 dark:text-gray-300 my-4 p-6 rounded">
+                <div class="bg-gray-100 dark:bg-gray-800 dark:text-gray-300 my-4 p-4 rounded">
                     <ul
                         class="grid grid-flow-row grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2 gap-4 text-sm font-bold"
                     >
@@ -126,7 +126,7 @@
                             <NuxtLink
                                 :title="previous[0].title"
                                 :to="'/posts/detail/' + previous[0].code"
-                                class="flex items-center transform hover:-translate-x-2 transition duration-500"
+                                class="flex items-center py-2 transform hover:-translate-x-2 transition duration-500"
                             >
                                 <svg
                                     v-show="previous[0]"
@@ -150,7 +150,7 @@
                             <NuxtLink
                                 :title="next[1].title"
                                 :to="'/posts/detail/' + next[1].code"
-                                class="flex items-center transform hover:translate-x-2 transition duration-500"
+                                class="flex items-center py-2 transform hover:translate-x-2 transition duration-500"
                             >
                                 {{ next[1].title }}
                                 <svg
@@ -172,48 +172,14 @@
                         </li>
                     </ul>
                 </div>
-
-                <form class="my-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="w-full">
-                            <label class="text-sm font-medium text-gray-600 dark:text-gray-200">Name</label>
-                            <input
-                                class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:outline-none focus:ring-1 focus:ring-gray-400"
-                                type="text"
-                            />
-                        </div>
-
-                        <div class="w-full">
-                            <label
-                                class="text-sm font-medium text-gray-600 dark:text-gray-200"
-                            >E-mail</label>
-                            <input
-                                class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:outline-none focus:ring-1 focus:ring-gray-400"
-                                type="email"
-                            />
-                        </div>
-                    </div>
-
-                    <div class="grid my-4">
-                        <label class="text-sm font-medium text-gray-600 dark:text-gray-200">Message</label>
-                        <textarea
-                            class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:outline-none focus:ring-1 focus:ring-gray-400"
-                        ></textarea>
-                    </div>
-
-                    <div class="flex justify-end">
-                        <button
-                            @click="onsubmit"
-                            class="px-2 py-1 transition-colors duration-200 transform border border-gray-300 dark:bg-gray-600 dark:text-gray-300 bg-gray-200 rounded-md focus:outline-none"
-                        >Commit Comment</button>
-                    </div>
-                </form>
-                <LazyComment v-for="data in comments" :data="data" />
+                <p class="mt-8 text-lg">添加评论：</p>
+                <LazyCommentForm :isShow="isShow" :code="data.code" />
+                <LazyCommentItem v-for="data in comments" :data="data" />
             </div>
         </div>
 
         <LazyPreview :isShow="view.isShow" @closeAction="previewOperation">
-            <img :src="view.url" alt="preview" class="w-full h-full" width="640" height="427" />
+            <img :src="view.url" alt="preview" class="w-full h-full" width="1366" height="768" />
         </LazyPreview>
     </div>
 </template>
@@ -223,6 +189,7 @@ const { params } = useRoute();
 const { $marked } = useNuxtApp()
 
 const renderedHtmlRef = ref()
+const isShow = ref(true)
 
 let view = reactive({
     isShow: false,
@@ -230,6 +197,7 @@ let view = reactive({
 })
 
 const data = ref({
+    code: '2323',
     title: 'Mac 键盘快捷键',
     content: '要使用键盘快捷键，请按住一个或多个修饰键，然后按快捷键的最后一个键。[企业管理系统](https://console.leafage.top) 例如，要使用 Command-C（拷贝），请按住 Command 键并按 C 键，然后同时松开这两个键。Mac 菜单和键盘通常使用符号来表示某些按键，其中包括以下修饰键：',
     tags: ['mac', '键盘', '快捷键'],

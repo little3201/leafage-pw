@@ -4,50 +4,29 @@ const URL_PREFIX = "/assets/comment"
 export default () => {
     return [
         {
-            avatar: 'https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80',
-            nickname: 'Jame Brond',
-            content: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+            posts: '124',
+            country: 'china',
+            location: '陕西省西安市',
+            content: '在开发中常常会需要截取字符串，而 JavaScript 提供了很多种方法实现截取操作。本文对各种方法做个整理，供大家参考.',
             modifyTime: "2022-03-11T13:41:26.495",
             count: 0,
             replies: []
         },
         {
-            avatar: 'https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80',
-            nickname: 'Jame Brond',
+            posts: '124',
+            country: 'canada',
+            location: '多伦多',
             content: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
             modifyTime: "2022-03-11T13:41:26.495",
             count: 2,
             replies: [
-                {
-                    avatar: 'https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80',
-                    nickname: 'Jame Brond',
-                    content: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
-                    modifyTime: "2022-03-11T13:41:26.495",
-                    count: 1,
-                    replies: [
-                        {
-                            avatar: 'https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80',
-                            nickname: 'Jame Brond',
-                            content: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
-                            modifyTime: "2022-03-11T13:41:26.495",
-                            count: 0,
-                            replies: []
-                        }
-                    ]
-                },
-                {
-                    avatar: 'https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80',
-                    nickname: 'Jame Brond',
-                    content: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
-                    modifyTime: "2022-03-11T13:41:26.495",
-                    count: 0,
-                    replies: []
-                }
+
             ]
         },
         {
-            avatar: 'https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80',
-            nickname: 'Jame Brond',
+            posts: '124',
+            country: 'america',
+            location: '纽约',
             content: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
             modifyTime: "2022-03-11T13:41:26.495",
             count: 0,
