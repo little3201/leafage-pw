@@ -14,9 +14,8 @@
         <ol>
             <span class="font-semibold text-lg">本站使用到的一些技术、工具主要有：</span>
             <li>nuxt3 —— 开发框架；</li>
-            <li>tailwindcss —— 页面样式；</li>
             <li>tailwindcss(plugins: typography、aspect-ratio) —— 样式、排版优化；</li>
-            <li>marked.js —— markdown解析；</li>
+            <li>marked.js(plugins: marked-extended-tables) —— markdown解析、表格支持；</li>
             <li>hightlight.js —— 代码高亮，使用 ir-black；</li>
         </ol>
         <p class="font-semibold">

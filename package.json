@@ -11,6 +11,7 @@
     "autoprefixer": "^10.4.2",
     "highlight.js": "^11.4.0",
     "marked": "^4.0.12",
+    "marked-extended-tables": "^1.0.3",
     "nuxt3": "^3.0.0-27449808.ac40c97",
     "postcss": "^8.4.8",
     "tailwindcss": "^3.0.23",

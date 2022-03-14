@@ -199,7 +199,7 @@ let view = reactive({
 const data = ref({
     code: '2323',
     title: 'Mac 键盘快捷键',
-    content: '要使用键盘快捷键，请按住一个或多个修饰键，然后按快捷键的最后一个键。[企业管理系统](https://console.leafage.top) 例如，要使用 Command-C（拷贝），请按住 Command 键并按 C 键，然后同时松开这两个键。Mac 菜单和键盘通常使用符号来表示某些按键，其中包括以下修饰键：',
+    content: '要使用键盘快捷键，请按住一个或多个修饰键，然后按快捷键的最后一个键。[企业管理系统](https://console.leafage.top) 例如，要使用 Command-C（拷贝），请按住 Command 键并按 C 键，然后同时松开这两个键。Mac 菜单和键盘通常使用符号来表示某些按键，其中包括以下修饰键：\n | spanned header ||\n|----|----|\n|cell 1|cell 2|',
     tags: ['mac', '键盘', '快捷键'],
     viewed: 3920,
     comment: 245,

@@ -1,5 +1,7 @@
 import { marked } from "marked";
 
+import extendedTables from 'marked-extended-tables'
+
 import hljs from "highlight.js/lib/core";
 import "highlight.js/styles/ir-black.css";
 
@@ -40,7 +42,7 @@ marked.setOptions({
     breaks: true,
     smartLists: true,
     xhtml: true
-})
+}).use(extendedTables())
 
 export default defineNuxtPlugin((nuxtApp) => {
     nuxtApp.provide('marked', marked)

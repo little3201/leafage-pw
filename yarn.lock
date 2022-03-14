@@ -4660,6 +4660,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"marked-extended-tables@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "marked-extended-tables@npm:1.0.3"
+  peerDependencies:
+    marked: ^3.0.0 || ^4.0.0
+  checksum: e3dad582f89645adfd01423626c5724ec4e6275ecfdc46c1ec8863f0e5fa0b4c12d896c2e6f0646d413f9693be2d8effe4bcba5ab8a15908b055870305e88086
+  languageName: node
+  linkType: hard
+
 "marked@npm:^4.0.12":
   version: 4.0.12
   resolution: "marked@npm:4.0.12"
@@ -6529,6 +6538,7 @@ __metadata:
     autoprefixer: ^10.4.2
     highlight.js: ^11.4.0
     marked: ^4.0.12
+    marked-extended-tables: ^1.0.3
     nuxt3: ^3.0.0-27449808.ac40c97
     postcss: ^8.4.8
     tailwindcss: ^3.0.23
