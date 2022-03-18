@@ -29,7 +29,7 @@ let checked = ref(props.datas[0].code)
 
 const current = (code: string) => {
     checked.value = code
-    emit('chageParams', 0, code)
+    emit('chageParams', code)
 }
 
 </script>
