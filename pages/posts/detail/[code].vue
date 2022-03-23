@@ -172,7 +172,7 @@
                         </li>
                     </ul>
                 </div>
-                <p class="mt-8 text-lg">添加评论：</p>
+                <p class="mt-8 text-lg dark:text-gray-300">添加评论：</p>
                 <LazyCommentForm :isShow="isShow" :code="data.code" />
                 <LazyCommentItem v-for="data in comments" :data="data" />
             </div>
