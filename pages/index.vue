@@ -75,8 +75,10 @@ const tabs = ref([
 
 let page = ref(0)
 
-const { data: galleryPosts } = await useAsyncData('gallery', () =>  $fetch(`/api/assets/posts?page=0&size=6`))
-const { data: posts, refresh } = await useFetch(`/api/assets/posts?page=${page.value}&size=12&sort=${category.value}`)
+const [{ data: galleryPosts }, { data: posts, refresh }] = await Promise.all([
+    useFetch(`/api/assets/posts?page=0&size=6`),
+    useFetch(`/api/assets/posts?page=${page.value}&size=12&sort=${category.value}`)
+])
 
 let datas = ref(posts)
 
