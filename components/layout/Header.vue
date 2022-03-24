@@ -1,42 +1,46 @@
 <template>
     <div
-        class="flex justify-between md:justify-start items-center border-black border-b-2 py-3 md:py-5 dark:text-white"
+        class="flex justify-between items-center mx-4 md:mx-0 py-3 md:py-5 text-gray-900 dark:text-gray-300"
     >
-        <nav class="hidden md:flex space-x-6 tracking-wide text-xs uppercase font-bold">
+        <button
+            @click="isShow = !isShow"
+            type="button"
+            aria-label="openMenu"
+            class="focus:outline-none md:hidden"
+        >
+            <svg
+                width="24"
+                height="24"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                />
+            </svg>
+        </button>
+        <Drawer :isShow="isShow" @closeAction="drawerOperation" />
+
+        <nav
+            class="hidden md:inline-flex items-center space-x-6 tracking-wide font-semibold text-xs uppercase"
+        >
             <NuxtLink title="home" to="/">Home</NuxtLink>
             <NuxtLink title="posts" to="/posts">Posts</NuxtLink>
             <NuxtLink title="resource" to="/resource">Resource</NuxtLink>
             <NuxtLink title="about" to="/about">About</NuxtLink>
         </nav>
-        <div class="-my-2 md:hidden">
-            <button
-                type="button"
-                aria-label="openMenu"
-                @click="isOpen = !isOpen"
-                class="m-2 items-center justify-center focus:outline-none"
-            >
-                <svg
-                    class="h-6 w-6"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="black"
-                    aria-hidden="true"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M4 6h16M4 12h16M4 18h16"
-                    />
-                </svg>
-            </button>
-        </div>
-        <div class="flex items-center justify-end md:flex-1">
+        <div class="inline-flex items-center">
             <button
                 title="Toggle Theme"
-                @click="theme()"
-                class="relative focus:outline-none transition-colors duration-500 ease-in border-transparent"
+                @click="theme"
+                class="hidden md:block relative focus:outline-none transition-colors duration-500 ease-in border-transparent"
             >
                 <svg
                     v-if="isDark"
@@ -77,12 +81,13 @@
                     <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
                 </svg>
             </button>
+
             <a
-                title="subscribe"
-                class="flex items-center uppercase text-xs font-bold tracking-wide mx-6"
+                title="contact me"
+                class="hidden md:flex items-center uppercase text-xs font-bold tracking-wide mx-6"
                 href="mailto:little3201@163.com"
                 rel="noopener"
-                aria-label="subscribe"
+                aria-label="contact me"
             >
                 <svg
                     style="display: unset"
@@ -92,7 +97,7 @@
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="1.5"
+                    stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     class="feather feather-mail mr-2"
@@ -104,7 +109,13 @@
                 </svg>
                 Contact Me
             </a>
-            <button title="search" class="focus:outline-none" type="button" aria-label="search">
+            <button
+                type="button"
+                title="search"
+                class="focus:outline-none"
+                aria-label="searchOpen"
+                @click="isSearch = !isSearch"
+            >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"
@@ -112,7 +123,7 @@
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="1.5"
+                    stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     class="feather feather-search"
@@ -126,12 +137,19 @@
 </template>
 
 <script>
+import Drawer from './Drawer.vue'
 export default {
     name: "Header",
 
+    components: {
+        Drawer
+    },
+
     data() {
         return {
-            isDark: false
+            isDark: false,
+            isSearch: false,
+            isShow: false
         };
     },
 
@@ -145,6 +163,10 @@ export default {
                 localStorage.removeItem('theme')
                 document.documentElement.classList.remove('dark')
             }
+        },
+
+        drawerOperation(show) {
+            this.isShow = show
         }
     },
 
