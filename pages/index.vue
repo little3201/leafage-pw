@@ -25,7 +25,7 @@
             <div class="w-full">
                 <Tab @chageParams="chageParams" :datas="tabs" />
                 <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 2xl:grid-cols-3 my-8">
-                    <Item v-for="post in datas" :data="post" />
+                    <Item v-for="post in posts" :data="post" />
                 </div>
                 <div class="text-center my-6 text-gray-400">
                     <button
@@ -77,21 +77,16 @@ let page = ref(0)
 
 const [{ data: galleryPosts }, { data: posts, refresh }] = await Promise.all([
     useFetch(`/api/assets/posts?page=0&size=6`),
-    useFetch(`/api/assets/posts?page=${page.value}&size=12&sort=${category.value}`)
+    useFetch(`/api/assets/posts?page=0&size=12&sort=likes`)
 ])
-
-let datas = ref(posts)
-
-watch(posts, (newPosts) => {
-    datas.value.push(...newPosts)
-})
 
 /**
  * 加载更多
  */
-const viewMore = () => {
+const viewMore = async () => {
     page.value = page.value + 1;
-    refresh()
+    const datas = await $fetch(`/api/assets/posts?page=${page.value}&size=12&sort=${category.value}`)
+    posts.push(datas)
 }
 
 /**

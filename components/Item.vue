@@ -14,7 +14,7 @@
             <span>{{ new Date(data.modifyTime).toLocaleDateString() }}</span>
         </div>
         <p
-            class="my-2 font-medium text-gray-800 dark:text-gray-300 group-hover:underline"
+            class="my-2 text-lg font-medium text-gray-800 dark:text-gray-300 group-hover:underline"
         >{{ data.title }}</p>
         <div class="flex justify-between text-xs text-gray-600 dark:text-gray-400">
             <div>

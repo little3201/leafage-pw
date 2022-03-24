@@ -174,7 +174,7 @@
                 </div>
                 <p class="mt-8 text-lg dark:text-gray-300">添加评论：</p>
                 <LazyCommentForm :isShow="isShow" :code="data.code" />
-                <LazyCommentItem v-for="data in comments" :data="data" />
+                <LazyCommentItem v-for="comment in comments" :data="comment" />
             </div>
         </div>
 
@@ -196,7 +196,7 @@ let view = reactive({
     url: ''
 })
 
-const { data } = await useAsyncData('detail', () => $fetch(`/api/assets/posts/${params.code}/details`))
+const { data } = await useAsyncData('details', () => $fetch(`/api/assets/posts/${params.code}/details`))
 
 const [{ data: previous }, { data: next }, { data: comments }] = await Promise.all([
     useFetch(`/api/assets/posts/${params.code}/previous`),
@@ -251,9 +251,9 @@ const previewOperation = (show: boolean, url: string) => {
  * 点赞
  */
 const likes = async () => {
-    await useFetch(`/api/check`).then(() => {
-        const { data: likes } = useFetch(`/api/assets/posts/${params.code}/like`)
-        data.value = { ...data, likes: likes }
+    await $fetch(`/api/check`).then(() => {
+        const likes = $fetch(`/api/assets/posts/${params.code}/like`)
+        data.valuelikes = likes
     })
 }
 </script>

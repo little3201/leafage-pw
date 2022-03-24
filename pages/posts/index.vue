@@ -8,7 +8,7 @@
 
         <Tab @chageParams="chageParams" :datas="categories" />
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 my-8">
-            <Item v-for="post in datas" :data="post" />
+            <Item v-for="post in posts" :data="post" />
         </div>
         <div class="text-center my-6 text-gray-400">
             <button
@@ -39,19 +39,13 @@
 <script lang="ts" setup>
 const route = useRoute();
 
+const [{ data: categories }, { data: posts, refresh }] = await Promise.all([
+    useFetch(`/api/assets/category`),
+    useFetch(`/api/assets/posts?page=0&size=12&sort=likes`)
+])
+
 let page = ref(0)
-
-const category = ref(route.params.category || '');
-
-const { data: categories } = await useAsyncData('category', () => $fetch(`/api/assets/category`))
-
-const { data: posts, refresh } = await useFetch(`/api/assets/posts?page=${page.value}&size=12&category=${category.value}`)
-
-let datas = ref(posts)
-
-watch(posts, (newPosts) => {
-    datas.value.push(...newPosts)
-})
+let category = ref(route.params.category || categories[0]);
 
 /**
  * 加载更多

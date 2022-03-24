@@ -46,8 +46,8 @@ const onSubmit = async () => {
         content: content.value,
         replier: props.reply
     }
-    await useFetch(`/api/check`).then(() => {
-        const { data } = useFetch(`/api/assets/comment/${props.code}`, { data: comment })
+    await $fetch(`/api/check`).then(() => {
+        $fetch(`/api/assets/comment`, { method: 'POST', body: comment })
     })
 
 }

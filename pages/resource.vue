@@ -9,7 +9,11 @@
         <div
             class="grid grid-cols-1 gap-y-8 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 my-8"
         >
-            <NuxtLink v-for="data in datas" :to="'/posts/detail/' + data.code" class="w-full group">
+            <NuxtLink
+                v-for="data in resources"
+                :to="'/posts/detail/' + data.code"
+                class="w-full group"
+            >
                 <div class="w-full aspect-w-4 aspect-h-5 bg-gray-300 overflow-hidden border">
                     <img
                         :src="data.cover"
@@ -93,26 +97,21 @@
 </template>
 
 <script lang="ts" setup>
+const [{ data: categories }, { data: resources, refresh }] = await Promise.all([
+    useFetch(`/api/assets/category`),
+    useFetch(`/api/assets/resource?page=0&size=12&sort=likes`)
+])
+
 let page = ref(0)
-
-const { data: categories } = await useAsyncData('resources', () => $fetch(`/api/assets/category`))
-
-const { data: resources, refresh } = await useFetch(`/api/assets/resource?page=${page.value}&size=12`)
-
-let datas = ref(resources)
-
-watch(resources, (newPosts) => {
-    datas.value.push(...newPosts)
-})
-
-const category = ref(categories.value[0]);
+let category = ref(categories[0]);
 
 /**
  * 加载更多
  */
-const viewMore = () => {
+const viewMore = async () => {
     page.value = page.value + 1;
-    refresh()
+    const datas = await $fetch(`/api/assets/resource?page=${page.value}&size=12&sort=${category.value}`)
+    resources.push(datas)
 }
 
 /**

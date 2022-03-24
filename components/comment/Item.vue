@@ -23,7 +23,7 @@
         <div class="text-sm text-gray-400 font-semibold">
           <button
             type="button"
-            @click="reply(data.code)"
+            @click="isOpen = !isOpen"
             class="inline-flex items-center focus:outline-none"
           >
             <span>{{ isOpen ? '取消' : '回复' }}</span>
@@ -37,7 +37,7 @@
               :src="`/svg/${data.country}.svg`"
               :alt="reply.location"
             />
-          </div> -->
+          </div>-->
           <div class="text-sm text-gray-400 font-semibold">
             {{ data.count }} Replies
             <button
@@ -52,7 +52,7 @@
       <div v-show="isShow">
         <span class="my-5 uppercase tracking-wide text-gray-400 font-bold text-xs">Replies</span>
         <div v-if="data.count > 0" class="space-y-4">
-          <CommentItem v-for="reply in data.replies" :data="reply" />
+          <CommentItem v-for="reply in replies" :data="reply" />
         </div>
       </div>
     </div>
@@ -62,28 +62,27 @@
 <script lang="ts" setup>
 import CommentForm from './Form.vue';
 
-const props = defineProps({
+defineProps({
   data: {
     type: Object,
     default: {},
   },
 })
 
-const isShow = ref(false)
-const isOpen = ref(false)
+let isShow = ref(false)
+let isOpen = ref(false)
+
+let replies = ref([])
 
 const operation = async (show: boolean, code: string) => {
   isShow.value = show
   if (show) {
     // 查询关联回复
-    const { data: replies } = await useFetch(`/api/comment/${code}/replies`)
-    props.data.replies = replies
+    const { data: datas } = await useFetch(`/api/assets/comment/${code}/replies`)
+    replies.value = datas
   }
 }
 
-const reply = (code: string) => {
-  isOpen.value = !isOpen.value
-}
 /**
  * 提交表单
  */
