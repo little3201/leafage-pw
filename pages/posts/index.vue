@@ -50,9 +50,10 @@ let category = ref(route.params.category || categories[0]);
 /**
  * 加载更多
  */
-const viewMore = () => {
+const viewMore = async () => {
     page.value = page.value + 1;
-    refresh()
+    const datas = await $fetch(`/api/assets/posts?page=${page.value}&size=12&sort=${category.value}`)
+    posts.push(datas)
 }
 
 /**
