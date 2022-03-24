@@ -51,7 +51,7 @@
                     </button>
                 </div>
             </div>
-            <LazyLayoutAside class="hidden lg:block" />
+            <LayoutAside class="hidden lg:block" />
         </div>
     </div>
 </template>
@@ -81,7 +81,7 @@ const chageParams = async (category: string) => {
     refresh()
 };
 
-const { data: posts, refresh } = await useFetch(`/api/posts?page=${page.value}&size=12`)
+const { data: posts, refresh } = await useFetch(`/api/assets/posts?page=${page.value}&size=12`)
 
 let datas = ref(posts)
 

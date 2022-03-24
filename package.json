@@ -1,5 +1,8 @@
 {
   "private": true,
+  "name": "leafage-pw",
+  "version": "0.1.0",
+  "license": "MIT",
   "scripts": {
     "dev": "nuxt dev",
     "build": "nuxt build",
@@ -12,10 +15,10 @@
     "highlight.js": "^11.4.0",
     "marked": "^4.0.12",
     "marked-extended-tables": "^1.0.3",
-    "nuxt3": "^3.0.0-27449808.ac40c97",
+    "nuxt3": "^3.0.0-27460489.53fbca7",
     "postcss": "^8.4.8",
     "tailwindcss": "^3.0.23",
     "vue-gtag-next": "^1.14.0"
   },
-  "packageManager": "yarn@3.1.1"
+  "packageManager": "yarn@3.2.0"
 }

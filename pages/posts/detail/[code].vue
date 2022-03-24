@@ -173,14 +173,14 @@
                     </ul>
                 </div>
                 <p class="mt-8 text-lg">添加评论：</p>
-                <LazyCommentForm :isShow="isShow" :code="data.code" />
-                <LazyCommentItem v-for="data in comments" :data="data" />
+                <CommentForm :isShow="isShow" :code="data.code" />
+                <CommentItem v-for="data in comments" :data="data" />
             </div>
         </div>
 
-        <LazyPreview :isShow="view.isShow" @closeAction="previewOperation">
+        <Preview :isShow="view.isShow" @closeAction="previewOperation">
             <img :src="view.url" alt="preview" class="w-full h-full" width="1366" height="768" />
-        </LazyPreview>
+        </Preview>
     </div>
 </template>
 
