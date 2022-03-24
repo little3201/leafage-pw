@@ -258,7 +258,8 @@ const likes = async () => {
             method: 'PATCH',
             headers: {
                 'X-CSRF-TOKEN': getCookie('XSRF-TOKEN')
-            }
+            },
+            credentials: 'include'
         })
         data.value.likes = likes
     })

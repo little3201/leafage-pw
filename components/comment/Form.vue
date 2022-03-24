@@ -55,7 +55,8 @@ const onSubmit = async () => {
             body: comment,
             headers: {
                 'X-CSRF-TOKEN': getCookie('XSRF-TOKEN')
-            }
+            },
+            credentials: 'include'
         }).then(() => {
             content.value = ''
         })
