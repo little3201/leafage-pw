@@ -81,7 +81,7 @@ const chageParams = async (item: string) => {
     refresh()
 };
 
-const { data: galleryPosts } = await useAsyncData('gallery', () => `/api/assets/posts?page=${page.value}&size=6`)
+const { data: galleryPosts } = await useAsyncData('gallery', () =>  $fetch(`/api/assets/posts?page=${page.value}&size=6`))
 const { data: posts, refresh } = await useFetch(`/api/assets/posts?page=${page.value}&size=12&sort=${category.value}`)
 
 let datas = ref(posts)
