@@ -46,6 +46,9 @@ const onSubmit = async () => {
         content: content.value,
         replier: props.reply
     }
-    const { data } = await useFetch(`/api/assets/comment/${props.code}`)
+    await useFetch(`/api/check`).then(() => {
+        const { data } = useFetch(`/api/assets/comment/${props.code}`, { data: comment })
+    })
+
 }
 </script>

@@ -252,7 +252,7 @@ const previewOperation = (show: boolean, url: string) => {
  */
 const likes = async () => {
     await useFetch(`/api/check`).then(() => {
-        const { data: likes } = await useFetch(`/api/assets/posts/${params.code}/like`)
+        const { data: likes } = useFetch(`/api/assets/posts/${params.code}/like`)
         data.value = { ...data, likes: likes }
     })
 }
