@@ -1,22 +1,44 @@
 <template>
     <div id="home">
-        <div class="grid lg:grid-rows-2 lg:grid-cols-4 gap-4 lg:gap-6">
+        <div class="grid lg:grid-rows-2 lg:grid-cols-4 gap-6 mb-8">
             <Gallery
-                v-for="(data, index) in recentDatas"
+                v-for="(data, index) in galleryPosts"
                 :key="index"
                 :data="data"
                 :aspect="(index < 4 && index > 1) ? true : false"
             />
         </div>
-        <div class="flex justify-between space-x-8 my-8">
+        <div class="flex justify-between space-x-8 dark:text-gray-300">
             <div class="w-full">
                 <Tab @chageParams="chageParams" :datas="tabs" />
-                <div class="grid grid-cols-1 gap-y-8 sm:grid-cols-2 gap-x-6 xl:grid-cols-3 my-8">
-                    <Item v-for="data in datas" :key="data.code" :data="data" />
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 2xl:grid-cols-3 my-8">
+                    <Item v-for="data in posts" :key="data.code" :data="data" />
                 </div>
-                <LazyPagation :page="page" :size="size" :total="total" @chagePage="chageParams" />
+                <div class="text-center my-6 text-gray-400">
+                    <button
+                        type="button"
+                        @click="viewMore"
+                        class="font-semibold hover:text-gray-600 px-2 py-1 rounded focus:outline-none"
+                    >
+                        View More
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="28"
+                            height="28"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="feather feather-chevrons-down mx-auto"
+                        >
+                            <polyline points="7 6 12 11 17 6" />
+                        </svg>
+                    </button>
+                </div>
             </div>
-            <LazyAside />
+            <LazyAside class="hidden lg:block" />
         </div>
     </div>
 </template>
@@ -29,19 +51,16 @@ export default {
     scrollToTop: true,
 
     async asyncData({ $axios }) {
-        let [recentDatas, datas, total] = await Promise.all([
+        let [galleryPosts, posts] = await Promise.all([
             $axios.$get(SERVER_URL.posts, { params: { page: 0, size: 6 } }),
-            $axios.$get(SERVER_URL.posts, {
-                params: { page: 0, size: 12, order: "likes" },
-            }),
-            $axios.$get(SERVER_URL.posts.concat("/count"))
+            $axios.$get(SERVER_URL.posts, { params: { page: 0, size: 12, order: "likes" } })
         ]);
-        return { recentDatas, datas, total };
+        return { galleryPosts, posts };
     },
 
     data() {
         return {
-            datas: [],
+            posts: [],
             tabs: [
                 {
                     code: "likes",
@@ -57,27 +76,27 @@ export default {
                 }
             ],
             page: 0,
-            size: 12,
-            total: 0,
             sort: "likes"
         };
     },
 
     methods: {
-        chageParams(num, code) {
-            this.page = num ? num : 0;
+        chageParams(code) {
             if (code) {
                 this.sort = code
             }
             this.retrieve()
         },
         async retrieve() {
-            await Promise.all([
-                this.$axios.get(SERVER_URL.posts, {
-                    params: { page: this.page, size: this.size, sort: this.sort },
-                }).then(res => this.datas = res.data),
-                this.$axios.get(SERVER_URL.posts.concat("/count")).then(res => this.total = res.data)
-            ]);
+            await this.$axios.get(SERVER_URL.posts, {
+                params: { page: this.page, size: this.size, sort: this.sort },
+            }).then(res => this.posts = res.data)
+        },
+        
+        viewMore() {
+            this.page = this.page + 1;
+
+            this.retrieve();
         }
     }
 

@@ -3,7 +3,6 @@ import { marked } from "marked";
 import hljs from "highlight.js/lib/core";
 import "highlight.js/styles/ir-black.css";
 
-import plaintext from 'highlight.js/lib/languages/plaintext'
 import bash from 'highlight.js/lib/languages/bash';
 import dockerfile from 'highlight.js/lib/languages/dockerfile';
 import javascript from 'highlight.js/lib/languages/javascript';
@@ -17,7 +16,6 @@ import typescript from 'highlight.js/lib/languages/typescript';
 import xml from 'highlight.js/lib/languages/xml';
 import yaml from 'highlight.js/lib/languages/yaml';
 
-hljs.registerLanguage('plaintext', plaintext)
 hljs.registerLanguage('bash', bash);
 hljs.registerLanguage('dockerfile', dockerfile);
 hljs.registerLanguage('js', javascript);
@@ -33,17 +31,15 @@ hljs.registerLanguage('xml', xml);
 
 marked.setOptions({
   renderer: new marked.Renderer(),
-  highlight: function(code, lang) {
-    const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+  highlight: function (code, lang) {
+    const language = hljs.getLanguage(lang) ? lang : 'sh';
     return hljs.highlight(code, { language }).value;
   },
   pedantic: false,
   gfm: true,
   breaks: true,
-  sanitize: false,
   smartLists: true,
-  smartypants: false,
-  xhtml: false
+  xhtml: true
 })
 
 export default marked

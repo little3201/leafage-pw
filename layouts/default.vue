@@ -1,22 +1,16 @@
 <template>
-  <div id="layout" class="dark:bg-black">
-    <header class="max-w-2xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
-      <Header class="hidden sm:flex border-black dark:border-white border-b-2" />
-      <div class="flex justify-center items-center my-8">
-        <NuxtLink to="/" title="leafage" class="dark:text-white text-center">
-          <figure class="inline-flex justify-center dark:invert dark:opacity-90">
-            <img src="https://cdn.leafage.top/logo-only.png" alt="Leafage" width="64" height="64" />
-          </figure>
-          <h1 class="text-4xl tracking-widest font-black uppercase">Leafage</h1>
-        </NuxtLink>
-      </div>
+  <div class="dark:bg-gray-900">
+    <header class="max-w-2xl mx-auto sm:px-6 lg:max-w-4xl 2xl:max-w-6xl lg:px-8">
+      <Header class="flex border-gray-900 dark:border-gray-300 border-b-2" />
+      <Logo />
     </header>
-    <main class="max-w-2xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <main
+      class="max-w-2xl mx-auto px-4 sm:px-6 lg:max-w-4xl 2xl:max-w-6xl lg:px-8"
+      style="min-height: calc(100vh - 23rem);"
+    >
       <Nuxt />
     </main>
-    <footer class="bg-black">
-      <Footer />
-    </footer>
+    <Footer />
   </div>
 </template>
 
