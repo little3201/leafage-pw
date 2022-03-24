@@ -94,10 +94,10 @@ const viewMore = async () => {
  */
 const chageParams = async (item: string) => {
     page.value = 0
-    sort.value = item;
     if (sort.value == item) {
         refresh()
     } else {
+        sort.value = item;
         posts.splice(0, -1)
         const datas = await $fetch(`/api/assets/posts?page=${page.value}&size=12&sort=${sort.value}`)
         posts.push(datas)

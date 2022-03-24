@@ -61,10 +61,10 @@ const viewMore = async () => {
  */
 const chageParams = async (item: string) => {
     page.value = 0;
-    category.value = item;
     if (category.value == item) {
         refresh()
     } else {
+        category.value = item;
         posts.splice(0, -1)
         const datas = await $fetch(`/api/assets/posts?page=${page.value}&size=12&sort=${category.value}`)
         posts.push(datas)
