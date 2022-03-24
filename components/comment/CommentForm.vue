@@ -51,9 +51,9 @@ export default {
          */
         onSubmit(code) {
             let comment = {
-                posts: props.code,
+                posts: this.props.code,
                 content: this.content,
-                replier: props.replier
+                replier: this.props.replier
             };
             this.$axios.get("/check").then(() => {
                 this.$axios.post(SERVER_URL.comment, comment).then(() => {
