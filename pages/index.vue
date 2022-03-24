@@ -57,7 +57,6 @@
 </template>
 
 <script lang="ts" setup>
-const category = ref("likes");
 const tabs = ref([
     {
         code: "likes",
@@ -73,6 +72,7 @@ const tabs = ref([
     }
 ])
 
+let sort = ref("likes")
 let page = ref(0)
 
 const [{ data: galleryPosts }, { data: posts, refresh }] = await Promise.all([
@@ -85,7 +85,7 @@ const [{ data: galleryPosts }, { data: posts, refresh }] = await Promise.all([
  */
 const viewMore = async () => {
     page.value = page.value + 1;
-    const datas = await $fetch(`/api/assets/posts?page=${page.value}&size=12&sort=${category.value}`)
+    const datas = await $fetch(`/api/assets/posts?page=${page.value}&size=12&sort=${sort.value}`)
     posts.push(datas)
 }
 
@@ -94,7 +94,13 @@ const viewMore = async () => {
  */
 const chageParams = async (item: string) => {
     page.value = 0
-    category.value = item;
-    refresh()
+    sort.value = item;
+    if (sort.value == item) {
+        refresh()
+    } else {
+        posts.splice(0, -1)
+        const datas = await $fetch(`/api/assets/posts?page=${page.value}&size=12&sort=${sort.value}`)
+        posts.push(datas)
+    }
 }
 </script>

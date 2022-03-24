@@ -117,9 +117,15 @@ const viewMore = async () => {
 /**
  * 更新排序
  */
-const chageParams = async (code: string) => {
+const chageParams = async (item: string) => {
     page.value = 0;
-    category.value = code;
-    refresh()
+    category.value = item;
+    if (category.value == item) {
+        refresh()
+    } else {
+        resources.splice(0, -1)
+        const datas = await $fetch(`/api/assets/resource?page=${page.value}&size=12&sort=${category.value}`)
+        resources.push(datas)
+    }
 }
 </script>
