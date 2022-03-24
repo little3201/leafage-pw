@@ -208,7 +208,7 @@ let view = reactive({
 //     category: 'Technology'
 // })
 
-const { data } = await useAsyncData('detail', () => $fetch(`/api/assets/posts/details/${params.code}`))
+const { data } = await useAsyncData('detail', () => $fetch(`/api/assets/posts/${params.code}/details`))
 
 const [{ data: previous }, { data: next }, { data: comments }] = await Promise.all([
     useFetch(`/api/assets/posts/${params.code}/previous`),

@@ -105,7 +105,7 @@ const chageParams = async (code: string) => {
 
 const { data: categories } = await useAsyncData('resources', () => $fetch(`/api/assets/category`))
 
-const { data: resources, refresh } = await useFetch(`/api/assets/resource?page=${page.value}&size=12}`)
+const { data: resources, refresh } = await useFetch(`/api/assets/resource?page=${page.value}&size=12`)
 
 let datas = ref(resources)
 
@@ -114,7 +114,7 @@ watch(resources, (newPosts) => {
 })
 
 const viewMore = () => {
-    page.value++;
+    page.value = page.value + 1;
     refresh()
 }
 </script>
