@@ -110,7 +110,7 @@ let category = ref(categories[0]);
  */
 const viewMore = async () => {
     page.value = page.value + 1;
-    const datas = await $fetch(`/api/assets/resource?page=${page.value}&size=12&sort=${category.value}`)
+    const datas = await $fetch(`/api/assets/resource?page=${page.value}&size=12&category=${category.value}`)
     resources.push(datas)
 }
 
@@ -124,7 +124,7 @@ const chageParams = async (item: string) => {
     } else {
         category.value = item;
         resources.splice(0, -1)
-        const datas = await $fetch(`/api/assets/resource?page=${page.value}&size=12&sort=${category.value}`)
+        const datas = await $fetch(`/api/assets/resource?page=${page.value}&size=12&category=${category.value}`)
         resources.push(datas)
     }
 }

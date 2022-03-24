@@ -185,6 +185,8 @@
 </template>
 
 <script lang="ts" setup>
+import { getCookie } from '../../../utils/ck'
+
 const { params } = useRoute();
 const { $marked } = useNuxtApp()
 
@@ -253,9 +255,12 @@ const previewOperation = (show: boolean, url: string) => {
 const likes = async () => {
     await $fetch(`/api/check`).then(() => {
         const likes = $fetch(`/api/assets/posts/${params.code}/like`, {
-            method: 'PATCH'
+            method: 'PATCH',
+            headers: {
+                'X-CSRF-TOKEN': getCookie('XSRF-TOKEN')
+            }
         })
-        data.valuelikes = likes
+        data.value.likes = likes
     })
 }
 </script>

@@ -21,6 +21,8 @@
 </template>
 
 <script lang="ts" setup>
+import { getCookie } from '../../utils/ck'
+
 const props = defineProps({
     isShow: {
         type: Boolean,
@@ -48,7 +50,13 @@ const onSubmit = async () => {
         replier: props.reply
     }
     await $fetch(`/api/check`).then(() => {
-        $fetch(`/api/assets/comment`, { method: 'POST', body: comment }).then(() => {
+        $fetch(`/api/assets/comment`, {
+            method: 'POST',
+            body: comment,
+            headers: {
+                'X-CSRF-TOKEN': getCookie('XSRF-TOKEN')
+            }
+        }).then(() => {
             content.value = ''
         })
     })
