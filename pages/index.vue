@@ -25,7 +25,7 @@
             <div class="w-full">
                 <Tab @chageParams="chageParams" :datas="tabs" />
                 <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 2xl:grid-cols-3 my-8">
-                    <Item v-for="data in datas" :data="data" />
+                    <Item v-for="post in datas" :data="post" />
                 </div>
                 <div class="text-center my-6 text-gray-400">
                     <button
@@ -57,7 +57,7 @@
 </template>
 
 <script lang="ts" setup>
-const order = ref("");
+const category = ref("");
 const tabs = ref([
     {
         code: "likes",
@@ -75,9 +75,9 @@ const tabs = ref([
 
 let page = ref(0)
 
-const chageParams = async (category: string) => {
+const chageParams = async (item: string) => {
     page.value = 0
-    order.value = category;
+    category.value = item;
     refresh()
 };
 

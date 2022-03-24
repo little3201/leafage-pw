@@ -27,12 +27,10 @@ leafage-pw，一个使用 Nuxt.js、 Tailwindcss 的博客网站，不太喜欢 
 ### 工具、依赖：
 
 - [x] nuxt —— 开发框架；
-- [x] axios —— 接口数据请求；
-- [x] tailwindcss —— 页面样式；
-- [x] @tailwindcss/typography —— 排版优化；
-- [x] @tailwindcss/aspect-ratio —— 图片比例；
-- [x] markdown-it —— markdown解析；
-- [x] hightlight.js —— 代码高亮，使用 ir-black；
+- [x] tailwindcss(plugins: typography、aspect-ratio) —— 样式、排版优化、图片比例；
+- [x] marked.js(plugins: marked-extended-tables) —— markdown解析、表格支持；
+- [x] hightlight.js —— 代码高亮（使用ir-black）；
+- [x] vue-gtag-next —— google tag manager;
 
 
 # Nuxt 3 Minimal Starter

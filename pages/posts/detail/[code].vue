@@ -172,15 +172,15 @@
                         </li>
                     </ul>
                 </div>
-                <p class="mt-8 text-lg">添加评论：</p>
-                <CommentForm :isShow="isShow" :code="data.code" />
-                <CommentItem v-for="data in comments" :data="data" />
+                <p class="mt-8 text-lg dark:text-gray-300">添加评论：</p>
+                <LazyCommentForm :isShow="isShow" :code="data.code" />
+                <LazyCommentItem v-for="data in comments" :data="data" />
             </div>
         </div>
 
-        <Preview :isShow="view.isShow" @closeAction="previewOperation">
+        <LazyPreview :isShow="view.isShow" @closeAction="previewOperation">
             <img :src="view.url" alt="preview" class="w-full h-full" width="1366" height="768" />
-        </Preview>
+        </LazyPreview>
     </div>
 </template>
 
@@ -211,9 +211,9 @@ const data = ref({
 // const { data } = await useAsyncData('detail', () => $fetch(`/api/posts/details/${params.code}`))
 
 const [{ data: previous }, { data: next }, { data: comments }] = await Promise.all([
-    useFetch(`/api/posts/${params.code}/previous`),
-    useFetch(`/api/posts/${params.code}/next`),
-    useFetch(`/api/comment/${params.code}`)
+    useFetch(`/api/assets/posts/${params.code}/previous`),
+    useFetch(`/api/assets/posts/${params.code}/next`),
+    useFetch(`/api/assets/comment/${params.code}`)
 ])
 
 onMounted(() => {

@@ -103,10 +103,9 @@ const chageParams = async (code: string) => {
     refresh()
 };
 
-const { data: categories } = await useAsyncData('resources', () => $fetch(`/api/category`))
+const { data: categories } = await useAsyncData('resources', () => $fetch(`/api/assets/category`))
 
-const { data: resources, refresh } = await useFetch(`/api/resource?page=${page.value}&size=12}`)
-
+const { data: resources, refresh } = await useFetch(`/api/assets/resource?page=${page.value}&size=12}`)
 
 let datas = ref(resources)
 

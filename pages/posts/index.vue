@@ -8,7 +8,7 @@
 
         <Tab @chageParams="chageParams" :datas="categories" />
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 my-8">
-            <Item v-for="data in datas" :data="data" />
+            <Item v-for="post in datas" :data="post" />
         </div>
         <div class="text-center my-6 text-gray-400">
             <button
@@ -43,17 +43,15 @@ let page = ref(0)
 
 const category = ref(route.params.category || '');
 
-const chageParams = async (alias: string) => {
+const chageParams = async (item: string) => {
     page.value = 0;
-    category.value = alias;
-    datas.value = []
+    category.value = item;
     refresh()
-    datas.value.push(posts)
 };
 
-const { data: categories } = await useAsyncData('posts', () => $fetch(`/api/category`))
+const { data: categories } = await useAsyncData('category', () => $fetch(`/api/assets/category`))
 
-const { data: posts, refresh } = await useFetch(`/api/posts?page=${page.value}&size=12`)
+const { data: posts, refresh } = await useFetch(`/api/assets/posts?page=${page.value}&size=12`)
 
 let datas = ref(posts)
 
