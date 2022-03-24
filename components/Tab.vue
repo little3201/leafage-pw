@@ -35,7 +35,7 @@ export default {
     methods: {
         switchCode(code) {
             this.checked = code
-            this.$emit('chageParams', 0, code)
+            this.$emit('chageParams', code)
         }
     }
 }
