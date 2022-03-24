@@ -15,7 +15,7 @@
         </Html>
         <div class="grid lg:grid-rows-2 lg:grid-cols-4 gap-6 mb-8">
             <Gallery
-                v-for="(data, index) in datas.splice(0, 6)"
+                v-for="(data, index) in galleryPosts"
                 :data="data"
                 :aspect="(index < 4 && index > 1) ? true : false"
             />
@@ -81,6 +81,7 @@ const chageParams = async (item: string) => {
     refresh()
 };
 
+const { data: galleryPosts } = await useAsyncData('gallery', () => `/api/assets/posts?page=${page.value}&size=6`)
 const { data: posts, refresh } = await useFetch(`/api/assets/posts?page=${page.value}&size=12&sort=${category.value}`)
 
 let datas = ref(posts)

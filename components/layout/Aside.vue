@@ -130,5 +130,5 @@
 </template>
 
 <script lang="ts" setup>
-const { data: categories } = await useFetch('/api/category')
+const { data: categories } = await useFetch('/api/assets/category')
 </script>
