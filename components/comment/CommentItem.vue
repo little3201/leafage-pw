@@ -52,7 +52,7 @@
       <div v-show="isShow">
         <span class="my-5 uppercase tracking-wide text-gray-400 font-bold text-xs">Replies</span>
         <div v-if="data.count > 0" class="space-y-4">
-          <CommentItem v-for="reply in replies" :data="reply" />
+          <CommentItem v-for="(reply, index) in replies" :key="index" :data="reply" />
         </div>
       </div>
     </div>
