@@ -57,7 +57,7 @@
 </template>
 
 <script lang="ts" setup>
-const category = ref("");
+const category = ref("likes");
 const tabs = ref([
     {
         code: "likes",
@@ -75,13 +75,7 @@ const tabs = ref([
 
 let page = ref(0)
 
-const chageParams = async (item: string) => {
-    page.value = 0
-    category.value = item;
-    refresh()
-};
-
-const { data: galleryPosts } = await useAsyncData('gallery', () =>  $fetch(`/api/assets/posts?page=${page.value}&size=6`))
+const { data: galleryPosts } = await useAsyncData('gallery', () =>  $fetch(`/api/assets/posts?page=0&size=6`))
 const { data: posts, refresh } = await useFetch(`/api/assets/posts?page=${page.value}&size=12&sort=${category.value}`)
 
 let datas = ref(posts)
@@ -90,8 +84,20 @@ watch(posts, (newPosts) => {
     datas.value.push(...newPosts)
 })
 
+/**
+ * 加载更多
+ */
 const viewMore = () => {
     page.value = page.value + 1;
+    refresh()
+}
+
+/**
+ * 更新排序
+ */
+const chageParams = async (item: string) => {
+    page.value = 0
+    category.value = item;
     refresh()
 }
 </script>

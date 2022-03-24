@@ -122,14 +122,14 @@
                     <ul
                         class="grid grid-flow-row grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2 gap-4 text-sm font-bold"
                     >
-                        <li v-if="previous[0]">
+                        <li v-if="previous && previous.code">
                             <NuxtLink
-                                :title="previous[0].title"
-                                :to="'/posts/detail/' + previous[0].code"
+                                :title="previous.title"
+                                :to="'/posts/detail/' + previous.code"
                                 class="flex items-center py-2 transform hover:-translate-x-2 transition duration-500"
                             >
                                 <svg
-                                    v-show="previous[0]"
+                                    v-show="previous.code && previous.code.length > 0"
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="16"
                                     height="16"
@@ -143,18 +143,18 @@
                                 >
                                     <polyline points="15 18 9 12 15 6" />
                                 </svg>
-                                {{ previous[0].title }}
+                                {{ previous.title }}
                             </NuxtLink>
                         </li>
-                        <li class="flex items-center justify-end" v-if="next[1]">
+                        <li class="flex items-center justify-end" v-if="next && next.code">
                             <NuxtLink
-                                :title="next[1].title"
-                                :to="'/posts/detail/' + next[1].code"
+                                :title="next.title"
+                                :to="'/posts/detail/' + next.code"
                                 class="flex items-center py-2 transform hover:translate-x-2 transition duration-500"
                             >
-                                {{ next[1].title }}
+                                {{ next.title }}
                                 <svg
-                                    v-show="next[1]"
+                                    v-show="next.code && next.code.length > 0"
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="16"
                                     height="16"
@@ -207,6 +207,7 @@ const [{ data: previous }, { data: next }, { data: comments }] = await Promise.a
 onMounted(() => {
     addImgClickEvent()
 })
+
 /**
  * marked 解析
  * @param content 原内容
@@ -217,6 +218,7 @@ const renderedHtml = (content: string) => {
     }
     return ""
 }
+
 /**
  * 给img添加双击事件
  */
@@ -235,6 +237,7 @@ const addImgClickEvent = () => {
         }
     }
 }
+
 /**
  * 预览操作
  */
@@ -247,5 +250,10 @@ const previewOperation = (show: boolean, url: string) => {
 /**
  * 点赞
  */
-const likes = () => { }
+const likes = async () => {
+    await useFetch(`/api/check`).then(() => {
+        const { data: likes } = await useFetch(`/api/assets/posts/${params.code}/like`)
+        data.value = { ...data, likes: likes }
+    })
+}
 </script>

@@ -43,12 +43,6 @@ let page = ref(0)
 
 const category = ref(route.params.category || '');
 
-const chageParams = async (item: string) => {
-    page.value = 0;
-    category.value = item;
-    refresh()
-};
-
 const { data: categories } = await useAsyncData('category', () => $fetch(`/api/assets/category`))
 
 const { data: posts, refresh } = await useFetch(`/api/assets/posts?page=${page.value}&size=12&category=${category.value}`)
@@ -59,8 +53,20 @@ watch(posts, (newPosts) => {
     datas.value.push(...newPosts)
 })
 
+/**
+ * 加载更多
+ */
 const viewMore = () => {
     page.value = page.value + 1;
     refresh()
 }
+
+/**
+ * 更新排序
+ */
+const chageParams = async (item: string) => {
+    page.value = 0;
+    category.value = item;
+    refresh()
+};
 </script>

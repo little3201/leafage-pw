@@ -40,12 +40,12 @@ let content = ref('')
 /**
  * 提交表单
  */
-const onSubmit = () => {
+const onSubmit = async () => {
     let comment = {
         posts: props.code,
         content: content.value,
         replier: props.reply
     }
-    alert("提交了")
+    const { data } = await useFetch(`/api/assets/comment/${props.code}`)
 }
 </script>

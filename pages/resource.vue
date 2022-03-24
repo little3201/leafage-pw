@@ -93,15 +93,7 @@
 </template>
 
 <script lang="ts" setup>
-const category = ref("");
-
 let page = ref(0)
-
-const chageParams = async (code: string) => {
-    page.value = 0;
-    category.value = code;
-    refresh()
-};
 
 const { data: categories } = await useAsyncData('resources', () => $fetch(`/api/assets/category`))
 
@@ -113,8 +105,22 @@ watch(resources, (newPosts) => {
     datas.value.push(...newPosts)
 })
 
+const category = ref(categories.value[0]);
+
+/**
+ * 加载更多
+ */
 const viewMore = () => {
     page.value = page.value + 1;
+    refresh()
+}
+
+/**
+ * 更新排序
+ */
+const chageParams = async (code: string) => {
+    page.value = 0;
+    category.value = code;
     refresh()
 }
 </script>
