@@ -70,15 +70,6 @@ typings/
 # Nuxt generate
 dist
 
-# vuepress build output
-.vuepress/dist
-
-# Serverless directories
-.serverless
-
-# IDE / Editor
-.idea
-
 # Service worker
 sw.*
 
@@ -88,4 +79,9 @@ sw.*
 # Vim swap files
 *.swp
 
-.yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
