@@ -164,7 +164,7 @@
           </ul>
         </div>
         <p class="mt-8 text-lg dark:text-gray-300">添加评论：</p>
-        <LazyCommentForm :isShow="isShow" :post="data.code" />
+        <LazyCommentForm :isShow="isShow" :post="data.code" @retrieve="retrieveComment" />
         <LazyCommentItem v-for="comment in comments" :key="comment.code" :data="comment" />
       </div>
     </div>
@@ -249,8 +249,8 @@ export default {
      * 给img添加双击事件
      */
     addImgClickEvent() {
-      if (this.$refs.renderHtmlRef) {
-        let imgs = this.$refs.renderHtmlRef.querySelectorAll("img");
+      if (this.$refs.renderedHtmlRef) {
+        let imgs = this.$refs.renderedHtmlRef.querySelectorAll("img");
         if (imgs.length > 0) {
           setTimeout(() => {
             for (let i = 0, len = imgs.length; i < len; i++) {
@@ -268,6 +268,10 @@ export default {
         this.view.url = url
       }
       this.view.isShow = show
+    },
+
+    retrieveComment() {
+      this.$axios.get(SERVER_URL.comment.concat("/", params.slug)).then(res => this.comments = res.data)
     }
   }
 }

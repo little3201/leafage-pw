@@ -48,7 +48,12 @@
           </div>
         </div>
       </div>
-      <CommentForm :isShow="isOpen" :post="data.posts" :reply="data.code" />
+      <CommentForm
+        :isShow="isOpen"
+        :post="data.posts"
+        :reply="data.code"
+        @retrieve="retireveReplies"
+      />
       <div v-show="isShow">
         <span class="my-5 uppercase tracking-wide text-gray-400 font-bold text-xs">Replies</span>
         <div v-if="data.count > 0" class="space-y-4">
@@ -85,9 +90,11 @@ export default {
       this.isShow = show
       if (show) {
         // 查询关联回复
-        const { data: datas } = this.$axios.get(`${SERVER_URL.comment}/${code}/replies`)
-        this.replies = datas
+        this.retireveReplies(code)
       }
+    },
+    retireveReplies(code) {
+      this.$axios.get(`${SERVER_URL.comment}/${code}/replies`).then(res => this.replies = res.data)
     }
   }
 }
