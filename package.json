@@ -32,5 +32,6 @@
   "bugs": {
     "url": "https://github.com/little3201/leafage-pw/issues"
   },
-  "homepage": "https://www.leafage.top"
+  "homepage": "https://www.leafage.top",
+  "packageManager": "yarn@3.2.0"
 }

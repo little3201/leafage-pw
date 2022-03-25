@@ -1,6 +1,21 @@
 <template>
     <div class="relative my-4">
-        <div class="border-r border-dotted border-gray-500 absolute h-full top-4"></div>
+        <div
+            class="border-r border-dotted border-gray-500 absolute h-full top-4"
+            style="left: 5.5px;"
+        ></div>
+
+        <section>
+            <div class="flex items-center">
+                <span class="rounded-full h-3 w-3 z-0 bg-green-500"></span>
+                <span class="ml-4 font-semibold text-base">2022-03-24</span>
+            </div>
+            <ol class="ml-12 text-sm">
+                <li>重构了详情页的排版，整体的宽度；</li>
+                <li>移除了分页组件，更新为【加载更多】；</li>
+                <li>更新为 yarn3, 优化排版中文本超出的问题；</li>
+            </ol>
+        </section>
 
         <section>
             <div class="flex items-center">
