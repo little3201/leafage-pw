@@ -57,9 +57,9 @@ export default {
             };
             this.$axios.get("/check").then(() => {
                 this.$axios.post(SERVER_URL.comment, comment).then(() => {
-                    this.$axios.get(SERVER_URL.comment.concat("/", this.props.post)).then(res => this.comments = res.data);
                     // 已提交的内容清空
                     this.content = '';
+                    this.$emit('retrieve')
                 });
             });
         }
