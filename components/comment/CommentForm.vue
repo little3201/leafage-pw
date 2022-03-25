@@ -1,9 +1,9 @@
 <template>
     <form v-show="isShow" @submit.prevent class="my-4">
         <div class="grid my-4">
-            <label :for="'comment+' + code" class="sr-only">Content</label>
+            <label :for="'comment_' + post" class="sr-only">Content</label>
             <textarea
-                :id="'comment+' + code"
+                :id="'comment_' + post"
                 placeholder="请输入评论..."
                 v-model="content"
                 class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:outline-none focus:ring-1 focus:ring-gray-400"
@@ -29,7 +29,7 @@ export default {
             type: Boolean,
             default: false,
         },
-        code: {
+        post: {
             type: String,
             default: undefined
         },
@@ -49,15 +49,15 @@ export default {
         /**
          * 评论提交
          */
-        onSubmit(code) {
+        onSubmit() {
             let comment = {
-                posts: this.props.code,
+                posts: this.post,
                 content: this.content,
-                replier: this.props.reply
+                replier: this.reply
             };
             this.$axios.get("/check").then(() => {
                 this.$axios.post(SERVER_URL.comment, comment).then(() => {
-                    this.$axios.get(SERVER_URL.comment.concat("/", code)).then(res => this.comments = res.data);
+                    this.$axios.get(SERVER_URL.comment.concat("/", this.props.post)).then(res => this.comments = res.data);
                     // 已提交的内容清空
                     this.content = '';
                 });

@@ -14,9 +14,9 @@
       <h3>{{ data.category }}</h3>
       <span>{{ new Date(data.modifyTime).toLocaleDateString() }}</span>
     </div>
-    <p
+    <h4
       class="my-2 text-lg font-medium text-gray-800 dark:text-gray-300 group-hover:underline"
-    >{{ data.title }}</p>
+    >{{ data.title }}</h4>
     <div class="flex justify-between text-xs text-gray-600 dark:text-gray-400">
       <div>
         <div class="inline-flex items-center">

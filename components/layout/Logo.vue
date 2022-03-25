@@ -7,7 +7,7 @@
                     alt="Leafage"
                     width="64"
                     height="64"
-                    class="filter dark:invert dark:opacity-90"
+                    class="dark:invert dark:opacity-90"
                 />
             </figure>
             <h1 class="text-4xl tracking-widest font-gray-900 uppercase font-semibold">Leafage</h1>

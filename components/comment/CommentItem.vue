@@ -48,7 +48,7 @@
           </div>
         </div>
       </div>
-      <CommentForm :isShow="isOpen" :code="data.posts" :reply="data.code" />
+      <CommentForm :isShow="isOpen" :post="data.posts" :reply="data.code" />
       <div v-show="isShow">
         <span class="my-5 uppercase tracking-wide text-gray-400 font-bold text-xs">Replies</span>
         <div v-if="data.count > 0" class="space-y-4">
