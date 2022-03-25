@@ -21,6 +21,8 @@
 </template>
 
 <script>
+import { SERVER_URL } from "../../api/request";
+
 export default {
     name: "CommentForm",
 
