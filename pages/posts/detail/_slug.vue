@@ -164,7 +164,7 @@
           </ul>
         </div>
         <p class="mt-8 text-lg dark:text-gray-300">添加评论：</p>
-        <LazyCommentForm :isShow="isShow" :code="data.code" />
+        <LazyCommentForm :isShow="isShow" :post="data.code" />
         <LazyCommentItem v-for="comment in comments" :key="comment.code" :data="comment" />
       </div>
     </div>
