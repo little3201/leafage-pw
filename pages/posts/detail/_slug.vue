@@ -3,11 +3,11 @@
     <div class="flex space-x-8 border-t border-gray-900 dark:border-gray-300">
       <div class="my-6 w-full">
         <article>
-          <h2 class="text-3xl text-center dark:text-gray-300">{{ data.title }}</h2>
+          <h2 class="text-2xl font-semibold text-center dark:text-gray-300">{{ data.title }}</h2>
 
           <div
             ref="renderedHtmlRef"
-            class="my-6 prose prose-base xl:prose-lg dark:text-gray-300 prose-blue max-w-none"
+            class="my-6 prose prose-base xl:prose-lg dark:text-gray-300 prose-blue max-w-none break-words"
             v-html="renderedHtml"
           ></div>
         </article>
@@ -75,11 +75,11 @@
           </div>
         </div>
 
-        <div class="inline-flex items-center space-x-2 text-gray-600 dark:text-gray-300">
+        <div class="inline-flex flex-wrap items-center space-x-2 text-gray-600 dark:text-gray-300">
           <span
             v-for="(tag, index) in data.tags"
             :key="index"
-            class="text-sm bg-gray-200 dark:bg-gray-600 rounded-md px-2 py-px"
+            class="text-sm my-1 bg-gray-200 dark:bg-gray-600 rounded-md px-2 py-px"
           >{{ tag }}</span>
         </div>
 
@@ -228,7 +228,7 @@ export default {
         isShow: false,
         url: ''
       },
-      isShow: false
+      isShow: true
     };
   },
   mounted() {

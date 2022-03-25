@@ -53,13 +53,13 @@ export default {
             let comment = {
                 posts: this.props.code,
                 content: this.content,
-                replier: this.props.replier
+                replier: this.props.reply
             };
             this.$axios.get("/check").then(() => {
                 this.$axios.post(SERVER_URL.comment, comment).then(() => {
                     this.$axios.get(SERVER_URL.comment.concat("/", code)).then(res => this.comments = res.data);
                     // 已提交的内容清空
-                    this.formData.content = '';
+                    this.content = '';
                 });
             });
         }
