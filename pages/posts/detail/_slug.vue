@@ -7,7 +7,7 @@
 
           <div
             ref="renderedHtmlRef"
-            class="my-6 prose prose-base xl:prose-lg dark:text-gray-300 prose-blue max-w-none break-words"
+            class="my-6 prose prose-base xl:prose-lg dark:text-gray-300 dark:prose-invert prose-blue max-w-none break-words"
             v-html="renderedHtml"
           ></div>
         </article>
