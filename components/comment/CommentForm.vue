@@ -54,7 +54,7 @@ export default {
          */
         onSubmit() {
             let comment = {
-                posts: this.post,
+                posts: this.post ? this.post : null,
                 content: this.content,
                 replier: this.reply
             };
