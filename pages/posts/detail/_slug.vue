@@ -179,8 +179,6 @@
 import { SERVER_URL } from "~/api/request";
 import marked from "~/plugins/md";
 
-import { markdownToHtml } from "~/plugins/remark.md";
-
 export default {
   name: "Slug",
   scrollToTop: true,
@@ -219,7 +217,7 @@ export default {
       $axios.$get(SERVER_URL.comment.concat("/", params.slug))
     ]);
     // a标签添加 target="_blank"
-    let renderedHtml = markdownToHtml(data.content).replace(/href="/gi, 'target="_blank" href="');
+    let renderedHtml = marked.parse(data.content).replace(/href="/gi, 'target="_blank" href="');
     return { data, previous, next, comments, renderedHtml };
   },
   data() {
