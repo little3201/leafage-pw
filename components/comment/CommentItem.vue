@@ -50,6 +50,7 @@
       </div>
       <CommentForm
         :isShow="isOpen"
+        :code="data.posts"
         :reply="data.code"
         @retrieve="retireveReplies"
       />

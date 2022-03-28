@@ -86,9 +86,6 @@ export default {
   },
 
   build: {
-    extractCSS: {
-      ignoreOrder: true
-    },
     postcss: {
       plugins: {
         tailwindcss: {},
