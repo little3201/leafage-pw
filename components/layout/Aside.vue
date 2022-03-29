@@ -15,7 +15,7 @@
                     <p class="my-2">微信搜一搜</p>
                     <input
                         type="text"
-                        class="placeholder-gray-300 border border-gray-300 p-2 w-full text-sm"
+                        class="placeholder-gray-300 border border-gray-300 py-1 pl-2 w-full text-sm"
                         disabled
                         placeholder="Leafage"
                     />
@@ -57,8 +57,8 @@
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
+                        width="16"
+                        height="16"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
