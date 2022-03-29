@@ -42,6 +42,7 @@ marked.setOptions({
   breaks: true,
   sanitize: false, // 需要设置false, 否则高亮无法显示
   smartLists: true,
+  smartypants: false,
   xhtml: true
 })
 
