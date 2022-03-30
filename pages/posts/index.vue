@@ -45,22 +45,19 @@ export default {
     },
 
     async asyncData({ $axios }) {
-        let [datas, total, categories] = await Promise.all([
+        let [datas, categories] = await Promise.all([
             $axios.$get(SERVER_URL.posts, {
                 params: { page: 0, size: 16, order: "likes" },
             }),
-            $axios.$get(SERVER_URL.posts.concat("/count")),
             $axios.$get(SERVER_URL.category)])
 
-        return { datas, total, categories }
+        return { datas, categories }
     },
 
     data() {
         return {
             datas: [],
             page: 0,
-            size: 16,
-            total: 0,
             category: undefined
         }
     },
@@ -74,12 +71,9 @@ export default {
         },
 
         async retrieve() {
-            await Promise.all([
-                this.$axios.get(SERVER_URL.posts, {
-                    params: { page: this.page, size: this.size, category: this.category },
-                }).then(res => this.datas = res.data),
-                this.$axios.get(SERVER_URL.posts.concat("/count"), { params: { category: this.category } })
-                    .then(res => this.total = res.data)])
+            await this.$axios.get(SERVER_URL.posts, {
+                params: { page: this.page, size: this.size, category: this.category },
+            }).then(res => this.datas = res.data)
         },
 
         viewMore() {

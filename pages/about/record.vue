@@ -7,6 +7,17 @@
 
         <section>
             <div class="flex items-center">
+                <span class="rounded-full h-3 w-3 z-0 bg-yellow-500"></span>
+                <span class="ml-4 font-semibold text-base">2022-03-30</span>
+            </div>
+            <ol class="ml-12 text-sm">
+                <li>解决了评论、回复评论的问题；</li>
+                <li>修复了 resource 分类查询的问题，添加 resource 的 detail 页面；</li>
+            </ol>
+        </section>
+
+        <section>
+            <div class="flex items-center">
                 <span class="rounded-full h-3 w-3 z-0 bg-green-500"></span>
                 <span class="ml-4 font-semibold text-base">2022-03-24</span>
             </div>
