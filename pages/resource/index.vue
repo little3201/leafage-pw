@@ -4,7 +4,12 @@
         <div
             class="grid grid-cols-1 gap-y-8 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 my-8"
         >
-            <NuxtLink v-for="data in datas" :key="data.code" to="/resource" class="group">
+            <NuxtLink
+                v-for="data in datas"
+                :key="data.code"
+                :to="'/resource/detail/' + data.code"
+                class="group"
+            >
                 <div class="w-full aspect-w-4 aspect-h-5 bg-gray-300 overflow-hidden border">
                     <img
                         :src="data.cover"
@@ -124,7 +129,7 @@ export default {
 
         async retrieve() {
             await this.$axios.get(SERVER_URL.resource, {
-                params: { page: this.page, size: this.size, category: this.category }
+                params: { page: this.page, size: 12, category: this.category }
             }).then(res => this.datas = res.data)
         },
 
