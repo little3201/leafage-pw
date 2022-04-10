@@ -1,15 +1,11 @@
 .container {
-    max-width: 36rem;
-    padding: 0 1rem;
-    margin: 3rem auto 6rem;
-  }
-  
-  .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .backToHome {
-    margin: 3rem 0 0;
-  }
+  @apply max-w-xl px-4 mt-12 mb-24 mx-auto
+}
+
+.header {
+  @apply flex flex-col items-center
+}
+
+.backToHome {
+  @apply my-12 mx-0
+}
