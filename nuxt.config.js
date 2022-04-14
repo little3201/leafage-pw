@@ -56,8 +56,7 @@ export default {
     // https: true,
     progress: true,
     // credentials: true,
-    baseURL: "http://localhost:8760",
-    proxy: true
+    baseURL: "https://www.leafage.top/api"
   },
 
   globalName: 'leafage',
