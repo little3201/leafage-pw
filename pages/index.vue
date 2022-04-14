@@ -2,7 +2,7 @@
     <div id="home">
         <div class="grid lg:grid-rows-2 lg:grid-cols-4 gap-6 mb-8">
             <Gallery
-                v-for="(data, index) in galleryPosts"
+                v-for="(data, index) in galleryPosts.content"
                 :key="index"
                 :data="data"
                 :aspect="(index < 4 && index > 1) ? true : false"
@@ -12,7 +12,7 @@
             <div class="w-full">
                 <Tab @chageParams="chageParams" :datas="tabs" />
                 <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 2xl:grid-cols-3 my-8">
-                    <Item v-for="data in posts" :key="data.code" :data="data" />
+                    <Item v-for="data in posts.content" :key="data.code" :data="data" />
                 </div>
                 <div class="text-center my-6 text-gray-400">
                     <button
@@ -89,7 +89,7 @@ export default {
         },
         async retrieve() {
             await this.$axios.get(SERVER_URL.posts, {
-                params: { page: this.page, size: this.size, sort: this.sort },
+                params: { page: this.page, size: 12, sort: this.sort },
             }).then(res => this.posts = res.data)
         },
         

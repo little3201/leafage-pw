@@ -53,10 +53,11 @@ export default {
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
-    https: true,
+    // https: true,
     progress: true,
-    credentials: true,
-    baseURL: "https://www.leafage.top/api"
+    // credentials: true,
+    baseURL: "http://localhost:8760",
+    proxy: true
   },
 
   globalName: 'leafage',
@@ -82,8 +83,8 @@ export default {
       lastmod: new Date()
     },
     routes: async () => {
-      const { data } = await axios.get('https://www.leafage.top/api/assets/posts')
-      return data.map((posts) => `/posts/detail/${posts.code}`)
+      const { data } = await axios.get('https://www.leafage.top/api/assets/posts', { params: { page: 0, size: 99 } })
+      return data.content.map((posts) => `/posts/detail/${posts.code}`)
     }
   },
 
