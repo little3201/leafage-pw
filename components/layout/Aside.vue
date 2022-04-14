@@ -30,7 +30,7 @@
             <ul
                 class="grid grid-cols-1 divide-y divide-gray-300 p-4 text-xs font-semibold list-disc"
             >
-                <li class="py-3 mx-4" v-for="category in categories" :key="category.code">
+                <li class="py-3 mx-4" v-for="category in categoryData.content" :key="category.code">
                     <NuxtLink
                         :title="category.alias"
                         :to="{ path: '/posts', params: { category: category.code } }"
@@ -138,12 +138,12 @@ export default {
 
     data() {
         return {
-            categories: []
+            categoryData: {}
         }
     },
 
     async fetch() {
-        this.categories = await this.$axios.$get(SERVER_URL.category)
+        this.categoryData = await this.$axios.$get(SERVER_URL.category, { params: { page: 0, size: 99 } })
     }
 
 }
