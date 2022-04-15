@@ -32,9 +32,9 @@
             >
                 <li class="py-3 mx-4" v-for="category in categoryData.content" :key="category.code">
                     <NuxtLink
-                        :title="category.alias"
+                        :title="category.name"
                         :to="{ path: '/posts', params: { category: category.code } }"
-                        v-text="category.alias"
+                        v-text="category.name"
                         class="hover:underline hover:text-black"
                     ></NuxtLink>
                     <span class="mr-2 float-right text-gray-400" v-text="category.count"></span>
