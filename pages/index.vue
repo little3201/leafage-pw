@@ -1,12 +1,8 @@
 <template>
     <div id="home">
         <div class="grid lg:grid-rows-2 lg:grid-cols-4 gap-6 mb-8">
-            <Gallery
-                v-for="(data, index) in galleryPosts.content"
-                :key="index"
-                :data="data"
-                :aspect="(index < 4 && index > 1) ? true : false"
-            />
+            <Gallery v-for="(data, index) in galleryPosts.content" :key="index" :data="data"
+                :aspect="(index < 4 && index > 1) ? true : false" />
         </div>
         <div class="flex justify-between space-x-8 dark:text-gray-300">
             <div class="w-full">
@@ -15,24 +11,12 @@
                     <Item v-for="data in posts.content" :key="data.code" :data="data" />
                 </div>
                 <div class="text-center my-6 text-gray-400">
-                    <button
-                        type="button"
-                        @click="viewMore"
-                        class="font-semibold hover:text-gray-600 px-2 py-1 rounded focus:outline-none"
-                    >
+                    <button type="button" @click="viewMore"
+                        class="font-semibold hover:text-gray-600 px-2 py-1 rounded focus:outline-none">
                         View More
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="28"
-                            height="28"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            class="feather feather-chevrons-down mx-auto"
-                        >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-chevrons-down mx-auto">
                             <polyline points="7 6 12 11 17 6" />
                         </svg>
                     </button>
@@ -64,15 +48,15 @@ export default {
             tabs: [
                 {
                     code: "likes",
-                    alias: "Trending"
+                    name: "Trending"
                 },
                 {
                     code: "viewed",
-                    alias: "Most View"
+                    name: "Most View"
                 },
                 {
                     code: "comment",
-                    alias: "Popular"
+                    name: "Popular"
                 }
             ],
             page: 0,
@@ -90,9 +74,12 @@ export default {
         async retrieve() {
             await this.$axios.get(SERVER_URL.posts, {
                 params: { page: this.page, size: 12, sort: this.sort },
-            }).then(res => this.posts = res.data)
+            }).then(res => {
+                this.posts.content.push(res.data.contnet)
+                this.posts.last = this.posts.last
+            })
         },
-        
+
         viewMore() {
             this.page = this.page + 1;
 
