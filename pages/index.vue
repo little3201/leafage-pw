@@ -10,7 +10,7 @@
                 <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 2xl:grid-cols-3 my-8">
                     <Item v-for="data in posts.content" :key="data.code" :data="data" />
                 </div>
-                <div class="text-center my-6 text-gray-400">
+                <div v-if="!posts.last" class="text-center my-6 text-gray-400">
                     <button type="button" @click="viewMore"
                         class="font-semibold hover:text-gray-600 px-2 py-1 rounded focus:outline-none">
                         View More
