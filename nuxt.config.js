@@ -56,8 +56,20 @@ export default {
     https: true,
     progress: true,
     credentials: true,
-    baseURL: "https://www.leafage.top/api"
+    prefix: '/api/',
+    // baseURL: "https://www.leafage.top/api",
+    // proxy: true
   },
+
+  // proxy: {
+  //   '/api/': {
+  //     target: 'http://localhost:8760',
+  //     pathRewrite: {
+  //       '^/api/': '/',
+  //       changeOrigin: true
+  //     }
+  //   }
+  // },
 
   globalName: 'leafage',
 

@@ -2,21 +2,15 @@
     <form v-show="isShow" @submit.prevent class="my-4">
         <div class="grid my-4">
             <label :for="'comment_' + post" class="sr-only">Content</label>
-            <textarea
-                :id="'comment_' + post"
-                placeholder="请输入评论..."
-                v-model="content"
+            <textarea :id="'comment_' + post" placeholder="请输入评论..." v-model="content"
                 class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:outline-none focus:ring-1 focus:ring-gray-400"
-                required
-            ></textarea>
+                required></textarea>
         </div>
 
         <div class="flex justify-end">
-            <button
-                type="submit"
-                @click="onSubmit"
-                class="px-2 py-1 text-sm transition-colors duration-200 transform border border-gray-300 dark:bg-gray-600 dark:text-gray-300 bg-gray-200 rounded-md focus:outline-none"
-            >Commit Comment</button>
+            <button type="submit" @click="onSubmit"
+                class="px-2 py-1 text-sm transition-colors duration-200 transform border border-gray-300 dark:bg-gray-600 dark:text-gray-300 bg-gray-200 rounded-md focus:outline-none">Commit
+                Comment</button>
         </div>
     </form>
 </template>
@@ -34,6 +28,7 @@ export default {
         },
         post: {
             type: String,
+            require: true,
             default: undefined
         },
         reply: {
@@ -62,7 +57,7 @@ export default {
                 this.$axios.post(SERVER_URL.comment, comment).then(() => {
                     // 已提交的内容清空
                     this.content = '';
-                    this.$emit('retrieve', this.post)
+                    this.$emit('retrieve', this.reply)
                 });
             });
         }
