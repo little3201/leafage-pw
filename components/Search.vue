@@ -7,19 +7,11 @@
           Enter your select domain name and choose any
           extension name in the next step (choose between .com, .online, .tech, .site, .net, and more)
         </p>
-        <div
-          class="sm:flex items-center bg-white rounded-lg overflow-hidden px-2 py-1 justify-between"
-        >
-          <input
-            class="text-base text-gray-400 flex-grow outline-none px-2"
-            type="text"
-            placeholder="Search your domain name"
-          />
+        <div class="sm:flex items-center bg-white rounded-lg overflow-hidden px-2 py-1 justify-between">
+          <input class="text-base text-gray-400 flex-grow outline-none px-2" type="text"
+            placeholder="Search your domain name" />
           <div class="ms:flex items-center px-2 rounded-lg space-x-4 mx-auto">
-            <select
-              id="Com"
-              class="text-base text-gray-800 outline-none border-2 px-4 py-2 rounded-lg"
-            >
+            <select id="Com" class="text-base text-gray-800 outline-none border-2 px-4 py-2 rounded-lg">
               <option value="com" selected>com</option>
               <option value="net">net</option>
               <option value="org">org</option>
@@ -48,9 +40,8 @@ export default {
 
   methods: {
     onSubmit: async () => {
-      datas = []
       let result = $axios.$get(SERVER_URL.posts.concat("/search"), { params: { keyword: keyword.value } });
-      datas.value.push(result)
+      this.datas = result
     }
   }
 }

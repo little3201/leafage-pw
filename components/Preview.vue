@@ -74,3 +74,4 @@ export default {
 .preview-leave-to {
     opacity: 0;
 }
+</style>

@@ -5,13 +5,13 @@ if (process.client && process.env.NODE_ENV === 'production') {
     /*
      ** Google 统计分析脚本
      */
-    ; (function (i, s, o, g, r, a, m) {
+    (function (i, s, o, g, r, a, m) {
         i.GoogleAnalyticsObject = r
             ; (i[r] =
                 i[r] ||
                 function () {
-                    ; (i[r].q = i[r].q || []).push(arguments)
-                }),
+                    (i[r].q = i[r].q || []).push(arguments)
+                })
                 (i[r].l = 1 * new Date())
             ; (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0])
         a.async = 1
@@ -30,11 +30,11 @@ if (process.client && process.env.NODE_ENV === 'production') {
     ga('create', 'UA-174206461-1', 'auto')
 }
 
-export default ({ app: { router }, store }) => {
+export default ({ app: { router } }) => {
     /*
      ** 每次路由变更时进行pv统计
      */
-    router.afterEach((to, from) => {
+    router.afterEach((to) => {
         /*
          ** 告诉 GA 增加一个 PV
          */
