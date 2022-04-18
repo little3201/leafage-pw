@@ -52,6 +52,7 @@ export default {
             if (code) {
                 this.category = code
             }
+            this.posts.content = []
             this.retrieve();
         },
 

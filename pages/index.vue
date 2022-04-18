@@ -69,6 +69,7 @@ export default {
             if (code) {
                 this.sort = code
             }
+            this.posts.content = []
             this.retrieve()
         },
         async retrieve() {

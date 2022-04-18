@@ -83,6 +83,7 @@ export default {
             if (code) {
                 this.category = code
             }
+            this.resource.content = []
             this.retrieve();
         },
 
