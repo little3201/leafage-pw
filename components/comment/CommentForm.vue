@@ -62,7 +62,7 @@ export default {
                 this.$axios.post(SERVER_URL.comment, comment).then(() => {
                     // 已提交的内容清空
                     this.content = '';
-                    this.$emit('retrieve')
+                    this.$emit('retrieve', this.post)
                 });
             });
         }

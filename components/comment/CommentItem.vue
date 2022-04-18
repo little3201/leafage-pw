@@ -10,7 +10,7 @@
       />
       <figcaption
         class="text-gray-400 text-xs text-center my-2"
-      >{{ data.country ? data.country.replace(data.country.substr(0, 1), data.country.substr(0, 1).toUpperCase()) : 'china' }}</figcaption>
+      >{{ data.country ? data.country.replace(data.country.substr(0, 1), data.country.substr(0, 1).toUpperCase()) : 'China' }}</figcaption>
     </figure>
     <div
       class="flex-1 border rounded px-4 py-2 md:px-6 md:py-4 leading-relaxed dark:text-gray-300 dark:border-gray-400"
