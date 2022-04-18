@@ -53,9 +53,9 @@ export default {
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
-    // https: true,
+    https: true,
     progress: true,
-    // credentials: true,
+    credentials: true,
     baseURL: "https://www.leafage.top/api"
   },
 
