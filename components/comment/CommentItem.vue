@@ -30,14 +30,6 @@
           </button>
         </div>
         <div v-if="data.count > 0" class="inline-flex items-center">
-          <!-- <div class="flex -space-x-2 mr-2">
-            <img
-              v-for="reply in data.replies"
-              class="rounded-full w-6 h-6 border border-gray-300"
-              :src="`/svg/${data.country}.svg`"
-              :alt="reply.location"
-            />
-          </div>-->
           <div class="text-sm text-gray-400 font-semibold">
             {{ data.count }} Replies
             <button
