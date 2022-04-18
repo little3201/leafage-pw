@@ -145,6 +145,7 @@ export default {
   },
   data() {
     return {
+      data: {},
       comments: [],
       view: {
         isShow: false,
@@ -201,7 +202,9 @@ export default {
      * @param  code 代码
      */
     retrieveComment(code) {
-      code = params.slug
+      if (!code) {
+        code = this.data.code
+      }
       this.$axios.get(SERVER_URL.comment.concat("/", code)).then(res => this.comments = res.data)
     }
   }

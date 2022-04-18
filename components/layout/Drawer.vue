@@ -107,13 +107,8 @@
 </template>
 
 <script>
-import Logo from './Logo.vue'
 export default {
   name: "Drawer",
-
-  components: {
-    Logo
-  },
 
   props: {
     isShow: {

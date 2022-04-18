@@ -61,15 +61,8 @@
 </template>
 
 <script>
-import Drawer from './Drawer.vue'
-
-
 export default {
     name: "Header",
-
-    components: {
-        Drawer
-    },
 
     data() {
         return {
