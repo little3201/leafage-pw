@@ -44,7 +44,7 @@ export default {
 
     data() {
         return {
-            posts: [],
+            posts: {},
             tabs: [
                 {
                     code: "likes",
@@ -75,8 +75,12 @@ export default {
             await this.$axios.get(SERVER_URL.posts, {
                 params: { page: this.page, size: 12, sort: this.sort },
             }).then(res => {
-                this.posts.content.push(res.data.contnet)
-                this.posts.last = this.posts.last
+                if (res.data.content) {
+                    for (let i in res.data.content) {
+                        this.posts.content.push(res.data.content[i])
+                    }
+                    this.posts.last = res.data.last
+                }
             })
         },
 

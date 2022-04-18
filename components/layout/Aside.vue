@@ -25,7 +25,7 @@
 
         <div class="border border-solid border-gray-200 my-8 relative">
             <legend
-                class="absolute top-0 -mt-2.5 px-2 ml-4 bg-white dark:bg-gray-900 text-sm font-semibold"
+                class="absolute top-0 -mt-2.5 px-2 ml-4 bg-white dark:bg-gray-900 text-sm uppercase font-semibold"
             >Categories</legend>
             <ul
                 class="grid grid-cols-1 divide-y divide-gray-300 p-4 text-xs font-semibold list-disc"

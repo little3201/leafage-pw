@@ -41,7 +41,7 @@ export default {
 
     data() {
         return {
-            datas: [],
+            posts: {},
             page: 0,
             category: undefined
         }
@@ -58,7 +58,14 @@ export default {
         async retrieve() {
             await this.$axios.get(SERVER_URL.posts, {
                 params: { page: this.page, size: 12, category: this.category },
-            }).then(res => this.posts = res.data)
+            }).then(res => {
+                if (res.data.content) {
+                    for (let i in res.data.content) {
+                        this.posts.content.push(res.data.content[i])
+                    }
+                    this.posts.last = res.data.last
+                }
+            })
         },
 
         viewMore() {
