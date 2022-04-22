@@ -1,7 +1,4 @@
-// url prefix
-const URL_PREFIX = "/assets/posts"
-
-export default async () => {
+export default defineEventHandler(async() => {
     return [
         {
             "code": "2128BXOG",
@@ -207,4 +204,4 @@ export default async () => {
             "viewed": 623
         }
     ]
-}
+})

@@ -1,7 +1,18 @@
-import { defineNuxtConfig } from 'nuxt3'
+import { defineNuxtConfig } from 'nuxt'
 
 export default defineNuxtConfig({
-    css: ['~/assets/css/tailwind.css'],
+    typescript: {
+        shim: false
+    },
+    buildModules: [
+        '@unocss/nuxt',
+    ],
+    unocss: {
+        uno: true,
+        attributify: true,
+        preflight: true,
+        typography: true
+    },
     build: {
         postcss: {
             // add Postcss options

@@ -1,8 +1,4 @@
-import type { IncomingMessage, ServerResponse } from 'http'
-// url prefix
-const URL_PREFIX = "/assets/category"
-
-export default async (req: IncomingMessage, res: ServerResponse) => {
+export default defineEventHandler (() => {
     return [
         {
             "code": "20C3ID6W",
@@ -54,4 +50,4 @@ export default async (req: IncomingMessage, res: ServerResponse) => {
             "description": "其它"
         }
     ]
-}
+})

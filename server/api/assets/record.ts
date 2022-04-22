@@ -1,4 +1,4 @@
-export default () => {
+export default defineEventHandler(async () => {
     return [
         {
             date: '2022-03-12',
@@ -26,4 +26,4 @@ export default () => {
             ]
         }
     ]
-}
+})

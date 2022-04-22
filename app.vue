@@ -1,6 +1,8 @@
 <template>
     <div>
-        <Html :lang="'en'"></Html>
+        <Html :lang="'en'">
+
+        </Html>
         <NuxtLayout>
             <NuxtPage />
         </NuxtLayout>

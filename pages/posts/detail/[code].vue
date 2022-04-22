@@ -14,7 +14,7 @@
 
                     <div
                         ref="renderedHtmlRef"
-                        class="my-6 prose prose-base xl:prose-lg dark:text-gray-300 prose-blue max-w-none"
+                        class="my-6 prose dark:text-gray-300"
                         v-html="renderedHtml(data.content)"
                     ></div>
                 </article>
@@ -198,11 +198,11 @@ let view = reactive({
     url: ''
 })
 
-const { data } = await useAsyncData('details', () => $fetch(`/api/assets/posts/${params.code}/details`))
+const { data } = await useAsyncData('details', () => $fetch(`/api/assets/posts/${params.code}`))
 
 const [{ data: previous }, { data: next }, { data: comments }] = await Promise.all([
-    useFetch(`/api/assets/posts/${params.code}/previous`),
-    useFetch(`/api/assets/posts/${params.code}/next`),
+    useFetch(`/api/assets/posts/${params.code}`),
+    useFetch(`/api/assets/posts/${params.code}`),
     useFetch(`/api/assets/comment/${params.code}`)
 ])
 

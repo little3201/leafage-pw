@@ -3,7 +3,7 @@
     <figure class="shrink-0 mr-3 w-8 h-8 md:w-10 md:h-10">
       <img
         class="mt-4 rounded-full w-full h-full object-cover"
-        :src="`/svg/${data.country}.svg`"
+        :src="`/svg/${data.country ? data.country : 'china'}.svg`"
         :alt="data.location"
         height="32"
         width="32"
@@ -15,7 +15,7 @@
     <div
       class="flex-1 border rounded px-4 py-2 md:px-6 md:py-4 leading-relaxed dark:text-gray-300 dark:border-gray-400"
     >
-      <span class="text-xs text-gray-400 mr-4">{{ data.location }}</span>
+      <span class="text-xs text-gray-400 mr-4">{{ data.location ? data.location : '未知' }}</span>
       <span class="text-xs text-gray-400">{{ new Date(data.modifyTime).toLocaleString() }}</span>
       <p class="text-sm">{{ data.content }}</p>
 
