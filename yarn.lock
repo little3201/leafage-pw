@@ -90,10 +90,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+<<<<<<< HEAD
 "@iconify/types@npm:^1.1.0":
   version: 1.1.0
   resolution: "@iconify/types@npm:1.1.0"
   checksum: beffcdbf14e879ff74e79ac29ea0f4f4874f9df632f1994d97395b3f05cbeebaf10f1abc73cf850dc7444924cd57ed92e0e2ca55bacfe3374eff7542d489fbd0
+=======
+"@next/env@npm:12.1.5":
+  version: 12.1.5
+  resolution: "@next/env@npm:12.1.5"
+  checksum: 21a6345ad6ff39edd76630484af3f2a87a0984d06be19ca88d9758583a1c724905f1ea6c0d110a4c825430e5bcda835f7197ee820c7173c428416fb615ff97e6
+>>>>>>> 99a5bbe1 (修改sitemap)
   languageName: node
   linkType: hard
 
@@ -3314,6 +3321,7 @@ __metadata:
   bin:
     next: dist/bin/next
   checksum: a70e70f7863035d9b2d5bb70ede6b165d4022c75d8e3b44411097eb20e4a4d9b34205873cb2d0088a76986fe3e0f160edad0ff7602fc269994e02dc4d21d035c
+<<<<<<< HEAD
   languageName: node
   linkType: hard
 
@@ -3321,6 +3329,8 @@ __metadata:
   version: 0.1.3
   resolution: "node-fetch-native@npm:0.1.3"
   checksum: b9659a22c41b471e970ef3223682d08c7c439deed9ed647f218bda503dae06d78f1882e1532ff9a70d088eac4a20b12a1711e18a756f609e26d6956955277a40
+=======
+>>>>>>> 99a5bbe1 (修改sitemap)
   languageName: node
   linkType: hard
 
