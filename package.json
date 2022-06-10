@@ -11,14 +11,15 @@
   },
   "dependencies": {
     "highlight.js": "^11.5.1",
-    "marked": "^4.0.12",
+    "marked": "^4.0.16",
     "marked-extended-tables": "^1.0.3",
-    "postcss": "^8.4.12",
+    "postcss": "^8.4.14",
     "vue-gtag-next": "^1.14.0"
   },
   "devDependencies": {
-    "@unocss/nuxt": "^0.31.12",
-    "nuxt": "npm:nuxt3@latest"
+    "@unocss/nuxt": "^0.38.1",
+    "nuxt": "npm:nuxt3@latest",
+    "sitemap": "^7.1.1"
   },
   "packageManager": "yarn@3.2.0"
 }
