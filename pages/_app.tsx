@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 import '@unocss/reset/tailwind.css'
 import 'uno.css'
 
+=======
+import '../styles/globals.css'
+import 'prismjs/themes/prism-okaidia.css';
+>>>>>>> da49d5b5 (升级以来)
 import type { AppProps } from 'next/app'
 
 import Router from 'next/router'
