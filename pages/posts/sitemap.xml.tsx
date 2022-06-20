@@ -1,51 +1,68 @@
 import type { NextApiRequest } from 'next'
-const EXTERNAL_DATA_URL = 'https://jsonplaceholder.typicode.com/posts'
+const EXTERNAL_DATA_URL = 'https://www.leafage.top/api/assets/posts'
 
-function generateSiteMap(posts: {
-    id: String
-}[]) {
-    return `<?xml version="1.0" encoding="UTF-8"?>
+function generateSiteMap(posts: { code: String, modifyTime: Date }[]) {
+  return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      <!--We manually set the two URLs we know already-->
      <url>
-       <loc>https://jsonplaceholder.typicode.com</loc>
+        <loc>https://www.leafage.top</loc>
+        <lastmod>2022-04-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
      </url>
      <url>
-       <loc>https://jsonplaceholder.typicode.com/guide</loc>
+        <loc>https://www.leafage.top/posts</loc>
+        <lastmod>2022-04-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
      </url>
-     ${posts
-            .map(({ id }) => {
-                return `
+     <url>
+        <loc>https://www.leafage.top/resource</loc>
+        <lastmod>2022-04-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+     </url>
+     <url>
+        <loc>https://www.leafage.top/about</loc>
+        <lastmod>2022-04-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+     </url>
+     ${posts.map(({ code, modifyTime }) => {
+    return `
        <url>
-           <loc>${`${EXTERNAL_DATA_URL}/${id}`}</loc>
+          <loc>${`${EXTERNAL_DATA_URL}/${code}`}</loc>
+          <lastmod>${new Date(modifyTime).toISOString()}</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.8</priority>
        </url>
      `
-            })
-            .join('')}
+  }).join('')}
    </urlset>
  `
 }
 
 function SiteMap() {
-    // getServerSideProps will do the heavy lifting
+  // getServerSideProps will do the heavy lifting
 }
 
 export async function getServerSideProps({ res }: { res: any }) {
-    // We make an API call to gather the URLs for our site
-    const request = await fetch(EXTERNAL_DATA_URL)
-    const posts = await request.json()
+  // We make an API call to gather the URLs for our site
+  const request = await fetch(EXTERNAL_DATA_URL.concat('?page=0&size=99'))
+  const posts = await request.json()
 
-    // We generate the XML sitemap with the posts data
-    const sitemap = generateSiteMap(posts)
+  // We generate the XML sitemap with the posts data
+  const sitemap = generateSiteMap(posts.content)
 
-    res.setHeader('Content-Type', 'text/xml')
-    // we send the XML to the browser
-    res.write(sitemap)
-    res.end()
+  res.setHeader('Content-Type', 'text/xml')
+  // we send the XML to the browser
+  res.write(sitemap)
+  res.end()
 
-    return {
-        props: {}
-    }
+  return {
+    props: {}
+  }
 }
 
 export default SiteMap

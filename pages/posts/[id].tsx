@@ -24,7 +24,7 @@ export default function Post({
           <div className='text-base'>
             <Date dateString={postData.date} />
           </div>
-          <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+          <div className='prose lg:prose-lg xl:prose-xl' dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
         </article>
       </Layout>
     )
