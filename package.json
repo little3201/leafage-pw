@@ -8,12 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@badrap/bar-of-progress": "^0.2.1",
-=======
-    "@badrap/bar-of-progress": "^0.1.2",
-    "autoprefixer": "^10.4.7",
->>>>>>> da49d5b5 (升级以来)
     "classnames": "^2.3.1",
     "date-fns": "^2.28.0",
     "gray-matter": "^4.0.3",
@@ -24,17 +19,7 @@
     "rehype-sanitize": "^5.0.1",
     "rehype-stringify": "^9.0.3",
     "remark": "^14.0.2",
-<<<<<<< HEAD
     "remark-html": "^15.0.1"
-=======
-    "remark-frontmatter": "^4.0.1",
-    "remark-gfm": "^3.0.1",
-    "remark-parse": "^10.0.1",
-    "remark-prism": "^1.3.6",
-    "remark-rehype": "^10.1.0",
-    "tailwindcss": "^3.0.24",
-    "unified": "^10.1.2"
->>>>>>> da49d5b5 (升级以来)
   },
   "devDependencies": {
     "@types/node": "^18.0.0",
