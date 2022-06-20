@@ -11,12 +11,7 @@ export default defineNuxtConfig({
         uno: true,
         attributify: true,
         preflight: true,
-        typography: true
-    },
-    build: {
-        postcss: {
-            // add Postcss options
-            postcssOptions: require('./postcss.config.js')
-        }
+        typography: true,
+        components: false
     }
 })
