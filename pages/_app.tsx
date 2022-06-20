@@ -1,4 +1,6 @@
-import '../styles/globals.css'
+import '@unocss/reset/tailwind.css'
+import 'uno.css'
+
 import type { AppProps } from 'next/app'
 
 import Router from 'next/router'
