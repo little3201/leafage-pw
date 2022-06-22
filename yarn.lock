@@ -41,13 +41,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@badrap/bar-of-progress@npm:^0.2.1":
-  version: 0.2.1
-  resolution: "@badrap/bar-of-progress@npm:0.2.1"
-  checksum: dc7f34efb7881b9f88e689e0ab336749250682eff4a13c35e433b696fb8ff16ead98bb516126cb1a1eb2395e172b3bfea5801a2ede9f78018aff9edb46a4cb4c
-  languageName: node
-  linkType: hard
-
 "@eslint/eslintrc@npm:^1.3.0":
   version: 1.3.0
   resolution: "@eslint/eslintrc@npm:1.3.0"
@@ -2531,7 +2524,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "leafage-pw@workspace:."
   dependencies:
-    "@badrap/bar-of-progress": ^0.2.1
     "@types/node": ^18.0.0
     "@types/react": ^18.0.14
     "@types/react-dom": ^18.0.5
