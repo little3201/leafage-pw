@@ -8,12 +8,7 @@ const nextConfig = {
       UnoCSS(), // <--
     )
     return config
-  },
-  i18n: {
-    locales: ['en'],
-    defaultLocale: 'en',
-  },
-  swcMinify: true
+  }
 }
 
 module.exports = nextConfig
