@@ -2527,9 +2527,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"leafage-next@workspace:.":
+"leafage-pw@workspace:.":
   version: 0.0.0-use.local
-  resolution: "leafage-next@workspace:."
+  resolution: "leafage-pw@workspace:."
   dependencies:
     "@badrap/bar-of-progress": ^0.2.1
     "@types/node": ^18.0.0
