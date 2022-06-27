@@ -1,17 +1,20 @@
 import { defineNuxtConfig } from 'nuxt'
 
 export default defineNuxtConfig({
+    css: [
+        '@/assets/css/tailwind.css',
+    ],
     typescript: {
         shim: false
     },
-    buildModules: [
-        '@unocss/nuxt',
-    ],
-    unocss: {
-        uno: true,
-        attributify: true,
-        preflight: true,
-        typography: true,
-        components: false
+    build: {
+        postcss: {
+            postcssOptions: {
+                plugins: {
+                    tailwindcss: {},
+                    autoprefixer: {},
+                },
+            },
+        },
     }
 })

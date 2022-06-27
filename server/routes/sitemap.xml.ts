@@ -1,13 +1,13 @@
 import { SitemapStream, streamToPromise } from 'sitemap'
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async () => {
     const sitemap = new SitemapStream({
         hostname: 'https://www.leafage.top'
     })
 
     // Fetch all documents
     //   const docs = await serverQueryContent(event).find()
-    const { data.content: docs } = await useFetch(`https://www.leafage.top/api/assets/posts?page=0&size=999`)
-    for (const doc of docs) {
+    const { data } = await useFetch(`https://www.leafage.top/api/assets/posts?page=0&size=999`)
+    for (const doc of data.content) {
         sitemap.write({
             url: doc._path,
             changefreq: 'monthly'
