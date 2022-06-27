@@ -1,5 +1,4 @@
-import '@unocss/reset/tailwind.css'
-import 'uno.css'
+import '../styles/globals.css'
 
 import { AppProps } from 'next/app'
 
