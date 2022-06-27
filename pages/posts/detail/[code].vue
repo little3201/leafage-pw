@@ -14,7 +14,7 @@
                 <article>
                     <h2 class="text-3xl text-center dark:text-gray-300">{{ data.title }}</h2>
 
-                    <div ref="renderedHtmlRef" class="my-6 prose dark:text-gray-300 lg:prose-xl"
+                    <div ref="renderedHtmlRef" class="my-6 max-w-none prose dark:text-gray-300 lg:prose-lg"
                         v-html="renderedHtml(data.content)"></div>
                 </article>
 

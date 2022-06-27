@@ -926,6 +926,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tailwindcss/aspect-ratio@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "@tailwindcss/aspect-ratio@npm:0.4.0"
+  peerDependencies:
+    tailwindcss: ">=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1"
+  checksum: 106ee15ce10445006a0b6cfb70bf37fc9b47b4e4e146455e61ed6c0c6b6d18255175d8f6991df9ee686d9b5afe4edc3158a22266f22a6b6e8878fd73212efef5
+  languageName: node
+  linkType: hard
+
+"@tailwindcss/typography@npm:^0.5.2":
+  version: 0.5.2
+  resolution: "@tailwindcss/typography@npm:0.5.2"
+  dependencies:
+    lodash.castarray: ^4.4.0
+    lodash.isplainobject: ^4.0.6
+    lodash.merge: ^4.6.2
+  peerDependencies:
+    tailwindcss: "*"
+  checksum: f6c27e32c9b48b0e906561d1e9dd3eec8fd5efc9792fd691269ceaa9d30d35bc715023215ec83ff8e5475c38af69e164d577672d935813b70e04b1c820b2ea8e
+  languageName: node
+  linkType: hard
+
 "@tootallnate/once@npm:2":
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
@@ -3816,6 +3838,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "leafage-pw@workspace:."
   dependencies:
+    "@tailwindcss/aspect-ratio": ^0.4.0
+    "@tailwindcss/typography": ^0.5.2
     autoprefixer: latest
     highlight.js: ^11.5.1
     marked: ^4.0.17
@@ -3861,6 +3885,13 @@ __metadata:
   version: 3.0.0
   resolution: "lodash._reinterpolate@npm:3.0.0"
   checksum: 06d2d5f33169604fa5e9f27b6067ed9fb85d51a84202a656901e5ffb63b426781a601508466f039c720af111b0c685d12f1a5c14ff8df5d5f27e491e562784b2
+  languageName: node
+  linkType: hard
+
+"lodash.castarray@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "lodash.castarray@npm:4.4.0"
+  checksum: fca8c7047e0ae2738b0b2503fb00157ae0ff6d8a1b716f87ed715b22560e09de438c75b65e01a7e44ceb41c5b31dce2eb576e46db04beb9c699c498e03cbd00f
   languageName: node
   linkType: hard
 
@@ -3910,6 +3941,13 @@ __metadata:
   version: 4.1.2
   resolution: "lodash.memoize@npm:4.1.2"
   checksum: 9ff3942feeccffa4f1fafa88d32f0d24fdc62fd15ded5a74a5f950ff5f0c6f61916157246744c620173dddf38d37095a92327d5fd3861e2063e736a5c207d089
+  languageName: node
+  linkType: hard
+
+"lodash.merge@npm:^4.6.2":
+  version: 4.6.2
+  resolution: "lodash.merge@npm:4.6.2"
+  checksum: ad580b4bdbb7ca1f7abf7e1bce63a9a0b98e370cf40194b03380a46b4ed799c9573029599caebc1b14e3f24b111aef72b96674a56cfa105e0f5ac70546cdc005
   languageName: node
   linkType: hard
 
