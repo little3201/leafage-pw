@@ -14,7 +14,6 @@ import PostType from '../../types/post'
 
 type Props = {
   post: PostType
-  morePosts: PostType[]
   preview?: boolean
 }
 
