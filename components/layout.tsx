@@ -10,15 +10,13 @@ type Props = {
 
 const Layout = ({ preview, children }: Props) => {
   return (
-    <>
+    <div className="bg-white text-base dark:bg-neutral-900 text-neutral-900 dark:text-neutral-200">
       <Meta />
       <Alert preview={preview} />
       <Header />
-      <main className="bg-white text-base dark:bg-neutral-900 text-neutral-900 dark:text-neutral-200 mx-auto">
-        <div>{children}</div>
-      </main>
+      <main>{children}</main>
       <Footer />
-    </>
+    </div>
   )
 }
 

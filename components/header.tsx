@@ -67,7 +67,7 @@ const Header = () => {
           <div className="px-1">
           </div>
           <Link href="/ncmaz/login">
-            <a className="relative h-auto inline-flex items-center justify-center rounded-full transition-colors text-sm sm:text-base font-medium px-4 py-2 sm:px-6 disabled:bg-opacity-70 bg-green-600 hover:bg-green-700 text-neutral-50  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600 dark:focus:ring-offset-0 " rel="noopener noreferrer">Sign up</a>
+            <a className="relative h-auto inline-flex items-center justify-center rounded-full transition-colors text-sm sm:text-base font-medium px-4 py-3 sm:px-6 disabled:bg-opacity-70 bg-green-600 hover:bg-green-700 text-neutral-50  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600 dark:focus:ring-offset-0 " rel="noopener noreferrer">Sign up</a>
           </Link>
         </div>
         <div className="flex items-center xl:hidden">

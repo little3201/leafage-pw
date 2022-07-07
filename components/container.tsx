@@ -4,7 +4,7 @@ type Props = {
   children?: ReactNode
 }
 
-const Container: FunctionComponent = ({ children }: Props) => {
+const Container: FunctionComponent<Props> = ({ children }: Props) => {
   return <div className="container mx-auto px-5">{children}</div>
 }
 
