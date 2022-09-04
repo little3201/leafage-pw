@@ -10,7 +10,7 @@ const Header = () => {
         <ul className="hidden lg:flex lg:flex-wrap lg:items-center lg:space-x-1">
           <li>
             <Link href="/" aria-current="page">
-              <a className="inline-flex items-center text-sm xl:text-base font-normal text-neutral-700 dark:text-neutral-300 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-green-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200 bg-green-50 dark:bg-neutral-800" rel="noopener noreferrer" id="headlessui-popover-button-1" aria-expanded="false">
+              <a className="inline-flex items-center text-sm xl:text-base font-normal text-neutral-700 dark:text-green-300 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-green-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200 bg-green-50 dark:bg-neutral-800" rel="noopener noreferrer" id="headlessui-popover-button-1" aria-expanded="false">
                 Home
               </a>
             </Link>
@@ -23,22 +23,23 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link href="/about">
+            <Link href="/category">
               <a className="inline-flex items-center text-sm xl:text-base font-normal text-neutral-700 dark:text-neutral-300 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200" rel="noopener noreferrer" id="headlessui-popover-button-5" aria-expanded="false">
-                About
+                Categories
               </a>
             </Link>
           </li>
           <li>
-            <Link href="/ncmaz#">
+            <Link href="/tag">
               <a className="inline-flex items-center text-sm xl:text-base font-normal text-neutral-700 dark:text-neutral-300 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200" rel="noopener noreferrer" id="headlessui-popover-button-7" aria-expanded="false" >
-                Templates
+                Tags
               </a>
             </Link>
           </li>
           <li>
             <Link href="/ncmaz#">
-              <a className="inline-flex items-center text-sm xl:text-base font-normal text-neutral-700 dark:text-neutral-300 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200" rel="noopener noreferrer" id="headlessui-popover-button-9" aria-expanded="false">Other pages
+              <a className="inline-flex items-center text-sm xl:text-base font-normal text-neutral-700 dark:text-neutral-300 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200" rel="noopener noreferrer" id="headlessui-popover-button-9" aria-expanded="false">
+                Projects
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className="ml-1 -mr-1 h-4 w-4 text-neutral-400">
                   <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path>
                 </svg>

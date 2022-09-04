@@ -7,11 +7,11 @@ import { CMS_NAME } from '../../lib/constants'
 import Post from '../../types/post'
 
 type Props = {
-  allPosts: Post[]
+  posts: Post[]
 }
 
-const Index = ({ allPosts }: Props) => {
-  const morePosts = allPosts.slice(1)
+const Index = ({ posts }: Props) => {
+  const morePosts = posts.slice(1)
   return (
     <>
       <Layout>
@@ -29,16 +29,9 @@ const Index = ({ allPosts }: Props) => {
 export default Index
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts([
-    'title',
-    'date',
-    'slug',
-    'author',
-    'coverImage',
-    'excerpt',
-  ])
+  const posts = await getAllPosts()
 
   return {
-    props: { allPosts },
+    props: { posts },
   }
 }

@@ -13,16 +13,15 @@ import PostType from '../../types/post'
 
 type Props = {
   post: PostType
-  preview?: boolean
 }
 
-const Post = ({ post, preview }: Props) => {
+const Post = ({ post }: Props) => {
   const router = useRouter()
-  if (!router.isFallback && !post?.slug) {
+  if (!router.isFallback && !post?.code) {
     return <ErrorPage statusCode={404} />
   }
   return (
-    <Layout preview={preview}>
+    <Layout>
       <Container>
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
@@ -33,11 +32,11 @@ const Post = ({ post, preview }: Props) => {
                 <title>
                   {post.title} | Next.js Blog Example with {CMS_NAME}
                 </title>
-                <meta property="og:image" content={post.ogImage.url} />
+                <meta property="og:image" content={post.cover} />
               </Head>
               <PostHeader
                 title={post.title}
-                date={post.date}
+                date={post.modifyTime}
                 author={post.author}
               />
               <PostBody content={post.content} />
@@ -58,15 +57,7 @@ type Params = {
 }
 
 export async function getStaticProps({ params }: Params) {
-  const post = getPostBySlug(params.slug, [
-    'title',
-    'date',
-    'slug',
-    'author',
-    'content',
-    'ogImage',
-    'coverImage',
-  ])
+  const post: PostType = await getPostBySlug(params.slug)
   const content = await markdownToHtml(post.content || '')
 
   return {
@@ -80,13 +71,13 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(['slug'])
+  const posts = await getAllPosts()
 
   return {
-    paths: posts.map((post) => {
+    paths: posts.map((post: PostType) => {
       return {
         params: {
-          slug: post.slug,
+          slug: post.code,
         },
       }
     }),

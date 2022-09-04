@@ -25,13 +25,13 @@ const Footer = () => {
           <div className='mx-2 max-w-md'>
             <h3 className="text-xl font-bold text-neutral-700 dark:text-neutral-200">Browse by Tag</h3>
             <ul className="mt-5 flex flex-wrap">
-              <li><a className="text-neutral-600 dark:text-neutral-300 block mb-2 mr-2 px-4 py-2 bg-neutral-800 rounded-md" href="#">Travel</a></li>
-              <li><a className="text-neutral-600 dark:text-neutral-300 block mb-2 mr-2 px-4 py-2 bg-neutral-800 rounded-md" href="#">Business</a></li>
-              <li><a className="text-neutral-600 dark:text-neutral-300 block mb-2 mr-2 px-4 py-2 bg-neutral-800 rounded-md" href="#">Lifestyle</a></li>
-              <li><a className="text-neutral-600 dark:text-neutral-300 block mb-2 mr-2 px-4 py-2 bg-neutral-800 rounded-md" href="#">Sports</a></li>
-              <li><a className="text-neutral-600 dark:text-neutral-300 block mb-2 mr-2 px-4 py-2 bg-neutral-800 rounded-md" href="#">Foods</a></li>
-              <li><a className="text-neutral-600 dark:text-neutral-300 block mb-2 mr-2 px-4 py-2 bg-neutral-800 rounded-md" href="#">Spring</a></li>
-              <li><a className="text-neutral-600 dark:text-neutral-300 block mb-2 mr-2 px-4 py-2 bg-neutral-800 rounded-md" href="#">Java</a></li>
+              <li><a className="text-neutral-600 dark:text-neutral-300 block mb-2 mr-2 px-4 py-2 bg-neutral-200 dark:bg-neutral-800 rounded-md" href="#">Travel</a></li>
+              <li><a className="text-neutral-600 dark:text-neutral-300 block mb-2 mr-2 px-4 py-2 bg-neutral-200 dark:bg-neutral-800 rounded-md" href="#">Business</a></li>
+              <li><a className="text-neutral-600 dark:text-neutral-300 block mb-2 mr-2 px-4 py-2 bg-neutral-200 dark:bg-neutral-800 rounded-md" href="#">Lifestyle</a></li>
+              <li><a className="text-neutral-600 dark:text-neutral-300 block mb-2 mr-2 px-4 py-2 bg-neutral-200 dark:bg-neutral-800 rounded-md" href="#">Sports</a></li>
+              <li><a className="text-neutral-600 dark:text-neutral-300 block mb-2 mr-2 px-4 py-2 bg-neutral-200 dark:bg-neutral-800 rounded-md" href="#">Foods</a></li>
+              <li><a className="text-neutral-600 dark:text-neutral-300 block mb-2 mr-2 px-4 py-2 bg-neutral-200 dark:bg-neutral-800 rounded-md" href="#">Spring</a></li>
+              <li><a className="text-neutral-600 dark:text-neutral-300 block mb-2 mr-2 px-4 py-2 bg-neutral-200 dark:bg-neutral-800 rounded-md" href="#">Java</a></li>
             </ul>
           </div>
           <div>
@@ -44,16 +44,16 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="text-xs text-center text-gray-400">
-          <p className="border-t border-neutral-600 py-3">
-            Copyright &copy; {new Date().getFullYear()} Leafage All Rights Reserved.
-            <a
-              href="https://beian.miit.gov.cn"
-              rel="noopener noreferrer"
-              target="_blank"
-              className="hover:underline hover:text-green-600"
-            > 陕ICP备19017836号-2</a>
+        <div className="text-sm text-center ">
+          <p className="border-t border-neutral-200 dark:border-neutral-700 pt-4 pb-2">
+            Copyright &copy; {new Date().getFullYear()} leafage.top All Rights Reserved.
           </p>
+          <a
+            href="https://beian.miit.gov.cn"
+            rel="noopener noreferrer"
+            target="_blank"
+            className="hover:underline hover:text-green-600 pb-3"
+          > 陕ICP备19017836号-2</a>
         </div>
       </Container>
     </footer>
