@@ -18,10 +18,10 @@ const CategoryStories = ({ posts }: Props) => {
             </div>
         </div>
         <div className="flex flex-row">
-            <div className="grid grid-cols-12 gap-8">
+            <div className="grid grid-cols-12 gap-8 w-full">
                 <div className="col-span-5">
                     <article className="relative pb-10">
-                        <div className="relative w-full mb-0 block transition-all ease-out" style={{ height: 678 }}>
+                        <div className="relative mb-0 block transition-all ease-out" style={{ height: 678 }}>
                             <div className="absolute inset-0 overflow-hidden bg-no-repeat bg-cover bg-center bg-neutral-800" style={{ backgroundImage: `url(${posts[0].cover})` }}></div>
                             <Link as={`/posts/${posts[0].code}`} href="/posts/[slug]">
                                 <a className="absolute inset-0"></a>
@@ -86,35 +86,25 @@ const CategoryStories = ({ posts }: Props) => {
 
                         <div className="col-md-6 col-sm-6 small-post-vertical mt-9">
                             <article className="relative">
-                                <div className=" pb-9 px-3">
-                                    <a className="px-4 py-2 inline-block uppercase text-xs text-center" href="/logen/tag/fashion/">Fashion</a>
-                                    <h3 className="post__title">
-                                        <a href="/logen/you-will-become-as-small-as-your-controlling-desire/">You Will Become as Small as Your Controlling Desire</a>
+                                <div className="pb-9 px-3 text-center">
+                                    <a className="px-4 py-2 font-medium uppercase text-xs text-green-700">{posts[2].category}</a>
+                                    <h3 className="text-xl my-4 hover:text-green-600">
+                                        <a>{posts[2].title}</a>
                                     </h3>
-                                    <div className="post-meta">
-                                        <span className="entry-author">By
-                                            <a className="entry-author__name" rel="author" href="/logen/author/isabella/">Ava Isabella</a>
+                                    <div className="w-full">
+                                        <span className="text-xs text-neutral-400 ">By
+                                            <a className="uppercase ml-2" rel="author" href="/logen/author/isabella/">Ava Isabella</a>
                                         </span>
                                     </div>
                                 </div>
-                                <div className="w-full relative">
+                                <div className="w-full relative" style={{ height: 420 }}>
                                     <div className="absolute inset-0 overflow-hidden bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `url(${posts[2].cover})` }}></div>
-                                    <a className="link-overlay" href="/logen/you-will-become-as-small-as-your-controlling-desire/"></a>
-                                </div>
-                                <div className="post__text text-center hidden-lg hidden-md hidden-sm">
-                                    <a className="post__cat cat-theme-bg" href="/logen/tag/fashion/">Fashion</a>
-                                    <h3 className="post__title">
-                                        <a href="/logen/you-will-become-as-small-as-your-controlling-desire/">You Will Become as Small as Your Controlling Desire</a>
-                                    </h3>
-                                    <div className="post-meta">
-                                        <span className="entry-author">By
-                                            <a className="entry-author__name" rel="author" href="/logen/author/isabella/">Ava Isabella</a>
-                                        </span>
-                                    </div>
+                                    <Link as={`/posts/${posts[2].code}`} href="/posts/[slug]">
+                                        <a className="absolute inset-0"></a>
+                                    </Link>
                                 </div>
                             </article>
                         </div>
-
                     </div>
                 </div>
             </div>

@@ -14,7 +14,7 @@ const PostHeader = ({ title, date, author }: Props) => {
     <>
       <PostTitle>{title}</PostTitle>
       <div className=" text-center">
-        <span>布吉岛</span>
+        <span className='mr-4'>布吉岛</span>
         {/* <Avatar name={author.nickname} picture={author.avatar} /> */}
         <DateFormatter dateString={date} />
       </div>

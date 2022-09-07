@@ -7,6 +7,7 @@ import Head from 'next/head'
 import { CMS_NAME } from '../lib/constants'
 import Post from '../types/post'
 import CategoryStories from '../components/category-stories'
+import HotNews from '../components/hot-news'
 
 type Props = {
   posts: Post[]
@@ -34,6 +35,7 @@ const Index = ({ posts }: Props) => {
             />
           )}
           {categoryPosts.length > 0 && <CategoryStories posts={categoryPosts} />}
+          {morePosts.length > 0 && <HotNews posts={morePosts} />}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
         </Container>
       </Layout>
