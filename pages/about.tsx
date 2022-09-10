@@ -6,16 +6,14 @@ import { CMS_NAME } from '../lib/constants'
 
 const About = () => {
   return (
-    <>
-      <Layout>
-        <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
-        </Head>
-        <Container>
-          <div>About</div>
-        </Container>
-      </Layout>
-    </>
+    <Layout>
+      <Head>
+        <title>{CMS_NAME}</title>
+      </Head>
+      <Container>
+        <div>About</div>
+      </Container>
+    </Layout>
   )
 }
 

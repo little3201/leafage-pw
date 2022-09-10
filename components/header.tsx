@@ -16,13 +16,6 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link href="/posts">
-              <a className="inline-flex items-center text-sm xl:text-base font-normal text-neutral-700 dark:text-neutral-300 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200" rel="noopener noreferrer" id="headlessui-popover-button-3" aria-expanded="false">
-                All Posts
-              </a>
-            </Link>
-          </li>
-          <li>
             <Link href="/category">
               <a className="inline-flex items-center text-sm xl:text-base font-normal text-neutral-700 dark:text-neutral-300 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200" rel="noopener noreferrer" id="headlessui-popover-button-5" aria-expanded="false">
                 Categories

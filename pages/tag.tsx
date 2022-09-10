@@ -9,7 +9,7 @@ const Tag = () => {
         <>
             <Layout>
                 <Head>
-                    <title>Next.js Blog Example with {CMS_NAME}</title>
+                    <title>{CMS_NAME}</title>
                 </Head>
                 <Container>
                     <div>Tags</div>

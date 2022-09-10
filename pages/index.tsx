@@ -2,7 +2,7 @@ import Container from '../components/container'
 import MoreStories from '../components/more-stories'
 import HeroPost from '../components/hero-post'
 import Layout from '../components/layout'
-import { getAllPosts } from '../lib/api'
+import { getPostsByPage } from '../lib/api'
 import Head from 'next/head'
 import { CMS_NAME } from '../lib/constants'
 import Post from '../types/post'
@@ -16,12 +16,13 @@ type Props = {
 const Index = ({ posts }: Props) => {
   const heroPost = posts[0]
   const categoryPosts = posts.slice(1, 4)
-  const morePosts = posts.slice(5)
+  const hotNews = posts.slice(4, 9)
+  const morePosts = posts.slice(9)
   return (
     <>
       <Layout>
         <Head>
-          <title>{CMS_NAME} Blogs</title>
+          <title>{CMS_NAME}</title>
         </Head>
         <Container>
           {heroPost && (
@@ -35,8 +36,11 @@ const Index = ({ posts }: Props) => {
             />
           )}
           {categoryPosts.length > 0 && <CategoryStories posts={categoryPosts} />}
-          {morePosts.length > 0 && <HotNews posts={morePosts} />}
+          {hotNews.length > 0 && <HotNews posts={hotNews} />}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+          <div className='text-center my-8'>
+            <button type='button' className='border border-green-600 px-6 py-2 rounded-md text-green-600 hover:bg-green-700 hover:text-white'>Load More</button>
+          </div>
         </Container>
       </Layout>
     </>
@@ -46,7 +50,7 @@ const Index = ({ posts }: Props) => {
 export default Index
 
 export const getStaticProps = async () => {
-  const posts = await getAllPosts()
+  const posts = await getPostsByPage(0, 15)
 
   return {
     props: { posts },

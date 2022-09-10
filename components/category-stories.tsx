@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import DateFormatter from './date-formatter'
+import CoverImage from './cover-image'
+import Avatar from './avatar'
 import Post from '../types/post'
 
 type Props = {
@@ -22,10 +24,9 @@ const CategoryStories = ({ posts }: Props) => {
                 <div className="col-span-5">
                     <article className="relative pb-10">
                         <div className="relative mb-0 block transition-all ease-out" style={{ height: 678 }}>
-                            <div className="absolute inset-0 overflow-hidden bg-no-repeat bg-cover bg-center bg-neutral-800" style={{ backgroundImage: `url(${posts[0].cover})` }}></div>
-                            <Link as={`/posts/${posts[0].code}`} href="/posts/[slug]">
-                                <a className="absolute inset-0"></a>
-                            </Link>
+                            <div className="absolute inset-0 overflow-hidden bg-no-repeat bg-cover bg-center bg-neutral-800">
+                                <CoverImage slug={posts[0].code} title={posts[0].title} src={posts[0].cover} />
+                            </div>
                         </div>
                         <div className="absolute left-0 bottom-0 px-6 py-8 bg-neutral-900 mr-6">
                             <Link href="/category">
@@ -51,30 +52,36 @@ const CategoryStories = ({ posts }: Props) => {
                         <div className="col-md-6 col-sm-6 small-post-vertical mt-16">
                             <article className="relative">
                                 <div className="w-full relative" style={{ height: 420 }}>
-                                    <div className="absolute inset-0 overflow-hidden bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `url(${posts[1].cover})` }}></div>
-                                    <a className="absolute top-5 left-5 px-4 py-2 inline-block uppercase text-xs text-white bg-green-700" href="/logen/tag/health/">{posts[1].category}</a>
-                                    <Link as={`/posts/${posts[1].code}`} href="/posts/[slug]">
-                                        <a className="absolute inset-0"></a>
+                                    <div className="absolute inset-0 overflow-hidden bg-no-repeat bg-cover bg-center">
+                                        <CoverImage slug={posts[1].code} title={posts[1].title} src={posts[1].cover} />
+                                    </div>
+                                    <Link href="/category">
+                                        <a className="absolute top-5 left-5 px-4 py-2 inline-block uppercase text-xs text-white bg-green-700">{posts[1].category}</a>
                                     </Link>
                                 </div>
                                 <div className="-mt-5 pl-5">
                                     <div className="relative top-0 left-0 mb-4">
                                         <div className="mr-3 font-bold text-xs">
-                                            <a className="block w-10 h-10 mb-4 rounded-full overflow-hidden" href="/logen/author/dannyings/">
-                                                <img src="https://secure.gravatar.com/avatar/a85fbe13ad8e5648f5e462665915c9ab?s=512&amp;d=mm&amp;r=g"
-                                                    className="w-full h-auto align-middle" data-pagespeed-url-hash="2454222443" />
-                                            </a>
+                                            <Link href="/about">
+                                                <a className="block w-10 h-10 mb-4 rounded-full overflow-hidden">
+                                                    <Avatar name={posts[1].title} picture="/assets/avatar.jpg" />
+                                                </a>
+                                            </Link>
                                             <div className="whitespace-nowrap">
-                                                <a className="block mb-1" rel="author" href="/logen/author/dannyings/">Danny Ings</a>
+                                                <Link href="/about">
+                                                    <a className="block mb-1" rel="author">WQ</a>
+                                                </Link>
                                                 <DateFormatter dateString={posts[1].modifyTime} />
                                             </div>
                                         </div>
                                     </div>
                                     <h3 className="text-xl hover:text-green-600">
-                                        <a>{posts[1].title}</a>
+                                        <Link as={`/posts/${posts[1].code}`} href="/posts/[slug]">
+                                            <a>{posts[1].title}</a>
+                                        </Link>
                                     </h3>
                                     <div className=" text-neutral-200 mt-4">
-                                        <Link as={`/posts/${posts[0].code}`} href="/posts/[slug]">
+                                        <Link as={`/posts/${posts[1].code}`} href="/posts/[slug]">
                                             <a className="pb-1 border-b-2 border-green-600 font-serif">
                                                 <span className="text-xs text-green-600">View More</span>
                                             </a>
@@ -89,19 +96,22 @@ const CategoryStories = ({ posts }: Props) => {
                                 <div className="pb-9 px-3 text-center">
                                     <a className="px-4 py-2 font-medium uppercase text-xs text-green-700">{posts[2].category}</a>
                                     <h3 className="text-xl my-4 hover:text-green-600">
-                                        <a>{posts[2].title}</a>
+                                        <Link as={`/posts/${posts[2].code}`} href="/posts/[slug]">
+                                            <a>{posts[2].title}</a>
+                                        </Link>
                                     </h3>
                                     <div className="w-full">
                                         <span className="text-xs text-neutral-400 ">By
-                                            <a className="uppercase ml-2" rel="author" href="/logen/author/isabella/">Ava Isabella</a>
+                                            <Link href="/about">
+                                                <a className="uppercase ml-2" rel="author">WQ</a>
+                                            </Link>
                                         </span>
                                     </div>
                                 </div>
                                 <div className="w-full relative" style={{ height: 420 }}>
-                                    <div className="absolute inset-0 overflow-hidden bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `url(${posts[2].cover})` }}></div>
-                                    <Link as={`/posts/${posts[2].code}`} href="/posts/[slug]">
-                                        <a className="absolute inset-0"></a>
-                                    </Link>
+                                    <div className="absolute inset-0 overflow-hidden bg-no-repeat bg-cover bg-center">
+                                        <CoverImage slug={posts[2].code} title={posts[2].title} src={posts[2].cover} />
+                                    </div>
                                 </div>
                             </article>
                         </div>

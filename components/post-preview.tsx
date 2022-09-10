@@ -22,44 +22,35 @@ const PostPreview = ({
   slug,
 }: Props) => {
   return (
-    // <div>
-    //   <div className="mb-5">
-    //     <CoverImage slug={slug} title={title} src={coverImage} />
-    //   </div>
-    //   <h3 className="text-3xl mb-3 leading-snug">
-    //     <Link as={`/posts/${slug}`} href="/posts/[slug]">
-    //       <a className="hover:underline hover:text-green-600">{title}</a>
-    //     </Link>
-    //   </h3>
-    //   <div className="text-lg mb-4">
-    //     <DateFormatter dateString={date} />
-    //   </div>
-    //   <p className="text-lg leading-relaxed mb-4">{category}</p>
-    //   {/* <Avatar name={author.nickname} picture={author.avatar} /> */}
-    // </div>
     <article className="relative">
       <div className="w-full relative" style={{ height: 240 }}>
-        <div className="absolute inset-0 overflow-hidden bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `url(${coverImage})` }}></div>
-        <a className="absolute top-5 left-5 px-4 py-2 inline-block uppercase text-xs text-white bg-green-700" href="/logen/tag/health/">{category}</a>
-        <Link as={`/posts/${slug}`} href="/posts/[slug]">
-          <a className="absolute inset-0"></a>
+        <div className="absolute inset-0 overflow-hidden bg-no-repeat bg-cover bg-center">
+          <CoverImage slug={slug} title={title} src={coverImage} />
+        </div>
+        <Link href="/category">
+          <a className="absolute top-5 left-5 px-4 py-2 inline-block uppercase text-xs text-white bg-green-700">{category}</a>
         </Link>
       </div>
       <div className="-mt-5 pl-5">
         <div className="relative top-0 left-0 mb-4">
           <div className="mr-3 font-bold text-xs">
-            <a className="block w-10 h-10 mb-4 rounded-full overflow-hidden" href="/logen/author/dannyings/">
-              <img src="https://secure.gravatar.com/avatar/a85fbe13ad8e5648f5e462665915c9ab?s=512&amp;d=mm&amp;r=g"
-                className="w-full h-auto align-middle" data-pagespeed-url-hash="2454222443" />
-            </a>
+            <Link href="/about">
+              <a className="block w-10 h-10 mb-4 rounded-full overflow-hidden" >
+                <Avatar name={title} picture="/assets/avatar.jpg" />
+              </a>
+            </Link>
             <div className="whitespace-nowrap">
-              <a className="block mb-1" rel="author" href="/logen/author/dannyings/">Danny Ings</a>
+              <Link href="/about">
+                <a className="block mb-1" rel="author">WQ</a>
+              </Link>
               <DateFormatter dateString={date} />
             </div>
           </div>
         </div>
         <h3 className="text-xl hover:text-green-600">
-          <a>{title}</a>
+          <Link as={`/posts/${slug}`} href="/posts/[slug]">
+            <a>{title}</a>
+          </Link>
         </h3>
         <div className=" text-neutral-200 mt-4">
           <Link as={`/posts/${slug}`} href="/posts/[slug]">
