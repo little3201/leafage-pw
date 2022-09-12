@@ -23,16 +23,14 @@ const CategoryStories = ({ posts }: Props) => {
             <div className="grid grid-cols-12 gap-8 w-full">
                 <div className="col-span-5">
                     <article className="relative pb-10">
-                        <div className="relative mb-0 block transition-all ease-out" style={{ height: 678 }}>
-                            <div className="absolute inset-0 overflow-hidden bg-no-repeat bg-cover bg-center bg-neutral-800">
-                                <CoverImage slug={posts[0].code} title={posts[0].title} src={posts[0].cover} />
-                            </div>
+                        <div className="relative shadow-sm hover:shadow-lg transition-shadow duration-200" style={{ height: 678 }}>
+                            <CoverImage slug={posts[0].code} title={posts[0].title} src={posts[0].cover} />
                         </div>
                         <div className="absolute left-0 bottom-0 px-6 py-8 bg-neutral-900 mr-6">
                             <Link href="/category">
                                 <a className="absolute bottom-full left-8 px-4 py-2 inline-block uppercase text-xs bg-green-700 text-white translate-y-1/2" >{posts[0].category}</a>
                             </Link>
-                            <h3 className="text-white text-xl hover:text-green-600">
+                            <h3 className="text-white text-xl hover:text-green-600 transition-colors duration-200">
                                 <Link as={`/posts/${posts[0].code}`} href="/posts/[slug]">
                                     <a>{posts[0].title}</a>
                                 </Link>
@@ -51,10 +49,8 @@ const CategoryStories = ({ posts }: Props) => {
                     <div className="grid grid-cols-2 gap-8">
                         <div className="col-md-6 col-sm-6 small-post-vertical mt-16">
                             <article className="relative">
-                                <div className="w-full relative" style={{ height: 420 }}>
-                                    <div className="absolute inset-0 overflow-hidden bg-no-repeat bg-cover bg-center">
-                                        <CoverImage slug={posts[1].code} title={posts[1].title} src={posts[1].cover} />
-                                    </div>
+                                <div className="w-full relative shadow-sm hover:shadow-lg transition-shadow duration-200" style={{ height: 420 }}>
+                                    <CoverImage slug={posts[1].code} title={posts[1].title} src={posts[1].cover} />
                                     <Link href="/category">
                                         <a className="absolute top-5 left-5 px-4 py-2 inline-block uppercase text-xs text-white bg-green-700">{posts[1].category}</a>
                                     </Link>
@@ -75,7 +71,7 @@ const CategoryStories = ({ posts }: Props) => {
                                             </div>
                                         </div>
                                     </div>
-                                    <h3 className="text-xl hover:text-green-600">
+                                    <h3 className="text-xl hover:text-green-600 transition-colors duration-200">
                                         <Link as={`/posts/${posts[1].code}`} href="/posts/[slug]">
                                             <a>{posts[1].title}</a>
                                         </Link>
@@ -95,7 +91,7 @@ const CategoryStories = ({ posts }: Props) => {
                             <article className="relative">
                                 <div className="pb-9 px-3 text-center">
                                     <a className="px-4 py-2 font-medium uppercase text-xs text-green-700">{posts[2].category}</a>
-                                    <h3 className="text-xl my-4 hover:text-green-600">
+                                    <h3 className="text-xl my-4 hover:text-green-600 transition-colors duration-200">
                                         <Link as={`/posts/${posts[2].code}`} href="/posts/[slug]">
                                             <a>{posts[2].title}</a>
                                         </Link>
@@ -108,10 +104,8 @@ const CategoryStories = ({ posts }: Props) => {
                                         </span>
                                     </div>
                                 </div>
-                                <div className="w-full relative" style={{ height: 420 }}>
-                                    <div className="absolute inset-0 overflow-hidden bg-no-repeat bg-cover bg-center">
-                                        <CoverImage slug={posts[2].code} title={posts[2].title} src={posts[2].cover} />
-                                    </div>
+                                <div className="w-full relative shadow-sm hover:shadow-lg transition-shadow duration-200" style={{ height: 420 }}>
+                                    <CoverImage slug={posts[2].code} title={posts[2].title} src={posts[2].cover} />
                                 </div>
                             </article>
                         </div>

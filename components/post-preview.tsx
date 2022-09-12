@@ -23,10 +23,8 @@ const PostPreview = ({
 }: Props) => {
   return (
     <article className="relative">
-      <div className="w-full relative" style={{ height: 240 }}>
-        <div className="absolute inset-0 overflow-hidden bg-no-repeat bg-cover bg-center">
-          <CoverImage slug={slug} title={title} src={coverImage} />
-        </div>
+      <div className="w-full relative shadow-sm hover:shadow-lg transition-shadow duration-200" style={{ height: 240 }}>
+        <CoverImage slug={slug} title={title} src={coverImage} />
         <Link href="/category">
           <a className="absolute top-5 left-5 px-4 py-2 inline-block uppercase text-xs text-white bg-green-700">{category}</a>
         </Link>
@@ -47,7 +45,7 @@ const PostPreview = ({
             </div>
           </div>
         </div>
-        <h3 className="text-xl hover:text-green-600">
+        <h3 className="text-xl hover:text-green-600 transition-colors duration-200">
           <Link as={`/posts/${slug}`} href="/posts/[slug]">
             <a>{title}</a>
           </Link>

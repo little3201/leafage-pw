@@ -11,19 +11,20 @@ type Props = {
 }
 
 const Category = ({ categories }: Props) => {
+    const title = `Category${CMS_NAME}`
+    categories.sort((a, b) => new Date(a.modifyTime).getTime() - new Date(b.modifyTime).getTime())
     return (
         <Layout>
             <Head>
-                <title>{CMS_NAME}</title>
+                <title>{title}</title>
             </Head>
             <Container>
                 <div className="bg-white">
                     <div className="mx-auto py-8">
                         <h2 className="sr-only">Categories</h2>
-
                         <ul className="grid grid-cols-4 gap-6">
                             {categories.map((category) => (
-                                <li className='relative overflow-hidden rounded-3xl h-40 bg-gradient-to-r from-green-300 to-lime-300' key={category.code}>
+                                <li className='relative overflow-hidden rounded-3xl h-40 bg-gradient-to-r from-green-300 to-lime-300 shadow-sm hover:shadow-lg hover:opacity-80 transition-all duration-200' key={category.code}>
                                     <div className='absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center'>
                                         <div className='text-white text-center'>
                                             <h3 className="text-2xl">

@@ -20,14 +20,12 @@ const HotNews = ({ posts }: Props) => {
         </div>
         <div className="relative">
             <article className="flex flex-row">
-                <div className="relative mr-14" style={{ height: 480, width: `calc(50vw + 235px)` }}>
-                    <div className="absolute inset-0 overflow-hidden bg-no-repeat bg-cover bg-center">
-                        <CoverImage slug={posts[0].code} title={posts[0].title} src={posts[0].cover} />
-                    </div>
+                <div className="relative mr-14 shadow-sm hover:shadow-lg transition-shadow duration-200" style={{ height: '32rem', width: `calc(50vw + 14rem)` }}>
+                    <CoverImage slug={posts[0].code} title={posts[0].title} src={posts[0].cover} />
                 </div>
                 <div className="max-w-xs">
                     <a className="pb-9 font-medium uppercase text-xs text-green-700">{posts[0].category}</a>
-                    <h3 className="text-xl my-4 hover:text-green-600">
+                    <h3 className="text-xl my-4 hover:text-green-600 transition-colors duration-200">
                         <Link as={`/posts/${posts[0].code}`} href="/posts/[slug]">
                             <a>{posts[0].title}</a>
                         </Link>
@@ -40,7 +38,7 @@ const HotNews = ({ posts }: Props) => {
                     {posts.slice(1, 5).map((post) => (
                         <li className="w-1/2 px-4 inline-block my-2" key={post.code}>
                             <article className="flex items-center justify-start">
-                                <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4 flex-shrink-0">
+                                <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4 flex-shrink-0 shadow-sm hover:shadow-lg transition-shadow duration-200">
                                     <div className="absolute inset-0 overflow-hidden bg-no-repeat bg-cover bg-center">
                                         <CoverImage slug={post.code} title={post.title} src={post.cover} />
                                     </div>
@@ -49,7 +47,7 @@ const HotNews = ({ posts }: Props) => {
                                     <Link href="/category">
                                         <a className="pb-2 font-medium uppercase text-xs text-green-700">{post.category}</a>
                                     </Link>
-                                    <h3 className="text-sm hover:text-green-600">
+                                    <h3 className="text-sm hover:text-green-600 transition-colors duration-200">
                                         <Link as={`/posts/${post.code}`} href="/posts/[slug]">
                                             <a>{post.title}</a>
                                         </Link>

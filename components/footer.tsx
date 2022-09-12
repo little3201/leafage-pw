@@ -7,18 +7,18 @@ const Footer = () => {
       <Container>
         <div className="py-10 grid grid-cols-7 gap-4">
           <div className='col-span-3 md:col-span-4'>
-            <div className='mb-6'>
+            <div className='mb-5'>
               <Link href="/">
-                <a className='text-3xl font-semibold text-green-600'>Leafage</a>
+                <a className='text-4xl font-semibold text-green-600'>Leafage</a>
               </Link>
             </div>
             <nav>
               <ul className='block opacity-80 text-sm'>
                 <li className='inline-block'>
-                  <Link href="/"><a>Home</a></Link>
+                  <Link href="/"><a className='hover:text-green-600 transition-colors duration-200'>Home</a></Link>
                 </li>
-                <li className='inline-block px-6'><Link href="/doc"><a>Document</a></Link></li>
-                <li className='inline-block'><Link href="/project"><a>Projects</a></Link></li>
+                <li className='inline-block px-6'><Link href="/doc"><a className='hover:text-green-600 transition-colors duration-200'>Document</a></Link></li>
+                <li className='inline-block'><Link href="/project"><a className='hover:text-green-600 transition-colors duration-200'>Projects</a></Link></li>
               </ul>
             </nav>
           </div>
@@ -27,7 +27,7 @@ const Footer = () => {
               <h3 className='opacity-70 text-sm my-2'>Get the freshest Chobani news</h3>
               <form className='relative max-w-xl'>
                 <input name='email' type="email" className='border outline-none w-2/3 px-4' placeholder="Your email address" required autoComplete='false' />
-                <button type='submit' className='border focus:ring-1 hover:bg-green-600 px-4'>Subscribe</button>
+                <button type='submit' className='border outline-none hover:border-green-600 text-green-600 px-4 transition-colors duration-200'>Subscribe</button>
               </form>
             </div>
           </div>

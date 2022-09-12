@@ -5,17 +5,16 @@ import { CMS_NAME } from '../lib/constants'
 
 
 const Tag = () => {
+    const title = `Tag${CMS_NAME}`
     return (
-        <>
-            <Layout>
-                <Head>
-                    <title>{CMS_NAME}</title>
-                </Head>
-                <Container>
-                    <div>Tags</div>
-                </Container>
-            </Layout>
-        </>
+        <Layout>
+            <Head>
+                <title>{title}</title>
+            </Head>
+            <Container>
+                <div>Tags</div>
+            </Container>
+        </Layout>
     )
 }
 

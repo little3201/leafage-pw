@@ -11,7 +11,7 @@ const Layout = ({ children }: Props) => {
     <div className="text-base dark:bg-neutral-900 text-neutral-900 dark:text-neutral-200">
       <Meta />
       <Header />
-      <main>{children}</main>
+      <main style={{ minHeight: `calc(100vh - 20rem)` }}>{children}</main>
       <Footer />
     </div>
   )
