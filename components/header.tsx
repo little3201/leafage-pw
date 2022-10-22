@@ -23,9 +23,9 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link href="/tag">
+            <Link href="/resource">
               <a className="text-sm xl:text-base font-normal text-neutral-700 dark:text-neutral-300 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-green-50 dark:hover:bg-neutral-800 dark:hover:text-neutral-200 transition-colors duration-200" rel="noopener noreferrer" id="headlessui-popover-button-7" aria-expanded="false" >
-                Tags
+                Resources
               </a>
             </Link>
           </li>

@@ -4,8 +4,8 @@ import Head from 'next/head'
 import { CMS_NAME } from '../lib/constants'
 
 
-const Tag = () => {
-    const title = `Tag${CMS_NAME}`
+const Resource = () => {
+    const title = `Resource${CMS_NAME}`
     return (
         <Layout>
             <Head>
@@ -18,4 +18,4 @@ const Tag = () => {
     )
 }
 
-export default Tag
+export default Resource

@@ -65,7 +65,7 @@ const CategoryStories = ({ posts }: Props) => {
                                             </Link>
                                             <div className="whitespace-nowrap">
                                                 <Link href="/about">
-                                                    <a className="block mb-1" rel="author">WQ</a>
+                                                    <a className="block mb-1" rel="author">WQ Li</a>
                                                 </Link>
                                                 <DateFormatter dateString={posts[1].modifyTime} />
                                             </div>
@@ -99,7 +99,7 @@ const CategoryStories = ({ posts }: Props) => {
                                     <div className="w-full">
                                         <span className="text-xs text-neutral-400 ">By
                                             <Link href="/about">
-                                                <a className="uppercase ml-2" rel="author">WQ</a>
+                                                <a className="uppercase ml-2" rel="author">WQ Li</a>
                                             </Link>
                                         </span>
                                     </div>

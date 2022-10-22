@@ -25,7 +25,7 @@ const PostHeader = ({ title, date, author }: Props) => {
 
         <div className="whitespace-nowrap text-sm">
           <Link href="/about">
-            <a className="block" rel="author">WQ</a>
+            <a className="block" rel="author">WQ Li</a>
           </Link>
           <DateFormatter dateString={date} />
         </div>

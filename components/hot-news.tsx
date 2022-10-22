@@ -11,8 +11,8 @@ const HotNews = ({ posts }: Props) => {
     return (<div className="mb-12">
         <div className="flex items-center relative mb-12">
             <div className="">
-                <span className="capitalize text-black text-opacity-60 italic font-serif">Editor WQ&apos;s</span>
-                <h4 className="text-4xl font-bold font-serif">Hot News</h4>
+                <span className="capitalize text-black text-opacity-60 italic font-serif">Editor WQ Li&apos;s</span>
+                <h4 className="text-4xl font-bold font-serif">Hot Posts</h4>
             </div>
             <div className="flex-1">
                 <p className="text-sm max-w-md text-neutral-400 font-serif ml-16 pl-6 border-l-4 border-green-700 leading-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor</p>

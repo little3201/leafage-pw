@@ -35,7 +35,7 @@ const HeroPost = ({
           </Link>
           <div className="whitespace-nowrap">
             <Link href="/about">
-              <a className="block mb-1" rel="author">WQ</a>
+              <a className="block mb-1" rel="author">WQ Li</a>
             </Link>
             <DateFormatter dateString={date} />
           </div>

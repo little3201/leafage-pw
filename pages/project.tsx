@@ -25,7 +25,7 @@ const Project = () => {
                                         </h3>
                                     </div>
                                 </div>
-                                <Link href="/posts">
+                                <Link href="/">
                                     <a className='absolute inset-0'></a>
                                 </Link>
                             </li>
@@ -37,7 +37,7 @@ const Project = () => {
                                         </h3>
                                     </div>
                                 </div>
-                                <Link href="/posts">
+                                <Link href="/">
                                     <a className='absolute inset-0'></a>
                                 </Link>
                             </li>
@@ -49,7 +49,7 @@ const Project = () => {
                                         </h3>
                                     </div>
                                 </div>
-                                <Link href="/posts">
+                                <Link href="/">
                                     <a className='absolute inset-0'></a>
                                 </Link>
                             </li>
@@ -61,7 +61,7 @@ const Project = () => {
                                         </h3>
                                     </div>
                                 </div>
-                                <Link href="/posts">
+                                <Link href="/">
                                     <a className='absolute inset-0'></a>
                                 </Link>
                             </li>
