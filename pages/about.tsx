@@ -19,11 +19,11 @@ const About = () => {
               <Image src="/assets/avatar.jpg" alt="about author" width={240} height={240} />
             </div>
             <div className="text-center">
-              <h5 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100" className="text-xl text-neutral-600 font-semibold">Hello, I'm <span className='text-green-600'>WQ Li</span></h5>
+              <h5 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100" className="text-xl text-neutral-600 font-semibold">Hello, I&apos;m <span className='text-green-600'>WQ Li</span></h5>
               <h2 className="text-5xl font-bold my-3 text-green-600" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
                 A Program Developer
               </h2>
-              <p className=" max-w-xl mb-8 text-lg text-neutral-500 break-words" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">I'm a Java Developer based In China, over 6 years of
+              <p className=" max-w-xl mb-8 text-lg text-neutral-500 break-words" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">I&apos;m a Java Developer based In China, over 6 years of
                 professional experience. And Front-end like React、Vue experience. And learning the Rust language.</p>
               <ul className='flex items-center justify-center divide-x text-2xl text-neutral-500'>
                 <li className='px-4'>
