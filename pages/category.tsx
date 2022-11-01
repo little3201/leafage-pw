@@ -1,7 +1,8 @@
+import Head from 'next/head'
+
 import Container from '../components/container'
 import Layout from '../components/layout'
 import PostPreview from '../components/post-preview'
-import Head from 'next/head'
 import { getAllCategories, getPostsByCategory } from '../lib/api'
 import { CMS_NAME } from '../lib/constants'
 import Category from '../types/category'
@@ -12,10 +13,15 @@ type Props = {
     posts: Post[]
 }
 
+let isChecked = true
+
 const Category = ({ categories, posts }: Props) => {
     const title = `Category${CMS_NAME}`
-    let isChecked = true
     categories.sort((a, b) => new Date(a.modifyTime).getTime() - new Date(b.modifyTime).getTime())
+
+    const setChecked = () => {
+        isChecked = !isChecked
+    }
     return (
         <Layout>
             <Head>
@@ -24,7 +30,7 @@ const Category = ({ categories, posts }: Props) => {
             <Container>
                 <div className="mx-auto py-8">
                     <h2 className="sr-only">Categories</h2>
-                    {isChecked ? <button type='button' onClick={() => isChecked = !isChecked} className='rounded-3xl w-full h-40 bg-gradient-to-r from-green-300 to-lime-300'>
+                    {isChecked ? <button type='button' onClick={setChecked} className='rounded-3xl w-full h-40 bg-gradient-to-r from-green-300 to-lime-300'>
                         <div className='w-full h-full rounded-3xl bg-black bg-opacity-40 flex items-center justify-center'>
                             <div className='text-white text-center'>
                                 <h2 className="text-5xl">
@@ -63,6 +69,10 @@ const Category = ({ categories, posts }: Props) => {
                         />
                     ))}
                 </div>
+
+                <div className='text-center my-8'>
+                    <button type='button' className='border border-green-600 px-6 py-2 rounded-md text-green-600 hover:bg-green-700 hover:text-white shadow-md hover:shadow-xl transition-all duration-200'>Load More</button>
+                </div>
             </Container>
         </Layout >
     )
@@ -72,7 +82,7 @@ export default Category
 
 export const getStaticProps = async () => {
     const categories = await getAllCategories()
-    const posts = await getPostsByCategory("20C3ID6W")
+    const posts = await getPostsByCategory(0, 6, "20C3ID6W")
     return {
         props: { categories, posts },
     }
