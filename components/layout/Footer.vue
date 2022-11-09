@@ -1,6 +1,6 @@
 <template>
   <footer class="bg-gray-900">
-    <section class="max-w-2xl mx-auto sm:px-6 lg:max-w-4xl 2xl:max-w-6xl lg:px-8">
+    <section class="container mx-auto px-5">
       <div class="md:flex md:justify-between md:items-center text-gray-300">
         <div class="flex justify-center">
           <NuxtLink
