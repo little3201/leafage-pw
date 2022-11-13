@@ -17,5 +17,5 @@
 </template>
 
 <script lang="ts" setup>
-const { data: datas } = await useAsyncData('record', () => $fetch(`/api/assets/record`))
+const { data: datas } = await useAsyncData('record', () => $fetch(`/api/assets/records`))
 </script>

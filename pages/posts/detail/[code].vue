@@ -131,7 +131,7 @@ const { data } = await useAsyncData('details', () => $fetch(`/api/assets/posts/$
 const [{ data: previous }, { data: next }, { data: comments }] = await Promise.all([
     useFetch(`/api/assets/posts/${params.code}`),
     useFetch(`/api/assets/posts/${params.code}`),
-    useFetch(`/api/assets/comment/${params.code}`)
+    useFetch(`/api/assets/comments/${params.code}`)
 ])
 
 onMounted(() => {

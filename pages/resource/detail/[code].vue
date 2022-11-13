@@ -46,7 +46,7 @@ import { getCookie } from '../../../utils/ck'
 
 const { params } = useRoute();
 
-const { data } = await useAsyncData('details', () => $fetch(`/api/assets/resource/${params.code}`))
+const { data } = await useAsyncData('details', () => $fetch(`/api/assets/resources/${params.code}`))
 
 /**
  * 下载

@@ -57,12 +57,6 @@
 </template>
 
 <script lang="ts" setup>
-<<<<<<< HEAD
-=======
-import PostType from '../types/posts'
-
-const order = ref("");
->>>>>>> 854876dc (更新依赖)
 const tabs = ref([
     {
         code: "likes",
