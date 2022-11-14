@@ -8,12 +8,12 @@
     >
         <div class="absolute inset-0 overflow-hidden">
             <div
-                class="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+                class="absolute inset-0 bg-neutral-500 bg-opacity-75 transition-opacity"
                 aria-hidden="true"
             ></div>
             <div class="pointer-events-none fixed inset-y-0 right-0 flex w-full">
                 <div class="pointer-events-auto w-screen">
-                    <div class="flex h-screen flex-col overflow-y-scroll bg-white dark:bg-gray-900">
+                    <div class="flex h-screen flex-col overflow-y-scroll bg-white dark:bg-neutral-900">
                         <div class="flex justify-between items-center p-4">
                             <button
                                 type="button"

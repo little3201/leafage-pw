@@ -6,7 +6,7 @@
                 :id="'comment+' + code"
                 placeholder="请输入评论..."
                 v-model="content"
-                class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:outline-none focus:ring-1 focus:ring-gray-400"
+                class="w-full mt-1 px-4 py-2 border border-neutral-300 rounded-md dark:bg-neutral-800 dark:text-neutral-300 dark:border-neutral-600 focus:outline-none focus:ring-1 focus:ring-neutral-400"
             ></textarea>
         </div>
 
@@ -14,7 +14,7 @@
             <button
                 type="submit"
                 @click="onSubmit"
-                class="px-2 py-1 text-sm transition-colors duration-200 transform border border-gray-300 dark:bg-gray-600 dark:text-gray-300 bg-gray-200 rounded-md focus:outline-none"
+                class="px-2 py-1 text-sm transition-colors duration-200 transform border border-neutral-300 dark:bg-neutral-600 dark:text-neutral-300 bg-neutral-200 rounded-md focus:outline-none"
             >Commit Comment</button>
         </div>
     </form>
@@ -50,7 +50,7 @@ const onSubmit = async () => {
         replier: props.reply
     }
     await $fetch(`/api/check`).then(() => {
-        $fetch(`/api/assets/comment`, {
+        $fetch(`/api/comment`, {
             method: 'POST',
             body: comment,
             headers: {

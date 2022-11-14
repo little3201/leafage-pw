@@ -10,9 +10,13 @@
     "start": "node .output/server/index.mjs"
   },
   "dependencies": {
-    "highlight.js": "^11.6.0",
-    "marked": "^4.2.2",
-    "marked-extended-tables": "^1.0.5",
+    "rehype-external-links": "^2.0.1",
+    "rehype-highlight": "^6.0.0",
+    "rehype-sanitize": "^5.0.1",
+    "rehype-stringify": "^9.0.3",
+    "remark-gfm": "^3.0.1",
+    "remark-parse": "^10.0.1",
+    "remark-rehype": "^10.1.0",
     "vue-gtag-next": "^1.14.0"
   },
   "devDependencies": {

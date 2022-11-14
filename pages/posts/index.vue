@@ -6,15 +6,15 @@
             </Head>
         </Html>
 
-        <Tab @chageParams="chageParams" :datas="categories" />
-        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 my-8">
+        <Tab @chageParams="chageParams" :datas="categories ? categories : []" />
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 my-8">
             <Item v-for="post in posts" :data="post" />
         </div>
-        <div class="text-center my-6 text-gray-400">
+        <div class="text-center my-6 text-neutral-400">
             <button
                 type="button"
                 @click="viewMore"
-                class="font-semibold hover:text-gray-600 px-2 py-1 rounded focus:outline-none"
+                class="font-semibold hover:text-neutral-600 px-2 py-1 rounded focus:outline-none"
             >
                 View More
                 <svg
@@ -37,11 +37,13 @@
 </template>
 
 <script lang="ts" setup>
+import { Category, Posts } from '@/lib/request.type';
+
 const route = useRoute();
 
 const [{ data: categories }, { data: posts, refresh }] = await Promise.all([
-    useFetch(`/api/assets/category`),
-    useFetch(`/api/assets/posts?page=0&size=12&sort=likes`)
+    useFetch<Array<Category>>(`/api/categories`),
+    useFetch<Array<Posts>>(`/api/posts?page=0&size=12&sort=likes`)
 ])
 
 let page = ref(0)
@@ -52,7 +54,7 @@ let category = ref(route.params.category || categories[0]);
  */
 const viewMore = async () => {
     page.value = page.value + 1;
-    const datas = await $fetch(`/api/assets/posts?page=${page.value}&size=12&category=${category.value}`)
+    const datas = await $fetch(`/api/posts?page=${page.value}&size=12&category=${category.value}`)
     posts.push(datas)
 }
 
@@ -65,8 +67,7 @@ const chageParams = async (item: string) => {
         refresh()
     } else {
         category.value = item;
-        posts.splice(0, -1)
-        const datas = await $fetch(`/api/assets/posts?page=${page.value}&size=12&category=${category.value}`)
+        const datas = await $fetch(`/api/posts?page=${page.value}&size=12&category=${category.value}`)
         posts.push(datas)
     }
 };

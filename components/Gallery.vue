@@ -2,7 +2,7 @@
   <div class="relative" :class="{ 'lg:col-span-2': aspect }">
     <RouterLink :to="'/posts/detail/' + data.code" class="group">
       <figure
-        class="h-full bg-gray-300 overflow-hidden"
+        class="h-full bg-neutral-300 overflow-hidden"
         :class="{ 'aspect-w-16 aspect-h-9': aspect }"
       >
         <img

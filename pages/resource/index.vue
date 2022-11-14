@@ -2,10 +2,10 @@
     <div>
         <Html :lang="'en'">
             <Head>
-                <Title>Leafage - Resource</Title>
+                <Title>Resource - Leafage</Title>
             </Head>
         </Html>
-        <Tab @chageParams="chageParams" :datas="categories" />
+        <Tab @chageParams="chageParams" :datas="categories ? categories : []" />
         <div
             class="grid grid-cols-1 gap-y-8 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 my-8"
         >
@@ -14,7 +14,7 @@
                 :to="'/resource/detail/' + data.code"
                 class="w-full group"
             >
-                <div class="w-full aspect-w-4 aspect-h-5 bg-gray-300 overflow-hidden border">
+                <div class="w-full aspect-w-4 aspect-h-5 bg-neutral-300 overflow-hidden border">
                     <img
                         :src="data.cover"
                         :alt="data.title"
@@ -24,9 +24,9 @@
                     />
                 </div>
                 <p
-                    class="my-2 text-base font-medium text-gray-800 dark:text-gray-300 group-hover:underline"
+                    class="my-2 text-base font-medium text-neutral-800 dark:text-neutral-300 group-hover:underline"
                 >{{ data.title }}</p>
-                <div class="flex justify-between text-sm text-gray-600 dark:text-gray-400">
+                <div class="flex justify-between text-sm text-neutral-600 dark:text-neutral-400">
                     <span>{{ new Date(data.modifyTime).toLocaleDateString() }}</span>
                     <div>
                         <div class="inline-flex items-center">
@@ -70,11 +70,11 @@
                 </div>
             </NuxtLink>
         </div>
-        <div class="text-center my-6 text-gray-400">
+        <div class="text-center my-6 text-neutral-400">
             <button
                 type="button"
                 @click="viewMore"
-                class="font-semibold hover:text-gray-600 px-2 py-1 rounded focus:outline-none"
+                class="font-semibold hover:text-neutral-600 px-2 py-1 rounded focus:outline-none"
             >
                 View More
                 <svg
@@ -97,9 +97,11 @@
 </template>
 
 <script lang="ts" setup>
+import { Category, Resource } from '@/lib/request.type';
+
 const [{ data: categories }, { data: resources, refresh }] = await Promise.all([
-    useFetch(`/api/assets/categories`),
-    useFetch(`/api/assets/resources?page=0&size=12&sort=likes`)
+    useFetch<Array<Category>>(`/api/categories`),
+    useFetch<Array<Resource>>(`/api/resources?page=0&size=12&sort=likes`)
 ])
 
 let page = ref(0)
@@ -110,7 +112,7 @@ let category = ref(categories[0]);
  */
 const viewMore = async () => {
     page.value = page.value + 1;
-    const datas = await $fetch(`/api/assets/resources?page=${page.value}&size=12&category=${category.value}`)
+    const datas = await $fetch(`/api/resources?page=${page.value}&size=12&category=${category.value}`)
     resources.push(datas)
 }
 
@@ -123,8 +125,7 @@ const chageParams = async (item: string) => {
         refresh()
     } else {
         category.value = item;
-        resources.splice(0, -1)
-        const datas = await $fetch(`/api/assets/resources?page=${page.value}&size=12&category=${category.value}`)
+        const datas = await $fetch(`/api/resources?page=${page.value}&size=12&category=${category.value}`)
         resources.push(datas)
     }
 }

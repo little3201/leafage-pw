@@ -17,7 +17,7 @@
                     <button
                         type="button"
                         @click="closeOperation"
-                        class="inline-flex items-center justify-center rounded-bl-full bg-gray-400 bg-opacity-60 absolute top-0 right-0 w-12 h-12"
+                        class="inline-flex items-center justify-center rounded-bl-full bg-neutral-400 bg-opacity-60 absolute top-0 right-0 w-12 h-12"
                     >
                         <span class="sr-only">Close</span>
                         <svg

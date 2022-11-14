@@ -1,6 +1,6 @@
 <template>
     <NuxtLink :to="'/posts/detail/' + data.code" class="group">
-        <figure class="w-full aspect-w-3 aspect-h-2 bg-gray-300 overflow-hidden">
+        <figure class="w-full aspect-w-3 aspect-h-2 bg-neutral-300 overflow-hidden">
             <img
                 :src="data.cover + '?imageMogr2/thumbnail/272x182/format/webp/interlace/1/blur/1x0/quality/100'"
                 :alt="data.title"
@@ -9,14 +9,14 @@
                 width="182"
             />
         </figure>
-        <div class="flex justify-between mt-4 text-xs uppercase text-gray-600 dark:text-gray-400">
+        <div class="flex justify-between mt-4 text-xs uppercase text-neutral-600 dark:text-neutral-400">
             <span>{{ data.category }}</span>
             <span>{{ new Date(data.modifyTime).toLocaleDateString() }}</span>
         </div>
         <p
-            class="my-2 text-lg font-medium text-gray-800 dark:text-gray-300 group-hover:underline"
+            class="my-2 text-lg font-medium text-neutral-800 dark:text-neutral-300 group-hover:underline"
         >{{ data.title }}</p>
-        <div class="flex justify-between text-xs text-gray-600 dark:text-gray-400">
+        <div class="flex justify-between text-xs text-neutral-600 dark:text-neutral-400">
             <div>
                 <div class="inline-flex items-center">
                     <svg

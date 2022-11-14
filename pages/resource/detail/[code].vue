@@ -1,12 +1,12 @@
 <template>
-    <div class="border-t border-gray-900 dark:border-gray-300 my-6">
+    <div class="border-t border-neutral-900 dark:border-neutral-300 my-6">
         <article class="my-6">
-            <h2 class="my-4 text-3xl font-semibold text-center dark:text-gray-300">{{ data.title }}</h2>
-            <div class="dark:text-gray-300">
+            <h2 class="my-4 text-3xl font-semibold text-center dark:text-neutral-300">{{ data.title }}</h2>
+            <div class="dark:text-neutral-300">
                 <figure class="w-72 h-96 mx-auto border">
                     <img :src="data.cover" :alt="data.title" class="w-72 h-96" height="350" width="278" />
                 </figure>
-                <div class="text-sm text-gray-600 dark:text-gray-400 my-2 md:flex justify-center">
+                <div class="text-sm text-neutral-600 dark:text-neutral-400 my-2 md:flex justify-center">
                     <span class="my-2">{{ new Date(data.modifyTime).toLocaleString() }}</span>
                     <div class="flex space-x-4 my-2 md:my-0 md:mx-4">
                         <span class="inline-flex items-center">
@@ -30,13 +30,13 @@
                         </span>
                     </div>
                 </div>
-                <p class="prose mx-auto lg:prose-lg dark:text-gray-300">{{ data.description }}</p>
+                <p class="prose mx-auto lg:prose-lg dark:text-neutral-300">{{ data.description }}</p>
             </div>
         </article>
 
         <section class="flex items-center justify-center my-6">
             <button type="button" @click="download()"
-                class="rounded-md px-4 py-2 border border-gray-400 dark:text-gray-200 dark:hover:bg-gray-600 hover:bg-gray-100">Download</button>
+                class="rounded-md px-4 py-2 border border-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600 hover:bg-neutral-100">Download</button>
         </section>
     </div>
 </template>
@@ -46,13 +46,13 @@ import { getCookie } from '../../../utils/ck'
 
 const { params } = useRoute();
 
-const { data } = await useAsyncData('details', () => $fetch(`/api/assets/resources/${params.code}`))
+const { data } = await useAsyncData('details', () => $fetch(`/api/resources/${params.code}`))
 
 /**
  * 下载
  */
 const download = async () => {
-    await $fetch(`/api/assets/posts/${params.code}/like`, {
+    await $fetch(`/api/posts/${params.code}/like`, {
         method: 'GET',
         headers: {
             'X-CSRF-TOKEN': getCookie('XSRF-TOKEN')

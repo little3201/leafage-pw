@@ -1,6 +1,6 @@
 <template>
-    <aside class="w-64 flex-none dark:text-gray-400">
-        <div class="border border-solid border-gray-300 dark:border-gray-400 p-4">
+    <aside class="w-full flex-none dark:text-neutral-400">
+        <div class="border border-solid border-neutral-300 dark:border-neutral-400 p-4">
             <h3 class="font-bold">欢迎关注公众号（Leafage）</h3>
             <div class="flex items-center mt-4">
                 <figure class="border">
@@ -15,7 +15,7 @@
                     <p class="my-2">微信搜一搜</p>
                     <input
                         type="text"
-                        class="placeholder-gray-300 border border-gray-300 p-2 w-full text-sm"
+                        class="placeholder-neutral-300 border border-neutral-300 p-2 w-full text-sm"
                         disabled
                         placeholder="Leafage"
                     />
@@ -23,28 +23,28 @@
             </div>
         </div>
 
-        <div class="border border-solid border-gray-300 dark:border-gray-400 my-8 relative">
+        <div class="border border-solid border-neutral-300 dark:border-neutral-400 my-8 relative">
             <h3
-                class="absolute top-0 -mt-2.5 px-2 ml-4 bg-white dark:bg-gray-900 text-sm font-semibold"
+                class="absolute top-0 -mt-2.5 px-2 ml-4 bg-white dark:bg-neutral-900 text-sm font-semibold"
             >帖子分类</h3>
             <ul
-                class="grid grid-cols-1 divide-y divide-gray-300 p-4 text-xs font-semibold list-disc"
+                class="grid grid-cols-1 divide-y divide-neutral-300 p-4 text-xs font-semibold list-decimal"
             >
                 <li class="py-3 mx-4" v-for="category in categories">
                     <NuxtLink
                         :title="category.alias"
                         :to="{ name: 'posts', params: { category: category.alias } }"
-                        class="hover:underline hover:text-gray-900 text-gray-800 dark:text-gray-400 dark:hover:text-gray-300"
+                        class="hover:underline hover:text-neutral-900 text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-300"
                     >{{ category.alias }}</NuxtLink>
-                    <span class="mr-2 float-right text-gray-400">{{ category.count }}</span>
+                    <span class="mr-2 float-right text-neutral-400">{{ category.count }}</span>
                 </li>
             </ul>
         </div>
-        <div class="my-8 border-2 border-solid border-gray-900 dark:border-gray-400 p-4">
+        <div class="my-8 border-2 border-solid border-neutral-900 dark:border-neutral-400 p-4">
             <h3>Send Email To Me</h3>
             <div class="mt-2 flex items-center">
                 <input
-                    class="w-full text-sm placeholder-gray-300 border border-gray-300 focus:outline-none py-1 pl-2"
+                    class="w-full text-sm placeholder-neutral-300 border border-neutral-300 focus:outline-none py-1 pl-2"
                     type="email"
                     placeholder="Email adress"
                 />
@@ -52,7 +52,7 @@
                     aria-label="email"
                     title="email"
                     href="mailto:little3201@163.com?subject=Leafage%20Website%20News"
-                    class="bg-gray-900 text-gray-300 dark:bg-gray-300 dark:text-gray-900 p-2 -ml-1"
+                    class="bg-neutral-900 text-neutral-300 dark:bg-neutral-300 dark:text-neutral-900 p-2 -ml-1"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -72,12 +72,12 @@
                 </a>
             </div>
         </div>
-        <div class="border border-solid border-gray-300 dark:border-gray-400 relative my-8">
+        <div class="border border-solid border-neutral-300 dark:border-neutral-400 relative my-8">
             <h3
-                class="absolute top-0 -mt-2.5 px-2 ml-4 bg-white dark:bg-gray-900 uppercase text-sm font-semibold"
+                class="absolute top-0 -mt-2.5 px-2 ml-4 bg-white dark:bg-neutral-900 uppercase text-sm font-semibold"
             >友情链接</h3>
             <ul
-                class="grid grid-cols-1 divide-y divide-gray-300 p-4 text-xs text-gray-800 dark:text-gray-400 font-semibold list-decimal"
+                class="grid grid-cols-1 divide-y divide-neutral-300 p-4 text-xs text-neutral-800 dark:text-neutral-400 font-semibold list-disc"
             >
                 <li class="py-3 mx-4">
                     <a
@@ -85,7 +85,7 @@
                         href="https://console.leafage.top"
                         target="_blank"
                         rel="noopener"
-                        class="hover:underline hover:text-gray-900 dark:hover:text-gray-300"
+                        class="hover:underline hover:text-neutral-900 dark:hover:text-neutral-300"
                     >管理端（console.leafage.top）</a>
                 </li>
                 <li class="py-3 mx-4">
@@ -94,7 +94,7 @@
                         href="https://blog.csdn.net/zx110503?spm=1008.2028.3001.5343&type=blog"
                         rel="noopener"
                         target="_blank"
-                        class="hover:underline hover:text-gray-900 dark:hover:text-gray-300"
+                        class="hover:underline hover:text-neutral-900 dark:hover:text-neutral-300"
                     >csdn（csdn.net）</a>
                 </li>
                 <li class="py-3 mx-4">
@@ -103,7 +103,7 @@
                         href="https://my.oschina.net/u/4066932"
                         target="_blank"
                         rel="noopener"
-                        class="hover:underline hover:text-gray-900 dark:hover:text-gray-300"
+                        class="hover:underline hover:text-neutral-900 dark:hover:text-neutral-300"
                     >开源中国（oschina.net）</a>
                 </li>
                 <li class="py-3 mx-4">
@@ -112,7 +112,7 @@
                         href="https://segmentfault.com/u/bujidao_5d0c24ce7055e/articles"
                         rel="noopener"
                         target="_blank"
-                        class="hover:underline hover:text-gray-900 dark:hover:text-gray-300"
+                        class="hover:underline hover:text-neutral-900 dark:hover:text-neutral-300"
                     >思否（segmentfault.com）</a>
                 </li>
                 <li class="py-3 mx-4">
@@ -121,7 +121,7 @@
                         href="https://juejin.cn/user/184373686838312/posts"
                         rel="noopener"
                         target="_blank"
-                        class="hover:underline hover:text-gray-900 dark:hover:text-gray-300"
+                        class="hover:underline hover:text-neutral-900 dark:hover:text-neutral-300"
                     >掘金（juejin.cn）</a>
                 </li>
             </ul>
@@ -130,5 +130,5 @@
 </template>
 
 <script lang="ts" setup>
-const { data: categories } = await useFetch('/api/assets/category')
+const { data: categories } = await useFetch('/api/categories')
 </script>

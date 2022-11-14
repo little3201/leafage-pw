@@ -1,6 +1,6 @@
 <template>
     <div
-        class="flex justify-between items-center border border-gray-900 dark:border-gray-300 overflow-x-auto"
+        class="flex justify-between items-center border border-neutral-900 dark:border-neutral-300 overflow-x-auto"
     >
         <button
             v-for="data in datas"
@@ -9,8 +9,8 @@
             :aria-label="data.alias"
             type="button"
             @click="current(data.code)"
-            class="w-full p-3 text-xs font-bold dark:text-gray-300 uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-gray-900 hover:text-gray-200 dark:hover:bg-gray-200 dark:hover:text-gray-900"
-            :class="{ 'bg-gray-900 text-gray-200 dark:bg-gray-200 dark:text-gray-900': data.code == checked }"
+            class="w-full p-3 text-xs font-bold dark:text-neutral-300 uppercase whitespace-nowrap rounded-none focus:outline-none hover:bg-neutral-900 hover:text-neutral-200 dark:hover:bg-neutral-200 dark:hover:text-neutral-900"
+            :class="{ 'bg-neutral-900 text-neutral-200 dark:bg-neutral-200 dark:text-neutral-900': data.code == checked }"
         >{{ data.alias }}</button>
     </div>
 </template>

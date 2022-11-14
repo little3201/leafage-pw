@@ -1,6 +1,6 @@
 <template>
     <div
-        class="flex justify-between items-center mx-4 md:mx-0 py-3 md:py-5 text-gray-900 dark:text-gray-300"
+        class="flex justify-between items-center mx-4 md:mx-0 py-3 md:py-5 text-neutral-900 dark:text-neutral-300"
     >
         <button
             @click="isShow = !isShow"

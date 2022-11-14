@@ -1,9 +1,11 @@
-import { marked } from "marked";
-
-import extendedTables from 'marked-extended-tables'
-
-import hljs from "highlight.js/lib/core";
-import "highlight.js/styles/ir-black.css";
+import { unified } from 'unified'
+import remarkParse from 'remark-parse'
+import remarkGfm from 'remark-gfm'
+import remarkRehype from 'remark-rehype'
+import rehypeExternalLinks from 'rehype-external-links'
+import rehypeHighlight from 'rehype-highlight'
+import rehypeSanitize, { defaultSchema } from 'rehype-sanitize'
+import rehypeStringify from 'rehype-stringify'
 
 import bash from 'highlight.js/lib/languages/bash';
 import dockerfile from 'highlight.js/lib/languages/dockerfile';
@@ -18,32 +20,43 @@ import typescript from 'highlight.js/lib/languages/typescript';
 import xml from 'highlight.js/lib/languages/xml';
 import yaml from 'highlight.js/lib/languages/yaml';
 
-hljs.registerLanguage('bash', bash);
-hljs.registerLanguage('dockerfile', dockerfile);
-hljs.registerLanguage('js', javascript);
-hljs.registerLanguage('json', json);
-hljs.registerLanguage('nginx', nginx);
-hljs.registerLanguage('html', handlebars);
-hljs.registerLanguage('ts', typescript);
-hljs.registerLanguage('java', java);
-hljs.registerLanguage('yaml', yaml);
-hljs.registerLanguage('sql', sql);
-hljs.registerLanguage('sh', shell)
-hljs.registerLanguage('xml', xml);
+// 创建解析方法
+export async function markdownToHtml(markdown: string) {
+    const result = await unified()
+        .use(remarkParse)
+        .use(remarkGfm)
+        .use(remarkRehype)
+        .use(rehypeExternalLinks, {target: '_blank', rel: ['nofollow']})
+        .use(rehypeHighlight, { languages: { bash, dockerfile, javascript, handlebars, java, json, nginx, shell, sql, typescript, xml, yaml } })
+        .use(rehypeSanitize, {
+            ...defaultSchema,
+            attributes: {
+                ...defaultSchema.attributes,
+                span: [
+                    ...(defaultSchema.attributes?.span || []),
+                    // 这里配置代码块高亮的关键词:
+                    [
+                        'className', 'hljs-addition', 'hljs-attr', 'hljs-attribute', 'hljs-built_in', 'hljs-bullet',
+                        'hljs-char', 'hljs-code', 'hljs-comment', 'hljs-deletion', 'hljs-doctag', 'hljs-emphasis',
+                        'hljs-formula', 'hljs-keyword', 'hljs-link', 'hljs-literal', 'hljs-meta', 'hljs-name',
+                        'hljs-number', 'hljs-operator', 'hljs-params', 'hljs-property', 'hljs-punctuation',
+                        'hljs-quote', 'hljs-regexp', 'hljs-section', 'hljs-selector-attr', 'hljs-selector-class',
+                        'hljs-selector-id', 'hljs-selector-pseudo', 'hljs-selector-tag', 'hljs-string', 'hljs-strong',
+                        'hljs-subst', 'hljs-symbol', 'hljs-tag', 'hljs-template-tag', 'hljs-template-variable',
+                        'hljs-title', 'hljs-type', 'hljs-variable'
+                    ]]
+            }
+        }
+        )
+        .use(rehypeStringify)
+        .process(markdown)
+    return result.toString()
+}
 
-marked.setOptions({
-    renderer: new marked.Renderer(),
-    highlight: function (code: string, lang: string) {
-        const language = hljs.getLanguage(lang) ? lang : 'sh';
-        return hljs.highlight(code, { language }).value;
-    },
-    pedantic: false,
-    gfm: true,
-    breaks: true,
-    smartLists: true,
-    xhtml: true
-}).use(extendedTables())
-
-export default defineNuxtPlugin((nuxtApp) => {
-    nuxtApp.provide('marked', marked)
+export default defineNuxtPlugin(() => {
+    return {
+        provide: {
+            markdownToHtml: (markdown: string) => markdownToHtml(markdown)
+        }
+    }
 })

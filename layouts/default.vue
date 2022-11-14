@@ -1,8 +1,8 @@
 <template>
-  <div class="dark:bg-gray-900">
+  <div class="dark:bg-neutral-900">
 
     <header class="container mx-auto px-5">
-      <LayoutHeader class="flex border-gray-900 dark:border-gray-300 border-b-2" />
+      <LayoutHeader class="flex border-neutral-900 dark:border-neutral-300 border-b-2" />
       <LayoutLogo />
     </header>
 

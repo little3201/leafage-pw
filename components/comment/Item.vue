@@ -9,18 +9,18 @@
         width="32"
       />
       <figcaption
-        class="text-gray-400 text-xs text-center my-2"
+        class="text-neutral-400 text-xs text-center my-2"
       >{{ data.country ? data.country.replace(data.country.substr(0, 1), data.country.substr(0, 1).toUpperCase()) : '' }}</figcaption>
     </figure>
     <div
-      class="flex-1 border rounded px-4 py-2 md:px-6 md:py-4 leading-relaxed dark:text-gray-300 dark:border-gray-400"
+      class="flex-1 border rounded px-4 py-2 md:px-6 md:py-4 leading-relaxed dark:text-neutral-300 dark:border-neutral-400"
     >
-      <span class="text-xs text-gray-400 mr-4">{{ data.location ? data.location : '未知' }}</span>
-      <span class="text-xs text-gray-400">{{ new Date(data.modifyTime).toLocaleString() }}</span>
+      <span class="text-xs text-neutral-400 mr-4">{{ data.location ? data.location : '未知' }}</span>
+      <span class="text-xs text-neutral-400">{{ new Date(data.modifyTime).toLocaleString() }}</span>
       <p class="text-sm">{{ data.content }}</p>
 
       <div class="flex items-center justify-between mt-2">
-        <div class="text-sm text-gray-400 font-semibold">
+        <div class="text-sm text-neutral-400 font-semibold">
           <button
             type="button"
             @click="isOpen = !isOpen"
@@ -33,12 +33,12 @@
           <!-- <div class="flex -space-x-2 mr-2">
             <img
               v-for="reply in data.replies"
-              class="rounded-full w-6 h-6 border border-gray-300"
+              class="rounded-full w-6 h-6 border border-neutral-300"
               :src="`/svg/${data.country}.svg`"
               :alt="reply.location"
             />
           </div>-->
-          <div class="text-sm text-gray-400 font-semibold">
+          <div class="text-sm text-neutral-400 font-semibold">
             {{ data.count }} Replies
             <button
               type="button"
@@ -50,7 +50,7 @@
       </div>
       <CommentForm :isShow="isOpen" :code="data.posts" :reply="data.code" />
       <div v-show="isShow">
-        <span class="my-5 uppercase tracking-wide text-gray-400 font-bold text-xs">Replies</span>
+        <span class="my-5 uppercase tracking-wide text-neutral-400 font-bold text-xs">Replies</span>
         <div v-if="data.count > 0" class="space-y-4">
           <CommentItem v-for="reply in replies" :data="reply" />
         </div>
@@ -78,7 +78,7 @@ const operation = async (show: boolean, code: string) => {
   isShow.value = show
   if (show) {
     // 查询关联回复
-    const { data: datas } = await useFetch(`/api/assets/comment/${code}/replies`)
+    const { data: datas } = await useFetch(`/api/comment/${code}/replies`)
     replies.value = datas
   }
 }

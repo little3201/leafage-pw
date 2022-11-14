@@ -9,16 +9,16 @@
         </Head>
 
         </Html>
-        <div class="flex space-x-8 border-t border-gray-900 dark:border-gray-300">
+        <div class="flex space-x-8 border-t border-neutral-900 dark:border-neutral-300">
             <div class="my-6 w-full">
                 <article>
-                    <h2 class="text-3xl text-center dark:text-gray-300">{{ data.title }}</h2>
+                    <h2 class="text-3xl text-center dark:text-neutral-300">{{ data.title }}</h2>
 
-                    <div ref="renderedHtmlRef" class="my-6 max-w-none prose dark:text-gray-300 lg:prose-lg"
+                    <div ref="renderedHtmlRef" class="my-6 max-w-none prose dark:text-neutral-300 lg:prose-lg"
                         v-html="renderedHtml(data.content)"></div>
                 </article>
 
-                <div class="text-sm text-gray-600 dark:text-gray-400 my-2 md:flex">
+                <div class="text-sm text-neutral-600 dark:text-neutral-400 my-2 md:flex">
                     <div class="flex space-x-4 text-sm uppercase">
                         <span>{{ data.category }}</span>
                         <span>{{ new Date(data.modifyTime).toLocaleString() }}</span>
@@ -53,15 +53,15 @@
                     </div>
                 </div>
 
-                <div class="inline-flex items-center space-x-2 text-gray-600 dark:text-gray-300">
+                <div class="inline-flex items-center space-x-2 text-neutral-600 dark:text-neutral-300">
                     <span v-for="(tag, index) in data.tags" :key="index"
-                        class="text-sm bg-gray-200 dark:bg-gray-600 rounded-md px-2 py-px">{{ tag }}</span>
+                        class="text-sm bg-neutral-200 dark:bg-neutral-600 rounded-md px-2 py-px">{{ tag }}</span>
                 </div>
 
                 <section class="flex items-center justify-center my-6">
-                    <span class="text-gray-400">如有帮助，点赞鼓励一下吧！</span>
+                    <span class="text-neutral-400">如有帮助，点赞鼓励一下吧！</span>
                     <button type="button" @click="likes(data.code)"
-                        class="rounded-full p-2 border dark:border-gray-400 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 hover:border-gray-600 dark:hover:border-gray-200">
+                        class="rounded-full p-2 border dark:border-neutral-400 text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200 hover:border-neutral-600 dark:hover:border-neutral-200">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="feather feather-thumbs-up cursor-pointer">
@@ -71,7 +71,7 @@
                     </button>
                 </section>
 
-                <div class="bg-gray-100 dark:bg-gray-800 dark:text-gray-300 my-4 p-4 rounded">
+                <div class="bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-300 my-4 p-4 rounded">
                     <ul
                         class="grid grid-flow-row grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2 gap-4 text-sm font-bold">
                         <li v-if="previous && previous.code">
@@ -100,7 +100,7 @@
                         </li>
                     </ul>
                 </div>
-                <p class="mt-8 text-lg dark:text-gray-300">添加评论：</p>
+                <p class="mt-8 text-lg dark:text-neutral-300">添加评论：</p>
                 <LazyCommentForm :isShow="isShow" :code="data.code" />
                 <LazyCommentItem v-for="comment in comments" :data="comment" />
             </div>
@@ -116,7 +116,7 @@
 import { getCookie } from '../../../utils/ck'
 
 const { params } = useRoute();
-const { $marked } = useNuxtApp()
+const { $markdownToHtml } = useNuxtApp()
 
 const renderedHtmlRef = ref()
 const isShow = ref(true)
@@ -126,12 +126,12 @@ let view = reactive({
     url: ''
 })
 
-const { data } = await useAsyncData('details', () => $fetch(`/api/assets/posts/${params.code}`))
+const { data } = await useAsyncData('details', () => $fetch(`/api/posts/${params.code}`))
 
 const [{ data: previous }, { data: next }, { data: comments }] = await Promise.all([
-    useFetch(`/api/assets/posts/${params.code}`),
-    useFetch(`/api/assets/posts/${params.code}`),
-    useFetch(`/api/assets/comments/${params.code}`)
+    useFetch(`/api/posts/${params.code}/previous`),
+    useFetch(`/api/posts/${params.code}/next`),
+    useFetch(`/api/comments/${params.code}`)
 ])
 
 onMounted(() => {
@@ -144,7 +144,7 @@ onMounted(() => {
  */
 const renderedHtml = (content: string) => {
     if (content && content.length > 0) {
-        return $marked.parse(content).replace(/href="/gi, 'target="_blank" href="')
+        return $markdownToHtml(content)
     }
     return ""
 }
@@ -182,7 +182,7 @@ const previewOperation = (show: boolean, url: string) => {
  */
 const likes = async () => {
     await $fetch(`/api/check`).then(() => {
-        const count = $fetch(`/api/assets/posts/${params.code}/like`, {
+        const count = $fetch(`/api/posts/${params.code}/like`, {
             method: 'PATCH',
             headers: {
                 'X-CSRF-TOKEN': getCookie('XSRF-TOKEN')
