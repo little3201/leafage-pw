@@ -27,7 +27,7 @@
                 >更新日志</NuxtLink>
             </div>
             <div class="my-4 mx-auto w-full lg:border-l">
-                <article class="prose prose-blue dark:text-neutral-300 mx-auto">
+                <article class="prose prose-blue lg:prose-lg dark:text-neutral-300 mx-auto">
                     <NuxtPage />
                 </article>
             </div>

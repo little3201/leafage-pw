@@ -1,8 +1,8 @@
 <template>
-    <div class="my-4">
+    <div class="relative my-4">
         <div class="border-r border-dotted border-neutral-500 dark:border-neutral-100 absolute h-full top-4" style="left: 5.5px;"></div>
         <div>
-            <div class="flex items-center"><span class="rounded-full h-3 w-3 z-0 bg-green-500"></span><span
+            <div class="flex items-center"><span class="rounded-full h-3 w-3 z-10 bg-green-500"></span><span
                     class="ml-4 font-semibold text-base">2022-03-12</span></div>
             <div class="ml-10">
                 <ol>
@@ -14,7 +14,7 @@
             </div>
         </div>
         <div>
-            <div class="flex items-center"><span class="rounded-full h-3 w-3 z-0 bg-yellow-500"></span><span
+            <div class="flex items-center"><span class="rounded-full h-3 w-3 z-10 bg-yellow-500"></span><span
                     class="ml-4 font-semibold text-base">2021-12-02</span></div>
             <div class="ml-10">
                 <ol>

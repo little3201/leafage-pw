@@ -1,9 +1,11 @@
 <template>
     <div>
         <Html :lang="'en'">
-            <Head>
-                <Title>Leafage - Posts</Title>
-            </Head>
+
+        <Head>
+            <Title>Posts - Leafage</Title>
+        </Head>
+
         </Html>
 
         <Tab @chageParams="chageParams" :datas="categories ? categories : []" />
@@ -11,24 +13,12 @@
             <Item v-for="post in posts" :data="post" />
         </div>
         <div class="text-center my-6 text-neutral-400">
-            <button
-                type="button"
-                @click="viewMore"
-                class="font-semibold hover:text-neutral-600 px-2 py-1 rounded focus:outline-none"
-            >
+            <button type="button" @click="viewMore"
+                class="font-semibold hover:text-neutral-600 px-2 py-1 rounded focus:outline-none">
                 View More
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="28"
-                    height="28"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="feather feather-chevrons-down mx-auto"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-chevrons-down mx-auto">
                     <polyline points="7 6 12 11 17 6" />
                 </svg>
             </button>
@@ -47,7 +37,7 @@ const [{ data: categories }, { data: posts, refresh }] = await Promise.all([
 ])
 
 let page = ref(0)
-let category = ref(route.params.category || categories[0]);
+let category = ref(route.params.category || '');
 
 /**
  * 加载更多
@@ -55,7 +45,9 @@ let category = ref(route.params.category || categories[0]);
 const viewMore = async () => {
     page.value = page.value + 1;
     const datas = await $fetch(`/api/posts?page=${page.value}&size=12&category=${category.value}`)
-    posts.push(datas)
+    if (Array.isArray(posts)) {
+        posts.push(datas)
+    }
 }
 
 /**
@@ -68,7 +60,9 @@ const chageParams = async (item: string) => {
     } else {
         category.value = item;
         const datas = await $fetch(`/api/posts?page=${page.value}&size=12&category=${category.value}`)
-        posts.push(datas)
+        if (Array.isArray(posts)) {
+            posts.push(datas)
+        }
     }
 };
 </script>

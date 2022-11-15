@@ -61,6 +61,7 @@
 
 <script lang="ts" setup>
 import CommentForm from './Form.vue';
+import { Comment } from '@/lib/request.type';
 
 defineProps({
   data: {
@@ -72,14 +73,16 @@ defineProps({
 let isShow = ref(false)
 let isOpen = ref(false)
 
-let replies = ref([])
+let replies = ref<Array<Comment>>([])
 
 const operation = async (show: boolean, code: string) => {
   isShow.value = show
   if (show) {
     // 查询关联回复
-    const { data: datas } = await useFetch(`/api/comment/${code}/replies`)
-    replies.value = datas
+    const { data: datas } = await useFetch<Array<Comment>>(`/api/comments/${code}/replies`)
+      if(Array.isArray(replies)){
+        replies.value = datas
+      }
   }
 }
 

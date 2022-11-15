@@ -4,68 +4,39 @@
             <h3 class="font-bold">欢迎关注公众号（Leafage）</h3>
             <div class="flex items-center mt-4">
                 <figure class="border">
-                    <img
-                        src="https://cdn.leafage.top/leafage-wechat.jpg?imageMogr2/thumbnail/x128/format/webp/blur/1x0/quality/75"
-                        alt="leafage"
-                        width="100%"
-                        height="100%"
-                    />
+                    <img src="https://cdn.leafage.top/leafage-wechat.jpg?imageMogr2/thumbnail/x128/format/webp/blur/1x0/quality/75"
+                        alt="leafage" width="100%" height="100%" />
                 </figure>
                 <div class="ml-4">
                     <p class="my-2">微信搜一搜</p>
-                    <input
-                        type="text"
-                        class="placeholder-neutral-300 border border-neutral-300 p-2 w-full text-sm"
-                        disabled
-                        placeholder="Leafage"
-                    />
+                    <input type="text" class="rounded-lg border border-neutral-300 p-2 w-full text-sm"
+                        disabled placeholder="Leafage" />
                 </div>
             </div>
         </div>
 
         <div class="border border-solid border-neutral-300 dark:border-neutral-400 my-8 relative">
-            <h3
-                class="absolute top-0 -mt-2.5 px-2 ml-4 bg-white dark:bg-neutral-900 text-sm font-semibold"
-            >帖子分类</h3>
-            <ul
-                class="grid grid-cols-1 divide-y divide-neutral-300 p-4 text-xs font-semibold list-decimal"
-            >
+            <h3 class="absolute top-0 -mt-2.5 px-2 ml-4 bg-white dark:bg-neutral-900 font-semibold">帖子分类</h3>
+            <ul class="grid grid-cols-1 divide-y divide-neutral-300 p-4 text-sm font-semibold list-decimal">
                 <li class="py-3 mx-4" v-for="category in categories">
-                    <NuxtLink
-                        :title="category.alias"
-                        :to="{ name: 'posts', params: { category: category.alias } }"
-                        class="hover:underline hover:text-neutral-900 text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-300"
-                    >{{ category.alias }}</NuxtLink>
+                    <NuxtLink :title="category.name" :to="{ name: 'posts', state: { category: category.name } }"
+                        class="hover:underline hover:text-neutral-900 text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-300">
+                        {{ category.name }}</NuxtLink>
                     <span class="mr-2 float-right text-neutral-400">{{ category.count }}</span>
                 </li>
             </ul>
         </div>
         <div class="my-8 border-2 border-solid border-neutral-900 dark:border-neutral-400 p-4">
             <h3>Send Email To Me</h3>
-            <div class="mt-2 flex items-center">
+            <div class="mt-2 flex items-center border border-neutral-300 rounded-md overflow-hidden">
                 <input
-                    class="w-full text-sm placeholder-neutral-300 border border-neutral-300 focus:outline-none py-1 pl-2"
-                    type="email"
-                    placeholder="Email adress"
-                />
-                <a
-                    aria-label="email"
-                    title="email"
-                    href="mailto:little3201@163.com?subject=Leafage%20Website%20News"
-                    class="bg-neutral-900 text-neutral-300 dark:bg-neutral-300 dark:text-neutral-900 p-2 -ml-1"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="feather feather-send"
-                    >
+                    class="w-full text-sm focus:outline-none py-2 pl-2"
+                    type="email" placeholder="Email adress" />
+                <a aria-label="email" title="email" href="mailto:little3201@163.com?subject=Leafage%20Website%20News"
+                    class="bg-neutral-900 text-neutral-300 dark:bg-neutral-400 dark:text-neutral-900 p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-send">
                         <line x1="22" y1="2" x2="11" y2="13" />
                         <polygon points="22 2 15 22 11 13 2 9 22 2" />
                     </svg>
@@ -73,56 +44,31 @@
             </div>
         </div>
         <div class="border border-solid border-neutral-300 dark:border-neutral-400 relative my-8">
-            <h3
-                class="absolute top-0 -mt-2.5 px-2 ml-4 bg-white dark:bg-neutral-900 uppercase text-sm font-semibold"
-            >友情链接</h3>
+            <h3 class="absolute top-0 -mt-2.5 px-2 ml-4 bg-white dark:bg-neutral-900 uppercase font-semibold">
+                友情链接</h3>
             <ul
-                class="grid grid-cols-1 divide-y divide-neutral-300 p-4 text-xs text-neutral-800 dark:text-neutral-400 font-semibold list-disc"
-            >
+                class="grid grid-cols-1 divide-y divide-neutral-300 p-4 text-sm text-neutral-800 dark:text-neutral-400 font-semibold list-disc">
                 <li class="py-3 mx-4">
-                    <a
-                        title="leafage console"
-                        href="https://console.leafage.top"
-                        target="_blank"
-                        rel="noopener"
-                        class="hover:underline hover:text-neutral-900 dark:hover:text-neutral-300"
-                    >管理端（console.leafage.top）</a>
+                    <a title="leafage console" href="https://console.leafage.top" target="_blank" rel="noopener"
+                        class="hover:underline hover:text-neutral-900 dark:hover:text-neutral-300">管理端（console.leafage.top）</a>
                 </li>
                 <li class="py-3 mx-4">
-                    <a
-                        title="csdn"
-                        href="https://blog.csdn.net/zx110503?spm=1008.2028.3001.5343&type=blog"
-                        rel="noopener"
-                        target="_blank"
-                        class="hover:underline hover:text-neutral-900 dark:hover:text-neutral-300"
-                    >csdn（csdn.net）</a>
+                    <a title="csdn" href="https://blog.csdn.net/zx110503?spm=1008.2028.3001.5343&type=blog"
+                        rel="noopener" target="_blank"
+                        class="hover:underline hover:text-neutral-900 dark:hover:text-neutral-300">csdn（csdn.net）</a>
                 </li>
                 <li class="py-3 mx-4">
-                    <a
-                        title="oschina"
-                        href="https://my.oschina.net/u/4066932"
-                        target="_blank"
-                        rel="noopener"
-                        class="hover:underline hover:text-neutral-900 dark:hover:text-neutral-300"
-                    >开源中国（oschina.net）</a>
+                    <a title="oschina" href="https://my.oschina.net/u/4066932" target="_blank" rel="noopener"
+                        class="hover:underline hover:text-neutral-900 dark:hover:text-neutral-300">开源中国（oschina.net）</a>
                 </li>
                 <li class="py-3 mx-4">
-                    <a
-                        title="segmentfault"
-                        href="https://segmentfault.com/u/bujidao_5d0c24ce7055e/articles"
-                        rel="noopener"
-                        target="_blank"
-                        class="hover:underline hover:text-neutral-900 dark:hover:text-neutral-300"
-                    >思否（segmentfault.com）</a>
+                    <a title="segmentfault" href="https://segmentfault.com/u/bujidao_5d0c24ce7055e/articles"
+                        rel="noopener" target="_blank"
+                        class="hover:underline hover:text-neutral-900 dark:hover:text-neutral-300">思否（segmentfault.com）</a>
                 </li>
                 <li class="py-3 mx-4">
-                    <a
-                        title="juejin"
-                        href="https://juejin.cn/user/184373686838312/posts"
-                        rel="noopener"
-                        target="_blank"
-                        class="hover:underline hover:text-neutral-900 dark:hover:text-neutral-300"
-                    >掘金（juejin.cn）</a>
+                    <a title="juejin" href="https://juejin.cn/user/184373686838312/posts" rel="noopener" target="_blank"
+                        class="hover:underline hover:text-neutral-900 dark:hover:text-neutral-300">掘金（juejin.cn）</a>
                 </li>
             </ul>
         </div>
@@ -130,5 +76,11 @@
 </template>
 
 <script lang="ts" setup>
-const { data: categories } = await useFetch('/api/categories')
+import { Category } from '@/lib/request.type'
+defineProps({
+    categories: {
+        type: Array<Category>,
+        default: [],
+    }
+})
 </script>

@@ -1,13 +1,13 @@
 <template>
     <div class="border-t border-neutral-900 dark:border-neutral-300 my-6">
         <article class="my-6">
-            <h2 class="my-4 text-3xl font-semibold text-center dark:text-neutral-300">{{ data.title }}</h2>
+            <h2 class="my-4 text-3xl font-semibold text-center dark:text-neutral-300">{{ resource.title }}</h2>
             <div class="dark:text-neutral-300">
-                <figure class="w-72 h-96 mx-auto border">
-                    <img :src="data.cover" :alt="data.title" class="w-72 h-96" height="350" width="278" />
+                <figure class="w-72 h-96 mx-auto border my-8">
+                    <img :src="resource.cover" :alt="resource.title" class="w-72 h-96" height="350" width="278" />
                 </figure>
                 <div class="text-sm text-neutral-600 dark:text-neutral-400 my-2 md:flex justify-center">
-                    <span class="my-2">{{ new Date(data.modifyTime).toLocaleString() }}</span>
+                    <span class="my-2">{{ new Date(resource.modifyTime).toLocaleString() }}</span>
                     <div class="flex space-x-4 my-2 md:my-0 md:mx-4">
                         <span class="inline-flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
@@ -16,7 +16,7 @@
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
                                 <circle cx="12" cy="12" r="3" />
                             </svg>
-                            {{ data.viewed }}
+                            {{ resource.viewed }}
                         </span>
                         <span class="inline-flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
@@ -26,11 +26,11 @@
                                 <line x1="12" y1="12" x2="12" y2="21" />
                                 <path d="M20.88 18.09A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.29" />
                             </svg>
-                            {{ data.downloads }}
+                            {{ resource.downloads }}
                         </span>
                     </div>
                 </div>
-                <p class="prose mx-auto lg:prose-lg dark:text-neutral-300">{{ data.description }}</p>
+                <article class="prose max-w-none mx-auto lg:prose-lg dark:text-neutral-300" v-html="renderedHtml"></article>
             </div>
         </article>
 
@@ -42,12 +42,29 @@
 </template>
 
 <script lang="ts" setup>
-import { getCookie } from '../../../utils/ck'
+import { getCookie } from '@/utils/ck'
+import { Resource } from '@/lib/request.type';
 
+const { $markdownToHtml } = useNuxtApp()
 const { params } = useRoute();
 
-const { data } = await useAsyncData('details', () => $fetch(`/api/resources/${params.code}`))
+const renderedHtml = ref()
 
+const { data: resource } = await useFetch<Resource>(`/api/resources/${params.code}`)
+
+onMounted(() => {
+    markdownToHtml(resource.value?.description)
+})
+
+/**
+ * marked 解析
+ * @param content 原内容
+ */
+const markdownToHtml = async (content: string) => {
+    if (content && content.length > 0) {
+        renderedHtml.value = await $markdownToHtml(content)
+    }
+}
 /**
  * 下载
  */

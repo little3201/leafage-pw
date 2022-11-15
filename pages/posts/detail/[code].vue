@@ -3,25 +3,25 @@
         <Html :lang="'en'">
 
         <Head>
-            <Title>Leafage - {{ data.title }}</Title>
-            <Meta name="description" :content="data.title" />
-            <Meta name="keywords" :content="data.tags.toString()" />
+            <Title>{{ posts.title }} - Leafage</Title>
+            <Meta name="description" :content="posts.title" />
+            <Meta name="keywords" :content="posts.tags.toString()" />
         </Head>
 
         </Html>
         <div class="flex space-x-8 border-t border-neutral-900 dark:border-neutral-300">
             <div class="my-6 w-full">
                 <article>
-                    <h2 class="text-3xl text-center dark:text-neutral-300">{{ data.title }}</h2>
+                    <h2 class="text-3xl text-center dark:text-neutral-300">{{ posts.title }}</h2>
 
-                    <div ref="renderedHtmlRef" class="my-6 max-w-none prose dark:text-neutral-300 lg:prose-lg"
-                        v-html="renderedHtml(data.content)"></div>
+                    <div ref="renderedHtmlRef" class="my-6 max-w-none prose prose-blue lg:prose-lg dark:text-neutral-300"
+                        v-html="renderedHtml"></div>
                 </article>
 
                 <div class="text-sm text-neutral-600 dark:text-neutral-400 my-2 md:flex">
                     <div class="flex space-x-4 text-sm uppercase">
-                        <span>{{ data.category }}</span>
-                        <span>{{ new Date(data.modifyTime).toLocaleString() }}</span>
+                        <span>{{ posts.category }}</span>
+                        <span>{{ new Date(posts.modifyTime).toLocaleString() }}</span>
                     </div>
                     <div class="flex space-x-4 my-2 md:my-0 md:mx-4">
                         <div class="inline-flex items-center">
@@ -31,7 +31,7 @@
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
                                 <circle cx="12" cy="12" r="3" />
                             </svg>
-                            {{ data.viewed }}
+                            {{ posts.viewed }}
                         </div>
                         <div class="inline-flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
@@ -39,7 +39,7 @@
                                 stroke-linejoin="round" class="feather feather-message-square mr-1">
                                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                             </svg>
-                            {{ data.comment }}
+                            {{ posts.comments }}
                         </div>
                         <div class="inline-flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
@@ -48,77 +48,82 @@
                                 <path
                                     d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
                             </svg>
-                            {{ data.likes }}
+                            {{ posts.likes }}
                         </div>
                     </div>
                 </div>
 
                 <div class="inline-flex items-center space-x-2 text-neutral-600 dark:text-neutral-300">
-                    <span v-for="(tag, index) in data.tags" :key="index"
+                    <span v-for="(tag, index) in posts.tags" :key="index"
                         class="text-sm bg-neutral-200 dark:bg-neutral-600 rounded-md px-2 py-px">{{ tag }}</span>
                 </div>
+                <ClientOnly>
+                    <section class="flex items-center justify-center my-6">
+                        <span class="text-neutral-400">如有帮助，点赞鼓励一下吧！</span>
+                        <button type="button" @click="likes(posts.code)"
+                            class="rounded-full p-2 border dark:border-neutral-400 text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200 hover:border-neutral-600 dark:hover:border-neutral-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-thumbs-up cursor-pointer">
+                                <path
+                                    d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
+                            </svg>
+                        </button>
+                    </section>
 
-                <section class="flex items-center justify-center my-6">
-                    <span class="text-neutral-400">如有帮助，点赞鼓励一下吧！</span>
-                    <button type="button" @click="likes(data.code)"
-                        class="rounded-full p-2 border dark:border-neutral-400 text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200 hover:border-neutral-600 dark:hover:border-neutral-200">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="feather feather-thumbs-up cursor-pointer">
-                            <path
-                                d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
-                        </svg>
-                    </button>
-                </section>
-
-                <div class="bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-300 my-4 p-4 rounded">
-                    <ul
-                        class="grid grid-flow-row grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2 gap-4 text-sm font-bold">
-                        <li v-if="previous && previous.code">
-                            <NuxtLink :title="previous.title" :to="'/posts/detail/' + previous.code"
-                                class="flex items-center py-2 transform hover:-translate-x-2 transition duration-500">
-                                <svg v-show="previous.code && previous.code.length > 0"
-                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-chevron-left">
-                                    <polyline points="15 18 9 12 15 6" />
-                                </svg>
-                                {{ previous.title }}
-                            </NuxtLink>
-                        </li>
-                        <li class="flex items-center justify-end" v-if="next && next.code">
-                            <NuxtLink :title="next.title" :to="'/posts/detail/' + next.code"
-                                class="flex items-center py-2 transform hover:translate-x-2 transition duration-500">
-                                {{ next.title }}
-                                <svg v-show="next.code && next.code.length > 0" xmlns="http://www.w3.org/2000/svg"
-                                    width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
-                                    class="feather feather-chevron-right">
-                                    <polyline points="9 18 15 12 9 6" />
-                                </svg>
-                            </NuxtLink>
-                        </li>
-                    </ul>
-                </div>
-                <p class="mt-8 text-lg dark:text-neutral-300">添加评论：</p>
-                <LazyCommentForm :isShow="isShow" :code="data.code" />
-                <LazyCommentItem v-for="comment in comments" :data="comment" />
+                    <div class="bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-300 my-4 p-4 rounded">
+                        <ul
+                            class="grid grid-flow-row grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2 gap-4 text-sm font-bold">
+                            <li v-if="previous && previous.code">
+                                <NuxtLink :title="previous.title" :to="'/posts/detail/' + previous.code"
+                                    class="flex items-center py-2 transform hover:-translate-x-2 transition duration-500">
+                                    <svg v-show="previous.code && previous.code.length > 0"
+                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-chevron-left">
+                                        <polyline points="15 18 9 12 15 6" />
+                                    </svg>
+                                    {{ previous.title }}
+                                </NuxtLink>
+                            </li>
+                            <li class="flex items-center justify-end" v-if="next && next.code">
+                                <NuxtLink :title="next.title" :to="'/posts/detail/' + next.code"
+                                    class="flex items-center py-2 transform hover:translate-x-2 transition duration-500">
+                                    {{ next.title }}
+                                    <svg v-show="next.code && next.code.length > 0" xmlns="http://www.w3.org/2000/svg"
+                                        width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                                        class="feather feather-chevron-right">
+                                        <polyline points="9 18 15 12 9 6" />
+                                    </svg>
+                                </NuxtLink>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="mt-8 text-lg dark:text-neutral-300">添加评论：</p>
+                    <LazyCommentForm :isShow="isShow" :code="posts.code" />
+                    <LazyCommentItem v-for="comment in comments" :data="comment" />
+                </ClientOnly>
             </div>
         </div>
 
-        <LazyPreview :isShow="view.isShow" @closeAction="previewOperation">
-            <img :src="view.url" alt="preview" class="w-full h-full" width="1366" height="768" />
-        </LazyPreview>
+        <ClientOnly>
+            <LazyPreview :isShow="view.isShow" @closeAction="previewOperation">
+                <img :src="view.url" alt="preview" class="w-full h-full" width="1366" height="768" />
+            </LazyPreview>
+        </ClientOnly>
     </div>
 </template>
 
 <script lang="ts" setup>
-import { getCookie } from '../../../utils/ck'
+import { getCookie } from '@/utils/ck'
+import { Posts, PostsContent, Comment } from '@/lib/request.type';
 
 const { params } = useRoute();
 const { $markdownToHtml } = useNuxtApp()
 
 const renderedHtmlRef = ref()
+const renderedHtml = ref()
 const isShow = ref(true)
 
 let view = reactive({
@@ -126,15 +131,15 @@ let view = reactive({
     url: ''
 })
 
-const { data } = await useAsyncData('details', () => $fetch(`/api/posts/${params.code}`))
-
-const [{ data: previous }, { data: next }, { data: comments }] = await Promise.all([
-    useFetch(`/api/posts/${params.code}/previous`),
-    useFetch(`/api/posts/${params.code}/next`),
-    useFetch(`/api/comments/${params.code}`)
+const [{ data: posts }, { data: previous }, { data: next }, { data: comments }] = await Promise.all([
+    useFetch<PostsContent>(`/api/posts/${params.code}`),
+    useFetch<Posts>(`/api/posts/${params.code}/previous`),
+    useFetch<Posts>(`/api/posts/${params.code}/next`),
+    useFetch<Array<Comment>>(`/api/comments/${params.code}`)
 ])
 
 onMounted(() => {
+    markdownToHtml(posts.value.content)
     addImgClickEvent()
 })
 
@@ -142,11 +147,10 @@ onMounted(() => {
  * marked 解析
  * @param content 原内容
  */
-const renderedHtml = (content: string) => {
+const markdownToHtml = async (content: string) => {
     if (content && content.length > 0) {
-        return $markdownToHtml(content)
+        renderedHtml.value = await $markdownToHtml(content)
     }
-    return ""
 }
 
 /**
@@ -182,14 +186,18 @@ const previewOperation = (show: boolean, url: string) => {
  */
 const likes = async () => {
     await $fetch(`/api/check`).then(() => {
-        const count = $fetch(`/api/posts/${params.code}/like`, {
+        $fetch(`/api/posts/${params.code}/like`, {
             method: 'PATCH',
             headers: {
                 'X-CSRF-TOKEN': getCookie('XSRF-TOKEN')
             },
             credentials: 'include'
-        })
-        data.value.likes = count
+        }).then(count => posts.value.likes = count)
+
     })
 }
 </script>
+
+<style src="highlight.js/styles/atom-one-dark.css">
+
+</style>

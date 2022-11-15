@@ -19,7 +19,7 @@ export declare interface Posts extends AbstractVO<string> {
     comments: number
 }
 
-export declare interface PostsContent {
+export declare interface PostsContent extends Posts {
     catalog: string,
     content: string
 }
@@ -38,5 +38,6 @@ export declare interface Comment extends AbstractVO<string> {
     posts: string,
     country: string,
     location: string,
-    content: string
+    content: string,
+    count: number
 }

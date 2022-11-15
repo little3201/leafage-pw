@@ -21,8 +21,8 @@
           <a title="gitee" href="https://gitee.com/little3201" rel="noopener" target="_blank">Gitee</a>
         </div>
       </div>
-      <div class="pb-3 text-xs text-center text-neutral-400">
-        <p class="border-t border-neutral-600 py-3">
+      <div class="pb-3 text-sm text-center text-neutral-400">
+        <p class="border-t border-neutral-600 py-2">
           Copyright &copy; {{ new Date().getFullYear() }} All Rights Reserved. Created by
           <a
             href="https://github.com/little3201"
