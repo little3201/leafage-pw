@@ -11,7 +11,7 @@
       />
     </div>
     <div class="flex justify-between mt-4 text-sm uppercase text-gray-600 dark:text-gray-400">
-      <h3>{{ data.category }}</h3>
+      <h3>{{ data.category.name }}</h3>
       <span>{{ new Date(data.modifyTime).toLocaleDateString() }}</span>
     </div>
     <h4
