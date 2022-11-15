@@ -10,7 +10,7 @@
 
     <div class="text-sm text-gray-600 dark:text-gray-400 my-2 md:flex">
       <div class="flex space-x-4 text-sm uppercase">
-        <span>{{ data.category }}</span>
+        <span>{{ data.category.name }}</span>
         <span>{{ new Date(data.modifyTime).toLocaleString() }}</span>
       </div>
       <div class="flex space-x-4 my-2 md:my-0 md:mx-4">
