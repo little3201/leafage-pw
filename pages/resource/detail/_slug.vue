@@ -30,7 +30,10 @@
                         </span>
                     </div>
                 </div>
-                <p>{{ data.description }}</p>
+
+                <div
+                    class="my-6 prose prose-base xl:prose-lg dark:text-gray-300 dark:prose-invert prose-blue max-w-none break-words"
+                    v-html="renderedHtml"></div>
             </div>
         </article>
 
@@ -73,8 +76,8 @@ export default {
 
     async asyncData({ $axios, params }) {
         let data = await $axios.$get(SERVER_URL.resource.concat("/", params.slug))
-
-        return { data };
+        let renderedHtml = marked.parse(data.description).replace(/href="/gi, 'target="_blank" href="');
+        return { data, renderedHtml };
     },
 
     methods: {

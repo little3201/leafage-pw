@@ -1,5 +1,5 @@
 <template>
-    <aside class="w-64 flex-none dark:text-gray-400">
+    <aside class="w-full flex-none dark:text-gray-400">
         <div class="border border-solid border-gray-300 dark:border-gray-400 p-4">
             <h3 class="font-bold">欢迎关注公众号（Leafage）</h3>
             <div class="flex items-center mt-4">
@@ -25,10 +25,10 @@
 
         <div class="border border-solid border-gray-200 my-8 relative">
             <legend
-                class="absolute top-0 -mt-2.5 px-2 ml-4 bg-white dark:bg-gray-900 text-sm uppercase font-semibold"
+                class="absolute top-0 -mt-2.5 px-2 ml-4 bg-white dark:bg-gray-900 uppercase font-semibold"
             >Categories</legend>
             <ul
-                class="grid grid-cols-1 divide-y divide-gray-300 p-4 text-xs font-semibold list-disc"
+                class="grid grid-cols-1 divide-y divide-gray-300 p-4 text-sm font-semibold list-disc"
             >
                 <li class="py-3 mx-4" v-for="category in categoryData.content" :key="category.code">
                     <NuxtLink
@@ -75,10 +75,10 @@
         </div>
         <div class="border border-solid border-gray-300 dark:border-gray-400 relative my-8">
             <legend
-                class="absolute top-0 -mt-2.5 px-2 ml-4 bg-white dark:bg-gray-900 uppercase text-sm font-semibold"
+                class="absolute top-0 -mt-2.5 px-2 ml-4 bg-white dark:bg-gray-900 uppercase font-semibold"
             >Friend Chain</legend>
             <ul
-                class="grid grid-cols-1 divide-y divide-gray-300 p-4 text-xs text-gray-800 dark:text-gray-400 font-semibold list-decimal"
+                class="grid grid-cols-1 divide-y divide-gray-300 p-4 text-gray-800 dark:text-gray-400 font-semibold list-decimal"
             >
                 <li class="py-3 mx-4">
                     <a
