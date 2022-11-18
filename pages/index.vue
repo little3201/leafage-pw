@@ -4,8 +4,8 @@
             <Gallery v-for="(data, index) in galleryPosts.content" :key="index" :data="data"
                 :aspect="(index < 4 && index > 1) ? true : false" />
         </div>
-        <div class="grid grid-flow-row grid-cols-4 gap-8 dark:text-gray-300">
-            <div class=" col-span-3">
+        <div class="grid grid-flow-row lg:grid-cols-4 gap-8 dark:text-gray-300">
+            <div class="lg:col-span-3">
                 <Tab @chageParams="chageParams" :datas="tabs" />
                 <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 2xl:grid-cols-3 my-8">
                     <Item v-for="data in posts.content" :key="data.code" :data="data" />
