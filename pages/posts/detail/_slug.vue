@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-2xl border-t border-gray-900 dark:border-gray-300">
+  <div class="border-t border-gray-900 dark:border-gray-300">
     <article class="my-6">
       <h2 class="text-2xl font-semibold text-center dark:text-gray-300">{{ data.title }}</h2>
 

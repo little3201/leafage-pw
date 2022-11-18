@@ -56,9 +56,10 @@ export default {
     https: true,
     progress: true,
     credentials: true,
-    prefix: '/api/',
+    baseURL: "/api",
     // baseURL: "https://www.leafage.top/api",
-    // proxy: true
+    // proxy: true,
+    // prefix: '/api/'
   },
 
   // proxy: {

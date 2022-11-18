@@ -46,6 +46,7 @@
 
 <script>
 import { SERVER_URL } from "~/api/request";
+import marked from "~/plugins/md";
 
 export default {
     name: "ReourceSlug",
