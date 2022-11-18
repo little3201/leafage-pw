@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-between items-center mx-4 md:mx-0 py-3 md:py-5 text-gray-900 dark:text-gray-300">
+    <div class="flex justify-between items-center py-3 md:py-5 text-gray-900 dark:text-gray-300">
         <button @click="isShow = !isShow" type="button" aria-label="openMenu" class="focus:outline-none md:hidden">
             <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor" stroke-width="2" aria-hidden="true">
