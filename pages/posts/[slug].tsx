@@ -40,7 +40,7 @@ const Post = ({ post }: Props) => {
                 date={post.modifyTime}
                 author={post.author}
               />
-              <PostBody content={post.content} />
+              <PostBody content={post.content.content} />
             </article>
           </>
         )}
@@ -59,13 +59,16 @@ type Params = {
 
 export async function getStaticProps({ params }: Params) {
   const post: PostContent = await getPostBySlug(params.slug)
-  const content = await markdownToHtml(post.content.content || '')
+  const content: string = await markdownToHtml(post.content.content || '')
 
   return {
     props: {
       post: {
         ...post,
-        content,
+        content: {
+          content: content,
+          catalog: ''
+        },
       },
     },
   }
