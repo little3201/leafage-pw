@@ -13,7 +13,7 @@ const CategoryStories = ({ posts }: Props) => {
         <div className="flex items-center relative mb-12">
             <div className="">
                 <span className="capitalize text-black text-opacity-60 italic font-serif">In category</span>
-                <h4 className="text-4xl font-bold font-serif">{posts[0].category}</h4>
+                <h4 className="text-4xl font-bold font-serif">{posts[0].category.name}</h4>
             </div>
             <div className="flex-1">
                 <p className="text-sm max-w-md text-neutral-400 font-serif ml-16 pl-6 border-l-4 border-green-700 leading-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor</p>
@@ -28,7 +28,7 @@ const CategoryStories = ({ posts }: Props) => {
                         </div>
                         <div className="absolute left-0 bottom-0 px-6 py-8 bg-neutral-900 mr-6">
                             <Link href="/category">
-                                <a className="absolute bottom-full left-8 px-4 py-2 inline-block uppercase text-xs bg-green-700 text-white translate-y-1/2" >{posts[0].category}</a>
+                                <a className="absolute bottom-full left-8 px-4 py-2 inline-block uppercase text-xs bg-green-700 text-white translate-y-1/2" >{posts[0].category.name}</a>
                             </Link>
                             <h3 className="text-white text-xl hover:text-green-600 transition-colors duration-200">
                                 <Link as={`/posts/${posts[0].code}`} href="/posts/[slug]">
@@ -52,7 +52,7 @@ const CategoryStories = ({ posts }: Props) => {
                                 <div className="w-full relative shadow-sm hover:shadow-lg transition-shadow duration-200" style={{ height: 420 }}>
                                     <CoverImage slug={posts[1].code} title={posts[1].title} src={posts[1].cover} />
                                     <Link href="/category">
-                                        <a className="absolute top-5 left-5 px-4 py-2 inline-block uppercase text-xs text-white bg-green-700">{posts[1].category}</a>
+                                        <a className="absolute top-5 left-5 px-4 py-2 inline-block uppercase text-xs text-white bg-green-700">{posts[1].category.name}</a>
                                     </Link>
                                 </div>
                                 <div className="-mt-5 pl-5">
@@ -90,7 +90,7 @@ const CategoryStories = ({ posts }: Props) => {
                         <div className="col-md-6 col-sm-6 small-post-vertical mt-9">
                             <article className="relative">
                                 <div className="pb-9 px-3 text-center">
-                                    <a className="px-4 py-2 font-medium uppercase text-xs text-green-700">{posts[2].category}</a>
+                                    <a className="px-4 py-2 font-medium uppercase text-xs text-green-700">{posts[2].category.name}</a>
                                     <h3 className="text-xl my-4 hover:text-green-600 transition-colors duration-200">
                                         <Link as={`/posts/${posts[2].code}`} href="/posts/[slug]">
                                             <a>{posts[2].title}</a>

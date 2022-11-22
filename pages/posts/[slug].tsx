@@ -8,12 +8,12 @@ import { getPostBySlug, getAllPosts } from '../../lib/api'
 import PostTitle from '../../components/post-title'
 import Head from 'next/head'
 import markdownToHtml from '../../lib/markdownToHtml'
-import PostType from '../../types/post'
+import PostContent from '../../types/postContent'
 
 import 'highlight.js/styles/atom-one-dark.css'
 
 type Props = {
-  post: PostType
+  post: PostContent
 }
 
 const Post = ({ post }: Props) => {
@@ -58,8 +58,8 @@ type Params = {
 }
 
 export async function getStaticProps({ params }: Params) {
-  const post: PostType = await getPostBySlug(params.slug)
-  const content = await markdownToHtml(post.content || '')
+  const post: PostContent = await getPostBySlug(params.slug)
+  const content = await markdownToHtml(post.content.content || '')
 
   return {
     props: {
@@ -75,7 +75,7 @@ export async function getStaticPaths() {
   const posts = await getAllPosts()
 
   return {
-    paths: posts.map((post: PostType) => {
+    paths: posts.map((post: PostContent) => {
       return {
         params: {
           slug: post.code,

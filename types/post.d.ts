@@ -1,14 +1,14 @@
 import Author from './author'
+import Category from './category'
 
-type PostType = {
+type Post = {
   code: string
   title: string
   tags: string
   cover: string
   author: Author
-  content: string
-  category: string
+  category: Category
   modifyTime: string
 }
 
-export default PostType
+export default Post

@@ -1,4 +1,4 @@
-type CategoryType = {
+type Category = {
   code: string
   name: string
   description: string
@@ -6,4 +6,4 @@ type CategoryType = {
   modifyTime: string
 }
 
-export default CategoryType
+export default Category

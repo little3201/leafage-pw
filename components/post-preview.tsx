@@ -3,12 +3,13 @@ import DateFormatter from './date-formatter'
 import CoverImage from './cover-image'
 import Link from 'next/link'
 import Author from '../types/author'
+import Category from '../types/category'
 
 type Props = {
   title: string
   coverImage: string
   date: string
-  category: string
+  category: Category
   author: Author
   slug: string
 }
@@ -26,7 +27,7 @@ const PostPreview = ({
       <div className="w-full relative shadow-sm hover:shadow-lg transition-shadow duration-200" style={{ height: 540 }}>
         <CoverImage slug={slug} title={title} src={coverImage} />
         <Link href="/category">
-          <a className="absolute top-5 left-5 px-4 py-2 inline-block uppercase text-xs text-white bg-green-700">{category}</a>
+          <a className="absolute top-5 left-5 px-4 py-2 inline-block uppercase text-xs text-white bg-green-700">{category.name}</a>
         </Link>
       </div>
       <div className="-mt-5 pl-5">

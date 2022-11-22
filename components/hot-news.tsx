@@ -24,7 +24,7 @@ const HotNews = ({ posts }: Props) => {
                     <CoverImage slug={posts[0].code} title={posts[0].title} src={posts[0].cover} />
                 </div>
                 <div className="max-w-xs">
-                    <a className="pb-9 font-medium uppercase text-xs text-green-700">{posts[0].category}</a>
+                    <a className="pb-9 font-medium uppercase text-xs text-green-700">{posts[0].category.name}</a>
                     <h3 className="text-xl my-4 hover:text-green-600 transition-colors duration-200">
                         <Link as={`/posts/${posts[0].code}`} href="/posts/[slug]">
                             <a>{posts[0].title}</a>
@@ -45,7 +45,7 @@ const HotNews = ({ posts }: Props) => {
                                 </div>
                                 <div className="p-0">
                                     <Link href="/category">
-                                        <a className="pb-2 font-medium uppercase text-xs text-green-700">{post.category}</a>
+                                        <a className="pb-2 font-medium uppercase text-xs text-green-700">{post.category.name}</a>
                                     </Link>
                                     <h3 className="text-sm hover:text-green-600 transition-colors duration-200">
                                         <Link as={`/posts/${post.code}`} href="/posts/[slug]">

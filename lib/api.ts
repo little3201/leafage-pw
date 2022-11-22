@@ -1,4 +1,4 @@
-import {REMOTE_URL} from './constants'
+import { REMOTE_URL } from './constants'
 
 export async function getPostBySlug(slug: string) {
   const res = await fetch(`${REMOTE_URL}/posts/${slug}/details`)
@@ -28,7 +28,7 @@ export async function getAllPosts() {
   return json.content
 }
 
-export async function getPostsByCategory(page: number, size: number, category:string) {
+export async function getPostsByCategory(page: number, size: number, category: string) {
   const res = await fetch(`${REMOTE_URL}/posts?page=${page}&size=${size}&category=${category}`)
   const json = await res.json()
   if (json.errors) {
@@ -38,7 +38,7 @@ export async function getPostsByCategory(page: number, size: number, category:st
 }
 
 export async function getAllCategories() {
-  const res = await fetch(`${REMOTE_URL}/category?page=0&size=99`)
+  const res = await fetch(`${REMOTE_URL}/categories?page=0&size=99`)
   const json = await res.json()
   if (json.errors) {
     throw new Error('Failed to fetch API')
@@ -74,8 +74,8 @@ export async function getAllResources() {
   return json.content
 }
 
-export async function getResourceByCategory(page: number, size: number, category:string) {
-  const res = await fetch(`${REMOTE_URL}/resource?page=${page}&size=${size}&category=${category}`)
+export async function getResourceByCategory(page: number, size: number, category: string) {
+  const res = await fetch(`${REMOTE_URL}/resources?page=${page}&size=${size}&category=${category}`)
   const json = await res.json()
   if (json.errors) {
     throw new Error('Failed to fetch API')
