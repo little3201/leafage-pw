@@ -8,7 +8,7 @@ COPY public ./public
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
 COPY .next/standalone ./
-COPY .next/static ./.next/static
+COPY .next ./.next
 
 EXPOSE 3000
 

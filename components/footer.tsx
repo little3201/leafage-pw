@@ -38,7 +38,7 @@ const Footer = () => {
         <Container>
           <div className='h-14 flex items-center justify-between'>
             <span className="">
-              Leafage &copy; {new Date().getFullYear()} Made with by WQ Li Li.
+              Leafage &copy; {new Date().getFullYear()} Made with by WQ Li.
             </span>
             <a
               href="https://beian.miit.gov.cn"
