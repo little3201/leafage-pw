@@ -82,7 +82,7 @@ export default Category
 
 export const getStaticProps = async () => {
     const categories = await getAllCategories()
-    const posts = await getPostsByCategory(0, 6, "20C3ID6W")
+    const posts = await getPostsByCategory(0, 12, "20C3ID6W")
     return {
         props: { categories, posts },
     }

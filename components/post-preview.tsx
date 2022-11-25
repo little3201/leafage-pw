@@ -25,7 +25,7 @@ const PostPreview = ({
   return (
     <article className="relative">
       <div className="w-full relative shadow-sm hover:shadow-lg transition-shadow duration-200" style={{ height: 420 }}>
-        <CoverImage slug={slug} title={title} src={coverImage} />
+        <CoverImage slug={slug} title={title} src={`${coverImage}?imageMogr2/thumbnail/640x420>/blur/1x0/quality/75`} />
         <Link href="/category">
           <a className="absolute top-5 left-5 px-4 py-2 inline-block uppercase text-xs text-white bg-green-700">{category.name}</a>
         </Link>
@@ -35,7 +35,7 @@ const PostPreview = ({
           <div className="mr-3 font-bold text-xs">
             <Link href="/about">
               <a className="block w-10 h-10 mb-4 rounded-full overflow-hidden" >
-                <Avatar name={title} picture="/assets/avatar.jpg" />
+                <Avatar name={title} picture="https://cdn.leafage.top/avatar.jpg?imageMogr2/thumbnail/40x40/blur/1x0/quality/75" />
               </a>
             </Link>
             <div className="whitespace-nowrap">

@@ -60,7 +60,7 @@ const CategoryStories = ({ posts }: Props) => {
                                         <div className="mr-3 font-bold text-xs">
                                             <Link href="/about">
                                                 <a className="block w-10 h-10 mb-4 rounded-full overflow-hidden">
-                                                    <Avatar name={posts[1].title} picture="/assets/avatar.jpg" />
+                                                    <Avatar name={posts[1].title} picture="https://cdn.leafage.top/avatar.jpg?imageMogr2/thumbnail/40x40/blur/1x0/quality/75" />
                                                 </a>
                                             </Link>
                                             <div className="whitespace-nowrap">
