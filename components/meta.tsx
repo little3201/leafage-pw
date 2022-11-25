@@ -37,6 +37,9 @@ const Meta = () => {
         content={`A statically generated blog example using Next.js and ${CMS_NAME}.`}
       />
       <meta property="og:image" content={HOME_OG_IMAGE_URL} />
+      <meta name="google-site-verification" content="_2Z6I2Wl5xuTKIGRrCD3meIZDgfn_XFVrTv1tKeJ6v8" />
+      <meta name="msvalidate.01" content="E02DDF417CA7C7D33A55805B3E9A81C7" />
+      <meta name="bytedance-verification-code" content="QAK19uJv32RHmoMsQ+hi" />
     </Head>
   )
 }

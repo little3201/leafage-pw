@@ -33,7 +33,7 @@ const HotNews = ({ posts }: Props) => {
                     <DateFormatter dateString={posts[1].modifyTime} />
                 </div>
             </article>
-            <div className="absolute bg-white bottom-0 right-0 p-8" style={{ width: 600 }}>
+            <div className="absolute bg-white bottom-0 right-0 p-8 shadow-md" style={{ width: 600 }}>
                 <ul className="w-full list-none">
                     {posts.slice(1, 5).map((post) => (
                         <li className="w-1/2 px-4 inline-block my-2" key={post.code}>
@@ -43,7 +43,7 @@ const HotNews = ({ posts }: Props) => {
                                         <CoverImage slug={post.code} title={post.title} src={post.cover} />
                                     </div>
                                 </div>
-                                <div className="p-0">
+                                <div>
                                     <Link href="/category">
                                         <a className="pb-2 font-medium uppercase text-xs text-green-700">{post.category.name}</a>
                                     </Link>

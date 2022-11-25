@@ -24,7 +24,7 @@ const HeroPost = ({
 }: Props) => {
   return (<div className="my-12 group">
     <article className="relative">
-      <div className="relative ml-28 shadow-sm group-hover:shadow-lg transition-shadow duration-200" style={{ height: 600 }}>
+      <div className="relative ml-28 shadow-sm group-hover:shadow-lg transition-shadow duration-200" style={{ height: 640 }}>
         <CoverImage slug={slug} title={title} src={cover} />
       </div>
       <div className="absolute left-0 top-1/2 -rotate-90">
