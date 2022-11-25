@@ -1,27 +1,46 @@
-node_modules
-*.log
-.nuxt
-<<<<<<< HEAD
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# Nuxt generate
-dist
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
 
-# Service worker
-sw.*
+# testing
+/coverage
 
-# macOS
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
 .DS_Store
+*.pem
 
-# Vim swap files
-*.swp
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
+# local env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+
+# yarn
+.pnp.*
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
-=======
-nuxt.d.ts
-.output
->>>>>>> 623bfc89 (nuxt3)

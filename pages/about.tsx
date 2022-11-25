@@ -16,7 +16,7 @@ const About = () => {
         <div className="relative flex items-center justify-center">
           <div className="px-5 py-24">
             <div className="w-60 h-60 mx-auto mb-4 rounded-full overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-200" data-aos="fade-up" data-aos-duration="1200">
-              <Image src="/assets/avatar.jpg" alt="about author" width={240} height={240} />
+              <Image src="https://cdn.leafage.top/avatar.jpg" alt="about author" width={240} height={240} />
             </div>
             <div className="text-center">
               <h5 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100" className="text-xl text-neutral-600 font-semibold">Hello, I&apos;m <span className='text-green-600'>WQ Li</span></h5>

@@ -18,7 +18,7 @@ const PostHeader = ({ title, date, author }: Props) => {
         <div className="mr-2 font-bold text-xs">
           <Link href="/about">
             <a className="w-10 h-10 rounded-full overflow-hidden">
-              <Avatar name={title} picture="/assets/avatar.jpg" />
+              <Avatar name={title} picture="https://cdn.leafage.top/avatar.jpg?imageMogr2/thumbnail/40x40/blur/1x0/quality/75" />
             </a>
           </Link>
         </div>
