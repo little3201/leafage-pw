@@ -1,17 +1,12 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
+  mode: 'jit',
   content: [
-    "./components/**/*.{js,vue,ts}",
-    "./layouts/**/*.vue",
-    "./pages/**/*.vue",
-    "./plugins/**/*.{js,ts}",
-    "./nuxt.config.{js,ts}"
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class', // or 'media' or 'class',
-  theme: {
-    extend: {},
-  },
   plugins: [
     require('@tailwindcss/typography'),
-    require('@tailwindcss/aspect-ratio'),
   ],
 }
