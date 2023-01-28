@@ -22,13 +22,13 @@ const Header = () => {
               </a>
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/resource">
               <a className="text-sm xl:text-base font-normal text-neutral-700 dark:text-neutral-300 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-green-50 dark:hover:bg-neutral-800 dark:hover:text-neutral-200 transition-colors duration-200" rel="noopener noreferrer" id="headlessui-popover-button-7" aria-expanded="false" >
                 Resources
               </a>
             </Link>
-          </li>
+          </li> */}
           <li className='group relative'>
             <span className="inline-flex items-center text-sm xl:text-base font-normal text-neutral-700 dark:text-neutral-300 py-2 px-4 xl:px-5 rounded-full group-hover:text-neutral-900 group-hover:bg-green-50 dark:hover:bg-neutral-800 dark:hover:text-neutral-200 transition-colors duration-200">
               Projects
@@ -59,6 +59,22 @@ const Header = () => {
                     <a className="-m-3 flex items-start rounded-lg p-3 hover:bg-green-50 transition-colors duration-200">
                       <div>
                         <p className="text-base font-medium text-gray-900">leafage-basic</p>
+                        <p className="mt-1 text-sm text-gray-500">Get a better understanding of where your traffic is coming from.</p>
+                      </div>
+                    </a>
+                  </Link>
+                  <Link href="/project">
+                    <a className="-m-3 flex items-start rounded-lg p-3 hover:bg-green-50 transition-colors duration-200">
+                      <div>
+                        <p className="text-base font-medium text-gray-900">leafage-gateway</p>
+                        <p className="mt-1 text-sm text-gray-500">Get a better understanding of where your traffic is coming from.</p>
+                      </div>
+                    </a>
+                  </Link>
+                  <Link href="/project">
+                    <a className="-m-3 flex items-start rounded-lg p-3 hover:bg-green-50 transition-colors duration-200">
+                      <div>
+                        <p className="text-base font-medium text-gray-900">leafage-auth</p>
                         <p className="mt-1 text-sm text-gray-500">Get a better understanding of where your traffic is coming from.</p>
                       </div>
                     </a>
