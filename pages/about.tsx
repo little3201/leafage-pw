@@ -2,7 +2,7 @@ import Container from '../components/container'
 import Layout from '../components/layout'
 import Head from 'next/head'
 import { CMS_NAME } from '../lib/constants'
-import Image from 'next/image'
+import Image from "next/legacy/image";
 
 
 const About = () => {
