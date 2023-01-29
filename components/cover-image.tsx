@@ -1,5 +1,5 @@
 import cn from 'classnames'
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from 'next/link'
 
 type Props = {
@@ -16,11 +16,13 @@ const CoverImage = ({ title, src, slug }: Props) => {
       className={cn('shadow-sm w-full', {
         'hover:shadow-lg hover:opacity-80 transition-all duration-200': slug,
       })}
-      layout="fill"
-      objectFit="cover"
-      objectPosition="center"
       priority
-    />
+      fill
+      sizes="100vw"
+      style={{
+        objectFit: "cover",
+        objectPosition: "center"
+      }} />
   )
   return (
     <div className="sm:mx-0">
