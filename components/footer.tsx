@@ -8,17 +8,21 @@ const Footer = () => {
         <div className="py-10 grid grid-cols-7 gap-4">
           <div className='col-span-3 md:col-span-4'>
             <div className='mb-5'>
-              <Link href="/">
-                <a className='text-4xl font-semibold text-green-600'>Leafage</a>
+              <Link href="/" className='text-4xl font-semibold text-green-600'>
+                Leafage
               </Link>
             </div>
             <nav>
               <ul className='block opacity-80 text-sm'>
                 <li className='inline-block'>
-                  <Link href="/"><a className='hover:text-green-600 transition-colors duration-200'>Home</a></Link>
+                  <Link href="/" className='hover:text-green-600 transition-colors duration-200'>Home</Link>
                 </li>
-                <li className='inline-block px-6'><Link href="/doc"><a className='hover:text-green-600 transition-colors duration-200'>Document</a></Link></li>
-                <li className='inline-block'><Link href="/project"><a className='hover:text-green-600 transition-colors duration-200'>Projects</a></Link></li>
+                <li className='inline-block px-6'><Link
+                  href="/doc"
+                  className='hover:text-green-600 transition-colors duration-200'>Document</Link></li>
+                <li className='inline-block'><Link
+                  href="/project"
+                  className='hover:text-green-600 transition-colors duration-200'>Projects</Link></li>
               </ul>
             </nav>
           </div>
@@ -50,7 +54,7 @@ const Footer = () => {
         </Container>
       </div>
     </footer>
-  )
+  );
 }
 
 export default Footer

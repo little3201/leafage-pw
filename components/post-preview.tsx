@@ -26,21 +26,25 @@ const PostPreview = ({
     <article className="relative">
       <div className="w-full relative shadow-sm hover:shadow-lg transition-shadow duration-200" style={{ height: 420 }}>
         <CoverImage slug={slug} title={title} src={`${coverImage}?imageMogr2/thumbnail/640x420>/blur/1x0/quality/75`} />
-        <Link href="/category">
-          <a className="absolute top-5 left-5 px-4 py-2 inline-block uppercase text-xs text-white bg-green-700">{category.name}</a>
+        <Link
+          href="/category"
+          className="absolute top-5 left-5 px-4 py-2 inline-block uppercase text-xs text-white bg-green-700">
+          {category.name}
         </Link>
       </div>
       <div className="-mt-5 pl-5">
         <div className="relative top-0 left-0 mb-4">
           <div className="mr-3 font-bold text-xs">
-            <Link href="/about">
-              <a className="block w-10 h-10 mb-4 rounded-full overflow-hidden" >
-                <Avatar name={title} picture="https://cdn.leafage.top/avatar.jpg?imageMogr2/thumbnail/40x40/blur/1x0/quality/75" />
-              </a>
+            <Link
+              href="/about"
+              className="block w-10 h-10 mb-4 rounded-full overflow-hidden">
+
+              <Avatar name={title} picture="https://cdn.leafage.top/avatar.jpg?imageMogr2/thumbnail/40x40/blur/1x0/quality/75" />
+
             </Link>
             <div className="whitespace-nowrap">
-              <Link href="/about">
-                <a className="block mb-1" rel="author">WQ Li</a>
+              <Link href="/about" className="block mb-1" rel="author">
+                WQ Li
               </Link>
               <DateFormatter dateString={date} />
             </div>
@@ -48,19 +52,22 @@ const PostPreview = ({
         </div>
         <h3 className="text-xl hover:text-green-600 transition-colors duration-200">
           <Link as={`/posts/${slug}`} href="/posts/[slug]">
-            <a>{title}</a>
+            {title}
           </Link>
         </h3>
         <div className=" text-neutral-200 mt-4">
-          <Link as={`/posts/${slug}`} href="/posts/[slug]">
-            <a className="pb-1 border-b-2 border-green-600 font-serif">
-              <span className="text-xs text-green-600">View More</span>
-            </a>
+          <Link
+            as={`/posts/${slug}`}
+            href="/posts/[slug]"
+            className="pb-1 border-b-2 border-green-600 font-serif">
+
+            <span className="text-xs text-green-600">View More</span>
+
           </Link>
         </div>
       </div>
     </article>
-  )
+  );
 }
 
 export default PostPreview

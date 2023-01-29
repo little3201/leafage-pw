@@ -25,8 +25,8 @@ const Project = () => {
                                         </h3>
                                     </div>
                                 </div>
-                                <Link href="/">
-                                    <a className='absolute inset-0'></a>
+                                <Link href="/" className='absolute inset-0'>
+
                                 </Link>
                             </li>
                             <li className='relative overflow-hidden rounded-3xl h-40 bg-gradient-to-r from-green-300 to-lime-300 shadow-sm hover:shadow-lg hover:opacity-80 transition-all duration-200'>
@@ -37,8 +37,8 @@ const Project = () => {
                                         </h3>
                                     </div>
                                 </div>
-                                <Link href="/">
-                                    <a className='absolute inset-0'></a>
+                                <Link href="/" className='absolute inset-0'>
+
                                 </Link>
                             </li>
                             <li className='relative overflow-hidden rounded-3xl h-40 bg-gradient-to-r from-green-300 to-lime-300 shadow-sm hover:shadow-lg hover:opacity-80 transition-all duration-200' >
@@ -49,8 +49,8 @@ const Project = () => {
                                         </h3>
                                     </div>
                                 </div>
-                                <Link href="/">
-                                    <a className='absolute inset-0'></a>
+                                <Link href="/" className='absolute inset-0'>
+
                                 </Link>
                             </li>
                             <li className='relative overflow-hidden rounded-3xl h-40 bg-gradient-to-r from-green-300 to-lime-300 shadow-sm hover:shadow-lg hover:opacity-80 transition-all duration-200'>
@@ -61,8 +61,8 @@ const Project = () => {
                                         </h3>
                                     </div>
                                 </div>
-                                <Link href="/">
-                                    <a className='absolute inset-0'></a>
+                                <Link href="/" className='absolute inset-0'>
+
                                 </Link>
                             </li>
                             <li className='relative overflow-hidden rounded-3xl h-40 bg-gradient-to-r from-green-300 to-lime-300 shadow-sm hover:shadow-lg hover:opacity-80 transition-all duration-200'>
@@ -73,8 +73,8 @@ const Project = () => {
                                         </h3>
                                     </div>
                                 </div>
-                                <Link href="/">
-                                    <a className='absolute inset-0'></a>
+                                <Link href="/" className='absolute inset-0'>
+
                                 </Link>
                             </li>
                         </ul>
@@ -82,7 +82,7 @@ const Project = () => {
                 </div>
             </Container>
         </Layout>
-    )
+    );
 }
 
 export default Project
