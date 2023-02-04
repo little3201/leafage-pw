@@ -118,9 +118,7 @@ export function getAllPostIds() {
   const fileNames = fs.readdirSync(docsDirectory)
   return fileNames.map(fileName => {
     return {
-      params: {
-        id: fileName.replace(/\.md$/, '')
-      }
+      id: fileName.replace(/\.md$/, '')
     };
   });
 }

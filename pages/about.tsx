@@ -31,7 +31,7 @@ const About = () => {
               <h2 className="text-5xl font-bold my-3 text-green-600" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
                 A Program Developer
               </h2>
-              <p className=" max-w-xl mb-8 text-lg text-neutral-500 break-words" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">I&apos;m a Java Developer based In China, over 6 years of
+              <p className=" max-w-xl mb-8 text-lg text-neutral-500 break-words" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">I&apos;m a Java Developer based In China, over { new Date().getFullYear() - 2016 } years of
                 professional experience. And Front-end like React、Vue experience. And learning the Rust language.</p>
               <ul className='flex items-center justify-center divide-x text-2xl text-neutral-500'>
                 <li className='px-4'>

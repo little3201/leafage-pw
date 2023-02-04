@@ -9,13 +9,13 @@ const Avatar = ({ name, picture }: Props) => {
   return (
     <Image
       src={picture}
-      className="rounded-full mx-4"
+      className="rounded-full"
       alt={name}
       width={40}
       height={40}
       style={{
-        maxWidth: "100%",
-        height: "auto"
+        objectFit: 'contain',
+        objectPosition: "center"
       }} />
   );
 }

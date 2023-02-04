@@ -43,9 +43,7 @@ const CategoryStories = ({ posts }: Props) => {
                                         as={`/posts/${posts[0].code}`}
                                         href="/posts/[slug]"
                                         className="pb-1 border-b-2 border-green-600 font-serif">
-
                                         <span className="text-xs text-green-600">View More</span>
-
                                     </Link>
                                 </div>
                             </div>

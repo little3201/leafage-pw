@@ -41,7 +41,7 @@ const HotNews = ({ posts }: Props) => {
                                 <article className="flex items-center justify-start">
                                     <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4 flex-shrink-0 shadow-sm hover:shadow-lg transition-shadow duration-200">
                                         <div className="absolute inset-0 overflow-hidden bg-no-repeat bg-cover bg-center">
-                                            <CoverImage slug={post.code} title={post.title} src={post.cover} />
+                                            <CoverImage slug={post.code} title={post.title} src={post.cover} rounded={true} />
                                         </div>
                                     </div>
                                     <div>

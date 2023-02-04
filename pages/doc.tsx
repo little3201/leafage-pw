@@ -5,24 +5,16 @@ import PostTitle from '../components/post-title'
 import { CMS_NAME } from '../lib/constants'
 import { getAllPostIds, getPostData } from '../lib/api'
 import { GetStaticProps } from 'next'
+import { Doc, Document} from '../types/doc'
 
 type Props = {
-    postIds: Array<string>
-    post: {
-        title: string
-        cover: string
-        contentHtml: string
-        modifyTime: string
-        author: {
-            nickname: string
-            avatar: string
-        }
-    }
+    docs: Doc[]
+    doc: Document
 }
 
 const Doc = ({
-    postIds,
-    post
+    docs,
+    doc
 }: Props) => {
     const title = `Document${CMS_NAME}`
     return (
@@ -34,8 +26,8 @@ const Doc = ({
                 <div className='flex my-10'>
                     <aside className='w-64 pr-8'>
                         <ul>
-                            {postIds.map((postId) => (
-                                <li className='my-2 text-sm xl:text-base font-normal text-neutral-900 dark:text-neutral-300 py-2 px-4 xl:px-5 rounded-full bg-green-50 dark:hover:bg-neutral-800 dark:hover:text-neutral-200' key={postId} >{postId}</li>
+                            {docs.map((doc) => (
+                                <li className='my-2 text-sm xl:text-base font-normal text-neutral-900 dark:text-neutral-300 py-2 px-4 xl:px-5 rounded-full first:bg-green-50 dark:hover:bg-neutral-800 dark:hover:text-neutral-200' key={doc.id} >{doc.id}</li>
                             ))}
                         </ul>
                     </aside>
@@ -43,14 +35,14 @@ const Doc = ({
                         <article className='mx-auto prose prose-green lg:prose-lg dark:prose-invert'>
                             <Head>
                                 <title>
-                                    {post.title}
+                                    {doc.title}
                                 </title>
-                                <meta property="og:image" content={post.cover} />
+                                <meta property="og:image" content={doc.cover} />
                             </Head>
-                            <PostTitle>{post.title}</PostTitle>
+                            <PostTitle>{doc.title}</PostTitle>
                             <div
-                                className='mx-auto prose prose-green lg:prose-lg dark:prose-invert py-8 lg:py-12'
-                                dangerouslySetInnerHTML={{ __html: post.contentHtml }}
+                                className='mx-auto prose prose-green lg:prose-lg dark:prose-invert py-8 xl:py-12'
+                                dangerouslySetInnerHTML={{ __html: doc.contentHtml }}
                             />
                         </article>
                     </div>
@@ -63,12 +55,12 @@ const Doc = ({
 export default Doc
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-    const postIds = await getAllPostIds();
-    const post = await getPostData('user-api')
+    const docs = await getAllPostIds();
+    const doc = await getPostData('role-api')
     return {
         props: {
-            postIds,
-            post
+            docs,
+            doc
         }
     }
 }
