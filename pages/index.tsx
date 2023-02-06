@@ -15,7 +15,7 @@ type Props = {
 
 const Index = ({ posts }: Props) => {
   const title = `Home${CMS_NAME}`
-  posts.sort((a, b) => new Date(a.modifyTime).getTime() - new Date(b.modifyTime).getTime())
+  posts.sort((a, b) => a.modifyTime < b.modifyTime ? 1 : -1)
   const heroPost = posts[0]
   const categoryPosts = posts.slice(1, 4)
   const hotNews = posts.slice(4, 9)
@@ -49,7 +49,7 @@ const Index = ({ posts }: Props) => {
 
 export default Index
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const posts = await getPostsByPage(0, 15)
 
   return {

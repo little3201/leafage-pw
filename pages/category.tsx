@@ -17,7 +17,7 @@ let isChecked = true
 
 const Category = ({ categories, posts }: Props) => {
     const title = `Category${CMS_NAME}`
-    categories.sort((a, b) => new Date(a.modifyTime).getTime() - new Date(b.modifyTime).getTime())
+    categories.sort((a, b) => a.modifyTime < b.modifyTime ? 1 : -1)
 
     const setChecked = () => {
         isChecked = !isChecked
@@ -80,7 +80,7 @@ const Category = ({ categories, posts }: Props) => {
 
 export default Category
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
     const categories = await getAllCategories()
     const posts = await getPostsByCategory(0, 12, "20C3ID6W")
     return {

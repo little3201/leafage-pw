@@ -1,6 +1,5 @@
 import { getAllPosts } from '../lib/api'
 
-
 const EXTERNAL_DATA_URL = 'https://www.leafage.top/posts'
 
 function generateSiteMap(posts: { code: string, modifyTime: Date }[]) {
@@ -14,19 +13,25 @@ function generateSiteMap(posts: { code: string, modifyTime: Date }[]) {
         <priority>0.8</priority>
      </url>
      <url>
-        <loc>https://www.leafage.top/posts</loc>
+        <loc>https://www.leafage.top/category</loc>
         <lastmod>2022-04-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
      </url>
      <url>
-        <loc>https://www.leafage.top/resource</loc>
+        <loc>https://www.leafage.top/project</loc>
         <lastmod>2022-04-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
      </url>
      <url>
         <loc>https://www.leafage.top/about</loc>
+        <lastmod>2022-04-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+     </url>
+     <url>
+        <loc>https://www.leafage.top/doc</loc>
         <lastmod>2022-04-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>

@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/image";
 
 type Props = {
   name: string
@@ -7,8 +7,17 @@ type Props = {
 
 const Avatar = ({ name, picture }: Props) => {
   return (
-    <Image src={picture} className="rounded-full mx-4" alt={name} width={40} height={40} />
-  )
+    <Image
+      src={picture}
+      className="rounded-full"
+      alt={name}
+      width={40}
+      height={40}
+      style={{
+        objectFit: 'contain',
+        objectPosition: "center"
+      }} />
+  );
 }
 
 export default Avatar

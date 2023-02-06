@@ -2,7 +2,7 @@ import Container from '../components/container'
 import Layout from '../components/layout'
 import Head from 'next/head'
 import { CMS_NAME } from '../lib/constants'
-import Image from 'next/image'
+import Image from "next/image";
 
 
 const About = () => {
@@ -16,14 +16,22 @@ const About = () => {
         <div className="relative flex items-center justify-center">
           <div className="px-5 py-24">
             <div className="w-60 h-60 mx-auto mb-4 rounded-full overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-200" data-aos="fade-up" data-aos-duration="1200">
-              <Image src="https://cdn.leafage.top/avatar.jpg" alt="about author" width={240} height={240} />
+              <Image
+                src="https://cdn.leafage.top/avatar.jpg"
+                alt="about author"
+                width={240}
+                height={240}
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} />
             </div>
             <div className="text-center">
               <h5 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100" className="text-xl text-neutral-600 font-semibold">Hello, I&apos;m <span className='text-green-600'>WQ Li</span></h5>
               <h2 className="text-5xl font-bold my-3 text-green-600" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
                 A Program Developer
               </h2>
-              <p className=" max-w-xl mb-8 text-lg text-neutral-500 break-words" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">I&apos;m a Java Developer based In China, over 6 years of
+              <p className=" max-w-xl mb-8 text-lg text-neutral-500 break-words" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">I&apos;m a Java Developer based In China, over { new Date().getFullYear() - 2016 } years of
                 professional experience. And Front-end like React、Vue experience. And learning the Rust language.</p>
               <ul className='flex items-center justify-center divide-x text-2xl text-neutral-500'>
                 <li className='px-4'>
@@ -71,7 +79,7 @@ const About = () => {
 
       </Container>
     </Layout>
-  )
+  );
 }
 
 export default About
