@@ -16,9 +16,7 @@ const Header = () => {
               rel="noopener noreferrer"
               id="headlessui-popover-button-1"
               aria-expanded="false">
-              
-                Home
-              
+              Home
             </Link>
           </li>
           <li>
@@ -28,18 +26,9 @@ const Header = () => {
               rel="noopener noreferrer"
               id="headlessui-popover-button-5"
               aria-expanded="false">
-              
-                Categories
-              
+              Categories
             </Link>
           </li>
-          {/* <li>
-            <Link href="/resource">
-              <a className="text-sm xl:text-base font-normal text-neutral-700 dark:text-neutral-300 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-green-50 dark:hover:bg-neutral-800 dark:hover:text-neutral-200 transition-colors duration-200" rel="noopener noreferrer" id="headlessui-popover-button-7" aria-expanded="false" >
-                Resources
-              </a>
-            </Link>
-          </li> */}
           <li className='group relative'>
             <span className="inline-flex items-center text-sm xl:text-base font-normal text-neutral-700 dark:text-neutral-300 py-2 px-4 xl:px-5 rounded-full group-hover:text-neutral-900 group-hover:bg-green-50 dark:hover:bg-neutral-800 dark:hover:text-neutral-200 transition-colors duration-200">
               Projects
@@ -56,7 +45,7 @@ const Header = () => {
 
                     <div>
                       <p className="text-base font-medium text-gray-900">leafage-pw</p>
-                      <p className="mt-1 text-sm text-gray-500">Get a better understanding of where your traffic is coming from.</p>
+                      <p className="mt-1 text-sm text-gray-500">基于 nuxtjs 和 tailwindcss，一个博客前端代码库，持续更新</p>
                     </div>
 
                   </Link>
@@ -66,7 +55,7 @@ const Header = () => {
 
                     <div>
                       <p className="text-base font-medium text-gray-900">leafage-ms</p>
-                      <p className="mt-1 text-sm text-gray-500">Get a better understanding of where your traffic is coming from.</p>
+                      <p className="mt-1 text-sm text-gray-500">基于 RBAC（Role-Based Access Control） 模型的管理系统实践</p>
                     </div>
 
                   </Link>
@@ -76,7 +65,7 @@ const Header = () => {
 
                     <div>
                       <p className="text-base font-medium text-gray-900">leafage-basic</p>
-                      <p className="mt-1 text-sm text-gray-500">Get a better understanding of where your traffic is coming from.</p>
+                      <p className="mt-1 text-sm text-gray-500">作为后台管理系统的基础，将持续完善，提供一套完整的权限管理方案</p>
                     </div>
 
                   </Link>
@@ -86,7 +75,7 @@ const Header = () => {
 
                     <div>
                       <p className="text-base font-medium text-gray-900">leafage-gateway</p>
-                      <p className="mt-1 text-sm text-gray-500">Get a better understanding of where your traffic is coming from.</p>
+                      <p className="mt-1 text-sm text-gray-500">前后端交互的统一认证、服务入口，提供Api 认证、校验等</p>
                     </div>
 
                   </Link>
@@ -96,7 +85,7 @@ const Header = () => {
 
                     <div>
                       <p className="text-base font-medium text-gray-900">leafage-auth</p>
-                      <p className="mt-1 text-sm text-gray-500">Get a better understanding of where your traffic is coming from.</p>
+                      <p className="mt-1 text-sm text-gray-500">认证服务，提供 Oauth2、统一的账号管理和授权</p>
                     </div>
 
                   </Link>
@@ -111,9 +100,9 @@ const Header = () => {
               rel="noopener noreferrer"
               id="headlessui-popover-button-5"
               aria-expanded="false">
-              
-                About
-              
+
+              About
+
             </Link>
           </li>
         </ul>

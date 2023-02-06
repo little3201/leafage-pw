@@ -47,7 +47,7 @@ const Project = () => {
                                         <h3 className="text-2xl">
                                             <a>leafage-basic</a>
                                         </h3>
-                                        <p className='text-sm mt-4 mx-4 opacity-75'>作为后台管理系统的基础，将持续完善，提供一套完整的权限管理方案。</p>
+                                        <p className='text-sm mt-4 mx-4 opacity-75'>作为后台管理系统的基础，将持续完善，提供一套完整的权限管理方案</p>
                                     </div>
                                 </div>
                                 <Link href="https://github.com/little3201/leafage-basic" className='absolute inset-0'>
