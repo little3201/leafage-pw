@@ -1,11 +1,13 @@
-import Container from '../components/container'
-import Layout from '../components/layout'
+import Container from '../../components/container'
+import Layout from '../../components/layout'
 import Head from 'next/head'
-import PostTitle from '../components/post-title'
-import { CMS_NAME } from '../lib/constants'
-import { getAllPostIds, getPostData } from '../lib/api'
+import PostTitle from '../../components/post-title'
+import { CMS_NAME } from '../../lib/constants'
+import { getAllPostIds, getPostData } from '../../lib/api'
 import { GetStaticProps } from 'next'
-import { Doc, Document} from '../types/doc'
+import { Doc, Document} from '../../types/doc'
+
+import 'highlight.js/styles/atom-one-dark.css'
 
 type Props = {
     docs: Doc[]
@@ -56,7 +58,7 @@ export default Doc
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     const docs = await getAllPostIds();
-    const doc = await getPostData('role-api')
+    const doc = await getPostData(params?.id as string|| 'Post')
     return {
         props: {
             docs,
