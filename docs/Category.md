@@ -72,7 +72,42 @@ empty|boolean|Returns whether the current {@link Streamable} is empty.|-
 
 **Response-example:**
 ```json
-{}
+{
+    "content": [
+        {
+            "code": "20C329QX",
+            "name": "Lifestyle",
+            "count": 0,
+            "description": "生活",
+            "modifyTime": "2020-12-03T15:08:01"
+        }
+    ],
+    "pageable": {
+        "sort": {
+            "empty": true,
+            "sorted": false,
+            "unsorted": true
+        },
+        "offset": 1,
+        "pageNumber": 1,
+        "pageSize": 1,
+        "paged": true,
+        "unpaged": false
+    },
+    "totalPages": 7,
+    "totalElements": 7,
+    "last": false,
+    "size": 1,
+    "number": 1,
+    "sort": {
+        "empty": true,
+        "sorted": false,
+        "unsorted": true
+    },
+    "numberOfElements": 1,
+    "first": false,
+    "empty": false
+}
 ```
 
 ## 根据 code 查询信息

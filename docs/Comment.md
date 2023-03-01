@@ -73,8 +73,45 @@ pageable|object|Returns the {@link Pageable} that's been used to request the cur
 empty|boolean|Returns whether the current {@link Streamable} is empty.|-
 
 **Response-example:**
-```
-{}
+```json
+{
+    "content": [
+        {
+            "code": "22812OET6",
+            "posts": "21628W63S",
+            "content": "fsgfdgdfg",
+            "country": null,
+            "location": null,
+            "count": 0,
+            "modifyTime": "2022-08-12T17:14:30.929"
+        }
+    ],
+    "pageable": {
+        "sort": {
+            "empty": false,
+            "sorted": true,
+            "unsorted": false
+        },
+        "offset": 1,
+        "pageNumber": 1,
+        "pageSize": 1,
+        "paged": true,
+        "unpaged": false
+    },
+    "totalPages": 48,
+    "totalElements": 48,
+    "last": false,
+    "size": 1,
+    "number": 1,
+    "sort": {
+        "empty": false,
+        "sorted": true,
+        "unsorted": false
+    },
+    "numberOfElements": 1,
+    "first": false,
+    "empty": false
+}
 ```
 
 ## 根据 code 查询信息
