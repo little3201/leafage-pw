@@ -53,44 +53,7 @@ export async function getAllCategories() {
   return json.content
 }
 
-export async function getResourceBySlug(slug: string) {
-  const res = await fetch(`${REMOTE_URL}/resources/${slug}/details`)
-  const json = await res.json()
-  if (json.errors) {
-    throw new Error('Failed to fetch API')
-  }
-  return json
-}
-
-
-export async function getResourcesByPage(page: number, size: number) {
-  const res = await fetch(`${REMOTE_URL}/resources?page=${page}&size=${size}`)
-  const json = await res.json()
-  if (json.errors) {
-    throw new Error('Failed to fetch API')
-  }
-  return json.content
-}
-
-export async function getAllResources() {
-  const res = await fetch(`${REMOTE_URL}/resources?page=0&size=99`)
-  const json = await res.json()
-  if (json.errors) {
-    throw new Error('Failed to fetch API')
-  }
-  return json.content
-}
-
-export async function getResourceByCategory(page: number, size: number, category: string) {
-  const res = await fetch(`${REMOTE_URL}/resources?page=${page}&size=${size}&category=${category}`)
-  const json = await res.json()
-  if (json.errors) {
-    throw new Error('Failed to fetch API')
-  }
-  return json.content
-}
-
-export function getSortedPostsData() {
+export function getSortedDocData() {
   // Get file names under /docs
   const fileNames = fs.readdirSync(docsDirectory)
   const allPostsData = fileNames.map(fileName => {
@@ -114,7 +77,7 @@ export function getSortedPostsData() {
   return allPostsData.sort((a, b) => a.modifyTime < b.modifyTime ? 1 : -1)
 }
 
-export function getAllPostIds() {
+export function getAllDocIds() {
   const fileNames = fs.readdirSync(docsDirectory)
   return fileNames.map(fileName => {
     return {
@@ -123,7 +86,7 @@ export function getAllPostIds() {
   });
 }
 
-export async function getPostData(id: string) {
+export async function getDocData(id: string) {
   const fullPath = path.join(docsDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 
