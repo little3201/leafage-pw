@@ -25,7 +25,7 @@ const Doc = ({
                 <title>{title}</title>
             </Head>
             <Container>
-                <div className='flex my-10'>
+                <div className='flex my-10 py-16 sm:py-28 lg:py-32'>
                     <aside className='w-64 pr-8'>
                         <ul>
                             {docs.map((doc) => (

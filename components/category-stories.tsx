@@ -67,13 +67,11 @@ const CategoryStories = ({ posts }: Props) => {
                                                 <Link
                                                     href="/about"
                                                     className="block w-10 h-10 mb-4 rounded-full overflow-hidden">
-
-                                                    <Avatar name={posts[1].title} picture="https://cdn.leafage.top/avatar.jpg?imageMogr2/thumbnail/40x40/blur/1x0/quality/75" />
-
+                                                    <Avatar name={posts[1].title} picture={posts[1].author.avatar} />
                                                 </Link>
                                                 <div className="whitespace-nowrap">
                                                     <Link href="/about" className="block mb-1" rel="author">
-                                                        WQ Li
+                                                        {posts[1].author.nickname}
                                                     </Link>
                                                     <DateFormatter dateString={posts[1].modifyTime} />
                                                 </div>
@@ -89,9 +87,7 @@ const CategoryStories = ({ posts }: Props) => {
                                                 as={`/posts/${posts[1].code}`}
                                                 href="/posts/[slug]"
                                                 className="pb-1 border-b-2 border-green-600 font-serif">
-
                                                 <span className="text-xs text-green-600">View More</span>
-
                                             </Link>
                                         </div>
                                     </div>
@@ -110,7 +106,7 @@ const CategoryStories = ({ posts }: Props) => {
                                         <div className="w-full">
                                             <span className="text-xs text-neutral-400 ">By
                                                 <Link href="/about" className="uppercase ml-2" rel="author">
-                                                    WQ Li
+                                                    {posts[2].author.avatar}
                                                 </Link>
                                             </span>
                                         </div>

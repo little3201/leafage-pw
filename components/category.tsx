@@ -1,36 +1,20 @@
-import Head from 'next/head'
+import { useState } from 'react'
 
-import Container from '../components/container'
-import Layout from '../components/layout'
-import PostPreview from '../components/post-preview'
 import { getAllCategories, getPostsByCategory } from '../lib/api'
-import { CMS_NAME } from '../lib/constants'
 import Category from '../types/category'
-import Post from '../types/post'
 
 type Props = {
     categories: Category[]
-    posts: Post[]
 }
 
-let isChecked = true
-
-const Category = ({ categories, posts }: Props) => {
-    const title = `Category${CMS_NAME}`
+const Category = ({ categories }: Props) => {
     categories.sort((a, b) => a.modifyTime < b.modifyTime ? 1 : -1)
-
-    const setChecked = () => {
-        isChecked = !isChecked
-    }
+    const [isChecked, setChecked] = useState(false)
+    
     return (
-        <Layout>
-            <Head>
-                <title>{title}</title>
-            </Head>
-            <Container>
-                <div className="mx-auto py-8">
+        <div className="mx-auto py-8">
                     <h2 className="sr-only">Categories</h2>
-                    {isChecked ? <button type='button' onClick={setChecked} className='rounded-3xl w-full h-40 bg-gradient-to-r from-green-300 to-lime-300'>
+                    {isChecked ? <button type='button' onClick={() => setChecked(true)} className='rounded-3xl w-full h-40 bg-gradient-to-r from-green-300 to-lime-300'>
                         <div className='w-full h-full rounded-3xl bg-black bg-opacity-40 flex items-center justify-center'>
                             <div className='text-white text-center'>
                                 <h2 className="text-5xl">
@@ -55,26 +39,6 @@ const Category = ({ categories, posts }: Props) => {
                     </div>
                     }
                 </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-8 lg:gap-x-12 gap-y-10 md:gap-y-12 my-12">
-                    {posts.map((post) => (
-                        <PostPreview
-                            key={post.code}
-                            title={post.title}
-                            coverImage={post.cover}
-                            date={post.modifyTime}
-                            author={post.author}
-                            slug={post.code}
-                            category={post.category}
-                        />
-                    ))}
-                </div>
-
-                <div className='text-center my-8'>
-                    <button type='button' className='border border-green-600 px-6 py-2 rounded-md text-green-600 hover:bg-green-700 hover:text-white shadow-md hover:shadow-xl transition-all duration-200'>Load More</button>
-                </div>
-            </Container>
-        </Layout >
     )
 }
 
@@ -82,7 +46,7 @@ export default Category
 
 export const getServerSideProps = async () => {
     const categories = await getAllCategories()
-    const posts = await getPostsByCategory(0, 12, "20C3ID6W")
+    const posts = await getPostsByCategory(0, 12, "")
     return {
         props: { categories, posts },
     }

@@ -9,7 +9,7 @@ import { REMOTE_URL } from './constants'
 const docsDirectory = path.join(process.cwd(), 'docs')
 
 export async function getPostBySlug(slug: string) {
-  const res = await fetch(`${REMOTE_URL}/posts/${slug}/details`)
+  const res = await fetch(`${REMOTE_URL}/posts/${slug}`)
   const json = await res.json()
   if (json.errors) {
     throw new Error('Failed to fetch API')

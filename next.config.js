@@ -4,7 +4,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['cdn.leafage.top'],
+    domains: ['cdn.leafage.top', 'tailwindui.com'],
     formats: ['image/avif', 'image/webp'],
   },
 }

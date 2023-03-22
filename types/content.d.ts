@@ -1,5 +1,5 @@
 type Content = {
-    content: string
+    context: string
     catalog: string
 }
 

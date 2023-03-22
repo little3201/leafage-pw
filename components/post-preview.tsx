@@ -38,13 +38,11 @@ const PostPreview = ({
             <Link
               href="/about"
               className="block w-10 h-10 mb-4 rounded-full overflow-hidden">
-
-              <Avatar name={title} picture="https://cdn.leafage.top/avatar.jpg?imageMogr2/thumbnail/40x40/blur/1x0/quality/75" />
-
+              <Avatar name={author.nickname} picture={author.avatar} />
             </Link>
             <div className="whitespace-nowrap">
               <Link href="/about" className="block mb-1" rel="author">
-                WQ Li
+                {author.nickname}
               </Link>
               <DateFormatter dateString={date} />
             </div>
