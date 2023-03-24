@@ -25,6 +25,7 @@
     "remark-rehype": "^10.1.0"
   },
   "devDependencies": {
+    "@heroicons/react": "^2.0.16",
     "@tailwindcss/typography": "^0.5.9",
     "@types/node": "^18.15.5",
     "@types/react": "^18.0.28",

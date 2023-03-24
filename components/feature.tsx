@@ -1,31 +1,33 @@
+import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from '@heroicons/react/24/outline'
+
 const features = [
   {
     name: 'Push to deploy',
     description:
       'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.',
-    icon: "",
+    icon: CloudArrowUpIcon,
   },
   {
     name: 'SSL certificates',
     description:
       'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.',
-    icon: "",
+    icon: LockClosedIcon,
   },
   {
     name: 'Simple queues',
     description:
       'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
-    icon: "",
+    icon: ArrowPathIcon,
   },
   {
     name: 'Advanced security',
     description:
       'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
-    icon: "",
+    icon: FingerPrintIcon,
   },
 ]
 
-export default function Feature() {
+const Feature = () => {
   return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -45,7 +47,7 @@ export default function Feature() {
               <div key={feature.name} className="relative pl-16">
                 <dt className="text-base font-semibold leading-7 text-gray-900">
                   <div className="absolute top-0 left-0 flex h-10 w-10 items-center justify-center rounded-lg bg-green-600">
-                    <i className="h-6 w-6 text-white" aria-hidden="true" />
+                    <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
                   </div>
                   {feature.name}
                 </dt>
@@ -58,3 +60,5 @@ export default function Feature() {
     </div>
   )
 }
+
+export default Feature

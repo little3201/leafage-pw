@@ -1,18 +1,29 @@
 import Link from 'next/link'
+import Image from 'next/image';
+
+import { SunIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 
 const Header = () => {
   return (
     <header className="absolute inset-x-0 top-0 z-50 container mx-auto p-5 flex justify-between items-center space-x-4 xl:space-x-8">
       <div className="flex justify-start flex-grow items-center space-x-4 sm:space-x-10 2xl:space-x-14">
-        <Link href="/" className='text-4xl font-semibold text-green-600'>
-          Leafage
+        <Link href="/" >
+          <Image
+            src="/assets/logo-only.svg"
+            className="rounded-full"
+            alt="logo"
+            width={40}
+            height={40}
+            style={{
+              objectFit: 'contain',
+              objectPosition: "center"
+            }} />
         </Link>
         <ul className="hidden lg:flex lg:flex-wrap lg:items-center lg:space-x-1">
           <li>
             <Link
               href="/"
-              aria-current="page"
-              className="text-sm xl:text-base font-normal text-neutral-900 dark:text-green-300 py-2 px-4 xl:px-5 rounded-full bg-green-50 dark:bg-neutral-800 transition-colors duration-200"
+              className="text-md xl:text-base font-medium dark:text-green-300 py-2 px-4 xl:px-5 transition-transform duration-200"
               rel="noopener noreferrer"
               id="home"
               aria-expanded="false">
@@ -22,7 +33,7 @@ const Header = () => {
           <li>
             <Link
               href="/posts"
-              className="text-sm xl:text-base font-normal text-neutral-700 dark:text-neutral-300 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-green-50 dark:hover:bg-neutral-800 dark:hover:text-neutral-200 transition-colors duration-200"
+              className="text-sm xl:text-base font-normal text-neutral-700 dark:text-neutral-300 py-2 px-4 xl:px-5 hover:font-medium transition-transform duration-200"
               rel="noopener noreferrer"
               id="posts"
               aria-expanded="false">
@@ -31,18 +42,18 @@ const Header = () => {
           </li>
           <li>
             <Link
-              href="/project"
-              className="inline-flex items-center text-sm xl:text-base font-normal text-neutral-700 dark:text-neutral-300 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-green-50 dark:hover:bg-neutral-800 dark:hover:text-neutral-200 transition-colors duration-200"
+              href="/open-sources"
+              className="text-sm xl:text-base font-normal text-neutral-700 dark:text-neutral-300 py-2 px-4 xl:px-5 hover:font-medium transition-transform duration-200"
               rel="noopener noreferrer"
               id="projects"
               aria-expanded="false">
-              Projects
+              Open sources
             </Link>
           </li>
           <li>
             <Link
               href="/doc"
-              className="inline-flex items-center text-sm xl:text-base font-normal text-neutral-700 dark:text-neutral-300 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-green-50 dark:hover:bg-neutral-800 dark:hover:text-neutral-200 transition-colors duration-200"
+              className="text-sm xl:text-base font-normal text-neutral-700 dark:text-neutral-300 py-2 px-4 xl:px-5 hover:font-medium transition-transform duration-200"
               rel="noopener noreferrer"
               id="projects"
               aria-expanded="false">
@@ -52,7 +63,7 @@ const Header = () => {
           <li>
             <Link
               href="/about"
-              className="inline-flex items-center text-sm xl:text-base font-normal text-neutral-700 dark:text-neutral-300 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-green-50 dark:hover:bg-neutral-800 dark:hover:text-neutral-200 transition-colors duration-200"
+              className="text-sm xl:text-base font-normal text-neutral-700 dark:text-neutral-300 py-2 px-4 xl:px-5 hover:font-medium transition-transform duration-200"
               rel="noopener noreferrer"
               id="about"
               aria-expanded="false">
@@ -63,19 +74,13 @@ const Header = () => {
       </div>
       <div className="flex-shrink-0 flex items-center justify-end text-neutral-700 dark:text-neutral-100 space-x-1">
         <div className="hidden items-center xl:flex space-x-1">
-          <button className="text-2xl md:text-3xl w-12 h-12 rounded-full text-neutral-700 dark:text-neutral-300 hover:bg-green-50 dark:hover:bg-neutral-800 focus:outline-none flex items-center justify-center transition-colors duration-200">
+          <button className="w-12 h-12 rounded-full hover:bg-green-50 dark:hover:bg-neutral-800 focus:outline-none flex items-center justify-center transition-colors duration-200">
             <span className="sr-only">Enable dark mode</span>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" aria-hidden="true" className="w-7 h-7">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-            </svg>
+            <SunIcon className="h-7 w-7 text-neutral-700 dark:text-neutral-300" aria-hidden="true" />
           </button>
           <div className="relative">
-            <button className="w-12 h-12 rounded-full text-neutral-700 dark:text-neutral-300 hover:bg-green-50 dark:hover:bg-neutral-800 focus:outline-none flex items-center justify-center transition-colors duration-200" id="dark" type="button" aria-expanded="false">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <circle cx="10" cy="10" r="7"></circle>
-                <line x1="21" y1="21" x2="15" y2="15"></line>
-              </svg>
+            <button className="w-12 h-12 rounded-full hover:bg-green-50 dark:hover:bg-neutral-800 focus:outline-none flex items-center justify-center transition-colors duration-200" id="dark" type="button" aria-expanded="false">
+              <MagnifyingGlassIcon className="h-7 w-7 text-neutral-700 dark:text-neutral-300" aria-hidden="true" />
             </button>
           </div>
           <div className="relative">

@@ -4,6 +4,7 @@ import Head from 'next/head'
 import { CMS_NAME } from '../lib/constants'
 import Hero from '../components/hero'
 import Feathure from '../components/feature'
+import Newsletter from '../components/newsletter';
 import State from '../components/state'
 
 const Index = () => {
@@ -18,6 +19,7 @@ const Index = () => {
         <Feathure/>
         <State/>
       </Container>
+      <Newsletter />
     </Layout>
   )
 }
