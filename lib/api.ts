@@ -77,7 +77,7 @@ export function getSortedDocData() {
   return allPostsData.sort((a, b) => a.modifyTime < b.modifyTime ? 1 : -1)
 }
 
-export function getAllDocIds() {
+export function getAllDocNames() {
   const fileNames = fs.readdirSync(docsDirectory)
   return fileNames.map(fileName =>  fileName.replace(/\.md$/, ''));
 }

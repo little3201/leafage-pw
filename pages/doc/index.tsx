@@ -3,19 +3,19 @@ import Layout from '../../components/layout'
 import Head from 'next/head'
 import PostTitle from '../../components/post-title'
 import { CMS_NAME } from '../../lib/constants'
-import { getAllDocIds, getDocData } from '../../lib/api'
+import { getAllDocNames, getDocData } from '../../lib/api'
 import { GetStaticProps } from 'next'
 import { Document} from '../../types/doc'
 
 import 'highlight.js/styles/atom-one-dark.css'
 
 type Props = {
-    docIds: string[]
+    docNames: string[]
     doc: Document
 }
 
 const Doc = ({
-    docIds,
+    docNames,
     doc
 }: Props) => {
     const title = `Document${CMS_NAME}`
@@ -28,8 +28,8 @@ const Doc = ({
                 <div className='flex my-10 py-16 sm:py-28 lg:py-32'>
                     <aside className='w-64 pr-8'>
                         <ul>
-                            {docIds.map((docId) => (
-                                <li className='my-2 text-sm xl:text-base font-normal text-neutral-900 dark:text-neutral-300 py-2 px-4 xl:px-5 rounded-full first:bg-green-50 dark:hover:bg-neutral-800 dark:hover:text-neutral-200' key={docId} >{docId}</li>
+                            {docNames.map((name) => (
+                                <li className='my-2 text-sm xl:text-base font-normal text-neutral-900 dark:text-neutral-300 py-2 px-4 xl:px-5 rounded-full first:bg-green-50 dark:hover:bg-neutral-800 dark:hover:text-neutral-200' key={name} >{name}</li>
                             ))}
                         </ul>
                     </aside>
@@ -57,11 +57,11 @@ const Doc = ({
 export default Doc
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-    const docIds = await getAllDocIds();
+    const docNames = await getAllDocNames();
     const doc = await getDocData(params?.id as string|| 'Post')
     return {
         props: {
-            docIds,
+            docNames,
             doc
         }
     }
