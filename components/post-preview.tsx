@@ -3,15 +3,14 @@ import DateFormatter from './date-formatter'
 import CoverImage from './cover-image'
 import Link from 'next/link'
 import Author from '../types/author'
-import Category from '../types/category'
 
 type Props = {
   title: string
   coverImage: string
   date: string
-  category: Category
+  category: string
   author: Author
-  slug: string
+  slug: number
 }
 
 const PostPreview = ({
@@ -29,7 +28,7 @@ const PostPreview = ({
         <Link
           href="/category"
           className="absolute top-5 left-5 px-4 py-2 inline-block uppercase text-xs text-white bg-green-700">
-          {category.name}
+          {category}
         </Link>
       </div>
       <div className="-mt-5 pl-5">

@@ -25,11 +25,11 @@ const Category = ({ categories }: Props) => {
                         </div>
                     </button> : <div className="flex items-center max-w-full overflow-x-scroll space-x-6">
                         {categories.map((category) => (
-                            <button type='button' className='flex-shrink-0 rounded-3xl w-64 h-40 bg-gradient-to-r from-green-300 to-lime-300 shadow-sm hover:shadow-lg hover:opacity-80 transition-all duration-200' key={category.code} >
+                            <button type='button' className='flex-shrink-0 rounded-3xl w-64 h-40 bg-gradient-to-r from-green-300 to-lime-300 shadow-sm hover:shadow-lg hover:opacity-80 transition-all duration-200' key={category.id} >
                                 <div className='w-full h-full bg-black bg-opacity-40 rounded-3xl flex items-center justify-center'>
                                     <div className='text-white text-center'>
                                         <h3 className="text-2xl">
-                                            <a>{category.name}</a>
+                                            <a>{category.categoryName}</a>
                                         </h3>
                                         <p>{category.count}<span className='ml-2'>Posts</span></p>
                                     </div>

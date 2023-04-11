@@ -8,17 +8,17 @@ import Layout from '../../components/layout'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import Head from 'next/head'
 import markdownToHtml from '../../lib/markdownToHtml'
-import PostContent from '../../types/postContent'
+import Post from '../../types/post'
 
 import 'highlight.js/styles/atom-one-dark.css'
 
 type Props = {
-  post: PostContent
+  post: Post
 }
 
 const Post = ({ post }: Props) => {
   const router = useRouter()
-  if (!router.isFallback && !post?.code) {
+  if (!router.isFallback && !post?.id) {
     return <ErrorPage statusCode={404} />
   }
   return (
@@ -40,7 +40,7 @@ const Post = ({ post }: Props) => {
                 date={post.modifyTime}
                 author={post.author}
               />
-              <PostBody content={post.content.content} />
+              <PostBody content={post.context} />
             </article>
           </>
         )}
@@ -58,8 +58,8 @@ type Params = {
 }
 
 export async function getStaticProps({ params }: Params) {
-  const post: PostContent = await getPostBySlug(params.slug)
-  const content: string = await markdownToHtml(post.content.content || '')
+  const post: Post = await getPostBySlug(params.slug)
+  const content: string = await markdownToHtml(post.context || '')
 
   return {
     props: {
@@ -78,10 +78,10 @@ export async function getStaticPaths() {
   const posts = await getAllPosts()
 
   return {
-    paths: posts.map((post: PostContent) => {
+    paths: posts.map((post: Post) => {
       return {
         params: {
-          slug: post.code,
+          slug: post.id,
         },
       }
     }),

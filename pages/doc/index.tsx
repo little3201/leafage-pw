@@ -5,17 +5,17 @@ import PostTitle from '../../components/post-title'
 import { CMS_NAME } from '../../lib/constants'
 import { getAllDocIds, getDocData } from '../../lib/api'
 import { GetStaticProps } from 'next'
-import { Doc, Document} from '../../types/doc'
+import { Document} from '../../types/doc'
 
 import 'highlight.js/styles/atom-one-dark.css'
 
 type Props = {
-    docs: Doc[]
+    docIds: string[]
     doc: Document
 }
 
 const Doc = ({
-    docs,
+    docIds,
     doc
 }: Props) => {
     const title = `Document${CMS_NAME}`
@@ -28,8 +28,8 @@ const Doc = ({
                 <div className='flex my-10 py-16 sm:py-28 lg:py-32'>
                     <aside className='w-64 pr-8'>
                         <ul>
-                            {docs.map((doc) => (
-                                <li className='my-2 text-sm xl:text-base font-normal text-neutral-900 dark:text-neutral-300 py-2 px-4 xl:px-5 rounded-full first:bg-green-50 dark:hover:bg-neutral-800 dark:hover:text-neutral-200' key={doc.id} >{doc.id}</li>
+                            {docIds.map((docId) => (
+                                <li className='my-2 text-sm xl:text-base font-normal text-neutral-900 dark:text-neutral-300 py-2 px-4 xl:px-5 rounded-full first:bg-green-50 dark:hover:bg-neutral-800 dark:hover:text-neutral-200' key={docId} >{docId}</li>
                             ))}
                         </ul>
                     </aside>
@@ -44,7 +44,7 @@ const Doc = ({
                             <PostTitle>{doc.title}</PostTitle>
                             <div
                                 className='mx-auto prose prose-green lg:prose-lg dark:prose-invert py-8 xl:py-12'
-                                dangerouslySetInnerHTML={{ __html: doc.contentHtml }}
+                                dangerouslySetInnerHTML={{ __html: doc.context }}
                             />
                         </article>
                     </div>
@@ -57,11 +57,11 @@ const Doc = ({
 export default Doc
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-    const docs = await getAllDocIds();
+    const docIds = await getAllDocIds();
     const doc = await getDocData(params?.id as string|| 'Post')
     return {
         props: {
-            docs,
+            docIds,
             doc
         }
     }

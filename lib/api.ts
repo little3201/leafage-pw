@@ -79,11 +79,7 @@ export function getSortedDocData() {
 
 export function getAllDocIds() {
   const fileNames = fs.readdirSync(docsDirectory)
-  return fileNames.map(fileName => {
-    return {
-      id: fileName.replace(/\.md$/, '')
-    };
-  });
+  return fileNames.map(fileName =>  fileName.replace(/\.md$/, ''));
 }
 
 export async function getDocData(id: string) {
@@ -93,12 +89,12 @@ export async function getDocData(id: string) {
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents)
 
-  const contentHtml: string = await markdownToHtml(matterResult.content || '')
+  const context: string = await markdownToHtml(matterResult.content || '')
 
   // Combine the data with the id and contentHtml
   return {
     id,
-    contentHtml,
+    context,
     ...(matterResult.data as { modifyTime: string; title: string })
   }
 }

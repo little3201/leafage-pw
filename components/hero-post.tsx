@@ -1,7 +1,6 @@
 import DateFormatter from './date-formatter'
 import Link from 'next/link'
 import Author from '../types/author'
-import Category from '../types/category'
 import Avatar from './avatar'
 import CoverImage from './cover-image'
 
@@ -9,9 +8,9 @@ type Props = {
   title: string
   cover: string
   date: string
-  category: Category
+  category: string
   author: Author
-  slug: string
+  slug: number
 }
 
 const HeroPost = ({
@@ -47,7 +46,7 @@ const HeroPost = ({
           <Link
             href="/category"
             className="block mb-3 leading-tight text-xs uppercase text-green-700 font-semibold">
-            {category.name}
+            {category}
           </Link>
           <h3 className="relative pb-5 text-3xl font-medium before:absolute before:w-10 before:h-1 before:bottom-0 before:left-0 before:content-[''] before:bg-green-700 hover:text-green-600 transition-colors duration-200">
             <Link as={`/posts/${slug}`} href="/posts/[slug]">

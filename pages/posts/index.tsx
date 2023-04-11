@@ -33,7 +33,7 @@ const Index = ({ posts }: Props) => {
               cover={heroPost.cover}
               date={heroPost.modifyTime}
               author={heroPost.author}
-              slug={heroPost.code}
+              slug={heroPost.id}
               category={heroPost.category}
             />
           )}
