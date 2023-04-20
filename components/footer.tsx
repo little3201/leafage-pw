@@ -7,7 +7,7 @@ const Footer = () => {
         <Container>
           <div className='h-14 flex items-center justify-between'>
             <span className="">
-              Leafage &copy; {new Date().getFullYear()} Made with by WQ Lee.
+              Copyright &copy; {new Date().getFullYear()} Leafage - License By MIT.
             </span>
             <a
               href="https://beian.miit.gov.cn"
