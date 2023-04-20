@@ -40,9 +40,6 @@ const Index = ({ posts }: Props) => {
           {categoryPosts.length > 0 && <CategoryStories posts={categoryPosts} />}
           {hotNews.length > 0 && <HotNews posts={hotNews} />}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-          <div className='text-center my-8'>
-            <button type='button' className='border border-green-600 px-6 py-2 rounded-md text-green-600 hover:bg-green-700 hover:text-white shadow-md hover:shadow-xl transition-all duration-200'>Load More</button>
-          </div>
         </div>
       </Container>
     </Layout>

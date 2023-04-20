@@ -14,9 +14,10 @@ import 'highlight.js/styles/atom-one-dark.css'
 
 type Props = {
   post: Post
+  renderedHtml: string
 }
 
-const Post = ({ post }: Props) => {
+const Post = ({ post, renderedHtml }: Props) => {
   const router = useRouter()
   if (!router.isFallback && !post?.id) {
     return <ErrorPage statusCode={404} />
@@ -28,7 +29,7 @@ const Post = ({ post }: Props) => {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article className="mb-32">
+            <article className="mb-32 py-16 sm:py-28 lg:py-32">
               <Head>
                 <title>
                   {post.title}
@@ -40,7 +41,7 @@ const Post = ({ post }: Props) => {
                 date={post.modifyTime}
                 author={post.author}
               />
-              <PostBody content={post.context} />
+              <PostBody content={renderedHtml} />
             </article>
           </>
         )}
@@ -59,17 +60,12 @@ type Params = {
 
 export async function getStaticProps({ params }: Params) {
   const post: Post = await getPostBySlug(params.slug)
-  const content: string = await markdownToHtml(post.context || '')
+  const renderedHtml: string = await markdownToHtml(post.context || '')
 
   return {
     props: {
-      post: {
-        ...post,
-        content: {
-          content: content,
-          catalog: ''
-        },
-      },
+      post: post,
+      renderedHtml: renderedHtml
     },
   }
 }
@@ -81,7 +77,7 @@ export async function getStaticPaths() {
     paths: posts.map((post: Post) => {
       return {
         params: {
-          slug: post.id,
+          slug: post.id + '',
         },
       }
     }),

@@ -14,7 +14,7 @@ type Props = {
 }
 
 const DocAside = ({ docNames, children }: Props) => {
-    const title = `Document${CMS_NAME}`
+    const title = `Docs${CMS_NAME}`
     const router = useRouter()
     const path = router.asPath.substring(6, router.asPath.length)
     return (
