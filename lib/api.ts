@@ -9,7 +9,7 @@ import { REMOTE_URL } from './constants'
 const docsDirectory = path.join(process.cwd(), 'docs')
 
 export async function getPostBySlug(slug: string) {
-  const res = await fetch(`${REMOTE_URL}/posts/${slug}/details`)
+  const res = await fetch(`${REMOTE_URL}/posts/${slug}`)
   const json = await res.json()
   if (json.errors) {
     throw new Error('Failed to fetch API')
@@ -77,13 +77,10 @@ export function getSortedDocData() {
   return allPostsData.sort((a, b) => a.modifyTime < b.modifyTime ? 1 : -1)
 }
 
-export function getAllDocIds() {
+export function getAllDocNames() {
   const fileNames = fs.readdirSync(docsDirectory)
-  return fileNames.map(fileName => {
-    return {
-      id: fileName.replace(/\.md$/, '')
-    };
-  });
+  // 过滤掉.Ds
+  return fileNames.filter(fileName => fileName != '.DS_Store').map(fileName =>  fileName.replace(/\.md$/, ''));
 }
 
 export async function getDocData(id: string) {
@@ -93,12 +90,12 @@ export async function getDocData(id: string) {
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents)
 
-  const contentHtml: string = await markdownToHtml(matterResult.content || '')
+  const context: string = await markdownToHtml(matterResult.content || '')
 
   // Combine the data with the id and contentHtml
   return {
     id,
-    contentHtml,
+    context,
     ...(matterResult.data as { modifyTime: string; title: string })
   }
 }

@@ -1,13 +1,11 @@
-import Author from './author'
-import Category from './category'
-
 type Post = {
-  code: string
+  id: number
   title: string
   tags: string
   cover: string
   author: Author
-  category: Category
+  category: string
+  context: string
   modifyTime: string
 }
 

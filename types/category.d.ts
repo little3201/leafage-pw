@@ -1,6 +1,6 @@
 type Category = {
-  code: string
-  name: string
+  id: number
+  categoryName: string
   description: string
   count: number
   modifyTime: string

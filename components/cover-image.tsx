@@ -5,7 +5,7 @@ import Link from 'next/link'
 type Props = {
   title: string
   src: string
-  slug: string
+  slug: number
   rounded?: boolean
 }
 

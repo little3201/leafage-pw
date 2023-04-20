@@ -20,12 +20,12 @@ const MoreStories = ({ posts }: Props) => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-8 lg:gap-x-12 gap-y-10 md:gap-y-12 mb-16">
         {posts.map((post) => (
           <PostPreview
-            key={post.code}
+            key={post.id}
             title={post.title}
             coverImage={post.cover}
             date={post.modifyTime}
             author={post.author}
-            slug={post.code}
+            slug={post.id}
             category={post.category}
           />
         ))}

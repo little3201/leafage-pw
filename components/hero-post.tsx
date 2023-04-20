@@ -1,7 +1,6 @@
 import DateFormatter from './date-formatter'
 import Link from 'next/link'
 import Author from '../types/author'
-import Category from '../types/category'
 import Avatar from './avatar'
 import CoverImage from './cover-image'
 
@@ -9,9 +8,9 @@ type Props = {
   title: string
   cover: string
   date: string
-  category: Category
+  category: string
   author: Author
-  slug: string
+  slug: number
 }
 
 const HeroPost = ({
@@ -33,13 +32,11 @@ const HeroPost = ({
             <Link
               href="/about"
               className="block w-10 h-10 rounded-full overflow-hidden float-left mr-3">
-
-              <Avatar name={title} picture="https://cdn.leafage.top/avatar.jpg?imageMogr2/thumbnail/40x40/blur/1x0/quality/75" />
-
+              <Avatar name={title} picture={author.avatar} />
             </Link>
             <div className="whitespace-nowrap">
               <Link href="/about" className="block mb-1" rel="author">
-                WQ Li
+                {author.nickname}
               </Link>
               <DateFormatter dateString={date} />
             </div>
@@ -49,7 +46,7 @@ const HeroPost = ({
           <Link
             href="/category"
             className="block mb-3 leading-tight text-xs uppercase text-green-700 font-semibold">
-            {category.name}
+            {category}
           </Link>
           <h3 className="relative pb-5 text-3xl font-medium before:absolute before:w-10 before:h-1 before:bottom-0 before:left-0 before:content-[''] before:bg-green-700 hover:text-green-600 transition-colors duration-200">
             <Link as={`/posts/${slug}`} href="/posts/[slug]">

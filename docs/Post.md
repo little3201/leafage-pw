@@ -80,7 +80,56 @@ empty|boolean|Returns whether the current {@link Streamable} is empty.|-
 
 **Response-example:**
 ```json
-{}
+{
+    "content": [
+        {
+            "code": "213489UI",
+            "title": "如何在 nuxt.js 中使用 axios.js 在组件和页面请求数据？",
+            "cover": "https://cdn.leafage.top/grass-4574494_640.jpg",
+            "tags": [
+                "leafage",
+                "nuxt.js",
+                "post",
+                "get",
+                "axios",
+                "asyncData"
+            ],
+            "category": {
+                "code": "20C3ID6W",
+                "name": "Technology"
+            },
+            "likes": 4,
+            "comments": 1,
+            "viewed": 1330,
+            "modifyTime": "2022-11-23T22:35:39.406"
+        }
+    ],
+    "pageable": {
+        "sort": {
+            "empty": false,
+            "sorted": true,
+            "unsorted": false
+        },
+        "offset": 1,
+        "pageNumber": 1,
+        "pageSize": 1,
+        "paged": true,
+        "unpaged": false
+    },
+    "totalPages": 42,
+    "totalElements": 42,
+    "last": false,
+    "size": 1,
+    "number": 1,
+    "sort": {
+        "empty": false,
+        "sorted": true,
+        "unsorted": false
+    },
+    "numberOfElements": 1,
+    "first": false,
+    "empty": false
+}
 ```
 
 ## title 关键字查询

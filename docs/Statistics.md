@@ -17,10 +17,6 @@ modifyTime: '2023-01-28'
 
 **Description:** 查询
 
-
-
-
-
 **Request-example:**
 ```accesslog
 curl -X GET -i /statistics/

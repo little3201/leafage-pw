@@ -22,12 +22,12 @@ const HotNews = ({ posts }: Props) => {
             <div className="relative">
                 <article className="flex flex-row">
                     <div className="relative mr-14 shadow-sm hover:shadow-lg transition-shadow duration-200" style={{ height: '32rem', width: `calc(50vw + 14rem)` }}>
-                        <CoverImage slug={posts[0].code} title={posts[0].title} src={posts[0].cover} />
+                        <CoverImage slug={posts[0].id} title={posts[0].title} src={posts[0].cover} />
                     </div>
                     <div className="max-w-xs">
-                        <a className="pb-9 font-medium uppercase text-xs text-green-700">{posts[0].category.name}</a>
+                        <a className="pb-9 font-medium uppercase text-xs text-green-700">{posts[0].category}</a>
                         <h3 className="text-xl my-4 hover:text-green-600 transition-colors duration-200">
-                            <Link as={`/posts/${posts[0].code}`} href="/posts/[slug]">
+                            <Link as={`/posts/${posts[0].id}`} href="/posts/[slug]">
                                 {posts[0].title}
                             </Link>
                         </h3>
@@ -37,21 +37,21 @@ const HotNews = ({ posts }: Props) => {
                 <div className="absolute bg-white bottom-0 right-0 p-8 shadow-md" style={{ width: 600 }}>
                     <ul className="w-full list-none">
                         {posts.slice(1, 5).map((post) => (
-                            <li className="w-1/2 px-4 inline-block my-2" key={post.code}>
+                            <li className="w-1/2 px-4 inline-block my-2" key={post.id}>
                                 <article className="flex items-center justify-start">
                                     <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4 flex-shrink-0 shadow-sm hover:shadow-lg transition-shadow duration-200">
                                         <div className="absolute inset-0 overflow-hidden bg-no-repeat bg-cover bg-center">
-                                            <CoverImage slug={post.code} title={post.title} src={post.cover} rounded={true} />
+                                            <CoverImage slug={post.id} title={post.title} src={post.cover} rounded={true} />
                                         </div>
                                     </div>
                                     <div>
                                         <Link
                                             href="/category"
                                             className="pb-2 font-medium uppercase text-xs text-green-700">
-                                            {post.category.name}
+                                            {post.category}
                                         </Link>
                                         <h3 className="text-sm hover:text-green-600 transition-colors duration-200">
-                                            <Link as={`/posts/${post.code}`} href="/posts/[slug]">
+                                            <Link as={`/posts/${post.id}`} href="/posts/[slug]">
                                                 {post.title}
                                             </Link>
                                         </h3>
