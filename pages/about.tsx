@@ -17,7 +17,7 @@ const About = () => {
           <div className="px-5 py-24">
             <div className="w-60 h-60 mx-auto mb-4 rounded-full overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-200" data-aos="fade-up" data-aos-duration="1200">
               <Image
-                src="https://cdn.leafage.top/avatar.jpg"
+                src="/assets/logo.svg"
                 alt="about author"
                 width={240}
                 height={240}

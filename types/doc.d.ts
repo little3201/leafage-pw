@@ -9,4 +9,4 @@ type Document = {
   author: Author
 }
 
-export { Doc, Document }
+export { Document }

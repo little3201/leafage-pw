@@ -79,7 +79,8 @@ export function getSortedDocData() {
 
 export function getAllDocNames() {
   const fileNames = fs.readdirSync(docsDirectory)
-  return fileNames.map(fileName =>  fileName.replace(/\.md$/, ''));
+  // 过滤掉.Ds
+  return fileNames.filter(fileName => fileName != '.DS_Store').map(fileName =>  fileName.replace(/\.md$/, ''));
 }
 
 export async function getDocData(id: string) {

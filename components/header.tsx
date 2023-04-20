@@ -1,9 +1,21 @@
 import Link from 'next/link'
-import Image from 'next/image';
+import Image from 'next/image'
+import { useRouter } from 'next/router'
+import cn from 'classnames'
+import { Item } from '../types/item'
 
 import { SunIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 
 const Header = () => {
+  const items: Item[] = [
+    { title: 'Home', path: '/' },
+    { title: 'Posts', path: '/posts' },
+    { title: 'Open sources', path: '/open-sources' },
+    { title: 'Docs', path: '/docs' },
+    { title: 'About', path: '/about' }
+  ]
+
+  const router = useRouter()
   return (
     <header className="absolute inset-x-0 top-0 z-50 container mx-auto p-5 flex justify-between items-center space-x-4 xl:space-x-8">
       <div className="flex justify-start flex-grow items-center space-x-4 sm:space-x-10 2xl:space-x-14">
@@ -20,56 +32,20 @@ const Header = () => {
             }} />
         </Link>
         <ul className="hidden lg:flex lg:flex-wrap lg:items-center lg:space-x-1">
-          <li>
+          {items.map(item => (
             <Link
-              href="/"
-              className="text-md xl:text-base font-medium dark:text-green-300 py-2 px-4 xl:px-5 transition-transform duration-200"
+              href={item.path}
+              className={cn('text-md xl:text-base  dark:text-neutral-300 py-2 px-4 xl:px-5 transition-transform duration-200',
+                { 'font-medium': router.pathname == item.path },
+                { 'font-normal text-neutral-700': router.pathname != item.path })}
               rel="noopener noreferrer"
               id="home"
-              aria-expanded="false">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/posts"
-              className="text-sm xl:text-base font-normal text-neutral-700 dark:text-neutral-300 py-2 px-4 xl:px-5 hover:font-medium transition-transform duration-200"
-              rel="noopener noreferrer"
-              id="posts"
-              aria-expanded="false">
-              Posts
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/open-sources"
-              className="text-sm xl:text-base font-normal text-neutral-700 dark:text-neutral-300 py-2 px-4 xl:px-5 hover:font-medium transition-transform duration-200"
-              rel="noopener noreferrer"
-              id="projects"
-              aria-expanded="false">
-              Open sources
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/doc"
-              className="text-sm xl:text-base font-normal text-neutral-700 dark:text-neutral-300 py-2 px-4 xl:px-5 hover:font-medium transition-transform duration-200"
-              rel="noopener noreferrer"
-              id="projects"
-              aria-expanded="false">
-              Document
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/about"
-              className="text-sm xl:text-base font-normal text-neutral-700 dark:text-neutral-300 py-2 px-4 xl:px-5 hover:font-medium transition-transform duration-200"
-              rel="noopener noreferrer"
-              id="about"
-              aria-expanded="false">
-              About
-            </Link>
-          </li>
+              aria-expanded="false"
+              key={item.title}>
+              <li >
+                {item.title}
+              </li>
+            </Link>))}
         </ul>
       </div>
       <div className="flex-shrink-0 flex items-center justify-end text-neutral-700 dark:text-neutral-100 space-x-1">
