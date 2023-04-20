@@ -60,6 +60,7 @@ type Params = {
 
 export async function getStaticProps({ params }: Params) {
   const post: Post = await getPostBySlug(params.slug)
+  post.author = {nickname: 'WQ Li', avatar: '/assets/avatar-cartoon.jpg'}
   const renderedHtml: string = await markdownToHtml(post.context || '')
 
   return {

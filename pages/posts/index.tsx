@@ -50,7 +50,7 @@ export default Index
 
 export const getServerSideProps = async () => {
   const posts = await getPostsByPage(0, 15)
-
+  posts.map((post: Post) => post.author = {nickname: 'WQ Li', avatar: '/assets/avatar-cartoon.jpg'})
   return {
     props: { posts },
   }
