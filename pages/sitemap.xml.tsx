@@ -8,31 +8,31 @@ function generateSiteMap(posts: { code: string, modifyTime: Date }[]) {
      <!--We manually set the two URLs we know already-->
      <url>
         <loc>https://www.leafage.top</loc>
-        <lastmod>2022-04-25</lastmod>
+        <lastmod>2023-04-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
      </url>
      <url>
-        <loc>https://www.leafage.top/category</loc>
-        <lastmod>2022-04-25</lastmod>
+        <loc>https://www.leafage.top/posts</loc>
+        <lastmod>2023-04-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
      </url>
      <url>
-        <loc>https://www.leafage.top/project</loc>
-        <lastmod>2022-04-25</lastmod>
+        <loc>https://www.leafage.top/open-sources</loc>
+        <lastmod>2023-04-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+     </url>
+     <url>
+        <loc>https://www.leafage.top/docs</loc>
+        <lastmod>2023-04-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
      </url>
      <url>
         <loc>https://www.leafage.top/about</loc>
-        <lastmod>2022-04-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-     </url>
-     <url>
-        <loc>https://www.leafage.top/doc</loc>
-        <lastmod>2022-04-25</lastmod>
+        <lastmod>2023-04-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
      </url>
