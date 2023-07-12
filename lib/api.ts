@@ -18,7 +18,7 @@ export async function getPostBySlug(slug: string) {
 }
 
 export async function getPostsByPage(page: number, size: number) {
-  const res = await fetch(`${REMOTE_URL}/posts?page=${page}&size=${size}`)
+  const res = await fetch(`${REMOTE_URL}/assets/posts?page=${page}&size=${size}`)
   const json = await res.json()
   if (json.errors) {
     throw new Error('Failed to fetch API')
@@ -27,7 +27,7 @@ export async function getPostsByPage(page: number, size: number) {
 }
 
 export async function getAllPosts() {
-  const res = await fetch(`${REMOTE_URL}/posts?page=0&size=99`)
+  const res = await fetch(`${REMOTE_URL}/assets/posts?page=0&size=99`)
   const json = await res.json()
   if (json.errors) {
     throw new Error('Failed to fetch API')
@@ -36,7 +36,7 @@ export async function getAllPosts() {
 }
 
 export async function getPostsByCategory(page: number, size: number, category: string) {
-  const res = await fetch(`${REMOTE_URL}/posts?page=${page}&size=${size}&category=${category}`)
+  const res = await fetch(`${REMOTE_URL}/assets/posts?page=${page}&size=${size}&category=${category}`)
   const json = await res.json()
   if (json.errors) {
     throw new Error('Failed to fetch API')
@@ -45,7 +45,7 @@ export async function getPostsByCategory(page: number, size: number, category: s
 }
 
 export async function getAllCategories() {
-  const res = await fetch(`${REMOTE_URL}/categories?page=0&size=99`)
+  const res = await fetch(`${REMOTE_URL}/assets/categories?page=0&size=99`)
   const json = await res.json()
   if (json.errors) {
     throw new Error('Failed to fetch API')
