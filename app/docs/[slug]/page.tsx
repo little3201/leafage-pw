@@ -5,5 +5,5 @@ export default function Page({
     params: { slug: string }
     searchParams: { [key: string]: string | string[] | undefined }
   }) {
-    return <h1>My Page</h1>
+    return <h1>docs-slug</h1>
   }
