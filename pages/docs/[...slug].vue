@@ -12,7 +12,7 @@ const { data: surround } = await useAsyncData(`${route.path}-surround`, () => qu
   .where({ _extension: 'md', navigation: { $ne: false } })
   .only(['title', 'description', '_path'])
   .findSurround(withoutTrailingSlash(route.path))
-, { default: () => [] })
+  , { default: () => [] })
 
 useSeoMeta({
   title: page.value.title,

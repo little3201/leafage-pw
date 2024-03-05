@@ -1,17 +1,30 @@
-node_modules
-*.log
-.nuxt
-nuxt.d.ts
-dist
+# Nuxt dev/build outputs
 .output
-.env
-.history
-.cache
 .data
+.nuxt
+.nitro
+.cache
+dist
 
-# misc
+# Node dependencies
+node_modules
+
+# Logs
+logs
+*.log
+
+# Misc
 .DS_Store
-*.pem
+.fleet
+.idea
+
+# Local env files
+.env
+.env.*
+!.env.example
+
+# VSC
+.history
 
 # yarn
 .pnp.*
