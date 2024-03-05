@@ -1,93 +1,83 @@
+<script setup lang="ts">
+const { data: page } = await useAsyncData('index', () => queryContent('/').findOne())
+if (!page.value) {
+  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+}
+
+useSeoMeta({
+  titleTemplate: '',
+  title: page.value.title,
+  ogTitle: page.value.title,
+  description: page.value.description,
+  ogDescription: page.value.description
+})
+</script>
+
 <template>
-    <div>
-        <Html :lang="'en'">
+  <div v-if="page">
+    <ULandingHero :title="page.hero.title" :description="page.hero.description" :links="page.hero.links">
+      <div class="absolute inset-0 landing-grid z-[-1] [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]" />
 
-        <Head>
-            <Title>Home - Leafage</Title>
-            <Meta name="description" content="Leafage 是一个开源的博客网站，记录自己平时学习总结、工作中遇到的问题的解决方法的一个经验记录。" />
-            <Meta name="keywords" content="leafage, 博客, 经验记录, 学习总结, nuxt, vue, ts, tailwindcss, java, js" />
-        </Head>
+      <template #headline>
+        <UBadge v-if="page.hero.headline" variant="subtle" size="lg" class="relative rounded-full font-semibold">
+          <NuxtLink :to="page.hero.headline.to" target="_blank" class="focus:outline-none" tabindex="-1">
+            <span class="absolute inset-0" aria-hidden="true" />
+          </NuxtLink>
 
-        </Html>
-        <div class="grid lg:grid-rows-2 lg:grid-cols-4 gap-8 mb-8">
-            <Gallery v-for="(data, index) in galleryPosts?.slice(0, 6)" :data="data"
-                :aspect="(index < 4 && index > 1) ? true : false" />
+          {{ page.hero.headline.label }}
+
+          <UIcon v-if="page.hero.headline.icon" :name="page.hero.headline.icon" class="ml-1 w-4 h-4 pointer-events-none" />
+        </UBadge>
+      </template>
+    </ULandingHero>
+
+    <ULandingSection class="!pt-0">
+      <Placeholder />
+    </ULandingSection>
+
+    <ULandingSection
+      v-for="(section, index) in page.sections"
+      :key="index"
+      :title="section.title"
+      :description="section.description"
+      :align="section.align"
+      :features="section.features"
+    >
+      <Placeholder />
+    </ULandingSection>
+
+    <ULandingSection :title="page.features.title" :description="page.features.description">
+      <UPageGrid>
+        <ULandingCard v-for="(item, index) in page.features.items" :key="index" v-bind="item" />
+      </UPageGrid>
+    </ULandingSection>
+
+    <ULandingSection :headline="page.testimonials.headline" :title="page.testimonials.title" :description="page.testimonials.description">
+      <UPageColumns class="xl:columns-4">
+        <div v-for="(testimonial, index) in page.testimonials.items" :key="index" class="break-inside-avoid">
+          <ULandingTestimonial v-bind="testimonial" class="bg-gray-100/50 dark:bg-gray-800/50" />
         </div>
+      </UPageColumns>
+    </ULandingSection>
 
-        <div class="grid grid-flow-row grid-cols-4 gap-8 dark:text-neutral-300">
-            <div class=" col-span-3">
-                <Tab @chageParams="chageParams" :datas="tabs" />
-                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3 my-8">
-                    <Item v-for="post in posts" :data="post" />
-                </div>
-                <div class="text-center my-6 text-neutral-400">
-                    <button type="button" @click="viewMore"
-                        class="font-semibold hover:text-neutral-600 px-2 py-1 rounded focus:outline-none">
-                        View More
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                            class="feather feather-chevrons-down mx-auto">
-                            <polyline points="7 6 12 11 17 6" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            <LazyLayoutAside class="hidden lg:block" :categories="categories ? categories : []" />
-        </div>
-    </div>
+    <ULandingSection>
+      <ULandingCTA v-bind="page.cta" class="bg-gray-100/50 dark:bg-gray-800/50" />
+    </ULandingSection>
+  </div>
 </template>
 
-<script lang="ts" setup>
-import { Posts, Category } from '@/lib/request.type';
-
-const tabs = ref([
-    {
-        code: "likes",
-        name: "Trending"
-    },
-    {
-        code: "viewed",
-        name: "Most View"
-    },
-    {
-        code: "comment",
-        name: "Popular"
-    }
-])
-
-let sort = ref("likes")
-let page = ref(0)
-
-const [{ data: galleryPosts }, { data: posts, refresh }, { data: categories }] = await Promise.all([
-    useFetch<Array<Posts>>(`/api/posts?page=0&size=6`),
-    useFetch<Array<Posts>>(`/api/posts?page=0&size=12&sort=likes`),
-    useFetch<Array<Category>>('/api/categories')
-])
-
-/**
- * 加载更多
- */
-const viewMore = async () => {
-    page.value = page.value + 1;
-    const datas = await $fetch(`/api/posts?page=${page.value}&size=12&sort=${sort.value}`)
-    if (Array.isArray(posts)) {
-        posts.push(datas)
-    }
+<style scoped>
+.landing-grid {
+  background-size: 100px 100px;
+  background-image:
+    linear-gradient(to right, rgb(var(--color-gray-200)) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(var(--color-gray-200)) 1px, transparent 1px);
 }
-
-/**
- * 更新排序
- */
-const chageParams = async (item: string) => {
-    page.value = 0
-    if (sort.value == item) {
-        refresh()
-    } else {
-        sort.value = item;
-        const datas = await $fetch(`/api/posts?page=${page.value}&size=12&sort=${sort.value}`)
-        if (Array.isArray(posts)) {
-            posts.push(datas)
-        }
-    }
+.dark {
+  .landing-grid {
+    background-image:
+      linear-gradient(to right, rgb(var(--color-gray-800)) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--color-gray-800)) 1px, transparent 1px);
+  }
 }
-</script>
+</style>

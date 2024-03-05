@@ -1,14 +1,24 @@
+<script setup lang="ts">
+import type { ParsedContent } from '@nuxt/content/dist/runtime/types'
+
+const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation(), { default: () => [] })
+const { data: files } = useLazyFetch<ParsedContent[]>('/api/search.json', { default: () => [], server: false })
+
+provide('navigation', navigation)
+</script>
+
 <template>
-  <div class="dark:bg-neutral-900">
+  <div>
+    <Header />
 
-    <header class="container mx-auto px-5">
-      <LayoutHeader class="flex border-neutral-900 dark:border-neutral-300 border-b-2" />
-      <LayoutLogo />
-    </header>
-
-    <main class="container mx-auto px-5" style="min-height: calc(100vh - 23rem);">
+    <UMain>
       <slot />
-    </main>
-    <LayoutFooter />
+    </UMain>
+
+    <Footer />
+
+    <ClientOnly>
+      <LazyUContentSearch :files="files" :navigation="navigation" />
+    </ClientOnly>
   </div>
 </template>

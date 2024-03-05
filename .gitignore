@@ -2,7 +2,18 @@ node_modules
 *.log
 .nuxt
 nuxt.d.ts
+dist
 .output
+.env
+.history
+.cache
+.data
+
+# misc
+.DS_Store
+*.pem
+
+# yarn
 .pnp.*
 .yarn/*
 !.yarn/patches
