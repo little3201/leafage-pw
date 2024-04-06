@@ -21,9 +21,7 @@ const description = post.value.head?.description || post.value.description
 
 useSeoMeta({
   title,
-  ogTitle: title,
-  description,
-  ogDescription: description,
+  description
 })
 </script>
 
@@ -34,7 +32,7 @@ useSeoMeta({
         <UBadge v-bind="post.badge" variant="subtle" />
         <span class="text-gray-500 dark:text-gray-400">&middot;</span>
         <time class="text-gray-500 dark:text-gray-400">{{ new Date(post.date).toLocaleDateString('en',
-    { year: 'numeric', month: 'short', day: 'numeric' }) }}</time>
+          { year: 'numeric', month: 'short', day: 'numeric' }) }}</time>
       </template>
 
       <div class="flex flex-wrap items-center gap-3 mt-4">

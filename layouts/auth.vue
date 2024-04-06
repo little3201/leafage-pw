@@ -36,6 +36,7 @@ useHead({
     linear-gradient(to right, rgb(var(--color-gray-200)) 0.5px, transparent 0.5px),
     linear-gradient(to bottom, rgb(var(--color-gray-200)) 0.5px, transparent 0.5px);
 }
+
 .dark {
   .overlay {
     background-image:

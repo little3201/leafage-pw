@@ -1,30 +1,27 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  extends: ['@nuxt/ui-pro'],
   modules: [
     '@nuxt/content',
-    '@nuxt/ui'
+    '@nuxt/ui',
+    '@nuxt/image',
+    '@nuxt/fonts',
+    '@vueuse/nuxt'
   ],
-  extends: ['@nuxt/ui-pro'],
-  content: {
-    highlight: {
-      theme: {
-        default: 'material-theme-lighter',
-        dark: 'material-theme-palenight'
-      },
-      langs: [
-        'js',
-        'ts',
-        'vue',
-        'css',
-        'scss',
-        'sass',
-        'html',
-        'bash',
-        'md',
-        'mdc',
-        'json'
-      ]
+  hooks: {
+    // Define `@nuxt/ui` components as global to use them in `.md` (feel free to add those you need)
+    'components:extend': (components) => {
+      const globals = components.filter((c) => ['UButton'].includes(c.pascalName))
+
+      globals.forEach((c) => c.global = true)
     }
-  }
+  },
+  ui: {
+    icons: ['heroicons', 'simple-icons']
+  },
+  routeRules: {
+    '/api/search.json': { prerender: true },
+    '/docs': { redirect: '/docs/getting-started', prerender: false }
+  },
+  devtools: { enabled: true }
 })
