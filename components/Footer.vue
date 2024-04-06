@@ -80,6 +80,12 @@ function onSubmit() {
       </p>
     </template>
 
+    <template #center>
+      <a class="text-gray-500 dark:text-gray-400 text-sm" href="https://beian.miit.gov.cn/" target="_blank">
+        陕ICP备19017836号-2
+      </a>
+    </template>
+
     <template #right>
       <UColorModeButton size="sm" />
 

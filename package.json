@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@nuxt/eslint-config": "^0.3.0",
+    "@nuxthq/studio": "^1.0.13",
     "sitemap": "^7.1.1",
     "vue-tsc": "^2.0.10"
   },
