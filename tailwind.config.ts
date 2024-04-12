@@ -1,12 +1,15 @@
 import type { Config } from 'tailwindcss'
-import defaultTheme from 'tailwindcss/defaultTheme'
 
 export default <Partial<Config>>{
-  theme: {
-    extend: {
-      fontFamily: {
-        sans: ['DM Sans', ...defaultTheme.fontFamily.sans]
-      }
-    }
-  }
+  darkMode: 'class',
+  theme: {},
+  plugins: [],
+  content: [
+    "./components/**/*.{js,vue,ts}",
+    "./layouts/**/*.vue",
+    "./pages/**/*.vue",
+    "./plugins/**/*.{js,ts}",
+    "./app.vue",
+    "./error.vue",
+  ],
 }
