@@ -20,7 +20,7 @@ export default function Page() {
             height: "auto"
           }} />
       </div>
-      <div className="prose mx-auto mt-14 text-center dark:prose-invert">
+      <div className="prose prose-lg mx-auto mt-14 text-center dark:prose-invert">
         <p>
           We provide real-time connectivity to enable software
           providers and financial institutions to build integrated

@@ -18,6 +18,7 @@ export default async function Page({ params }: Params) {
     <article>
       <PostHeader
         title={post.title}
+        tags={['Technology', 'Lifestyle']}
         date={post.date}
         author={post.author}
       />
