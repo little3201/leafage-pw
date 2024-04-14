@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center">
+    <section className="flex flex-col items-center justify-center min-h-full p-32">
       <div className="w-60 h-60 mx-auto rounded-full overflow-hidden shadow-2xl dark:shadow-neutral-500 transition-shadow duration-200">
         <Image
           src="/avatar-cartoon.jpg"
@@ -20,14 +20,19 @@ export default function Page() {
             height: "auto"
           }} />
       </div>
-      <div className="text-center mt-12">
-        <h5 className="text-xl text-neutral-600 font-semibold">Hello, I&apos;m <span className='text-green-600'>WQ Li</span></h5>
-        <h2 className="text-5xl font-bold my-3 text-green-600" >
-          A developer
-        </h2>
-        <p className="max-w-2xl mb-8 text-lg text-neutral-500 break-words">I&apos;m a Java developer based in China, over {new Date().getFullYear() - 2015} years of
-          professional experience with front-end like React、Vue, and learning the Rust language.</p>
+      <div className="prose mx-auto mt-14 text-center dark:prose-invert">
+        <p>
+          We provide real-time connectivity to enable software
+          providers and financial institutions to build integrated
+          products for their small business customers.
+        </p>
+        <p>
+          Our API infrastructure is leveraged by clients ranging from
+          lenders to corporate card providers and business forecasting
+          tools, with use cases including automatic reconciliation,
+          business dashboarding, and loan decisioning.
+        </p>
       </div>
-    </main>
+    </section>
   )
 }

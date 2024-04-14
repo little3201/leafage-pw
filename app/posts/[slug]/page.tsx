@@ -1,26 +1,55 @@
-// Return a list of `params` to populate the [slug] dynamic segment
-export async function generateStaticParams() {
-  
-  return [{
-    slug: '1',
-  }]
-}
+import { Metadata } from "next";
+import { notFound } from 'next/navigation'
+import { getAllPosts, getPostBySlug } from '@/lib/api'
+import type { Post } from '@/lib/type-guards'
 
-export default function Page({
-  params,
-  searchParams,
-}: {
-  params: { slug: string }
-  searchParams: { [key: string]: string | string[] | undefined }
-}) {
+import PostHeader from "@/components/post-header"
+import PostBody from "@/components/post-body"
+
+
+export default async function Page({ params }: Params) {
+  const post = await getPostBySlug(params.slug)
+
+  if (!post) {
+    return notFound();
+  }
+
   return (
-    <article className="flex min-h-screen flex-col items-center justify-center overflow-hidden py-8 lg:py-16">
-      <div className="w-full grow rounded bg-white md:shadow-2xl dark:bg-neutral-900 dark:shadow-neutral-500 max-w-4xl p-2 md:py-16">
-        <div
-          className='mx-auto prose prose-green lg:prose-lg dark:prose-invert'
-          dangerouslySetInnerHTML={{ __html: 'xxxx内容测试容测试容测试容测试容测试容测试容测试容测试容测试容测试容测试容测试容测试容测试容测试容测试容测试容测试容测试容测试容测试容测试容测试容测试容测试容测试容测试' }}
-        />
-      </div>
+    <article>
+      <PostHeader
+        title={post.title}
+        date={post.date}
+        author={post.author}
+      />
+      <PostBody content={post.parsedDoc} />
     </article>
   )
+}
+
+type Params = {
+  params: {
+    slug: string;
+  };
+};
+
+export async function generateMetadata({ params }: Params): Promise<Metadata | undefined> {
+  const post = await getPostBySlug(params.slug);
+
+  if (!post) {
+    return notFound();
+  }
+
+  return {
+    title: post.title,
+    description: post.title
+  };
+}
+
+// Return a list of `params` to populate the [slug] dynamic segment
+export async function generateStaticParams() {
+  const posts = await getAllPosts()
+
+  return posts.map((post: Post) => ({
+    slug: String(post.id),
+  }))
 }
