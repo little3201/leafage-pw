@@ -1,4 +1,3 @@
-import SideNav from "@/components/sidenav"
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,7 +13,7 @@ export default function DocLayout({
     return (
         <div className="flex h-screen flex-col md:flex-row md:overflow-hidden">
             <div className="w-full flex-none md:w-64">
-                <SideNav />
+                <div>Catelog</div>
             </div>
             <div className="grow overflow-y-auto md:p-12">{children}</div>
         </div>
