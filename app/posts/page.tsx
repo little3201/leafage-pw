@@ -1,10 +1,10 @@
 import { Suspense } from 'react'
 import Link from 'next/link'
-import { getAllPosts } from '@/lib/api'
+import { getAllPosts } from '@/app/lib/api'
 
-import TagList from '@/components/tag-list'
-import Tag from '@/components/tag'
-import Pagination from '@/components/pagination'
+import TagList from '@/app/ui/tag-list'
+import Tag from '@/app/ui/tag'
+import Pagination from '@/app/ui/pagination'
 
 export default async function Page() {
     const posts = await getAllPosts()

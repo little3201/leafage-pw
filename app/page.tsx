@@ -1,5 +1,5 @@
-import Link from "next/link";
-import type { Metadata } from "next";
+import Link from 'next/link'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: "知识信息分享",

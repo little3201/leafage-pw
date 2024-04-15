@@ -1,4 +1,4 @@
-import Tag from '@/components/tag'
+import Tag from '@/app/ui/tag'
 
 type Props = {
     title: string
@@ -22,7 +22,7 @@ export default function PostHeader({ title, tags, date }: Props) {
                     dateTime={date}>
                     {date}
                 </time>
-                <span className='text-neutral-500'>· 9 min read</span>
+                <span className='text-neutral-500'> · 9 min read</span>
             </div>
         </section>)
 }

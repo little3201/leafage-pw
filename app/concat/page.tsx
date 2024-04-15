@@ -1,4 +1,17 @@
 export default function Contact() {
+    async function submit(formData: FormData) {
+        'use server'
+     
+        const rawFormData = {
+          customerId: formData.get('customerId'),
+          amount: formData.get('amount'),
+          status: formData.get('status'),
+        }
+     
+        // mutate data
+        // revalidate cache
+      }
+
     return (
         <section className="p-24">
             <h1 className="mt-2 mb-3 text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
@@ -25,7 +38,7 @@ export default function Contact() {
                     </div>
                 </div>
                 <div>
-                    <form className="my-10">
+                    <form className="my-10" action={submit}>
                         <div className="mb-5">
                             <input type="text" placeholder="Full Name" autoComplete="false" className="w-full px-3 py-2 rounded-md" />
                         </div>

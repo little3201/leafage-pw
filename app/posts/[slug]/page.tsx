@@ -1,11 +1,10 @@
-import { Metadata } from "next";
+import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { getAllPosts, getPostBySlug } from '@/lib/api'
-import type { Post } from '@/lib/type-guards'
+import { getAllPosts, getPostBySlug } from '@/app/lib/api'
+import type { Post } from '@/app/lib/type-guards'
 
-import PostHeader from "@/components/post-header"
-import PostBody from "@/components/post-body"
-
+import PostHeader from '@/app/ui/post-header'
+import PostBody from '@/app/ui/post-body'
 
 export default async function Page({ params }: Params) {
   const post = await getPostBySlug(params.slug)

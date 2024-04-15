@@ -2,7 +2,7 @@
 
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import tagData from '@/lib/data.json'
+import tagData from '@/app/lib/data.json'
 
 
 export default function TagList({ tags }: { tags: string[] }) {
@@ -11,7 +11,7 @@ export default function TagList({ tags }: { tags: string[] }) {
     const tagCounts = tagData as Record<string, number>
 
     return (
-        <div className="hidden h-full max-h-screen min-w-[280px] max-w-[280px] flex-wrap overflow-auto rounded pt-5 shadow-lg dark:bg-neutral-900/70 dark:shadow-neutral-800/40 sm:flex">
+        <div className="hidden h-full max-h-screen min-w-[280px] max-w-[280px] flex-wrap overflow-auto rounded pt-5 shadow-lg dark:shadow-lime-700/40 sm:flex">
             <div className="px-6 py-4">
                 {pathname.startsWith('/posts') ? (
                     <h3 className="font-bold uppercase text-primary-500">All Posts</h3>
