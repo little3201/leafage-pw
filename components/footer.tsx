@@ -8,13 +8,13 @@ export default function Footer() {
                         <a href="https://github.com/little3201/leafage-pw/blob/main/LICENSE"
                         rel="noopener noreferrer"
                         target="_blank"
-                        className="hover:text-green-600"> MIT</a>.
+                        className="hover:text-lime-600"> MIT</a>.
                     </span>
                     <a
                         href="https://beian.miit.gov.cn"
                         rel="noopener noreferrer"
                         target="_blank"
-                        className="hover:text-green-600"
+                        className="hover:text-lime-600"
                     > 陕ICP备19017836号-2</a>
                 </div>
             </div>

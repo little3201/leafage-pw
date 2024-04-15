@@ -19,7 +19,7 @@ export default function Contact() {
                     </p>
 
                     <div className="mt-5">
-                        <div className="flex items-center mt-2 space-x-2 text-dark-600 dark:text-gray-400">
+                        <div className="flex items-center mt-2 space-x-2 text-dark-600 dark:text-neutral-400">
                             <span>1734 Sanfransico, CA 93063</span>
                         </div>
                     </div>
@@ -36,7 +36,7 @@ export default function Contact() {
                         <div className="mb-3">
                             <textarea  name="message" placeholder="Your Message" className="w-full px-3 py-2 rounded-md"/>
                         </div>
-                        <button type="submit" className="w-full py-3 font-semibold rounded-md text-white transition-colors bg-green-600 shadow-lg">
+                        <button type="submit" className="w-full py-3 font-semibold rounded-md text-white transition-colors bg-lime-600 shadow-lg">
                             Send Message
                         </button>
                     </form>

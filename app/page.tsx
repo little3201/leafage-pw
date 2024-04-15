@@ -10,9 +10,9 @@ export default function Home() {
   return (
     <section className="mx-auto max-w-4xl py-48">
       <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-        <div className="relative rounded-full py-1 px-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+        <div className="relative rounded-full py-1 px-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400 ring-1 ring-neutral-900/10 hover:ring-neutral-900/20">
           Announcing our next round of funding.{' '}
-          <Link href="/docs" className="font-semibold text-green-600">
+          <Link href="/docs" className="font-semibold text-lime-600">
             <span className="absolute inset-0" aria-hidden="true" />
             Read more <span aria-hidden="true">&rarr;</span>
           </Link>
@@ -29,7 +29,7 @@ export default function Home() {
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <a
             href="#"
-            className="rounded-full bg-green-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
+            className="rounded-full bg-lime-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-lime-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-600"
           >
             Get started
           </a>

@@ -21,22 +21,22 @@ export default async function Page() {
                                 <article className="flex flex-col space-y-2 xl:space-y-0">
                                     <dl>
                                         <dt className="sr-only">Published on</dt>
-                                        <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                                        <dd className="text-base font-medium leading-6 text-neutral-500 dark:text-neutral-400">
                                             <time dateTime={post.date}>{post.date}</time>
                                         </dd>
                                     </dl>
                                     <div className="space-y-3">
                                         <div>
                                             <h2 className="text-2xl font-bold leading-8 tracking-tight">
-                                                <Link href={`/posts/${post.id}`} className="text-gray-900 dark:text-gray-100">
+                                                <Link href={`/posts/${post.id}`} className="text-neutral-900 dark:text-neutral-100">
                                                     {post.title}
                                                 </Link>
                                             </h2>
-                                            <div className="flex flex-wrap">
+                                            <div className="flex flex-wrap space-x-2">
                                                 {post.tags.map((tag) => <Tag key={tag} text={tag} />)}
                                             </div>
                                         </div>
-                                        <div className="prose max-w-none text-gray-500 dark:text-gray-400">
+                                        <div className="prose max-w-none text-neutral-500 dark:text-neutral-400">
                                             {post.excerpt}
                                         </div>
                                     </div>

@@ -44,8 +44,8 @@ export default function RootLayout({
                 y2="474.645"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#9089FC" />
-                <stop offset={1} stopColor="#FF80B5" />
+                <stop stopColor="#84cc16" />
+                <stop offset={1} stopColor="#15803d" />
               </linearGradient>
             </defs>
           </svg>
