@@ -1,13 +1,7 @@
-export type Author = {
-    name: string;
-    picture: string;
-}
-
 export type Post = {
     id: number
     title: string;
     date: string;
-    author: Author;
     excerpt: string;
     ogImage: {
         url: string;

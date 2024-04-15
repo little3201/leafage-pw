@@ -20,7 +20,6 @@ export default async function Page({ params }: Params) {
         title={post.title}
         tags={['Technology', 'Lifestyle']}
         date={post.date}
-        author={post.author}
       />
       <PostBody content={post.parsedDoc} />
     </article>
