@@ -1,3 +1,11 @@
+// Return a list of `params` to populate the [slug] dynamic segment
+export async function generateStaticParams() {
+
+  return [{
+    slug: '1',
+  }]
+}
+
 export default function Page({
   params,
   searchParams,
