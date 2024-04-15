@@ -8,48 +8,36 @@ const posts = [
         id: 1,
         title: '这个是标题，可能会比较长，可以测试下布局是否好看，不是很方便吗',
         date: '2024-04-13',
-        coverImage: '/ai.jpg',
-        author: {
-            name: '章三',
-            picture: '/avatar-cartoon.jpg' 
-        },
         excerpt: '这是帖子概要描述',
         ogImage: {
             url: ''
         },
         content: '### 三级标题 \n 换行了 \n <pre><code>function test () {}</code></pre>',
+        tags: ['markdown', 'code'],
         parsedDoc: ''
     },
     {
         id: 2,
         title: '这个是标题，可能会比较长，可以测试下布局是否好看，不是很方便吗',
         date: '2024-04-13',
-        coverImage: '/ai.jpg',
-        author: {
-            name: '章三',
-            picture: '/avatar-cartoon.jpg' 
-        },
         excerpt: '这是帖子概要描述',
         ogImage: {
             url: ''
         },
         content: '### 三级标题',
+        tags: ['tailwind', 'next-js'],
         parsedDoc: ''
     },
     {
         id: 2,
         title: '这个是标题，可能会比较长，可以测试下布局是否好看，不是很方便吗',
         date: '2024-04-13',
-        coverImage: '/ai.jpg',
-        author: {
-            name: '章三',
-            picture: '/avatar-cartoon.jpg' 
-        },
         excerpt: '这是帖子概要描述',
         ogImage: {
             url: ''
         },
         content: '### 三级标题',
+        tags: ['next-js', 'code'],
         parsedDoc: ''
     }
 ]
