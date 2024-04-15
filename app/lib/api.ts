@@ -6,7 +6,7 @@ const REMOTE_URL = 'https://leafage.top/api'
 const posts = [
     {
         id: 1,
-        title: '这个是标题，可能会比较长，可以测试下布局是否好看，不是很方便吗',
+        title: 'This is title, might be very long, you can test is ui ok , does it ok',
         date: '2024-04-13',
         excerpt: '这是帖子概要描述',
         ogImage: {

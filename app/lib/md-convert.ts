@@ -2,6 +2,7 @@ import { unified } from 'unified'
 import remarkParse from 'remark-parse'
 import remarkGfm from 'remark-gfm'
 import remarkRehype from 'remark-rehype'
+import rehypeSlug from 'rehype-slug'
 import rehypeExternalLinks from 'rehype-external-links'
 import rehypeHighlight from 'rehype-highlight'
 import rehypeSanitize from 'rehype-sanitize'
@@ -13,9 +14,10 @@ export async function parseDoc(doc: string) {
         .use(remarkParse, {fragment: true})
         .use(remarkGfm)
         .use(remarkRehype)
+        .use(rehypeSlug)
+        .use(rehypeSanitize)
         .use(rehypeExternalLinks, { target: '_blank', rel: ['nofollow'] })
         .use(rehypeHighlight)
-        .use(rehypeSanitize)
         .use(rehypeStringify)
         .process(doc)
     return String(file)
