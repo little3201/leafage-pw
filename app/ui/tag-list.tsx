@@ -2,7 +2,7 @@
 
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import tagData from '@/lib/data.json'
+import tagData from '@/app/lib/data.json'
 
 
 export default function TagList({ tags }: { tags: string[] }) {

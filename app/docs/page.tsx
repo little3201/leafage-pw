@@ -1,6 +1,6 @@
-import { Suspense } from 'react';
+import { Suspense } from 'react'
 
-import TagList from '@/components/tag-list';
+import TagList from '@/app/ui/tag-list'
 
 export default async function Page() {
 

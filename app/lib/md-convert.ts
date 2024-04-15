@@ -7,8 +7,6 @@ import rehypeHighlight from 'rehype-highlight'
 import rehypeSanitize from 'rehype-sanitize'
 import rehypeStringify from 'rehype-stringify'
 
-// import bnf from 'highlight.js/lib/languages/bnf'
-// import common from 'highlight.js/lib/languages/common'
 
 export async function parseDoc(doc: string) {
     const file = await unified()

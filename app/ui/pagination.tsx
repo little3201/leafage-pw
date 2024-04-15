@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
-import type { Pagation } from '@/lib/type-guards'
+import type { Pagation } from '@/app/lib/type-guards'
 
 export default function Pagination({ totalPages, page }: Pagation) {
     const pathname = usePathname()
