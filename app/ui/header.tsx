@@ -6,7 +6,6 @@ import Image from 'next/image'
 import { clsx } from 'clsx'
 import { MagnifyingGlassIcon, Bars3Icon } from '@heroicons/react/24/outline'
 
-import ThemeSwitch from '@/app/ui/theme-switch'
 import { headerList } from '@/app/lib/data'
 
 export default function Header() {
@@ -43,7 +42,6 @@ export default function Header() {
             </div>
             <div className="flex-shrink-0 flex items-center justify-end text-neutral-700 dark:text-neutral-100 space-x-1">
                 <div className="hidden items-center xl:flex space-x-1">
-                    <ThemeSwitch />
                     <div className="relative">
                         <button type="button" title='search_button' className="w-9 h-9 rounded-full hover:bg-lime-50 dark:hover:bg-neutral-800 focus:outline-none flex items-center justify-center transition-colors duration-200" id="dark" aria-expanded="false">
                             <MagnifyingGlassIcon className="h-5 w-5 text-neutral-700 dark:text-neutral-300" aria-hidden="true" />
