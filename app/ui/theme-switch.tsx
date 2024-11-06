@@ -1,8 +1,6 @@
 'use client'
-
 import { SunIcon, MoonIcon } from '@heroicons/react/24/outline'
 import { useState } from 'react'
-
 export default function ThemeSwitch() {
     const [theme, setTheme] = useState('light')
     return (
