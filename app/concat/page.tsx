@@ -1,6 +1,5 @@
 export default function Contact() {
   async function submit() {
-
     // mutate data
     // revalidate cache
   }
