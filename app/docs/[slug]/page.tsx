@@ -5,14 +5,15 @@ export async function generateStaticParams() {
   }]
 }
 
-export default function Page({
+export default async function Page({
   params
 }: {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }) {
+  const slug = (await params).slug
   return (
     <article className="flex min-h-screen flex-col items-center justify-center overflow-hidden py-8 md:py-16">
-      <div>{params.slug}</div>
+      <div>{slug}</div>
       <div className="w-full grow rounded bg-white md:shadow-2xl dark:bg-neutral-900 dark:shadow-neutral-500 max-w-4xl p-2 md:py-16">
         <div
           className='mx-auto prose prose-green lg:prose-lg dark:prose-invert'
