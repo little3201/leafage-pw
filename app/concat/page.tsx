@@ -1,7 +1,16 @@
+'use client'
+
+import { useRef } from "react"
+import { useFormStatus } from "react-dom"
+
 export default function Contact() {
-  async function submit() {
-    // mutate data
-    // revalidate cache
+  const formRef = useRef<HTMLFormElement | null>(null)
+  const { pending } = useFormStatus()
+
+  async function onSubmit(formData: FormData) {
+    alert("formData:" + formData.values)
+    formRef.current?.reset()
+    alert("Save success!")
   }
 
   return (
@@ -30,7 +39,7 @@ export default function Contact() {
           </div>
         </div>
         <div>
-          <form className="my-10" action={submit}>
+          <form className="my-10" action={onSubmit} ref={formRef}>
             <div className="mb-5">
               <input type="text" placeholder="Full Name" autoComplete="false" className="w-full px-3 py-2 rounded-md" />
             </div>
@@ -41,8 +50,8 @@ export default function Contact() {
             <div className="mb-3">
               <textarea name="message" placeholder="Your Message" className="w-full px-3 py-2 rounded-md" />
             </div>
-            <button type="submit" className="w-full py-3 font-semibold rounded-md text-white transition-colors bg-lime-600 shadow-lg">
-              Send Message
+            <button disabled={pending} type="submit" className="w-full py-3 font-semibold rounded-md text-white transition-colors bg-lime-600 shadow-lg">
+              {pending ? "Submitting" : "Send Message"}
             </button>
           </form>
         </div>

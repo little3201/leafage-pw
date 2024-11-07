@@ -8,12 +8,12 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <section className="mx-auto max-w-4xl py-48">
+    <section className="max-w-4xl mx-auto py-40">
       <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-        <div className="relative rounded-full py-1 px-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400 ring-1 ring-neutral-900/10 hover:ring-neutral-900/20">
+        <div className="rounded-full py-1 px-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400 ring-1 ring-neutral-900/10 hover:ring-neutral-900/20">
           Announcing our next round of funding.{' '}
           <Link href="/docs" className="font-semibold text-lime-600">
-            <span className="absolute inset-0" aria-hidden="true" />
+            <span className="inset-0" aria-hidden="true" />
             Read more <span aria-hidden="true">&rarr;</span>
           </Link>
         </div>
