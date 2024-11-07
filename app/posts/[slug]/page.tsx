@@ -6,11 +6,12 @@ import type { Post } from '@/app/lib/type-guards'
 import PostHeader from '@/app/ui/post-header'
 import PostBody from '@/app/ui/post-body'
 
-export default async function Page({ params }: Params) {
-  const post = await getPostBySlug(params.slug)
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const slug = (await params).slug
+  const post = await getPostBySlug(slug)
 
   if (!post) {
-    return notFound();
+    return notFound()
   }
 
   return (
@@ -25,17 +26,12 @@ export default async function Page({ params }: Params) {
   )
 }
 
-type Params = {
-  params: {
-    slug: string;
-  };
-};
-
-export async function generateMetadata({ params }: Params): Promise<Metadata | undefined> {
-  const post = await getPostBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata | undefined> {
+  const slug = (await params).slug
+  const post = await getPostBySlug(slug);
 
   if (!post) {
-    return notFound();
+    return notFound()
   }
 
   return {
@@ -49,6 +45,6 @@ export async function generateStaticParams() {
   const posts = await getAllPosts()
 
   return posts.map((post: Post) => ({
-    slug: String(post.id),
+    slug: String(post.id)
   }))
 }
