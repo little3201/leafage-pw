@@ -9,7 +9,7 @@ import Pagination from '@/app/_components/pagination'
 export default async function Index() {
   const posts = await getAllPosts()
 
-  const pagination = { totalPages: 3, page: 1 }
+  const pagination = { totalPages: posts.length / 12, page: 1 }
   return (
     <Suspense>
       <div className='flex space-x-24'>
@@ -17,30 +17,32 @@ export default async function Index() {
         <div>
           <ul>
             {posts.map((post) =>
-              <li key={`/posts/${post.slug}`} className="py-5">
-                <article className="flex flex-col space-y-2 xl:space-y-0">
-                  <dl>
-                    <dt className="sr-only">Published on</dt>
-                    <dd className="text-base font-medium leading-6 text-neutral-500 dark:text-neutral-400">
-                      <time dateTime={post.date}>{post.date}</time>
-                    </dd>
-                  </dl>
-                  <div className="space-y-3">
-                    <div>
-                      <h2 className="text-2xl font-bold leading-8 tracking-tight">
-                        <Link href={`/posts/${post.slug}`} className="text-neutral-900 dark:text-neutral-100">
-                          {post.title}
-                        </Link>
-                      </h2>
-                      <div className="flex flex-wrap space-x-2">
-                        {post.tags.map((tag) => <Tag key={tag} text={tag} />)}
-                      </div>
-                    </div>
-                    <div className="prose max-w-none text-neutral-500 dark:text-neutral-400">
-                      {post.excerpt}
+              <li key={`/posts/${post.slug}`} className="flex flex-col space-y-2 xl:space-y-0 p-5 rounded hover:bg-neutral-50 group">
+                <dl>
+                  <dt className="sr-only">Published on</dt>
+                  <dd className="text-sm font-medium leading-6 text-neutral-500 dark:text-neutral-400">
+                    <time dateTime={post.date}>{new Intl.DateTimeFormat('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    }).format(new Date(post.date))}</time>
+                  </dd>
+                </dl>
+                <div className="space-y-3">
+                  <div>
+                    <h2 className="text-xl font-bold leading-8 tracking-tight">
+                      <Link href={`/posts/${post.slug}`} className="text-neutral-900 group-hover:text-lime-600 dark:text-neutral-100">
+                        {post.title}
+                      </Link>
+                    </h2>
+                    <div className="flex flex-wrap space-x-2 mt-1">
+                      {post.tags.map((tag) => <Tag key={tag} text={tag} />)}
                     </div>
                   </div>
-                </article>
+                  <div className="text-sm text-neutral-500 dark:text-neutral-400">
+                    {post.excerpt}
+                  </div>
+                </div>
               </li>
             )}
           </ul>
