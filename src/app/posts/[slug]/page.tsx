@@ -1,10 +1,11 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { getAllPosts, getPostBySlug } from '@/app/lib/api'
-import type { Post } from '@/app/lib/type-guards'
+import { parseMarkdown } from "@/lib/md-convert"
+import { getAllPosts, getPostBySlug } from '@/lib/api'
+import type { Post } from '@/interfaces/post'
 
-import PostHeader from '@/app/ui/post-header'
-import PostBody from '@/app/ui/post-body'
+import PostHeader from '@/app/_components/post-header'
+import PostBody from '@/app/_components/post-body'
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const slug = (await params).slug
@@ -14,6 +15,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     return notFound()
   }
 
+  const content = await parseMarkdown(post.content || "");
+
   return (
     <article>
       <PostHeader
@@ -21,7 +24,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         tags={['Technology', 'Lifestyle']}
         date={post.date}
       />
-      <PostBody content={post.parsedDoc} />
+      <PostBody content={content} />
     </article>
   )
 }
@@ -45,6 +48,6 @@ export async function generateStaticParams() {
   const posts = await getAllPosts()
 
   return posts.map((post: Post) => ({
-    slug: String(post.id)
+    slug: String(post.slug)
   }))
 }

@@ -8,13 +8,13 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <section className="flex flex-col items-center justify-center min-h-full p-32">
-      <div className="w-60 h-60 mx-auto rounded-full overflow-hidden shadow-2xl dark:shadow-neutral-500 transition-shadow duration-200">
+    <section className="flex flex-col items-center justify-center my-28">
+      <div className="w-50 h-50 mx-auto rounded-full overflow-hidden shadow-2xl dark:shadow-neutral-500 transition-shadow duration-200">
         <Image
           src="/avatar-cartoon.jpg"
           alt="avatar"
-          width={240}
-          height={240}
+          width={200}
+          height={200}
           style={{
             maxWidth: "100%",
             height: "auto"
