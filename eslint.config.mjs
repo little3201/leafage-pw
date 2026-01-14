@@ -1,11 +1,13 @@
 import { defineConfig, globalIgnores } from 'eslint/config'
 import nextVitals from 'eslint-config-next/core-web-vitals'
+import nextTs from "eslint-config-next/typescript"
 
 const eslintConfig = defineConfig([
   ...nextVitals,
-  // 覆盖 eslint-config-next 的默认忽略项。
+  ...nextTs,
+  // Override default ignores of eslint-config-next.
   globalIgnores([
-    // eslint-config-next 的默认忽略项：
+    // Default ignores of eslint-config-next:
     '.next/**',
     'out/**',
     'build/**',
