@@ -9,8 +9,9 @@ if (!page.value) {
 </script>
 
 <template>
-  <section class="flex space-x-12 p-6">
-    <div class="hidden h-full max-h-screen w-64 shrink-0 overflow-auto rounded-sm bg-gray-50 dark:bg-gray-900 lg:block">
+  <section class="container mx-auto flex space-x-12 p-6">
+    <div
+      class="hidden h-full max-h-screen w-64 shrink-0 overflow-auto rounded-sm bg-gray-50 dark:bg-neutral-900 lg:block">
       <EssentialLink :items="navigation" />
     </div>
 
@@ -20,7 +21,7 @@ if (!page.value) {
       </h1>
       <div class="w-full grow rounded-sm md:shadow-lg dark:shadow-gray-700/40 max-w-5xl md:py-16">
         <ContentRenderer v-if="page" :value="page"
-          class="prose ma-auto max-w-3xl dark:prose-invert prose-pre:bg-gray-100 dark:prose-pre:bg-gray-900 mx-auto" />
+          class="prose ma-auto max-w-3xl dark:prose-invert prose-pre:bg-gray-100 dark:prose-pre:bg-neutral-800 mx-auto" />
       </div>
     </div>
   </section>

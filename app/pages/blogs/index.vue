@@ -7,7 +7,7 @@ const { data: blogs } = await useAsyncData(() => queryCollection('blogs')
 </script>
 
 <template>
-  <section class="flex space-x-12 p-6">
+  <section class="container mx-auto flex space-x-12 p-6">
     <div class="hidden h-full max-h-screen w-64 shrink-0 overflow-auto rounded-sm bg-gray-50 dark:bg-gray-900 lg:block">
       <EssentialLink :items="navigation" />
     </div>
